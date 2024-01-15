@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <title>Sistema Vicco</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(180deg, #ffffff, #a2f3fc, #e4e4e4, #ffffff);
+            background-size: 600% 600%;
+            -webkit-animation: BGdegrade 10s ease infinite;
+            -moz-animation: BGdegrade 10s ease infinite;
+            animation: BGdegrade 10s ease infinite;
+        }
+
+        @-webkit-keyframes BGdegrade {
+            0% {
+                background-position: 50% 0%
+            }
+
+            50% {
+                background-position: 50% 100%
+            }
+
+            100% {
+                background-position: 50% 0%
+            }
+        }
+
+        @-moz-keyframes BGdegrade {
+            0% {
+                background-position: 50% 0%
+            }
+
+            50% {
+                background-position: 50% 100%
+            }
+
+            100% {
+                background-position: 50% 0%
+            }
+        }
+
+        @keyframes BGdegrade {
+            0% {
+                background-position: 50% 0%
+            }
+
+            50% {
+                background-position: 50% 100%
+            }
+
+            100% {
+                background-position: 50% 0%
+            }
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+            margin-top: 50px; /* Adiciona uma margem superior padrão */
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 30px;
+        }
+
+        span {
+            font-size: 11px;
+            margin: 15px 10px 0;
+        }
+
+        p {
+            font-size: 13px;
+            margin: 15px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 11px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #ff842c;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 1px 1px #a8561c;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            .login-container {
+                margin-top: 15px !important;
+                position: absolute;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <img class="logo" src="imgs/logo.png" alt="Logo Vicco">
+        <h2>Bem Vindo ao Sistema Vicco</h2>
+        <p>Informe seu login e senha de acesso abaixo:</p>
+        <form>
+            <input type="text" placeholder="Login">
+            <input type="password" placeholder="Senha">
+            <button type="submit">Entrar</button>
+        </form>
+        <p><a href="#">Esqueceu sua senha?</a></p>
+        <p><a href="#">Modificar seu acesso</a></p>
+        <span>Desenvolvido para Vicco Construtora by Profsa Informática</span>
+   
