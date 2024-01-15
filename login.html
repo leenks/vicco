@@ -16,7 +16,7 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
-            background: linear-gradient(180deg, #ffffff, #a2f3fc, #e4e4e4, #ffffff);
+            background: linear-gradient(180deg, #ffffff, #f5dd74, #f1e197, #d8d8d8);
             background-size: 600% 600%;
             -webkit-animation: BGdegrade 10s ease infinite;
             -moz-animation: BGdegrade 10s ease infinite;
@@ -69,10 +69,12 @@
             background: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* isso ajusta a opacidade da sombra da caixa */
             text-align: center;
             width: 320px;
-            margin-top: 50px; /* Adiciona uma margem superior padrão */
+            margin-top: 50px;
+            /* Adiciona uma margem superior padrão */
         }
 
         .logo {
@@ -100,6 +102,7 @@
             text-decoration: none;
             font-size: 11px;
         }
+
         a:hover {
             text-decoration: underline;
         }
@@ -111,6 +114,11 @@
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+        }
+
+        input:focus {
+            outline: 1px solid #3498db;
+            /* Altere para a cor desejada */
         }
 
         button {
@@ -150,4 +158,3 @@
         <p><a href="#">Esqueceu sua senha?</a></p>
         <p><a href="#">Modificar seu acesso</a></p>
         <span>Desenvolvido para Vicco Construtora by Profsa Informática</span>
-   
