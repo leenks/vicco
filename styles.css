@@ -2,7 +2,7 @@
         font-family: 'Lato', sans-serif;
         margin: 0;
         padding: 0;
-        background: linear-gradient(to bottom, #e3e3e3, #fff);
+        background: linear-gradient(to top, #e3e3e3, #fff);
         color: #555;
         line-height: 20px;
         letter-spacing: 1px;
@@ -88,38 +88,64 @@
     }
 
     .mapa-nav:nth-of-type(1) {
-        background: #c54f20;
-        font-size: 13px;
+        border: 2px solid #c54f20;
+        background: white;
+        font-size: 12px;
+        z-index: 1;
+        width: 100%;
+        height: 20px;
+        padding-top: 4px;
     }
 
     .mapa-nav:nth-of-type(2) {
-        background: #c54f20;
-        font-size:13px;
+        border: 2px solid #f37334;
+        background: white;
+        font-size:11px;
+        z-index: 2;
+        width: 90%;
+        height: 20px;
+        top:-8px;
+        margin-left: 5%;
+        padding-top: 4px;
     }
 
     .mapa-nav:nth-of-type(3) {
-        background: #f37334;
-        font-size: 12px;
+        border: 2px solid #faa936 ;
+        background:white ;
+        font-size: 10px;
+        z-index: 3;
+        width: 80%;
+        height: 15px;
+        top: -15px;
+        margin-left: 10%;
+        padding-top: 4px;
     }
 
     .mapa-nav:nth-of-type(4) {
-        background: #faa936;
+        border: 2px solid #faa936 ;
+        background:white ;
         font-size: 11px;;
+        z-index: 4;
+        width: 70%;
+        height: 10px;
+        top: -50px;
     }
     .mapa-nav:nth-of-type(5) {
         background: #ffd38d;
         font-size: 11px;
+        z-index: 5;
     }
 
     .mapa-nav {
-        color: white;
+        color:#666 ;
         font-weight: bold;
         font-size: 10px;
-        text-shadow: 1px 1px #993c17;
-        padding: 3px;
+        padding: 10px;
         text-align: center;
+        border-radius: 10px;
+        position: relative;
+        margin: 0 auto;
     }
-
 
 
 
@@ -131,12 +157,21 @@
         font-size: 12px;
     }
 
+    .caixa-menu2 {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+
     .conteudo {
         padding: 5px;
         background-color: #fff;
         margin: 20px 0 20px;
         border-radius: 10px;
-        border: 1px solid #ccc;
+        border: 3px solid #f37334;
         position: relative;
     }
     .conteudo-in {
@@ -152,10 +187,43 @@
 
     /* ESSA É A CAIXA DE FILTROS */
 
+    .filtros-selecionados {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end; /* Alinha os filtros à direita */
+    }
+    
+    .filtros-selecionados span {
+        background-color: #79C14E;
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer; /* Adiciona cursor para indicar que é clicável */
+    }
+    
+    .filtros-selecionados span:hover {
+        background-color: #A4A4A4;
+        
+    }
+
+    .filtros-selecionados button {
+        background-color:   #fff;
+        border-radius: 5px;
+        border: 1px solid #444;
+        font-size: 12px;
+        padding: 0px 5px !important;
+    }
+    
+
     .modal {
         display: none;
         position: fixed;
-        z-index: 1;
+        z-index: 2000;
         left: 0;
         top: 0;
         width: 100%;
@@ -343,6 +411,30 @@
         margin: 0;
     }
 
+    /* Nova classe para o modo-simples */
+.cards-container.modo-simples .card {
+    flex-basis: 100%;
+    min-width: 87%;
+    width: 97%;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.cards-container.modo-simples .card .imagem-container {
+    display: none; /* Oculta a imagem no modo-simples */
+}
+
+.cards-container.modo-simples .card .informacoes {
+    width: 95%;
+}
+
+/* Adicionando a classe .modo-simples ao container de cards */
+.cards-container.modo-simples {
+    flex-direction: column; 
+    align-items: center; 
+}
+
     .toggle-container .toggle-container2 button {
         background: none;
         border: none;
@@ -396,7 +488,7 @@
     .filtro-coluna li {
         margin-bottom: 5px;
     }
-
+    
 
 
     /* VERSAO MOBILE */
@@ -446,6 +538,52 @@
         .toggle-container2 {
             display: block;
         }
+
+        .mapa-nav:nth-of-type(1) {
+            border: 2px solid #c54f20;
+            background: white;
+            font-size: 12px;
+            z-index: 1;
+            width: 92%;
+            height: 20px;
+            padding-top: 4px;
+        }
+    
+        .mapa-nav:nth-of-type(2) {
+            border: 2px solid #f37334;
+            background: white;
+            font-size:11px;
+            z-index: 2;
+            width: 84%;
+            height: 20px;
+            top:-8px;
+            margin-left: 5%;
+            padding-top: 4px;
+        }
+    
+        .mapa-nav:nth-of-type(3) {
+            border: 2px solid #faa936 ;
+            background:white ;
+            font-size: 10px;
+            z-index: 3;
+            width: 74%;
+            height: 15px;
+            top: -15px;
+            margin-left: 10%;
+            padding-top: 4px;
+        }
+    
+        .mapa-nav:nth-of-type(4) {
+            border: 2px solid #faa936 ;
+            background:white ;
+            font-size: 11px;;
+            z-index: 4;
+            width: 64%;
+            height: 10px;
+            top: -50px;
+        }
+
+    
         .card {
             display: flex;
             margin: 10px;

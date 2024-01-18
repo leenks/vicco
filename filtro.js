@@ -1,6 +1,8 @@
+// Efeito de slide na caixa de filtro
 function openFilterModal() {
     var modal = document.getElementById('filterModal');
     modal.style.display = 'block';
+    modal.classList.add('slideIn'); // Adiciona a classe de animação
 }
 
 // Fecha o modal quando clica no Xis
@@ -15,31 +17,45 @@ window.onclick = function (event) {
     if (event.target === modal) {
         modal.style.display = 'none';
     }
+    
+}
+// Adiciona o filtro à lista de filtros selecionados
+function adicionarFiltro(nomeFiltro) {
+    const filtrosSelecionados = document.querySelector('.filtros-selecionados');
+    // FALTA MONTAR AQUI
+
 }
 
-// Efeito de slide na caixa
-function openFilterModal() {
-    var modal = document.getElementById('filterModal');
-    modal.style.display = 'block';
-    modal.classList.add('slideIn'); // Adiciona a classe de animação
-}
 
 // CARDS MODOS DE LISTAGEM
 let modoExibicao = 'card';
 
 function alterarModo() {
-    modoExibicao = modoExibicao === 'card' ? 'lista' : 'card';
-    atualizarModoExibicao();
+    if (modoExibicao === 'card') {
+        modoExibicao = 'lista';
+        atualizarModoExibicao();
+    } else if (modoExibicao === 'lista') {
+        modoExibicao = 'simples';
+        atualizarModoExibicao();
+    } else {
+        modoExibicao = 'card';
+        atualizarModoExibicao();
+    }
 }
 
 function atualizarModoExibicao() {
     const cardsContainer = document.querySelector('.cards-container');
 
-    if (modoExibicao === 'card') {
-        cardsContainer.classList.remove('modo-lista');
-    } else {
+    // Remove todas as classes de modo
+    cardsContainer.classList.remove('modo-lista', 'modo-simples');
+
+    // Adiciona a classe do modo atual
+    if (modoExibicao === 'lista') {
         cardsContainer.classList.add('modo-lista');
-    }
+    } else if (modoExibicao === 'simples') {
+        cardsContainer.classList.add('modo-simples');
+    }   
+    
 
     // Pega a referência do ícone
     const iconElement = document.getElementById('modo-icon');
