@@ -65,26 +65,6 @@
             }
         }
 
-        /* Estilos para telas maiores que 1900px */
-        @media screen and (min-width: 1900px) {
-            .login-container {
-                max-width: 1900px;
-                /* Deixa o conteudo mais ajustado no meio da tela, sem espalhar */
-                height: 70%;
-            }
-
-            .logo {
-                padding-top: 20px;
-            }
-
-            .left-container {
-                background-image: url('imgs/pe-home.jpg');
-                background-size: cover;
-                flex: 1;
-                height: 100% !important;
-            }
-        }
-
         .login-container {
             background: #fff;
             padding: 0px;
@@ -92,26 +72,31 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
             /* isso ajusta a opacidade da sombra da caixa */
             text-align: center;
-            width: 60%;
             margin-top: 20px;
             /* Adiciona uma margem superior padrão */
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 50%;
+            height: 450px;
+
         }
+
+
 
         .left-container {
             background-image: url('imgs/v-pe-home.jpg');
             background-size: cover;
-            flex: 2;
-            height: 430px;
+            flex: 1;
             padding: 0;
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
+            background-position: top;
+            height: 100%;
         }
 
         .right-container {
-            flex: 2;
+            flex: 1;
             padding: 20px;
             text-align: left;
         }
@@ -202,14 +187,38 @@
             font-weight: bold;
             text-shadow: 1px 1px #a8561c;
             text-transform: uppercase;
-            transition: background-color 0.3s; /* Adiciona uma transição suave para a mudança de cor de fundo */
-}
+            transition: background-color 0.3s;
+            /* Adiciona uma transição suave para a mudança de cor de fundo */
+        }
 
-button:hover {
-    background-color: #f05936; /* Cor quando o mouse passa sobre o botão */
-}
+        button:hover {
+            background-color: #f05936;
+            /* Cor quando o mouse passa sobre o botão */
+        }
 
 
+        /* Estilos para telas maiores que 1900px */
+        @media screen and (min-width: 1900px) {
+            .login-container {
+                max-width: 1900px;
+                /* Deixa o conteudo mais ajustado no meio da tela, sem espalhar */
+                height: 70%;
+            }
+
+            .logo {
+                padding-top: 20px;
+            }
+
+            .left-container {
+                background-image: url('imgs/v-pe-home.jpg');
+                background-size: cover;
+                flex: 1;
+                height: 100% !important;
+            }
+        }
+
+
+        /* Estilo para MOBILE */
         @media screen and (max-width: 600px) {
             .login-container {
                 margin-top: 15px !important;
@@ -224,20 +233,51 @@ button:hover {
         }
 
         /* Estilos para telas maiores que 1900px */
-@media screen and (min-width: 1900px) {
-    .right-container {
-        flex: 2; /* Ajusta a largura da right-container para 3 */
-        padding: 20px;
-        text-align: left;
-    }
+        @media screen and (min-width: 1900px) {
 
-    h2 {
-        font-size: 40px; /* Tamanho do título maior */
-        margin: 0; /* Remove a margem superior do título */
-    }
+            .login-container {
 
-}
+                width: 40%;
+                height: 500px;
 
+            }
+
+            .right-container {
+                flex: 1;
+                /* Ajusta a largura da right-container para 3 */
+                padding: 20px;
+                text-align: left;
+                margin: 0 10px;
+            }
+
+            .left-container {
+                flex: 1;
+                margin-right: 10px;
+                padding: 0 10px;
+            }
+
+            h2 {
+                font-size: 40px;
+                /* Tamanho do título maior */
+                margin: 0;
+                /* Remove a margem superior do título */
+            }
+
+        }
+
+        @media screen and (min-width: 1400px) and (max-width: 1900px) {
+
+            .login-container {
+
+                width: 40%;
+                height: 450px;
+
+            }
+
+            .left-container {
+                height: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -249,7 +289,8 @@ button:hover {
         <div class="right-container">
 
             <h2>ENTRAR</h2>
-            <p><b><span style="font-size: 18px; text-align: left; margin: 0;">Olá! </span> Para entrar no sistema, informe seu login e senha abaixo:</b></p>
+            <p><b><span style="font-size: 18px; text-align: left; margin: 0;">Olá! </span> Para entrar no sistema,
+                    informe seu login e senha abaixo:</b></p>
             <form>
                 <input type="text" placeholder="Login">
                 <input type="password" placeholder="Senha">
