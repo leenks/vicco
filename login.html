@@ -16,11 +16,11 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
-            background: linear-gradient(180deg, #ffffff, #ffd27f, #fff, #fff59d   );
+            background: linear-gradient(180deg, #cb3d00, #f9a231, #f05936, #ff892e, #731000);
             background-size: 600% 600%;
             -webkit-animation: BGdegrade 10s ease infinite;
             -moz-animation: BGdegrade 10s ease infinite;
-            animation: BGdegrade 10s ease infinite;
+            animation: BGdegrade 15s ease infinite;
         }
 
         @-webkit-keyframes BGdegrade {
@@ -65,36 +65,84 @@
             }
         }
 
+        /* Estilos para telas maiores que 1900px */
+        @media screen and (min-width: 1900px) {
+            .login-container {
+                max-width: 1900px;
+                /* Deixa o conteudo mais ajustado no meio da tela, sem espalhar */
+                height: 70%;
+            }
+
+            .logo {
+                padding-top: 20px;
+            }
+
+            .left-container {
+                background-image: url('imgs/pe-home.jpg');
+                background-size: cover;
+                flex: 1;
+                height: 100% !important;
+            }
+        }
+
         .login-container {
             background: #fff;
-            padding: 20px;
+            padding: 0px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
             /* isso ajusta a opacidade da sombra da caixa */
             text-align: center;
-            width: 320px;
-            margin-top: 50px;
+            width: 60%;
+            margin-top: 20px;
             /* Adiciona uma margem superior padrão */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-container {
+            background-image: url('imgs/v-pe-home.jpg');
+            background-size: cover;
+            flex: 2;
+            height: 430px;
+            padding: 0;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .right-container {
+            flex: 2;
+            padding: 20px;
+            text-align: left;
         }
 
         .logo {
-            max-width: 100%;
+            max-width: 70%;
             height: auto;
+            padding-top: 20px;
         }
 
         h2 {
-            font-size: 20px;
-            margin: 30px;
+            font-size: 30px;
+            margin: f0px 0;
         }
 
         span {
+            font-size: 13px;
+            margin: 15px 0;
+            display: block;
+            text-align: center;
+        }
+
+        .byprofsa {
             font-size: 11px;
             margin: 15px 10px 0;
+            text-align: center;
         }
 
         p {
-            font-size: 13px;
-            margin: 15px;
+            font-size: 14px;
+            margin: 15px 0px 30px;
         }
 
         a {
@@ -112,49 +160,106 @@
             padding: 10px;
             margin-bottom: 10px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: none;
+            border-bottom: 1px solid #444;
+            outline: none;
+            /* Remove a borda padrão ao focar */
+            background-color: transparent;
+            /* Torna o fundo transparente */
+            transition: all 0.3s;
+        }
+
+        input::placeholder {
+            color: #444;
+            /* Define a cor do placeholder como branco */
+        }
+
+        input:focus::placeholder {
+            color: #c0c0c0;
         }
 
         input:focus {
-            outline: 1px solid #3498db;
-            /* Altere para a cor desejada */
+            border-bottom: 2px solid #fe9a35;
+            border-radius: 6px 6px 0px 0px;
+            /* Aumenta a espessura da borda inferior e muda a cor quando o input está em foco */
+            background-color: #f5f1ee;
+            /* Cor de fundo laranja quando focado */
+            color: #444;
+            /* Cor do texto branco quando focado */
         }
+
+
 
         button {
             background: #ff842c;
             color: #fff;
             padding: 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             width: 100%;
             margin-bottom: 10px;
             font-weight: bold;
             text-shadow: 1px 1px #a8561c;
             text-transform: uppercase;
-        }
+            transition: background-color 0.3s; /* Adiciona uma transição suave para a mudança de cor de fundo */
+}
+
+button:hover {
+    background-color: #f05936; /* Cor quando o mouse passa sobre o botão */
+}
+
 
         @media screen and (max-width: 600px) {
             .login-container {
                 margin-top: 15px !important;
-                position: absolute;
-                top: 0;
+                flex-direction: column;
+            }
+
+            .left-container,
+            .right-container {
+                border-radius: 8px;
+                width: 100%;
             }
         }
+
+        /* Estilos para telas maiores que 1900px */
+@media screen and (min-width: 1900px) {
+    .right-container {
+        flex: 2; /* Ajusta a largura da right-container para 3 */
+        padding: 20px;
+        text-align: left;
+    }
+
+    h2 {
+        font-size: 40px; /* Tamanho do título maior */
+        margin: 0; /* Remove a margem superior do título */
+    }
+
+}
+
     </style>
 </head>
 
 <body>
     <div class="login-container">
-        <img class="logo" src="imgs/logo.png" alt="Logo Vicco">
-        <h2>Bem Vindo ao Sistema Vicco</h2>
-        <p>Informe seu login e senha de acesso abaixo:</p>
-        <form>
-            <input type="text" placeholder="Login">
-            <input type="password" placeholder="Senha">
-            <button type="submit">Entrar</button>
-        </form>
-        <p><a href="#">Esqueceu sua senha?</a></p>
-        <p><a href="#">Modificar seu acesso</a></p>
-        <span>Desenvolvido para Vicco Construtora by Profsa Informática</span>
+        <div class="left-container">
+            <img class="logo" src="imgs/logo.png" alt="Logo Vicco">
+        </div>
+        <div class="right-container">
+
+            <h2>ENTRAR</h2>
+            <p><b><span style="font-size: 18px; text-align: left; margin: 0;">Olá! </span> Para entrar no sistema, informe seu login e senha abaixo:</b></p>
+            <form>
+                <input type="text" placeholder="Login">
+                <input type="password" placeholder="Senha">
+                <a href="home.html" target="_blank"><button type="submit">Entrar</button></a>
+            </form>
+            <span><a href="#">Esqueceu sua senha?</a></span>
+            <span><a href="#">Modificar seu acesso</a></span>
+            <span class="byprofsa">Desenvolvido para Vicco Construtora by Profsa Informática</span>
+        </div>
+    </div>
+</body>
+
+</html>
