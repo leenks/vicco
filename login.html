@@ -91,7 +91,6 @@
             padding: 0;
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
-            background-position: top;
             height: 100%;
         }
 
@@ -109,7 +108,7 @@
 
         h2 {
             font-size: 30px;
-            margin: f0px 0;
+            margin: 10px 0;
         }
 
         span {
@@ -216,21 +215,42 @@
                 height: 100% !important;
             }
         }
+        
+/* Estilo para MOBILE */
+@media screen and (max-width: 600px) {
+    body {
+        height: 60vh;
+        background: none;
+    }
+    .logo {
+        margin: 10px 0 100px;
+    }
+
+    .login-container {
+        margin-top: 50px !important; /* Cola o login-container no topo */
+        width: 100%;
+        flex-direction: column;
+        height: auto; /* Remove a altura fixa para que ela possa se ajustar ao conteúdo */
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .left-container,
+    .right-container {
+        border-radius: 8px;
+        width: 100%;
+        height: auto; /* Ajusta a altura automática */
+        margin-bottom: 10px; /* Adiciona espaço entre .left-container e .right-container */
+    }
+
+    .left-container {
+        height: 200px; /* Ajuste a altura desejada para .left-container no modo mobile */
+        background-size: cover;
+        margin-top: 40px;
+    }
+}
 
 
-        /* Estilo para MOBILE */
-        @media screen and (max-width: 600px) {
-            .login-container {
-                margin-top: 15px !important;
-                flex-direction: column;
-            }
-
-            .left-container,
-            .right-container {
-                border-radius: 8px;
-                width: 100%;
-            }
-        }
 
         /* Estilos para telas maiores que 1900px */
         @media screen and (min-width: 1900px) {
