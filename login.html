@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <title>Sistema Vicco</title>
     <style>
@@ -172,8 +172,6 @@
             /* Cor do texto branco quando focado */
         }
 
-
-
         button {
             background: #ff842c;
             color: #fff;
@@ -194,7 +192,6 @@
             background-color: #f05936;
             /* Cor quando o mouse passa sobre o botão */
         }
-
 
         /* Estilos para telas maiores que 1900px */
         @media screen and (min-width: 1900px) {
@@ -218,12 +215,16 @@
         
 /* Estilo para MOBILE */
 @media screen and (max-width: 600px) {
+
+    input {
+        font-size: 16px;
+    }
     body {
         height: 60vh;
         background: none;
     }
     .logo {
-        margin: 10px 0 100px;
+        margin: 10px 0 150px;
     }
 
     .login-container {
@@ -244,7 +245,7 @@
     }
 
     .left-container {
-        height: 200px; /* Ajuste a altura desejada para .left-container no modo mobile */
+        height: 400px; /* Ajuste a altura desejada para .left-container no modo mobile */
         background-size: cover;
         margin-top: 40px;
     }
@@ -338,9 +339,8 @@
         </div>
         <div class="right-container">
 
-            <h2>ENTRAR</h2>
-            <p><b><span style="font-size: 18px; text-align: left; margin: 0;">Olá! </span> Para entrar no sistema,
-                    informe seu login e senha abaixo:</b></p>
+            <p><span style="font-size: 18px; text-align: left; margin: 0;">Olá! </span> Para entrar no sistema,
+                    informe seu login e senha abaixo:</p>
             <form>
                 <input type="text" placeholder="Login">
                 <input type="password" placeholder="Senha">
