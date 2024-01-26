@@ -86,68 +86,16 @@
         height: 30px;
         margin-bottom: 5px;
     }
+    .separa-topo {
+        background-image: url(imgs/separa-top.png);
+        background-repeat: repeat-x; /* Repete apenas na horizontal */
+        background-size: auto; /* Pode ser 'auto' ou um valor específico para o tamanho da imagem */
+        margin: 20px 0;
+        padding-bottom: 0;
+        box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra acima (negativo no eixo Y) */
 
-    .mapa-nav:nth-of-type(1) {
-        border: 2px solid #c54f20;
-        background: white;
-        font-size: 12px;
-        z-index: 1;
-        width: 100%;
-        height: 20px;
-        padding-top: 4px;
     }
-
-    .mapa-nav:nth-of-type(2) {
-        border: 2px solid #f37334;
-        background: white;
-        font-size:11px;
-        z-index: 2;
-        width: 90%;
-        height: 20px;
-        top:-8px;
-        margin-left: 5%;
-        padding-top: 4px;
-    }
-
-    .mapa-nav:nth-of-type(3) {
-        border: 2px solid #faa936 ;
-        background:white ;
-        font-size: 10px;
-        z-index: 3;
-        width: 80%;
-        height: 15px;
-        top: -15px;
-        margin-left: 10%;
-        padding-top: 4px;
-    }
-
-    .mapa-nav:nth-of-type(4) {
-        border: 2px solid #faa936 ;
-        background:white ;
-        font-size: 11px;;
-        z-index: 4;
-        width: 70%;
-        height: 10px;
-        top: -50px;
-    }
-    .mapa-nav:nth-of-type(5) {
-        background: #ffd38d;
-        font-size: 11px;
-        z-index: 5;
-    }
-
-    .mapa-nav {
-        color:#666 ;
-        font-weight: bold;
-        font-size: 10px;
-        padding: 10px;
-        text-align: center;
-        border-radius: 10px;
-        position: relative;
-        margin: 0 auto;
-    }
-
-
+    
 
     .caixa-menu {
         display: flex;
@@ -171,7 +119,7 @@
         background-color: #fff;
         margin: 20px 0 20px;
         border-radius: 10px;
-        border: 3px solid #f37334;
+        border: 3px solid #c54f20;
         position: relative;
     }
     .conteudo-in {
@@ -215,11 +163,10 @@
         background-color:   #fff;
         border-radius: 5px;
         border: 1px solid #444;
-        font-size: 12px;
+        font-size: 11px;
         padding: 0px 5px !important;
     }
     
-
     .modal {
         display: none;
         position: fixed;
@@ -287,7 +234,7 @@
     }
 
     button {
-        padding: 10px;
+        padding: 5px;
         margin: 5px;
         border: none;
         cursor: pointer;
@@ -316,15 +263,17 @@
     }
 
     .card {
-        flex: 1;
-        min-width: 200px;
-        max-width: 100%;
-        margin: 10px;
-        padding: 5px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+    flex: 1;
+    min-width: 200px;
+    max-width: 100%;
+    margin: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden; /* Adiciona overflow hidden para a borda inferior seguir até o final da div */
+}
 
 
     .imagem-container {
@@ -457,8 +406,25 @@
         margin-right: 10px; /* Ajuste a margem conforme necessário */
     }
 
+    /* MENU MIGALHAS - OU MAPA DE NAVEGAÇÃO */
 
-
+    .breadcrumbs {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        font-size: 10px;
+        color: #444;
+    }
+    
+    .breadcrumbs a {
+        color: #444;
+        text-decoration: none;
+        margin-right: 5px;
+    }
+    
+    .breadcrumbs span {
+        margin-right: 5px;
+    }    
 
     /* FILTROS */
 
@@ -469,11 +435,12 @@
         margin-bottom: 20px;
         z-index: 10001;
     }
-
+    
     .filtro-coluna {
         flex: 1;
         margin-right: 20px;
     }
+
     .filtro-coluna label {
 
         display: block;
@@ -538,51 +505,6 @@
         .toggle-container2 {
             display: block;
         }
-
-        .mapa-nav:nth-of-type(1) {
-            border: 2px solid #c54f20;
-            background: white;
-            font-size: 12px;
-            z-index: 1;
-            width: 92%;
-            height: 20px;
-            padding-top: 4px;
-        }
-    
-        .mapa-nav:nth-of-type(2) {
-            border: 2px solid #f37334;
-            background: white;
-            font-size:11px;
-            z-index: 2;
-            width: 84%;
-            height: 20px;
-            top:-8px;
-            margin-left: 5%;
-            padding-top: 4px;
-        }
-    
-        .mapa-nav:nth-of-type(3) {
-            border: 2px solid #faa936 ;
-            background:white ;
-            font-size: 10px;
-            z-index: 3;
-            width: 74%;
-            height: 15px;
-            top: -15px;
-            margin-left: 10%;
-            padding-top: 4px;
-        }
-    
-        .mapa-nav:nth-of-type(4) {
-            border: 2px solid #faa936 ;
-            background:white ;
-            font-size: 11px;;
-            z-index: 4;
-            width: 64%;
-            height: 10px;
-            top: -50px;
-        }
-
     
         .card {
             display: flex;
