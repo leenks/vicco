@@ -68,7 +68,7 @@
         color: #444;
         text-decoration: none;
         transition: color 0.3s;
-        margin
+        margin: 0;
     }
 
     .menu-item a:hover,
@@ -89,11 +89,20 @@
     .separa-topo {
         background-image: url(imgs/separa-top.png);
         background-repeat: repeat-x; /* Repete apenas na horizontal */
-        background-size: auto; /* Pode ser 'auto' ou um valor específico para o tamanho da imagem */
+        background-size: auto; 
         margin: 20px 0;
         padding-bottom: 0;
         box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra acima (negativo no eixo Y) */
 
+    }
+
+    .selo-img {
+        position: absolute;
+        bottom: 30%;
+        left: 10%;
+        z-index: 1; /* Adiciona uma camada acima da imagem */
+        height:30% !important; /* Ajuste a altura automaticamente */
+        width: 80% !important;
     }
     
 
@@ -112,6 +121,7 @@
         margin-top: 10px;
         font-size: 12px;
     }
+    
 
 
     .conteudo {
@@ -278,6 +288,7 @@
 
     .imagem-container {
         position: relative;
+        width: 100%;
     }
 
     .imagem-container img {
@@ -289,12 +300,14 @@
 
     .selo, .selo-amarelo, .selo-verde {
         position: absolute;
-        top: 10px;
-        right: 10px;
-        border-radius: 50px;
+        top: 0;
+        left: 0;
+        border-radius: 5px 5px 0px 0px;
         padding: 4px 10px;
-        font-size: 13px;
+        font-size: 11px;
         font-weight: bold;
+        z-index: 1;
+        width: 100%;
     }
     .selo {
         background-color: #0055ff;
@@ -398,7 +411,7 @@
         padding: 10px;
         display: flex;
         margin-left: auto;
-        z-index: 1;
+        z-index: 2;
     }
 
     .toggle-container,
@@ -521,8 +534,10 @@
         }
 
         .card .imagem-container img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
         }
 
         .card .selo {
@@ -532,10 +547,8 @@
         .card .selo,
         .card .selo-amarelo,
         .card .selo-verde {
-            position: static;
-            margin-top: 10px;
-            border-radius: 50px;
-            padding: 2px 5px;
+            position: absolute;
+            padding: 0px 5px 0px 0px;
             font-size: 11px;
             font-weight: bold;
             text-align: center;
@@ -547,8 +560,31 @@
         }
         
         .card .informacoes h4 {
-            margin-top: 5px; /* Adiciona margem acima do título */
+            margin: 15px 0px !important; /* Adiciona margem acima do título */
         }
+        .cards-container.modo-lista .card {
+            flex-basis: calc(100% - 20px); /* Largura total com uma margem de 20px */
+            min-width: calc(100% - 20px);
+            width: calc(100% - 20px);
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+    
+        .cards-container.modo-lista .card .imagem-container {
+            width: 100%;
+            margin-right: 0;
+            position: relative;
+        }
+    
+        .cards-container.modo-lista .card .informacoes {
+            width: 100%;
+            position: relative;
+        }
+
+        
     }
 
     /* Versão Desktop pro modo-lista das obras */

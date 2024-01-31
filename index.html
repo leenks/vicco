@@ -7,7 +7,7 @@
     <link rel="icon" href="imgs/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="styles.css">
@@ -96,259 +96,268 @@
                         <span>OUTROS</span>
                     </div>
 
-                <div class="wrap-toggle">
-                    <div class="toggle-container">
-                        <button onclick="alterarModo()">
-                            <span id="modo-icon" class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
-                        </button>
+                    <div class="wrap-toggle">
+                        <div class="toggle-container">
+                            <button onclick="alterarModo()">
+                                <span id="modo-icon" class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
+                            </button>
+                        </div>
+                        <div class="toggle-container2">
+                            <button onclick="openFilterModal(); updateFilterDisplay();">
+                                <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
+                            </button>
+                        </div>
+
+                        <div class="filtros-selecionados">
+                            <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
+                            <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                        </div>
+
                     </div>
-                    <div class="toggle-container2">
-                        <button onclick="openFilterModal(); updateFilterDisplay();">
-                            <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
-                        </button>
-                    </div>
 
-                    <div class="filtros-selecionados">
-                        <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
-                        <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
-                    </div>
-                        
-                </div>
 
-                
 
-                <div class="conteudo-in">
-                    <h2>Todas as Obras</h2>
+                    <div class="conteudo-in">
+                        <h2>Todas as Obras</h2>
 
-                    <div class="cards-container">
+                        <div class="cards-container">
 
-                        <div class="card">
-                            <div class="imagem-container">
-                                
-                                <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="card">
                                 <div class="selo">Em Andamento</div>
-                            </div>
-                            <div class="informacoes">
-                                <h4>Nome da Obra</h4>
-                                <p>INFO - Texto informativo sobre a obra</p>
-                            </div>
-                        </div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                    <img src="imgs/selo-atrasado.png" class="selo-img">
+                                </div>
+                                <div class="informacoes">
 
-                        <div class="card">
-                            <div class="imagem-container">
-                                <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
                                 <div class="selo">Em Andamento</div>
-                            </div>
-                            <div class="informacoes">
-                                <h4>Nome da Obra</h4>
-                                <p>INFO - Texto informativo sobre a obra</p>
-                            </div>
-                        </div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa2.png" alt="Descrição da Imagem">
 
-                        <div class="card">
-                            <div class="imagem-container">
-                                <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
                                 <div class="selo">Em Andamento</div>
-                            </div>
-                            <div class="informacoes">
-                                <h4>Nome da Obra</h4>
-                                <p>INFO - Texto informativo sobre a obra</p>
-                            </div>
-                        </div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
 
-                        <div class="card">
-                            <div class="imagem-container">
-                                <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
                                 <div class="selo">Em Andamento</div>
-                            </div>
-                            <div class="informacoes">
-                                <h4>Nome da Obra</h4>
-                                <p>INFO - Texto informativo sobre a obra</p>
-                            </div>
-                        </div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa2.png" alt="Descrição da Imagem">
+                                    <img src="imgs/selo-adiantada.png" class="selo-img">
 
-                        <div class="card">
-                            <div class="imagem-container">
-                                <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
                                 <div class="selo-amarelo">Pausada</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                   
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
                             </div>
-                            <div class="informacoes">
-                                <h4>Nome da Obra</h4>
-                                <p>INFO - Texto informativo sobre a obra</p>
-                            </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="imagem-container">
-                                <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="card">
                                 <div class="selo-verde">Concluída</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
                             </div>
-                            <div class="informacoes">
-                                <h4>Nome da Obra</h4>
-                                <p>INFO - Texto informativo sobre a obra</p>
-                            </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="imagem-container">
-                                <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="card">
                                 <div class="selo">Em Andamento</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
                             </div>
-                            <div class="informacoes">
-                                <h4>Nome da Obra</h4>
-                                <p>INFO - Texto informativo sobre a obra</p>
-                            </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="imagem-container">
-                                <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="card">
                                 <div class="selo">Em Andamento</div>
-                            </div>
-                            <div class="informacoes">
-                                <h4>Nome da Obra</h4>
-                                <p>INFO - Texto informativo sobre a obra</p>
-                            </div>
-                        </div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
 
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
 
-            </div>
+                <div class="conteudo">
+                    <h3>Lorem ipsum</h3>
+                    <p>Aenean lorem quam, lobortis quis posuere at, mollis id dui. Maecenas nibh lacus, iaculis nec
+                        feugiat
+                        nec, consectetur ut lacus. </p>
+                </div>
 
-            <div class="conteudo">
-                <h3>Lorem ipsum</h3>
-                <p>Aenean lorem quam, lobortis quis posuere at, mollis id dui. Maecenas nibh lacus, iaculis nec feugiat
-                    nec, consectetur ut lacus. </p>
             </div>
 
         </div>
 
-    </div>
 
+        <!-- Modal de Filtro -->
+        <div id="filterModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFilterModal()">&times;</span>
 
-    <!-- Modal de Filtro -->
-    <div id="filterModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeFilterModal()">&times;</span>
+                <!-- Conteúdo do Filtro -->
+                <h2>Informações de Filtro para Requisições</h2>
 
-            <!-- Conteúdo do Filtro -->
-            <h2>Informações de Filtro para Requisições</h2>
+                <!-- Tabela de Filtros -->
+                <div class="filtro-tabela">
 
-            <!-- Tabela de Filtros -->
-            <div class="filtro-tabela">
+                    <!-- Primeira Coluna -->
+                    <div class="filtro-coluna">
+                        <label for="dataInicial">Data Inicial:</label>
+                        <input type="date" id="dataInicial">
 
-                <!-- Primeira Coluna -->
-                <div class="filtro-coluna">
-                    <label for="dataInicial">Data Inicial:</label>
-                    <input type="date" id="dataInicial">
+                        <p><strong>Tipo:</strong></p>
+                        <label>
+                            <input type="checkbox" id="tipoRequisicao"> Requisições
+                        </label>
+                        <label>
+                            <input type="checkbox" id="tipoReembolso"> Reembolsos
+                        </label>
+                        <label>
+                            <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                        </label>
+                    </div>
 
-                    <p><strong>Tipo:</strong></p>
-                    <label>
-                        <input type="checkbox" id="tipoRequisicao"> Requisições
-                    </label>
-                    <label>
-                        <input type="checkbox" id="tipoReembolso"> Reembolsos
-                    </label>
-                    <label>
-                        <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                    </label>
+                    <!-- Segunda Coluna -->
+                    <div class="filtro-coluna">
+                        <label for="dataFinal">Data Final:</label>
+                        <input type="date" id="dataFinal">
+
+                        <p><strong>Formato:</strong></p>
+                        <label>
+                            <input type="checkbox" id="formatoBox"> Box
+                        </label>
+                        <label>
+                            <input type="checkbox" id="formatoLista"> Lista
+                        </label>
+                        <label>
+                            <input type="checkbox" id="formatoSimples"> Simples
+                        </label>
+                    </div>
+
+                    <!-- Terceira Coluna -->
+                    <div class="filtro-coluna">
+                        <h3>Status da Requisição:</h3>
+                        <label>
+                            <input type="checkbox" id="statusAberta"> Aberta
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusCotacao"> Cotação
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusAprovacao"> Aprovação
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusReprovado"> Reprovado
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusPagamento"> Pagamento
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusComprada"> Comprada
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusEntregue"> Entregue
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusCancelada"> Cancelada
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusRecusada"> Recusada
+                        </label>
+                    </div>
+
+                    <!-- Quarta Coluna -->
+                    <div class="filtro-coluna">
+                        <h3>Obras:</h3>
+                        <label>
+                            <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                        </label>
+
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e
+                                    rh)
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
 
-                <!-- Segunda Coluna -->
-                <div class="filtro-coluna">
-                    <label for="dataFinal">Data Final:</label>
-                    <input type="date" id="dataFinal">
-
-                    <p><strong>Formato:</strong></p>
-                    <label>
-                        <input type="checkbox" id="formatoBox"> Box
-                    </label>
-                    <label>
-                        <input type="checkbox" id="formatoLista"> Lista
-                    </label>
-                    <label>
-                        <input type="checkbox" id="formatoSimples"> Simples
-                    </label>
-                </div>
-
-                <!-- Terceira Coluna -->
-                <div class="filtro-coluna">
-                    <h3>Status da Requisição:</h3>
-                    <label>
-                        <input type="checkbox" id="statusAberta"> Aberta
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusCotacao"> Cotação
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusAprovacao"> Aprovação
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusReprovado"> Reprovado
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusPagamento"> Pagamento
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusComprada"> Comprada
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusEntregue"> Entregue
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusCancelada"> Cancelada
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusRecusada"> Recusada
-                    </label>
-                </div>
-
-                <!-- Quarta Coluna -->
-                <div class="filtro-coluna">
-                    <h3>Obras:</h3>
-                    <label>
-                        <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                    </label>
-                    <label>
-                        <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                    </label>
-
-                    <ul>
-                        <li>
-                            <label>
-                                <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e rh)
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                            </label>
-                        </li>
-                    </ul>
+                <!-- Botões de Ação -->
+                <div>
+                    <button class="filtrar" onclick="filtrar()">Filtrar</button>
+                    <button class="limpar" onclick="limparFiltro()">Limpar</button>
                 </div>
 
             </div>
-
-            <!-- Botões de Ação -->
-            <div>
-                <button class="filtrar" onclick="filtrar()">Filtrar</button>
-                <button class="limpar" onclick="limparFiltro()">Limpar</button>
-            </div>
-
         </div>
-    </div>
 
 
-    <script src="filtro.js"></script>
+        <script src="filtro.js"></script>
 </body>
 
 </html>
