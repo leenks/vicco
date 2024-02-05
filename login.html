@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <title>Sistema Vicco</title>
+    <style>
+        body{margin:0;font-family:'Lato',sans-serif;color:#555;display:flex;align-items:center;justify-content:center;height:100vh;overflow:hidden;background:linear-gradient(180deg,#cb3d00,#f9a231,#f05936,#ff892e,#731000);background-size:600% 600%;-webkit-animation:BGdegrade 10s ease infinite;-moz-animation:BGdegrade 10s ease infinite;animation:BGdegrade 15s ease infinite}@-webkit-keyframes BGdegrade{0%{background-position:50% 0%}50%{background-position:50% 100%}100%{background-position:50% 0%}}@-moz-keyframes BGdegrade{0%{background-position:50% 0%}50%{background-position:50% 100%}100%{background-position:50% 0%}}@keyframes BGdegrade{0%{background-position:50% 0%}50%{background-position:50% 100%}100%{background-position:50% 0%}}.login-container{background:#fff;padding:0px;border-radius:8px;box-shadow:0 0 15px rgba(0,0,0,0.5);text-align:center;margin-top:20px;display:flex;justify-content:space-between;align-items:center;width:50%;height:450px}.left-container{background-image:url('imgs/v-pe-home.jpg');background-size:cover;flex:1;padding:0;border-top-left-radius:8px;border-bottom-left-radius:8px;height:100%}.right-container{flex:1;padding:20px;text-align:left}.logo{max-width:70%;height:auto;padding-top:20px}h2{font-size:30px;margin:10px 0}span{font-size:13px;margin:15px 0;display:block;text-align:center}.byprofsa{font-size:11px;margin:15px 10px 0;text-align:center}p{font-size:14px;margin:15px 0px 30px}a{color:#3498db;text-decoration:none;font-size:11px}a:hover{text-decoration:underline}input{width:100%;padding:10px;margin-bottom:10px;box-sizing:border-box;border:none;border-bottom:1px solid #444;outline:none;background-color:transparent;transition:all 0.3s}input::placeholder{color:#444}input:focus::placeholder{color:#c0c0c0}input:focus{border-bottom:2px solid #fe9a35;border-radius:6px 6px 0px 0px;background-color:#f5f1ee;color:#444}button{background:#ff842c;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;width:100%;margin-bottom:10px;font-weight:bold;text-shadow:1px 1px #a8561c;text-transform:uppercase;transition:background-color 0.3s}button:hover{background-color:#f05936}@media screen and (min-width:1900px){.login-container{max-width:1900px;height:70%}.logo{padding-top:20px}.left-container{background-image:url('imgs/v-pe-home.jpg');background-size:cover;flex:1;height:100% !important}}@media screen and (max-width:600px){input{font-size:16px}body{height:60vh;background:none}.logo{margin:10px 0 150px}.login-container{margin-top:50px !important;width:100%;flex-direction:column;height:auto;padding:10px;box-shadow:none}.left-container,.right-container{border-radius:8px;width:100%;height:auto;margin-bottom:10px}.left-container{height:400px;background-size:cover;margin-top:40px}}@media screen and (min-width:1900px){.login-container{width:40%;height:500px}.right-container{flex:1;padding:20px;text-align:left;margin:0 10px}.left-container{flex:1;margin-right:10px;padding:0 10px}h2{font-size:40px;margin:0}}@media screen and (min-width:1400px) and (max-width:1900px){.login-container{width:40%;height:450px}.left-container{height:100%}}@media screen and (max-width:400px){body{height:60vh}.login-container{margin-top:0 !important;width:98%;flex-direction:column;height:auto;padding:10px}.left-container,.right-container{border-radius:8px;width:100%;height:auto;margin-bottom:10px}.left-container{height:200px;background-size:cover;margin-top:72%}}
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="left-container">
+            <img class="logo" src="imgs/logo.png" alt="Logo Vicco">
+        </div>
+        <div class="right-container">
+            <p><span style="font-size: 18px; text-align: left; margin: 0;">Olá! </span> Para entrar no sistema,
+                    informe seu login e senha abaixo:</p>
+            <form>
+                <input type="text" placeholder="Login">
+                <input type="password" placeholder="Senha">
+                <a href="home.html" target="_blank"><button type="submit">Entrar</button></a>
+            </form>
+            <span><a href="#">Esqueceu sua senha?</a></span>
+            <span><a href="#">Modificar seu acesso</a></span>
+            <span class="byprofsa">Desenvolvido para Vicco Construtora by Profsa Informática</span>
+        </div>
+    </div>
+</body>
+
+</html>
