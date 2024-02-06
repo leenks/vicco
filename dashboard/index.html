@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home-dashboard-v2.css">
+    <link rel="stylesheet" href="grafico.css">
+    <title>Dashboard de Obras</title>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo"><img src="imgs/logo.png"></div>
+
+        <button class="view-button" onclick="alterarModo('geral')">
+            Geral &nbsp;<span class="fas fa-chart-pie"></span>
+        </button>
+        <button class="view-button" onclick="alterarModo('orcamento')">
+            Orçamento &nbsp;<span class="fas fa-coins"></span>
+        </button>
+        <button class="view-button" onclick="alterarModo('empresa')">
+            Empresa &nbsp;<span class="fas fa-building"></span>
+        </button>
+
+        <div class="search-bar">
+
+            <input type="text" class="search-input" placeholder="Buscar...">
+
+            <button class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="notification-container">
+            <div class="notifications" onclick="toggleNotifications()">
+                <img src="imgs/ico-notif-off.png" alt="Notificações" id="notification-icon">
+                <div class="notification-badge" id="notification-badge">2</div>
+            </div>
+            <div class="notification-popup" id="notification-popup">
+                <!-- Conteúdo do balão flutuante -->
+                <a href="#"><p>Fulano atualizou obra Y</p></a>
+                <a href="#"><p>Fulano atualizou obra X</p></a>
+                <!-- Adicione mais conteúdo aqui, se necessário -->
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <img src="imgs/user.png" alt="Usuário">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+
+            <div class="menu-icon" onclick="toggleSidebar()">
+                <i class="fa-solid fa-grip-lines-vertical"></i>
+            </div>
+
+            <!-- Conteúdo da Sidebar -->
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tachometer-alt"></i> <!-- Ícone de um velocímetro -->
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chart-bar"></i> <!-- Ícone de um gráfico de barras -->
+                            Relatórios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cogs"></i> <!-- Ícone de uma engrenagem -->
+                            Configurações
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-users"></i> <!-- Ícone de pessoas -->
+                            Usuários
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-calendar"></i> <!-- Ícone de um calendário -->
+                            Calendário
+                        </a>
+                    </li>
+                    <!-- Adicione mais itens conforme necessário -->
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <!-- esse conteudo esta sendo inserido via JS-->
+            <div class="blocks-container">
+                <div class="block">Bloco 1</div>
+                <div class="block">Bloco 2</div>
+                <div class="block">Bloco 3</div>
+                <div class="block">Bloco 4</div>
+            </div>
+
+            <div class="full-width-block">
+                <!-- Bloco de largura total -->
+                <div class="wraper">
+                    <div class="flag-hoje">Hoje: <br><span style="font-size: 11px;">2 de Abril</span></div>
+                    <div class="dayline"></div>
+                    <!-- Cabeçalho fixo com dias do mês será adicionado dinamicamente via JavaScript -->
+
+                    <div class="gantt" id="gantt-chart">
+                        <!-- Conteúdo dinâmico será adicionado aqui via JavaScript -->
+                    </div>
+                </div> <!-- wraper-->
+            </div> <!-- full-width-block-->
+        </div> <!-- content -->
+    </div>
+
+    <footer>
+        <p>Rodapé do Dashboard</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="home-dashboard.js"></script>
+</body>
+
+</html>
