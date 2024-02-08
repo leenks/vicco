@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário e Tabela de Tarefas</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      width: 100%;
+      font-size: 11px;
+      margin: 0;
+      padding: 0;
+      display: flex; /* Alterado para flex */
+      justify-content: center; /* Centraliza o conteúdo na horizontal */
+    }
+
+    /* Estilo para inputs de data */
+    input[type="text"].data {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      font-size: 11px;
+    }
+    input.data:focus {
+  outline: none; /* Remove a borda ao focar no input */
+}
+
+
+    h2 {
+      margin-left: 20px;
+      font-size: 20px;
+      color: #444;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .tabelas-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .tabela-obras,
+    .calendario-mes {
+      border-collapse: collapse;
+      margin: 0 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      /* Adiciona sombra à tabela */
+    }
+
+    /* Estilo para células ímpares */
+.tabela-obras tbody tr:nth-child(odd) td {
+  background-color: #ececec; /* Fundo branco para células ímpares */
+}
+
+/* Estilo para células pares */
+.tabela-obras tbody tr:nth-child(even) td {
+  background-color: #f0f0f0; /* Fundo cinza claro para células pares */
+}
+
+    .tabela-obras th,
+    .tabela-obras td,
+    .calendario-mes td {
+      padding:5px;
+      text-align: center;
+      border: 1px solid #fbfbfb transparent;
+    }
+
+    .tabela-obras th {
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 10px 5px;
+      background-color: #f37334;
+    }
+
+    .bg-tabela-topo:nth-child(even) {
+      background-color: #fc7c3c;
+      /* A cada segundo elemento, a cor de fundo é cinza claro */
+    }
+
+    .tabela-obras .titulo td {
+      background-color: #fbfbfb;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .tabela-obras .detalhes:nth-child(even) td {
+      background-color: #fff;
+    }
+
+    .timeline {
+      width: 50%;
+      /* Ajusta a largura da timeline para 50% */
+    }
+
+    .timeline:first-child {
+      width: 25%;
+      /* Define a largura da primeira timeline para 25% */
+    }
+
+    .timeline td {
+      min-width: 40px;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .progresso-75 {
+      background-image: linear-gradient(90deg, #00bfa5 75%, #2196f3 35%);
+    }
+
+    .progresso-50 {
+      background-image: linear-gradient(90deg, #00bfa5 50%, #2196f3 50%);
+    }
+
+    .progresso-35 {
+      background: linear-gradient(90deg, #00bfa5 35%, #2196f3 35%);
+    }
+
+    .progresso-100 {
+      background: linear-gradient(90deg, #00bfa5 50%, #00bfa5 50%);
+    }
+
+    .bg-tabela-topo {
+      background-color: white;
+      /* Inicialmente, a cor de fundo é branca */
+    }
+
+    #dataAtual {
+      background-color: #faa936;
+      color: #fff;
+      /* Define a cor de fundo como amarelo */
+      padding: 2px 5px;
+      /* Adiciona um espaçamento interno para que o fundo amarelo envolva o texto */
+      border-radius: 5px;
+      /* Adiciona bordas arredondadas */
+    }
+
+    /************TELAS DE TV ***********/
+    @media screen and (min-width: 2560px) {
+
+      body {
+        font-family: 'Lato', sans-serif;
+        font-size: 12px;
+        width: 100%;
+      }
+
+      h2 {
+        margin-left: 20px;
+      }
+
+      .container,
+      .tabelas-container {
+        width: 100%;
+      }
+
+      .tabela-obras,
+      .calendario-mes,
+      .tabela-obras th,
+      .tabela-obras td,
+      .calendario-mes td {
+        padding: 5px;
+        text-align: center;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="tabelas-container">
+      <h2 id="tituloFluxoObras">Fluxo de Obras <br> <span style="font-size: 16px;"> Data de Hoje: <span
+            id="dataAtual"></span></span></h2>
+      <table class="tabela-obras" id="tabelaTarefas"> <!-- Alterado de tabela-tarefas para tabela-obras -->
+        <thead>
+          <tr>
+            <th class="bg-tabela-topo">Grupo/Sub.Grupo</th>
+            <th class="bg-tabela-topo">Predecessor</th>
+            <th class="bg-tabela-topo">Responsável</th>
+            <th class="bg-tabela-topo">Obs</th>
+            <th class="bg-tabela-topo">Progresso</th>
+            <th class="bg-tabela-topo">Início</th>
+            <th class="bg-tabela-topo">Dias</th>
+            <th class="bg-tabela-topo">Término</th>
+            <th class="bg-tabela-topo">1</th>
+            <th class="bg-tabela-topo">2</th>
+            <th class="bg-tabela-topo">3</th>
+            <th class="bg-tabela-topo">4</th>
+            <th class="bg-tabela-topo">5</th>
+            <th class="bg-tabela-topo">6</th>
+            <th class="bg-tabela-topo">7</th>
+            <th class="bg-tabela-topo">8</th>
+            <th class="bg-tabela-topo">9</th>
+            <th class="bg-tabela-topo">10</th>
+            <th class="bg-tabela-topo">11</th>
+            <th class="bg-tabela-topo">12</th>
+            <th class="bg-tabela-topo">13</th>
+            <th class="bg-tabela-topo">14</th>
+            <th class="bg-tabela-topo">15</th>
+            <th class="bg-tabela-topo">16</th>
+            <th class="bg-tabela-topo">17</th>
+            <th class="bg-tabela-topo">18</th>
+            <th class="bg-tabela-topo">19</th>
+            <th class="bg-tabela-topo">20</th>
+            <th class="bg-tabela-topo">21</th>
+            <th class="bg-tabela-topo">22</th>
+            <th class="bg-tabela-topo">23</th>
+            <th class="bg-tabela-topo">24</th>
+            <th class="bg-tabela-topo">25</th>
+            <th class="bg-tabela-topo">26</th>
+            <th class="bg-tabela-topo">27</th>
+            <th class="bg-tabela-topo">28</th>
+            <th class="bg-tabela-topo">29</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="titulo">
+            <td>01- Pré Obra</td>
+            <td>Tarefa Anterior</td>
+            <td>Cliente</td>
+            <td>Alguma Observação</td>
+            <td>50%</td>
+            <td><input type="text" value="01/02/2024" class="data" readonly></td>
+            <td>12</td>
+            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-50"> &nbsp</td>
+                  <!-- Aqui adicionei a classe progresso-50 para indicar 50% de conclusão -->
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="detalhes retratil">
+            <td>Chaves e Cadeados</td>
+            <td><i class="fa-solid fa-eye"></i></td>
+            <td>Cliente</td>
+            <td>Nenhuma Observação</td>
+            <td>75%</td>
+            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td>3</td>
+            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-35"> &nbsp</td>
+                  <!-- Aqui adicionei a classe progresso-35 para indicar 35% de conclusão -->
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="titulo">
+            <td>02 - Custos Administrativos </td>
+            <td>Outra Tarefa</td>
+            <td>Cliente</td>
+            <td>Nenhuma Observação</td>
+            <td>75%</td>
+            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td>3</td>
+            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-75"> &nbsp</td>
+                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="detalhes retratil">
+            <td>Alimentação</td>
+            <td>004</td>
+            <td>Cliente</td>
+            <td>Nenhuma Observação</td>
+            <td>100%</td>
+            <td><input type="text" value="06/02/2024" class="data" readonly></td>
+            <td>3</td>
+            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-100"> &nbsp</td>
+                  <!-- Aqui adicionei a classe progresso-100 para indicar 100% de conclusão -->
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="detalhes retratil">
+            <td>Outra Tarefa</td>
+            <td>005</td>
+            <td>Cliente</td>
+            <td>Nenhuma Observação</td>
+            <td>35%</td>
+            <td><input type="text" value="03/02/2024" class="data" readonly></td>
+            <td>5</td>
+            <td><input type="text" value="12/02/2024" class="data" readonly></td>
+            <td></td>
+            <td></td>
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-35"> &nbsp</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="detalhes retratil">
+            <td>Documentações</td>
+            <td>001</td>
+            <td>Construtora</td>
+            <td>Nenhuma Observação <br> Teste de quebra de linha <br> Teste de quebra de linha <br> Teste de
+              quebra de linha <br> Teste de quebra de linha</td>
+            <td>75%</td>
+            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td>3</td>
+            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td></td>
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-75"> &nbsp</td>
+                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="titulo">
+            <td>03 - Serviços Preliminares </td>
+            <td>Outra Tarefa</td>
+            <td>Construtora</td>
+            <td>Nenhuma Observação </td>
+            <td>75%</td>
+            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td>3</td>
+            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-75"> &nbsp</td>
+                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="detalhes retratil">
+            <td>Documentações</td>
+            <td>001</td>
+            <td>Construtora</td>
+            <td>Nenhuma ObservaçãO</td>
+            <td>75%</td>
+            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td>3</td>
+            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td></td>
+            <td></td>
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-75"> &nbsp</td>
+                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="titulo">
+            <td>04 - Serviços Preliminares </td>
+            <td>Outra Tarefa</td>
+            <td>Construtora</td>
+            <td>Nenhuma Observação </td>
+            <td>75%</td>
+            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td>3</td>
+            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan=36>
+              <table class="timeline">
+                <tr>
+                  <td class="progresso-75"> &nbsp</td>
+                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script>
+    // Obtém o dia atual do sistema
+    const diaAtual = new Date().getDate();
+
+    // Obtém todos os elementos th que representam os dias na tabela
+    const diasNaTabela = document.querySelectorAll('.bg-tabela-topo');
+
+    // Itera sobre os elementos para encontrar o correspondente ao dia atual e aplica a cor de fundo
+    diasNaTabela.forEach(th => {
+      const textoDia = th.textContent.trim(); // Remove espaços em branco do início e fim do texto
+      const diaNaTabela = parseInt(textoDia); // Converte o texto para número inteiro
+      if (!isNaN(diaNaTabela) && diaNaTabela === diaAtual) { // Verifica se é um número válido e compara com o dia atual
+        th.style.backgroundColor = '#faa936'; // Altera a cor de fundo para vermelho para o dia atual
+      }
+    });
+
+    // Obtém o elemento <span> pelo seu ID
+    const dataAtualSpan = document.getElementById('dataAtual');
+
+    // Obtém a data atual do sistema
+    const dataAtual = new Date();
+
+    // Obtém o dia e o mês atuais em formato de texto
+    const dia = dataAtual.getDate();
+    const mes = dataAtual.toLocaleString('pt-BR', { month: 'long' }).toUpperCase(); // Obtém o mês em maiúsculas
+
+    // Atualiza o conteúdo do span com o dia e o mês formatados
+    dataAtualSpan.textContent = `${dia} DE ${mes}`;
+
+
+    // Obtém todas as timelines na tabela de obras
+    const timelines = document.querySelectorAll('.tabela-obras .timeline');
+
+    // Define as larguras das timelines conforme especificado
+    const larguras = ['40%', '50%', '80%', '14%', '30%', '30%', '40%', '30%', '60%'];
+
+    // Itera sobre cada timeline e define sua largura
+    timelines.forEach((timeline, index) => {
+      timeline.style.width = larguras[index];
+    });
+
+    
+  </script>
+</body>
+
+</html>
