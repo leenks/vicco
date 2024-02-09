@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela JS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+        }
+
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #efefef;
+    color: #333;
+    z-index: 10000;
+}
+
+.logo img {
+    border: 0;
+    height: 50px;
+    margin-right: 15px;
+    /* Ajuste a margem conforme necessário */
+}
+
+.dash-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    z-index: 1;
+    overflow-y: auto;
+    /* Adiciona scroll vertical se necessário */
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: background-color 0.3s;
+    /* Adicionado para suavizar a transição de cor de fundo */
+}
+
+.search-input:focus {
+    border-color: orange;
+    /* Define a cor da borda para laranja apenas no hover */
+}
+
+.search-input:focus::placeholder {
+    color: #ccc;
+    /* Define a cor do placeholder para cinza claro quando o campo estiver em foco */
+    border-color: orange;
+    /* Define a cor da borda para laranja apenas no hover */
+}
+
+.search-input {
+    width: 500px;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: 1px orange;
+
+}
+
+.notifications,
+.user-profile,
+.menu-button {
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-right: 15px;
+}
+
+.notification-container {
+    position: relative;
+}
+
+.notifications {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Adicionado para controlar a posição relativa ao ícone de notificações */
+}
+
+.notification-badge {
+    background-color: #ff892e;
+    color: #fff;
+    border-radius: 50%;
+    padding: 1px 4px;
+    font-size: 10px;
+    position: absolute;
+    /* Tornando a posição absoluta em relação ao ícone de notificações */
+    top: -2px;
+    /* Ajuste para posicionar o círculo bem em cima da imagem */
+    right: 6px;
+    /* Ajuste para posicionar o círculo bem em cima da imagem */
+    display: inline-block;
+}
+
+.notification-popup {
+    display: none;
+    position: absolute;
+    top: 40px;
+    /* Ajuste a posição conforme necessário */
+    right: 10px;
+    /* Ajuste a posição conforme necessário */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    /* Ajuste para aumentar a largura do balão */
+    min-width: 200px;
+    /* Defina uma largura mínima para o balão */
+    max-width: 300px;
+    /* Ajuste a largura máxima conforme necessário */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: center;
+    /* Ajuste para centralizar o texto no balão */
+    white-space: nowrap;
+    /* Evita que o texto quebre para a próxima linha */
+}
+
+.notification-popup p {
+    margin: 0;
+    padding: 10px;
+    background-color: #f6f6f6;
+    border: 1px solid white;
+}
+
+.notification-popup a {
+    text-decoration: none;
+    color: #444;
+}
+
+.notification-popup::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    /* Ajuste a posição conforme necessário */
+    right: 50%;
+    /* Ajuste a posição conforme necessário */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    transform: translateX(50%);
+    /* Centraliza a ponta do balão */
+}
+
+.notifications img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.menu-button img {
+    width: 30px;
+    height: 30px;
+
+}
+
+.view-button {
+    background-color: #efefef;
+    /* Cor suave de fundo */
+    padding: 15px 25px;
+    /* Ajuste o padding para ampliar a área de ativação */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #444;
+    font-weight: bold;
+    font-family: 'Lato';
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.view-button:hover {
+    color: #111;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            font-family: 'Lato', sans-serif;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ccc;
+        }
+
+        th {
+            text-transform: uppercase;
+        }
+
+        th,
+        td {
+            border: 1px solid rgba(248, 246, 246, 0.1);
+            padding: 8px;
+            text-align: center;
+            font-size: 11px;
+            max-height: 100px;
+            /* Defina a altura máxima desejada */
+            overflow: hidden;
+            /* Oculta qualquer conteúdo que exceda a altura máxima */
+            white-space: nowrap;
+            /* Impede que o texto quebre em várias linhas */
+        }
+
+        td:nth-child(even) {
+            background-color: #fff;
+            /* Cor de fundo para células pares */
+        }
+
+        td:nth-child(odd) {
+            background-color: #fcfcfc;
+            /* Cor de fundo para células ímpares */
+        }
+
+        tr:nth-child(even) td {
+            background-color: #ececec;
+            /* Cor de fundo para linhas pares */
+        }
+
+        tr:nth-child(odd) td {
+            background-color: #fff;
+            /* Cor de fundo para linhas ímpares */
+        }
+
+        th {
+            font-weight: bold;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        th:nth-child(even) {
+            background-color: #fc7c3c;
+        }
+
+        th:nth-child(odd) {
+            background-color: #f37334;
+        }
+
+        input {
+            font-size: 11px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #dataAtual {
+            background-color: #faa936;
+            color: #fff;
+            /* Define a cor de fundo como amarelo */
+            padding: 2px 5px;
+            /* Adiciona um espaçamento interno para que o fundo amarelo envolva o texto */
+            border-radius: 5px;
+            /* Adiciona bordas arredondadas */
+        }
+
+        h2 {
+            margin-left: 20px;
+            font-size: 22px;
+            color: #444;
+            text-align: center;
+        }
+
+        /* Estilo para linhas titulares */
+        .titulo {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Estilo para linhas de detalhes */
+        .detalhes {
+            font-weight: normal;
+        }
+
+        .barra-progresso {
+            background-color: #4CAF50;
+            /* Cor verde padrão */
+            width: 100%;
+            /* Largura inicial da barra de progresso */
+            margin-left: 0;
+            /* Inicialmente sem margem */
+            height: 10px;
+            /* Altura da barra de progresso */
+            background: linear-gradient(to right, #4CAF50 0%, #4CAF50 0%);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bg-tabela-topo.dia-atual {
+            background-color: #faa936;
+            /* Cor de fundo para destacar o dia atual */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo"><img src="imgs/logo.png"></div>
+
+        <button class="view-button" onclick="alterarModo('geral')">
+            Geral &nbsp;<span class="fas fa-chart-pie"></span>
+        </button>
+        <button class="view-button" onclick="alterarModo('orcamento')">
+            Orçamento &nbsp;<span class="fas fa-coins"></span>
+        </button>
+        <button class="view-button" onclick="alterarModo('empresa')">
+            Empresa &nbsp;<span class="fas fa-building"></span>
+        </button>
+
+        <div class="search-bar">
+
+            <input type="text" class="search-input" placeholder="Buscar...">
+
+            <button class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="notification-container">
+            <div class="notifications" onclick="toggleNotifications()">
+                <img src="imgs/ico-notif-off.png" alt="Notificações" id="notification-icon">
+                <div class="notification-badge" id="notification-badge">2</div>
+            </div>
+            <div class="notification-popup" id="notification-popup">
+                <!-- Conteúdo do balão flutuante -->
+                <a href="#"><p>Fulano atualizou obra Y</p></a>
+                <a href="#"><p>Fulano atualizou obra X</p></a>
+                <!-- Adicione mais conteúdo aqui, se necessário -->
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <img src="imgs/user.png" alt="Usuário">
+        </div>
+    </header>
+
+    <h2>Bio Ritmo - Alto das Nações <br><span style="font-size: 12px;">  Periodo Previsto: 24/10/2022 até 10/10/2023 -
+        Periodo de Verbas: 01/01/2024 até 02/03/2024</h2>
+    <h2 id="tituloFluxoObras"><span style="font-size: 16px;"> Data de Hoje: <span
+                id="dataAtual"></span></span></h2>
+    <table id="tabela">
+        <tr>
+            <th>Ver</th>
+            <th>Grupo/Sub.Grupo</th>
+            <th>Predecessor</th>
+            <th>Responsável</th>
+            <th colspan="4" class="data-col">Progresso %</th>
+            <th colspan="4" class="data-col">Data Início</th>
+            <th colspan="4" class="data-col">Data Entrega</th>
+            <!-- Substituí "Dias do Mês" por números de 1 a 31 -->
+            <th class="bg-tabela-topo">1</th>
+            <th class="bg-tabela-topo">2</th>
+            <th class="bg-tabela-topo">3</th>
+            <th class="bg-tabela-topo">4</th>
+            <th class="bg-tabela-topo">5</th>
+            <th class="bg-tabela-topo">6</th>
+            <th class="bg-tabela-topo">7</th>
+            <th class="bg-tabela-topo">8</th>
+            <th class="bg-tabela-topo">9</th>
+            <th class="bg-tabela-topo">10</th>
+            <th class="bg-tabela-topo">11</th>
+            <th class="bg-tabela-topo">12</th>
+            <th class="bg-tabela-topo">13</th>
+            <th class="bg-tabela-topo">14</th>
+            <th class="bg-tabela-topo">15</th>
+            <th class="bg-tabela-topo">16</th>
+            <th class="bg-tabela-topo">17</th>
+            <th class="bg-tabela-topo">18</th>
+            <th class="bg-tabela-topo">19</th>
+            <th class="bg-tabela-topo">20</th>
+            <th class="bg-tabela-topo">21</th>
+            <th class="bg-tabela-topo">22</th>
+            <th class="bg-tabela-topo">23</th>
+            <th class="bg-tabela-topo">24</th>
+            <th class="bg-tabela-topo">25</th>
+            <th class="bg-tabela-topo">26</th>
+            <th class="bg-tabela-topo">27</th>
+            <th class="bg-tabela-topo">28</th>
+            <th class="bg-tabela-topo">29</th>
+            <th class="bg-tabela-topo">30</th>
+            <th class="bg-tabela-topo">31</th>
+        </tr>
+        <!-- Dados de exemplo nas novas colunas -->
+        <tr class="titulo">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Grupo A</td>
+            <td>Predecessor A</td>
+            <td>João</td>
+            <td colspan="4"><input type="number" class="progresso" value="25" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-05"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-10"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <tr class="detalhes">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Detalhes e Atualizações</td>
+            <td></td>
+            <td>Ana</td>
+            <td colspan="4"><input type="number" class="progresso" value="75" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-03"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-15"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <!-- Mais linhas com dados de exemplo -->
+        <tr class="titulo">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Grupo B</td>
+            <td>Predecessor B</td>
+            <td>Maria</td>
+            <td colspan="4"><input type="number" class="progresso" value="30" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-05"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-15"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <tr class="detalhes">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Detalhes e Atualizações</td>
+            <td></td>
+            <td>Ana</td>
+            <td colspan="4"><input type="number" class="progresso" value="75" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-03"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-15"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <tr class="titulo">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Grupo C</td>
+            <td>Predecessor C</td>
+            <td>Carlos</td>
+            <td colspan="4"><input type="number" class="progresso" value="50" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-02"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-20"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <tr class="detalhes">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Detalhes e Atualizações</td>
+            <td></td>
+            <td>Ana</td>
+            <td colspan="4"><input type="number" class="progresso" value="75" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-03"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-15"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <!-- Última linha com dados de exemplo -->
+        <tr class="titulo">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Grupo D</td>
+            <td>Predecessor D</td>
+            <td>Pedro</td>
+            <td colspan="4"><input type="number" class="progresso" value="100" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-05"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-10"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <tr class="detalhes">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Detalhes e Atualizações <br>Teste de quebra de linha Teste de quebra de linha<br>Teste de quebra de
+                linha <br>
+                Teste de quebra de linha</td>
+            <td></td>
+            <td>Pedro</td>
+            <td colspan="4"><input type="number" class="progresso" value="100" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-02"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-28"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <!-- Última linha com dados de exemplo -->
+        <tr class="titulo">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Grupo E</td>
+            <td>Predecessor E</td>
+            <td>Pedro</td>
+            <td colspan="4"><input type="number" class="progresso" value="100" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-05"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-10"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <tr class="detalhes">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Detalhes e Atualizações <br>Teste de quebra de linha Teste de quebra de linha<br>Teste de quebra de
+                linha <br>
+                Teste de quebra de linha</td>
+            <td></td>
+            <td>Pedro</td>
+            <td colspan="4"><input type="number" class="progresso" value="100" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-05"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-10"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <tr class="titulo">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Grupo F</td>
+            <td>Predecessor F</td>
+            <td>Carlos</td>
+            <td colspan="4"><input type="number" class="progresso" value="50" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-02"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-20"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+        <tr class="detalhes">
+            <td><i class="fas fa-eye"></i></td>
+            <td>Detalhes e Atualizações</td>
+            <td></td>
+            <td>Ana</td>
+            <td colspan="4"><input type="number" class="progresso" value="75" min="0" max="100"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-inicio" value="2024-02-03"></td>
+            <td colspan="4" class="data-col"><input type="date" class="data-entrega" value="2024-02-15"></td>
+            <!-- Colunas adicionais -->
+            <td colspan="31">
+                <div class="barra-progresso"></div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        const dataAtualSpan = document.getElementById('dataAtual');
+        const dataAtual = new Date();
+        const dia = dataAtual.getDate();
+        const mes = dataAtual.toLocaleString('pt-br', { month: 'long' }).toUpperCase(); // Obtém o nome do mês em maiúsculo
+        dataAtualSpan.textContent = `${dia} de ${mes}`; // Formato: Dia de Mês
+
+        // Obtém o dia atual do sistema
+        const diaAtual = new Date().getDate();
+
+        // Obtém todos os elementos th que representam os dias na tabela
+        const diasNaTabela = document.querySelectorAll('.bg-tabela-topo');
+
+        // Itera sobre os elementos para encontrar o correspondente ao dia atual e aplica a cor de fundo
+        diasNaTabela.forEach(th => {
+            const textoDia = th.textContent.trim(); // Remove espaços em branco do início e fim do texto
+            const diaNaTabela = parseInt(textoDia); // Converte o texto para número inteiro
+            if (!isNaN(diaNaTabela) && diaNaTabela === diaAtual) { // Verifica se é um número válido e compara com o dia atual
+                th.classList.add('dia-atual'); // Adiciona a classe para destacar o dia atual
+            }
+        });
+
+        function atualizarBarraProgresso(dataInicioInput, dataEntregaInput, barraProgresso, progressoInput) {
+            const dataInicio = new Date(dataInicioInput.value);
+            const dataEntrega = new Date(dataEntregaInput.value);
+            const diasTotal = (dataEntrega - dataInicio) / (1000 * 60 * 60 * 24);
+            const larguraTotal = (diasTotal / 31) * 100;
+
+            const valorProgresso = parseInt(progressoInput.value);
+
+            // Calcula a porcentagem de verde e azul
+            const porcentagemVerde = valorProgresso;
+            const porcentagemAzul = 100 - porcentagemVerde;
+
+
+
+            const larguraVerde = (porcentagemVerde / 100) * larguraTotal;
+            const larguraAzul = (porcentagemAzul / 100) * larguraTotal;
+
+            const dataInicioSelecionada = dataInicio.getDate();
+            const margemPorDia = 3.225;
+            const margemEsquerda = (dataInicioSelecionada - 1) * margemPorDia;
+
+            barraProgresso.style.width = larguraTotal + '%';
+            barraProgresso.style.marginLeft = margemEsquerda + '%';
+
+            // Adiciona gradientes lineares para demonstrar o progresso
+            barraProgresso.style.background = `linear-gradient(to right, #00bfa5 0%, #00bfa5 ${larguraVerde}%, #2196f3 ${larguraVerde}%, #2196f3 100%)`;
+        }
+
+
+        // Seleciona todos os elementos de entrada de data e progresso
+        const dataInicioInputs = document.querySelectorAll('.data-inicio');
+        const dataEntregaInputs = document.querySelectorAll('.data-entrega');
+        const barrasProgresso = document.querySelectorAll('.barra-progresso');
+        const progressoInputs = document.querySelectorAll('.progresso');
+
+        // Atualiza as barras de progresso quando a página é carregada
+        dataInicioInputs.forEach((input, index) => {
+            atualizarBarraProgresso(input, dataEntregaInputs[index], barrasProgresso[index], progressoInputs[index]);
+        });
+
+        dataEntregaInputs.forEach((input, index) => {
+            atualizarBarraProgresso(dataInicioInputs[index], input, barrasProgresso[index], progressoInputs[index]);
+        });
+
+        progressoInputs.forEach((input, index) => {
+            atualizarBarraProgresso(dataInicioInputs[index], dataEntregaInputs[index], barrasProgresso[index], input);
+        });
+
+        // Adiciona um evento de mudança de valor às entradas de data e progresso para atualizar a barra de progresso
+        dataInicioInputs.forEach((input, index) => {
+            input.addEventListener('change', () => {
+                atualizarBarraProgresso(input, dataEntregaInputs[index], barrasProgresso[index], progressoInputs[index]);
+            });
+        });
+
+        dataEntregaInputs.forEach((input, index) => {
+            input.addEventListener('change', () => {
+                atualizarBarraProgresso(dataInicioInputs[index], input, barrasProgresso[index], progressoInputs[index]);
+            });
+        });
+
+        progressoInputs.forEach((input, index) => {
+            input.addEventListener('change', () => {
+                atualizarBarraProgresso(dataInicioInputs[index], dataEntregaInputs[index], barrasProgresso[index], input);
+            });
+        });
+    </script>
+</body>
+
+</html>
