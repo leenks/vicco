@@ -15,194 +15,194 @@
         }
 
         header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #efefef;
-    color: #333;
-    z-index: 10000;
-}
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #efefef;
+            color: #333;
+            z-index: 10000;
+        }
 
-.logo img {
-    border: 0;
-    height: 50px;
-    margin-right: 15px;
-    /* Ajuste a margem conforme necessário */
-}
+        .logo img {
+            border: 0;
+            height: 50px;
+            margin-right: 15px;
+            /* Ajuste a margem conforme necessário */
+        }
 
-.dash-title {
-    font-size: 16px;
-    font-weight: bold;
-}
+        .dash-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-    z-index: 1;
-    overflow-y: auto;
-    /* Adiciona scroll vertical se necessário */
-}
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            z-index: 1;
+            overflow-y: auto;
+            /* Adiciona scroll vertical se necessário */
+        }
 
-.search-button {
-    background: rgb(243, 242, 242);
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    padding: 5px;
-    margin-left: 5px;
-    transition: background-color 0.3s;
-    /* Adicionado para suavizar a transição de cor de fundo */
-}
+        .search-button {
+            background: rgb(243, 242, 242);
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin-left: 5px;
+            transition: background-color 0.3s;
+            /* Adicionado para suavizar a transição de cor de fundo */
+        }
 
-.search-input:focus {
-    border-color: orange;
-    /* Define a cor da borda para laranja apenas no hover */
-}
+        .search-input:focus {
+            border-color: orange;
+            /* Define a cor da borda para laranja apenas no hover */
+        }
 
-.search-input:focus::placeholder {
-    color: #ccc;
-    /* Define a cor do placeholder para cinza claro quando o campo estiver em foco */
-    border-color: orange;
-    /* Define a cor da borda para laranja apenas no hover */
-}
+        .search-input:focus::placeholder {
+            color: #ccc;
+            /* Define a cor do placeholder para cinza claro quando o campo estiver em foco */
+            border-color: orange;
+            /* Define a cor da borda para laranja apenas no hover */
+        }
 
-.search-input {
-    width: 500px;
-    padding: 8px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    outline: 1px orange;
+        .search-input {
+            width: 500px;
+            padding: 8px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            outline: 1px orange;
 
-}
+        }
 
-.notifications,
-.user-profile,
-.menu-button {
-    cursor: pointer;
-}
+        .notifications,
+        .user-profile,
+        .menu-button {
+            cursor: pointer;
+        }
 
-.user-profile img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    margin-right: 15px;
-}
+        .user-profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            margin-right: 15px;
+        }
 
-.notification-container {
-    position: relative;
-}
+        .notification-container {
+            position: relative;
+        }
 
-.notifications {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    position: relative;
-    /* Adicionado para controlar a posição relativa ao ícone de notificações */
-}
+        .notifications {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            position: relative;
+            /* Adicionado para controlar a posição relativa ao ícone de notificações */
+        }
 
-.notification-badge {
-    background-color: #ff892e;
-    color: #fff;
-    border-radius: 50%;
-    padding: 1px 4px;
-    font-size: 10px;
-    position: absolute;
-    /* Tornando a posição absoluta em relação ao ícone de notificações */
-    top: -2px;
-    /* Ajuste para posicionar o círculo bem em cima da imagem */
-    right: 6px;
-    /* Ajuste para posicionar o círculo bem em cima da imagem */
-    display: inline-block;
-}
+        .notification-badge {
+            background-color: #ff892e;
+            color: #fff;
+            border-radius: 50%;
+            padding: 1px 4px;
+            font-size: 10px;
+            position: absolute;
+            /* Tornando a posição absoluta em relação ao ícone de notificações */
+            top: -2px;
+            /* Ajuste para posicionar o círculo bem em cima da imagem */
+            right: 6px;
+            /* Ajuste para posicionar o círculo bem em cima da imagem */
+            display: inline-block;
+        }
 
-.notification-popup {
-    display: none;
-    position: absolute;
-    top: 40px;
-    /* Ajuste a posição conforme necessário */
-    right: 10px;
-    /* Ajuste a posição conforme necessário */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    /* Ajuste para aumentar a largura do balão */
-    min-width: 200px;
-    /* Defina uma largura mínima para o balão */
-    max-width: 300px;
-    /* Ajuste a largura máxima conforme necessário */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    text-align: center;
-    /* Ajuste para centralizar o texto no balão */
-    white-space: nowrap;
-    /* Evita que o texto quebre para a próxima linha */
-}
+        .notification-popup {
+            display: none;
+            position: absolute;
+            top: 40px;
+            /* Ajuste a posição conforme necessário */
+            right: 10px;
+            /* Ajuste a posição conforme necessário */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            /* Ajuste para aumentar a largura do balão */
+            min-width: 200px;
+            /* Defina uma largura mínima para o balão */
+            max-width: 300px;
+            /* Ajuste a largura máxima conforme necessário */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            text-align: center;
+            /* Ajuste para centralizar o texto no balão */
+            white-space: nowrap;
+            /* Evita que o texto quebre para a próxima linha */
+        }
 
-.notification-popup p {
-    margin: 0;
-    padding: 10px;
-    background-color: #f6f6f6;
-    border: 1px solid white;
-}
+        .notification-popup p {
+            margin: 0;
+            padding: 10px;
+            background-color: #f6f6f6;
+            border: 1px solid white;
+        }
 
-.notification-popup a {
-    text-decoration: none;
-    color: #444;
-}
+        .notification-popup a {
+            text-decoration: none;
+            color: #444;
+        }
 
-.notification-popup::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    /* Ajuste a posição conforme necessário */
-    right: 50%;
-    /* Ajuste a posição conforme necessário */
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent #fff transparent;
-    transform: translateX(50%);
-    /* Centraliza a ponta do balão */
-}
+        .notification-popup::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            /* Ajuste a posição conforme necessário */
+            right: 50%;
+            /* Ajuste a posição conforme necessário */
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent;
+            transform: translateX(50%);
+            /* Centraliza a ponta do balão */
+        }
 
-.notifications img {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
+        .notifications img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
 
-.menu-button img {
-    width: 30px;
-    height: 30px;
+        .menu-button img {
+            width: 30px;
+            height: 30px;
 
-}
+        }
 
-.view-button {
-    background-color: #efefef;
-    /* Cor suave de fundo */
-    padding: 15px 25px;
-    /* Ajuste o padding para ampliar a área de ativação */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #444;
-    font-weight: bold;
-    font-family: 'Lato';
-    margin-right: 10px;
-    margin-left: 40px;
-}
+        .view-button {
+            background-color: #efefef;
+            /* Cor suave de fundo */
+            padding: 15px 25px;
+            /* Ajuste o padding para ampliar a área de ativação */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #444;
+            font-weight: bold;
+            font-family: 'Lato';
+            margin-right: 10px;
+            margin-left: 40px;
+        }
 
-.view-button:hover {
-    color: #111;
-    background-color: #fff;
-    margin-right: 10px;
-    margin-left: 40px;
-}
+        .view-button:hover {
+            color: #111;
+            background-color: #fff;
+            margin-right: 10px;
+            margin-left: 40px;
+        }
 
         table {
             border-collapse: collapse;
@@ -356,8 +356,12 @@
             </div>
             <div class="notification-popup" id="notification-popup">
                 <!-- Conteúdo do balão flutuante -->
-                <a href="#"><p>Fulano atualizou obra Y</p></a>
-                <a href="#"><p>Fulano atualizou obra X</p></a>
+                <a href="#">
+                    <p>Fulano atualizou obra Y</p>
+                </a>
+                <a href="#">
+                    <p>Fulano atualizou obra X</p>
+                </a>
                 <!-- Adicione mais conteúdo aqui, se necessário -->
             </div>
         </div>
@@ -367,10 +371,9 @@
         </div>
     </header>
 
-    <h2>Bio Ritmo - Alto das Nações <br><span style="font-size: 12px;">  Periodo Previsto: 24/10/2022 até 10/10/2023 -
-        Periodo de Verbas: 01/01/2024 até 02/03/2024</h2>
-    <h2 id="tituloFluxoObras"><span style="font-size: 16px;"> Data de Hoje: <span
-                id="dataAtual"></span></span></h2>
+    <h2>Bio Ritmo - Alto das Nações <br><span style="font-size: 12px;"> Periodo Previsto: 24/10/2022 até 10/10/2023 -
+            Periodo de Verbas: 01/01/2024 até 02/03/2024</h2>
+    <h2 id="tituloFluxoObras"><span style="font-size: 16px;"> Data de Hoje: <span id="dataAtual"></span></span></h2>
     <table id="tabela">
         <tr>
             <th>Ver</th>
@@ -614,6 +617,16 @@
                 th.classList.add('dia-atual'); // Adiciona a classe para destacar o dia atual
             }
         });
+
+        // Lógica para abrir balão quando clica em notificações
+        function toggleNotifications() {
+            var popup = document.getElementById("notification-popup");
+            popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
+
+            // Ocultar o círculo de notificações
+            var badge = document.getElementById("notification-badge");
+            badge.style.display = "none";
+        }
 
         function atualizarBarraProgresso(dataInicioInput, dataEntregaInput, barraProgresso, progressoInput) {
             const dataInicio = new Date(dataInicioInput.value);
