@@ -13,8 +13,23 @@
       font-size: 11px;
       margin: 0;
       padding: 0;
-      display: flex; /* Alterado para flex */
-      justify-content: center; /* Centraliza o conteúdo na horizontal */
+      display: flex;
+      /* Alterado para flex */
+      justify-content: center;
+      /* Centraliza o conteúdo na horizontal */
+    }
+
+    .cabecalho {
+      display: flex;
+      align-items: center;
+      /* Alinha os itens verticalmente */
+    }
+
+    .logo img {
+      border: 0;
+      height: 50px;
+      margin-left: 0
+        /* Ajuste a margem conforme necessário */
     }
 
     /* Estilo para inputs de data */
@@ -24,15 +39,17 @@
       width: 100%;
       font-size: 11px;
     }
-    input.data:focus {
-  outline: none; /* Remove a borda ao focar no input */
-}
 
+    input.data:focus {
+      outline: none;
+      /* Remove a borda ao focar no input */
+    }
 
     h2 {
       margin-left: 20px;
-      font-size: 20px;
+      font-size: 22px;
       color: #444;
+      text-align: center;
     }
 
     .container {
@@ -61,19 +78,21 @@
     }
 
     /* Estilo para células ímpares */
-.tabela-obras tbody tr:nth-child(odd) td {
-  background-color: #ececec; /* Fundo branco para células ímpares */
-}
+    .tabela-obras tbody tr:nth-child(odd) td {
+      background-color: #ececec;
+      /* Fundo branco para células ímpares */
+    }
 
-/* Estilo para células pares */
-.tabela-obras tbody tr:nth-child(even) td {
-  background-color: #f0f0f0; /* Fundo cinza claro para células pares */
-}
+    /* Estilo para células pares */
+    .tabela-obras tbody tr:nth-child(even) td {
+      background-color: #f0f0f0;
+      /* Fundo cinza claro para células pares */
+    }
 
     .tabela-obras th,
     .tabela-obras td,
     .calendario-mes td {
-      padding:5px;
+      padding: 5px;
       text-align: center;
       border: 1px solid #fbfbfb transparent;
     }
@@ -82,9 +101,13 @@
       font-weight: bold;
       color: #fff;
       text-transform: uppercase;
-      font-size: 12px;
-      padding: 10px 5px;
+      font-size: 11px;
       background-color: #f37334;
+    }
+
+    .tabela-obras thead th {
+      border-bottom: 1px solid #ffffff;
+      /* Adiciona uma borda inferior branca */
     }
 
     .bg-tabela-topo:nth-child(even) {
@@ -102,43 +125,41 @@
       background-color: #fff;
     }
 
-    .timeline {
-      width: 50%;
-      /* Ajusta a largura da timeline para 50% */
+    .progresso-container {
+      display: flex;
+      /* Define o contêiner como um flex container */
+      width: 100%;
+      /* Garante que o contêiner ocupe toda a largura da célula */
     }
 
-    .timeline:first-child {
-      width: 25%;
-      /* Define a largura da primeira timeline para 25% */
-    }
-
-    .timeline td {
-      min-width: 40px;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 10px;
-      overflow: hidden;
+    .progresso-verde,
+    .progresso-azul {
+      flex: 1;
+      /* Faz com que os elementos de progresso ocupem a mesma quantidade de espaço dentro do contêiner flexível */
+      height: 100%;
+      /* Garante que a altura ocupe todo o espaço disponível */
+      margin: 0;
+      /* Remove margens para evitar espaços extras */
       padding: 0;
+      /* Remove o preenchimento para evitar espaços extras */
     }
 
-    .progresso-75 {
-      background-image: linear-gradient(90deg, #00bfa5 75%, #2196f3 35%);
+    .progresso-verde {
+      background-color: #00bfa5;
+      margin: 0;
+      border-radius: 5px 0 0 5px;
+
     }
 
-    .progresso-50 {
-      background-image: linear-gradient(90deg, #00bfa5 50%, #2196f3 50%);
-    }
-
-    .progresso-35 {
-      background: linear-gradient(90deg, #00bfa5 35%, #2196f3 35%);
-    }
-
-    .progresso-100 {
-      background: linear-gradient(90deg, #00bfa5 50%, #00bfa5 50%);
+    .progresso-azul {
+      background-color: #2196f3;
+      margin: 0;
+      border-radius: 0px 5px 5px 0px;
     }
 
     .bg-tabela-topo {
       background-color: white;
+
       /* Inicialmente, a cor de fundo é branca */
     }
 
@@ -159,6 +180,8 @@
         font-family: 'Lato', sans-serif;
         font-size: 12px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
       }
 
       h2 {
@@ -186,237 +209,327 @@
 <body>
 
   <div class="container">
+
+    <header class="cabecalho">
+
+
+      <h2>Bio Ritmo - Alto das Nações <br><span style="font-size: 12px;"> Periodo Previsto: 24/10/2022 até 10/10/2023 -
+          Periodo de Verbas: 01/01/2024 até 02/03/2024</h2>
+      <!--<h2 id="tituloFluxoObras"><span style="font-size: 16px;"> Data de Hoje: <span id="dataAtual"></span></span></h2>-->
+
+    </header>
+
+
     <div class="tabelas-container">
-      <h2 id="tituloFluxoObras">Fluxo de Obras <br> <span style="font-size: 16px;"> Data de Hoje: <span
-            id="dataAtual"></span></span></h2>
       <table class="tabela-obras" id="tabelaTarefas"> <!-- Alterado de tabela-tarefas para tabela-obras -->
         <thead>
           <tr>
+            <th class="bg-tabela-topo">Seq</th>
             <th class="bg-tabela-topo">Grupo/Sub.Grupo</th>
-            <th class="bg-tabela-topo">Predecessor</th>
             <th class="bg-tabela-topo">Responsável</th>
             <th class="bg-tabela-topo">Obs</th>
-            <th class="bg-tabela-topo">Progresso</th>
             <th class="bg-tabela-topo">Início</th>
             <th class="bg-tabela-topo">Dias</th>
             <th class="bg-tabela-topo">Término</th>
-            <th class="bg-tabela-topo">1</th>
-            <th class="bg-tabela-topo">2</th>
-            <th class="bg-tabela-topo">3</th>
-            <th class="bg-tabela-topo">4</th>
-            <th class="bg-tabela-topo">5</th>
-            <th class="bg-tabela-topo">6</th>
-            <th class="bg-tabela-topo">7</th>
-            <th class="bg-tabela-topo">8</th>
-            <th class="bg-tabela-topo">9</th>
-            <th class="bg-tabela-topo">10</th>
-            <th class="bg-tabela-topo">11</th>
-            <th class="bg-tabela-topo">12</th>
-            <th class="bg-tabela-topo">13</th>
-            <th class="bg-tabela-topo">14</th>
-            <th class="bg-tabela-topo">15</th>
-            <th class="bg-tabela-topo">16</th>
-            <th class="bg-tabela-topo">17</th>
-            <th class="bg-tabela-topo">18</th>
-            <th class="bg-tabela-topo">19</th>
-            <th class="bg-tabela-topo">20</th>
-            <th class="bg-tabela-topo">21</th>
-            <th class="bg-tabela-topo">22</th>
-            <th class="bg-tabela-topo">23</th>
-            <th class="bg-tabela-topo">24</th>
-            <th class="bg-tabela-topo">25</th>
-            <th class="bg-tabela-topo">26</th>
-            <th class="bg-tabela-topo">27</th>
-            <th class="bg-tabela-topo">28</th>
-            <th class="bg-tabela-topo">29</th>
+            <th class="bg-tabela-topo">Predecessor</th>
+            <th class="bg-tabela-topo">Previsto</th>
+            <th class="bg-tabela-topo">Progresso</th>
+            <th colspan="7" class="bg-tabela-topo">01-Jan-2024</th>
+            <th colspan="7" class="bg-tabela-topo">08-Jan-2024</th>
+            <th colspan="7" class="bg-tabela-topo">15-Jan-2024</th>
+            <th colspan="7" class="bg-tabela-topo">22-Jan-2024</th>
+            <th colspan="7" class="bg-tabela-topo">29-Jan-2024</th>
+            <th colspan="7" class="bg-tabela-topo">05-Fev-2024</th>
+            <th colspan="7" class="bg-tabela-topo">12-Fev-2024</th>
+            <th colspan="7" class="bg-tabela-topo">19-Fev-2024</th>
+            <th colspan="7" class="bg-tabela-topo">26-Fev-2024</th>
+            <th colspan="7" class="bg-tabela-topo">04-Mar-2024</th>
+            <th colspan="7" class="bg-tabela-topo">11-Mar-2024</th>
+            <th colspan="7" class="bg-tabela-topo">18-Mar-2024</th>
+            <th colspan="7" class="bg-tabela-topo">25-Mar-2024</th>
+            <th colspan="7" class="bg-tabela-topo">01-Abr-2024</th>
+            <th colspan="7" class="bg-tabela-topo" style="min-width: 100px;">08-Abr-2024</th>
+          <tr>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo"></th>
+            <th class="bg-tabela-topo" title="01/01/2024">s</th>
+            <th class="bg-tabela-topo" title="02/01/2024">t</th>
+            <th class="bg-tabela-topo" title="03/01/2024">q</th>
+            <th class="bg-tabela-topo" title="04/01/2024">q</th>
+            <th class="bg-tabela-topo" title="05/01/2024">s</th>
+            <th class="bg-tabela-topo" title="06/01/2024">s</th>
+            <th class="bg-tabela-topo" title="07/01/2024">d</th>
+            <th class="bg-tabela-topo" title="08/01/2024">s</th>
+            <th class="bg-tabela-topo" title="09/01/2024">t</th>
+            <th class="bg-tabela-topo" title="10/01/2024">q</th>
+            <th class="bg-tabela-topo" title="11/01/2024">q</th>
+            <th class="bg-tabela-topo" title="12/01/2024">s</th>
+            <th class="bg-tabela-topo" title="13/01/2024">s</th>
+            <th class="bg-tabela-topo" title="14/01/2024">d</th>
+            <th class="bg-tabela-topo" title="15/01/2024">s</th>
+            <th class="bg-tabela-topo" title="16/01/2024">t</th>
+            <th class="bg-tabela-topo" title="17/01/2024">q</th>
+            <th class="bg-tabela-topo" title="18/01/2024">q</th>
+            <th class="bg-tabela-topo" title="19/01/2024">s</th>
+            <th class="bg-tabela-topo" title="20/01/2024">s</th>
+            <th class="bg-tabela-topo" title="21/01/2024">d</th>
+            <th class="bg-tabela-topo" title="22/01/2024">s</th>
+            <th class="bg-tabela-topo" title="23/01/2024">t</th>
+            <th class="bg-tabela-topo" title="24/01/2024">q</th>
+            <th class="bg-tabela-topo" title="25/01/2024">q</th>
+            <th class="bg-tabela-topo" title="26/01/2024">s</th>
+            <th class="bg-tabela-topo" title="27/01/2024">s</th>
+            <th class="bg-tabela-topo" title="28/01/2024">d</th>
+            <th class="bg-tabela-topo" title="29/01/2024">s</th>
+            <th class="bg-tabela-topo" title="30/01/2024">t</th>
+            <th class="bg-tabela-topo" title="31/01/2024">q</th>
+            <th class="bg-tabela-topo" title="01/02/2024">q</th>
+            <th class="bg-tabela-topo" title="02/02/2024">s</th>
+            <th class="bg-tabela-topo" title="03/02/2024">s</th>
+            <th class="bg-tabela-topo" title="04/02/2024">d</th>
+            <th class="bg-tabela-topo" title="05/02/2024">s</th>
+            <th class="bg-tabela-topo" title="06/02/2024">t</th>
+            <th class="bg-tabela-topo" title="07/02/2024">q</th>
+            <th class="bg-tabela-topo" title="08/02/2024">q</th>
+            <th class="bg-tabela-topo" title="09/02/2024">s</th>
+            <th class="bg-tabela-topo" title="10/02/2024">s</th>
+            <th class="bg-tabela-topo" title="11/02/2024">d</th>
+            <th class="bg-tabela-topo" title="12/02/2024">s</th>
+            <th class="bg-tabela-topo" title="13/02/2024">t</th>
+            <th class="bg-tabela-topo" title="14/02/2024">q</th>
+            <th class="bg-tabela-topo" title="15/02/2024">q</th>
+            <th class="bg-tabela-topo" title="16/02/2024">s</th>
+            <th class="bg-tabela-topo" title="17/02/2024">s</th>
+            <th class="bg-tabela-topo" title="18/02/2024">d</th>
+            <th class="bg-tabela-topo" title="19/02/2024">s</th>
+            <th class="bg-tabela-topo" title="20/02/2024">t</th>
+            <th class="bg-tabela-topo" title="21/02/2024">q</th>
+            <th class="bg-tabela-topo" title="22/02/2024">q</th>
+            <th class="bg-tabela-topo" title="23/02/2024">s</th>
+            <th class="bg-tabela-topo" title="24/02/2024">s</th>
+            <th class="bg-tabela-topo" title="25/02/2024">d</th>
+            <th class="bg-tabela-topo" title="26/02/2024">s</th>
+            <th class="bg-tabela-topo" title="27/02/2024">t</th>
+            <th class="bg-tabela-topo" title="28/02/2024">q</th>
+            <th class="bg-tabela-topo" title="29/02/2024">q</th>
+            <th class="bg-tabela-topo" title="01/03/2024">s</th>
+            <th class="bg-tabela-topo" title="02/03/2024">s</th>
+            <th class="bg-tabela-topo" title="03/03/2024">d</th>
+            <th class="bg-tabela-topo" title="04/03/2024">s</th>
+            <th class="bg-tabela-topo" title="05/03/2024">t</th>
+            <th class="bg-tabela-topo" title="06/03/2024">q</th>
+            <th class="bg-tabela-topo" title="07/03/2024">q</th>
+            <th class="bg-tabela-topo" title="08/03/2024">s</th>
+            <th class="bg-tabela-topo" title="09/03/2024">s</th>
+            <th class="bg-tabela-topo" title="10/03/2024">d</th>
+            <th class="bg-tabela-topo" title="11/03/2024">s</th>
+            <th class="bg-tabela-topo" title="12/03/2024">t</th>
+            <th class="bg-tabela-topo" title="13/03/2024">q</th>
+            <th class="bg-tabela-topo" title="14/03/2024">q</th>
+            <th class="bg-tabela-topo" title="15/03/2024">s</th>
+            <th class="bg-tabela-topo" title="16/03/2024">s</th>
+            <th class="bg-tabela-topo" title="17/03/2024">d</th>
+            <th class="bg-tabela-topo" title="18/03/2024">s</th>
+            <th class="bg-tabela-topo" title="19/03/2024">t</th>
+            <th class="bg-tabela-topo" title="20/03/2024">q</th>
+            <th class="bg-tabela-topo" title="21/03/2024">q</th>
+            <th class="bg-tabela-topo" title="22/03/2024">s</th>
+            <th class="bg-tabela-topo" title="23/03/2024">s</th>
+            <th class="bg-tabela-topo" title="24/03/2024">d</th>
+            <th class="bg-tabela-topo" title="25/03/2024">s</th>
+            <th class="bg-tabela-topo" title="26/03/2024">t</th>
+            <th class="bg-tabela-topo" title="27/03/2024">q</th>
+            <th class="bg-tabela-topo" title="28/03/2024">q</th>
+            <th class="bg-tabela-topo" title="29/03/2024">s</th>
+            <th class="bg-tabela-topo" title="30/03/2024">s</th>
+            <th class="bg-tabela-topo" title="31/03/2024">d</th>
+            <th class="bg-tabela-topo" title="01/04/2024">s</th>
+            <th class="bg-tabela-topo" title="02/04/2024">t</th>
+            <th class="bg-tabela-topo" title="03/04/2024">q</th>
+            <th class="bg-tabela-topo" title="04/04/2024">q</th>
+            <th class="bg-tabela-topo" title="05/04/2024">s</th>
+            <th class="bg-tabela-topo" title="06/04/2024">s</th>
+            <th class="bg-tabela-topo" title="07/04/2024">d</th>
+            <th class="bg-tabela-topo" title="08/04/2024">s</th>
+            <th class="bg-tabela-topo" title="02/04/2024">t</th>
+            <th class="bg-tabela-topo" title="03/04/2024">q</th>
+            <th class="bg-tabela-topo" title="04/04/2024">q</th>
+            <th class="bg-tabela-topo" title="05/04/2024">s</th>
+            <th class="bg-tabela-topo" title="06/04/2024">s</th>
+            <th class="bg-tabela-topo" title="07/04/2024">d</th>
+          </tr>
+          </tr>
           </tr>
         </thead>
         <tbody>
           <tr class="titulo">
+            <td>01</td>
             <td>01- Pré Obra</td>
-            <td>Tarefa Anterior</td>
             <td>Cliente</td>
             <td>Alguma Observação</td>
+            <td><span>01/02/2024</span></td>
+            <td>1</td>
+            <td><span>01/02/2024</span></td>
+            <td></td>
+            <td>100%</td>
             <td>50%</td>
-            <td><input type="text" value="01/02/2024" class="data" readonly></td>
-            <td>12</td>
-            <td><input type="text" value="13/02/2024" class="data" readonly></td>
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-50"> &nbsp</td>
-                  <!-- Aqui adicionei a classe progresso-50 para indicar 50% de conclusão -->
-                </tr>
-              </table>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
             </td>
           </tr>
           <tr class="detalhes retratil">
+            <td>01</td>
             <td>Chaves e Cadeados</td>
-            <td><i class="fa-solid fa-eye"></i></td>
-            <td>Cliente</td>
-            <td>Nenhuma Observação</td>
-            <td>75%</td>
-            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td> </td>
+            <td><i class="fa-solid fa-eye"></i> </td>
+            <td><span>01/02/2024</span></td>
             <td>3</td>
-            <td><input type="text" value="13/02/2024" class="data" readonly></td>
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-35"> &nbsp</td>
-                  <!-- Aqui adicionei a classe progresso-35 para indicar 35% de conclusão -->
-                </tr>
-              </table>
+            <td><span>01/02/2024</span></td>
+            <td>1</td>
+            <td>100% </td>
+            <td>50% </td>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
             </td>
           </tr>
           <tr class="titulo">
-            <td>02 - Custos Administrativos </td>
-            <td>Outra Tarefa</td>
+            <td>01</td>
+            <td>01- Pré Obra</td>
             <td>Cliente</td>
-            <td>Nenhuma Observação</td>
-            <td>75%</td>
-            <td><input type="text" value="10/02/2024" class="data" readonly></td>
-            <td>3</td>
-            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td>Alguma Observação</td>
+            <td><span>01/02/2024</span></td>
+            <td>1</td>
+            <td><span>01/02/2024</span></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-75"> &nbsp</td>
-                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
-                </tr>
-              </table>
+            <td>100%</td>
+            <td>50%</td>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
             </td>
           </tr>
           <tr class="detalhes retratil">
+            <td>01</td>
             <td>Alimentação</td>
-            <td>004</td>
+            <td> </td>
+            <td><i class="fa-solid fa-eye"></i> </td>
+            <td><span>01/02/2024</span></td>
+            <td>3</td>
+            <td><span>01/02/2024</span></td>
+            <td>1</td>
+            <td>100% </td>
+            <td>50% </td>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+          <tr class="detalhes retratil">
+            <td>01</td>
+            <td>Outra Tarefa</td>
+            <td>005</td>
             <td>Cliente</td>
             <td>Nenhuma Observação</td>
             <td>100%</td>
             <td><input type="text" value="06/02/2024" class="data" readonly></td>
             <td>3</td>
             <td><input type="text" value="10/02/2024" class="data" readonly></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-100"> &nbsp</td>
-                  <!-- Aqui adicionei a classe progresso-100 para indicar 100% de conclusão -->
-                </tr>
-              </table>
+            <td>50%</td>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
             </td>
           </tr>
           <tr class="detalhes retratil">
-            <td>Outra Tarefa</td>
-            <td>005</td>
+            <td>01</td>
+            <td>Documentações</td>
+            <td> </td>
+            <td><i class="fa-solid fa-eye"></i> </td>
+            <td><span>01/02/2024</span></td>
+            <td>3</td>
+            <td><span>01/02/2024</span></td>
+            <td>1</td>
+            <td>100% </td>
+            <td>50% </td>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+          <tr class="titulo">
+            <td>01</td>
+            <td>01- Pré Obra</td>
             <td>Cliente</td>
-            <td>Nenhuma Observação</td>
-            <td>35%</td>
-            <td><input type="text" value="03/02/2024" class="data" readonly></td>
-            <td>5</td>
-            <td><input type="text" value="12/02/2024" class="data" readonly></td>
+            <td>Alguma Observação</td>
+            <td><span>01/02/2024</span></td>
+            <td>1</td>
+            <td><span>01/02/2024</span></td>
             <td></td>
-            <td></td>
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-35"> &nbsp</td>
-                </tr>
-              </table>
+            <td>100%</td>
+            <td>50%</td>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
             </td>
           </tr>
           <tr class="detalhes retratil">
+            <td>01</td>
             <td>Documentações</td>
-            <td>001</td>
-            <td>Construtora</td>
-            <td>Nenhuma Observação <br> Teste de quebra de linha <br> Teste de quebra de linha <br> Teste de
-              quebra de linha <br> Teste de quebra de linha</td>
-            <td>75%</td>
-            <td><input type="text" value="10/02/2024" class="data" readonly></td>
+            <td>Cliente</td>
+            <td><i class="fa-solid fa-eye"></i> </td>
+            <td><span>01/02/2024</span></td>
             <td>3</td>
-            <td><input type="text" value="13/02/2024" class="data" readonly></td>
-            <td></td>
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-75"> &nbsp</td>
-                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
-
-                </tr>
-              </table>
+            <td><span>01/02/2024</span></td>
+            <td>1</td>
+            <td>100% </td>
+            <td>50% </td>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
             </td>
           </tr>
           <tr class="titulo">
-            <td>03 - Serviços Preliminares </td>
-            <td>Outra Tarefa</td>
-            <td>Construtora</td>
-            <td>Nenhuma Observação </td>
-            <td>75%</td>
-            <td><input type="text" value="10/02/2024" class="data" readonly></td>
-            <td>3</td>
-            <td><input type="text" value="13/02/2024" class="data" readonly></td>
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-75"> &nbsp</td>
-                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr class="detalhes retratil">
-            <td>Documentações</td>
-            <td>001</td>
-            <td>Construtora</td>
-            <td>Nenhuma ObservaçãO</td>
-            <td>75%</td>
-            <td><input type="text" value="10/02/2024" class="data" readonly></td>
-            <td>3</td>
-            <td><input type="text" value="13/02/2024" class="data" readonly></td>
+            <td>01</td>
+            <td>01- Pré Obra</td>
+            <td>Cliente</td>
+            <td>Alguma Observação</td>
+            <td><span>01/02/2024</span></td>
+            <td>1</td>
+            <td><span>01/02/2024</span></td>
             <td></td>
-            <td></td>
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-75"> &nbsp</td>
-                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
-
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr class="titulo">
-            <td>04 - Serviços Preliminares </td>
-            <td>Outra Tarefa</td>
-            <td>Construtora</td>
-            <td>Nenhuma Observação </td>
-            <td>75%</td>
-            <td><input type="text" value="10/02/2024" class="data" readonly></td>
-            <td>3</td>
-            <td><input type="text" value="13/02/2024" class="data" readonly></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td colspan=36>
-              <table class="timeline">
-                <tr>
-                  <td class="progresso-75"> &nbsp</td>
-                  <!-- Aqui adicionei a classe progresso-75 para indicar 75% de conclusão -->
-                </tr>
-              </table>
+            <td>100%</td>
+            <td>50%</td>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -455,18 +568,6 @@
     dataAtualSpan.textContent = `${dia} DE ${mes}`;
 
 
-    // Obtém todas as timelines na tabela de obras
-    const timelines = document.querySelectorAll('.tabela-obras .timeline');
-
-    // Define as larguras das timelines conforme especificado
-    const larguras = ['40%', '50%', '80%', '14%', '30%', '30%', '40%', '30%', '60%'];
-
-    // Itera sobre cada timeline e define sua largura
-    timelines.forEach((timeline, index) => {
-      timeline.style.width = larguras[index];
-    });
-
-    
   </script>
 </body>
 
