@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Vicco Construtora</title>
+
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="imgs/ico-h1.png" alt="Início" width="50px">
+                                <p>Agenda</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="imgs/ico-h2.png" alt="Relatórios" width="50px">
+                                <p>Suprimentos</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="imgs/ico-h3.png" alt="Voltar" width="50px">
+                                <p>Financeiro</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="imgs/ico-h4.png" alt="Voltar" width="50px">
+                                <p>Planejamento</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="imgs/ico-h5.png" alt="Voltar" width="50px">
+                                <p>Engenharia</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">
+                                <img src="imgs/ico-h6.png" alt="Voltar" width="50px">
+                                <p>Cadastros</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Nome de usuário fictício, data, horário e e-mail -->
+                    <div class="usuario-info">
+                        <h4>João Fulano</h4>
+                        <p>joao.fulano@exemplo.com</p>
+                        <div id="data-hora"></div>
+                        <button onclick="sair()">Sair</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-desktop">
+
+            <div class="conteudo">
+
+                <h2>Quadro Geral</h2>
+            
+                <div class="container-box-requisicoes">
+                    <div class="box-info-geral">
+                        <div class="titulo">Verbas:</div>
+                        <div class="quantidade">R$ 754.411,68</div>
+                    </div>
+                
+                    <div class="box-info-geral">
+                        <div class="titulo">Budget:</div>
+                        <div class="quantidade">R$ 705.745,89</div>
+                    </div>                    
+                </div>
+                
+                <img class="imagem" src="imgs/exemplo.png" width="100%">
+            </div>            
+                
+
+            <div class="conteudo">
+
+                <div class="wrap-toggle">
+                    <div class="toggle-container">
+                        <button onclick="alterarModo()">
+                            <span id="modo-icon" class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
+                        </button>
+                    </div>
+                    <div class="toggle-container2">
+                        <button onclick="openFilterModal(); updateFilterDisplay();">
+                            <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
+                        </button>
+                    </div>
+
+                    <div class="filtros-selecionados">
+                        <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
+                        <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                    </div>
+
+                </div>
+
+                <h2>Todas as Obras</h2>
+
+                <div class="cards-container">
+
+                    <div class="card">
+                        <div class="imagem-container">
+                            <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="selo">Em Andamento</div>
+                        </div>
+                        <div class="informacoes">
+                            <h4>Nome da Obra</h4>
+                            <p>INFO - Texto informativo sobre a obra</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imagem-container">
+                            <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="selo">Em Andamento</div>
+                        </div>
+                        <div class="informacoes">
+                            <h4>Nome da Obra</h4>
+                            <p>INFO - Texto informativo sobre a obra</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imagem-container">
+                            <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="selo">Em Andamento</div>
+                        </div>
+                        <div class="informacoes">
+                            <h4>Nome da Obra</h4>
+                            <p>INFO - Texto informativo sobre a obra</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imagem-container">
+                            <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="selo">Em Andamento</div>
+                        </div>
+                        <div class="informacoes">
+                            <h4>Nome da Obra</h4>
+                            <p>INFO - Texto informativo sobre a obra</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imagem-container">
+                            <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="selo-amarelo">Pausada</div>
+                        </div>
+                        <div class="informacoes">
+                            <h4>Nome da Obra</h4>
+                            <p>INFO - Texto informativo sobre a obra</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imagem-container">
+                            <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="selo-verde">Concluída</div>
+                        </div>
+                        <div class="informacoes">
+                            <h4>Nome da Obra</h4>
+                            <p>INFO - Texto informativo sobre a obra</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imagem-container">
+                            <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="selo">Em Andamento</div>
+                        </div>
+                        <div class="informacoes">
+                            <h4>Nome da Obra</h4>
+                            <p>INFO - Texto informativo sobre a obra</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imagem-container">
+                            <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                            <div class="selo">Em Andamento</div>
+                        </div>
+                        <div class="informacoes">
+                            <h4>Nome da Obra</h4>
+                            <p>INFO - Texto informativo sobre a obra</p>
+                        </div>
+                    </div><!-- fecha div card-->
+                </div><!--fecha div cards-container-->
+
+            </div><!--fecha div conteudo-->
+
+        <div class="conteudo">
+            
+            <h2>Requisições</h2>
+
+            <div class="container-box-requisicoes">
+                <div class="box-requisicoes">
+                    <div class="titulo">Aberta</div>
+                    <div class="quantidade">10</div>
+                </div>
+                <div class="box-requisicoes">
+                    <div class="titulo">Cotação</div>
+                    <div class="quantidade">20</div>
+                </div>
+                <div class="box-requisicoes">
+                    <div class="titulo">Aprovação</div>
+                    <div class="quantidade">15</div>
+                </div>
+            </div>
+            
+            <div class="container-box-requisicoes">
+                <div class="box-requisicoes">
+                    <div class="titulo">Pré-Compra</div>
+                    <div class="quantidade">8</div>
+                </div>
+                <div class="box-requisicoes">
+                    <div class="titulo">Pagamento</div>
+                    <div class="quantidade">12</div>
+                </div>
+                <div class="box-requisicoes">
+                    <div class="titulo">Comprada</div>
+                    <div class="quantidade">18</div>
+                </div>
+            </div>
+            
+            <div class="container-box-requisicoes">
+                <div class="box-requisicoes">
+                    <div class="titulo">Entregue</div>
+                    <div class="quantidade">25</div>
+                </div>
+                <div class="box-requisicoes">
+                    <div class="titulo">Recusada</div>
+                    <div class="quantidade">5</div>
+                </div>
+                <div class="box-requisicoes">
+                    <div class="titulo">Cancelada</div>
+                    <div class="quantidade">3</div>
+                </div>
+
+            </div><!--fecha container-requisicoes-->
+        </div><!--fecha conteudo-->
+
+        <div class="conteudo">
+            <h2>Faturamento</h2>
+
+            <div class="box-faturamento-geral">R$ 0,00</div>
+            
+            <div class="container-box-requisicoes">
+                <div class="box-info-geral">
+                    <div class="titulo">Faturado</div>
+                    <div class="quantidade">R$ 00,00</div>
+                </div>
+            
+                <div class="box-info-geral">
+                    <div class="titulo">Recebido</div>
+                    <div class="quantidade">R$ 00,00</div>
+                </div>    
+                <div class="box-info-geral">
+                    <div class="titulo">Residual</div>
+                    <div class="quantidade">R$ 00,00</div>
+                </div>
+            
+                <div class="box-info-geral">
+                    <div class="titulo">Retido</div>
+                    <div class="quantidade">R$ 00,00</div>
+                </div>                    
+            </div>
+        </div>
+
+    </div> <!--fecha container desktop-->
+
+    </div><!--fecha container full-->
+
+
+    <!-- Modal de Filtro -->
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFilterModal()">&times;</span>
+
+            <!-- Conteúdo do Filtro -->
+            <h2>Informações de Filtro para Requisições</h2>
+
+            <!-- Tabela de Filtros -->
+            <div class="filtro-tabela">
+
+                <!-- Primeira Coluna -->
+                <div class="filtro-coluna">
+                    <label for="dataInicial">Data Inicial:</label>
+                    <input type="date" id="dataInicial">
+
+                    <p><strong>Tipo:</strong></p>
+                    <label>
+                        <input type="checkbox" id="tipoRequisicao"> Requisições
+                    </label>
+                    <label>
+                        <input type="checkbox" id="tipoReembolso"> Reembolsos
+                    </label>
+                    <label>
+                        <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                    </label>
+                </div>
+
+                <!-- Segunda Coluna -->
+                <div class="filtro-coluna">
+                    <label for="dataFinal">Data Final:</label>
+                    <input type="date" id="dataFinal">
+
+                    <p><strong>Formato:</strong></p>
+                    <label>
+                        <input type="checkbox" id="formatoBox"> Box
+                    </label>
+                    <label>
+                        <input type="checkbox" id="formatoLista"> Lista
+                    </label>
+                    <label>
+                        <input type="checkbox" id="formatoSimples"> Simples
+                    </label>
+                </div>
+
+                <!-- Terceira Coluna -->
+                <div class="filtro-coluna">
+                    <h3>Status da Requisição:</h3>
+                    <label>
+                        <input type="checkbox" id="statusAberta"> Aberta
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusCotacao"> Cotação
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusAprovacao"> Aprovação
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusReprovado"> Reprovado
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusPagamento"> Pagamento
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusComprada"> Comprada
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusEntregue"> Entregue
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusCancelada"> Cancelada
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusRecusada"> Recusada
+                    </label>
+                </div>
+
+                <!-- Quarta Coluna -->
+                <div class="filtro-coluna">
+                    <h3>Obras:</h3>
+                    <label>
+                        <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                    </label>
+
+                    <ul>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e rh)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Botões de Ação -->
+            <div>
+                <button class="filtrar" onclick="filtrar()">Filtrar</button>
+                <button class="limpar" onclick="limparFiltro()">Limpar</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="filtro.js"></script>
+</body>
+
+</html>
