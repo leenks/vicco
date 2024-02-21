@@ -104,6 +104,14 @@
         margin-bottom: 5px;
     }
 
+    .separa-topo {
+        background-image: url(imgs/separa-top.png);
+        background-repeat: repeat-x; /* Repete apenas na horizontal */
+        background-size: auto; 
+        margin: 0;
+        padding-bottom: 0;
+    }
+
     .mapa-nav:nth-of-type(1) {
         border: 2px solid #c54f20;
         background: white;
@@ -413,11 +421,13 @@
         background-color: #fff;
         border: 1px solid #ccc;
         border-radius: 5px;
+        position: relative;
     }
-
 
     .imagem-container {
         position: relative;
+        max-width: 100%; /* Define a largura máxima */
+        overflow: hidden; /* Para garantir que a imagem não ultrapasse o contêiner */
     }
 
     .imagem-container img {
@@ -431,13 +441,25 @@
     .selo-amarelo,
     .selo-verde {
         position: absolute;
-        top: 10px;
-        right: 10px;
-        border-radius: 50px;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 5px 5px 0 0; 
         padding: 4px 10px;
         font-size: 13px;
         font-weight: bold;
+        z-index: 1;
     }
+
+    .selo-img {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%) scale(0.3);
+    overflow: visible;
+    z-index: 2; /* Garante que as imagens do selo estejam acima da imagem da obra */
+}
+
 
     .selo {
         background-color: #0055ff;
@@ -465,6 +487,7 @@
 
     .informacoes h4 {
         color: #f99e32;
+        margin-top: 30px;
     }
 
     .informacoes p {
@@ -489,24 +512,28 @@
 
 
     /* CARDS MODOS DE LISTAGEM*/
-
-
     .cards-container {
         display: flex;
         flex-wrap: wrap;
     }
-
     .cards-container.modo-lista .card {
         flex-basis: 100%;
         min-width: 96%;
         width: 100%;
     }
-
     .cards-container.modo-lista h4 {
         margin: 0;
     }
 
     /* Nova classe para o modo-simples */
+.cards-container.modo-simples .card {
+    flex-basis: 100%;
+    min-width: 87%;
+    width: 97%;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
     .cards-container.modo-simples .card {
         flex-basis: 100%;
         min-width: 87%;
@@ -516,20 +543,32 @@
         align-items: flex-start;
     }
 
+.cards-container.modo-simples .card .imagem-container {
+    display: none; /* Oculta a imagem no modo-simples */
+}
     .cards-container.modo-simples .card .imagem-container {
         display: none;
         /* Oculta a imagem no modo-simples */
     }
 
+.cards-container.modo-simples .card .informacoes {
+    width: 95%;
+}
     .cards-container.modo-simples .card .informacoes {
         width: 95%;
     }
 
+/* Adicionando a classe .modo-simples ao container de cards */
+.cards-container.modo-simples {
+    flex-direction: column; 
+    align-items: center; 
+}
     /* Adicionando a classe .modo-simples ao container de cards */
     .cards-container.modo-simples {
         flex-direction: column;
         align-items: center;
     }
+
 
     .toggle-container .toggle-container2 button {
         background: none;
@@ -554,6 +593,27 @@
         margin-right: 10px;
         /* Ajuste a margem conforme necessário */
     }
+
+     /* MENU MIGALHAS - OU MAPA DE NAVEGAÇÃO */
+
+     .breadcrumbs {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        font-size: 10px;
+        color: #444;
+    }
+
+    .breadcrumbs a {
+        color: #444;
+        text-decoration: none;
+        margin-right: 5px;
+    }
+
+    .breadcrumbs span {
+        margin-right: 5px;
+    }    
+
 
 
 
@@ -768,15 +828,29 @@
         .card .imagem-container {
             width: 50%;
             margin-bottom: 10px;
+            height: auto;
         }
 
         .card .imagem-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
             max-width: 100%;
             height: auto;
         }
 
         .card .selo {
-            width: 100%;
+            position: absolute;
+            top: 10px; /* Ajuste a posição vertical conforme necessário */
+            left: 10px; /* Ajuste a posição horizontal conforme necessário */
+            background-color: rgba(255, 165, 0, 0.7); /* Cor de fundo do selo */
+            color: #fff; /* Cor do texto do selo */
+            padding: 5px 10px; /* Espaçamento interno do selo */
+            border-radius: 5px; /* Arredondamento das bordas do selo */
+            font-size: 14px; /* Tamanho da fonte do selo */
+            font-weight: bold; /* Peso da fonte do selo */
+            z-index: 1; /* Garante que o selo esteja sobre a imagem */
         }
 
         .card .selo,
