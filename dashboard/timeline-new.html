@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela com Cabeçalho e Coluna Fixos e Scroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            width: 100%;
+            font-size: 11px;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .cabecalho {
+            display: flex;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #444;
+            text-align: center;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+
+        #subclass-h2 {
+            font-size: 12px !important;
+            line-height: 5px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        h3 {
+            margin-left: 20px;
+            font-size: 22px;
+            color: #444;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .table-scroll {
+            position: sticky;
+            top: 0;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border-collapse: collapse;
+            margin: 0 10px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .table-wrap {
+            width: 100%;
+            overflow: auto;
+            height: 60%;
+        }
+
+
+        /* Estilizando as barras de rolagem */
+        .table-wrap::-webkit-scrollbar {
+            width: 18px;
+            /* Largura da barra de rolagem */
+        }
+
+        .table-wrap::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            /* Cor de fundo da trilha */
+        }
+
+        .table-wrap::-webkit-scrollbar-thumb {
+            background: #888;
+            /* Cor do controle deslizante */
+            border-radius: 5px;
+            /* Borda arredondada do controle deslizante */
+            height: 5px;
+        }
+
+        .table-wrap::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            /* Altera a cor do controle deslizante ao passar o mouse */
+        }
+
+        .table-scroll table {
+            width: auto;
+            margin: auto;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .table-scroll thead th:nth-child(even) {
+            background-color: #fc7c3c;
+            color: white;
+        }
+
+        .table-scroll thead th:nth-child(odd) {
+            background-color: #f37334;
+            color: white;
+        }
+
+        .table-scroll th,
+        .table-scroll td {
+            padding: 5px 10px;
+            border: 1px solid #ffffff;
+            background: #fff;
+            white-space: nowrap;
+            vertical-align: top;
+        }
+
+        /* Estilo para células <th> e <td> em linhas pares */
+        .table-scroll tbody tr:nth-child(even) th,
+        .table-scroll tbody tr:nth-child(even) td {
+            background-color: #e7e7e7;
+            /* Cinza claro */
+        }
+
+        /* Estilo para células <th> e <td> em linhas ímpares */
+        .table-scroll tbody tr:nth-child(odd) th,
+        .table-scroll tbody tr:nth-child(odd) td {
+            background-color: #ffffff;
+            /* Branco */
+        }
+
+        .table-scroll thead {
+            position: sticky;
+            top: 0;
+            background: #f9f9f9;
+        }
+
+        .clone {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .clone th,
+        .clone td {
+            visibility: hidden
+        }
+
+        .clone td,
+        .clone th {
+            border-color: transparent;
+        }
+
+        .clone tbody th {
+            visibility: visible;
+        }
+
+        .clone .fixed-side {
+            border: 1px solid #ffffff;
+            color: #444;
+            background: #e3e3e3;
+            visibility: visible;
+        }
+
+        .clone thead {
+            visibility: visible;
+            width: auto;
+        }
+
+        .topo-fixo {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background: #f9f9f9;
+        }
+
+        .topo-fixo-sobreposto {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            /* Ajustado para ficar acima das colunas fixas */
+            background: #f9f9f9;
+        }
+
+        .mostrar-topo-fixo-sobreposto th {
+
+            visibility: visible;
+        }
+
+        /* Estilo para o tooltip */
+        .tooltip {
+            position: absolute;
+            background-color: #FAA936;
+            border: 2px solid white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Adiciona sombra à caixa do tooltip */
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 999;
+            display: none;
+            /* Começa oculto */
+        }
+
+        
+        .ico-mostrar {
+            color:#2196f3;
+        }
+
+        .progresso-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .progresso-verde,
+        .progresso-azul {
+            flex: 1;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .progresso-verde {
+            background-color: #00bfa5;
+            margin: 0;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .progresso-azul {
+            background-color: #2196f3;
+            margin: 0;
+            border-radius: 0px 5px 5px 0px;
+        }
+
+        .scroll-left {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="cabecalho">
+            <h2>Bio Ritmo - Alto das Nações <br><span id="subclass-h2"> Periodo Previsto: 24/10/2022 até 10/10/2023 (351
+                    dias) -
+                    Periodo de Verbas: 01/01 até 08/04 (98 dias) <br>
+                    Média de Percentuais: 71% previsto - 64% realizado <br>
+                    Prazo para Término: 47 dias</h3>
+            </h2>
+
+        </header>
+
+        <div id="table-scroll" class="table-scroll">
+            <div class="table-wrap">
+                <table class="main-table">
+                    <thead class="topo-fixo topo-fixo-sobreposto">
+                        <tr>
+                            <th class="fixed-side scroll-left" style="width: 50px;">Seq</th>
+                            <th class="fixed-side scroll-left">Grupo/Sub.Grupo</th>
+                            <th class="fixed-side scroll-left">Responsável</th>
+                            <th class="fixed-side scroll-left">Obs</th>
+                            <th class="fixed-side scroll-left">Início</th>
+                            <th class="fixed-side scroll-left">Dias</th>
+                            <th class="fixed-side scroll-left">Término</th>
+                            <th class="fixed-side scroll-left">Predecessor</th>
+                            <th class="fixed-side scroll-left">Previsto</th>
+                            <th class="fixed-side scroll-left">Progresso</th>
+                            <th colspan="7" class="fixed-side">01 até 07-JAN-2024</th>
+                            <th colspan="7" class="fixed-side">08 até 14-JAN-2024</th>
+                            <th colspan="7" class="fixed-side">15 até 21-JAN-2024</th>
+                            <th colspan="7" class="fixed-side">22 até 28-JAN-2024</th>
+                            <th colspan="7" class="fixed-side">29-JAN até 04-FEV-2024</th>
+                            <th colspan="7" class="fixed-side">05 até 11-FEV-2024</th>
+                            <th colspan="7" class="fixed-side">12 até 18-FEV-2024</th>
+                            <th colspan="7" class="fixed-side">19 até 25-FEV-2024</th>
+                            <th colspan="7" class="fixed-side">26 até 03-MAR-2024</th>
+                            <th colspan="7" class="fixed-side">04 até 10-MAR-2024</th>
+                            <th colspan="7" class="fixed-side">11 até 17-MAR-2024</th>
+            <tr>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side scroll-left">&nbsp;</th>
+              <th class="fixed-side" data-tooltip="01/01">s</th>
+                            <th class="fixed-side" data-tooltip="02/01">t</th>
+                            <th class="fixed-side" data-tooltip="03/01">q</th>
+                            <th class="fixed-side" data-tooltip="04/01">q</th>
+                            <th class="fixed-side" data-tooltip="05/01">s</th>
+                            <th class="fixed-side" data-tooltip="06/01">s</th>
+                            <th class="fixed-side" data-tooltip="07/01">d</th>
+                            <th class="fixed-side" data-tooltip="08/01">s</th>
+                            <th class="fixed-side" data-tooltip="09/01">t</th>
+                            <th class="fixed-side" data-tooltip="10/01">q</th>
+                            <th class="fixed-side" data-tooltip="11/01">q</th>
+                            <th class="fixed-side" data-tooltip="12/01">s</th>
+                            <th class="fixed-side" data-tooltip="13/01">s</th>
+                            <th class="fixed-side" data-tooltip="14/01">d</th>
+                            <th class="fixed-side" data-tooltip="15/01">s</th>
+                            <th class="fixed-side" data-tooltip="16/01">t</th>
+                            <th class="fixed-side" data-tooltip="17/01">q</th>
+                            <th class="fixed-side" data-tooltip="18/01">q</th>
+                            <th class="fixed-side" data-tooltip="19/01">s</th>
+                            <th class="fixed-side" data-tooltip="20/01">s</th>
+                            <th class="fixed-side" data-tooltip="21/01">d</th>
+                            <th class="fixed-side" data-tooltip="22/01">s</th>
+                            <th class="fixed-side" data-tooltip="23/01">t</th>
+                            <th class="fixed-side" data-tooltip="24/01">q</th>
+                            <th class="fixed-side" data-tooltip="25/01">q</th>
+                            <th class="fixed-side" data-tooltip="26/01">s</th>
+                            <th class="fixed-side" data-tooltip="27/01">s</th>
+                            <th class="fixed-side" data-tooltip="28/01">d</th>
+                            <th class="fixed-side" data-tooltip="29/01">s</th>
+                            <th class="fixed-side" data-tooltip="30/01">t</th>
+                            <th class="fixed-side" data-tooltip="31/01">q</th>
+                            <th class="fixed-side" data-tooltip="01/02">q</th>
+                            <th class="fixed-side" data-tooltip="02/02">s</th>
+                            <th class="fixed-side" data-tooltip="03/02">s</th>
+                            <th class="fixed-side" data-tooltip="04/02">d</th>
+                            <th class="fixed-side" data-tooltip="05/02">s</th>
+                            <th class="fixed-side" data-tooltip="06/02">t</th>
+                            <th class="fixed-side" data-tooltip="07/02">q</th>
+                            <th class="fixed-side" data-tooltip="08/02">q</th>
+                            <th class="fixed-side" data-tooltip="09/02">s</th>
+                            <th class="fixed-side" data-tooltip="10/02">s</th>
+                            <th class="fixed-side" data-tooltip="11/02">d</th>
+                            <th class="fixed-side" data-tooltip="12/02">s</th>
+                            <th class="fixed-side" data-tooltip="13/02">t</th>
+                            <th class="fixed-side" data-tooltip="14/02">q</th>
+                            <th class="fixed-side" data-tooltip="15/02">q</th>
+                            <th class="fixed-side" data-tooltip="16/02">s</th>
+                            <th class="fixed-side" data-tooltip="17/02">s</th>
+                            <th class="fixed-side" data-tooltip="18/02">d</th>
+                            <th class="fixed-side" data-tooltip="19/02">s</th>
+                            <th class="fixed-side" data-tooltip="20/02">t</th>
+                            <th class="fixed-side" data-tooltip="21/02">q</th>
+                            <th class="fixed-side" data-tooltip="22/02">q</th>
+                            <th class="fixed-side" data-tooltip="23/02">s</th>
+                            <th class="fixed-side" data-tooltip="24/02">s</th>
+                            <th class="fixed-side" data-tooltip="25/02">d</th>
+                            <th class="fixed-side" data-tooltip="26/02">s</th>
+                            <th class="fixed-side" data-tooltip="27/02">t</th>
+                            <th class="fixed-side" data-tooltip="28/02">q</th>
+                            <th class="fixed-side" data-tooltip="29/02">q</th>
+                            <th class="fixed-side" data-tooltip="01/03">s</th>
+                            <th class="fixed-side" data-tooltip="02/03">s</th>
+                            <th class="fixed-side" data-tooltip="03/03">d</th>
+                            <th class="fixed-side" data-tooltip="04/03">s</th>
+                            <th class="fixed-side" data-tooltip="05/03">t</th>
+                            <th class="fixed-side" data-tooltip="06/03">q</th>
+                            <th class="fixed-side" data-tooltip="07/03">q</th>
+                            <th class="fixed-side" data-tooltip="08/03">s</th>
+                            <th class="fixed-side" data-tooltip="09/03">s</th>
+                            <th class="fixed-side" data-tooltip="10/03">d</th>
+                            <th class="fixed-side" data-tooltip="11/03">s</th>
+                            <th class="fixed-side" data-tooltip="12/03">t</th>
+                            <th class="fixed-side" data-tooltip="13/03">q</th>
+                            <th class="fixed-side" data-tooltip="14/03">q</th>
+                            <th class="fixed-side" data-tooltip="15/03">s</th>
+                            <th class="fixed-side" data-tooltip="16/03">s</th>
+                            <th class="fixed-side" data-tooltip="17/03">d</th>
+                        </tr>
+            </tr>
+          </thead>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left" data-tooltip="Alterações feitas nas datas de entrega - Exemplo"><i class="fas fa-eye ico-mostrar"></i></th>
+            <th class="fixed-side scroll-left">01/02</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+                <div class="progresso-container" style="width: 10%;">
+                    <span class="progresso-verde">&nbsp;</span>
+                    <span class="progresso-azul">&nbsp;</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left" data-tooltip="Atualizações feitas no item Tal"><i class="fas fa-eye ico-mostrar"></i></th>
+            <th class="fixed-side scroll-left">01/02</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+                <div class="progresso-container" style="width: 30%;">
+                    <span class="progresso-verde">&nbsp;</span>
+                    <span class="progresso-azul">&nbsp;</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left" data-tooltip="Verificar modelos"><i class="fas fa-eye ico-mostrar"></i></th>
+            <th class="fixed-side scroll-left">01/02</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+                <div class="progresso-container" style="width: 20%;">
+                    <span class="progresso-verde">&nbsp;</span>
+                    <span class="progresso-azul">&nbsp;</span>
+                </div>
+            </td>
+        </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 50%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 15%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 60%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 40%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 80%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 70%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 25%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 85%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 30%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 12%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 5%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 45%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 55%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 60%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 10%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">60%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 30%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">30%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 30%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 50%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">01- Pré Obra</th>
+            <th class="fixed-side scroll-left">Cliente</th>
+            <th class="fixed-side scroll-left">A</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">01</th>
+            <th class="fixed-side scroll-left">01/02/2024</th>
+            <th class="fixed-side scroll-left">1</th>
+            <th class="fixed-side scroll-left">100%</th>
+            <th class="fixed-side scroll-left">50%</th>
+            <td colspan="107">
+              <div class="progresso-container" style="width: 20%;">
+                <span class="progresso-verde">&nbsp;</span>
+                <span class="progresso-azul">&nbsp;</span>
+              </div>
+            </td>
+          </tr>
+
+
+          <tbody>
+            <!-- Adicione as linhas da tabela aqui -->
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+       $(document).ready(function () {
+           // Ao rolar a tabela horizontalmente
+           $('.table-wrap').on('scroll', function () {
+               // Obter a posição do scroll horizontal
+               var scrollLeft = $(this).scrollLeft();
+
+               // Definir a posição das colunas fixas
+               $('.scroll-left').css('left', scrollLeft);
+           });
+       });
+   </script>
+
+   <script>
+       document.addEventListener('DOMContentLoaded', function () {
+           var tableWrap = document.querySelector('.table-wrap');
+           tableWrap.addEventListener('scroll', function () {
+               var scrollTop = tableWrap.scrollTop;
+               var topoFixoSobreposto = document.querySelector('.topo-fixo-sobreposto');
+               if (scrollTop > 0) {
+                   topoFixoSobreposto.classList.add('mostrar-topo-fixo-sobreposto');
+               } else {
+                   topoFixoSobreposto.classList.remove('mostrar-topo-fixo-sobreposto');
+               }
+           });
+       });
+   </script>
+
+   <!-- Script para criar o tooltip personalizado -->
+   <script>
+       document.addEventListener('DOMContentLoaded', function () {
+           var thItems = document.querySelectorAll('.fixed-side');
+   
+           thItems.forEach(function (item) {
+               var tooltipText = item.getAttribute('data-tooltip'); // Obtém o texto do tooltip
+   
+               // Verifica se o elemento tem o atributo data-tooltip
+               if (tooltipText) {
+                   item.addEventListener('mouseover', function (event) {
+                       var tooltip = document.createElement('div'); // Cria o elemento do tooltip
+                       tooltip.classList.add('tooltip'); // Adiciona a classe de estilo ao tooltip
+                       tooltip.textContent = tooltipText; // Define o texto do tooltip
+                       document.body.appendChild(tooltip); // Adiciona o tooltip ao corpo do documento
+                       // Define a posição do tooltip próximo ao ponteiro do mouse
+                       tooltip.style.left = (event.pageX + 10) + 'px';
+                       tooltip.style.top = (event.pageY + 10) + 'px';
+                       tooltip.style.display = 'block'; // Exibe o tooltip
+                   });
+   
+                   item.addEventListener('mouseout', function () {
+                       var tooltip = document.querySelector('.tooltip'); // Seleciona o tooltip
+                       if (tooltip) {
+                           tooltip.remove(); // Remove o tooltip quando o mouse sai do elemento
+                       }
+                   });
+               }
+           });
+       });
+   </script>
+   
+</body>
+
+</html>
