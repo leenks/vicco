@@ -69,6 +69,8 @@
         .bloco label {
             display: block;
             margin-bottom: 5px;
+            white-space: nowrap;    
+            font-size: 13px;
         }
 
         .bloco select,
@@ -84,6 +86,10 @@
             transition: border-color 0.3s ease;
             /* Adiciona uma transição suave */
         }
+        .bloco textarea {
+            width: 97%;
+         }
+        
 
         .bloco select:focus,
         .bloco input:focus,
@@ -136,6 +142,15 @@
 
         .inteiro {
             flex: 1 0 100%;
+        }
+
+        #datainicial,
+        #numdias,
+        #datafinal {
+            width: calc(70% - 5px);
+            /* Largura ajustada para caber na mesma linha */
+            margin-right: 5px;
+            /* Espaçamento entre os inputs */
         }
 
         .botoes {
