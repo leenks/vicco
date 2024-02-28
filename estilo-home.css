@@ -20,55 +20,139 @@ body {
 
 .container-desktop {
     width: 100%;
-    max-width: 960px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
 .topo-container {
     position: relative;
-    background-color: white;
+    min-height: 180px;
+    overflow: hidden; /* Para esconder o conteúdo que ultrapassa a div */
 }
 
-.topo-container2 {
-    background-color: white;
+.topo-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('imgs/pe-home.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 500px;
+    opacity: 0.2; /* Opacidade da imagem de fundo */
+    z-index: -1; /* Coloca a imagem de fundo atrás do conteúdo */
 }
 
 .topo {
-    padding: 10px 0px;
+    padding: 20px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 40px;
+}
+
+
+.usuario-info {
+    display: inline-block;
+    margin: 0;
+    padding: 5px;
+    text-align: right;
+    max-width: 190px;
+}
+
+.usuario-info h4 {
+    margin: 0;
+    font-size: 13px;
+}
+
+.usuario-info p {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0px;
+    font-size: 11px;
+    line-height: normal;
+}
+
+.usuario-info span {
+    display: inline-block;
+}
+
+#data-hora {
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
+    line-height: 15px;
+    min-width: 200px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.usuario-info button {
+    background-color: #666;
+    text-shadow: 1px 1px #000;
+    color: white;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.usuario-info button:hover {
+    background-color: #444;
+    text-shadow: 1px 1px #000;
+    color: white;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+
+
 .topo-banner {
     width: 100%;
-    margin: 180px 0 auto;
+    margin: 20px 0 auto;
     padding: 10px 0;
     text-align: center;
-    background-color: rgba(27, 27, 27, 0.4);
+    background-color: rgba(27, 27, 27, 0.6);
 }
 
 .topo-banner h1,
 .topo-banner h2 {
-    font-size: 50px;
+    font-size: 28px;
     color: #fff;
 }
 
 .topo-banner h2 {
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .topo-banner h1,
 .topo-banner h2 {
     font-weight: bolder;
-    letter-spacing: -1px !important;
     line-height: normal;
-    text-shadow: #424242 1px 2px;
+    /*text-shadow: #424242 1px 2px;*/
 }
 
 .logo,
