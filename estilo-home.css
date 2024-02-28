@@ -28,6 +28,8 @@ body {
     position: relative;
     min-height: 180px;
     overflow: hidden; /* Para esconder o conteúdo que ultrapassa a div */
+    transition: max-height 1s ease-in-out; /* Adiciona transição suave */
+
 }
 
 .topo-container::before {
@@ -155,14 +157,16 @@ button {
     }
 }
 
+/* Adição da classe shrink para animar a redução do tamanho do topo */
+.topo-container.shrink {
+    max-height: 100px; /* Defina a altura máxima desejada */
+    transition: max-height 1s ease-in-out; /* Ajuste a transição para ser mais suave */
+}
+
+/* Adição da classe fadeOut para o elemento desaparecer gradualmente */
 .topo-banner.fadeOut {
     animation: slideFromBottom 1s ease-out, fadeOutAnimation 0.5s ease-in-out 5s forwards;
     /* Adicionamos a classe fadeOut após 5 segundos */
-}
-
-.topo-container.shrink {
-    min-height: 100px; /* Defina a altura menor aqui */
-    transition: min-height 0.5s ease-in-out; /* Adicione uma transição suave */
 }
 
 .topo-banner {
@@ -171,7 +175,7 @@ button {
     padding: 10px 0;
     text-align: center;
     background-color: rgba(27, 27, 27, 0.6);
-    animation: slideFromBottom 1s ease-out, fadeOutAnimation 0.5s ease-in-out 5s forwards;
+    animation: slideFromBottom 1s ease-out, fadeOutAnimation 1s ease-in-out 5s forwards;
     /* Adicionamos a classe fadeOut após 5 segundos */
 }
 
