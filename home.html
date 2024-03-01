@@ -11,21 +11,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="estilo-home.css">
-    <title>Vicco Construtora</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos CSS */
+        /* Adicione os estilos CSS aqui */
 
+        /* Remova os estilos inline */
+    </style>
+    <title>Vicco Construtora</title>
 </head>
 
 <body>
 
     <div class="container-full">
 
-        <div class="topo-container2">
+        <div class="topo-container">
             <div class="container-desktop">
 
                 <div class="topo">
-                    <div class="logo-home">
+                    <div class="logo">
                         <img src="imgs/logo.png" alt="Logo">
                     </div>
+
 
                     <!-- Nome de usuário fictício, data, horário e e-mail -->
                     <div class="usuario-info">
@@ -34,15 +41,15 @@
                         <div id="data-hora"></div>
                         <button onclick="sair()">Sair</button>
                     </div>
-                </div>
-
+                </div><!-- fecha topo-->
             </div>
-            <div class="topo-banner">
+            <div class="topo-banner animacao-banner">
                 <h1> Bem vindo ao Sistema Vicco </h1>
                 <h2>O que você deseja acessar?</h2>
             </div><!--Fecha topo-banner-->
-        </div><!--Fecha topo container2-->
+        </div><!--Fecha topo container-->
     </div><!--Fecha container-desktop-->
+    <div class="separa-topo">&nbsp;</div>
 
 
 
@@ -86,42 +93,456 @@
                 </a>
             </div>
         </div>
-        <div class="conteudo">
 
-            <div class="conteudo-in">
-                <br>
-                <img src="imgs/exemplo.png" width="100%">
+
+        <div class="container-desktop">
+
+            <div class="conteudo">
+
+                <div class="botoes-topo">
+                    <h2>Quadro Geral</h2>
+                    <div class="botoes-container">
+                        <button class="botao-icone">
+                            <img src="imgs/ico-refresh.png" alt="Ícone de Refresh">
+                        </button>
+                        <button class="botao-icone">
+                            <img src="imgs/ico-filtro.png" alt="Ícone de Filtro">
+                        </button>
+                        <button class="botao-icone">
+                            <img src="imgs/ico-grafico.png" alt="Ícone de Gráfico">
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="container-box-requisicoes">
+                    <div class="box-info-geral">
+                        <div class="titulo"><img src="imgs/ico-verbas.png" alt="Ícone de Filtro"></div>
+                        <span>Verbas:</span>
+                        <div class="quantidade">R$ 754.411,68</div>
+                    </div>
+
+                    <div class="box-info-geral">
+                        <div class="titulo"><img src="imgs/ico-budget.png" alt="Ícone de Budget"></div>
+                        <span>Budget:</span>
+                        <div class="quantidade">R$ 705.745,89</div>
+                    </div>
+                </div>
+
+                <img class="imagem" src="imgs/exemplo.png" width="100%">
+            </div>
+
+
+            <div class="conteudo">
+
+                <div class="wrap-toggle">
+                    <div class="toggle-container">
+                        <button onclick="alterarModo()">
+                            <span id="modo-icon" class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
+                        </button>
+                    </div>
+                    <div class="toggle-container2">
+                        <button onclick="openFilterModal(); updateFilterDisplay();">
+                            <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
+                        </button>
+                    </div>
+
+                    <div class="filtros-selecionados">
+                        <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
+                        <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                    </div>
+
+                </div>
+
+                <h2>Todas as Obras</h2>
+
+                        <div class="cards-container">
+
+                            <div class="card">
+                                <div class="selo">Em Andamento</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                    <img src="imgs/selo-atrasado2.png" class="selo-img">
+                                </div>
+                                <div class="informacoes">
+
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="selo">Em Andamento</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/exemplo.jpg" alt="Descrição da Imagem">
+                                    <img src="imgs/selo-atrasado2.png" class="selo-img">
+
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="selo">Em Andamento</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/exemplo.jpg" alt="Descrição da Imagem">
+                                    <img src="imgs/selo-adiantada2.png" class="selo-img">
+
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="selo">Em Andamento</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa2.png" alt="Descrição da Imagem">
+                                    <img src="imgs/selo-adiantada2.png" class="selo-img">
+
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="selo-amarelo">Pausada</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="selo-verde">Concluída</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="selo">Em Andamento</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="selo">Em Andamento</div>
+                                <div class="imagem-container">
+                                    <img src="imgs/obra-ilustrativa.png" alt="Descrição da Imagem">
+
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div><!--div card-->
+                        </div><!--div cards-container-->f
+
+            </div><!--fecha div conteudo-->
+
+            <div class="conteudo">
+
+                <h2>Requisições</h2>
+
+                <div class="container-box-requisicoes">
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-aberta-laranja.png" alt="Ícone de Aberta"></div>
+                        <span>Aberta:</span>
+                        <div class="quantidade">10</div>
+                    </div>
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-cotacao-laranja.png" alt="Ícone de Cotação"></div>
+                        <span>Cotação:</span>
+                        <div class="quantidade">20</div>
+                    </div>
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-aprovacao.png" alt="Ícone de Cotação"></div>
+                        <span>Aprovação:</span>
+                        <div class="quantidade">15</div>
+                    </div>
+                </div>
+
+                <div class="container-box-requisicoes">
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-pre-compra-laranja.png" alt="Ícone de Cotação"></div>
+                        <span>Pré-Compra</span>
+                        <div class="quantidade">8</div>
+                    </div>
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-pagamento-laranja.png" alt="Ícone de Cotação"></div>
+                        <span>Pagamento:</span>
+                        <div class="quantidade">12</div>
+                    </div>
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-compra-laranja.png" alt="Ícone de Cotação"></div>
+                        <span>Comprada:</span>
+                        <div class="quantidade">18</div>
+                    </div>
+                </div>
+
+                <div class="container-box-requisicoes">
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-entregar-laranja.png" alt="Ícone de Cotação"></div>
+                        <span>Entregue:</span>
+                        <div class="quantidade">25</div>
+                    </div>
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-aprovacao-laranja.png" alt="Ícone de Cotação"></div>
+                        <span>Recusada:</span>
+                        <div class="quantidade">5</div>
+                    </div>
+                    <div class="box-requisicoes">
+                        <div class="titulo"><img src="imgs/ico-cancelado.png" alt="Ícone de Cotação"></div>
+                        <span>Cancelada:</span>
+                        <div class="quantidade">3</div>
+                    </div>
+
+                </div><!--fecha container-requisicoes-->
+            </div><!--fecha conteudo-->
+
+            <div class="conteudo">
+                <h2>Faturamento</h2>
+
+                <div class="box-faturamento-geral">R$ 150.000,00</div>
+
+                <div class="container-box-requisicoes">
+                    <div class="box-info-geral">
+                        <div class="titulo2"><img src="imgs/ico-verbas.png" alt="Ícone de Cotação"></div>
+                        <span>Faturado:</span>
+                        <div class="quantidade">R$ 00,00</div>
+                    </div>
+
+                    <div class="box-info-geral">
+                        <div class="titulo2"><img src="imgs/ico-entregue-laranja.png" alt="Ícone de Cotação"></div>
+                        <span>Recebido:</span>
+                        <div class="quantidade">R$ 00,00</div>
+                    </div>
+                    <div class="box-info-geral">
+                        <div class="titulo2"><img src="imgs/ico-residual.png" alt="Ícone de Cotação"></div>
+                        <span>Residual:</span>
+                        <div class="quantidade">R$ 00,00</div>
+                    </div>
+
+                    <div class="box-info-geral">
+                        <div class="titulo2"><img src="imgs/ico-retido.png" alt="Ícone de Cotação"></div>
+                        <span>Retido:</span>
+                        <div class="quantidade">R$ 00,00</div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!--fecha container desktop-->
+
+    </div><!--fecha container full-->
+
+
+    <!-- Modal de Filtro -->
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFilterModal()">&times;</span>
+
+            <!-- Conteúdo do Filtro -->
+            <h2>Informações de Filtro para Requisições</h2>
+
+            <!-- Tabela de Filtros -->
+            <div class="filtro-tabela">
+
+                <!-- Primeira Coluna -->
+                <div class="filtro-coluna">
+                    <label for="dataInicial">Data Inicial:</label>
+                    <input type="date" id="dataInicial">
+
+                    <p><strong>Tipo:</strong></p>
+                    <label>
+                        <input type="checkbox" id="tipoRequisicao"> Requisições
+                    </label>
+                    <label>
+                        <input type="checkbox" id="tipoReembolso"> Reembolsos
+                    </label>
+                    <label>
+                        <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                    </label>
+                </div>
+
+                <!-- Segunda Coluna -->
+                <div class="filtro-coluna">
+                    <label for="dataFinal">Data Final:</label>
+                    <input type="date" id="dataFinal">
+
+                    <p><strong>Formato:</strong></p>
+                    <label>
+                        <input type="checkbox" id="formatoBox"> Box
+                    </label>
+                    <label>
+                        <input type="checkbox" id="formatoLista"> Lista
+                    </label>
+                    <label>
+                        <input type="checkbox" id="formatoSimples"> Simples
+                    </label>
+                </div>
+
+                <!-- Terceira Coluna -->
+                <div class="filtro-coluna">
+                    <h3>Status da Requisição:</h3>
+                    <label>
+                        <input type="checkbox" id="statusAberta"> Aberta
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusCotacao"> Cotação
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusAprovacao"> Aprovação
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusReprovado"> Reprovado
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusPagamento"> Pagamento
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusComprada"> Comprada
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusEntregue"> Entregue
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusCancelada"> Cancelada
+                    </label>
+                    <label>
+                        <input type="checkbox" id="statusRecusada"> Recusada
+                    </label>
+                </div>
+
+                <!-- Quarta Coluna -->
+                <div class="filtro-coluna">
+                    <h3>Obras:</h3>
+                    <label>
+                        <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                    </label>
+
+                    <ul>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e rh)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Botões de Ação -->
+            <div>
+                <button class="filtrar" onclick="filtrar()">Filtrar</button>
+                <button class="limpar" onclick="limparFiltro()">Limpar</button>
             </div>
 
         </div>
+    </div>
 
-        <div class="conteudo">
-            <h3>Lorem ipsum</h3>
-            <p>Aenean lorem quam, lobortis quis posuere at, mollis id dui. Maecenas nibh lacus, iaculis nec feugiat
-                nec, consectetur ut lacus. </p>
-        </div>
+    <!-- Ícone no footer -->
+    <div class="ico-subir-footer" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+
+    <script src="filtro.js"></script>
+
+    <script>
+        // Função para rolar até o topo da página
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para fazer uma rolagem suave
+            });
+        }
+    </script>
+
+    <script>
+        // função pra animar o titulo da pagina
+        document.addEventListener("DOMContentLoaded", function () {
+            // Adiciona a classe de animação após um pequeno atraso para garantir que a transição seja visível
+            setTimeout(function () {
+                document.querySelector(".topo-banner").classList.add("animacao-banner");
+            }, 100);
+        });
+
+        // Função para obter a data e hora atual
+        function atualizarDataHora() {
+            var agora = new Date();
+            var data = agora.toLocaleDateString('pt-BR');
+            var hora = agora.toLocaleTimeString('pt-BR');
+
+            // Atualiza o conteúdo da div com a data e hora
+            document.getElementById('data-hora').innerHTML = '<b>Data:</b> ' + data + '  <b>Hora:</b> ' + hora;
+        }
+
+        // Chama a função inicialmente
+        atualizarDataHora();
+
+        // Atualiza a cada segundo
+        setInterval(atualizarDataHora, 1000);
+
+        // Função para adicionar a classe de redução de tamanho ao topo-container após a animação
+        window.onload = function () {
+            setTimeout(function () {
+                document.querySelector('.topo-container').classList.add('retraido');
+            }, 2000); // Adicione 2s para garantir que a animação de fadeOut tenha terminado
+        };
 
 
 
-        <script>
-            // Função para obter a data e hora atual
-            function atualizarDataHora() {
-                var agora = new Date();
-                var data = agora.toLocaleDateString('pt-BR');
-                var hora = agora.toLocaleTimeString('pt-BR');
-        
-                // Atualiza o conteúdo da div com a data e hora
-                document.getElementById('data-hora').innerHTML = '<b>Data:</b> ' + data + '  <b>Hora:</b> ' + hora;
-            }
-        
-            // Chama a função inicialmente
-            atualizarDataHora();
-        
-            // Atualiza a cada segundo
-            setInterval(atualizarDataHora, 1000);
-        </script>
-        
-        
+    </script>
+
+    <script>
+        // Função para adicionar a classe de redução de tamanho ao topo-container após a animação
+        window.onload = function () {
+            // Defina um atraso diferente para a versão mobile
+            var delay = window.innerWidth <= 768 ? 1000 : 2000;
+
+            setTimeout(function () {
+                document.querySelector('.topo-container').classList.add('retraido');
+            }, 500); // Adicione 2s para garantir que a animação de fadeOut tenha terminado
+        };
+    </script>
+
+    </div><!-- fecha container-desktop-->
+
 </body>
 
 </html>
