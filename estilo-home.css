@@ -136,6 +136,12 @@ body {
     display: flex;
     align-items: center;
 }
+.botoes-container input {
+    border-radius: 20px;
+    border: 2px solid #ff892e;
+    padding: 5px;
+    margin-right: 15px;
+}
 
 /* Aplicando a mudança apenas para o contêiner dos botões */
 .botoes-container {

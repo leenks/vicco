@@ -655,6 +655,7 @@
 
             display: block;
             margin-bottom: 10px;
+            font-size: 13px;
         }
 
         .filtro-coluna ul {
@@ -672,7 +673,8 @@
             display: flex;
             flex-wrap: wrap;
             /* Permite que os elementos quebrem para a próxima linha quando não houver espaço suficiente */
-        }
+            justify-content: space-between;
+}
 
         
         .box-requisicoes {
@@ -680,12 +682,12 @@
             /* Tamanho em porcentagem */
             width: 30%;
             min-width: 200px;
-            min-height: 160px;
+            min-height: 120px;
             background-color: #fff;
             margin: 30px 10px;
             display: flex;
             flex-direction: column;
-            border: 1px solid #ddd;
+            border: 3px solid #777;
             border-radius: 10px;
             box-sizing: border-box;
             text-align: center;
@@ -704,44 +706,28 @@
         .box-requisicoes span,
         .box-info-geral span,
         .box-faturamento-geral span {
-            color: orangered;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-top: 50px;
+            color: #fff;
+            /*text-transform: uppercase;*/
+            font-weight: normal;
+            font-size: 18px;
         }
 
 
 
         .box-info-geral {
-            flex: 1;
-            width: 30%;
-            min-width: 200px;
-            min-height: 160px;
+            flex-basis: calc(20% - 20px); /* 20% menos a margem entre os elementos */
+            min-width: 170px;
+            min-height: 100px;
             background-color: #fff;
-            margin: 30px 10px;
+            margin: 30px 5px; /* Ajuste a margem conforme necessário */
             display: flex;
             flex-direction: column;
-            border: 1px solid #ddd;
+            border: 3px solid #777;
             border-radius: 10px;
             box-sizing: border-box;
             text-align: center;
             position: relative;
-            /* Adicionando posição relativa para que a borda possa ser posicionada */
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .box-info-geral::after,
-        .box-requisicoes::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            /* Altura da borda */
-            background-color: #f9a21a;
-            border-radius: 0 0 10px 10px;
-            /* Arredondamento apenas na parte inferior */
         }
 
         .box-faturamento-geral {
@@ -750,44 +736,40 @@
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
             color: #fff;
             text-shadow: 1px 1px #15527c;
-            /* Cor laranja para o texto */
             font-size: 24px;
-            /* Tamanho da fonte */
             padding: 20px;
-            /* Espaçamento interno */
             text-align: center;
-            /* Centralizar texto */
             width: 30%;
-            /* Largura mínima de 30% */
             margin: 20px auto;
-            /* Centralizar na página */
+            font-weight: bold;
+            letter-spacing: -1px;
+            
         }
 
         .titulo2 {
             position: relative;
-            background-color: #f37334;
-            background-image: linear-gradient(to top, #f9a21a, #f05921);
+            background-color: #777;
+            background-image: linear-gradient(to bottom, #777, #666);
             color: white;
-            border-radius: 15px;
+            border-radius: 6px;
             padding: 10px;
             text-align: center;
             font-weight: bold;
-            width: 72%;
-            margin: -20px 20px;
+            width: 88%;
+            height: 10px;
         }
     
 
         .titulo {
             position: relative;
-            background-color: #f37334;
-            background-image: linear-gradient(to top, #f9a21a, #f05921);
+            background-color: #777;
+            /*background-image: linear-gradient(to bottom, #444, #999);*/
             color: white;
             border-radius: 15px;
             padding: 10px;
             text-align: center;
             font-weight: bold;
-            width: 87%;
-            margin: -20px 20px;
+            width: 100%;
         }
 
         .titulo::before {
@@ -802,33 +784,40 @@
             border-style: solid;
             border-width: 20px 15px 0 15px;
             /* Tamanho da ponta do balão */
-            border-color: #f9a21a transparent transparent transparent;
+            border-color: #666 transparent transparent transparent;
         }
 
+    
         .titulo2 img {
             border: none;
-            border-radius: 20%; /* Para tornar a borda circular */
             padding: 3px; /* Espaçamento entre a borda e a imagem */
-            background-color: #ffffff; /* Cor de fundo branca */
-            width: 40px;
+            width: 35px;
         }
 
         .titulo img {
             border: none;
-            border-radius: 20%; /* Para tornar a borda circular */
             padding: 3px; /* Espaçamento entre a borda e a imagem */
-            background-color: #ffffff; /* Cor de fundo branca */
             width: 40px;
+        }
+
+        .titulo img, .titulo span, .titulo2 img, .titulo2 span {
+            display: inline-block;
+            vertical-align:-webkit-baseline-middle;
+            margin-top: -20px;
+            font-size: 16px;
+        }
+        .titulo2 img {
+            padding: 10px 5px 0;
         }
         
 
         .quantidade {
-            color: #444;
+            color: orangered;
             /* Cor do texto para a quantidade */
             font-size: 20px;
             font-weight: bold;
             /* Tamanho da fonte */
-            margin-top: 10px;
+            margin-top: 20px;
             /* Espaçamento superior */
             display: flex;
             justify-content: center;
