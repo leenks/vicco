@@ -1020,7 +1020,7 @@
             /* Versão mobile android!! */
             @media screen and (max-width: 400px) {
                 .box-faturamento-geral {
-                    width: 60%;
+                    width: 65%;
                 }
 
                 .box-info-geral {
