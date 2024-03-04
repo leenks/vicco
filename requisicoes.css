@@ -498,19 +498,6 @@
         /* Ocupa toda a largura */
     }
 
-    /* Estilo para o botão PRÉ-COMPRA */
-    .botao-pre-compra {
-        background-color: #79C14E;
-        text-shadow: 1px 1px #356619;
-        color: white;
-        padding: 10px 10px 10px 30px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
-        position: relative;
-    }
-
     /* Estilo para o ícone */
     .icone-abrir {
         margin-right: -30px;
@@ -536,10 +523,6 @@
         width: 45px;
     }
 
-    .preco-container {
-        position: relative;
-    }
-
     .preco-texto {
         position: absolute;
         top: -25px;
@@ -557,6 +540,7 @@
         border-radius: 5px;
         font-size: 18px;
     }
+
 /* Estilo para o contêiner do título */
 .titulo-container {
     display: flex;
@@ -577,7 +561,31 @@
     background-color: #79C14E;
     text-shadow: 1px 1px #356619;
     color: white;
-    padding: 10px 10px 10px 30px;
+    padding: 7px 10px 6px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+}
+
+.titulo-container .botao-pagamento {
+    background-color: #891475;
+    text-shadow: 1px 1px #2f0020;
+    color: white;
+    padding: 7px 10px 6px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+}
+
+.titulo-container .botao-cotacao {
+    background-color: orangered;
+    text-shadow: 1px 1px #891000;
+    color: white;
+    padding: 7px 10px 6px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -620,7 +628,16 @@
     background-color: orange;
     text-shadow: 1px 1px #c54f20;
     color: white;
-    padding: 10px 10px;
+    padding: 7px 10px 6px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.titulo-container .pagamento {
+    background-color: rgb(187, 2, 144);
+    text-shadow: 1px 1px #550135;
+    color: white;
+    padding: 7px 10px 6px 10px;
     border-radius: 5px;
     font-size: 18px;
 }
