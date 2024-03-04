@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="requisicoes.css">
+    <title>Vicco Construtora</title>
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+            <div class="caixa-menu2">
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-aberta-laranja.png" alt="Requisição">
+                        <p>Nova Requisição</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-pagamento-laranja.png" alt="Reembolso">
+                        <p>Novo Reembolso</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-pago-laranja.png" alt="Lançamento">
+                        <p>Lançamento de Preços</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-aprovacao.png" alt="Aprovação">
+                        <p>Aprovação</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-mostrar.png" alt="Mostrar">
+                        <p>Mostrar</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">TODAS AS OBRAS</a>
+                        <span> > </span>
+                        <a href="#">SUPRIMENTOS</a>
+                        <span> > </span>
+                        <span>REQUISIÇÕES</span>
+                    </div>
+                    <!--Filtros e Visualizção modos-->
+                    <div class="wrap-toggle">
+                        <div class="toggle-container">
+                            <button onclick="alterarModo()">
+                                <span id="modo-icon" class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
+                            </button>
+                        </div>
+                        <div class="toggle-container2">
+                            <button onclick="openFilterModal(); updateFilterDisplay();">
+                                <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
+                            </button>
+                        </div>
+
+                        <div class="filtros-selecionados">
+                            <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
+                            <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="conteudo-in">
+
+                        <h2>Requisições</h2>
+
+                        <div class="cards-container">
+
+                            <div class="card">
+                                <!-- Adiciona o ícone, título e botão ao título -->
+                                <h3 class="titulo-container">
+                                    <span class="icone-abrir"><img src="imgs/ico-clique.png" alt="Ícone"></span>
+                                    <span>SMART FIT - PIRITUBA 2</span>
+                                    <span class="botao-pre-compra">
+                                        <img class="icone-pre-compra" src="imgs/ico-pre-compra-azul.png"
+                                            alt="Ícone de Pré-Compra">
+                                        PRÉ-COMPRA
+                                    </span>
+                                    <div class="preco-container">
+                                        <span class="preco-texto">Preço:</span>
+                                        <span class="preco-valor">120.000,00</span>
+                                    </div>
+                                </h3>
+
+                                <div class="cards-container modo-simples2" id="conteudoModoSimples2" style="display: none;">
+                                    <table class="table-requisicoes">
+                                        <thead>
+                                            <tr>
+                                                <th>Ver</th>
+                                                <th>Número</th>
+                                                <th>Ordem</th>
+                                                <th>Obra</th>
+                                                <th>Autor</th>
+                                                <th>Descrição</th>
+                                                <th>Grupo</th>
+                                                <th>Valor</th>
+                                                <th>Requisição</th>
+                                                <th>Entrega</th>
+                                                <th>Tipo</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Linhas da tabela aqui -->
+                                            <tr>
+                                                <td><span class="icone-abrir"><img src="imgs/ico-clique.png" alt="Ícone"></span></td>
+                                                <td>005420</td>
+                                                <td>SFFV2-039</td>
+                                                <td>SMART FIT - PIRITUBA 2</td>
+                                                <td>Nome do Autor</td>
+                                                <td>Locação de Trado (Estacas)</td>
+                                                <td>Fundações</td>
+                                                <td>R$ 120.000,00</td>
+                                                <td>01/02/23</td>
+                                                <td>01/02/23</td>
+                                                <td>Requisição</td>
+                                                <td><span class="botao-pre-compra">
+                                                    <img class="icone-pre-compra" src="imgs/ico-pre-compra-azul.png"
+                                                        alt="Ícone de Pré-Compra">
+                                                    PRÉ-COMPRA
+                                                </span></td>
+                                            </tr>
+                                            <!-- Adicione mais linhas conforme necessário -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+
+
+                                <div class="box-info-requisicao" id="oculta">
+                                    <div class="box-info-requisicao-borda2">
+                                        <label for="numero">Número:</label>
+                                        <span class="span-infos-requisicao" id="numero">005420</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda2">
+                                        <label for="empenho">Empenho:</label>
+                                        <span class="span-infos-requisicao" id="empenho">Requisição</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda">
+                                        <label for="requisicao">Requisição:</label>
+                                        <span class="span-infos-requisicao" id="requisicao">01/02/23</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda">
+                                        <label for="data_necessaria">Data Necessária:</label>
+                                        <span class="span-infos-requisicao" id="data_necessaria">01/02/23</span>
+                                    </div>
+                                    <div class="box-info-requisicao-ultima">
+                                        <label for="descricao">Descrição da Requisição:</label>
+                                        <span class="span-infos-requisicao" id="descricao">Locação de Trado (Estacas)</span>
+                                    </div>
+                                </div><!--box info requisicao-->
+
+                                
+
+                                <div class="box-info-requisicao"  id="oculta">
+                                    <div class="box-info-requisicao-borda2">
+                                        <label for="ordem">Ordem Compra:</label>
+                                        <span class="span-infos-requisicao" id="ordem">SFFV2-039</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda2">
+                                        <label for="tipo">Tipo:</label>
+                                        <span class="span-infos-requisicao" id="tipo">Obra</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda">
+                                        <label for="data_aprovacao">Data Aprovação:</label>
+                                        <span class="span-infos-requisicao" id="data_aprovacao">01/02/23</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda">
+                                        <label for="data_compra">Data Compra:</label>
+                                        <span class="span-infos-requisicao" id="data_compra">01/02/23</span>
+                                    </div>
+                                    <div class="box-info-requisicao-ultima">
+                                        <label for="contrato">Contrato Vinculado:</label>
+                                        <span class="span-infos-requisicao" id="contrato">TRA-02310-005</span>
+                                    </div>
+                                </div><!--box info requisicao-->
+
+                                <div class="box-info-requisicao">
+                                    <div class="box-info-requisicao-borda"  id="oculta">
+                                        <label for="data_entrega">Data Entrega:</label>
+                                        <span class="span-infos-requisicao" id="data_entrega">01/02/23</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda"  id="oculta">
+                                        <label for="data_liquidacao">Data Liquidação:</label>
+                                        <span class="span-infos-requisicao" id="data_liquidacao">01/02/23</span>
+                                    </div>
+                                    <div class="box-info-requisicao-ultima2"  id="oculta">
+                                        <label for="grupo">Grupo:</label>
+                                        <span class="span-infos-requisicao" id="grupo">Fundações</span>
+                                        
+                                    </div>
+                                    <div class="box-info-requisicao-ultima3"  id="oculta">
+                                        <label for="sub_grupo">SubGrupo:</label>
+                                        <span class="span-infos-requisicao" id="sub_grupo">Escavações</span>
+                                    </div>
+                                </div><!--box info requisicao-->
+                                
+                            </div><!--div card-->
+
+                            <div class="card">
+                                <!-- Adiciona o ícone, título e botão ao título -->
+                            <h3 class="titulo-container">
+                                <span class="icone-abrir"><img src="imgs/ico-clique.png" alt="Ícone"></span>
+                                <span>SMART FIT - PIRITUBA 2</span>
+                                <span class="botao-pre-compra">
+                                    <img class="icone-pre-compra" src="imgs/ico-pre-compra-azul.png"
+                                        alt="Ícone de Pré-Compra">
+                                    PRÉ-COMPRA
+                                </span>
+                                <div class="preco-container">
+                                    <span class="preco-texto">Preço:</span>
+                                    <span class="preco-valor">122.000,00</span>
+                                </div>
+                            </h3>
+                            
+
+                            <div class="box-info-requisicao" id="oculta">
+                                <div class="box-info-requisicao-borda2">
+                                    <label for="numero">Número:</label>
+                                    <span class="span-infos-requisicao" id="numero">005420</span>
+                                </div>
+                                <div class="box-info-requisicao-borda2">
+                                    <label for="empenho">Empenho:</label>
+                                    <span class="span-infos-requisicao" id="empenho">Requisição</span>
+                                </div>
+                                <div class="box-info-requisicao-borda">
+                                    <label for="requisicao">Requisição:</label>
+                                    <span class="span-infos-requisicao" id="requisicao">01/02/23</span>
+                                </div>
+                                <div class="box-info-requisicao-borda">
+                                    <label for="data_necessaria">Data Necessária:</label>
+                                    <span class="span-infos-requisicao" id="data_necessaria">01/02/23</span>
+                                </div>
+                                <div class="box-info-requisicao-ultima">
+                                    <label for="descricao">Descrição da Requisição:</label>
+                                    <span class="span-infos-requisicao" id="descricao">Locação de Trado (Estacas)</span>
+                                </div>
+                            </div><!--box info requisicao-->
+
+                            <div class="box-info-requisicao"  id="oculta">
+                                <div class="box-info-requisicao-borda2">
+                                    <label for="ordem">Ordem Compra:</label>
+                                    <span class="span-infos-requisicao" id="ordem">SFFV2-039</span>
+                                </div>
+                                <div class="box-info-requisicao-borda2">
+                                    <label for="tipo">Tipo:</label>
+                                    <span class="span-infos-requisicao" id="tipo">Obra</span>
+                                </div>
+                                <div class="box-info-requisicao-borda">
+                                    <label for="data_aprovacao">Data Aprovação:</label>
+                                    <span class="span-infos-requisicao" id="data_aprovacao">01/02/23</span>
+                                </div>
+                                <div class="box-info-requisicao-borda">
+                                    <label for="data_compra">Data Compra:</label>
+                                    <span class="span-infos-requisicao" id="data_compra">01/02/23</span>
+                                </div>
+                                <div class="box-info-requisicao-ultima">
+                                    <label for="contrato">Contrato Vinculado:</label>
+                                    <span class="span-infos-requisicao" id="contrato">TRA-02310-005</span>
+                                </div>
+                            </div><!--box info requisicao-->
+
+                            <div class="box-info-requisicao">
+                                <div class="box-info-requisicao-borda"  id="oculta">
+                                    <label for="data_entrega">Data Entrega:</label>
+                                    <span class="span-infos-requisicao" id="data_entrega">01/02/23</span>
+                                </div>
+                                <div class="box-info-requisicao-borda"  id="oculta">
+                                    <label for="data_liquidacao">Data Liquidação:</label>
+                                    <span class="span-infos-requisicao" id="data_liquidacao">01/02/23</span>
+                                </div>
+                                <div class="box-info-requisicao-ultima2"  id="oculta">
+                                    <label for="grupo">Grupo:</label>
+                                    <span class="span-infos-requisicao" id="grupo">Fundações</span>
+                                    
+                                </div>
+                                <div class="box-info-requisicao-ultima3"  id="oculta">
+                                    <label for="sub_grupo">SubGrupo:</label>
+                                    <span class="span-infos-requisicao" id="sub_grupo">Escavações</span>
+                                </div>
+                            </div><!--box info requisicao-->
+                            
+                        </div><!--div card-->
+
+                        <div class="card">
+                            <!-- Adiciona o ícone, título e botão ao título -->
+                        <h3 class="titulo-container">
+                            <span class="icone-abrir"><img src="imgs/ico-clique.png" alt="Ícone"></span>
+                            <span>SMART FIT - PIRITUBA 2</span>
+                            <span class="botao-pre-compra">
+                                <img class="icone-pre-compra" src="imgs/ico-pre-compra-azul.png"
+                                    alt="Ícone de Pré-Compra">
+                                PRÉ-COMPRA
+                            </span>
+                            <div class="preco-container">
+                                <span class="preco-texto">Preço:</span>
+                                <span class="preco-valor">122.000,00</span>
+                            </div>
+                        </h3>
+                        
+
+                        <div class="box-info-requisicao" id="oculta">
+                            <div class="box-info-requisicao-borda2">
+                                <label for="numero">Número:</label>
+                                <span class="span-infos-requisicao" id="numero">005420</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2">
+                                <label for="empenho">Empenho:</label>
+                                <span class="span-infos-requisicao" id="empenho">Requisição</span>
+                            </div>
+                            <div class="box-info-requisicao-borda">
+                                <label for="requisicao">Requisição:</label>
+                                <span class="span-infos-requisicao" id="requisicao">01/02/23</span>
+                            </div>
+                            <div class="box-info-requisicao-borda">
+                                <label for="data_necessaria">Data Necessária:</label>
+                                <span class="span-infos-requisicao" id="data_necessaria">01/02/23</span>
+                            </div>
+                            <div class="box-info-requisicao-ultima">
+                                <label for="descricao">Descrição da Requisição:</label>
+                                <span class="span-infos-requisicao" id="descricao">Locação de Trado (Estacas)</span>
+                            </div>
+                        </div><!--box info requisicao-->
+
+                        <div class="box-info-requisicao"  id="oculta">
+                            <div class="box-info-requisicao-borda2">
+                                <label for="ordem">Ordem Compra:</label>
+                                <span class="span-infos-requisicao" id="ordem">SFFV2-039</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2">
+                                <label for="tipo">Tipo:</label>
+                                <span class="span-infos-requisicao" id="tipo">Obra</span>
+                            </div>
+                            <div class="box-info-requisicao-borda">
+                                <label for="data_aprovacao">Data Aprovação:</label>
+                                <span class="span-infos-requisicao" id="data_aprovacao">01/02/23</span>
+                            </div>
+                            <div class="box-info-requisicao-borda">
+                                <label for="data_compra">Data Compra:</label>
+                                <span class="span-infos-requisicao" id="data_compra">01/02/23</span>
+                            </div>
+                            <div class="box-info-requisicao-ultima">
+                                <label for="contrato">Contrato Vinculado:</label>
+                                <span class="span-infos-requisicao" id="contrato">TRA-02310-005</span>
+                            </div>
+                        </div><!--box info requisicao-->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-borda"  id="oculta">
+                                <label for="data_entrega">Data Entrega:</label>
+                                <span class="span-infos-requisicao" id="data_entrega">01/02/23</span>
+                            </div>
+                            <div class="box-info-requisicao-borda"  id="oculta">
+                                <label for="data_liquidacao">Data Liquidação:</label>
+                                <span class="span-infos-requisicao" id="data_liquidacao">01/02/23</span>
+                            </div>
+                            <div class="box-info-requisicao-ultima2"  id="oculta">
+                                <label for="grupo">Grupo:</label>
+                                <span class="span-infos-requisicao" id="grupo">Fundações</span>
+                                
+                            </div>
+                            <div class="box-info-requisicao-ultima3"  id="oculta">
+                                <label for="sub_grupo">SubGrupo:</label>
+                                <span class="span-infos-requisicao" id="sub_grupo">Escavações</span>
+                            </div>
+                        </div><!--box info requisicao-->
+                        
+                    </div><!--div card-->
+                    
+                        </div><!--div cards-container-->
+                    </div><!--div conteudo in-->
+                </div><!--div container desktop-->
+
+            </div><!--div conteudo-->
+
+        </div><!--container desktop-->
+
+
+        <!-- Modal de Filtro -->
+        <div id="filterModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFilterModal()">&times;</span>
+
+                <!-- Conteúdo do Filtro -->
+                <h2>Informações de Filtro para Requisições</h2>
+
+                <!-- Tabela de Filtros -->
+                <div class="filtro-tabela">
+
+                    <!-- Primeira Coluna -->
+                    <div class="filtro-coluna">
+                        <label for="dataInicial">Data Inicial:</label>
+                        <input type="date" id="dataInicial">
+
+                        <p><strong>Tipo:</strong></p>
+                        <label>
+                            <input type="checkbox" id="tipoRequisicao"> Requisições
+                        </label>
+                        <label>
+                            <input type="checkbox" id="tipoReembolso"> Reembolsos
+                        </label>
+                        <label>
+                            <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                        </label>
+                    </div>
+
+                    <!-- Segunda Coluna -->
+                    <div class="filtro-coluna">
+                        <label for="dataFinal">Data Final:</label>
+                        <input type="date" id="dataFinal">
+                    </div>
+
+                    <!-- Terceira Coluna -->
+                    <div class="filtro-coluna">
+                        <h3>Status da Requisição:</h3>
+                        <label>
+                            <input type="checkbox" id="statusAberta"> Aberta
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusCotacao"> Cotação
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusAprovacao"> Aprovação
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusReprovado"> Reprovado
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusPagamento"> Pagamento
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusComprada"> Comprada
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusEntregue"> Entregue
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusCancelada"> Cancelada
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusRecusada"> Recusada
+                        </label>
+                    </div>
+
+                    <!-- Quarta Coluna -->
+                    <div class="filtro-coluna">
+                        <h3>Obras:</h3>
+                        <label>
+                            <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                        </label>
+
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e
+                                    rh)
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                </label>
+                            </li>
+                        </ul>
+                    </div><!--div filtro colunas-->
+
+                </div><!--div filtro tabela-->
+
+                <!-- Botões de Ação -->
+                <div>
+                    <button class="filtrar" onclick="filtrar()">Filtrar</button>
+                    <button class="limpar" onclick="limparFiltro()">Limpar</button>
+                </div>
+
+            </div><!--div modal content-->
+        </div><!--div filter modal-->
+
+
+        <script src="filtro.js"></script>
+</body>
+
+</html>

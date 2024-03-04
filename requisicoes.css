@@ -1,0 +1,1226 @@
+    body {
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to top, #e3e3e3, #fff);
+        color: #555;
+        line-height: 20px;
+        letter-spacing: 1px;
+    }
+
+    .menu-item,
+    .menu-item2 p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-full {
+        width: 100%;
+    }
+
+    .container-desktop {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .topo-container {
+        position: relative;
+        min-height: 200px;
+        overflow: hidden;
+        /* Para esconder o conteúdo que ultrapassa a div */
+    }
+
+    .topo-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('imgs/pe-home.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+        /* Opacidade da imagem de fundo */
+        z-index: -1;
+        /* Coloca a imagem de fundo atrás do conteúdo */
+    }
+
+    .topo {
+        padding: 30px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 50px;
+        margin-right: 40px;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .menu-item,
+    .menu-item2 {
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .menu-item p {
+        margin: 0;
+        font-weight: bold;
+        color: #666;
+    }
+
+    .menu-item a,
+    .menu-item2 a {
+        color: #444;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .menu-item a:hover,
+    .menu-item2 a:hover {
+        color: #f99e32;
+    }
+
+    .menu-item img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+
+    .menu-item2 img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+
+    .separa-topo {
+        background-image: url(imgs/separa-top.png);
+        background-repeat: repeat-x;
+        /* Repete apenas na horizontal */
+        background-size: auto;
+        margin: 0;
+        padding-bottom: 0;
+    }
+
+    .mapa-nav:nth-of-type(1) {
+        border: 2px solid #c54f20;
+        background: white;
+        font-size: 12px;
+        z-index: 1;
+        width: 100%;
+        height: 20px;
+        padding-top: 4px;
+    }
+
+    .mapa-nav:nth-of-type(2) {
+        border: 2px solid #f37334;
+        background: white;
+        font-size: 11px;
+        z-index: 2;
+        width: 90%;
+        height: 20px;
+        top: -8px;
+        margin-left: 5%;
+        padding-top: 4px;
+    }
+
+    .mapa-nav:nth-of-type(3) {
+        border: 2px solid #faa936;
+        background: white;
+        font-size: 10px;
+        z-index: 3;
+        width: 80%;
+        height: 15px;
+        top: -15px;
+        margin-left: 10%;
+        padding-top: 4px;
+    }
+
+    .mapa-nav:nth-of-type(4) {
+        border: 2px solid #faa936;
+        background: white;
+        font-size: 11px;
+        ;
+        z-index: 4;
+        width: 70%;
+        height: 10px;
+        top: -50px;
+    }
+
+    .mapa-nav:nth-of-type(5) {
+        background: #ffd38d;
+        font-size: 11px;
+        z-index: 5;
+    }
+
+    .mapa-nav {
+        color: #666;
+        font-weight: bold;
+        font-size: 10px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+
+
+    .caixa-menu {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+
+    .caixa-menu2 {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+
+    .usuario-info {
+        display: inline-block;
+        margin: 0;
+        padding: 5px;
+        text-align: right;
+        max-width: 190px;
+    }
+
+    .usuario-info h4 {
+        margin: 15px 0;
+        font-size: 13px;
+    }
+
+    .usuario-info p {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0px;
+        font-size: 11px;
+        line-height: normal;
+    }
+
+    .usuario-info span {
+        display: inline-block;
+    }
+
+    #data-hora {
+        font-size: 12px;
+        color: #555;
+        margin-top: 5px;
+        line-height: 15px;
+        min-width: 210px;
+    }
+
+    button {
+        padding: 10px;
+        margin: 5px 0;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+
+    .usuario-info button {
+        background-color: #666;
+        text-shadow: 1px 1px #000;
+        color: white;
+        text-transform: uppercase;
+        padding: 6px 20px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+
+    .usuario-info button:hover {
+        background-color: #444;
+        text-shadow: 1px 1px #000;
+        color: white;
+        text-transform: uppercase;
+        padding: 6px 20px;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+
+    .conteudo {
+        padding: 5px;
+        background-color: #fff;
+        margin: 0px 0 40px;
+        border-radius: 10px;
+        border: 3px solid #f37334;
+        position: relative;
+    }
+
+
+    .conteudo-in {
+        padding: 0px;
+        background-color: #fff;
+        margin: 0;
+    }
+
+    .conteudo p {
+        font-size: 14px;
+    }
+
+
+    /* ESSA É A CAIXA DE FILTROS */
+
+    .filtros-selecionados {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        /* Alinha os filtros à direita */
+    }
+
+    .filtros-selecionados span {
+        background-color: #79C14E;
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        /* Adiciona cursor para indicar que é clicável */
+    }
+
+    .filtros-selecionados span:hover {
+        background-color: #A4A4A4;
+
+    }
+
+    .filtros-selecionados button {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #444;
+        font-size: 12px;
+        padding: 0px 5px !important;
+    }
+
+
+  
+        /* ESSA É A CAIXA DE FILTROS */
+
+        .filtros-selecionados {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            /* Alinha os filtros à direita */
+        }
+
+        .filtros-selecionados span {
+            background-color: #79C14E;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            /* Adiciona cursor para indicar que é clicável */
+        }
+
+        .filtros-selecionados span:hover {
+            background-color: #A4A4A4;
+
+        }
+
+        .filtros-selecionados button {
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #444;
+            font-size: 12px;
+            padding: 0px 5px !important;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            animation: slideIn 0.5s ease;
+        }
+
+        /* CLASSE DE ANIMAÇÃO PRO SLIDER DO FILTRO */
+
+        @keyframes slideIn {
+            from {
+                margin-left: 100%;
+                /* Começa fora da tela à direita */
+            }
+
+            to {
+                margin-left: 0;
+                /* Termina na posição inicial */
+            }
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .modal-content select {
+            margin-left: 10px;
+        }
+
+        .modal-content h2,
+        .modal-content label,
+        .modal-content div {
+            margin-bottom: 20px;
+            line-height: normal;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+
+        button.filtrar {
+            background-color: #79C14E;
+            /* Verde */
+            color: white;
+        }
+
+        button.limpar {
+            background-color: #A4A4A4;
+            /* Amarelo */
+            color: white;
+        }
+
+
+    .informacoes {
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .informacoes h4 {
+        color: #f99e32;
+        margin-top: 15px;
+    }
+
+    .informacoes p {
+        font-size: 12px;
+        color: #555;
+    }
+
+    .informacoes a {
+        font-size: 12px;
+        color: #fff;
+        background-color: #ff842c;
+        border-radius: 5px;
+        padding: 5px 10px 5px 10px;
+        text-decoration: none;
+        box-shadow: 1px 1px #cf6219;
+        font-weight: bold;
+    }
+
+    .conteudo h2 {
+        margin: 30px 10px 30px;
+        font-size: 30px;
+        color: #333;
+    }
+
+    .conteudo-in h3 {
+        margin: 30px 0px 30px;
+        font-size: 24px;
+        color: orangered;
+    }
+
+    /* Estilo para o contêiner do título */
+    .titulo-container {
+        display: flex;
+        justify-content: space-between;
+        /* Alinha os elementos ao espaço entre eles */
+        align-items: center;
+        /* Alinha os elementos verticalmente */
+        width: 100%;
+        /* Ocupa toda a largura */
+    }
+
+    /* Estilo para o botão PRÉ-COMPRA */
+    .botao-pre-compra {
+        background-color: #79C14E;
+        text-shadow: 1px 1px #356619;
+        color: white;
+        padding: 10px 10px 10px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        position: relative;
+    }
+
+    /* Estilo para o ícone */
+    .icone-abrir {
+        margin-right: -30px;
+        /* Ajusta o espaçamento entre o ícone e o texto */
+        position: relative;
+        /* Permite que o ícone de pré-compra seja sobreposto */
+        z-index: 1;
+        /* Garante que o ícone fique sobre o botão */
+    }
+
+    /* Estilo para o ícone de pré-compra */
+    .icone-pre-compra {
+        position: absolute;
+        /* Posicionamento absoluto em relação ao botão */
+        left: -15%;
+        /* Ajusta a posição para que fique sobre o início do botão */
+        top: 50%;
+        /* Alinha o ícone verticalmente ao centro */
+        transform: translateY(-50%);
+        /* Ajusta a posição vertical */
+        z-index: 1;
+        /* Garante que o ícone fique sobre o botão */
+        width: 45px;
+    }
+
+    .preco-container {
+        position: relative;
+    }
+
+    .preco-texto {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        font-size: 13px;
+        color: #444;
+        font-weight: normal;
+    }
+
+    .preco-valor {
+        background-color: orange;
+        text-shadow: 1px 1px #c54f20;
+        color: white;
+        padding: 10px 10px;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+/* Estilo para o contêiner do título */
+.titulo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px; /* Mantém o espaçamento inferior para todos os modos */
+}
+
+/* Estilo para o título em todos os modos */
+.titulo-container h3 {
+    font-size: 20px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilo para o botão PRÉ-COMPRA */
+.titulo-container .botao-pre-compra {
+    background-color: #79C14E;
+    text-shadow: 1px 1px #356619;
+    color: white;
+    padding: 10px 10px 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+}
+
+/* Estilo para o ícone */
+.titulo-container .icone-abrir {
+    margin-right: -30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo para o ícone de pré-compra */
+.titulo-container .icone-pre-compra {
+    position: absolute;
+    left: -15%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 45px;
+}
+
+/* Estilo para o preço */
+.titulo-container .preco-container {
+    position: relative;
+}
+
+.titulo-container .preco-texto {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    font-size: 13px;
+    color: #444;
+    font-weight: normal;
+}
+
+.titulo-container .preco-valor {
+    background-color: orange;
+    text-shadow: 1px 1px #c54f20;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+    .span-infos-requisicao {
+        font-weight: bold;
+    }
+
+    .box-info-requisicao {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .box-info-requisicao-borda {
+        width: 18.5%;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 5px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin-right: 10px;
+        /* Espaçamento entre as divs */
+        height: 60px;
+    }
+
+    .box-info-requisicao-borda2 {
+        width: 16.5%;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 5px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin-right: 10px;
+        /* Espaçamento entre as divs */
+        background-color: #eee;
+        height: 60px;
+    }
+
+
+    .box-info-requisicao-ultima {
+        width: 30.5%;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 5px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 1px;
+        height: 60px;
+    }
+
+    .box-info-requisicao-ultima2 {
+        width: 40.5%;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 5px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 1px;
+        min-height: 60px;
+    }
+
+    .box-info-requisicao-ultima3 {
+        width: 35.5%;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 5px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 1px;
+        margin-left: 5px;
+        min-height: 60px;
+    }
+
+    /* Estilo para os inputs */
+    input {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 8px;
+    }
+
+    /* Estilo para os labels */
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    /*TABELA REQUISISCOES MODO-LISTA-SIMPLES **/
+    .table-requisicoes {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        /* Borda arredondada */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombra */
+        overflow: hidden;
+        /* Ocultar sombra que ultrapassa a borda arredondada */
+        display: none;
+    }
+
+    /* CSS para exibir a tabela no modo-simples2 */
+.modo-simples2 .table-requisicoes {
+    display: block;
+}
+
+    .table-requisicoes th {
+        background-color: #f37334;
+        /* Cor de fundo laranja para o cabeçalho */
+        color: white;
+        /* Cor do texto branco */
+        padding: 10px;
+        text-align: center;
+    }
+
+    .table-requisicoes td,
+    .table-requisicoes th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .table-requisicoes tr:nth-child(even) {
+        background-color: #f2f2f2;
+        /* Cor de fundo cinza claro para linhas pares */
+    }
+
+    .table-requisicoes tr:hover {
+        background-color: #ddd;
+        /* Cor de fundo cinza escuro ao passar o mouse */
+    }
+
+
+    /* CARDS */
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 100%;
+        min-height: 170px;
+        margin: 10px;
+        padding: 5px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: relative;
+        align-items: flex-start;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+    /* CARDS MODOS DE LISTAGEM*/
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cards-container.modo-lista .card {
+        width: 100%;
+        height: 200px;
+        margin: 10px;
+        padding: 5px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: relative;
+        align-items: flex-start;
+    }
+
+    .cards-container.modo-lista .titulo-container {
+        margin: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+
+    /* Nova classe para o modo-simples */
+    .cards-container.modo-simples .card {
+        width: 97%;
+        max-height: 55px;
+        margin: 10px;
+        padding: 5px 5px 0 5px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: relative;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+
+
+    .cards-container.modo-simples2 .card {
+        width: 97%;
+        min-height: 175px;
+        margin: 10px 10px 0 10px;
+        padding: 5px 5px 4px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: relative;
+        align-items: flex-start;
+    }    
+    .modo-simples2 .box-info-requisicao {
+        margin-right: 10px; /* Adicione margem direita para separar os elementos */
+        width: auto; /* Defina uma largura automática para que os elementos ocupem apenas o espaço necessário */
+        font-size: 14px; /* Reduza o tamanho da fonte */
+        display: none;
+    }
+    
+
+
+    .toggle-container .toggle-container2 button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .wrap-toggle {
+        background-color: white;
+        opacity: 98%;
+        position: sticky;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        display: flex;
+        margin-left: auto;
+        z-index: 2;
+    }
+
+    .toggle-container,
+    .toggle-container2 {
+        margin-right: 10px;
+        /* Ajuste a margem conforme necessário */
+    }
+
+    /* MENU MIGALHAS - OU MAPA DE NAVEGAÇÃO */
+
+    .breadcrumbs {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        font-size: 10px;
+        color: #444;
+    }
+
+    .breadcrumbs a {
+        color: #444;
+        text-decoration: none;
+        margin-right: 5px;
+    }
+
+    .breadcrumbs span {
+        margin-right: 5px;
+    }
+
+
+
+
+
+    /* FILTROS */
+
+    .filtro-tabela {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        z-index: 10001;
+    }
+
+    .filtro-coluna {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .filtro-coluna input {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid;
+    }
+
+
+    .filtro-coluna label {
+
+        display: block;
+        margin-bottom: 5px;
+        width: 10%;
+    }
+
+    .filtro-coluna ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .filtro-coluna li {
+        margin-bottom: 5px;
+    }
+
+    /* BOXS REQUISIÇÕES */
+
+    .container-box-requisicoes {
+        display: flex;
+        flex-wrap: wrap;
+        /* Permite que os elementos quebrem para a próxima linha quando não houver espaço suficiente */
+    }
+
+    .box-requisicoes {
+        width: 30%;
+        /* Tamanho em porcentagem */
+        min-width: 200px;
+        /* Largura mínima para evitar que os blocos fiquem muito estreitos */
+        min-height: 120px;
+        background-color: #fff;
+        /* Cor de fundo padrão */
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        /* Alinhar elementos verticalmente */
+        border: 1px solid #ddd;
+        /* Adicionando uma borda para separar visualmente as caixas */
+        box-sizing: border-box;
+        /* Considerar padding e borda dentro do tamanho definido */
+    }
+
+    .box-info-geral {
+        flex: 1;
+        /* Ocupa o mesmo espaço dentro do flex container */
+        width: 30%;
+        /* Tamanho em porcentagem */
+        min-width: 200px;
+        /* Largura mínima para evitar que os blocos fiquem muito estreitos */
+        min-height: 120px;
+        background-color: #fff;
+        /* Cor de fundo padrão */
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        /* Alinhar elementos verticalmente */
+        border: 1px solid #ddd;
+        /* Adicionando uma borda para separar visualmente as caixas */
+        border-radius: 10px;
+        box-sizing: border-box;
+        /* Considerar padding e borda dentro do tamanho definido */
+        text-align: center;
+        /* Centralizar texto */
+    }
+
+    .box-faturamento-geral {
+        border-radius: 10px;
+        background-color: #fff;
+        border: 2px solid #f37334;
+        color: #f37334;
+        /* Cor laranja para o texto */
+        font-size: 24px;
+        /* Tamanho da fonte */
+        padding: 20px;
+        /* Espaçamento interno */
+        text-align: center;
+        /* Centralizar texto */
+        width: 30%;
+        /* Largura mínima de 30% */
+        margin: 20px auto;
+        /* Centralizar na página */
+    }
+
+    .titulo {
+        background-color: #f37334;
+        /* Cor de fundo laranja para o título */
+        color: white;
+        /* Cor do texto branco */
+        border-radius: 10px 10px 0 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .quantidade {
+        color: #444;
+        /* Cor do texto para a quantidade */
+        font-size: 18px;
+        /* Tamanho da fonte */
+        margin-top: 20px;
+        /* Espaçamento superior */
+        display: flex;
+        justify-content: center;
+        /* Centralizar horizontalmente */
+        align-items: center;
+    }
+
+    .imagem {
+        width: 100%;
+        /* Garante que a imagem ocupe toda a largura do container */
+        display: block;
+        /* Remove qualquer margem extra */
+        margin-top: 20px;
+        /* Espaçamento entre os blocos e a imagem */
+    }
+
+
+
+
+    /* VERSAO MOBILE */
+
+    @media screen and (max-width: 768px) {
+        .topo {
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 0px;
+        }
+
+        .menu,
+        .caixa-menu {
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .menu-item {
+            margin-right: 0;
+            margin-bottom: 10px;
+            width: 90px;
+            text-align: center;
+        }
+
+        .menu-item2 {
+            margin-right: 0;
+            margin-bottom: 10px;
+            width: calc(33.33% - 20px);
+            /* Define a largura para 33.33% e subtrai a margem entre os itens */
+            text-align: center;
+        }
+
+        .conteudo {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .modo-icon {
+            text-transform: capitalize;
+            color: #888;
+        }
+
+        .toggle-container {
+            display: none;
+        }
+
+        .toggle-container2 {
+            display: block;
+        }
+
+        .mapa-nav:nth-of-type(1) {
+            border: 2px solid #c54f20;
+            background: white;
+            font-size: 12px;
+            z-index: 1;
+            width: 92%;
+            height: 20px;
+            padding-top: 4px;
+        }
+
+        .mapa-nav:nth-of-type(2) {
+            border: 2px solid #f37334;
+            background: white;
+            font-size: 11px;
+            z-index: 2;
+            width: 84%;
+            height: 20px;
+            top: -8px;
+            margin-left: 5%;
+            padding-top: 4px;
+        }
+
+        .mapa-nav:nth-of-type(3) {
+            border: 2px solid #faa936;
+            background: white;
+            font-size: 10px;
+            z-index: 3;
+            width: 74%;
+            height: 15px;
+            top: -15px;
+            margin-left: 10%;
+            padding-top: 4px;
+        }
+
+        .mapa-nav:nth-of-type(4) {
+            border: 2px solid #faa936;
+            background: white;
+            font-size: 11px;
+            ;
+            z-index: 4;
+            width: 64%;
+            height: 10px;
+            top: -50px;
+        }
+
+
+        .card {
+            display: flex;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            /* Adiciona posição relativa ao contêiner do card */
+        }
+
+        .card .imagem-container {
+            width: 50%;
+            margin-bottom: 10px;
+            height: auto;
+        }
+
+        .card .imagem-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card .selo {
+            position: absolute;
+            top: 10px;
+            /* Ajuste a posição vertical conforme necessário */
+            left: 10px;
+            /* Ajuste a posição horizontal conforme necessário */
+            background-color: rgba(255, 165, 0, 0.7);
+            /* Cor de fundo do selo */
+            color: #fff;
+            /* Cor do texto do selo */
+            padding: 5px 10px;
+            /* Espaçamento interno do selo */
+            border-radius: 5px;
+            /* Arredondamento das bordas do selo */
+            font-size: 14px;
+            /* Tamanho da fonte do selo */
+            font-weight: bold;
+            /* Peso da fonte do selo */
+            z-index: 1;
+            /* Garante que o selo esteja sobre a imagem */
+        }
+
+        .card .selo,
+        .card .selo-amarelo,
+        .card .selo-verde {
+            position: static;
+            margin-top: 10px;
+            border-radius: 50px;
+            padding: 2px 5px;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .card .informacoes {
+            width: 100%;
+            /* Ocupa a largura total */
+            margin-left: 10px;
+        }
+
+        .card .informacoes h4 {
+            margin-top: 5px;
+            /* Adiciona margem acima do título */
+        }
+    }
+
+    /* Versão Desktop pro modo-lista das obras */
+    @media screen and (min-width: 769px) {
+        .cards-container.modo-lista .card {
+            flex-basis: 100%;
+            min-width: 87%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .cards-container.modo-lista .card .imagem-container {
+            width: 30%;
+            margin-right: 15px;
+        }
+
+        .cards-container.modo-lista .card .informacoes {
+            width: 70%;
+        }
+
+    }
