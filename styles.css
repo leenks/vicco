@@ -326,6 +326,7 @@ textarea {
             border: 1px solid #444;
             font-size: 12px;
             padding: 0px 5px !important;
+            font-family: 'Lato', sans-serif;
         }
 
 
@@ -403,6 +404,7 @@ textarea {
             border-radius: 5px;
             font-size: 14px;
             text-transform: capitalize;
+            font-family: 'Lato', sans-serif;
         }
 
         button.filtrar {
@@ -424,6 +426,7 @@ textarea {
         .cards-container {
             display: flex;
             flex-wrap: wrap;
+            font-family: 'Lato', sans-serif;
         }
 
         .card {
@@ -456,6 +459,7 @@ textarea {
         .selo,
         .selo-amarelo,
         .selo-verde {
+            font-family: 'Lato', sans-serif;
             position: absolute;
             top: 0;
             left: 0;
