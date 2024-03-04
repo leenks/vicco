@@ -409,6 +409,8 @@
             color: white;
         }
 
+
+
         /* CARDS */
 
         .cards-container {
@@ -519,6 +521,7 @@
             margin: 30px 10px 30px;
             font-size: 30px;
             color: #333;
+            order: 1;
         }
 
 
@@ -674,9 +677,9 @@
             flex-wrap: wrap;
             /* Permite que os elementos quebrem para a próxima linha quando não houver espaço suficiente */
             justify-content: space-between;
-}
+        }
 
-        
+
         .box-requisicoes {
             width: 30%;
             /* Tamanho em porcentagem */
@@ -699,6 +702,7 @@
         .box-requisicoes .titulo {
             width: 79%;
         }
+
         .box-faturamento-geral .titulo {
             width: 79%;
         }
@@ -715,11 +719,13 @@
 
 
         .box-info-geral {
-            flex-basis: calc(20% - 20px); /* 20% menos a margem entre os elementos */
+            flex-basis: calc(20% - 20px);
+            /* 20% menos a margem entre os elementos */
             min-width: 170px;
             min-height: 100px;
             background-color: #fff;
-            margin: 30px 5px; /* Ajuste a margem conforme necessário */
+            margin: 30px 5px;
+            /* Ajuste a margem conforme necessário */
             display: flex;
             flex-direction: column;
             border: 3px solid #777;
@@ -743,7 +749,7 @@
             margin: 20px auto;
             font-weight: bold;
             letter-spacing: -1px;
-            
+
         }
 
         .titulo2 {
@@ -758,7 +764,7 @@
             width: 88%;
             height: 10px;
         }
-    
+
 
         .titulo {
             position: relative;
@@ -787,29 +793,35 @@
             border-color: #666 transparent transparent transparent;
         }
 
-    
+
         .titulo2 img {
             border: none;
-            padding: 3px; /* Espaçamento entre a borda e a imagem */
+            padding: 3px;
+            /* Espaçamento entre a borda e a imagem */
             width: 35px;
         }
 
         .titulo img {
             border: none;
-            padding: 3px; /* Espaçamento entre a borda e a imagem */
+            padding: 3px;
+            /* Espaçamento entre a borda e a imagem */
             width: 40px;
         }
 
-        .titulo img, .titulo span, .titulo2 img, .titulo2 span {
+        .titulo img,
+        .titulo span,
+        .titulo2 img,
+        .titulo2 span {
             display: inline-block;
-            vertical-align:-webkit-baseline-middle;
+            vertical-align: -webkit-baseline-middle;
             margin-top: -20px;
             font-size: 16px;
         }
+
         .titulo2 img {
             padding: 10px 5px 0;
         }
-        
+
 
         .quantidade {
             color: orangered;
@@ -849,6 +861,7 @@
         .ico-subir-footer i {
             color: #fff;
         }
+
         .ico-subir-footer:hover {
             background-color: #222;
         }
@@ -863,6 +876,17 @@
                 flex-direction: row;
                 align-items: center;
                 padding: 15px 0px;
+            }
+
+            .logo img {margin: 0;}
+
+            .usuario-info {
+                max-width: 170px;
+                padding-right: 20px;
+            }
+
+            #data-hora {
+                min-width: 170px;
             }
 
 
@@ -962,96 +986,54 @@
                 top: -50px;
             }
 
-
-            .card {
-                display: flex;
-                margin: 10px;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                position: relative;
-                /* Adiciona posição relativa ao contêiner do card */
-            }
-
-            .card .imagem-container {
-                width: 50%;
-                margin-bottom: 10px;
-                height: auto;
-            }
-
-            .card .imagem-container img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 5px;
-                max-width: 100%;
-                height: auto;
-            }
-
-            .card .selo {
-                position: absolute;
-                top: 10px;
-                /* Ajuste a posição vertical conforme necessário */
-                left: 10px;
-                /* Ajuste a posição horizontal conforme necessário */
-                background-color: rgba(255, 165, 0, 0.7);
-                /* Cor de fundo do selo */
-                color: #fff;
-                /* Cor do texto do selo */
-                padding: 5px 10px;
-                /* Espaçamento interno do selo */
-                border-radius: 5px;
-                /* Arredondamento das bordas do selo */
-                font-size: 14px;
-                /* Tamanho da fonte do selo */
-                font-weight: bold;
-                /* Peso da fonte do selo */
-                z-index: 1;
-                /* Garante que o selo esteja sobre a imagem */
-            }
-
-            .card .selo,
-            .card .selo-amarelo,
-            .card .selo-verde {
-                position: static;
-                margin-top: 10px;
-                border-radius: 50px;
-                padding: 2px 5px;
-                font-size: 11px;
-                font-weight: bold;
-                text-align: center;
-            }
-
-            .card .informacoes {
-                width: 100%;
-                /* Ocupa a largura total */
-                margin-left: 10px;
-            }
-
-            .card .informacoes h4 {
-                margin-top: 5px;
-                /* Adiciona margem acima do título */
-            }
-        }
-
-        /* Versão Desktop pro modo-lista das obras */
-        @media screen and (min-width: 769px) {
-            .cards-container.modo-lista .card {
-                flex-basis: 100%;
-                min-width: 87%;
-                width: 100%;
-                display: flex;
-                flex-direction: row;
+            /* Desativar o modo de cartões e ativar apenas o modo lista */
+            .cards-container {
+                flex-direction: column;
                 align-items: center;
             }
 
-            .cards-container.modo-lista .card .imagem-container {
-                width: 30%;
-                margin-right: 15px;
+            .cards-container .card {
+                flex-basis: 100%;
+                min-width: 87%;
+                width: 97%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 0px;
             }
 
-            .cards-container.modo-lista .card .informacoes {
-                width: 70%;
+            .cards-container .card .imagem-container {
+                display: none;
+                /* Oculta a imagem no modo lista */
             }
 
-        }
+            .cards-container .card .informacoes {
+                width: 95%;
+            }
+
+            .box-faturamento-geral {
+                width: 55%;
+            }
+            }
+
+            /* Versão Desktop pro modo-lista das obras */
+            @media screen and (min-width: 769px) {
+                .cards-container.modo-lista .card {
+                    flex-basis: 100%;
+                    min-width: 87%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                .cards-container.modo-lista .card .imagem-container {
+                    width: 30%;
+                    margin-right: 15px;
+                }
+
+                .cards-container.modo-lista .card .informacoes {
+                    width: 70%;
+                }
+
+            }
