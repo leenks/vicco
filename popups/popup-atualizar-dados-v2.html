@@ -113,7 +113,7 @@
             /* Altera a cor da borda ao focar */
         }
 
-        #mini-blocos {
+        #mini-blocos, #mini-blocos2 {
             width: calc(90% - 5px);
             /* Largura ajustada para caber na mesma linha */
             margin-right: 5px;
@@ -132,15 +132,6 @@
         /* Espaçamento entre os inputs */
         .espaco {
             margin-right: 5px;
-        }
-
-
-        @media screen and (max-width: 600px) {
-            .bloco {
-                flex: 1 0 100%;
-                margin-right: 0;
-                margin-bottom: 5px;
-            }
         }
 
         .metade {
@@ -246,6 +237,41 @@
                 opacity: 0;
             }
         }
+
+
+        /* VERSÃO MOBILE */
+        @media screen and (max-width: 600px) {
+            .bloco {
+                flex: 1 0 100%;
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+
+            #mini-blocos {
+                width: 100%;
+            }
+
+            #mini-blocos2 {
+                width: 90%;
+            }
+
+            #datainicial, #numdias, #datafinal {
+                width: 90%;
+            }
+
+            #data-inicial {
+                width: 90%;
+            }
+            
+            .metade {
+                flex: 1 0 calc(33.333% - 5px);
+            }
+            
+            .terco {
+                flex: 1 0 calc(33.333% - 5px);
+            }
+        }
+
     </style>
 </head>
 
@@ -300,11 +326,11 @@
                     </div>
                     <div class="bloco terco espaco">
                         <label for="predecessor">Predecessor:</label>
-                        <input type="text" id="mini-blocos" class="numeric">
+                        <input type="text" id="mini-blocos2" class="numeric">
                     </div>
                     <div class="bloco terco">
                         <label for="progresso">% de Progresso:</label>
-                        <input type="text" id="mini-blocos" class="numeric">
+                        <input type="text" id="mini-blocos2" class="numeric">
                     </div>
                 </div>
                 <div class="linha">
