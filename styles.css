@@ -1016,6 +1016,26 @@
             }
             }
 
+
+            /* Versão mobile android!! */
+            @media screen and (max-width: 400px) {
+                .box-faturamento-geral {
+                    width: 60%;
+                }
+
+                .box-info-geral {
+                    min-width: 152px;
+                }
+                
+                .titulo2 span {
+                    font-size: 13px;
+                }
+
+                .menu-item-home {
+                    max-width: calc(29% - 30px);
+                }
+            }
+
             /* Versão Desktop pro modo-lista das obras */
             @media screen and (min-width: 769px) {
                 .cards-container.modo-lista .card {
