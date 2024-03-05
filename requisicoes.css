@@ -674,6 +674,7 @@
 
     .span-infos-requisicao {
         font-weight: bold;
+        font-size: 14px;
     }
 
     .box-info-requisicao {
@@ -685,14 +686,14 @@
     .box-info-requisicao2 {
         display: flex;
         justify-content: start;
-        margin: -65px 0 10px;
+        margin: -60px 0 10px;
         
     }
 
     .box-info-requisicao-borda {
         width: 130px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-        padding: 5px;
+        padding: 2px 5px 2px;
         border: 2px solid #888;
         border-radius: 10px;
         background-color: #fff;
@@ -700,14 +701,14 @@
         box-sizing: border-box;
         margin-right: 5px;
         /* Espaçamento entre as divs */
-        height: 60px;
+       height: 55px;
         text-align: center;
     }
 
     .box-info-requisicao-borda2 {
         width: 130px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-        padding: 5px;
+         padding: 2px 5px 2px;
         border: 2px solid #888;
         border-radius: 10px;
         /* Borda arredondada */
@@ -715,7 +716,7 @@
         margin-right: 5px;
         /* Espaçamento entre as divs */
         background-color: #eee;
-        height: 60px;
+       height: 55px;
         text-align: center;
     }
     .box-info-requisicao-borda3 {
@@ -729,21 +730,21 @@
         margin-right: 5px;
         /* Espaçamento entre as divs */
         background-color: #eee;
-        height: 60px;
+       height: 55px;
         text-align: center;
     }
 
     .box-info-requisicao-borda4 {
         width: 129px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-        padding: 5px;
+         padding: 2px 5px 2px;
         border: 2px solid #888;
         border-radius: 10px;
         /* Borda arredondada */
         box-sizing: border-box;
         margin-right: 5px;
         /* Espaçamento entre as divs */
-        height: 60px;
+       height: 55px;
         text-align: center;
         background-color: #fff;
     }
@@ -751,36 +752,38 @@
     .box-info-requisicao-ultima {
         width: 235px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-        padding: 5px;
+         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
         background-color: #eee;
         border-radius: 10px;
         /* Borda arredondada */
         margin-right: 5px;
-        height: 60px;
+       height: 55px;
         white-space: nowrap;
         text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .box-info-requisicao-ultima2 {
         width: 265px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-        padding: 5px;
+         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
         background-color: #eee;
         border-radius: 10px;
         /* Borda arredondada */
         margin-right: 5px;
-        min-height: 60px;
+        min-height: 55px;
         text-align: center;
     }
 
     .box-info-requisicao-ultima3 {
         width: 35.5%;
         /* Ajusta a largura para caberem seis divs lado a lado */
-        padding: 5px;
+         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
         background-color: #eee;
@@ -788,15 +791,15 @@
         /* Borda arredondada */
         margin-right: 1px;
         margin-left: 5px;
-        min-height: 60px;
+        min-height: 55px;
         text-align: center;
     }
 
     .box-info-requisicao-ultima4 {
         width: 235px;
-        height: 125px;
+        height: 115px;
         white-space: nowrap;
-        padding: 5px;
+         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
         background-color: #fff;
