@@ -846,14 +846,13 @@
         /* Cor de fundo laranja para o cabeçalho */
         color: white;
         /* Cor do texto branco */
-        padding: 10px;
         text-align: center;
     }
 
     .table-requisicoes td,
     .table-requisicoes th {
         border: 1px solid #ddd;
-        padding: 8px;
+        padding: 6px;
         font-size: 13px;
         width: auto;
         overflow: hidden;
