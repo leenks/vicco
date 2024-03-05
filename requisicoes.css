@@ -482,10 +482,17 @@
     }
 
     .conteudo-in h3 {
-        margin: 30px 0px 30px;
+        margin: 20px 0px 20px;
         font-size: 24px;
         color: orangered;
     }
+
+    .modo-simples2 h3 {
+        margin: 5px 0px 5px;
+        font-size: 14px;
+        color: orangered;
+    }
+
 
     /* Estilo para o contêiner do título */
     .titulo-container {
@@ -544,7 +551,7 @@
 /* Estilo para o contêiner do título */
 .titulo-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     width: 100%;
     margin-bottom: 10px; /* Mantém o espaçamento inferior para todos os modos */
@@ -557,7 +564,7 @@
 }
 
 /* Estilo para o botão PRÉ-COMPRA */
-.titulo-container .botao-pre-compra {
+.box-info-requisicao-btn .botao-pre-compra {
     background-color: #79C14E;
     text-shadow: 1px 1px #356619;
     color: white;
@@ -567,11 +574,14 @@
     cursor: pointer;
     font-size: 14px;
     position: relative;
+    white-space: nowrap;
+    margin-left: 10px;
+    top: 20%;
 }
 
-.titulo-container .botao-pagamento {
-    background-color: #891475;
-    text-shadow: 1px 1px #2f0020;
+.box-info-requisicao-btn .botao-pagamento {
+    background-color: rgb(187, 2, 144);
+    text-shadow: 1px 1px #550135;
     color: white;
     padding: 7px 10px 6px 30px;
     border: none;
@@ -579,29 +589,50 @@
     cursor: pointer;
     font-size: 14px;
     position: relative;
+    white-space: nowrap;
+    margin-left: 10px;
+    top: 20%;
 }
 
-.titulo-container .botao-cotacao {
+.box-info-requisicao-btn .botao-cotacao {
     background-color: orangered;
-    text-shadow: 1px 1px #891000;
+    text-shadow: 1px 1px rgb(118, 31, 0);
     color: white;
-    padding: 7px 10px 6px 30px;
+    padding: 7px 35px 6px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     position: relative;
+    white-space: nowrap;
+    margin-left: 10px;
+    top: 20%;
+}
+
+.box-info-requisicao-btn .botao-cancelada {
+    background-color: rgb(214, 0, 0);
+    text-shadow: 1px 1px rgb(91, 0, 0);
+    color: white;
+    padding: 7px 15px 6px 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 10px;
+    top: 20%;
 }
 
 /* Estilo para o ícone */
 .titulo-container .icone-abrir {
-    margin-right: -30px;
+    margin-right: 30px;
     position: relative;
     z-index: 1;
 }
 
 /* Estilo para o ícone de pré-compra */
-.titulo-container .icone-pre-compra {
+.box-info-requisicao-btn .icones {
     position: absolute;
     left: -15%;
     top: 50%;
@@ -611,11 +642,13 @@
 }
 
 /* Estilo para o preço */
-.titulo-container .preco-container {
+.preco-container {
     position: relative;
+    width: 100%;
+    margin-top: 20px;
 }
 
-.titulo-container .preco-texto {
+.preco-texto {
     position: absolute;
     top: -25px;
     left: 0;
@@ -624,11 +657,11 @@
     font-weight: normal;
 }
 
-.titulo-container .preco-valor {
+.preco-valor {
     background-color: orange;
     text-shadow: 1px 1px #c54f20;
     color: white;
-    padding: 7px 10px 6px 10px;
+    padding: 7px 25px 6px 25px;
     border-radius: 5px;
     font-size: 18px;
 }
@@ -648,8 +681,15 @@
 
     .box-info-requisicao {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
+        justify-content: start;
+        margin-bottom: 5px;
+    }
+
+    .box-info-requisicao2 {
+        display: flex;
+        justify-content: start;
+        margin: -65px 0 10px;
+        
     }
 
     .box-info-requisicao-borda {
@@ -660,7 +700,7 @@
         border-radius: 10px;
         /* Borda arredondada */
         box-sizing: border-box;
-        margin-right: 10px;
+        margin-right: 5px;
         /* Espaçamento entre as divs */
         height: 60px;
     }
@@ -673,12 +713,37 @@
         border-radius: 10px;
         /* Borda arredondada */
         box-sizing: border-box;
-        margin-right: 10px;
+        margin-right: 5px;
+        /* Espaçamento entre as divs */
+        background-color: #eee;
+        height: 60px;
+    }
+    .box-info-requisicao-borda3 {
+        width: 13%;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 5px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin-right: 5px;
         /* Espaçamento entre as divs */
         background-color: #eee;
         height: 60px;
     }
 
+    .box-info-requisicao-borda4 {
+        width: 14.4%;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 5px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin-right: 5px;
+        /* Espaçamento entre as divs */
+        height: 60px;
+    }
 
     .box-info-requisicao-ultima {
         width: 30.5%;
@@ -689,12 +754,13 @@
         background-color: #eee;
         border-radius: 10px;
         /* Borda arredondada */
-        margin-right: 1px;
+        margin-right: 5px;
         height: 60px;
+        white-space: nowrap;
     }
 
     .box-info-requisicao-ultima2 {
-        width: 40.5%;
+        width: 26.5%;
         /* Ajusta a largura para caberem seis divs lado a lado */
         padding: 5px;
         box-sizing: border-box;
@@ -702,7 +768,7 @@
         background-color: #eee;
         border-radius: 10px;
         /* Borda arredondada */
-        margin-right: 1px;
+        margin-right: 5px;
         min-height: 60px;
     }
 
@@ -720,6 +786,21 @@
         min-height: 60px;
     }
 
+    .box-info-requisicao-ultima4 {
+        width: 25%;
+        height: 125px;
+        white-space: nowrap;
+        padding: 5px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 1px;
+        min-height: 60px;
+    }
+
+
     /* Estilo para os inputs */
     input {
         margin-bottom: 10px;
@@ -735,9 +816,13 @@
         white-space: nowrap;
     }
 
+    .modo-simples2 #oculta { display: none;}
+
     /*TABELA REQUISISCOES MODO-LISTA-SIMPLES **/
     .table-requisicoes {
+        max-width: 100%;
         width: 100%;
+        table-layout: fixed;
         border-collapse: collapse;
         border-radius: 10px;
         /* Borda arredondada */
@@ -751,6 +836,9 @@
     /* CSS para exibir a tabela no modo-simples2 */
 .modo-simples2 .table-requisicoes {
     display: block;
+}
+.modo-simples2 #conteudoModoSimples2 {
+    display: block !important;
 }
 
     .table-requisicoes th {
@@ -767,6 +855,10 @@
         border: 1px solid #ddd;
         padding: 8px;
         font-size: 13px;
+        width: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
     }
 
     .table-requisicoes tr:nth-child(even) {
@@ -780,6 +872,10 @@
     }
 
 
+
+    
+
+
     /* CARDS */
 
     .cards-container {
@@ -789,7 +885,7 @@
 
     .card {
         width: 100%;
-        min-height: 170px;
+        min-height: 140px;
         margin: 10px;
         padding: 5px;
         background-color: #f9f9f9;
@@ -855,11 +951,19 @@
         align-items: flex-start;
     }    
     .modo-simples2 .box-info-requisicao {
-        margin-right: 10px; /* Adicione margem direita para separar os elementos */
-        width: auto; /* Defina uma largura automática para que os elementos ocupem apenas o espaço necessário */
-        font-size: 14px; /* Reduza o tamanho da fonte */
         display: none;
     }
+    .modo-simples2 .box-info-requisicao2 {
+        display: none;
+    }
+
+    .box-info-requisicao-btn {
+        display: inline-block;
+        vertical-align: top; /* Alinha verticalmente com as outras divs */
+        margin-left: 10px; /* Margem entre a última div e a nova caixa de botões */
+        /* Adicione outros estilos conforme necessário */
+    }
+    
     
 
 
@@ -878,7 +982,7 @@
         padding: 10px;
         display: flex;
         margin-left: auto;
-        z-index: 2;
+        z-index: 1000;
     }
 
     .toggle-container,
@@ -1097,6 +1201,12 @@
 
         .toggle-container {
             display: none;
+        }
+
+        .wrap-toggle {
+            position: sticky !important;
+            z-index: 1000;
+            top: 0;
         }
 
         .toggle-container2 {
