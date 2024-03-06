@@ -321,131 +321,131 @@
     }
 
 
-  
-        /* ESSA É A CAIXA DE FILTROS */
 
-        .filtros-selecionados {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            /* Alinha os filtros à direita */
+    /* ESSA É A CAIXA DE FILTROS */
+
+    .filtros-selecionados {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        /* Alinha os filtros à direita */
+    }
+
+    .filtros-selecionados span {
+        background-color: #79C14E;
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        /* Adiciona cursor para indicar que é clicável */
+    }
+
+    .filtros-selecionados span:hover {
+        background-color: #A4A4A4;
+
+    }
+
+    .filtros-selecionados button {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #444;
+        font-size: 12px;
+        padding: 0px 5px !important;
+    }
+
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        animation: slideIn 0.5s ease;
+    }
+
+    /* CLASSE DE ANIMAÇÃO PRO SLIDER DO FILTRO */
+
+    @keyframes slideIn {
+        from {
+            margin-left: 100%;
+            /* Começa fora da tela à direita */
         }
 
-        .filtros-selecionados span {
-            background-color: #79C14E;
-            color: white;
-            border-radius: 5px;
-            padding: 5px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            font-size: 10px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            /* Adiciona cursor para indicar que é clicável */
+        to {
+            margin-left: 0;
+            /* Termina na posição inicial */
         }
+    }
 
-        .filtros-selecionados span:hover {
-            background-color: #A4A4A4;
+    .modal-content label {
+        display: block;
+        margin-bottom: 20px;
+    }
 
-        }
+    .modal-content select {
+        margin-left: 10px;
+    }
 
-        .filtros-selecionados button {
-            background-color: #fff;
-            border-radius: 5px;
-            border: 1px solid #444;
-            font-size: 12px;
-            padding: 0px 5px !important;
-        }
+    .modal-content h2,
+    .modal-content label,
+    .modal-content div {
+        margin-bottom: 20px;
+        line-height: normal;
+    }
 
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            animation: slideIn 0.5s ease;
-        }
+    button {
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+        text-transform: capitalize;
+    }
 
-        /* CLASSE DE ANIMAÇÃO PRO SLIDER DO FILTRO */
+    button.filtrar {
+        background-color: #79C14E;
+        /* Verde */
+        color: white;
+    }
 
-        @keyframes slideIn {
-            from {
-                margin-left: 100%;
-                /* Começa fora da tela à direita */
-            }
-
-            to {
-                margin-left: 0;
-                /* Termina na posição inicial */
-            }
-        }
-
-        .modal-content label {
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .modal-content select {
-            margin-left: 10px;
-        }
-
-        .modal-content h2,
-        .modal-content label,
-        .modal-content div {
-            margin-bottom: 20px;
-            line-height: normal;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        button {
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-            text-transform: capitalize;
-        }
-
-        button.filtrar {
-            background-color: #79C14E;
-            /* Verde */
-            color: white;
-        }
-
-        button.limpar {
-            background-color: #A4A4A4;
-            /* Amarelo */
-            color: white;
-        }
+    button.limpar {
+        background-color: #A4A4A4;
+        /* Amarelo */
+        color: white;
+    }
 
 
     .informacoes {
@@ -530,147 +530,150 @@
         width: 35px;
     }
 
-/* Estilo para o contêiner do título */
-.titulo-container {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px; /* Mantém o espaçamento inferior para todos os modos */
-}
+    /* Estilo para o contêiner do título */
+    .titulo-container {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+        /* Mantém o espaçamento inferior para todos os modos */
+    }
 
-/* Estilo para o título em todos os modos */
-.titulo-container h3 {
-    font-size: 20px; /* Tamanho da fonte */
-    color: #333; /* Cor do texto */
-}
+    /* Estilo para o título em todos os modos */
+    .titulo-container h3 {
+        font-size: 20px;
+        /* Tamanho da fonte */
+        color: #333;
+        /* Cor do texto */
+    }
 
-/* Estilo para o botão PRÉ-COMPRA */
-.box-info-requisicao-btn .botao-pre-compra {
-    background-color: #79C14E;
-    text-shadow: 1px 1px #356619;
-    color: white;
-    padding: 7px 10px 6px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    position: relative;
-    white-space: nowrap;
-    margin-left: 5px;
-    top: 20%;
-}
+    /* Estilo para o botão PRÉ-COMPRA */
+    .box-info-requisicao-btn .botao-pre-compra {
+        background-color: #79C14E;
+        text-shadow: 1px 1px #356619;
+        color: white;
+        padding: 7px 10px 6px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
-.box-info-requisicao-btn .botao-pagamento {
-    background-color: rgb(187, 2, 144);
-    text-shadow: 1px 1px #550135;
-    color: white;
-    padding: 7px 10px 6px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    position: relative;
-    white-space: nowrap;
-    margin-left: 5px;
-    top: 20%;
-}
+    .box-info-requisicao-btn .botao-pagamento {
+        background-color: rgb(187, 2, 144);
+        text-shadow: 1px 1px #550135;
+        color: white;
+        padding: 7px 10px 6px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
-.box-info-requisicao-btn .botao-cotacao {
-    background-color: orangered;
-    text-shadow: 1px 1px rgb(118, 31, 0);
-    color: white;
-    padding: 7px 25px 6px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    position: relative;
-    white-space: nowrap;
-    margin-left: 5px;
-    top: 20%;
-}
+    .box-info-requisicao-btn .botao-cotacao {
+        background-color: orangered;
+        text-shadow: 1px 1px rgb(118, 31, 0);
+        color: white;
+        padding: 7px 25px 6px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
-.box-info-requisicao-btn .botao-cancelada {
-    background-color: rgb(214, 0, 0);
-    text-shadow: 1px 1px rgb(91, 0, 0);
-    color: white;
-    padding: 7px 10px 6px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    position: relative;
-    white-space: nowrap;
-    margin-left: 5px;
-    top: 20%;
-}
+    .box-info-requisicao-btn .botao-cancelada {
+        background-color: rgb(214, 0, 0);
+        text-shadow: 1px 1px rgb(91, 0, 0);
+        color: white;
+        padding: 7px 10px 6px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
-.box-info-requisicao-btn .botao-aprovacao {
-    background-color: rgb(12, 204, 175);
-    text-shadow: 1px 1px rgb(1, 66, 67);
-    color: white;
-    padding: 7px 10px 6px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    position: relative;
-    white-space: nowrap;
-    margin-left: 5px;
-    top: 20%;
-}
+    .box-info-requisicao-btn .botao-aprovacao {
+        background-color: rgb(12, 204, 175);
+        text-shadow: 1px 1px rgb(1, 66, 67);
+        color: white;
+        padding: 7px 10px 6px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
-/* Estilo para o ícone */
-.titulo-container .icone-abrir {
-    margin-right: 30px;
-    position: relative;
-    z-index: 1;
-}
+    /* Estilo para o ícone */
+    .titulo-container .icone-abrir {
+        margin-right: 30px;
+        position: relative;
+        z-index: 1;
+    }
 
-/* Estilo para o ícone de pré-compra */
-.box-info-requisicao-btn .icones {
-    position: absolute;
-    left: -15%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    width: 35px;
-}
+    /* Estilo para o ícone de pré-compra */
+    .box-info-requisicao-btn .icones {
+        position: absolute;
+        left: -15%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        width: 35px;
+    }
 
-/* Estilo para o preço */
-.preco-container {
-    position: relative;
-    width: 100%;
-    margin-top: 20px;
-}
+    /* Estilo para o preço */
+    .preco-container {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+    }
 
-.preco-texto {
-    position: absolute;
-    top: -25px;
-    left: 0;
-    font-size: 13px;
-    color: #444;
-    font-weight: normal;
-}
+    .preco-texto {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        font-size: 13px;
+        color: #444;
+        font-weight: normal;
+    }
 
-.preco-valor {
-    background-color: orange;
-    text-shadow: 1px 1px #c54f20;
-    color: white;
-    padding: 7px 10px 6px 10px;
-    border-radius: 5px;
-    font-size: 18px;
-}
+    .preco-valor {
+        background-color: orange;
+        text-shadow: 1px 1px #c54f20;
+        color: white;
+        padding: 7px 10px 6px 10px;
+        border-radius: 5px;
+        font-size: 18px;
+    }
 
-.titulo-container .pagamento {
-    background-color: rgb(187, 2, 144);
-    text-shadow: 1px 1px #550135;
-    color: white;
-    padding: 7px 10px 6px 10px;
-    border-radius: 5px;
-    font-size: 18px;
-}
+    .titulo-container .pagamento {
+        background-color: rgb(187, 2, 144);
+        text-shadow: 1px 1px #550135;
+        color: white;
+        padding: 7px 10px 6px 10px;
+        border-radius: 5px;
+        font-size: 18px;
+    }
 
     .span-infos-requisicao {
         font-weight: bold;
@@ -687,7 +690,7 @@
         display: flex;
         justify-content: start;
         margin: -60px 0 10px;
-        
+
     }
 
     .box-info-requisicao-borda {
@@ -701,14 +704,14 @@
         box-sizing: border-box;
         margin-right: 5px;
         /* Espaçamento entre as divs */
-       height: 55px;
+        height: 55px;
         text-align: center;
     }
 
     .box-info-requisicao-borda2 {
         width: 130px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-         padding: 2px 5px 2px;
+        padding: 2px 5px 2px;
         border: 2px solid #888;
         border-radius: 10px;
         /* Borda arredondada */
@@ -716,9 +719,10 @@
         margin-right: 5px;
         /* Espaçamento entre as divs */
         background-color: #eee;
-       height: 55px;
+        height: 55px;
         text-align: center;
     }
+
     .box-info-requisicao-borda3 {
         width: 131px;
         /* Ajusta a largura para caberem seis divs lado a lado */
@@ -730,21 +734,21 @@
         margin-right: 5px;
         /* Espaçamento entre as divs */
         background-color: #eee;
-       height: 55px;
+        height: 55px;
         text-align: center;
     }
 
     .box-info-requisicao-borda4 {
         width: 129px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-         padding: 2px 5px 2px;
+        padding: 2px 5px 2px;
         border: 2px solid #888;
         border-radius: 10px;
         /* Borda arredondada */
         box-sizing: border-box;
         margin-right: 5px;
         /* Espaçamento entre as divs */
-       height: 55px;
+        height: 55px;
         text-align: center;
         background-color: #fff;
     }
@@ -752,14 +756,14 @@
     .box-info-requisicao-ultima {
         width: 235px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-         padding: 2px 5px 2px;
+        padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
         background-color: #eee;
         border-radius: 10px;
         /* Borda arredondada */
         margin-right: 5px;
-       height: 55px;
+        height: 55px;
         white-space: nowrap;
         text-align: center;
         overflow: hidden;
@@ -769,7 +773,7 @@
     .box-info-requisicao-ultima2 {
         width: 265px;
         /* Ajusta a largura para caberem seis divs lado a lado */
-         padding: 2px 5px 2px;
+        padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
         background-color: #eee;
@@ -783,7 +787,7 @@
     .box-info-requisicao-ultima3 {
         width: 35.5%;
         /* Ajusta a largura para caberem seis divs lado a lado */
-         padding: 2px 5px 2px;
+        padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
         background-color: #eee;
@@ -799,7 +803,7 @@
         width: 235px;
         height: 115px;
         white-space: nowrap;
-         padding: 2px 5px 2px;
+        padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
         background-color: #fff;
@@ -825,61 +829,65 @@
         white-space: nowrap;
     }
 
-    .modo-simples2 #oculta { display: none;}
+    .modo-simples2 #oculta {
+        display: none;
+    }
 
-    
-        /*TABELA REQUISISCOES MODO-LISTA-SIMPLES **/
-        .table-requisicoes {
-            max-width: 100%;
-            width: 100%;
-            table-layout: fixed;
-            border-collapse: collapse;
-            border-radius: 10px;
-            /* Borda arredondada */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Sombra */
-            overflow: hidden;
-            /* Ocultar sombra que ultrapassa a borda arredondada */
-            display: none;
-        }
 
-        /* CSS para exibir a tabela no modo-simples2 */
+    /*TABELA REQUISISCOES MODO-LISTA-SIMPLES **/
+    .table-requisicoes {
+        max-width: 100%;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        border-radius: 10px;
+        /* Borda arredondada */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombra */
+        overflow: hidden;
+        /* Ocultar sombra que ultrapassa a borda arredondada */
+        display: none;
+    }
+
+    /* CSS para exibir a tabela no modo-simples2 */
     .modo-simples2 .table-requisicoes {
         display: block;
     }
+
     .modo-simples2 #conteudoModoSimples2 {
         display: block !important;
     }
 
-        .table-requisicoes th {
-            background-color: #f37334;
-            /* Cor de fundo laranja para o cabeçalho */
-            color: white;
-            /* Cor do texto branco */
-            text-align: center;
-        }
+    .table-requisicoes th {
+        background-color: #f37334;
+        /* Cor de fundo laranja para o cabeçalho */
+        color: white;
+        /* Cor do texto branco */
+        text-align: center;
+    }
 
-        .table-requisicoes td,
-        .table-requisicoes th {
-            border: 1px solid #ddd;
-            padding: 6px;
-            font-size: 12px;
-            width: auto;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 60px;
-            
-        }
-        .table-requisicoes tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        .table-requisicoes tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
+    .table-requisicoes td,
+    .table-requisicoes th {
+        border: 1px solid #ddd;
+        padding: 6px;
+        font-size: 12px;
+        width: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 60px;
+
+    }
+
+    .table-requisicoes tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table-requisicoes tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
 
 
-        /* CARDS */
+    /* CARDS */
 
     .cards-container {
         display: flex;
@@ -925,7 +933,7 @@
         justify-content: space-between;
         width: 100%;
     }
-    
+
 
     /* Nova classe para o modo-simples */
     .cards-container.modo-simples .card {
@@ -945,29 +953,33 @@
     .cards-container.modo-simples2 .card {
         width: 97%;
         min-height: 135px;
-        margin: 10px 10px 0 10px;
+        margin: 10px 10px 0 5px;
         padding: 5px 5px 4px;
         background-color: #f9f9f9;
         border: 2px solid #f37334;
         border-radius: 5px;
         position: relative;
         align-items: flex-start;
-    }    
+    }
+
     .modo-simples2 .box-info-requisicao {
         display: none;
     }
+
     .modo-simples2 .box-info-requisicao2 {
         display: none;
     }
 
     .box-info-requisicao-btn {
         display: inline-block;
-        vertical-align: top; /* Alinha verticalmente com as outras divs */
-        margin-left: 10px; /* Margem entre a última div e a nova caixa de botões */
+        vertical-align: top;
+        /* Alinha verticalmente com as outras divs */
+        margin-left: 10px;
+        /* Margem entre a última div e a nova caixa de botões */
         /* Adicione outros estilos conforme necessário */
     }
-    
-    
+
+
 
 
     .toggle-container .toggle-container2 button {
@@ -1164,6 +1176,15 @@
     /* VERSAO MOBILE */
 
     @media screen and (max-width: 768px) {
+
+        .modo-simples {
+            display: none;
+        }
+
+        .modo-simples2 {
+            display: block;
+        }
+
         .topo {
             flex-direction: column;
             align-items: center;
@@ -1331,10 +1352,63 @@
             margin-top: 5px;
             /* Adiciona margem acima do título */
         }
+
+        /*TABELA NO MOBILE!!! */
+
+        .table-container {
+            overflow-x: auto;
+            /* Adiciona rolagem horizontal */
+            position: relative;
+            /* Define posição relativa para a tabela container */
+            max-width: 100%;
+            /* Garante que a tabela não exceda a largura da tela */
+        }
+
+        .table-requisicoes {
+            display: block;
+            /* Altera a exibição para bloco para permitir a rolagem horizontal */
+            white-space: nowrap;
+            /* Impede a quebra de linha dentro das células */
+        }
+
+        .table-requisicoes table {
+            table-layout: fixed;
+            /* Define a largura da tabela como fixa */
+            width: auto;
+            /* Garante que a largura da tabela seja definida pelo conteúdo */
+        }
+
+        .table-requisicoes th:first-child,
+        .table-requisicoes td:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
+        .table-requisicoes th:not(:first-child),
+        .table-requisicoes td:not(:first-child) {
+            z-index: 0;
+        }
+
+        .cards-container.modo-simples2 .card {
+            width: 94%;
+            min-height: 135px;
+            margin: 10px 10px 0 5px;
+            padding: 5px 5px 4px;
+            background-color: #f9f9f9;
+            border: 2px solid #f37334;
+            border-radius: 5px;
+            position: relative;
+            align-items: flex-start;
+            overflow-x: auto;
+            overflow-y: auto;
+        }
+
     }
 
     /* Versão Desktop pro modo-lista das obras */
     @media screen and (min-width: 769px) {
+
         .cards-container.modo-lista .card {
             flex-basis: 100%;
             min-width: 87%;

@@ -33,7 +33,7 @@ function alterarModo() {
     if (modoExibicao === 'card') {
         modoExibicao = 'modo-simples';
     } else if (modoExibicao === 'modo-simples') {
-        modoExibicao = 'modo-simples2'; // Desabilitando temporariamente o modo-simples2
+        modoExibicao = 'modo-simples2';
     } else {
         modoExibicao = 'card';
     }
@@ -61,7 +61,7 @@ function atualizarModoExibicao() {
         cardsContainer.classList.add('modo-simples');
         iconElement.classList.remove('fa-th-list');
         iconElement.classList.add('fa-th-large');
-        conteudoModoSimples2.style.display = 'none'; // Oculta a tabela
+        conteudoModoSimples2.style.display = '  '; // Oculta a tabela
         conteudoModoSimples.style.display = 'block'; // Exibe o conteúdo abaixo da tabela
     } else {
         cardsContainer.classList.remove('modo-simples', 'modo-simples2'); // Remover outras classes se estiverem presentes
@@ -69,4 +69,14 @@ function atualizarModoExibicao() {
         conteudoModoSimples2.style.display = 'none'; // Ocultar a tabela
         conteudoModoSimples.style.display = 'block'; // Exibir o conteúdo abaixo da tabela
     }
+}
+// Verifica se o dispositivo é um dispositivo móvel
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
+// Define o modo de exibição para "modo-simples2" se o dispositivo for móvel
+if (isMobileDevice()) {
+    modoExibicao = 'modo-simples2';
+    atualizarModoExibicao();
 }
