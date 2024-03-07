@@ -541,7 +541,7 @@
         /* Cor do texto */
     }
 
-    /* Estilo para o botão PRÉ-COMPRA */
+    /* Estilo para os status */
     .box-info-requisicao-btn .botao-pre-compra {
         background-color: #79C14E;
         text-shadow: 1px 1px #356619;
@@ -1184,6 +1184,14 @@
             line-height: normal;
         }
 
+        #mobile-conteudoModoSimples2 .table-requisicoes {
+            margin-bottom: 10px;
+        }
+        
+        #mobile-conteudoModoSimples2 .table-requisicoes td {
+            font-size: 10px;
+        }
+        
         #mobile-conteudoModoSimples2 .table-requisicoes td:nth-child(2) {
             white-space: nowrap;
         }
@@ -1197,15 +1205,12 @@
             background-color: #fff;
         }
 
-        #mobile-conteudoModoSimples2 .table-requisicoes {
-            width: 98%;
-        }
 
         /* Estilos para alinhar os elementos dentro da legenda */
         .caption-container {
             display: flex;
             align-items: center;
-            margin-bottom: 5px;
+            margin: 10px 0 5px;
         }
 
         .caption-container img {
@@ -1215,23 +1220,36 @@
 
         .modo-simples2 h3 {
             margin: 5px 0px 5px;
-            font-size: 16px;
+            font-size: 14px;
             color: orangered;
             min-width: 220px;
+            line-height: normal;
         }
-    
+
+        /* ANDROID */
+         @media screen and (max-width: 400px) {
+            .modo-simples2 h3 {
+                min-width: 186px;
+            }
+        } 
+
+        
 
         .preco-container {
             margin: 10px 0 10px;
             font-size: 12px;
         }
 
-        .icone-pre-compra {
+        .caption-container .icones {
             left: -13%;
             width: 30px;
         }
 
-        .box-info-requisicao-btn .botao-pagamento {
+        .caption-container .botao-pre-compra,
+        .caption-container .botao-pagamento,
+        .caption-container .botao-cotacao,
+        .caption-container .botao-cancelada,
+        .caption-container .botao-aprovacao {
             font-size: 10px;
         }
 
