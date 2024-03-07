@@ -1211,6 +1211,7 @@
         .caption-container {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             margin: 10px 0 5px;
         }
 
@@ -1226,26 +1227,6 @@
             line-height: normal;
             min-width: 140px;
         }
-    }
-    
-  /* Estilo para telas Iphones */
-@media only screen and (min-device-width: 400px) and (-webkit-min-device-pixel-ratio: 1.5) {
-    .modo-simples2 h3 {
-        min-width: 220px;
-    }
-}
-
-/* Estilo para Androids */
-@media only screen and (max-device-width: 400px) and (-webkit-min-device-pixel-ratio: 3) {
-    .modo-simples2 h3 {
-        min-width: 140px;
-    }
-}
-
-
-
-@media screen and (max-width: 768px) {
-
         .preco-container {
             margin: 10px 0 10px;
             font-size: 12px;
