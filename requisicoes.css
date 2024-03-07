@@ -1186,7 +1186,10 @@
         }
 
         #mobile-conteudoModoSimples2 .table-requisicoes {
-            margin-bottom: 10px;
+            margin-bottom: 10px;            
+                max-width: 100%; /* Define a largura máxima da tabela como 100% do contêiner pai */
+                overflow-x: auto; /* Adiciona uma barra de rolagem horizontal caso a tabela exceda a largura do contêiner */
+            }
         }
         
         #mobile-conteudoModoSimples2 .table-requisicoes td {
@@ -1199,7 +1202,6 @@
 
         #mobile-conteudoModoSimples2 th {
             font-size: 10px;
-            white-space: nowrap;
         }
 
         #mobile-conteudoModoSimples2 .table-requisicoes tr:nth-child(even) {
@@ -1456,3 +1458,5 @@
         }
 
     }
+
+    
