@@ -867,7 +867,7 @@
     .table-requisicoes td,
     .table-requisicoes th {
         border: 1px solid #ddd;
-        padding: 6px;
+        padding: 5px;
         font-size: 12px;
         width: auto;
         overflow: hidden;
@@ -1223,7 +1223,7 @@
             font-size: 14px;
             color: orangered;
             line-height: normal;
-            min-width: 150px;
+            min-width: 140px;
         }
     }
     
@@ -1237,7 +1237,7 @@
 /* Estilo para Androids */
 @media only screen and (max-device-width: 400px) and (-webkit-min-device-pixel-ratio: 3) {
     .modo-simples2 h3 {
-        min-width: 150px;
+        min-width: 140px;
     }
 }
 
