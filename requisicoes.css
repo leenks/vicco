@@ -487,13 +487,6 @@
         color: orangered;
     }
 
-    .modo-simples2 h3 {
-        margin: 5px 0px 5px;
-        font-size: 14px;
-        color: orangered;
-    }
-
-
     /* Estilo para o contêiner do título */
     .titulo-container {
         display: flex;
@@ -833,7 +826,6 @@
         display: none;
     }
 
-
     /*TABELA REQUISISCOES MODO-LISTA-SIMPLES **/
     .table-requisicoes {
         max-width: 100%;
@@ -858,6 +850,12 @@
         display: block !important;
     }
 
+    .modo-simples2 #mobile-conteudoModoSimples2 {
+        display: none !important;
+    }
+
+
+
     .table-requisicoes th {
         background-color: #f37334;
         /* Cor de fundo laranja para o cabeçalho */
@@ -875,6 +873,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         max-height: 60px;
+        text-align: center;
 
     }
 
@@ -953,7 +952,7 @@
     .cards-container.modo-simples2 .card {
         width: 97%;
         min-height: 135px;
-        margin: 10px 10px 0 5px;
+        margin: 10px 0 10px;
         padding: 5px 5px 4px;
         background-color: #f9f9f9;
         border: 2px solid #f37334;
@@ -1177,6 +1176,76 @@
 
     @media screen and (max-width: 768px) {
 
+
+        #mobile-conteudoModoSimples2 th,
+        td {
+            overflow: hidden;
+            text-align: center;
+            line-height: normal;
+        }
+
+        #mobile-conteudoModoSimples2 .table-requisicoes td:nth-child(2) {
+            white-space: nowrap;
+        }
+
+        #mobile-conteudoModoSimples2 th {
+            font-size: 10px;
+            white-space: nowrap;
+        }
+
+        #mobile-conteudoModoSimples2 .table-requisicoes tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        #mobile-conteudoModoSimples2 .table-requisicoes {
+            width: 98%;
+        }
+
+        /* Estilos para alinhar os elementos dentro da legenda */
+        .caption-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .caption-container img {
+            margin-right: 10px;
+            /* Espaçamento entre a imagem e o texto */
+        }
+
+        .modo-simples2 h3 {
+            margin: 5px 0px 5px;
+            font-size: 16px;
+            color: orangered;
+            min-width: 220px;
+        }
+    
+
+        .preco-container {
+            margin: 10px 0 10px;
+            font-size: 12px;
+        }
+
+        .icone-pre-compra {
+            left: -13%;
+            width: 30px;
+        }
+
+        .box-info-requisicao-btn .botao-pagamento {
+            font-size: 10px;
+        }
+
+        /* OCULTA A TABELA GRANDE E MOSTRA A PEQUENA */
+        .modo-simples2 #conteudoModoSimples2 {
+            display: none !important;
+        }
+
+        .modo-simples2 #mobile-conteudoModoSimples2 {
+            display: block !important;
+        }
+
+        /**/
+
         .modo-simples {
             display: none;
         }
@@ -1352,59 +1421,8 @@
             margin-top: 5px;
             /* Adiciona margem acima do título */
         }
-
-        /*TABELA NO MOBILE!!! */
-
-        .table-container {
-            overflow-x: auto;
-            /* Adiciona rolagem horizontal */
-            position: relative;
-            /* Define posição relativa para a tabela container */
-            max-width: 100%;
-            /* Garante que a tabela não exceda a largura da tela */
-        }
-
-        .table-requisicoes {
-            display: block;
-            /* Altera a exibição para bloco para permitir a rolagem horizontal */
-            white-space: nowrap;
-            /* Impede a quebra de linha dentro das células */
-        }
-
-        .table-requisicoes table {
-            table-layout: fixed;
-            /* Define a largura da tabela como fixa */
-            width: auto;
-            /* Garante que a largura da tabela seja definida pelo conteúdo */
-        }
-
-        .table-requisicoes th:first-child,
-        .table-requisicoes td:first-child {
-            position: sticky;
-            left: 0;
-            z-index: 1;
-        }
-
-        .table-requisicoes th:not(:first-child),
-        .table-requisicoes td:not(:first-child) {
-            z-index: 0;
-        }
-
-        .cards-container.modo-simples2 .card {
-            width: 94%;
-            min-height: 135px;
-            margin: 10px 10px 0 5px;
-            padding: 5px 5px 4px;
-            background-color: #f9f9f9;
-            border: 2px solid #f37334;
-            border-radius: 5px;
-            position: relative;
-            align-items: flex-start;
-            overflow-x: auto;
-            overflow-y: auto;
-        }
-
     }
+
 
     /* Versão Desktop pro modo-lista das obras */
     @media screen and (min-width: 769px) {
