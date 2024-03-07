@@ -1222,18 +1222,28 @@
             margin: 5px 0px 5px;
             font-size: 14px;
             color: orangered;
-            min-width: 220px;
             line-height: normal;
+            min-width: 186px;
         }
+    }
+    
+  /* Estilo para telas Iphones */
+@media only screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .modo-simples2 h3 {
+        min-width: 220px;
+    }
+}
 
-        /* ANDROID */
-         @media screen and (max-width: 420px) {
-            .modo-simples2 h3 {
-                min-width: 185px;
-            }
-        } 
+/* Estilo para Androids */
+@media only screen and (max-device-width: 414px) and (-webkit-min-device-pixel-ratio: 3) {
+    .modo-simples2 h3 {
+        min-width: 186px;
+    }
+}
 
-        
+
+
+@media screen and (max-width: 768px) {
 
         .preco-container {
             margin: 10px 0 10px;
