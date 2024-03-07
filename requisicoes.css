@@ -1223,21 +1223,21 @@
             font-size: 14px;
             color: orangered;
             line-height: normal;
-            min-width: 186px;
+            min-width: 150px;
         }
     }
     
   /* Estilo para telas Iphones */
-@media only screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-device-width: 400px) and (-webkit-min-device-pixel-ratio: 1.5) {
     .modo-simples2 h3 {
         min-width: 220px;
     }
 }
 
 /* Estilo para Androids */
-@media only screen and (max-device-width: 414px) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen and (max-device-width: 400px) and (-webkit-min-device-pixel-ratio: 3) {
     .modo-simples2 h3 {
-        min-width: 186px;
+        min-width: 150px;
     }
 }
 
