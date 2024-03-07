@@ -839,6 +839,7 @@
         overflow: hidden;
         /* Ocultar sombra que ultrapassa a borda arredondada */
         display: none;
+        border-top: 3px solid #999;
     }
 
     /* CSS para exibir a tabela no modo-simples2 */
