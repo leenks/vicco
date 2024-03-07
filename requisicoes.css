@@ -857,9 +857,9 @@
 
 
     .table-requisicoes th {
-        background-color: #f37334;
+        background-color: #ddd;
         /* Cor de fundo laranja para o cabeçalho */
-        color: white;
+        color: #444;
         /* Cor do texto branco */
         text-align: center;
     }
