@@ -1190,7 +1190,6 @@
                 max-width: 100%; /* Define a largura máxima da tabela como 100% do contêiner pai */
                 overflow-x: auto; /* Adiciona uma barra de rolagem horizontal caso a tabela exceda a largura do contêiner */
             }
-        }
         
         #mobile-conteudoModoSimples2 .table-requisicoes td {
             font-size: 10px;
