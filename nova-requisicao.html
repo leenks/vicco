@@ -48,7 +48,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                            <a href="#" onclick="goBack()"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
                                 <p>Voltar</p>
                             </a>
                         </div>
@@ -399,6 +399,12 @@
             });
         });
     </script>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 
 
