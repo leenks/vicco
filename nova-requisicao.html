@@ -102,12 +102,12 @@
                                         <div class="col-md-2">
 
                                             <input type="checkbox" id="rtb" name="rtb" value="1" />
-                                            <label for="rtb">Retrabalho</label>
+                                            <label for="rtb" style="display: inline-block;">Retrabalho</label>
                                         </div>
 
                                         <div class="col-md-2">
                                             <input type="checkbox" id="ocu" name="ocu" value="1" />
-                                            <label for="ocu">Sigilosa</label>
+                                            <label for="ocu" style="display: inline-block;">Sigilosa</label>
                                         </div>
                                         <div class="col-md-2">
                                             <label>Status</label>
@@ -220,7 +220,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-3">
-                                                <input type="checkbox" id="check_sub" name="gsg" value="1" /><label for="check_sub"><br>Utilizar Grupo e SubGrupo <br>selecionado
+                                                <input type="checkbox" id="check_sub" name="gsg" value="1" /><label for="check_sub" style="display: inline-block;"><br>Utilizar Grupo e SubGrupo <br>selecionado
                                                     anteriormente</label>
                                             </div>
                                         </div>
@@ -325,33 +325,30 @@
                                     </div>
                                     <br /><br />
                                     <div class="form-row align-right">
-                                        <div class="col-md-2"> </div>
                                         <div class="col-md-2 text-center">
-                                            <br />
                                             <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
                                         </div>
                                         <div class="col-md-2"> </div>
-                                        <div class="col-sm-2 text-center"></div>
-                                        <div class="col-sm-1 text-center">
-                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones" style="margin-left: 10px;"><i class="fa-regular fa-floppy-disk"></i></button><label>Salvar</label>
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
                                         </div>
                                     
-                                        <div class="col-sm-1 text-center">
-                                            <button type="submit" id="fecha" class="sub-icones" name="fechar" title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i class="fa-regular fa-square-check"></i></button>
-                                            <label>Finalizar</label>
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="fecha" class="sub-icones" name="fechar" title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
+                                            
                                         </div>
-                                        <div class="col-sm-1 text-center">
-                                            <button type="submit" id="cancel" class="sub-icones" name="cancel" title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i class="fa-regular fa-rectangle-xmark"></i></button>
-                                            <label>Cancelar</label>
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="cancel" class="sub-icones" name="cancel" title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
+                                            
                                         </div>
-                                        <div class="col-sm-1 text-center">
+                                        <div class="space-btn text-center">
                                             <div>
                                                 <input type="file" id="anexo" name="anexo" class="sub-icones" style="display: none;" />
                                                 <button type="button" id="fot_carrega" class="sub-icones" name="subir" title="Abrir janela para carregar imagem para a requisição de compra" onclick="document.getElementById('anexo').click();">
-                                                    <i class="fa-solid fa-paperclip"></i>
+                                                    <i class="fa-solid fa-paperclip"></i><label>Salvar</label>
                                                 </button>
                                             </div>
-                                            <label>Solicitação</label>
+                                            
                                         </div>
                                     </div>
                                     <p>&nbsp;</p>
