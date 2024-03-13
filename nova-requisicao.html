@@ -96,7 +96,7 @@
 
                                         <div class="col-md-3">
                                             <label>Data Entrega</label>
-                                            <input type="date" class="form-control">
+                                            <input type="date" class="form-control text-center" required>
 
                                         </div>
                                         <div class="col-md-2">
@@ -122,16 +122,16 @@
                                         <hr style="width: 100%;">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <label>Nome do Cliente</label>
-                                                <input type="text" class="form-control" maxlength="75" id="cli"
-                                                    name="cli" value="Bio Ritmo - Alto das Nações" required disabled />
-                                            </div>
-                                            <div class="col-md-6">
                                                 <label>Nome da Obra</label>
                                                 <select id="obr" name="obr" class="form-control" required disabled>
                                                     <option value="108" selected="selected">Bio Ritmo - Alto das Nações
                                                     </option>
                                                 </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Nome do Cliente</label>
+                                                <input type="text" class="form-control" maxlength="75" id="cli"
+                                                    name="cli" value="Bio Ritmo - Alto das Nações" required disabled />
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -142,7 +142,7 @@
                                            </div>
                                            <div class="col-md-3">
                                             <label>Data Necessário</label>
-                                            <input type="text" class="form-control text-center" maxlength="10"
+                                            <input type="date" class="form-control text-center" maxlength="10"
                                                 id="ent" name="ent" value="" required />
                                         </div>
                                         <div class="col-md-2">
@@ -220,7 +220,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-3">
-                                                <input type="checkbox" id="check_sub" name="rtb" value="1" /><label for="check_sub"><br>Utilizar SubGrupo <br>selecionado
+                                                <input type="checkbox" id="check_sub" name="gsg" value="1" /><label for="check_sub"><br>Utilizar Grupo e SubGrupo <br>selecionado
                                                     anteriormente</label>
                                             </div>
                                         </div>
@@ -388,15 +388,18 @@
             $('#check_sub').change(function () {
                 // Se o checkbox estiver selecionado
                 if ($(this).is(':checked')) {
-                    // Desativa o campo "Sub-Grupo"
+                    // Desativa os campos "Grupo" e "Sub-Grupo"
+                    $('#gru').prop('disabled', true);
                     $('#sub').prop('disabled', true);
                 } else {
-                    // Caso contrário, habilita o campo "Sub-Grupo"
+                    // Caso contrário, habilita os campos "Grupo" e "Sub-Grupo"
+                    $('#gru').prop('disabled', false);
                     $('#sub').prop('disabled', false);
                 }
             });
         });
     </script>
+    
 
 <script>
     function goBack() {
