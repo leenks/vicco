@@ -866,6 +866,9 @@ body {
     margin-top: 20px;
     /* Espaçamento entre os blocos e a imagem */
 }
+.status {
+    height: 100px;
+}
 
 .sub-icones-wrap {
     display: flex;
@@ -932,30 +935,16 @@ body {
 
 @media screen and (max-width: 768px) {
     .topo {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         padding: 15px 0px;
     }
-
-    .logo img {
-        margin: 0;
-    }
-
-    .usuario-info {
-        max-width: 170px;
-        padding-right: 20px;
-    }
-
-    #data-hora {
-        min-width: 170px;
-    }
-
 
     .menu,
     .caixa-menu {
         flex-direction: row;
         justify-content: center;
-        margin-top: 0px;
+        margin-top: 40px;
     }
 
     .menu-item {
@@ -971,6 +960,21 @@ body {
         width: calc(33.33% - 20px);
         /* Define a largura para 33.33% e subtrai a margem entre os itens */
         text-align: center;
+    }
+    .logo img {
+        margin: 0;
+    }
+    .status {
+        height: 65px;
+    }
+
+    .usuario-info {
+        max-width: 170px;
+        padding-right: 20px;
+    }
+
+    #data-hora {
+        min-width: 170px;
     }
 
 

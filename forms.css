@@ -66,6 +66,7 @@ select {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    padding-right: 10px;
 }
 
 .campo-valor {
@@ -176,8 +177,32 @@ select {
     .align-right,
     .status-container,
     .label-input-container {
-        width: 100%;
+        width: 99%;
     }
+
+    .form-row label {flex: auto; }
+    .space-btn {min-width: 80px;}
+    
+
+    .form-row {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .form-row > * {
+        margin-bottom: 10px;
+    }
+
+    .form-row label,
+    .form-row input[type="text"],
+    .form-row select,
+    .form-row input[type="checkbox"] {
+        flex-basis: 100%;
+    }
+    .box-info-requisicao-btn {
+        margin-top: 10px;
+    }
+ 
 }
 
 
@@ -220,28 +245,5 @@ select {
     /* Arredonda a borda superior direita */
     border-color: #fe9a35;
     /* Altera a cor da borda ao focar */
-}
-
-
-@media (max-width: 768px) {
-
-    .form-row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .form-row > * {
-        margin-bottom: 10px;
-    }
-
-    .form-row label,
-    .form-row input[type="text"],
-    .form-row select,
-    .form-row input[type="checkbox"] {
-        flex-basis: 100%;
-    }
-    .box-info-requisicao-btn {
-        margin-top: 10px;
-    }
-    
+   
 }

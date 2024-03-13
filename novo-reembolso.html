@@ -58,7 +58,7 @@
         <div class="separa-topo"> &nbsp;</div>
 
         <div class="container-desktop">
-            <center><img class="status" src="imgs/icons-status/03.png" /></center>
+            <center><img class="status" src="imgs/icons-status/21.png" /></center>
             <div class="conteudo">
                 <div class="container-desktop">
                     <!-- Novo Menu de Migalhas (Breadcrumbs) -->
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="conteudo-in">
-                        <h2>Nova Requisição</h2>
+                        <h2>Novo Reembolso</h2>
 
                         <div class="form-content">
                             <div class="form-row">
@@ -94,21 +94,26 @@
                                                 name="cod" value="6513" disabled />
                                         </div>
 
-                                        <div class="col-md-3">
+                                        <!--<div class="col-md-3">
                                             <label>Data Entrega</label>
                                             <input type="date" class="form-control text-center" required>
 
-                                        </div>
+                                        </div>-->
+                                        <div class="col-md-3">
+                                            <label>Nº Contrato</label>
+                                            <select id="con" name="con" class="form-control" disabled>
+                                                 <option value="0" selected="selected">Selecione contrato ...</option><option value ="8" selected>002-Teste contr</option><option value ="2">C21-SFSBC7-CIV1</option><option value ="1">C21-SFSBC7-ELE1</option><option value ="3">C21-SFSBC7-INC1</option><option value ="4">SF-R-Gesso0001</option><option value ="12">SFCRD3-REB_RM</option><option value ="9">SFTAQ4-CLIMAUP</option><option value ="7">Teste 01-contra</option>                                   </select>
+                                       </div>
                                         <div class="col-md-2">
 
                                             <input type="checkbox" id="rtb" name="rtb" value="1" />
                                             <label for="rtb" style="display: inline-block;">Retrabalho</label>
                                         </div>
 
-                                        <div class="col-md-2">
+                                        <!--<div class="col-md-2">
                                             <input type="checkbox" id="ocu" name="ocu" value="1" />
                                             <label for="ocu" style="display: inline-block;">Sigilosa</label>
-                                        </div>
+                                        </div>-->
                                         <div class="col-md-2">
                                             <label>Status</label>
                                             <div class="box-info-requisicao-btn">
@@ -133,23 +138,6 @@
                                                 <input type="text" class="form-control" maxlength="75" id="cli"
                                                     name="cli" value="Bio Ritmo - Alto das Nações" required disabled />
                                             </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-3">
-                                                <label>Nº Contrato</label>
-                                                <select id="con" name="con" class="form-control">
-                                                     <option value="0" selected="selected">Selecione contrato ...</option><option value ="8">002-Teste contr</option><option value ="2">C21-SFSBC7-CIV1</option><option value ="1">C21-SFSBC7-ELE1</option><option value ="3">C21-SFSBC7-INC1</option><option value ="4">SF-R-Gesso0001</option><option value ="12">SFCRD3-REB_RM</option><option value ="9">SFTAQ4-CLIMAUP</option><option value ="7">Teste 01-contra</option>                                   </select>
-                                           </div>
-                                           <div class="col-md-3">
-                                            <label>Data Necessário</label>
-                                            <input type="date" class="form-control text-center" maxlength="10"
-                                                id="ent" name="ent" value="" required />
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label>Total</label>
-                                            <input type="text" class="form-control text-center" maxlength="12"
-                                                id="val" name="val" value="" disabled />
-                                        </div>
                                         </div>
                                         
                                         <hr style="width: 100%;">
@@ -227,19 +215,63 @@
                                         <hr style="width: 100%;">
                                         <div class="form-row">
                                             <div class="col-md-6">
+                                                <label>Nome do Fornecedor</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="" />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Tipo de Documento</label>
+                                                <select id="tip_d" name="tip_d" class="form-control">
+                                                    <option value="0" selected="selected">Nota
+                                                         Fiscal
+                                                    </option>
+                                                    <option value="1" >
+                                                         Cupom Fiscal</option>
+                                                    <option value="2" >
+                                                         Recibo</option>
+                                                    <option value="3" >
+                                                         Sem Docto</option>
+                                               </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Nº Documento</label>
+                                                <input type="number" class="form-control text-right" maxlength="15"
+                                                    id="qtd_i" name="qtd_i" value=""/>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Data Documento</label>
+                                                <input type="date" class="form-control text-right" maxlength="15"
+                                                    id="qtd_i" name="qtd_i" value="" />
+                                            </div>
+                                        </div>
+                                        <hr style="width: 100%;">
+                                        <div class="form-row align-right">
+                                            <div class="space-btn text-center">
+                                                <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                            </div>
+                                        
+                                           <div class="space-btn text-center">
+                                                <div>
+                                                    <input type="file" id="anexo" name="anexo" class="sub-icones" style="display: none;" />
+                                                    <button type="button" id="fot_carrega" class="sub-icones" name="subir" title="Abrir janela para carregar imagem para a requisição de compra" onclick="document.getElementById('anexo').click();">
+                                                        <i class="fa-solid fa-paperclip"></i><label>Nota Fiscal</label>
+                                                    </button>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                
+                                        <hr style="width: 100%;">
+                                        <div class="form-row">
+                                            <div class="col-md-5">
                                                 <label>Produto</label>
                                                 <input type="text" class="form-control" maxlength="50" id="pro_i"
                                                     name="pro_i" value="" disabled />
                                             </div>
-                                            <div class="col-md-2">
-                                                <label>U.M.</label>
-                                                <input type="text" class="form-control text-center" maxlength="5"
-                                                    id="uni_i" name="uni_i" value="" disabled />
-                                            </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-3">
                                                 <label>Marca</label>
                                                 <select id="mar_i" name="mar_i" class="form-control" disabled>
-                                                    <option value="0" selected="selected">Selecione a marca ...</option>
+                                                    <option value="0" selected="selected">Selecione marca:</option>
                                                     <option value="56">3M</option>
                                                     <option value="45">Aço Plano</option>
                                                     <option value="4">Amanco</option>
@@ -320,38 +352,106 @@
                                                 <input type="text" class="form-control text-right" maxlength="15"
                                                     id="qtd_i" name="qtd_i" value="" disabled />
                                             </div>
-                                            
-                                        </div>
-                                    </div>
-                                    <br /><br />
-                                    <div class="form-row align-right">
-                                        <div class="col-md-2 text-center">
-                                            <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
-                                        </div>
-                                        <div class="col-md-2"> </div>
-                                        <div class="space-btn text-center">
-                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
-                                        </div>
-                                    
-                                        <div class="space-btn text-center">
-                                            <button type="submit" id="fecha" class="sub-icones" name="fechar" title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
-                                            
-                                        </div>
-                                        <div class="space-btn text-center">
-                                            <button type="submit" id="cancel" class="sub-icones" name="cancel" title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
-                                            
-                                        </div>
-                                        <div class="space-btn text-center">
-                                            <div>
-                                                <input type="file" id="anexo" name="anexo" class="sub-icones" style="display: none;" />
-                                                <button type="button" id="fot_carrega" class="sub-icones" name="subir" title="Abrir janela para carregar imagem para a requisição de compra" onclick="document.getElementById('anexo').click();">
-                                                    <i class="fa-solid fa-paperclip"></i><label>Solicitação</label>
-                                                </button>
+                                            <div class="col-md-1">
+                                                <label>Preço</label>
+                                                <input type="text" class="form-control text-right" maxlength="15"
+                                                    id="qtd_i" name="qtd_i" value="" disabled />
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>Valor</label>
+                                                <input type="text" class="form-control text-right" maxlength="15"
+                                                    id="qtd_i" name="qtd_i" value="" disabled />
                                             </div>
                                             
                                         </div>
                                     </div>
+                                    <br>                                   
+                                    
+                                        <div class="text-center">
+                                            <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
+                                        </div>
+                                        <div class="form-row align-right">
+
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones"><img src="imgs/ico-reembolso.png"><label>Favorecido</label></button>
+                                        </div>
+                                        </div>
+                                        <hr style="width: 100%;">
+                                        <div class="form-row">
+                                            <div class="col-md-5">
+                                                <label>Nome do Favorecido</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="Fulano de Tal" disabled />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Data de Vencimento</label>
+                                                <input type="date" class="form-control" maxlength="50" id="pro_i"
+                                                name="pro_i" value=" " disabled />
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>DOC</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="qtd_i" id="qtd_i_doc" value="DOC">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>TEF</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="qtd_i" id="qtd_i_tef" value="TEF">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>PIX</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="qtd_i" id="qtd_i_pix" value="PIX" checked>
+                                                </div>
+                                            </div>
+                                            
+                                        <hr style="width: 100%;">
+
+                                            <div class="form-row">
+                                                <div class="col-md-3">
+                                                    <label>Banco</label>
+                                                    <select id="con" name="con" class="form-control" disabled>
+                                                        <option value="0" selected="selected">Banco do Brasil</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <label>Agência</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i_agencia" name="pro_i_agencia" value=" " disabled />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Conta Corrente</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i_conta" name="pro_i_conta" value=" " disabled />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Tipo Chave Pix</label>
+                                                    <select id="con_tipo_pix" name="con_tipo_pix" class="form-control" disabled>
+                                                        <option value="0" selected="selected">Celular</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Chave PIX</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i_pix" name="pro_i_pix" value="(11) 98765-4321" disabled />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>CNPJ/CPF</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i_cnpj_cpf" name="pro_i_cnpj_cpf" value="123.456.789-00" disabled />
+                                                </div>
+                                            </div>
+                                            
+                                        <hr style="width: 100%;">
+                                            
+                                    <div class="form-row align-right">
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="fecha" class="sub-icones" name="fechar" title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
+                                        </div>
+                                    </div>     
+                                    </div>
+                                    
+                                   
                                     <p>&nbsp;</p>
+                                    
 
                     </div><!--conteudo in-->
                 </div><!--container desktop-->
