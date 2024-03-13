@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
 
@@ -164,40 +166,52 @@
             display: flex;
             justify-content: flex-end;
             margin-top: 10px;
-            /* Adicionado espaço entre os botões */
+            font-size: 12px;
         }
 
-        .botoes button {
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
+        .sub-icones-wrap {
+            display: flex;
+            align-items: center;
+            justify-content:flex-end;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        .sub-icones {
+            background: transparent;
+            font-size: 30px;
+            padding: 5px;
             cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 0 10px;
-            font-family: 'Lato', sans-serif;
+            margin: 0;
+            border: 0;
+            display: flex;
+            align-items: center;
+            
+            margin-left: 2px !important;
         }
 
-        .botao-salvar {
-            background: #ff842c;
-            text-shadow: 1px 1px #a8561c;
-            transition: background-color 0.3s;
+        .sub-icones i {
+            color: #ff842a;
+            background: transparent;
         }
 
-        .botao-salvar:hover {
-            background-color: #f05936;
+        .sub-icones i:hover {
+            color: #222;
         }
 
-        .botao-fechar {
-            background-color: #555;
-            text-shadow: 1px 1px #222;
-            transition: background-color 0.3s;
+        .sub-icones+label {
+            margin: 5px;
+            /* Espaçamento entre o ícone e o label */
         }
 
-        .botao-fechar:hover {
-            background-color: #333;
+        .sub-icones label {
+            margin: 5px;
+            color: #444;
+            font-family: 'Lato', 'sans-serif';
+            /* Espaçamento entre o ícone e o label */
         }
+
+
 
         .titulo {
             font-size: 18px;
@@ -347,9 +361,17 @@
                         </div>
                     </div>
                     <div class="linha botoes">
-                        <button class="botao-salvar">Salvar</button>
-                        <button class="botao-fechar">Fechar</button>
+                        <div>
+                            <button type="submit" id="sal_r" name="salvar" class="sub-icones" style="margin-left: 10px;"><i class="far fa-save"></i></button>
+                            <label for="sal_r">Salvar</label>
+                        </div>
+                    
+                        <div>
+                            <button type="submit" id="cancel" class="sub-icones" name="cancel" title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i class="fa-regular fa-rectangle-xmark"></i></button>
+                            <label for="cancel">Fechar</label>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
