@@ -67,23 +67,14 @@
                         <span> > </span>
                         <a href="#">SUPRIMENTOS</a>
                         <span> > </span>
-                        <span>REQUISIÇÕES</span>
+                        <span>REEMBOLSO DE MATERIAS</span>
                     </div>
 
                     <div class="conteudo-in">
                         <h2>Novo Reembolso</h2>
 
                         <div class="form-content">
-                            <div class="form-row">
-                                <form name=" " action="nova-requisicao.html" method="POST">
-                                    <button type="submit" id="nov" name="novo" class="sub-icones"
-                                        title="Abrir Nova Requisição no sistema">
-                                        <i class="fa-regular fa-square-plus"></i>
-                                        <label>Abrir Novo</label>
-                                    </button>
-                                </form>
-                            </div>
-
+         
                             <div id="tel-4">
                                 <form class="qua-5" name="frmTelMan" action="man-requisicao.php" method="POST"
                                     enctype="multipart/form-data">
@@ -281,7 +272,6 @@
                                                 </div>
                                             </div><!--form-row-->
 
-                                            <hr style="width: 100%;">
                                             <div class="form-row">
                                                 <div class="col-md-5">
                                                     <label>Produto</label>
@@ -389,6 +379,45 @@
                                         <div class="text-center" style="margin: 0 auto;">
                                             <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
                                         </div>
+                                        <div class="form-row"><br></div>
+                                        
+                                    <div id="lis_i" class="col-md-12  p-0">
+                                        <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+                                    
+                                            <div class="overflow-auto" style="max-width: 80vw;">
+                                                <div class="tab-1 table-responsive form-row-table">
+                                                    <table id="tab-2" class="table table-sm table-striped table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th width="3%">Alterar</th>
+                                                                <th width="3%">Excluir</th>
+                                                                <th>Sigla</th>
+                                                                <th>Descrição</th>
+                                                                <th class="text-center">U.M.</th>
+                                                                <th>Marca</th>
+                                                                <th class="text-center">Quantidade</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="odd bg-light">
+                                                                <td valign="top" colspan="7" class="dataTables_empty py-3">Não existem produtos a demonstrar ...</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                    
+                                            <div class="dataTables_info" id="tab-2_info" role="status" aria-live="polite">Sem registros de produtos para requisição ...</div>
+                                    
+                                            <div class="dataTables_paginate paging_simple_numbers" id="tab-2_paginate">
+                                                <a class="paginate_button previous disabled" aria-controls="tab-2" data-dt-idx="0" tabindex="0" id="tab-2_previous">Anterior</a>
+                                                <span></span>
+                                                <a class="paginate_button next disabled" aria-controls="tab-2" data-dt-idx="1" tabindex="0" id="tab-2_next">Próximo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row"> </div>
+                                        
+                                        <div class="form-row"> </div>
                                         <div class="form-row align-right">
 
                                             <div class="space-btn text-center">
@@ -396,6 +425,7 @@
                                                         src="imgs/ico-reembolso.png"><label>Favorecido</label></button>
                                             </div>
                                         </div>
+                                        
                                         <hr style="width: 100%;">
                                         <div class="form-row">
                                             <div class="col-md-5">
@@ -430,9 +460,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-                                        <hr style="width: 100%;">
 
                                         <div class="form-row">
                                             <div class="col-md-3">
@@ -481,11 +508,7 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-                                    <p>&nbsp;</p>
-
-
+                                
                             </div><!--conteudo in-->
                         </div><!--container desktop-->
 
