@@ -479,6 +479,7 @@
         margin: 30px 10px 30px;
         font-size: 30px;
         color: #333;
+        font-weight: normal;
     }
 
     .conteudo-in h3 {
@@ -830,11 +831,39 @@
         min-height: 60px;
     }
 
+    
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .input-buscar {
+        width: 150px; /* Defina a largura desejada para o campo de busca */
+        margin-left: 10px; /* Ajuste conforme necessário */
+        height: 25px;
+    }
+    .buscar-label {
+        margin-right: 10px; /* Adicione um espaço entre o label e o input */
+        display: flex;
+    }
+
+    @media (max-width: 767px) {
+        .form-row {
+            flex-direction: column; /* Altera a direção para coluna em dispositivos menores que 768px */
+        }
+
+        .dataTables_length,
+        .dataTables_filter {
+            margin-bottom: 5px; /* Adiciona espaço entre os campos ao empilhá-los */
+        }
+    }
 
     /* Estilo para os inputs */
     input {
         margin-bottom: 10px;
-        width: 100%;
+
         padding: 8px;
     }
 
@@ -920,7 +949,7 @@
 
     .card {
         width: 100%;
-        min-height: 136px;
+        min-height: 148px;
         margin: 10px;
         padding: 5px;
         background-color: #f9f9f9;
@@ -930,7 +959,6 @@
         align-items: flex-start;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
     }
-
 
 
     /* CARDS MODOS DE LISTAGEM*/
@@ -961,7 +989,7 @@
 
     /* Nova classe para o modo-simples */
     .cards-container.modo-simples .card {
-        width: 97%;
+        width: 100%;
         max-height: 55px;
         margin: 10px;
         padding: 5px 5px 0 5px;
@@ -975,7 +1003,7 @@
 
 
     .cards-container.modo-simples2 .card {
-        width: 97%;
+        width: 100%;
         min-height: 135px;
         margin: 10px 0 10px;
         padding: 5px 5px 4px;

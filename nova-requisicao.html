@@ -20,7 +20,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
         </script>
-        </head>
+</head>
 
 <body>
 
@@ -138,20 +138,30 @@
                                             <div class="col-md-3">
                                                 <label>Nº Contrato</label>
                                                 <select id="con" name="con" class="form-control">
-                                                     <option value="0" selected="selected">Selecione contrato ...</option><option value ="8">002-Teste contr</option><option value ="2">C21-SFSBC7-CIV1</option><option value ="1">C21-SFSBC7-ELE1</option><option value ="3">C21-SFSBC7-INC1</option><option value ="4">SF-R-Gesso0001</option><option value ="12">SFCRD3-REB_RM</option><option value ="9">SFTAQ4-CLIMAUP</option><option value ="7">Teste 01-contra</option>                                   </select>
-                                           </div>
-                                           <div class="col-md-3">
-                                            <label>Data Necessário</label>
-                                            <input type="date" class="form-control text-center" maxlength="10"
-                                                id="ent" name="ent" value="" required />
+                                                    <option value="0" selected="selected">Selecione contrato ...
+                                                    </option>
+                                                    <option value="8">002-Teste contr</option>
+                                                    <option value="2">C21-SFSBC7-CIV1</option>
+                                                    <option value="1">C21-SFSBC7-ELE1</option>
+                                                    <option value="3">C21-SFSBC7-INC1</option>
+                                                    <option value="4">SF-R-Gesso0001</option>
+                                                    <option value="12">SFCRD3-REB_RM</option>
+                                                    <option value="9">SFTAQ4-CLIMAUP</option>
+                                                    <option value="7">Teste 01-contra</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Data Necessário</label>
+                                                <input type="date" class="form-control text-center" maxlength="10"
+                                                    id="ent" name="ent" value="" required />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Total</label>
+                                                <input type="text" class="form-control text-center" maxlength="12"
+                                                    id="val" name="val" value="" disabled />
+                                            </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <label>Total</label>
-                                            <input type="text" class="form-control text-center" maxlength="12"
-                                                id="val" name="val" value="" disabled />
-                                        </div>
-                                        </div>
-                                        
+
                                         <hr style="width: 100%;">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -220,11 +230,13 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-3">
-                                                <input type="checkbox" id="check_sub" name="gsg" value="1" /><label for="check_sub" style="display: inline-block;"><br>Utilizar Grupo e SubGrupo <br>selecionado
+                                                <input type="checkbox" id="check_sub" name="gsg" value="1" /><label
+                                                    for="check_sub" style="display: inline-block;"><br>Utilizar Grupo e
+                                                    SubGrupo <br>selecionado
                                                     anteriormente</label>
                                             </div>
                                         </div>
-                                        <hr style="width: 100%;">
+                                        
                                         <div class="form-row">
                                             <div class="col-md-6">
                                                 <label>Produto</label>
@@ -320,7 +332,7 @@
                                                 <input type="text" class="form-control text-right" maxlength="15"
                                                     id="qtd_i" name="qtd_i" value="" disabled />
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                     <br /><br />
@@ -330,79 +342,120 @@
                                         </div>
                                         <div class="col-md-2"> </div>
                                         <div class="space-btn text-center">
-                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                                    class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
                                         </div>
-                                    
+
                                         <div class="space-btn text-center">
-                                            <button type="submit" id="fecha" class="sub-icones" name="fechar" title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
-                                            
+                                            <button type="submit" id="fecha" class="sub-icones" name="fechar"
+                                                title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i
+                                                    class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
+
                                         </div>
                                         <div class="space-btn text-center">
-                                            <button type="submit" id="cancel" class="sub-icones" name="cancel" title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
-                                            
+                                            <button type="submit" id="cancel" class="sub-icones" name="cancel"
+                                                title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
+                                                    class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
+
                                         </div>
                                         <div class="space-btn text-center">
                                             <div>
-                                                <input type="file" id="anexo" name="anexo" class="sub-icones" style="display: none;" />
-                                                <button type="button" id="fot_carrega" class="sub-icones" name="subir" title="Abrir janela para carregar imagem para a requisição de compra" onclick="document.getElementById('anexo').click();">
+                                                <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                                    style="display: none;" />
+                                                <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                                    title="Abrir janela para carregar imagem para a requisição de compra"
+                                                    onclick="document.getElementById('anexo').click();">
                                                     <i class="fa-solid fa-paperclip"></i><label>Solicitação</label>
                                                 </button>
                                             </div>
-                                            
                                         </div>
                                     </div>
-                                    <p>&nbsp;</p>
+                                    <div class="form-row"><br></div>
+                                        
+                                    <div id="lis_i" class="col-md-12  p-0">
+                                        <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+                                    
+                                            <div class="overflow-auto" style="max-width: 80vw;">
+                                                <div class="tab-1 table-responsive form-row-table">
+                                                    <table id="tab-2" class="table table-sm table-striped table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th width="3%">Alterar</th>
+                                                                <th width="3%">Excluir</th>
+                                                                <th>Sigla</th>
+                                                                <th>Descrição</th>
+                                                                <th class="text-center">U.M.</th>
+                                                                <th>Marca</th>
+                                                                <th class="text-center">Quantidade</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="odd bg-light">
+                                                                <td valign="top" colspan="7" class="dataTables_empty py-3">Não existem produtos a demonstrar ...</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                    
+                                            <div class="dataTables_info" id="tab-2_info" role="status" aria-live="polite">Sem registros de produtos para requisição ...</div>
+                                    
+                                            <div class="dataTables_paginate paging_simple_numbers" id="tab-2_paginate">
+                                                <a class="paginate_button previous disabled" aria-controls="tab-2" data-dt-idx="0" tabindex="0" id="tab-2_previous">Anterior</a>
+                                                <span></span>
+                                                <a class="paginate_button next disabled" aria-controls="tab-2" data-dt-idx="1" tabindex="0" id="tab-2_next">Próximo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                            </div><!--conteudo in-->
+                        </div><!--container desktop-->
 
-                    </div><!--conteudo in-->
-                </div><!--container desktop-->
+                    </div><!--div conteudo-->
 
-            </div><!--div conteudo-->
+                    <!-- Ícone no footer -->
+                    <div class="ico-subir-footer" onclick="scrollToTop()">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
 
-            <!-- Ícone no footer -->
-            <div class="ico-subir-footer" onclick="scrollToTop()">
-                <i class="fas fa-arrow-up"></i>
-            </div>
-
-        </div>
-    </div><!--div contaiber full-->
+                </div>
+            </div><!--div contaiber full-->
 
 
-    <script>
-        // Função para rolar até o topo da página
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Para fazer uma rolagem suave
-            });
-        }
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            // Monitora as mudanças no estado do checkbox
-            $('#check_sub').change(function () {
-                // Se o checkbox estiver selecionado
-                if ($(this).is(':checked')) {
-                    // Desativa os campos "Grupo" e "Sub-Grupo"
-                    $('#gru').prop('disabled', true);
-                    $('#sub').prop('disabled', true);
-                } else {
-                    // Caso contrário, habilita os campos "Grupo" e "Sub-Grupo"
-                    $('#gru').prop('disabled', false);
-                    $('#sub').prop('disabled', false);
+            <script>
+                // Função para rolar até o topo da página
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' // Para fazer uma rolagem suave
+                    });
                 }
-            });
-        });
-    </script>
-    
+            </script>
 
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    // Monitora as mudanças no estado do checkbox
+                    $('#check_sub').change(function () {
+                        // Se o checkbox estiver selecionado
+                        if ($(this).is(':checked')) {
+                            // Desativa os campos "Grupo" e "Sub-Grupo"
+                            $('#gru').prop('disabled', true);
+                            $('#sub').prop('disabled', true);
+                        } else {
+                            // Caso contrário, habilita os campos "Grupo" e "Sub-Grupo"
+                            $('#gru').prop('disabled', false);
+                            $('#sub').prop('disabled', false);
+                        }
+                    });
+                });
+            </script>
+
+
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
 
 
 

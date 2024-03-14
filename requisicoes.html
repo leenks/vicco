@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="imgs/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="requisicoes.css">
@@ -110,8 +112,30 @@
 
 
                     <div class="conteudo-in">
-
                         <h2>Requisições</h2>
+                       
+                        <div id="lis_i" class="col-md-12 p-0">
+                            <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+                                <div class="form-row">
+                                    <div class="dataTables_length" id="tab-2_length">
+                                        <label>Demonstrar 
+                                            <select name="tab-2_length" aria-controls="tab-2" class="" style="border: 1px solid #ccc;">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select> 
+                                            linhas por página
+                                        </label>
+                                    </div>
+                                    <div id="tab-2_filter" class="dataTables_filter">
+                                        <label for="buscar" class="buscar-label">Buscar:
+                                        <input type="search" id="buscar" class="input-buscar form-control" style="border: 1px solid #ccc;" placeholder="" aria-controls="tab-2">
+                                    </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="cards-container">
 
@@ -133,7 +157,8 @@
                                         <table class="table-requisicoes">
                                             <caption>
                                                 <div class="caption-container">
-                                                    <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
+                                                    <span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span>
                                                     <h3>Smart Fit - Pirituba 2</h3>
                                                     <div class="box-info-requisicao-btn">
                                                         <span class="botao-pre-compra">
@@ -144,7 +169,6 @@
                                                     </div>
                                                 </div>
                                             </caption>
-
 
                                             <thead>
                                                 <tr>
@@ -203,7 +227,8 @@
                                         <table class="table-requisicoes">
                                             <caption>
                                                 <div class="caption-container">
-                                                    <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
+                                                    <span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span>
                                                     <h3>Bio Ritmo - Alto das Nações</h3>
                                                     <div class="box-info-requisicao-btn">
                                                         <span class="botao-pagamento">
@@ -273,7 +298,8 @@
                                         <table class="table-requisicoes">
                                             <caption>
                                                 <div class="caption-container">
-                                                    <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
+                                                    <span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span>
                                                     <h3>Smart Fit - Pirituba 2</h3>
                                                     <div class="box-info-requisicao-btn">
                                                         <span class="botao-cotacao">
@@ -343,7 +369,8 @@
                                         <table class="table-requisicoes">
                                             <caption>
                                                 <div class="caption-container">
-                                                    <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
+                                                    <span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span>
                                                     <h3>Smart Fit - Pirituba 2</h3>
                                                     <div class="box-info-requisicao-btn">
                                                         <span class="botao-cancelada">
@@ -413,7 +440,8 @@
                                         <table class="table-requisicoes">
                                             <caption>
                                                 <div class="caption-container">
-                                                    <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
+                                                    <span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span>
                                                     <h3>Smart Fit - Pirituba 2</h3>
                                                     <div class="box-info-requisicao-btn">
                                                         <span class="botao-aprovacao">
@@ -507,7 +535,8 @@
                                         <tbody>
                                             <!-- Linhas da tabela aqui -->
                                             <tr>
-                                                 <td><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                                                <td><span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span></td>
                                                 <td>005420</td>
                                                 <td>SFFV2-039</td>
                                                 <td>SmartFit Pirituba 2</td>
@@ -531,7 +560,8 @@
                                             </tr>
 
                                             <tr>
-                                                <td><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                                                <td><span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span></td>
                                                 <td>005420</td>
                                                 <td>SFFV2-039</td>
                                                 <td>Bio Ritmo - Alto das Nações</td>
@@ -555,7 +585,8 @@
                                             </tr>
 
                                             <tr>
-                                                 <td><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                                                <td><span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span></td>
                                                 <td>005420</td>
                                                 <td>SFFV2-039</td>
                                                 <td>SmartFit Pirituba 2</td>
@@ -579,7 +610,8 @@
                                             </tr>
 
                                             <tr>
-                                                 <td><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                                                <td><span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span></td>
                                                 <td>005420</td>
                                                 <td>SFFV2-039</td>
                                                 <td>Bio Ritmo - Alto das Nações</td>
@@ -603,7 +635,8 @@
                                             </tr>
 
                                             <tr>
-                                                 <td><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                                                <td><span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span></td>
                                                 <td>005420</td>
                                                 <td>SFFV2-039</td>
                                                 <td>SmartFit Pirituba 2</td>
@@ -1090,6 +1123,28 @@
                                 </div><!-- box-info-requisicao -->
 
                             </div><!--div card-->
+                     
+                                <div class="col-md-6">
+                                    <div class="dataTables_info" id="tab-9_info" role="status" aria-live="polite">Mostrada página 1 de 34</div>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="tab-9_paginate">
+                                        <a class="paginate_button previous disabled" aria-controls="tab-9" data-dt-idx="0" tabindex="0" id="tab-9_previous">Anterior</a>
+                                        <span>
+                                            <a class="paginate_button current" aria-controls="tab-9" data-dt-idx="1" tabindex="0">1</a>
+                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="2" tabindex="0">2</a>
+                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="3" tabindex="0">3</a>
+                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="4" tabindex="0">4</a>
+                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="5" tabindex="0">5</a>
+                                            <span class="ellipsis">…</span>
+                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="6" tabindex="0">34</a>
+                                        </span>
+                                        <a class="paginate_button next" aria-controls="tab-9" data-dt-idx="7" tabindex="0" id="tab-9_next">Próximo</a>
+                                    </div>
+                                </div>
+                    
+                            
+                            
 
                         </div><!--div cards-container-->
 
@@ -1098,16 +1153,16 @@
 
             </div><!--div conteudo-->
 
-                  <!-- Ícone no footer -->
-        <div class="ico-subir-footer" onclick="scrollToTop()">
-            <i class="fas fa-arrow-up"></i>
-        </div>
+            <!-- Ícone no footer -->
+            <div class="ico-subir-footer" onclick="scrollToTop()">
+                <i class="fas fa-arrow-up"></i>
+            </div>
 
         </div><!--container desktop-->
 
 
-         <!-- Modal de Filtro -->
-         <div id="filterModal" class="modal">
+        <!-- Modal de Filtro -->
+        <div id="filterModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeFilterModal()">&times;</span>
 
@@ -1188,7 +1243,8 @@
                         <ul>
                             <li>
                                 <label>
-                                    <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e rh)
+                                    <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e
+                                    rh)
                                 </label>
                             </li>
                             <li>
@@ -1216,7 +1272,7 @@
             </div><!--div modal content-->
         </div><!--div filter modal-->
 
-          <script>
+        <script>
             // Função para rolar até o topo da página
             function scrollToTop() {
                 window.scrollTo({
