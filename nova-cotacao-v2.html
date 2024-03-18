@@ -138,65 +138,7 @@
                                             </div>
                                         </div><!--div form-row-->
                                         
-                                        <div class="form-row">
-                                            <div class="col-md-4">
-                                                <label>Grupo</label>
-                                                <select id="gru" name="gru" class="form-control" required>
-                                                    <option value="0" selected="selected">Selecione o grupo ...
-                                                    </option>
-                                                    <option value="64">01 - Pré - Obra</option>
-                                                    <option value="20">02 - Custos Administrativos</option>
-                                                    <option value="1">03 - Serviços Preliminares</option>
-                                                    <option value="21">04 - Demolições e Remoções</option>
-                                                    <option value="69">05-Estruturas de Concreto Armado</option>
-                                                    <option value="47">06 - Estruturas Metálicas</option>
-                                                    <option value="2">07 - Paredes e Divisórias</option>
-                                                    <option value="4">08 - Revestimentos de Paredes</option>
-                                                    <option value="5">09 - Impermeabilização</option>
-                                                    <option value="6">10 - Pisos</option>
-                                                    <option value="26">11 - Instalações Hidráulicas</option>
-                                                    <option value="27">12 - Instalações Elétricas</option>
-                                                    <option value="52">13 - T.I. / Sonorização / Automação</option>
-                                                    <option value="41">14 - Ar Condicionado e Exaustão</option>
-                                                    <option value="33">15 - Combate de Incêndio </option>
-                                                    <option value="9">16 - Forros</option>
-                                                    <option value="10">17 - Pintura</option>
-                                                    <option value="11">18 - Vidros e Espelhos</option>
-                                                    <option value="12">19 - Granitos</option>
-                                                    <option value="48">20 - Serralheria</option>
-                                                    <option value="14">21 - Esquadrias</option>
-                                                    <option value="22">22 - Plataformas e Elevadores</option>
-                                                    <option value="43">23 - Coberturas</option>
-                                                    <option value="54">24 - Divisórias</option>
-                                                    <option value="56">25 - Luminárias</option>
-                                                    <option value="57">26 - Aquecedores</option>
-                                                    <option value="58">27 - Marcenaria</option>
-                                                    <option value="59">28 - Eletro Eletrônicos</option>
-                                                    <option value="73">29 - Isolamento Térmico e Acústico</option>
-                                                    <option value="71">30 - Fachadas e Comunicação Visual</option>
-                                                    <option value="62">31 - Urbanização e Serviços Externos</option>
-                                                    <option value="51">32 - Apoio Civil</option>
-                                                    <option value="49">33- Limpeza de Obra</option>
-                                                    <option value="61">34 - Omissos</option>
-                                                    <option value="46">39 - Gerenciamento</option>
-                                                    <option value="78">40 - Dry Wall</option>
-                                                    <option value="83">Implantação</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label>Sub-Grupo</label>
-                                                <select id="sub" name="sub" class="form-control" required>
-                                                    <option value="0" selected="selected">Selecione o sub-grupo ...
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input type="checkbox" id="check_sub" name="gsg" value="1" /><label
-                                                    for="check_sub" style="display: inline-block;"><br>Utilizar
-                                                    Grupo e SubGrupo <br>selecionado
-                                                    anteriormente</label>
-                                            </div>
-                                        </div><!--form-row-->
+                                    
 
                                             <div class="form-row align-right">
                                            
@@ -216,17 +158,81 @@
                                                 </div>
                                                 
                                             </div><!--div dorm-row align-right-->
-                                            <div class="text-center" style="margin: 0 auto;">
-                                                <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
-                                            </div>
+                                            
+                                            <hr width="100%">
+
+                                            <div class="form-row">
+                                                <div class="col-md-4">
+                                                    <label>Grupo</label>
+                                                    <select id="gru" name="gru" class="form-control" required>
+                                                        <option value="0" selected="selected">Selecione o grupo ...
+                                                        </option>
+                                                        <option value="64">01 - Pré - Obra</option>
+                                                        <option value="20">02 - Custos Administrativos</option>
+                                                        <option value="1">03 - Serviços Preliminares</option>
+                                                        <option value="21">04 - Demolições e Remoções</option>
+                                                        <option value="69">05-Estruturas de Concreto Armado</option>
+                                                        <option value="47">06 - Estruturas Metálicas</option>
+                                                        <option value="2">07 - Paredes e Divisórias</option>
+                                                        <option value="4">08 - Revestimentos de Paredes</option>
+                                                        <option value="5">09 - Impermeabilização</option>
+                                                        <option value="6">10 - Pisos</option>
+                                                        <option value="26">11 - Instalações Hidráulicas</option>
+                                                        <option value="27">12 - Instalações Elétricas</option>
+                                                        <option value="52">13 - T.I. / Sonorização / Automação</option>
+                                                        <option value="41">14 - Ar Condicionado e Exaustão</option>
+                                                        <option value="33">15 - Combate de Incêndio </option>
+                                                        <option value="9">16 - Forros</option>
+                                                        <option value="10">17 - Pintura</option>
+                                                        <option value="11">18 - Vidros e Espelhos</option>
+                                                        <option value="12">19 - Granitos</option>
+                                                        <option value="48">20 - Serralheria</option>
+                                                        <option value="14">21 - Esquadrias</option>
+                                                        <option value="22">22 - Plataformas e Elevadores</option>
+                                                        <option value="43">23 - Coberturas</option>
+                                                        <option value="54">24 - Divisórias</option>
+                                                        <option value="56">25 - Luminárias</option>
+                                                        <option value="57">26 - Aquecedores</option>
+                                                        <option value="58">27 - Marcenaria</option>
+                                                        <option value="59">28 - Eletro Eletrônicos</option>
+                                                        <option value="73">29 - Isolamento Térmico e Acústico</option>
+                                                        <option value="71">30 - Fachadas e Comunicação Visual</option>
+                                                        <option value="62">31 - Urbanização e Serviços Externos</option>
+                                                        <option value="51">32 - Apoio Civil</option>
+                                                        <option value="49">33- Limpeza de Obra</option>
+                                                        <option value="61">34 - Omissos</option>
+                                                        <option value="46">39 - Gerenciamento</option>
+                                                        <option value="78">40 - Dry Wall</option>
+                                                        <option value="83">Implantação</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Sub-Grupo</label>
+                                                    <select id="sub" name="sub" class="form-control" required>
+                                                        <option value="0" selected="selected">Selecione o sub-grupo ...
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input type="checkbox" id="check_sub" name="gsg" value="1" /><label
+                                                        for="check_sub" style="display: inline-block;"><br>Utilizar
+                                                        Grupo e SubGrupo <br>selecionado
+                                                        anteriormente</label>
+                                                </div>
+                                            </div><!--form-row-->
 
                                            
 
                                             <div class="form-row">
-                                                <div class="col-md-5">
+                                                <div class="col-md-6">
                                                     <label>Produto</label>
                                                     <input type="text" class="form-control" maxlength="50" id="pro_i"
                                                         name="pro_i" value="" disabled />
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <label>U.M.</label>
+                                                    <input type="text" class="form-control text-right" maxlength="15"
+                                                        id="qtd_i" name="qtd_i" value="" disabled />
                                                 </div>
                                                 <div class="col-md-3">
                                                     <label>Marca</label>
@@ -312,19 +318,39 @@
                                                     <input type="text" class="form-control text-right" maxlength="15"
                                                         id="qtd_i" name="qtd_i" value="" disabled />
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <label>Preço</label>
-                                                    <input type="text" class="form-control text-right" maxlength="15"
-                                                        id="qtd_i" name="qtd_i" value="" disabled />
+                                               
+                                               
+                                            </div>
+                                            <div class="form-row d-none d-md-block"><br></div>
+                                        
+                                            <div class="form-row align-right">
+                                                
+                                                
+                                                <div class="space-btn text-center">
+                                                    <div>
+                                                        <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                                            style="display: none;" />
+                                                        <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                                            title="Abrir janela para carregar imagem para a requisição de compra"
+                                                            onclick="document.getElementById('anexo').click();">
+                                                            <i class="fa-solid fa-paperclip"></i><label>Anexos</label>
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <label>Valor</label>
-                                                    <input type="text" class="form-control text-right" maxlength="15"
-                                                        id="qtd_i" name="qtd_i" value="" disabled />
+                                                <div class="space-btn text-center">
+                                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
+                                                        title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
+                                                            class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
                                                 </div>
+                                                
+                                                <div class="space-btn text-center">
+                                                    <button type="submit" id="fecha" class="sub-icones" name="fechar"
+                                                        title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i
+                                                            class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
+                                                </div>
+                                                <div class="form-row d-none d-md-block"><br></div>
 
                                             </div>
-                                            <div class="form-row"><br></div>
                                         
                                     <div id="lis_i" class="col-md-12  p-0">
                                         <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
