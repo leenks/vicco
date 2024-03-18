@@ -85,8 +85,7 @@
                             </div>
 
                             <div id="tel-4">
-                                <form class="qua-5" name="frmTelMan" action="man-requisicao.php" method="POST"
-                                    enctype="multipart/form-data">
+                                <form id="formularioRequisicao" name="frmTelMan" action="" method="POST" enctype="multipart/form-data">
                                     <div class="form-row">
                                         <div class="col-md-3 col-6">
                                             <label>Número</label>
@@ -139,20 +138,20 @@
                                         </div><!--div form-row-->
                                         
                                           <br>
-                                            <div class="form-row">
-                                                    <div class="space-btn text-center" style="margin: 0 auto;">
-                                                        <button type="submit" id="sal_r" name="salvar"
-                                                            class="sub-icones"><i
-                                                                class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
-                                                  </div>
-                                            </div><!--form row-->
+                                          <div class="form-row">
+                                            <div class="space-btn text-center" style="margin: 0 auto;">
+                                                <button type="button" id="salvar" name="salvar" class="sub-icones">
+                                                    <i class="fa-regular fa-floppy-disk"></i><label>Salvar</label>
+                                                </button>
+                                            </div>
+                                        </div><!--form row-->
 
                                             <hr width="100%">
 
                                             <div class="form-row">
                                                 <div class="col-md-4">
                                                     <label>Grupo</label>
-                                                    <select id="gru" name="gru" class="form-control" required>
+                                                    <select id="gru" name="gru" class="form-control" required disabled>
                                                         <option value="0" selected="selected">Selecione o grupo ...
                                                         </option>
                                                         <option value="64">01 - Pré - Obra</option>
@@ -196,13 +195,13 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Sub-Grupo</label>
-                                                    <select id="sub" name="sub" class="form-control" required>
+                                                    <select id="sub" name="sub" class="form-control" required disabled>
                                                         <option value="0" selected="selected">Selecione o sub-grupo ...
                                                         </option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <input type="checkbox" id="check_sub" name="gsg" value="1" /><label
+                                                    <input type="checkbox" id="check_sub" name="gsg" value="1" disabled /><label
                                                         for="check_sub" style="display: inline-block;"><br>Utilizar
                                                         Grupo e SubGrupo <br>selecionado
                                                         anteriormente</label>
@@ -482,7 +481,20 @@
 </script>
 
 
+<!--FUNCAO QUE HABILITA OS CAMPOS BLOQUEADOS-->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("salvar").addEventListener("click", function() {
+            // Elementos que serão habilitados
+            var elementosHabilitar = document.querySelectorAll("#gru, #sub, #check_sub, #pro_i, #qtd_i, #mar_i");
 
+            // Para cada elemento a ser habilitado, remova o atributo "disabled"
+            elementosHabilitar.forEach(function(elemento) {
+                elemento.removeAttribute("disabled");
+            });
+        });
+    });
+</script>
 </body>
 
 </html>
