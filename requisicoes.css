@@ -286,43 +286,12 @@
 
     /* ESSA É A CAIXA DE FILTROS */
 
-    .filtros-selecionados {
+    .filtro-tabela {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        /* Alinha os filtros à direita */
+        justify-content: space-between;
+        /* Isso fará com que as colunas ocupem todo o espaço disponível na linha */
+        margin-right: 20px;
     }
-
-    .filtros-selecionados span {
-        background-color: #79C14E;
-        color: white;
-        border-radius: 5px;
-        padding: 5px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        font-size: 10px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        /* Adiciona cursor para indicar que é clicável */
-    }
-
-    .filtros-selecionados span:hover {
-        background-color: #A4A4A4;
-
-    }
-
-    .filtros-selecionados button {
-        background-color: #fff;
-        border-radius: 5px;
-        border: 1px solid #444;
-        font-size: 12px;
-        padding: 0px 5px !important;
-    }
-
-
-
-    /* ESSA É A CAIXA DE FILTROS */
 
     .filtros-selecionados {
         display: flex;
@@ -347,7 +316,6 @@
 
     .filtros-selecionados span:hover {
         background-color: #A4A4A4;
-
     }
 
     .filtros-selecionados button {
@@ -358,28 +326,44 @@
         padding: 0px 5px !important;
     }
 
+    
+    .filtro-coluna {
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
 
     .modal {
         display: none;
         position: fixed;
-        z-index: 2000;
-        left: 0;
         top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+        animation: slideInFromTop 0.5s ease-in forwards;
+    }
+
+    .modal-envolto {
+        position: relative;
+        background-color: #efefef;
+        padding: 1px 20px;
+        max-width: 960px;
+        margin: 2% auto;
+    }
+    .modal-wrap {
+        padding: 50px 10px 10px;
     }
 
     .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        animation: slideIn 0.5s ease;
+        position: relative;
+        background-color: #f5f5f5;
+        margin: 2% auto;
+        max-width: 960px;
+        border-radius: 10px;
+        border: 3px solid #f47332;
     }
+
 
     /* CLASSE DE ANIMAÇÃO PRO SLIDER DO FILTRO */
 
@@ -397,25 +381,29 @@
 
     .modal-content label {
         display: block;
-        margin-bottom: 20px;
     }
 
     .modal-content select {
         margin-left: 10px;
     }
 
-    .modal-content h2,
     .modal-content label,
     .modal-content div {
-        margin-bottom: 20px;
         line-height: normal;
     }
 
+    .modal-content h3 {
+        font-size: 18px;
+        margin: 20px 0;
+    }
+
     .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 2;
     }
 
     .close:hover,
@@ -424,6 +412,22 @@
         text-decoration: none;
         cursor: pointer;
     }
+
+    .tit-modal  {
+        font-size: 24px;
+        order: 1;
+        font-weight: normal;
+        color: #fff;
+        background-color: #f47332;
+        padding: 10px;
+        text-shadow: 1px 1px #a8561c;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        font-family: 'Lato', 'sans-serif';
+        position: absolute;
+        width: 100%;
+    }
+
 
     button {
         padding: 10px;
@@ -435,17 +439,20 @@
         text-transform: capitalize;
     }
 
-    button.filtrar {
-        background-color: #79C14E;
-        /* Verde */
-        color: white;
+    .linha {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
     }
 
-    button.limpar {
-        background-color: #A4A4A4;
-        /* Amarelo */
-        color: white;
+.subsub-botoes {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+        font-size: 12px;
     }
+
+    /* *** */
 
 
     .informacoes {
@@ -506,7 +513,7 @@
         justify-content: center;
         width: 100%;
     }
-    
+
     .sub-icones {
         background: transparent;
         font-size: 30px;
@@ -517,21 +524,21 @@
         display: flex;
         align-items: center;
     }
-    
+
     .sub-icones i {
         color: #ff842a;
         background: transparent;
     }
-    
+
     .sub-icones i:hover {
         color: #222;
     }
-    
+
     .sub-icones+label {
         margin: 5px;
         /* Espaçamento entre o ícone e o label */
     }
-    
+
 
     /* Estilo para o ícone de pré-compra */
     .icone-pre-compra {
@@ -831,7 +838,7 @@
         min-height: 60px;
     }
 
-    
+
     .form-row {
         display: flex;
         justify-content: space-between;
@@ -840,31 +847,38 @@
     }
 
     .input-buscar {
-        width: 150px; /* Defina a largura desejada para o campo de busca */
-        margin-left: 10px; /* Ajuste conforme necessário */
+        width: 150px;
+        /* Defina a largura desejada para o campo de busca */
+        margin-left: 10px;
+        /* Ajuste conforme necessário */
         height: 25px;
     }
+
     .buscar-label {
-        margin-right: 10px; /* Adicione um espaço entre o label e o input */
+        margin-right: 10px;
+        /* Adicione um espaço entre o label e o input */
         display: flex;
     }
 
     @media (max-width: 767px) {
         .form-row {
-            flex-direction: column; /* Altera a direção para coluna em dispositivos menores que 768px */
+            flex-direction: column;
+            /* Altera a direção para coluna em dispositivos menores que 768px */
         }
 
         .dataTables_length,
         .dataTables_filter {
-            margin-bottom: 5px; /* Adiciona espaço entre os campos ao empilhá-los */
+            margin-bottom: 5px;
+            /* Adiciona espaço entre os campos ao empilhá-los */
         }
     }
 
     /* Estilo para os inputs */
     input {
         margin-bottom: 10px;
-
-        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #444;
+        padding: 4px;
     }
 
     /* Estilo para os labels */
@@ -1033,7 +1047,6 @@
 
 
 
-
     .toggle-container .toggle-container2 button {
         background: none;
         border: none;
@@ -1100,48 +1113,6 @@
     }
 
 
-
-
-    /* FILTROS */
-
-    .filtro-tabela {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-        z-index: 10001;
-    }
-
-    .filtro-coluna {
-        flex: 1;
-        margin-right: 20px;
-    }
-
-    .filtro-coluna input {
-        margin-bottom: 10px;
-        width: 100%;
-        padding: 6px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        border: 1px solid;
-    }
-
-
-    .filtro-coluna label {
-
-        display: block;
-        margin-bottom: 5px;
-        width: 10%;
-    }
-
-    .filtro-coluna ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .filtro-coluna li {
-        margin-bottom: 5px;
-    }
 
     /* BOXS REQUISIÇÕES */
 
@@ -1258,15 +1229,17 @@
         }
 
         #mobile-conteudoModoSimples2 .table-requisicoes {
-            margin-bottom: 10px;            
-                max-width: 100%; /* Define a largura máxima da tabela como 100% do contêiner pai */
-                overflow-x: auto; /* Adiciona uma barra de rolagem horizontal caso a tabela exceda a largura do contêiner */
-            }
-        
+            margin-bottom: 10px;
+            max-width: 100%;
+            /* Define a largura máxima da tabela como 100% do contêiner pai */
+            overflow-x: auto;
+            /* Adiciona uma barra de rolagem horizontal caso a tabela exceda a largura do contêiner */
+        }
+
         #mobile-conteudoModoSimples2 .table-requisicoes td {
             font-size: 10px;
         }
-        
+
         #mobile-conteudoModoSimples2 .table-requisicoes td:nth-child(2) {
             white-space: nowrap;
         }
@@ -1278,6 +1251,77 @@
         #mobile-conteudoModoSimples2 .table-requisicoes tr:nth-child(even) {
             background-color: #fff;
         }
+
+        /* ESSA É A CAIXA DE FILTROS */
+
+        .modal-wrap {
+            padding: 70px 10px 10px;
+        }
+    
+
+        /* FILTROS */
+
+        .filtro-tabela {
+            display: flex;
+            flex-wrap: wrap;
+            z-index: 10001;
+        }
+
+        .filtro-coluna {
+            width: 100%;
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+
+        .filtro-coluna label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .filtro-coluna ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .filtrar .limpar {
+            width: 100%;
+        }
+
+        .filtros-selecionados {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            /* Alinha os filtros à direita */
+        }
+
+        .filtros-selecionados span {
+            background-color: #79C14E;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            /* Adiciona cursor para indicar que é clicável */
+        }
+
+        .filtros-selecionados span:hover {
+            background-color: #A4A4A4;
+
+        }
+
+        .filtros-selecionados button {
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #444;
+            font-size: 12px;
+            padding: 0px 5px !important;
+        }
+
+
 
 
         /* Estilos para alinhar os elementos dentro da legenda */
@@ -1300,6 +1344,7 @@
             line-height: normal;
             min-width: 140px;
         }
+
         .preco-container {
             margin: 10px 0 10px;
             font-size: 12px;
@@ -1529,5 +1574,3 @@
         }
 
     }
-
-    
