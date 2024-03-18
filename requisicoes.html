@@ -113,25 +113,27 @@
 
                     <div class="conteudo-in">
                         <h2>Requisições</h2>
-                       
+
                         <div id="lis_i" class="col-md-12 p-0">
                             <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
                                 <div class="form-row">
                                     <div class="dataTables_length" id="tab-2_length">
-                                        <label>Demonstrar 
-                                            <select name="tab-2_length" aria-controls="tab-2" class="" style="border: 1px solid #ccc;">
+                                        <label>Demonstrar
+                                            <select name="tab-2_length" aria-controls="tab-2" class=""
+                                                style="border: 1px solid #ccc;">
                                                 <option value="10">10</option>
                                                 <option value="25">25</option>
                                                 <option value="50">50</option>
                                                 <option value="100">100</option>
-                                            </select> 
+                                            </select>
                                             linhas por página
                                         </label>
                                     </div>
                                     <div id="tab-2_filter" class="dataTables_filter">
                                         <label for="buscar" class="buscar-label">Buscar:
-                                        <input type="search" id="buscar" class="input-buscar form-control" style="border: 1px solid #ccc;" placeholder="" aria-controls="tab-2">
-                                    </label>
+                                            <input type="search" id="buscar" class="input-buscar form-control"
+                                                style="border: 1px solid #ccc;" placeholder="" aria-controls="tab-2">
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -1123,28 +1125,37 @@
                                 </div><!-- box-info-requisicao -->
 
                             </div><!--div card-->
-                     
-                                <div class="col-md-6">
-                                    <div class="dataTables_info" id="tab-9_info" role="status" aria-live="polite">Mostrada página 1 de 34</div>
+
+                            <div class="col-md-6">
+                                <div class="dataTables_info" id="tab-9_info" role="status" aria-live="polite">Mostrada
+                                    página 1 de 34</div>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <div class="dataTables_paginate paging_simple_numbers" id="tab-9_paginate">
+                                    <a class="paginate_button previous disabled" aria-controls="tab-9" data-dt-idx="0"
+                                        tabindex="0" id="tab-9_previous">Anterior</a>
+                                    <span>
+                                        <a class="paginate_button current" aria-controls="tab-9" data-dt-idx="1"
+                                            tabindex="0">1</a>
+                                        <a class="paginate_button" aria-controls="tab-9" data-dt-idx="2"
+                                            tabindex="0">2</a>
+                                        <a class="paginate_button" aria-controls="tab-9" data-dt-idx="3"
+                                            tabindex="0">3</a>
+                                        <a class="paginate_button" aria-controls="tab-9" data-dt-idx="4"
+                                            tabindex="0">4</a>
+                                        <a class="paginate_button" aria-controls="tab-9" data-dt-idx="5"
+                                            tabindex="0">5</a>
+                                        <span class="ellipsis">…</span>
+                                        <a class="paginate_button" aria-controls="tab-9" data-dt-idx="6"
+                                            tabindex="0">34</a>
+                                    </span>
+                                    <a class="paginate_button next" aria-controls="tab-9" data-dt-idx="7" tabindex="0"
+                                        id="tab-9_next">Próximo</a>
                                 </div>
-                                <div class="col-md-6 text-right">
-                                    <div class="dataTables_paginate paging_simple_numbers" id="tab-9_paginate">
-                                        <a class="paginate_button previous disabled" aria-controls="tab-9" data-dt-idx="0" tabindex="0" id="tab-9_previous">Anterior</a>
-                                        <span>
-                                            <a class="paginate_button current" aria-controls="tab-9" data-dt-idx="1" tabindex="0">1</a>
-                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="2" tabindex="0">2</a>
-                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="3" tabindex="0">3</a>
-                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="4" tabindex="0">4</a>
-                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="5" tabindex="0">5</a>
-                                            <span class="ellipsis">…</span>
-                                            <a class="paginate_button" aria-controls="tab-9" data-dt-idx="6" tabindex="0">34</a>
-                                        </span>
-                                        <a class="paginate_button next" aria-controls="tab-9" data-dt-idx="7" tabindex="0" id="tab-9_next">Próximo</a>
-                                    </div>
-                                </div>
-                    
-                            
-                            
+                            </div>
+
+
+
 
                         </div><!--div cards-container-->
 
@@ -1153,123 +1164,135 @@
 
             </div><!--div conteudo-->
 
-            <!-- Ícone no footer -->
-            <div class="ico-subir-footer" onclick="scrollToTop()">
-                <i class="fas fa-arrow-up"></i>
-            </div>
-
+           
+                    <!-- Ícone no footer -->
+                    <div class="ico-subir-footer" onclick="scrollToTop()">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
         </div><!--container desktop-->
 
 
         <!-- Modal de Filtro -->
         <div id="filterModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeFilterModal()">&times;</span>
+            <div class="modal-envolto">
+                <div class="modal-content">
 
-                <!-- Conteúdo do Filtro -->
-                <h2>Informações de Filtro para Requisições</h2>
+                    <span class="close" onclick="closeFilterModal()">&times;</span>
+                    <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
 
-                <!-- Tabela de Filtros -->
-                <div class="filtro-tabela">
+                    <div class="modal-wrap">
+                        <!-- Tabela de Filtros -->
+                        <div class="filtro-tabela">
 
-                    <!-- Primeira Coluna -->
-                    <div class="filtro-coluna">
-                        <label for="dataInicial">Data Inicial:</label>
-                        <input type="date" id="dataInicial">
+                            <!-- Primeira Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Data Inicial:</h3>
+                                <input type="date" id="dataInicial">
 
-                        <p><strong>Tipo:</strong></p>
-                        <label>
-                            <input type="checkbox" id="tipoRequisicao"> Requisições
-                        </label>
-                        <label>
-                            <input type="checkbox" id="tipoReembolso"> Reembolsos
-                        </label>
-                        <label>
-                            <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                        </label>
-                    </div>
-
-                    <!-- Segunda Coluna -->
-                    <div class="filtro-coluna">
-                        <label for="dataFinal">Data Final:</label>
-                        <input type="date" id="dataFinal">
-                    </div>
-
-                    <!-- Terceira Coluna -->
-                    <div class="filtro-coluna">
-                        <h3>Status da Requisição:</h3>
-                        <label>
-                            <input type="checkbox" id="statusAberta"> Aberta
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusCotacao"> Cotação
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusAprovacao"> Aprovação
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusReprovado"> Reprovado
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusPagamento"> Pagamento
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusComprada"> Comprada
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusEntregue"> Entregue
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusCancelada"> Cancelada
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusRecusada"> Recusada
-                        </label>
-                    </div>
-
-                    <!-- Quarta Coluna -->
-                    <div class="filtro-coluna">
-                        <h3>Obras:</h3>
-                        <label>
-                            <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                        </label>
-                        <label>
-                            <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                        </label>
-
-                        <ul>
-                            <li>
+                                <h3>Tipo:</h3>
                                 <label>
-                                    <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e
-                                    rh)
+                                    <input type="checkbox" id="tipoRequisicao"> Requisições
                                 </label>
-                            </li>
-                            <li>
                                 <label>
-                                    <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                    <input type="checkbox" id="tipoReembolso"> Reembolsos
                                 </label>
-                            </li>
-                            <li>
                                 <label>
-                                    <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                    <input type="checkbox" id="tipoLevantamento"> Levantamentos
                                 </label>
-                            </li>
-                        </ul>
-                    </div>
+                            </div>
 
-                </div>
+                            <!-- Segunda Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Data Final:</h3>
+                                <input type="date" id="dataFinal">
+                            </div>
 
-                <!-- Botões de Ação -->
-                <div>
-                    <button class="filtrar" onclick="filtrar()">Filtrar</button>
-                    <button class="limpar" onclick="limparFiltro()">Limpar</button>
-                </div>
+                            <!-- Terceira Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Status da Requisição:</h3>
+                                <label>
+                                    <input type="checkbox" id="statusAberta"> Aberta
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusCotacao"> Cotação
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusAprovacao"> Aprovação
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusReprovado"> Reprovado
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusPagamento"> Pagamento
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusComprada"> Comprada
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusEntregue"> Entregue
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusCancelada"> Cancelada
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusRecusada"> Recusada
+                                </label>
+                            </div>
 
+                            <!-- Quarta Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Obras:</h3>
+                                <label>
+                                    <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                                </label>
 
-            </div><!--div modal content-->
+                                <ul>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
+                                            (financeiro e
+                                            rh)
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <!-- Botões de Ação -->
+
+                        <div class="linha subsub-botoes">
+                            <div>
+                                <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img src="imgs/sub-icone-filtro.png"></button>
+                                <label for="sal_r">Filtrar</label>
+                            </div>
+    
+                            <div>
+                                <button type="submit" id="cancel" class="sub-icones" name="limpar"><img src="imgs/sub-icone-limpar.png"></button>
+                                <label for="cancel">Limpar</label>
+                            </div>
+                        </div>
+                       
+                    </div><!--modal wrap-->
+
+                </div><!--div modal content-->
+            </div><!--modal envolto-->
         </div><!--div filter modal-->
 
         <script>

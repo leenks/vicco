@@ -1096,14 +1096,13 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: gray;
+        background-color: #ff842a;
         border: 3px solid white;
         border-radius: 50%;
-        padding: 10px 15px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 5px 10px;
         cursor: pointer;
     }
-
+    
     .ico-subir-footer i {
         color: #fff;
     }

@@ -263,7 +263,7 @@ body {
 
 
 .conteudo {
-    padding: 5px;
+    padding: 10px;
     background-color: #fff;
     margin: 0px 0 40px;
     border-radius: 10px;
@@ -280,6 +280,26 @@ body {
 
 .conteudo p {
     font-size: 14px;
+}
+
+.box-content {
+    margin: 0px 0px 15px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 2px solid #f37334;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box-subicons-cadastros {
+    margin-right: 10px; 
+    margin-bottom: 10px;
+    text-align: center;
+    box-sizing: border-box; /* Garantir que a borda e o padding sejam considerados no cálculo da largura */
 }
 
 .toggle-container .toggle-container2 button {
@@ -567,8 +587,59 @@ body {
     margin: 30px 10px 30px;
     font-size: 30px;
     color: #333;
-    order: 1;
     font-weight: normal;
+}
+
+.conteudo-in h3 {
+    margin: 20px 0px 20px;
+    font-size: 24px;
+    color: orangered;
+    font-weight: normal;
+}
+
+/* Estilo para o contêiner do título */
+.titulo-container {
+    display: flex;
+    justify-content: start;
+    /* Alinha os elementos ao espaço entre eles */
+    align-items: center;
+    /* Alinha os elementos verticalmente */
+    width: 100%;
+    /* Ocupa toda a largura */
+}
+
+
+/* Estilo para o ícone */
+.sub-icones-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.sub-icones {
+    background: transparent;
+    font-size: 30px;
+    padding: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 0;
+    display: flex;
+    align-items: center;
+}
+
+.sub-icones i {
+    color: #ff842a;
+    background: transparent;
+}
+
+.sub-icones i:hover {
+    color: #222;
+}
+
+.sub-icones+label {
+    margin: 5px;
+    /* Espaçamento entre o ícone e o label */
 }
 
 
@@ -991,7 +1062,7 @@ body {
 
     .conteudo {
         margin: 10px;
-        padding: 15px;
+        padding: 5px;
     }
 
     .modo-icon {
