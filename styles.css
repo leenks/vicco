@@ -280,8 +280,16 @@ body {
 
 .conteudo p {
     font-size: 14px;
+    color: #444;
 }
 
+.conteudo a {
+    text-decoration: none;
+}
+.conteudo a:hover {
+text-decoration: underline;
+color: #444;
+} 
 .box-content {
     margin: 0px 0px 15px;
     padding: 5px;
@@ -640,6 +648,19 @@ body {
 .sub-icones+label {
     margin: 5px;
     /* Espaçamento entre o ícone e o label */
+}
+
+.linha {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.subsub-botoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    font-size: 12px;
 }
 
 
