@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <title>Categorias</title>
+</head>
+<body style="background: none;">
+        <h3 class="mn-h3">Categorias</h3>
+<ul class="list-group">
+    <li><input type="checkbox" id="mostrar"><label for="mostrar"></label> Mostrar Tudo</li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="adm"><i class="fa-brands fa-black-tie"></i> Administração</button>
+        <!-- Subcategorias -->
+        <ul class="subcategorias">
+            <li><input type="checkbox" id="alimentacao"><label for="alimentacao">Alimentação</label></li>
+            <li><input type="checkbox" id="comunicacao_visual"><label for="comunicacao_visual">Comunicação
+                    Visual</label></li>
+            <li><input type="checkbox" id="cursos_treinamentos"><label for="cursos_treinamentos">Cursos &
+                    Treinamentos</label></li>
+            <li><input type="checkbox" id="descontos"><label for="descontos">Descontos</label></li>
+            <li><input type="checkbox" id="despesas_fixas"><label for="despesas_fixas">Despesas Fixas</label></li>
+            <li><input type="checkbox" id="documentos"><label for="documentos">Documentos</label></li>
+            <li><input type="checkbox" id="documentos_art"><label for="documentos_art">Documentos - ART</label></li>
+            <li><input type="checkbox" id="documentos_certidoes"><label for="documentos_certidoes">Documentos -
+                    Certidões</label></li>
+            <li><input type="checkbox" id="hospedagem"><label for="hospedagem">Hospedagem</label></li>
+            <li><input type="checkbox" id="impostos"><label for="impostos">Impostos</label></li>
+            <li><input type="checkbox" id="impressoes"><label for="impressoes">Impressões</label></li>
+            <li><input type="checkbox" id="materiais_limpeza"><label for="materiais_limpeza">Materiais de
+                    Limpeza</label></li>
+            <li><input type="checkbox" id="materiais_expediente"><label for="materiais_expediente">Materiais de
+                    Expediente</label></li>
+            <li><input type="checkbox" id="mao_obra"><label for="mao_obra">Mão de
+                    Obra</label></li>
+            <li><input type="checkbox" id="retirada_socios"><label for="retirada_socios">Retirada Sócios</label></li>
+            <li><input type="checkbox" id="saude"><label for="saude">Saúde</label>
+            </li>
+            <li><input type="checkbox" id="seguro"><label for="seguro">Seguro</label></li>
+            <li><input type="checkbox" id="sites_apps"><label for="sites_apps">Sites
+                    e Apps</label></li>
+            <li><input type="checkbox" id="transporte"><label for="transporte">Transporte</label></li>
+            <li><input type="checkbox" id="uniformes"><label for="uniformes">Uniformes</label></li>
+        </ul>
+
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="apo">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path
+                    d="M208 64a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM9.8 214.8c5.1-12.2 19.1-18 31.4-12.9L60.7 210l22.9-38.1C99.9 144.6 129.3 128 161 128c51.4 0 97 32.9 113.3 81.7l34.6 103.7 79.3 33.1 34.2-45.6c6.4-8.5 16.6-13.3 27.2-12.8s20.3 6.4 25.8 15.5l96 160c5.9 9.9 6.1 22.2 .4 32.2s-16.3 16.2-27.8 16.2H288c-11.1 0-21.4-5.7-27.2-15.2s-6.4-21.2-1.4-31.1l16-32c5.4-10.8 16.5-17.7 28.6-17.7h32l22.5-30L22.8 246.2c-12.2-5.1-18-19.1-12.9-31.4zm82.8 91.8l112 48c11.8 5 19.4 16.6 19.4 29.4v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V405.1l-60.6-26-37 111c-5.6 16.8-23.7 25.8-40.5 20.2S-3.9 486.6 1.6 469.9l48-144 11-33 32 13.7z" />
+            </svg>
+            Apoio Obra
+        </button>
+        <!-- Subcategorias -->
+        <ul id="apo-subcategorias" class="subcategorias">
+            <li><input type="checkbox" id="" name="subcategoria" value=""><label for="cantoneira_aluminio">Cantoneiras de Alumínio</label></li>
+            <li><input type="checkbox" id="" name="subcategoria" value=""><label for="furos_laje">Furos Laje</label></li>
+            <li><input type="checkbox" id="" name="subcategoria" value=""><label for="locacao_equipamentos">Locação de Equipamentos</label></li>
+            <li><input type="checkbox" id="" name="subcategoria" value=""><label for="protecao_pisos_paredes">Proteções de Pisos e Paredes</label></li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="arc">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path
+                    d="M128 112c0-26.5 21.5-48 48-48s48 21.5 48 48V276.5c0 17.3 7.1 31.9 15.3 42.5C249.8 332.6 256 349.5 256 368c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-18.5 6.2-35.4 16.7-48.9c8.2-10.6 15.3-25.2 15.3-42.5V112zM176 0C114.1 0 64 50.1 64 112V276.4c0 .1-.1 .3-.2 .6c-.2 .6-.8 1.6-1.7 2.8C43.2 304.2 32 334.8 32 368c0 79.5 64.5 144 144 144s144-64.5 144-144c0-33.2-11.2-63.8-30.1-88.1c-.9-1.2-1.5-2.2-1.7-2.8c-.1-.3-.2-.5-.2-.6V112C288 50.1 237.9 0 176 0zm0 416c26.5 0 48-21.5 48-48c0-20.9-13.4-38.7-32-45.3V272c0-8.8-7.2-16-16-16s-16 7.2-16 16v50.7c-18.6 6.6-32 24.4-32 45.3c0 26.5 21.5 48 48 48zm336-64H480V64c0-17.7-14.3-32-32-32s-32 14.3-32 32V352H384c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l64 64c6 6 14.1 9.4 22.6 9.4s16.6-3.4 22.6-9.4l64-64c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8z" />
+            </svg>
+            Ar Condicionado</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="arc">
+
+            <i class="fa-solid fa-tree"></i>
+
+            Carpintaria</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                    d="M240.8 4.8C250.3 10.6 256 20.9 256 32v72h89c3.6-13.8 16.1-24 31-24h88c26.5 0 48 21.5 48 48s-21.5 48-48 48H376c-14.9 0-27.4-10.2-31-24H256v72c0 11.1-5.7 21.4-15.2 27.2s-21.2 6.4-31.1 1.4l-192-96C6.8 151.2 0 140.1 0 128s6.8-23.2 17.7-28.6l192-96c9.9-5 21.7-4.4 31.1 1.4zM288 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H320c-17.7 0-32-14.3-32-32V256zM32 384h96c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32zm192 0H480c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32z" />
+            </svg>
+            Cívil</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-table-columns"></i>
+            Divisórias</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-plug"></i>
+            Eletroeletrônicos</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-table-cells"></i>
+            Esquadrias</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-table-cells"></i>
+            Estruturas Metálicas</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-table-cells"></i>
+            Fixação</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-table-cells"></i>
+            Geral</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-table-cells"></i>
+            Gesso</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-lightbulb"></i>
+            Iluminação</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-droplet"></i>
+            Impermeabilização</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-fire-flame-simple"></i>
+            Instalações de Gás</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+
+            <i class="fa-solid fa-bolt"></i>
+            Instalações Elétricas</button>
+        <!-- Subcategorias -->
+        <ul id="arc-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="sub5" name="subcategoria" value="Subcategoria 5">
+                <label for="sub5">Subcategoria 5</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sub6" name="subcategoria" value="Subcategoria 6">
+                <label for="sub6">Subcategoria 6</label>
+            </li>
+        </ul>
+    </li>
+    <li class="categoria-lista">
+        <button class="categoria-btn" id="civ">
+            <i class="fa-solid fa-faucet"></i>
+            Instalações Hidráulicas
+        </button>
+        <!-- Subcategorias -->
+        <ul id="ih-subcategorias" class="subcategorias">
+            <li>
+                <input type="checkbox" id="ac" name="subcategoria" value="AC">
+                <label for="ac">AC</label>
+                <!-- Subcategorias de AC -->
+                <ul id="ac-subcategorias" class="subcategorias">
+                    <li>
+                        <input type="checkbox" id="ppr_azul" name="subcategoria" value="PPR Azul - Luvas">
+                        <label for="ppr_azul">PPR Azul - Luvas</label>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="af" name="subcategoria" value="AF">
+                <label for="af">AF</label>
+                <!-- Subcategorias de AF -->
+                <ul id="af-subcategorias" class="subcategorias">
+                    <li>
+                        <input type="checkbox" id="adaptadores" name="subcategoria" value="Adaptadores">
+                        <label for="adaptadores">Adaptadores</label>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="aq" name="subcategoria" value="AQ">
+                <label for="aq">AQ</label>
+                <!-- Subcategorias de AQ -->
+                <ul id="aq-subcategorias" class="subcategorias">
+                    <li>
+                        <input type="checkbox" id="cpvc_adaptadores" name="subcategoria" value="CPVC-Adaptadores">
+                        <label for="cpvc_adaptadores">CPVC-Adaptadores</label>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</body>
+<script>
+    // Função para alternar a visibilidade das subcategorias
+    document.addEventListener('DOMContentLoaded', function () {
+        var categoriaBtns = document.querySelectorAll('.categoria-btn');
+        categoriaBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var subcategorias = btn.nextElementSibling;
+                subcategorias.classList.toggle('active');
+            });
+        });
+
+        // Adiciona um evento de clique ao botão "Mostrar Todos"
+        var mostrarTodosCheckbox = document.getElementById('mostrar');
+        mostrarTodosCheckbox.addEventListener('click', function () {
+            var subcategorias = document.querySelectorAll('.subcategorias');
+            if (mostrarTodosCheckbox.checked) {
+                subcategorias.forEach(function (subcategoria) {
+                    subcategoria.classList.add('active');
+                });
+            } else {
+                subcategorias.forEach(function (subcategoria) {
+                    subcategoria.classList.remove('active');
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    // Adiciona um evento de clique ao ícone do menu de categorias para mobile 
+    document.querySelector('.mobile-menu-icon').addEventListener('click', function () {
+        // Alternar a classe 'active' para mostrar ou ocultar o conteúdo lateral
+        document.querySelector('.conteudo-lateral').classList.toggle('active');
+    });
+
+</script>
