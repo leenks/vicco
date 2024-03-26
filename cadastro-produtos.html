@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Vicco Construtora</title>
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+        <!-- SIDEBAR CATEGORIAS -->
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+
+                                <div class="conteudo-lateral">
+                                    <!-- Lista de Categorias -->
+                                    <iframe src="menu-prod-categorias.html" frameborder="0" width="300"
+                                        height="100%"></iframe>
+
+                                </div><!--conteudo lateral-->
+                            </div><!--col md-3-->
+
+                            <div class="col-md-9">
+                                <div class="conteudo">
+                                    <!-- Ícone do menu para dispositivos móveis -->
+                                    <div class="mobile-menu-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path fill="#444" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                                        </svg>
+                                    </div>
+
+                                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                                    <div class="breadcrumbs">
+                                        <a href="#">INÍCIO</a>
+                                        <span> > </span>
+                                        <a href="#">CADASTROS</a>
+                                        <span> > </span>
+                                        <a href="#">PRODUTOS</a>
+                                    </div>
+
+
+                                    <div class="conteudo-in">
+                                        <h2>Cadastro de Produtos</h2>
+
+                                        <!--Filtros e Visualizção modos-->
+                                        <div class="wrap-toggle">
+                                            <div class="toggle-container">
+                                                <button onclick="alterarModo()">
+                                                    <span id="modo-icon" class="fas fa-th-large"></span> &nbsp;
+                                                    VISUALIZAÇÃO
+                                                </button>
+                                            </div>
+
+                                            <div class="filtros-selecionados">
+                                                <button onclick="adicionarFiltroExemplo()">CATEGORIA SELECIONADA
+                                                    01</button>
+                                                <button onclick="adicionarFiltroExemplo()">CATEGORIA 02</button>
+                                            </div>
+
+                                        </div><!--wrap toggle-->
+
+                                        <div class="form-row">
+                                            <form name=" " action="cadastrar-produto.html" method="POST">
+                                                <button type="submit" id="nov" name="novo" class="sub-icones"
+                                                    title="Abrir Novo Produto no sistema">
+                                                    <i class="fa-regular fa-square-plus"></i>&nbsp;
+                                                    <label>Abrir Novo</label>
+                                                </button>
+                                            </form>
+                                        </div>
+
+                                        <div class="form-row">&nbsp;</div>
+
+                                        <div id="lis_i" class="col-md-12 p-0">
+                                            <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+                                                <div class="form-row">
+                                                    <div class="dataTables_length" id="tab-2_length">
+                                                        <label>Demonstrar
+                                                            <select name="tab-2_length" aria-controls="tab-2" class=""
+                                                                style="border: 1px solid #ccc;">
+                                                                <option value="10">10</option>
+                                                                <option value="25">25</option>
+                                                                <option value="50">50</option>
+                                                                <option value="100">100</option>
+                                                            </select>
+                                                            linhas por página
+                                                        </label>
+                                                    </div>
+
+                                                    <div id="tab-2_filter" class="dataTables_filter">
+                                                        <label for="buscar" class="buscar-label">Buscar:
+                                                            <input type="search" id="buscar"
+                                                                class="input-buscar form-control"
+                                                                style="border: 1px solid #ccc;" placeholder=""
+                                                                aria-controls="tab-2">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="cards-container">
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                    <h4>Jateamento Acústico</h4><p>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</p>
+                                                    <span>COD 001</span>
+                                                </div>
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                    10 Metros Cinza</span> <span>COD 001</span>
+
+                                            </div>
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+
+                                                </div>
+                                                <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                    10 Metros Cinza</span> <span>COD 001</span>
+
+                                            </div>
+
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+                                            
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                            <div class="card-prod col-md-3">
+
+                                                <div class="imagem-container">
+                                                    <img src="imgs/exemplo2.png" alt="Descrição da Imagem">
+                                                </div>
+                                                
+                                                    <h4>Nome do Produto</h4><span>Fita Adesiva Banda Acústica 48mm com
+                                                        10 Metros Cinza</span> <span>COD 001</span>
+                                                
+                                            </div><!--card-->
+
+                                        </div><!--cards container-->
+                                    </div> <!--conteudo in-->
+
+                                </div><!--container desktop-->
+
+                            </div><!--div conteudo-->
+
+                            <!-- Ícone no footer -->
+                            <div class="ico-subir-footer" onclick="scrollToTop()">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+
+                        </div><!--container desktop-->
+
+
+                        <script>
+                            // Função para rolar até o topo da página
+                            function scrollToTop() {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth' // Para fazer uma rolagem suave
+                                });
+                            }
+                        </script>
+
+
+                        <script src="filtro-cadastros.js"></script>
+</body>
+
+</html>
