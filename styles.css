@@ -261,14 +261,27 @@ body {
     font-weight: bold;
 }
 
+.conteudo-lateral {
+    max-width: 250px;
+    flex: 1;
+    margin: 0!important;    
+    border-radius: 10px;
+    border: 1px solid #f37334;
+    position: sticky;
+    top: 20px;
+    height: calc(100vh - 20px); /* Ajuste conforme necessário */
+            overflow-y: auto;
+    padding: 10px;
+}
 
 .conteudo {
     padding: 10px;
     background-color: #fff;
-    margin: 0px 0 40px;
+    flex: 2;
     border-radius: 10px;
     border: 3px solid #f37334;
     position: relative;
+    margin: 0 0 10px 0 !important;
 }
 
 
@@ -281,6 +294,13 @@ body {
 .conteudo p {
     font-size: 14px;
     color: #444;
+    line-height: normal;
+    margin: 0;
+    
+}
+.conteudo span {
+    font-size: 11px;
+    color: #444;
 }
 
 .conteudo a {
@@ -290,6 +310,36 @@ body {
 text-decoration: underline;
 color: #444;
 } 
+
+.sidebar-form {
+    border: 1px solid #ccc; /* Adiciona uma borda ao sidebar */
+    height: 100%; /* Faz o sidebar ocupar toda a altura disponível */
+    margin-left: auto; /* Alinha o sidebar à direita */
+    padding: 15px; /* Adiciona algum espaçamento interno ao sidebar */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura do sidebar */
+}
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.input-buscar {
+    width: 150px;
+    /* Defina a largura desejada para o campo de busca */
+    margin-left: 10px;
+    /* Ajuste conforme necessário */
+    height: 25px;
+}
+
+.buscar-label {
+    margin-right: 10px;
+    /* Adicione um espaço entre o label e o input */
+    display: flex;
+}
+
+
 .box-content {
     margin: 0px 0px 15px;
     padding: 5px;
@@ -488,6 +538,7 @@ color: #444;
 .cards-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     font-family: 'Lato', sans-serif;
 }
 
@@ -502,6 +553,30 @@ color: #444;
     border-radius: 5px;
     position: relative;
 }
+.card-fichas {
+    width: calc(25% - 20px); /* 25% para 4 cards por linha */
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+.card-prod {
+    flex: 1;
+    min-width: 22%;
+    margin: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+.btn-navigation {
+    margin-top: 10px;
+  }
 
 .imagem-container {
     position: relative;
@@ -570,14 +645,17 @@ color: #444;
     border-radius: 0 0 10px 10px;
 }
 
-.informacoes h4 {
+.informacoes, .card-prod h4 {
     color: #f99e32;
-    margin-top: 30px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-.informacoes p {
-    font-size: 12px;
+.informacoes p, .card-prod p {
+    font-size: 14px;
     color: #555;
+    font-weight: normal;
 }
 
 .informacoes a {
@@ -597,6 +675,7 @@ color: #444;
     color: #333;
     font-weight: normal;
 }
+
 
 .conteudo-in h3 {
     margin: 20px 0px 20px;
@@ -663,6 +742,65 @@ color: #444;
     font-size: 12px;
 }
 
+/*CATEGORIAS RETRATIL*/
+
+.conteudo-lateral::-webkit-scrollbar{
+    width: 8px;
+}
+.conteudo-lateral::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    border: 1px solid;
+    
+}
+.conteudo-lateral::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+.conteudo-lateral { overflow-x:hidden;}
+
+.mn-h3 {   font-family: 'Lato';
+    font-size: 20px;
+    color: #333;
+    font-weight: normal;
+}
+
+.categoria-lista ul,li {
+ list-style-type: none;
+}
+.categoria-lista i {
+    color: #444;
+}
+.categoria-btn {
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2px;
+}
+.categoria-btn:focus {
+    outline: none;
+}
+.categoria-btn svg {
+    fill: #444;
+    width: 18px; 
+}
+
+.subcategorias {
+    display: none;
+    transition: max-height 0.4s ease-out;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.subcategorias.active {
+    display: block;
+    max-height: 1000px;
+    margin: 0;
+    padding-left: 10px;
+}
+.subcategorias input[type=checkbox] {
+    margin-right: 5px;
+}
+
 
 /* CARDS MODOS DE LISTAGEM*/
 .cards-container {
@@ -681,46 +819,22 @@ color: #444;
 }
 
 /* Nova classe para o modo-simples */
-.cards-container.modo-simples .card {
+.cards-container.modo-simples .card, .cards-container.modo-simples .card-prod {
     flex-basis: 100%;
-    min-width: 87%;
+    min-width: 97%;
     width: 97%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.cards-container.modo-simples .card {
-    flex-basis: 100%;
-    min-width: 87%;
-    width: 97%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.cards-container.modo-simples .card .imagem-container {
-    display: none;
-    /* Oculta a imagem no modo-simples */
-}
-
-.cards-container.modo-simples .card .imagem-container {
+.cards-container.modo-simples .card .imagem-container, .cards-container.modo-simples .card-prod .imagem-container {
     display: none;
     /* Oculta a imagem no modo-simples */
 }
 
 .cards-container.modo-simples .card .informacoes {
     width: 95%;
-}
-
-.cards-container.modo-simples .card .informacoes {
-    width: 95%;
-}
-
-/* Adicionando a classe .modo-simples ao container de cards */
-.cards-container.modo-simples {
-    flex-direction: column;
-    align-items: center;
 }
 
 /* Adicionando a classe .modo-simples ao container de cards */
@@ -999,7 +1113,7 @@ color: #444;
     margin: 5px;
     color: #444;
     font-family: 'Lato', 'sans-serif';
-    /* Espaçamento entre o ícone e o label */
+    font-size: 11px;
 }
 
 .ico-subir-footer {
@@ -1021,12 +1135,58 @@ color: #444;
     background-color: #222;
 }
 
-
+.mobile-menu-icon { display: none;}
 
 
 /* VERSAO MOBILE */
 
 @media screen and (max-width: 768px) {
+
+    /* Oculta o conteúdo lateral (sidebar de categorias) por padrão em dispositivos móveis */
+.conteudo-lateral {
+    display: none;
+}
+
+/* Estilize o ícone do menu */
+.mobile-menu-icon {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 90px;
+    left: 20px;
+    z-index: 1999; /* Certifique-se de que o ícone esteja acima do conteúdo */
+}
+
+/* Adicione estilos de transição suave para o conteúdo lateral */
+.conteudo-lateral.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%; /* Ou a largura desejada para o conteúdo lateral */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente para sobrepor a página */
+    z-index: 998; /* Certifique-se de que o conteúdo lateral esteja acima do conteúdo da página */
+    transition: transform 0.3s ease;
+}
+
+/* Estilize o conteúdo dentro do conteúdo lateral, se necessário */
+.conteudo-lateral.active .seu-elemento {
+    /* Estilos para o conteúdo dentro do conteúdo lateral quando aberto */
+}
+
+
+    .form-row {
+        flex-direction: column;
+        /* Altera a direção para coluna em dispositivos menores que 768px */
+    }
+
+    .dataTables_length,
+    .dataTables_filter {
+        margin-bottom: 5px;
+        /* Adiciona espaço entre os campos ao empilhá-los */
+    }
+    
     .topo {
         flex-direction: column;
         align-items: center;
