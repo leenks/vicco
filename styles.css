@@ -767,6 +767,14 @@ color: #444;
 .categoria-lista ul,li {
  list-style-type: none;
 }
+.categoria-lista li {padding: 5px;}
+
+.categoria-lista li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 5px;
+}
 .categoria-lista i {
     color: #444;
 }
@@ -802,23 +810,36 @@ color: #444;
 }
 
 
-/* CARDS MODOS DE LISTAGEM*/
+/* CARDS MODO DE LISTAGEM*/
 .cards-container {
     display: flex;
     flex-wrap: wrap;
 }
-
 .cards-container.modo-lista .card {
     flex-basis: 100%;
-    min-width: 96%;
+    min-width: 87%;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .cards-container.modo-lista h4 {
     margin: 0;
 }
 
-/* Nova classe para o modo-simples */
+
+.cards-container.modo-lista .card .imagem-container {
+    width: 30% !important;
+    margin-right: 15px;
+    display: flex;
+}
+
+.cards-container.modo-lista .card .informacoes {
+    width: 70%;
+}
+
+/* CARDS MODO-SIMPLES*/
 .cards-container.modo-simples .card, .cards-container.modo-simples .card-prod {
     flex-basis: 100%;
     min-width: 97%;
@@ -1188,7 +1209,7 @@ color: #444;
     }
     
     .topo {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         padding: 15px 0px;
     }
@@ -1324,6 +1345,14 @@ color: #444;
     .box-faturamento-geral {
         width: 40%;
     }
+    .ico-subir-footer {
+        display: none;    
+    }
+     /* Esconder o botão de visualização em dispositivos móveis */
+     .cards-container.modo-lista .card .visualizacao {
+        display: none;
+    }
+    
 }
 
 
@@ -1344,26 +1373,4 @@ color: #444;
     .menu-item-home {
         max-width: calc(29% - 30px);
     }
-}
-
-/* Versão Desktop pro modo-lista das obras */
-@media screen and (min-width: 769px) {
-    .cards-container.modo-lista .card {
-        flex-basis: 100%;
-        min-width: 87%;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .cards-container.modo-lista .card .imagem-container {
-        width: 30%;
-        margin-right: 15px;
-    }
-
-    .cards-container.modo-lista .card .informacoes {
-        width: 70%;
-    }
-
 }

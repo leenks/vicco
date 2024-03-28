@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Vicco Construtora</title>
+    <style>
+        
+.wrapper {
+  margin: 0 auto;
+  max-width: 1000px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);
+}
+
+.header {
+  padding: 30px 30px 0;
+  text-align: center;
+}
+.header__title {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.header__subtitle {
+  margin: 0;
+  font-size: 1.5em;
+  color: #949fb0;
+  font-family: "Yesteryear", cursive;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.cards {
+  padding: 15px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  width: calc((100% / 3) - 30px);
+  transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 991px) {
+  .card {
+    width: calc((100% / 2) - 30px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .card {
+    width: 100%;
+  }
+}
+.card:hover .card__inner {
+  background-color: #1abc9c;
+  transform: scale(1.05);
+}
+
+.card__inner {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  background-color: #9f9f9f;
+  color: #eceef1;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+.card__inner:after {
+  transition: all 0.3s ease-in-out;
+}
+.card__inner .fa {
+  width: 100%;
+  margin-top: 0.25em;
+}
+.card__expander {
+  transition: all 0.2s ease-in-out;
+  background-color: #333a45;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eceef1;
+  font-size: 14px;
+}
+.card__expander .fa {
+  font-size: 0.75em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.card__expander .fa:hover {
+  opacity: 0.9;
+}
+.card.is-collapsed .card__inner:after {
+  content: "";
+  opacity: 0;
+}
+.card.is-collapsed .card__expander {
+  max-height: 0;
+  min-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  opacity: 0;
+}
+.card.is-expanded .card__inner {
+  background-color: #1abc9c;
+}
+.card.is-expanded .card__inner:after {
+  content: "";
+  opacity: 1;
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  bottom: -30px;
+  left: calc(50% - 15px);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #333a45;
+}
+.card.is-expanded .card__inner .fa:before {
+  content: "";
+}
+.card.is-expanded .card__expander {
+  max-height: 1000px;
+  min-height: 200px;
+  overflow: visible;
+  margin-top: 30px;
+  opacity: 1;
+}
+.card.is-expanded:hover .card__inner {
+  transform: scale(1);
+}
+.card.is-inactive .card__inner {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.card.is-inactive:hover .card__inner {
+  background-color: #949fb0;
+  transform: scale(1);
+}
+
+@media screen and (min-width: 992px) {
+  .card:nth-of-type(3n + 2) .card__expander {
+    margin-left: calc(-100% - 30px);
+  }
+
+  .card:nth-of-type(3n + 3) .card__expander {
+    margin-left: calc(-200% - 60px);
+  }
+
+  .card:nth-of-type(3n + 4) {
+    clear: left;
+  }
+
+  .card__expander {
+    width: calc(300% + 60px);
+    z-index: 2;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .card:nth-of-type(2n + 2) .card__expander {
+    margin-left: calc(-100% - 30px);
+  }
+
+  .card:nth-of-type(2n + 3) {
+    clear: left;
+  }
+
+  .card__expander {
+    width: calc(200% + 30px);
+  }
+}
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+            <div class="caixa-menu2">            </div>
+
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">INÍCIO</a>
+                        <span style="color: white"> > </span>
+                        <a href="#">CADASTROS</a>
+                        <span style="color: white"> > </span>
+                        <a href="#">GRUPOS DE PRODUTOS</a>
+                    </div>
+                    <!--Filtros e Visualizção modos-->
+                    <div class="form-row">
+                        <form name=" " action="#" method="POST">
+                            <button type="submit" id="nov" name="novo" class="sub-icones"
+                                title="Abrir Novo">
+                                <i class="fa-regular fa-square-plus"></i>&nbsp;
+                                <label>Abrir Novo</label>
+                            </button>
+                        </form>
+                    </div>
+
+ 
+                    <div class="conteudo-in">
+                        <h2>Grupos de Produtos</h2>
+
+                        <div class="wrap-toggle">
+                            <div class="toggle-container">
+                                <button onclick="alterarModo()">
+                                    <span id="modo-icon" class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
+                                </button>
+                            </div>
+                            <div class="toggle-container2">
+                                <button onclick="openFilterModal(); updateFilterDisplay();">
+                                    <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
+                                </button>
+                            </div>
+    
+                            <div class="filtros-selecionados">
+                                <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
+                                <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                            </div>
+    
+                        </div>
+
+                        <div class="cards-container">
+
+                            <div class="wrapper">
+
+                                <div class="cards">
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                      <i class="fa-brands fa-black-tie"></i>
+                                        <span style="color: white">Administração</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      <ul style="flex: 1;">
+                                        <li class="categoria-lista">
+                                            <!-- Subcategorias -->
+                                            <ul style="flex: 1; white-space: nowrap;">
+                                                <li>Alimentação</li>
+                                                <li>Comunicação Visual</li>
+                                                <li>Cursos & Treinamentos</li>
+                                                <li>Descontos</li>
+                                                <li>Despesas Fixas</li>
+                                             </ul>
+                                    
+                                        </li>
+                                      </ul>
+                                      <ul style="flex: 1;">
+                                        <li>Documentos</li>
+                                        <li>Documentos - ART</li>
+                                        <li>Documentos -Certidões</li>
+                                        <li>Hospedagem</li>
+                                        <li>Impostos</li>
+                                       
+                                      </ul>
+                                      <ul style="flex: 1;">
+                                        <li>Impressões</li>
+                                        <li>Materiais de Limpeza</li>
+                                        <li>Materiais de Expediente</li>
+                                        <li>Mão de Obra</li>
+                                    </ul>
+                                      <ul style="flex: 1;">
+                                        <li>Retirada Sócios</li>
+                                        <li>Saúde</li>
+                                        <li>Seguro</li>
+                                        <li>Sites e Apps</li>
+                                        <li>Transporte</li>
+                                        <li>Uniformes</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                        
+                                      <span style="color: white">Apoio de Obra</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      Colocar subgrupo (sugcategorias dos produtos)
+                                    </div>
+                                  </div>
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                      <span style="color: white">Ar Condicionado</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      Colocar subgrupo (sugcategorias dos produtos)
+                                    </div>
+                                  </div>
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                      <span style="color: white">Card</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      Colocar subgrupo (sugcategorias dos produtos)
+                                    </div>
+                                  </div>
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                      <span style="color: white">Card</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      Colocar subgrupo (sugcategorias dos produtos)
+                                    </div>
+                                  </div>
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                      <span style="color: white">Card</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      Colocar subgrupo (sugcategorias dos produtos)
+                                    </div>
+                                  </div>
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                      <span style="color: white">Card</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      Colocar subgrupo (sugcategorias dos produtos)
+                                    </div>
+                                  </div>
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                      <span style="color: white">Card</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      Colocar subgrupo (sugcategorias dos produtos)
+                                    </div>
+                                  </div>
+                              
+                                  <div class=" card [ is-collapsed ] ">
+                                    <div class="card__inner [ js-expander ]">
+                                      <span style="color: white">Card</span>
+                                      <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander">
+                                      <i class="fa fa-close [ js-collapser ]"></i>
+                                      Colocar subgrupo (sugcategorias dos produtos)
+                                    </div>
+                                  </div>
+                              
+                                </div>
+                              
+                              </div>
+
+                            <div class="card" onclick="toggleDetails(this)">
+                                <div class="informacoes" style="text-align: center;">
+                                    ADMINISTRAÇÃO<br>
+                                    <i class="fa-regular fa-folder-open"></i>
+                                </div><!--informacoes-->
+                                <div class="details">
+                                    <ul>
+                                        <li>Detalhe 1</li>
+                                        <li>Detalhe 2</li>
+                                        <li>Detalhe 3</li>
+                                    </ul>
+                                </div><!--details-->
+                            </div><!--card-->
+                            <div class="card" onclick="toggleDetails(this)">
+                                <div class="informacoes" style="text-align: center;">
+                                    APOIO OBRA<br>
+                                    <i class="fa-regular fa-folder-open"></i>
+                                </div>
+                                <div class="details">
+                                    <ul>
+                                        <li>Detalhe 1</li>
+                                        <li>Detalhe 2</li>
+                                        <li>Detalhe 3</li>
+                                    </ul>
+                                </div><!--details-->
+                            </div><!--card-->
+                            <div class="card" onclick="toggleDetails(this)">
+                                <div class="informacoes" style="text-align: center;">
+                                    AR CONDICIONADO <br>
+                                    <i class="fa-regular fa-folder-open"></i>
+                                </div>
+                                <div class="details">
+                                    <ul>
+                                        <li>Detalhe 1</li>
+                                        <li>Detalhe 2</li>
+                                        <li>Detalhe 3</li>
+                                    </ul>
+                                </div><!--details-->
+                            </div><!--card-->
+                        </div><!--cards container-->
+                    </div> <!--conteudo in-->
+
+                </div><!--container desktop-->
+            </div><!--conteudo-->
+
+
+        <!-- Modal de Filtro -->
+        <div id="filterModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFilterModal()">&times;</span>
+
+                <!-- Conteúdo do Filtro -->
+                <h2>Informações de Filtro para Requisições</h2>
+
+                <!-- Tabela de Filtros -->
+                <div class="filtro-tabela">
+
+                    <!-- Primeira Coluna -->
+                    <div class="filtro-coluna">
+                        <label for="dataInicial">Data Inicial:</label>
+                        <input type="date" id="dataInicial">
+
+                        <p><strong>Tipo:</strong></p>
+                        <label>
+                            <input type="checkbox" id="tipoRequisicao"> Requisições
+                        </label>
+                        <label>
+                            <input type="checkbox" id="tipoReembolso"> Reembolsos
+                        </label>
+                        <label>
+                            <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                        </label>
+                    </div>
+
+                    <!-- Segunda Coluna -->
+                    <div class="filtro-coluna">
+                        <label for="dataFinal">Data Final:</label>
+                        <input type="date" id="dataFinal">
+                    </div>
+
+                    <!-- Terceira Coluna -->
+                    <div class="filtro-coluna">
+                        <h3>Status da Requisição:</h3>
+                        <label>
+                            <input type="checkbox" id="statusAberta"> Aberta
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusCotacao"> Cotação
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusAprovacao"> Aprovação
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusReprovado"> Reprovado
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusPagamento"> Pagamento
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusComprada"> Comprada
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusEntregue"> Entregue
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusCancelada"> Cancelada
+                        </label>
+                        <label>
+                            <input type="checkbox" id="statusRecusada"> Recusada
+                        </label>
+                    </div>
+
+                    <!-- Quarta Coluna -->
+                    <div class="filtro-coluna">
+                        <h3>Obras:</h3>
+                        <label>
+                            <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                        </label>
+
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e
+                                    rh)
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Botões de Ação -->
+                <div>
+                    <button class="filtrar" onclick="filtrar()">Filtrar</button>
+                    <button class="limpar" onclick="limparFiltro()">Limpar</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script src="filtro.js"></script>
+        <script>
+           var $cell = $('.card');
+
+//open and close card when clicked on card
+$cell.find('.js-expander').click(function() {
+
+  var $thisCell = $(this).closest('.card');
+
+  if ($thisCell.hasClass('is-collapsed')) {
+    $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+    $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+    
+    if ($cell.not($thisCell).hasClass('is-inactive')) {
+      //do nothing
+    } else {
+      $cell.not($thisCell).addClass('is-inactive');
+    }
+
+  } else {
+    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+    $cell.not($thisCell).removeClass('is-inactive');
+  }
+});
+
+//close card when click on cross
+$cell.find('.js-collapser').click(function() {
+
+  var $thisCell = $(this).closest('.card');
+
+  $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+  $cell.not($thisCell).removeClass('is-inactive');
+
+});
+        </script>
+</body>
+
+</html>

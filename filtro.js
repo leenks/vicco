@@ -26,7 +26,6 @@ function adicionarFiltro(nomeFiltro) {
 
 }
 
-
 // CARDS MODOS DE LISTAGEM
 let modoExibicao = 'card';
 
@@ -68,5 +67,17 @@ function atualizarModoExibicao() {
         iconElement.classList.remove('fa-th-list');
         iconElement.classList.add('fa-th-large');
     }
+
+    // Verifica se está em um dispositivo móvel
+    if (window.innerWidth <= 768) {
+        // Esconde o botão de visualização
+        const visualizacaoBtn = document.querySelector('.visualizacao');
+        visualizacaoBtn.style.display = 'none';
+    } else {
+        // Garante que o botão de visualização esteja visível em outras larguras de tela
+        const visualizacaoBtn = document.querySelector('.visualizacao');
+        visualizacaoBtn.style.display = 'block';
+    }
 }
+
 
