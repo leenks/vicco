@@ -7,189 +7,66 @@
     <link rel="icon" href="imgs/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
-    <link rel="stylesheet" href="styles.css">
-    <title>Vicco Construtora</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
     <style>
-        
-.wrapper {
-  margin: 0 auto;
-  max-width: 1000px;
-  background-color: #fff;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);
-}
+        .card-body {
+            text-align: center;
+            padding: 0;
+        }
 
-.header {
-  padding: 30px 30px 0;
-  text-align: center;
-}
-.header__title {
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 2.5em;
-  font-weight: 500;
-  line-height: 1.1;
-}
-.header__subtitle {
-  margin: 0;
-  font-size: 1.5em;
-  color: #949fb0;
-  font-family: "Yesteryear", cursive;
-  font-weight: 500;
-  line-height: 1.1;
-}
+        .carousel-item {
+            display: block !important;
+            margin: 10px;
+            /* Espaçamento entre os itens */
+            min-width: 180px;
+            height: 110px;
+        }
 
-.cards {
-  padding: 15px;
-  display: flex;
-  flex-flow: row wrap;
-}
+        .card-title {
+            background-color: orangered;
+            padding: 2px;
+            color: #fff;
+        }
 
-.card {
-  width: calc((100% / 3) - 30px);
-  transition: all 0.2s ease-in-out;
-}
-@media screen and (max-width: 991px) {
-  .card {
-    width: calc((100% / 2) - 30px);
-  }
-}
-@media screen and (max-width: 767px) {
-  .card {
-    width: 100%;
-  }
-}
-.card:hover .card__inner {
-  background-color: #1abc9c;
-  transform: scale(1.05);
-}
+        .card-title h5 {
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 4px;
+        }
 
-.card__inner {
-  width: 100%;
-  padding: 30px;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #9f9f9f;
-  color: #eceef1;
-  font-size: 1.5em;
-  text-transform: uppercase;
-  text-align: center;
-  transition: all 0.2s ease-in-out;
-}
-.card__inner:after {
-  transition: all 0.3s ease-in-out;
-}
-.card__inner .fa {
-  width: 100%;
-  margin-top: 0.25em;
-}
-.card__expander {
-  transition: all 0.2s ease-in-out;
-  background-color: #333a45;
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #eceef1;
-  font-size: 14px;
-}
-.card__expander .fa {
-  font-size: 0.75em;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-.card__expander .fa:hover {
-  opacity: 0.9;
-}
-.card.is-collapsed .card__inner:after {
-  content: "";
-  opacity: 0;
-}
-.card.is-collapsed .card__expander {
-  max-height: 0;
-  min-height: 0;
-  overflow: hidden;
-  margin-top: 0;
-  opacity: 0;
-}
-.card.is-expanded .card__inner {
-  background-color: #1abc9c;
-}
-.card.is-expanded .card__inner:after {
-  content: "";
-  opacity: 1;
-  display: block;
-  height: 0;
-  width: 0;
-  position: absolute;
-  bottom: -30px;
-  left: calc(50% - 15px);
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid #333a45;
-}
-.card.is-expanded .card__inner .fa:before {
-  content: "";
-}
-.card.is-expanded .card__expander {
-  max-height: 1000px;
-  min-height: 200px;
-  overflow: visible;
-  margin-top: 30px;
-  opacity: 1;
-}
-.card.is-expanded:hover .card__inner {
-  transform: scale(1);
-}
-.card.is-inactive .card__inner {
-  pointer-events: none;
-  opacity: 0.5;
-}
-.card.is-inactive:hover .card__inner {
-  background-color: #949fb0;
-  transform: scale(1);
-}
+        .carousel-item ul {
+            margin: 0;
+            padding: 0;
+        }
 
-@media screen and (min-width: 992px) {
-  .card:nth-of-type(3n + 2) .card__expander {
-    margin-left: calc(-100% - 30px);
-  }
+        .carousel-item li {
+            border-bottom: 1px solid #444;
+            padding: 4px;
+            font-size: 12px;
+        }
 
-  .card:nth-of-type(3n + 3) .card__expander {
-    margin-left: calc(-200% - 60px);
-  }
+        .slick-prev::before,
+        .slick-next::before {
+            color: gray;
+        }
 
-  .card:nth-of-type(3n + 4) {
-    clear: left;
-  }
-
-  .card__expander {
-    width: calc(300% + 60px);
-    z-index: 2;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .card:nth-of-type(2n + 2) .card__expander {
-    margin-left: calc(-100% - 30px);
-  }
-
-  .card:nth-of-type(2n + 3) {
-    clear: left;
-  }
-
-  .card__expander {
-    width: calc(200% + 30px);
-  }
-}
+        .card-title svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        input {border-radius: 5px; border: 1px solid #444; padding: 4px;}
     </style>
+</head>
+<link rel="stylesheet" href="styles.css">
+<title>Vicco Construtora</title>
 
 </head>
 
@@ -230,241 +107,252 @@
 
         <div class="container-desktop">
 
-            <div class="caixa-menu2">            </div>
+            <div class="caixa-menu2"> </div>
 
             <div class="conteudo">
                 <div class="container-desktop">
                     <!-- Novo Menu de Migalhas (Breadcrumbs) -->
                     <div class="breadcrumbs">
                         <a href="#">INÍCIO</a>
-                        <span style="color: white"> > </span>
+                        <span> > </span>
                         <a href="#">CADASTROS</a>
-                        <span style="color: white"> > </span>
+                        <span> > </span>
                         <a href="#">GRUPOS DE PRODUTOS</a>
                     </div>
                     <!--Filtros e Visualizção modos-->
                     <div class="form-row">
                         <form name=" " action="#" method="POST">
-                            <button type="submit" id="nov" name="novo" class="sub-icones"
-                                title="Abrir Novo">
+                            <button type="submit" id="nov" name="novo" class="sub-icones" title="Abrir Novo">
                                 <i class="fa-regular fa-square-plus"></i>&nbsp;
                                 <label>Abrir Novo</label>
                             </button>
                         </form>
                     </div>
 
- 
+                    <div class="wrap-toggle">
+                        <div class="toggle-container">
+                            <button id="visualizacaoBtn" onclick="alterarModo()">
+                                <span class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
+                            </button>
+                            
+                        </div>
+                        <div class="toggle-container2">
+                            <div class="busca">
+                                <input type="text" id="inputBusca" placeholder="Digtite grupo de produto..."  onkeypress="handleKeyPress(event)">
+                                <button onclick="buscar()">Buscar</button>
+                            </div>
+                        </div>
+
+                        
+
+                    </div><!--FIM DO TOGGLE DE VISUALIZAO-->
+
                     <div class="conteudo-in">
                         <h2>Grupos de Produtos</h2>
 
-                        <div class="wrap-toggle">
-                            <div class="toggle-container">
-                                <button onclick="alterarModo()">
-                                    <span id="modo-icon" class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
-                                </button>
-                            </div>
-                            <div class="toggle-container2">
-                                <button onclick="openFilterModal(); updateFilterDisplay();">
-                                    <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
-                                </button>
-                            </div>
-    
-                            <div class="filtros-selecionados">
-                                <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
-                                <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
-                            </div>
-    
+                        <div style="display: none;">
+                             <table id="tabelaGrupos">
+                            <tr>lalalal</tr>
+                        </table>
                         </div>
+                        
+                        
 
-                        <div class="cards-container">
+                        <div class="container mt-5">
+                            <!-- Primeira Linha -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title"><i class="fa-brands fa-black-tie"></i>
+                                                <h5>ADMINISTRAÇÃO</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Alimentação</li>
+                                                        <li>Comunicação Visual</li>
+                                                        <li>Cursos & Treinamentos</li>
+                                                        <li>Descontos</li>
+                                                        <li>Despesas Fixas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Documentos</li>
+                                                        <li>Documentos - ART</li>
+                                                        <li>Documentos -
+                                                            Certidões</li>
+                                                        <li>Hospedagem</li>
+                                                        <li>Impostos</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Impressões</li>
+                                                        <li>Materiais de
+                                                            Limpeza</li>
+                                                        <li>Materiais de
+                                                            Expediente</li>
+                                                        <li>Mão de
+                                                            Obra</li>
+                                                        <li>Retirada Sócios</li>
 
-                            <div class="wrapper">
-
-                                <div class="cards">
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                      <i class="fa-brands fa-black-tie"></i>
-                                        <span style="color: white">Administração</span>
-                                      <i class="fa fa-folder-o"></i>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Saúde</label>
+                                                        </li>
+                                                        <li>Seguro</li>
+                                                        <li>Sites
+                                                            e Apps</li>
+                                                        <li>Transporte</li>
+                                                        <li>Uniformes</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      <ul style="flex: 1;">
-                                        <li class="categoria-lista">
-                                            <!-- Subcategorias -->
-                                            <ul style="flex: 1; white-space: nowrap;">
-                                                <li>Alimentação</li>
-                                                <li>Comunicação Visual</li>
-                                                <li>Cursos & Treinamentos</li>
-                                                <li>Descontos</li>
-                                                <li>Despesas Fixas</li>
-                                             </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 576 512">
+                                                    <path
+                                                        d="M208 64a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM9.8 214.8c5.1-12.2 19.1-18 31.4-12.9L60.7 210l22.9-38.1C99.9 144.6 129.3 128 161 128c51.4 0 97 32.9 113.3 81.7l34.6 103.7 79.3 33.1 34.2-45.6c6.4-8.5 16.6-13.3 27.2-12.8s20.3 6.4 25.8 15.5l96 160c5.9 9.9 6.1 22.2 .4 32.2s-16.3 16.2-27.8 16.2H288c-11.1 0-21.4-5.7-27.2-15.2s-6.4-21.2-1.4-31.1l16-32c5.4-10.8 16.5-17.7 28.6-17.7h32l22.5-30L22.8 246.2c-12.2-5.1-18-19.1-12.9-31.4zm82.8 91.8l112 48c11.8 5 19.4 16.6 19.4 29.4v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V405.1l-60.6-26-37 111c-5.6 16.8-23.7 25.8-40.5 20.2S-3.9 486.6 1.6 469.9l48-144 11-33 32 13.7z" />
+                                                </svg>
+                                                <h5>Apoio de obra</h5>
+                                            </div>
+                                            <div class="carousel">
+
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Cantoneiras de Alumínio</li>
+                                                        <li>Furos Laje</li>
+                                                        <li>Locação de Equipamentos</li>
+                                                        <li>Proteções de Pisos e Paredes</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                    <path
+                                                        d="M128 112c0-26.5 21.5-48 48-48s48 21.5 48 48V276.5c0 17.3 7.1 31.9 15.3 42.5C249.8 332.6 256 349.5 256 368c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-18.5 6.2-35.4 16.7-48.9c8.2-10.6 15.3-25.2 15.3-42.5V112zM176 0C114.1 0 64 50.1 64 112V276.4c0 .1-.1 .3-.2 .6c-.2 .6-.8 1.6-1.7 2.8C43.2 304.2 32 334.8 32 368c0 79.5 64.5 144 144 144s144-64.5 144-144c0-33.2-11.2-63.8-30.1-88.1c-.9-1.2-1.5-2.2-1.7-2.8c-.1-.3-.2-.5-.2-.6V112C288 50.1 237.9 0 176 0zm0 416c26.5 0 48-21.5 48-48c0-20.9-13.4-38.7-32-45.3V272c0-8.8-7.2-16-16-16s-16 7.2-16 16v50.7c-18.6 6.6-32 24.4-32 45.3c0 26.5 21.5 48 48 48zm336-64H480V64c0-17.7-14.3-32-32-32s-32 14.3-32 32V352H384c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l64 64c6 6 14.1 9.4 22.6 9.4s16.6-3.4 22.6-9.4l64-64c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8z" />
+                                                </svg>
+                                                <h5>Ar Condicionado</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Isolantes</li>
+                                                        <li>Máquinas</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                     
-                                        </li>
-                                      </ul>
-                                      <ul style="flex: 1;">
-                                        <li>Documentos</li>
-                                        <li>Documentos - ART</li>
-                                        <li>Documentos -Certidões</li>
-                                        <li>Hospedagem</li>
-                                        <li>Impostos</li>
-                                       
-                                      </ul>
-                                      <ul style="flex: 1;">
-                                        <li>Impressões</li>
-                                        <li>Materiais de Limpeza</li>
-                                        <li>Materiais de Expediente</li>
-                                        <li>Mão de Obra</li>
-                                    </ul>
-                                      <ul style="flex: 1;">
-                                        <li>Retirada Sócios</li>
-                                        <li>Saúde</li>
-                                        <li>Seguro</li>
-                                        <li>Sites e Apps</li>
-                                        <li>Transporte</li>
-                                        <li>Uniformes</li>
-                                      </ul>
+                                        </div>
                                     </div>
-                                  </div>
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                        
-                                      <span style="color: white">Apoio de Obra</span>
-                                      <i class="fa fa-folder-o"></i>
-                                    </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      Colocar subgrupo (sugcategorias dos produtos)
-                                    </div>
-                                  </div>
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                      <span style="color: white">Ar Condicionado</span>
-                                      <i class="fa fa-folder-o"></i>
-                                    </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      Colocar subgrupo (sugcategorias dos produtos)
-                                    </div>
-                                  </div>
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                      <span style="color: white">Card</span>
-                                      <i class="fa fa-folder-o"></i>
-                                    </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      Colocar subgrupo (sugcategorias dos produtos)
-                                    </div>
-                                  </div>
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                      <span style="color: white">Card</span>
-                                      <i class="fa fa-folder-o"></i>
-                                    </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      Colocar subgrupo (sugcategorias dos produtos)
-                                    </div>
-                                  </div>
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                      <span style="color: white">Card</span>
-                                      <i class="fa fa-folder-o"></i>
-                                    </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      Colocar subgrupo (sugcategorias dos produtos)
-                                    </div>
-                                  </div>
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                      <span style="color: white">Card</span>
-                                      <i class="fa fa-folder-o"></i>
-                                    </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      Colocar subgrupo (sugcategorias dos produtos)
-                                    </div>
-                                  </div>
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                      <span style="color: white">Card</span>
-                                      <i class="fa fa-folder-o"></i>
-                                    </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      Colocar subgrupo (sugcategorias dos produtos)
-                                    </div>
-                                  </div>
-                              
-                                  <div class=" card [ is-collapsed ] ">
-                                    <div class="card__inner [ js-expander ]">
-                                      <span style="color: white">Card</span>
-                                      <i class="fa fa-folder-o"></i>
-                                    </div>
-                                    <div class="card__expander">
-                                      <i class="fa fa-close [ js-collapser ]"></i>
-                                      Colocar subgrupo (sugcategorias dos produtos)
-                                    </div>
-                                  </div>
-                              
                                 </div>
-                              
-                              </div>
+                                
+                            </div>
+                            <!-- Fim da Primeira Linha -->
 
-                            <div class="card" onclick="toggleDetails(this)">
-                                <div class="informacoes" style="text-align: center;">
-                                    ADMINISTRAÇÃO<br>
-                                    <i class="fa-regular fa-folder-open"></i>
-                                </div><!--informacoes-->
-                                <div class="details">
-                                    <ul>
-                                        <li>Detalhe 1</li>
-                                        <li>Detalhe 2</li>
-                                        <li>Detalhe 3</li>
-                                    </ul>
-                                </div><!--details-->
-                            </div><!--card-->
-                            <div class="card" onclick="toggleDetails(this)">
-                                <div class="informacoes" style="text-align: center;">
-                                    APOIO OBRA<br>
-                                    <i class="fa-regular fa-folder-open"></i>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-tree"></i>
+                                                <h5>Carpintaria</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Compensados</li>
+                                                        <li>Fórmica</li>
+                                                        <li>Madeiras</li>
+                                                        <li>MDF</li>
+                                                        <li>OSB</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="details">
-                                    <ul>
-                                        <li>Detalhe 1</li>
-                                        <li>Detalhe 2</li>
-                                        <li>Detalhe 3</li>
-                                    </ul>
-                                </div><!--details-->
-                            </div><!--card-->
-                            <div class="card" onclick="toggleDetails(this)">
-                                <div class="informacoes" style="text-align: center;">
-                                    AR CONDICIONADO <br>
-                                    <i class="fa-regular fa-folder-open"></i>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M240.8 4.8C250.3 10.6 256 20.9 256 32v72h89c3.6-13.8 16.1-24 31-24h88c26.5 0 48 21.5 48 48s-21.5 48-48 48H376c-14.9 0-27.4-10.2-31-24H256v72c0 11.1-5.7 21.4-15.2 27.2s-21.2 6.4-31.1 1.4l-192-96C6.8 151.2 0 140.1 0 128s6.8-23.2 17.7-28.6l192-96c9.9-5 21.7-4.4 31.1 1.4zM288 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H320c-17.7 0-32-14.3-32-32V256zM32 384h96c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32zm192 0H480c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32z" />
+                                                </svg>
+                                                <h5>Cívil</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Aço CA</li>
+                                                        <li>Aglomerantes e Agregados</li>
+                                                        <li>Blocos e Tijolos</li>
+                                                        <li>Concretos</li>
+                                                        <li>Contra pisos</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Emchimentos</li>
+                                                        <li>Pisos e Revestimentos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="details">
-                                    <ul>
-                                        <li>Detalhe 1</li>
-                                        <li>Detalhe 2</li>
-                                        <li>Detalhe 3</li>
-                                    </ul>
-                                </div><!--details-->
-                            </div><!--card-->
-                        </div><!--cards container-->
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M240.8 4.8C250.3 10.6 256 20.9 256 32v72h89c3.6-13.8 16.1-24 31-24h88c26.5 0 48 21.5 48 48s-21.5 48-48 48H376c-14.9 0-27.4-10.2-31-24H256v72c0 11.1-5.7 21.4-15.2 27.2s-21.2 6.4-31.1 1.4l-192-96C6.8 151.2 0 140.1 0 128s6.8-23.2 17.7-28.6l192-96c9.9-5 21.7-4.4 31.1 1.4zM288 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H320c-17.7 0-32-14.3-32-32V256zM32 384h96c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32zm192 0H480c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32z" />
+                                                </svg>
+                                                <h5>Divisórias</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Divisórias de Vidro</li>
+                                                        <li>Divisórias Naval</li>
+                                                        <li>Divisórias Sanitárias</li>
+                                                        </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><!--row-->
+                            
+                            </div>
+                        </div>
                     </div> <!--conteudo in-->
 
                 </div><!--container desktop-->
-            </div><!--conteudo-->
+
+
+            </div>
+
+        </div>
 
 
         <!-- Modal de Filtro -->
@@ -578,41 +466,60 @@
         </div>
 
 
-        <script src="filtro.js"></script>
+        <script src="filtro-cad-gr-prod.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+            <script>
+                function buscar() {
+                    // Obtém o valor digitado no campo de busca
+                    var termoBusca = document.getElementById("inputBusca").value.toLowerCase();
+            
+                    // Obtém todos os elementos com a classe "card-title"
+                    var cards = document.getElementsByClassName("card-title");
+            
+                    // Itera sobre os elementos para verificar se o texto corresponde à busca
+                    for (var i = 0; i < cards.length; i++) {
+                        var titulo = cards[i].getElementsByTagName("h5")[0].innerText.toLowerCase();
+                        // Se o texto do título corresponder ao termo de busca, exibe o card, senão, oculta-o
+                        if (titulo.includes(termoBusca)) {
+                            cards[i].closest(".col-md-4").style.display = "block";
+                        } else {
+                            cards[i].closest(".col-md-4").style.display = "none";
+                        }
+                    }
+                }
+            </script>
+            
         <script>
-           var $cell = $('.card');
-
-//open and close card when clicked on card
-$cell.find('.js-expander').click(function() {
-
-  var $thisCell = $(this).closest('.card');
-
-  if ($thisCell.hasClass('is-collapsed')) {
-    $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
-    $thisCell.removeClass('is-collapsed').addClass('is-expanded');
-    
-    if ($cell.not($thisCell).hasClass('is-inactive')) {
-      //do nothing
-    } else {
-      $cell.not($thisCell).addClass('is-inactive');
-    }
-
-  } else {
-    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-    $cell.not($thisCell).removeClass('is-inactive');
-  }
-});
-
-//close card when click on cross
-$cell.find('.js-collapser').click(function() {
-
-  var $thisCell = $(this).closest('.card');
-
-  $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-  $cell.not($thisCell).removeClass('is-inactive');
-
-});
+            $(document).ready(function () {
+                $('.carousel').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: false,
+                    autoplaySpeed: 2000,
+                    arrows: true,
+                    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+                    nextArrow: '<button type="button" class="slick-next">Next</button>',
+                });
+            });
         </script>
+        <script>
+            function handleKeyPress(event) {
+                // Verifica se a tecla pressionada é "Enter" (código 13)
+                if (event.keyCode === 13) {
+                    buscar();
+                }
+            }
+        </script>
+        
 </body>
 
 </html>
