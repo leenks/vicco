@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .card-body {
             text-align: center;
@@ -24,7 +23,6 @@
         .carousel-item {
             display: block !important;
             margin: 10px;
-            /* Espaçamento entre os itens */
             min-width: 180px;
             height: 110px;
         }
@@ -62,10 +60,30 @@
             height: 20px;
             fill: white;
         }
-        input {border-radius: 5px; border: 1px solid #444; padding: 4px;}
+        input {border-radius: 5px; border: 1px solid #666; padding: 4px;}
+         /* Estilo para a tabela */
+         table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-size: 12px;
+        }
     </style>
 </head>
 <link rel="stylesheet" href="styles.css">
+
 <title>Vicco Construtora</title>
 
 </head>
@@ -122,9 +140,9 @@
                     <!--Filtros e Visualizção modos-->
                     <div class="form-row">
                         <form name=" " action="#" method="POST">
-                            <button type="submit" id="nov" name="novo" class="sub-icones" title="Abrir Novo">
+                            <button type="submit" id="nov" name="novo" class="sub-icones" title="Criar Novo">
                                 <i class="fa-regular fa-square-plus"></i>&nbsp;
-                                <label>Abrir Novo</label>
+                                <label>Criar Novo</label>
                             </button>
                         </form>
                     </div>
@@ -134,11 +152,10 @@
                             <button id="visualizacaoBtn" onclick="alterarModo()">
                                 <span class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
                             </button>
-                            
                         </div>
                         <div class="toggle-container2">
                             <div class="busca">
-                                <input type="text" id="inputBusca" placeholder="Digtite grupo de produto..."  onkeypress="handleKeyPress(event)">
+                                <input type="text" id="inputBusca" placeholder="Pesquise por nome de grupo"  onkeypress="handleKeyPress(event)">
                                 <button onclick="buscar()">Buscar</button>
                             </div>
                         </div>
@@ -150,12 +167,49 @@
                     <div class="conteudo-in">
                         <h2>Grupos de Produtos</h2>
 
-                        <div style="display: none;">
-                             <table id="tabelaGrupos">
-                            <tr>lalalal</tr>
-                        </table>
+                        <div id="tabelaContainer" style="display: none;">
+                            
+                            <div id="lis_i" class="col-md-12 p-0">
+                                <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+                                    <div class="form-row">
+                                        <div class="dataTables_length" id="tab-2_length">
+                                            <label>Demonstrar
+                                                <select name="tab-2_length" aria-controls="tab-2" class=""
+                                                    style="border: 1px solid #ccc;">
+                                                    <option value="10">10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">50</option>
+                                                    <option value="100">100</option>
+                                                </select>
+                                                linhas por página
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table id="tabelaGrupos">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20px;">Editar</th>
+                                        <th>Número</th>
+                                        <th>Status</th>
+                                        <th>Sigla</th>
+                                        <th>Sub-Grupo</th>
+                                        <th>Descrição do Produto</th>
+                                        <th>Medida</th>
+                                        <th>Preço</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="sub-icones"><i
+                                                    class="fa-regular fa-pen-to-square"></i></div></td>
+                                    <td colspan="7" style="text-align: center;">Conteúdo dinâmico</td>
+                                    </tr><!-- Aqui os itens serão adicionados dinamicamente -->
+                                </tbody>
+                            </table>
                         </div>
-                        
                         
                         <div class="container mt-5">
                             <!-- Primeira Linha -->
