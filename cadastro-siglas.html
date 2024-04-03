@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .card-body {
@@ -60,17 +62,20 @@
             height: 20px;
             fill: white;
         }
-        input {border-radius: 5px; border: 1px solid #666; padding: 4px;}
-         /* Estilo para a tabela */
-         table {
+
+      
+
+        /* Estilo para a tabela */
+        table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             border-radius: 10px;
-            
+
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
@@ -155,12 +160,11 @@
                         </div>
                         <div class="toggle-container2">
                             <div class="busca">
-                                <input type="text" id="inputBusca" placeholder="Pesquise por nome de grupo"  onkeypress="handleKeyPress(event)">
+                                <input type="text" id="inputBusca" placeholder="Pesquise por nome de grupo" style="width: 185px;"
+                                    onkeypress="handleKeyPress(event)">
                                 <button onclick="buscar()">Buscar</button>
                             </div>
                         </div>
-
-                        
 
                     </div><!--FIM DO TOGGLE DE VISUALIZAO-->
 
@@ -168,7 +172,7 @@
                         <h2>Grupos de Produtos</h2>
 
                         <div id="tabelaContainer" style="display: none;">
-                            
+
                             <div id="lis_i" class="col-md-12 p-0">
                                 <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
                                     <div class="form-row">
@@ -203,14 +207,15 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><div class="sub-icones"><i
-                                                    class="fa-regular fa-pen-to-square"></i></div></td>
-                                    <td colspan="7" style="text-align: center;">Conteúdo dinâmico</td>
+                                        <td>
+                                            <div class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></div>
+                                        </td>
+                                        <td colspan="7" style="text-align: center;">Conteúdo dinâmico</td>
                                     </tr><!-- Aqui os itens serão adicionados dinamicamente -->
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <div class="container mt-5">
                             <!-- Primeira Linha -->
                             <div class="row">
@@ -288,7 +293,7 @@
                                                         <li>Proteções de Pisos e Paredes</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -311,15 +316,11 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                    
+
                                         </div>
                                     </div>
                                 </div>
-                                
-                            </div>
-                            <!-- Fim da Primeira Linha -->
 
-                            <div class="row">
                                 <div class="col-md-4">
                                     <div class="card">
                                         <div class="card-body">
@@ -384,16 +385,13 @@
                                                         <li>Divisórias de Vidro</li>
                                                         <li>Divisórias Naval</li>
                                                         <li>Divisórias Sanitárias</li>
-                                                        </ul>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                            </div><!--row-->
-
-                            <div class="row">
                                 <div class="col-md-4">
                                     <div class="card">
                                         <div class="card-body">
@@ -405,13 +403,13 @@
                                                 <div class="carousel-item">
                                                     <ul>
                                                         <li>Adicione</li>
-                                                        </ul>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            
+
                                 <div class="col-md-4">
                                     <div class="card">
                                         <div class="card-body">
@@ -427,7 +425,7 @@
                                                         <li>Chaves e Trancas</li>
                                                         <li>Guarnições</li>
                                                         <li>Janelas Metálicas</li>
-                                                        </ul>
+                                                    </ul>
                                                 </div>
                                                 <div class="carousel-item">
                                                     <ul>
@@ -436,156 +434,487 @@
                                                         <li>Portasd e Madeira</li>
                                                         <li>Portas Metálicas</li>
                                                         <li>Portões Metálicos</li>
-                                                        </ul>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            </div>
-                        </div>
-                    </div> <!--conteudo in-->
 
-                </div><!--container desktop-->
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-table-cells"></i>
+                                                <h5>Estruturas Metálicas</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Cabos de aço</li>
+                                                        <li>Calhas e Rufos</li>
+                                                        <li>Canoplas</li>
+                                                        <li>Cantoneiras Metálicas</li>
+                                                        <li>Chapas Metálicas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Correntes</li>
+                                                        <li>Curvas</li>
+                                                        <li>Discos de Corte</li>
+                                                        <li>Dobradiças</li>
+                                                        <li>Eletrodos</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Fechaduras</li>
+                                                        <li>Ferros Chatos</li>
+                                                        <li>Ferros Redondos</li>
+                                                        <li>Flange</li>
+                                                        <li>Metalon</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Perfis Dobrados</li>
+                                                        <li>Perfis Laminados</li>
+                                                        <li>Portas Metálicas</li>
+                                                        <li>Roldana</li>
+                                                        <li>Suportes</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Tampas</li>
+                                                        <li>Telas Metálicas</li>
+                                                        <li>Telhas Metálicas</li>
+                                                        <li>Tubos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-table-cells"></i>
+                                                <h5>Fixação</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Abraçadeiras</li>
+                                                        <li>Arruelas</li>
+                                                        <li>Barras Roscadas</li>
+                                                        <li>Buchas</li>
+                                                        <li>Chaumbadores</li>
+                                                        <li>Conj. Fixação Hidráulicas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Dobradiças</li>
+                                                        <li>Fitas Crepe</li>
+                                                        <li>Parafusos/li>
+                                                        <li>Porcas</li>
+                                                        <li>Pregos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-table-cells"></i>
+                                                <h5>Geral</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Ferramentas Manuais</li>
+                                                        <li>Quimicos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-table-cells"></i>
+                                                <h5>Gesso</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Acabamentos</li>
+                                                        <li>Alçapões</li>
+                                                        <li>Arames e Tirantes</li>
+                                                        <li>Canaletas</li>
+                                                        <li>Cantoneiras Zincadas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Chapas Drywall</li>
+                                                        <li>Estrutura Forro Modular</li>
+                                                        <li>Fixação</li>
+                                                        <li>Forros Modulares</li>
+                                                        <li>Forros PVC</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Guias</li>
+                                                        <li>Isolantes</li>
+                                                        <li>Fixação</li>
+                                                        <li>Montantes</li>
+                                                        <li>Placas Cimentícias</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Reforços</li>
+                                                        <li>Revestimentos TermoAcústicos</li>
+                                                        <li>Rodaforro</li>
+                                                        <li>Tabica</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-lightbulb"></i>
+                                                <h5>Iluminação</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Acrílicos</li>
+                                                        <li>Caixa de Comando</li>
+                                                        <li>Fitas Led</li>
+                                                        <li>Lâmpadas</li>
+                                                        <li>Luminárias</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-droplet"></i>
+                                                <h5>Impermeabilização</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Mantas Asfálticas</li>
+                                                        <li>Mantas Líquidas</li>
+                                                        <li>Poliméricos</li>
+                                                        <li>Primers</li>
+                                                        <li>Telas Poliéster</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Chapas Drywall</li>
+                                                        <li>Estrutura Forro Modular</li>
+                                                        <li>Fixação</li>
+                                                        <li>Forros Modulares</li>
+                                                        <li>Forros PVC</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Guias</li>
+                                                        <li>Isolantes</li>
+                                                        <li>Fixação</li>
+                                                        <li>Montantes</li>
+                                                        <li>Placas Cimentícias</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Reforços</li>
+                                                        <li>Revestimentos TermoAcústicos</li>
+                                                        <li>Rodaforro</li>
+                                                        <li>Tabica</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-fire-flame-simple"></i>
+                                                <h5>Instalações de Gás</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>COB-Caps</li>
+                                                        <li>COB-Conectores</li>
+                                                        <li>COB-Curvas</li>
+                                                        <li>COB-Joelhos</li>
+                                                        <li>COB-Luvas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>COB-Tês</li>
+                                                        <li>COB-Tubos</li>
+                                                        <li>Fitas</li>
+                                                        <li>GAL-Caps</li>
+                                                        <li>Válvulas</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-            </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-bolt"></i>
+                                                <h5>Instalações Elétricas</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Abraçadeiras</li>
+                                                        <li>Acabamentos</li>
+                                                        <li>Alarmes</li>
+                                                        <li>Cabos</li>
+                                                        <li>Dutotec</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Equipamentos</li>
+                                                        <li>Fitas Isolantes</li>
+                                                        <li>Fontes e Fusíveis</li>
+                                                        <li>Identificações</li>
+                                                        <li>Infras Estruturas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Para Raios</li>
+                                                        <li>Quadros Elétricos</li>
+                                                        <li>Terminais</li>
+                                                        <li>Tomadas-Interruptores-Acabamentos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-        </div>
 
 
-        <!-- Modal de Filtro -->
-        <div id="filterModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeFilterModal()">&times;</span>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-faucet"></i>
+                                                <h5>Instalações Hidráulicas-AC</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>PPR Azul-Luvas</li>
+                                                        <li>PPR Azul-Tês</li>
+                                                        <li>PPR Azul-Fixações e Suportes</li>
+                                                        <li>PPR Azul-Adaptadores</li>
+                                                        <li>PPR Azul-Buchas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>PPR Azul-Caps</li>
+                                                        <li>PPR Azul-Conectores</li>
+                                                        <li>PPR Azul-Curvas</li>
+                                                        <li>PPR Azul-Joelhos</li>
+                                                        <li>PPR Azul-Reduções</li>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>PPR Azul-Registros</li>
+                                                        <li>PPR Azul-Tubos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- Conteúdo do Filtro -->
-                <h2>Informações de Filtro para Requisições</h2>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-faucet"></i>
+                                                <h5>Instalações Hidráulicas-AF</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Adaptadores</li>
+                                                        <li>Buchas</li>
+                                                        <li>Caps</li>
+                                                        <li>Cruzetas</li>
+                                                        <li>Curvas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Entrada de Água</li>
+                                                        <li>Fixações</li>
+                                                        <li>Joelhos</li>
+                                                        <li>Luvas</li>
+                                                        <li>Niples</li>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Plugs</li>
+                                                        <li>Prolongadores</li>
+                                                        <li>Químicos</li>
+                                                        <li>Registros</li>
+                                                        <li>Resevatórios</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Tês</li>
+                                                        <li>Tubos</li>
+                                                        <li>Válvulas</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- Tabela de Filtros -->
-                <div class="filtro-tabela">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <i class="fa-solid fa-faucet"></i>
+                                                <h5>Instalações Hidráulicas-AQ</h5>
+                                            </div>
+                                            <div class="carousel">
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>CPVC-Adaptadores</li>
+                                                        <li>CPVC-Buchas</li>
+                                                        <li>CPVC-Caps</li>
+                                                        <li>CPVC-Conectores</li>
+                                                        <li>CPVC-Curvas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>CPVC-joelhos</li>
+                                                        <li>CPVC-Juntas</li>
+                                                        <li>CPVC-Luvas</li>
+                                                        <li>CPVC-Reduções</li>
+                                                        <li>CPVC-Tês</li>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>CPVC-Tubos</li>
+                                                        <li>CPVC-Uniões</li>
+                                                        <li>Fitas</li>
+                                                        <li>PPR-Adaptadores</li>
+                                                        <li>PPR-Buchas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>PPR-Caps</li>
+                                                        <li>PPR-Conectores</li>
+                                                        <li>PPR-Curvas</li>
+                                                        <li>PPR-Joelhos</li>
+                                                        <li>PPR-Juntas</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>PPR-Luvas</li>
+                                                        <li>PPR-Reduções</li>
+                                                        <li>PPR-Tês</li>
+                                                        <li>PPR-Tubos</li>
+                                                        <li>PPR-Uniões</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <ul>
+                                                        <li>Químicos</li>
+                                                        <li>Válvulas</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <!-- Primeira Coluna -->
-                    <div class="filtro-coluna">
-                        <label for="dataInicial">Data Inicial:</label>
-                        <input type="date" id="dataInicial">
+                            </div><!--row-->
+                        </div> <!--conteudo in-->
 
-                        <p><strong>Tipo:</strong></p>
-                        <label>
-                            <input type="checkbox" id="tipoRequisicao"> Requisições
-                        </label>
-                        <label>
-                            <input type="checkbox" id="tipoReembolso"> Reembolsos
-                        </label>
-                        <label>
-                            <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                        </label>
-                    </div>
+                    </div><!--container desktop-->
 
-                    <!-- Segunda Coluna -->
-                    <div class="filtro-coluna">
-                        <label for="dataFinal">Data Final:</label>
-                        <input type="date" id="dataFinal">
-                    </div>
-
-                    <!-- Terceira Coluna -->
-                    <div class="filtro-coluna">
-                        <h3>Status da Requisição:</h3>
-                        <label>
-                            <input type="checkbox" id="statusAberta"> Aberta
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusCotacao"> Cotação
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusAprovacao"> Aprovação
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusReprovado"> Reprovado
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusPagamento"> Pagamento
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusComprada"> Comprada
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusEntregue"> Entregue
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusCancelada"> Cancelada
-                        </label>
-                        <label>
-                            <input type="checkbox" id="statusRecusada"> Recusada
-                        </label>
-                    </div>
-
-                    <!-- Quarta Coluna -->
-                    <div class="filtro-coluna">
-                        <h3>Obras:</h3>
-                        <label>
-                            <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                        </label>
-                        <label>
-                            <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                        </label>
-
-                        <ul>
-                            <li>
-                                <label>
-                                    <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e
-                                    rh)
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
 
                 </div>
 
-                <!-- Botões de Ação -->
-                <div>
-                    <button class="filtrar" onclick="filtrar()">Filtrar</button>
-                    <button class="limpar" onclick="limparFiltro()">Limpar</button>
-                </div>
-
             </div>
-        </div>
 
 
-        <script src="filtro-cad-gr-prod.js"></script>
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+            <script src="filtro-cad-gr-prod.js"></script>
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+            <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-        <!-- Scripts -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <!-- Scripts -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
             <script>
                 function buscar() {
                     // Obtém o valor digitado no campo de busca
                     var termoBusca = document.getElementById("inputBusca").value.toLowerCase();
-            
+
                     // Obtém todos os elementos com a classe "card-title"
                     var cards = document.getElementsByClassName("card-title");
-            
+
                     // Itera sobre os elementos para verificar se o texto corresponde à busca
                     for (var i = 0; i < cards.length; i++) {
                         var titulo = cards[i].getElementsByTagName("h5")[0].innerText.toLowerCase();
@@ -598,29 +927,29 @@
                     }
                 }
             </script>
-            
-        <script>
-            $(document).ready(function () {
-                $('.carousel').slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 2000,
-                    arrows: true,
-                    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-                    nextArrow: '<button type="button" class="slick-next">Next</button>',
+
+            <script>
+                $(document).ready(function () {
+                    $('.carousel').slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay: false,
+                        autoplaySpeed: 2000,
+                        arrows: true,
+                        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+                        nextArrow: '<button type="button" class="slick-next">Next</button>',
+                    });
                 });
-            });
-        </script>
-        <script>
-            function handleKeyPress(event) {
-                // Verifica se a tecla pressionada é "Enter" (código 13)
-                if (event.keyCode === 13) {
-                    buscar();
+            </script>
+            <script>
+                function handleKeyPress(event) {
+                    // Verifica se a tecla pressionada é "Enter" (código 13)
+                    if (event.keyCode === 13) {
+                        buscar();
+                    }
                 }
-            }
-        </script>
-        
+            </script>
+
 </body>
 
 </html>
