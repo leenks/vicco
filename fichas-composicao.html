@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" onclick="goBack()"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+            <div class="caixa-menu2">
+                <div class="menu-item2">
+                    <a href="nova-requisicao.html"><img src="imgs/ico-budget.png" alt="Orçamentos">
+                        <p>Orçamentos</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="novo-reembolso.html"><img src="imgs/ico-mapa-quant.png" alt="Mapa">
+                        <p>Mapa Quantitativo</p>
+                    </a>
+                </div>
+
+                <div class="menu-item2">
+                    <a href="nova-cotacao.html"><img src="imgs/ico-cadastros.png" alt="Cadastros">
+                        <p>Cadastros</p>
+                    </a>
+                </div>
+
+            </div>
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">INÍCIO</a>
+                        <span> > </span>
+                        <a href="#">PLANEJAMENTO</a>
+                        <span> > </span>
+                        <span>FICHAS DE COMPOSIÇÃO</span>
+                    </div>
+
+                    <div class="conteudo-in">
+                        <h2>Fichas de Composição</h2>
+
+                        <!-- Botão para abrir a criação de ficha -->
+                        <button type="button" id="btnAbrirNovo" class="sub-icones" title="Abrir Nova Ficha">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <label>Criar Nova Ficha</label>
+                        </button>
+                    </div>
+
+                    <!-- criar ficha oculto -->
+                    <div class="form-content" style="display: none;">
+                        <div class="col-md-7">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label>Grupo</label>
+                                    <select id="gru" name="gru" class="form-control" required>
+                                        <!-- Opções do select aqui -->
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Número da Ficha</label>
+                                    <input type="text" class="form-control text-center" maxlength="6" id="cod"
+                                        name="cod" value="6513" disabled />
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Status</label>
+                                    <select id="obr" name="obr" class="form-control" required>
+                                        <!-- Opções do select aqui -->
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Linha 2: Descrição do Serviço Prestado e Unidade de Medida -->
+                            <div class="form-row">
+                                <div class="col-md-9">
+                                    <label>Descrição do Serviço Prestado</label>
+                                    <select id="obr" name="obr" class="form-control" required>
+                                        <option>Informe serviço a prestar desejado...
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Unid. Medida</label>
+                                    <input type="text" class="form-control" maxlength="4" id="cli" name="cli"
+                                        value="(Unid. Automático)" required disabled />
+                                </div>
+                            </div>
+                            <!-- Linha 3: Observações -->
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <label>Observações para a Ficha Técnica</label>
+                                    <textarea class="form-control" rows="12" id="des" placeholder=" "
+                                        name="des"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <!-- Sidebar -->
+                            <div class="sidebar-form cinza-medio">
+                                <!-- Conteúdo do sidebar aqui -->
+                                <h3>Composição BDI</h3>
+
+                                <!-- Continuação dos campos de formulário -->
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <label>% Encargos</label>
+                                        <input type="text" class="form-control" maxlength="50" id="encargos"
+                                            name="encargos" value="" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>R$ Encargos</label>
+                                        <input type="text" class="form-control" maxlength="50" id="valor_encargos"
+                                            name="valor_encargos" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <label>% Custos Indiretos</label>
+                                        <input type="text" class="form-control" maxlength="50" id="custos_indiretos"
+                                            name="custos_indiretos" value="" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>R$ Custos Indiretos</label>
+                                        <input type="text" class="form-control" maxlength="50"
+                                            id="valor_custos_indiretos" name="valor_custos_indiretos" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <label>% Lucro Líquido</label>
+                                        <input type="text" class="form-control" maxlength="50" id="lucro_liquido"
+                                            name="lucro_liquido" value="" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>R$ Lucro Líquido</label>
+                                        <input type="text" class="form-control" maxlength="50" id="valor_lucro_liquido"
+                                            name="valor_lucro_liquido" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <label>% Impostos</label>
+                                        <input type="text" class="form-control" maxlength="50" id="impostos"
+                                            name="impostos" value="" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>R$ Impostos</label>
+                                        <input type="text" class="form-control" maxlength="50" id="valor_impostos"
+                                            name="valor_impostos" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <label>% Potencializador</label>
+                                        <input type="text" class="form-control" maxlength="50" id="potencializador"
+                                            name="potencializador" value="" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>R$ Potencializador</label>
+                                        <input type="text" class="form-control" maxlength="50"
+                                            id="valor_potencializador" name="valor_potencializador" value="" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr width="100%">
+
+                        <div class="form-row cinza-medio">
+                            <div class="col-md-1">
+                                <label>Código</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Descrição dos Materiais</label>
+                                <input type="text" class="form-control text-center" maxlength="5" id="uni_i"
+                                    name="uni_i" value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <label>Unid.</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <label>Preço</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <label>Indice</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <label>Valor</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <form name=" " action="nova-requisicao.html" method="POST">
+                                    <button type="submit" id="nov" name="novo" class="sub-icones"
+                                        title="Abrir Nova Requisição no sistema">
+                                        <i class="fa-regular fa-square-plus"></i><br><br>
+                                        <label>Novo</label>
+                                    </button>
+                                </form>
+
+                            </div><!--form-row-->
+
+                        </div><!--conteudo sidebar-->
+
+
+                        <div class="form-row cinza-medio">
+                            <div class="col-md-1">
+                                <label>Código</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Descrição dos Materiais</label>
+                                <input type="text" class="form-control text-center" maxlength="5" id="uni_i"
+                                    name="uni_i" value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <label>Unid.</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <label>Preço</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <label>Indice</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <label>Valor</label>
+                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
+                                    value="" />
+                            </div>
+                            <div class="col-md-1">
+                                <form name=" " action="nova-requisicao.html" method="POST">
+                                    <button type="submit" id="nov" name="novo" class="sub-icones"
+                                        title="Abrir Nova Requisição no sistema">
+                                        <i class="fa-regular fa-square-plus"></i><br><br>
+                                        <label>Novo</label>
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div><!--form-row-->
+                    </div><!--div form-content-->
+
+                    <div id="lis_i" class="col-md-12  p-0">
+                        <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+
+                            <div class="overflow-auto" style="max-width: 90vw;">
+                                <div class="tab-1 table-responsive form-row-table">
+                                    <table id="tab-2" class="table table-sm table-striped table-bordered">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th width="3%">Excluir</th>
+                                                <th>Tipo</th>
+                                                <th class="text-center">Cód.</th>
+                                                <th>Descrição do Item</th>
+                                                <th>Unid.</th>
+                                                <th class="text-center">Quant.</th>
+                                                <th class="text-center">R$ Unit.</th>
+                                                <th class="text-center">R$ Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="odd bg-light">
+                                                <td valign="top" colspan="8" class="dataTables_empty py-3">Nada foi
+                                                    adicionado
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="dataTables_paginate paging_simple_numbers" id="tab-2_paginate">
+                                        <a class="paginate_button previous disabled" aria-controls="tab-2"
+                                            data-dt-idx="0" tabindex="0" id="tab-2_previous">Anterior</a>
+                                        <span></span>
+                                        <a class="paginate_button next disabled" aria-controls="tab-2" data-dt-idx="1"
+                                            tabindex="0" id="tab-2_next">Próximo</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--tab-2 wrapper-->
+                    </div><!--#lis-cold-md-->
+
+                    <!-- Ícone no footer -->
+                    <div class="ico-subir-footer" onclick="scrollToTop()">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+
+                </div><!--conteudo desktop-->
+            </div><!--div conteudo-->
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    // Ao clicar no botão, alternar a exibição do conteúdo do formulário
+                    $('#btnAbrirNovo').click(function () {
+                        $('.form-content').slideToggle(); // Correção aqui: alterei o seletor para classe '.form-content'
+                    });
+                });
+            </script>
+
+            <script>
+                // Função para rolar até o topo da página
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' // Para fazer uma rolagem suave
+                    });
+                }
+            </script>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+            <script>
+                $(document).ready(function () {
+                    // Monitora as mudanças no estado do checkbox
+                    $('#check_sub').change(function () {
+                        // Se o checkbox estiver selecionado
+                        if ($(this).is(':checked')) {
+                            // Desativa os campos "Grupo" e "Sub-Grupo"
+                            $('#gru').prop('disabled', true);
+                            $('#sub').prop('disabled', true);
+                        } else {
+                            // Caso contrário, habilita os campos "Grupo" e "Sub-Grupo"
+                            $('#gru').prop('disabled', false);
+                            $('#sub').prop('disabled', false);
+                        }
+                    });
+                });
+            </script>
+
+
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+
+</body>
+
+</html>
