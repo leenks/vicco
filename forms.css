@@ -15,6 +15,11 @@ textarea,
 select {
     font-family: 'Lato', sans-serif;
 }
+.cinza-medio {    
+    border: 1px solid #ccc; 
+    background-color: #e7e7e7;
+    border-radius: 10px;
+}
 
 .form-content {
     margin: 0px;
@@ -58,7 +63,7 @@ select {
 
 .form-row-table {
     border-radius: 5px;
-    border: 1px solid #ccc;
+
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -209,6 +214,16 @@ select {
 .label-input-container label {
     width: 100%;
 
+}
+
+
+.sidebar-form {
+    height: 100%; 
+    margin-left: auto; 
+    padding: 15px; 
+    box-sizing: border-box; /* Garante que o padding não aumente a largura do sidebar */
+    border-radius: 10px;
+    padding: 20px; 
 }
 
 @media (max-width: 768px) {
