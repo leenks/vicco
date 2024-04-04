@@ -17,6 +17,36 @@ body {
     letter-spacing: 1px;
 }
 
+ /* Estilo para a tabela */
+ table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-top: 3px solid #999;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-size: 12px;
+}
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+background-color: #ffffff;
+}
+
 .menu-item,
 .menu-item2 p {
     margin: 0;
@@ -744,6 +774,16 @@ color: #444;
 
 /*CATEGORIAS RETRATIL*/
 
+#btnAbrirNovo {
+    background-color: transparent;
+    border: none; /* Utilize 'none' para remover a borda */
+    outline: none; /* Remova a borda de foco */
+}
+#btnAbrirNovo:focus {
+    outline: none; /* Remover a borda de foco quando o botão está em foco */
+}
+
+
 .conteudo-lateral::-webkit-scrollbar{
     width: 8px;
 }
@@ -828,7 +868,6 @@ color: #444;
     margin: 0;
 }
 
-
 .cards-container.modo-lista .card .imagem-container {
     width: 30% !important;
     margin-right: 15px;
@@ -887,6 +926,52 @@ color: #444;
 }
 
 
+/* GRUPO DE PRODUTOS LISTA DE FICHAS */
+.card-body {
+    text-align: center;
+    padding: 0;
+}
+
+.carousel-item {
+    display: block !important;
+    margin: 10px;
+    min-width: 180px;
+    height: 110px;
+}
+
+.card-title {
+    background-color: orangered;
+    padding: 2px;
+    color: #fff;
+}
+
+.card-title h5 {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 4px;
+}
+
+.carousel-item ul {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-item li {
+    border-bottom: 1px solid #444;
+    padding: 4px;
+    font-size: 12px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    color: gray;
+}
+
+.card-title svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
 
 
 

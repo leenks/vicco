@@ -16,78 +16,11 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .card-body {
-            text-align: center;
-            padding: 0;
-        }
-
-        .carousel-item {
-            display: block !important;
-            margin: 10px;
-            min-width: 180px;
-            height: 110px;
-        }
-
-        .card-title {
-            background-color: orangered;
-            padding: 2px;
-            color: #fff;
-        }
-
-        .card-title h5 {
-            font-size: 12px;
-            text-transform: uppercase;
-            margin: 4px;
-        }
-
-        .carousel-item ul {
-            margin: 0;
-            padding: 0;
-        }
-
-        .carousel-item li {
-            border-bottom: 1px solid #444;
-            padding: 4px;
-            font-size: 12px;
-        }
-
-        .slick-prev::before,
-        .slick-next::before {
-            color: gray;
-        }
-
-        .card-title svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-
-      
-
-        /* Estilo para a tabela */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            border-radius: 10px;
-
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            font-size: 12px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forms.css">
 </head>
-<link rel="stylesheet" href="styles.css">
+
 
 <title>Vicco Construtora</title>
 
@@ -142,15 +75,38 @@
                         <span> > </span>
                         <a href="#">GRUPOS DE PRODUTOS</a>
                     </div>
-                    <!--Filtros e Visualizção modos-->
+
+                    <!--JANELA PARA CRIAR NOVO GRUPO DE PROD-->
                     <div class="form-row">
-                        <form name=" " action="#" method="POST">
-                            <button type="submit" id="nov" name="novo" class="sub-icones" title="Criar Novo">
-                                <i class="fa-regular fa-square-plus"></i>&nbsp;
-                                <label>Criar Novo</label>
-                            </button>
-                        </form>
+                        <button type="button" id="btnAbrirNovo" class="sub-icones btn btn-light" title="Criar Novo">
+                            <i class="fa-regular fa-square-plus"></i>&nbsp;
+                            <label>Criar Novo</label>
+                        </button>
                     </div>
+                    <br>
+                    <form id="formulario" class="form-content" style="display: none;">
+                        <div class="form-row">
+                            <div class="col-md-2 mb-3">
+                                <label for="codigo">Código:</label>
+                                <input type="text" class="form-control" id="codigo" name="codigo" required>
+                            </div>
+                            <div class="col-md-7 mb-3">
+                                <label for="descricao">Descrição do Grupo de Produto:</label>
+                                <input type="text" class="form-control" id="descricao" name="descricao" required>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <label for="abreviacao">Abreviação:</label>
+                                <input type="text" class="form-control" id="abreviacao" name="abreviacao" required>
+                            </div>
+                            <div class="col-md-1 mb-3">
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="sal_r" name="salvar" class="sub-icones btn btn-primary"><i
+                                            class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
 
                     <div class="wrap-toggle">
                         <div class="toggle-container">
@@ -160,8 +116,8 @@
                         </div>
                         <div class="toggle-container2">
                             <div class="busca">
-                                <input type="text" id="inputBusca" placeholder="Pesquise por nome de grupo" style="width: 185px;"
-                                    onkeypress="handleKeyPress(event)">
+                                <input type="text" id="inputBusca" placeholder="Pesquise por nome de grupo"
+                                    style="width: 185px;" onkeypress="handleKeyPress(event)">
                                 <button onclick="buscar()">Buscar</button>
                             </div>
                         </div>
@@ -192,17 +148,14 @@
                                 </div>
                             </div>
 
-                            <table id="tabelaGrupos">
+                            <table id="tabelaGrupos" class="table">
                                 <thead>
                                     <tr>
                                         <th style="width: 20px;">Editar</th>
                                         <th>Número</th>
-                                        <th>Status</th>
-                                        <th>Sigla</th>
-                                        <th>Sub-Grupo</th>
-                                        <th>Descrição do Produto</th>
-                                        <th>Medida</th>
-                                        <th>Preço</th>
+                                        <th>Código</th>
+                                        <th>Descrição do Grupo</th>
+                                        <th>Abreviação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -211,7 +164,8 @@
                                             <div class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></div>
                                         </td>
                                         <td colspan="7" style="text-align: center;">Conteúdo dinâmico</td>
-                                    </tr><!-- Aqui os itens serão adicionados dinamicamente -->
+                                    </tr>
+                                    <!-- Aqui os itens serão adicionados dinamicamente -->
                                 </tbody>
                             </table>
                         </div>
@@ -896,59 +850,13 @@
             </div>
 
 
-            <script src="filtro-cad-gr-prod.js"></script>
-            <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-            <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-            <!-- Scripts -->
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-            <script type="text/javascript"
-                src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <script src="filtro-cad-gr-prod.js"></script> <!--AQUI ESTÁ TODOS OS SCRIPTS USADOS NESSA PÁGINA-->
+            
 
-            <script>
-                function buscar() {
-                    // Obtém o valor digitado no campo de busca
-                    var termoBusca = document.getElementById("inputBusca").value.toLowerCase();
-
-                    // Obtém todos os elementos com a classe "card-title"
-                    var cards = document.getElementsByClassName("card-title");
-
-                    // Itera sobre os elementos para verificar se o texto corresponde à busca
-                    for (var i = 0; i < cards.length; i++) {
-                        var titulo = cards[i].getElementsByTagName("h5")[0].innerText.toLowerCase();
-                        // Se o texto do título corresponder ao termo de busca, exibe o card, senão, oculta-o
-                        if (titulo.includes(termoBusca)) {
-                            cards[i].closest(".col-md-4").style.display = "block";
-                        } else {
-                            cards[i].closest(".col-md-4").style.display = "none";
-                        }
-                    }
-                }
-            </script>
-
-            <script>
-                $(document).ready(function () {
-                    $('.carousel').slick({
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        autoplay: false,
-                        autoplaySpeed: 2000,
-                        arrows: true,
-                        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-                        nextArrow: '<button type="button" class="slick-next">Next</button>',
-                    });
-                });
-            </script>
-            <script>
-                function handleKeyPress(event) {
-                    // Verifica se a tecla pressionada é "Enter" (código 13)
-                    if (event.keyCode === 13) {
-                        buscar();
-                    }
-                }
-            </script>
 
 </body>
 
