@@ -117,7 +117,7 @@
                         <div class="toggle-container2">
                             <div class="busca">
                                 <input type="text" id="inputBusca" placeholder="Pesquise por nome de grupo"
-                                    style="width: 185px;" onkeypress="handleKeyPress(event)">
+                                    style="width: 185px;" oninput="buscar()">
                                 <button onclick="buscar()">Buscar</button>
                             </div>
                         </div>
@@ -848,6 +848,29 @@
                 </div>
 
             </div>
+
+            <script>
+                // Função para buscar
+                function buscar() {
+                    // Obtém o valor digitado no campo de busca
+                    var termoBusca = document.getElementById("inputBusca").value.toLowerCase();
+            
+                    // Obtém todos os elementos com a classe "card-title"
+                    var cards = document.getElementsByClassName("card-title");
+            
+                    // Itera sobre os elementos para verificar se o texto corresponde à busca
+                    for (var i = 0; i < cards.length; i++) {
+                        var titulo = cards[i].getElementsByTagName("h5")[0].innerText.toLowerCase();
+                        // Se o texto do título corresponder ao termo de busca, exibe o card, senão, oculta-o
+                        if (titulo.includes(termoBusca)) {
+                            cards[i].closest(".col-md-4").style.display = "block";
+                        } else {
+                            cards[i].closest(".col-md-4").style.display = "none";
+                        }
+                    }
+                }
+            </script>
+            
 
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
