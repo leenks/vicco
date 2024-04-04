@@ -347,7 +347,11 @@ color: #444;
     margin-left: auto; /* Alinha o sidebar à direita */
     padding: 15px; /* Adiciona algum espaçamento interno ao sidebar */
     box-sizing: border-box; /* Garante que o padding não aumente a largura do sidebar */
+    background-color: #e7e7e7; /* Cor de fundo cinza */
+    border-radius: 10px; /* Borda arredondada */
+    padding: 20px; /* Espaçamento interno */
 }
+
 .form-row {
     display: flex;
     justify-content: space-between;
