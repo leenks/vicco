@@ -42,42 +42,55 @@ $(document).ready(function () {
         $('#formulario').slideToggle();
     });
 
-    // Função para buscar
-    function buscar() {
-        // Obtém o valor digitado no campo de busca
-        var termoBusca = document.getElementById("inputBusca").value.toLowerCase();
+    
+// Função para buscar
+function buscar() {
+    // Obtém o valor digitado no campo de busca
+    var termoBusca = document.getElementById("inputBusca").value.toLowerCase();
 
-        // Obtém todos os elementos com a classe "card-title"
-        var cards = document.getElementsByClassName("card-title");
+    // Obtém todos os elementos com a classe "titulo2"
+    var titulos = document.querySelectorAll('.titulo2');
 
-        // Itera sobre os elementos para verificar se o texto corresponde à busca
-        for (var i = 0; i < cards.length; i++) {
-            var titulo = cards[i].getElementsByTagName("h5")[0].innerText.toLowerCase();
-            // Se o texto do título corresponder ao termo de busca, exibe o card, senão, oculta-o
-            if (titulo.includes(termoBusca)) {
-                cards[i].closest(".col-md-4").style.display = "block";
-            } else {
-                cards[i].closest(".col-md-4").style.display = "none";
-            }
+    // Itera sobre os elementos para verificar se o texto corresponde à busca
+    for (var i = 0; i < titulos.length; i++) {
+        var titulo = titulos[i].querySelector('span').innerText.toLowerCase();
+        // Se o texto do título corresponder ao termo de busca, exibe o elemento pai, senão, oculta-o
+        if (titulo.includes(termoBusca)) {
+            titulos[i].closest(".col-md-4").style.display = "block";
+        } else {
+            titulos[i].closest(".col-md-4").style.display = "none";
         }
     }
+}
+
+// Função habilita a tecla Enter para agilizar a busca
+function handleKeyPress(event) {
+    // Verifica se a tecla pressionada é "Enter" (código 13)
+    if (event.keyCode === 13) {
+        buscar();
+    }
+}
+});
+
 
     // Inicialização do (LISTA DE FICHAS DE GRUPO DE PRODUTOS) slick carousel 
-    $('.carousel').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 2000,
-        arrows: true,
-        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-        nextArrow: '<button type="button" class="slick-next">Next</button>',
+    $(document).ready(function() {
+        // Inicialização do slick carousel
+        $('.carousel').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 2000,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev">Anterior</button>',
+            nextArrow: '<button type="button" class="slick-next">Próximo</button>',
+            dots: true, // Habilita os bullets de navegação
+            infinite: true,
+            speed: 300,
+            adaptiveHeight: true,
+            // Outras opções de configuração conforme necessário
+        });
     });
+    
 
-    // Função habilita a tecla Enter para agilizar a busca
-    function handleKeyPress(event) {
-        // Verifica se a tecla pressionada é "Enter" (código 13)
-        if (event.keyCode === 13) {
-            buscar();
-        }
-    }
-});
+    
