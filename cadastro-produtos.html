@@ -87,9 +87,6 @@
                                     </div>
 
 
-                                    <div class="conteudo-in">
-                                        <h2>Cadastro de Produtos</h2>
-
                                         <!--Filtros e Visualizção modos-->
                                         <div class="wrap-toggle">
                                             <div class="toggle-container">
@@ -99,25 +96,16 @@
                                                 </button>
                                             </div>
 
-                                            <div class="filtros-selecionados">
-                                                <button onclick="adicionarFiltroExemplo()">CATEGORIA SELECIONADA
-                                                    01</button>
-                                                <button onclick="adicionarFiltroExemplo()">CATEGORIA 02</button>
+                                            <div class="toggle-container2">
+                                                
+                                                    <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                                                     <input type="text" id="inputBusca" placeholder="Digite aqui">
+                                                
                                             </div>
-
                                         </div><!--wrap toggle-->
 
-                                        <div class="form-row">
-                                            <form name=" " action="cadastrar-produto.html" method="POST">
-                                                <button type="submit" id="nov" name="novo" class="sub-icones"
-                                                    title="Abrir Novo Produto no sistema">
-                                                    <i class="fa-regular fa-square-plus"></i>&nbsp;
-                                                    <label>Abrir Novo</label>
-                                                </button>
-                                            </form>
-                                        </div>
-
-                                        <div class="form-row">&nbsp;</div>
+                                        <div class="conteudo-in">
+                                            <h2>Cadastro de Produtos</h2>
 
                                         <div id="lis_i" class="col-md-12 p-0">
                                             <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
@@ -132,15 +120,6 @@
                                                                 <option value="100">100</option>
                                                             </select>
                                                             linhas por página
-                                                        </label>
-                                                    </div>
-
-                                                    <div id="tab-2_filter" class="dataTables_filter">
-                                                        <label for="buscar" class="buscar-label">Buscar:
-                                                            <input type="search" id="buscar"
-                                                                class="input-buscar form-control"
-                                                                style="border: 1px solid #ccc;" placeholder=""
-                                                                aria-controls="tab-2">
                                                         </label>
                                                     </div>
                                                 </div>

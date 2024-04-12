@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="forms.css">
+    <style>
+        .mt-5 {margin-top: 10px !important;}
+    </style>
 </head>
 
 
@@ -76,17 +79,37 @@
                         <a href="#">GRUPOS DE PRODUTOS</a>
                     </div>
 
-                    <!--JANELA PARA CRIAR NOVO GRUPO DE PROD-->
+                    <div class="wrap-toggle">
+                        <div class="toggle-container">
+                            <button id="visualizacaoBtn" onclick="alterarModo()">
+                                <span class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
+                            </button>
+                        </div>
+                        <div class="toggle-container2">
+                            <div class="busca">
+                                <input type="text" id="inputBusca" placeholder="Pesquise por nome de grupo"
+                                    style="width: 185px;">
+                                <button onclick="buscar()">Buscar</button>
+                            </div>
+                        </div>
+
+                    </div><!--FIM DO TOGGLE DE VISUALIZAO-->
+
+                    <div class="conteudo-in">
+                        <h2>Grupos de Produtos</h2>
+
+                                            <!--JANELA PARA CRIAR NOVO GRUPO DE PROD-->
                     <div class="form-row">
                         <button type="button" id="btnAbrirNovo" class="sub-icones" title="Criar Novo">
                             <i class="fa-regular fa-square-plus"></i>&nbsp;
                             <label>Criar Novo</label>
                         </button>
                     </div>
-                    <br>
                     <form id="formulario" class="form-content" style="display: none;">
+                        <br>
                         <div class="form-row">
                             <div class="col-md-2 mb-3">
+                                
                                 <label for="codigo">Código:</label>
                                 <input type="text" class="form-control" id="codigo" name="codigo" required>
                             </div>
@@ -105,29 +128,9 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
                     </form>
-                    <br>
-
-                    <div class="wrap-toggle">
-                        <div class="toggle-container">
-                            <button id="visualizacaoBtn" onclick="alterarModo()">
-                                <span class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
-                            </button>
-                        </div>
-                        <div class="toggle-container2">
-                            <div class="busca">
-                                <input type="text" id="inputBusca" placeholder="Pesquise por nome de grupo"
-                                    style="width: 185px;">
-                                <button onclick="buscar()">Buscar</button>
-                            </div>
-
-                        </div>
-
-                    </div><!--FIM DO TOGGLE DE VISUALIZAO-->
-
-                    <div class="conteudo-in">
-                        <h2>Grupos de Produtos</h2>
-
+                    
                         <div id="tabelaContainer" style="display: none;">
 
                             <div id="lis_i" class="col-md-12 p-0">

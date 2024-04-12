@@ -385,27 +385,27 @@ color: #444;
     box-sizing: border-box; /* Garantir que a borda e o padding sejam considerados no cálculo da largura */
 }
 
-.toggle-container .toggle-container2 button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 
-.wrap-toggle {
-    background-color: white;
-    opacity: 98%;
-    position: sticky;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    display: flex;
-    margin-left: auto;
-    z-index: 5;
-}
+    .toggle-container .toggle-container2 button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .wrap-toggle {
+        background-color: white;
+        opacity: 98%;
+        position: sticky;
+        top: 0;
+        right: 0;
+        display: flex;
+        margin-left: auto;
+        z-index: 1000;
+    }
 
 .toggle-container,
 .toggle-container2 {
-    margin-right: 10px;
+    margin: 10px 10px 10px 0px;
 }
 
 .toggle-container button,
@@ -420,96 +420,177 @@ color: #444;
     font-family: 'Lato', sans-serif;
 }
 
-/* ESSA É A CAIXA DE FILTROS */
+.toggle-container input, 
+.toggle-container2 input {padding: 6px; margin-bottom: 10px;border-radius: 5px; border: 1px solid #444; font-size: 14px; font-family: 'Lato', sans-serif; }
 
-.filtros-selecionados {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    /* Alinha os filtros à direita */
-    margin-top: 5px;
-    max-height: 30px;
+
+    
+.filtro-coluna {
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
-
-.filtros-selecionados span {
-    background-color: #79C14E;
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    /* Adiciona cursor para indicar que é clicável */
-}
-
-.filtros-selecionados span:hover {
-    background-color: #A4A4A4;
-
-}
-
-.filtros-selecionados button {
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #444;
-    font-size: 11px;
-    padding: 0px 5px !important;
-    margin-right: 5px;
-    font-family: 'Lato', sans-serif;
-}
-
 
 .modal {
     display: none;
     position: fixed;
-    z-index: 2000;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    animation: slideInFromTop 0.5s ease-in forwards;
+}
+
+.modal-envolto {
+    position: relative;
+    background-color: #efefef;
+    padding: 1px 20px;
+    max-width: 960px;
+    margin: 2% auto;
+}
+.modal-wrap {
+    padding: 50px 10px 10px;
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    animation: slideIn 0.5s ease;
+    position: relative;
+    background-color: #f5f5f5;
+    margin: 2% auto;
+    max-width: 960px;
+    border-radius: 10px;
+    border: 3px solid #f47332;
 }
 
-.modal-content button.filtrar {
-    background-color: #79C14E;
-    /* Verde */
-    color: white;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-    text-transform: capitalize;
-    font-family: 'Lato', sans-serif;
+
+/* CLASSE DE ANIMAÇÃO PRO SLIDER DO FILTRO */
+
+@keyframes slideIn {
+    from {
+        margin-left: 100%;
+        /* Começa fora da tela à direita */
+    }
+
+    to {
+        margin-left: 0;
+        /* Termina na posição inicial */
+    }
 }
 
-.modal-content button.limpar {
-    background-color: #A4A4A4;
-    /* Amarelo */
-    color: white;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-    text-transform: capitalize;
-    font-family: 'Lato', sans-serif;
+.modal-content label {
+    display: block;
 }
+
+.modal-content select {
+    margin-left: 10px;
+}
+
+.modal-content label,
+.modal-content div {
+    line-height: normal;
+}
+
+.modal-content h3 {
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: normal;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tit-modal  {
+    font-size: 24px;
+    order: 1;
+    font-weight: normal;
+    color: #fff;
+    background-color: #f47332;
+    padding: 10px;
+    text-shadow: 1px 1px #a8561c;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Lato', 'sans-serif';
+    position: absolute;
+    width: 98%;
+}
+
+
+.linha {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.subsub-botoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* *** */
+
+
+    /* ESSA É A CAIXA DE FILTROS */
+
+    .filtro-tabela {
+        display: flex;
+        justify-content: space-between;
+        /* Isso fará com que as colunas ocupem todo o espaço disponível na linha */
+        margin-right: 20px;
+    }
+
+    .filtros-selecionados {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        /* Alinha os filtros à direita */
+        margin-top: 10px;
+    }
+
+    .filtros-selecionados span {
+        background-color: #79C14E;
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        /* Adiciona cursor para indicar que é clicável */
+    }
+
+    .filtros-selecionados span:hover {
+        background-color: #A4A4A4;
+    }
+
+    .filtros-selecionados button {
+        font-family: 'Lato', sans-serif;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #999;
+        font-size: 12px;
+        padding: 3px !important;
+        height: 26px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 5px 10px 0 0;
+    }
 
 
 /* CLASSE DE ANIMAÇÃO PRO SLIDER DO FILTRO */
@@ -535,27 +616,9 @@ color: #444;
     margin-left: 10px;
 }
 
-.modal-content h2,
-.modal-content label,
-.modal-content div {
-    margin-bottom: 20px;
-    line-height: normal;
+.modal-content h2 {
+    margin: 0;
 }
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 
 
 /* CARDS */
@@ -1080,7 +1143,7 @@ color: #444;
     min-width: 170px;
     min-height: 100px;
     background-color: #fff;
-    margin: 30px 5px;
+    margin: 10px 5px;
     /* Ajuste a margem conforme necessário */
     display: flex;
     flex-direction: column;

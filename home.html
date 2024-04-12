@@ -10,9 +10,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo-home.css">
     <link rel="stylesheet" href="styles.css">
+
+    
 
     <title>Vicco Construtora</title>
 </head>
@@ -52,42 +54,31 @@
     <div class="container-desktop">
 
         <div class="menu menu-home">
-            <div class="menu-item-home">
-                <a href="#">
-                    <img src="imgs/ico-h1.png" alt="Início" width="50px">
-                    <p>Agenda</p>
-                </a>
+            <div class="menu-item-home" onclick="window.location.href='home.html';">
+                <img src="imgs/ico-h1.png" alt="Início" width="50px">
+                <p>Agenda</p>
             </div>
-            <div class="menu-item-home">
-                <a href="requisicoes.html">
-                    <img src="imgs/ico-h2.png" alt="Relatórios" width="50px">
-                    <p>Suprimentos</p>
-                </a>
+            <div class="menu-item-home" onclick="window.location.href='requisicoes.html';">
+                <img src="imgs/ico-h2.png" alt="Relatórios" width="50px">
+                <p>Suprimentos</p>
             </div>
-            <div class="menu-item-home">
-                <a href="#">
-                    <img src="imgs/ico-h3.png" alt="Voltar" width="50px">
-                    <p>Financeiro</p>
-                </a>
+            <div class="menu-item-home" onclick="window.location.href='#';">
+                <img src="imgs/ico-h3.png" alt="Voltar" width="50px">
+                <p>Financeiro</p>
             </div>
-            <div class="menu-item-home">
-                <a href="#">
-                    <img src="imgs/ico-h4.png" alt="Voltar" width="50px">
-                    <p>Planejamento</p>
-                </a>
+            <div class="menu-item-home" onclick="window.location.href='planejamento.html';">
+                <img src="imgs/ico-h4.png" alt="Voltar" width="50px">
+                <p>Planejamento</p>
             </div>
-            <div class="menu-item-home">
-                <a href="#">
-                    <img src="imgs/ico-h5.png" alt="Voltar" width="50px">
-                    <p>Engenharia</p>
-                </a>
+            <div class="menu-item-home" onclick="window.location.href='#';">
+                <img src="imgs/ico-h5.png" alt="Voltar" width="50px">
+                <p>Engenharia</p>
             </div>
-            <div class="menu-item-home">
-                <a href="cadastros.html">
-                    <img src="imgs/ico-h6.png" alt="Voltar" width="50px">
-                    <p>Cadastros</p>
-                </a>
+            <div class="menu-item-home" onclick="window.location.href='cadastros.html';">
+                <img src="imgs/ico-h6.png" alt="Voltar" width="50px">
+                <p>Cadastros</p>
             </div>
+            
         </div>
 
 
@@ -131,6 +122,8 @@
 
             <div class="conteudo">
 
+                <!--Filtros e Visualizção modos-->
+
                 <div class="wrap-toggle">
                     <div class="toggle-container">
                         <button onclick="alterarModo()">
@@ -147,6 +140,14 @@
                         <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
                         <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
                     </div>
+
+                    <div class="toggle-container2">
+                        
+                            <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                             <input type="text" id="inputBusca" placeholder="Digite aqui">
+                        
+                    </div>
+
 
                 </div>
 
@@ -357,134 +358,136 @@
 
         </div> <!--fecha container desktop-->
 
-    </div><!--fecha container full-->
+   
+                    <!-- Ícone no footer -->
+                    <div class="ico-subir-footer" onclick="scrollToTop()">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+      
 
+        <!-- Modal de Filtro -->
+        <div id="filterModal" class="modal">
+            <div class="modal-envolto">
+                <div class="modal-content">
 
-    <!-- Modal de Filtro -->
-    <div id="filterModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeFilterModal()">&times;</span>
+                    <span class="close" onclick="closeFilterModal()">&times;</span>
+                    <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
 
-            <!-- Conteúdo do Filtro -->
-            <h2>Informações de Filtro para Requisições</h2>
+                    <div class="modal-wrap">
+                        <!-- Tabela de Filtros -->
+                        <div class="filtro-tabela">
 
-            <!-- Tabela de Filtros -->
-            <div class="filtro-tabela">
+                            <!-- Primeira Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Data Inicial:</h3>
+                                <input type="date" id="dataInicial">
 
-                <!-- Primeira Coluna -->
-                <div class="filtro-coluna">
-                    <label for="dataInicial">Data Inicial:</label>
-                    <input type="date" id="dataInicial">
+                                <h3>Tipo:</h3>
+                                <label>
+                                    <input type="checkbox" id="tipoRequisicao"> Requisições
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="tipoReembolso"> Reembolsos
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                                </label>
+                            </div>
 
-                    <p><strong>Tipo:</strong></p>
-                    <label>
-                        <input type="checkbox" id="tipoRequisicao"> Requisições
-                    </label>
-                    <label>
-                        <input type="checkbox" id="tipoReembolso"> Reembolsos
-                    </label>
-                    <label>
-                        <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                    </label>
-                </div>
+                            <!-- Segunda Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Data Final:</h3>
+                                <input type="date" id="dataFinal">
+                            </div>
 
-                <!-- Segunda Coluna -->
-                <div class="filtro-coluna">
-                    <label for="dataFinal">Data Final:</label>
-                    <input type="date" id="dataFinal">
+                            <!-- Terceira Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Status da Requisição:</h3>
+                                <label>
+                                    <input type="checkbox" id="statusAberta"> Aberta
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusCotacao"> Cotação
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusAprovacao"> Aprovação
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusReprovado"> Reprovado
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusPagamento"> Pagamento
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusComprada"> Comprada
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusEntregue"> Entregue
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusCancelada"> Cancelada
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusRecusada"> Recusada
+                                </label>
+                            </div>
 
-                    <p><strong>Formato:</strong></p>
-                    <label>
-                        <input type="checkbox" id="formatoBox"> Box
-                    </label>
-                    <label>
-                        <input type="checkbox" id="formatoLista"> Lista
-                    </label>
-                    <label>
-                        <input type="checkbox" id="formatoSimples"> Simples
-                    </label>
-                </div>
+                            <!-- Quarta Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Obras:</h3>
+                                <label>
+                                    <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                                </label>
 
-                <!-- Terceira Coluna -->
-                <div class="filtro-coluna">
-                    <h3>Status da Requisição:</h3>
-                    <label>
-                        <input type="checkbox" id="statusAberta"> Aberta
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusCotacao"> Cotação
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusAprovacao"> Aprovação
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusReprovado"> Reprovado
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusPagamento"> Pagamento
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusComprada"> Comprada
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusEntregue"> Entregue
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusCancelada"> Cancelada
-                    </label>
-                    <label>
-                        <input type="checkbox" id="statusRecusada"> Recusada
-                    </label>
-                </div>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
+                                            (financeiro e
+                                            rh)
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
 
-                <!-- Quarta Coluna -->
-                <div class="filtro-coluna">
-                    <h3>Obras:</h3>
-                    <label>
-                        <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                    </label>
-                    <label>
-                        <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                    </label>
+                        </div>
 
-                    <ul>
-                        <li>
-                            <label>
-                                <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4 (financeiro e
-                                rh)
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                            </label>
-                        </li>
-                    </ul>
-                </div>
+                        <!-- Botões de Ação -->
 
-            </div>
+                        <div class="linha subsub-botoes">
+                            <div>
+                                <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img src="imgs/sub-icone-filtro.png"></button>
+                                <label for="sal_r">Filtrar</label>
+                            </div>
+    
+                            <div>
+                                <button type="submit" id="cancel" class="sub-icones" name="limpar"><img src="imgs/sub-icone-limpar.png"></button>
+                                <label for="cancel">Limpar</label>
+                            </div>
+                        </div>
+                       
+                    </div><!--modal wrap-->
 
-            <!-- Botões de Ação -->
-            <div>
-                <button class="filtrar" onclick="filtrar()">Filtrar</button>
-                <button class="limpar" onclick="limparFiltro()">Limpar</button>
-            </div>
+                </div><!--div modal content-->
+            </div><!--modal envolto-->
+        </div><!--div filter modal-->
 
-        </div>
-    </div>
-
-    <!-- Ícone no footer -->
-    <div class="ico-subir-footer" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </div>
 
 
     <script src="filtro.js"></script>
@@ -538,7 +541,7 @@
     <script>
         // Função para adicionar a classe de redução de tamanho ao topo-container após a animação
         window.onload = function () {
-            // Defina um atraso diferente para a versão mobile
+            // Define um atraso diferente para a versão mobile
             var delay = window.innerWidth <= 768 ? 1000 : 2000;
 
             setTimeout(function () {
@@ -551,4 +554,4 @@
 
 </body>
 
-</html>
+</html> 

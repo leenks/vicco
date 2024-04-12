@@ -107,6 +107,13 @@
                             <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
                         </div>
 
+                        <div class="toggle-container2">
+                            <div class="busca">
+                                <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                                 <input type="text" id="inputBusca" placeholder="Digite aqui">
+                            </div>
+                        </div>
+
                     </div>
 
 
@@ -129,12 +136,8 @@
                                             linhas por página
                                         </label>
                                     </div>
-                                    <div id="tab-2_filter" class="dataTables_filter">
-                                        <label for="buscar" class="buscar-label">Buscar:
-                                            <input type="search" id="buscar" class="input-buscar form-control"
-                                                style="border: 1px solid #ccc;" placeholder="" aria-controls="tab-2">
-                                        </label>
-                                    </div>
+                                </div>
+                                
                                 </div>
                             </div>
                         </div>
@@ -520,7 +523,7 @@
                                     <table class="table-requisicoes">
                                         <thead>
                                             <tr>
-                                                <th>Ação</th>
+                                                <th>Editar</th>
                                                 <th>Número</th>
                                                 <th>Ordem</th>
                                                 <th>Obra</th>

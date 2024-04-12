@@ -231,8 +231,7 @@
     }
 
     button {
-        padding: 10px;
-        margin: 5px 0;
+        padding: 8px;
         border: none;
         cursor: pointer;
         border-radius: 5px;
@@ -298,6 +297,7 @@
         flex-wrap: wrap;
         justify-content: flex-end;
         /* Alinha os filtros à direita */
+        margin-top: 10px;
     }
 
     .filtros-selecionados span {
@@ -321,10 +321,18 @@
     .filtros-selecionados button {
         background-color: #fff;
         border-radius: 5px;
-        border: 1px solid #444;
+        border: 1px solid #999;
         font-size: 12px;
-        padding: 0px 5px !important;
+        padding: 3px !important;
+        height: 26px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0 5px;
     }
+    
+    .busca button {height: 35px; text-transform: uppercase; margin: 0px 5px 5px 0px ; font-family: 'Lato', sans-serif;} 
+    .busca input {padding: 6px; margin-bottom: 10px;border-radius: 5px; border: 1px solid #444; font-size: 14px; font-family: 'Lato', sans-serif; }
+
 
     
     .filtro-coluna {
@@ -395,6 +403,7 @@
     .modal-content h3 {
         font-size: 18px;
         margin: 20px 0;
+        font-weight: normal;
     }
 
     .close {
@@ -428,16 +437,6 @@
         width: 100%;
     }
 
-
-    button {
-        padding: 10px;
-        margin: 5px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 14px;
-        text-transform: capitalize;
-    }
 
     .linha {
         display: flex;
@@ -878,7 +877,7 @@
         margin-bottom: 10px;
         border-radius: 5px;
         border: 1px solid #444;
-        padding: 4px;
+        padding: 6px;
     }
 
     /* Estilo para os labels */
@@ -1059,7 +1058,6 @@
         position: sticky;
         top: 0;
         right: 0;
-        padding: 10px;
         display: flex;
         margin-left: auto;
         z-index: 1000;
@@ -1067,7 +1065,7 @@
 
     .toggle-container,
     .toggle-container2 {
-        margin-right: 10px;
+        margin: 10px;
         /* Ajuste a margem conforme necessário */
     }
 
@@ -1317,8 +1315,10 @@
             border-radius: 5px;
             border: 1px solid #444;
             font-size: 12px;
-            padding: 0px 5px !important;
+            margin: 0 5px
+         
         }
+        .busca input {max-width: 100px;}
 
 
 
