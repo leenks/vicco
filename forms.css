@@ -191,6 +191,11 @@ select {
 .space-btn {
     max-width: 10%;
 }
+.space-btn img {
+    width: 20px;
+    height: 30;
+    border: 0;
+}
 .box-info-requisicao-btn {
     display: inline-block;
     vertical-align: top;

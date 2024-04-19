@@ -641,6 +641,36 @@ color: #444;
     border-radius: 5px;
     position: relative;
 }
+.card2 {
+    flex: 0 0 calc(33.33% - 20px); /* Define a largura para ocupar aproximadamente 1/3 da linha, considerando a margem */
+    width: 220px; /* Largura fixa de 220 pixels */
+    margin: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+}
+.card2:last-child:nth-child(3n) {
+    margin-right: 0;
+}
+
+.card2.setor-1 {
+    background-color: #1bb3a4; 
+}
+
+.card2.setor-2 {
+    background-color: #78bc69; 
+}
+.card2.setor-3 {
+    background-color: #df8e4d;
+}
+.card2.setor-4 {
+    background-color: #e3382f;
+}
+
+
 .card-fichas {
     width: calc(25% - 20px); /* 25% para 4 cards por linha */
     box-sizing: border-box;
@@ -680,6 +710,38 @@ color: #444;
     object-fit: cover;
     border-radius: 5px;
 }
+
+.imagem-container2 {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1; /* Define uma proporção de 1:1 para manter a imagem quadrada */
+    position: relative;
+    z-index: 2;
+    border: 4px solid white;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.imagem-container2 img {
+    max-width: 100%; 
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.title.right { background-color: #444; color: white; text-align: right; font-family: 'Lato', sans-serif;  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px 5px 0 0;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: 1;}
 
 .selo,
 .selo-amarelo,
@@ -727,8 +789,18 @@ color: #444;
     text-shadow: 1px 1px #3d6d21;
 }
 
+
+
+.informacoes2 {
+    flex:1;
+    text-align: right;
+    margin: 10px 10px 0;
+    max-width: 100%; 
+    padding: 5px;
+    background: transparent;
+}
+
 .informacoes {
-    background-color: #fff;
     padding: 5px;
     border-radius: 0 0 10px 10px;
 }
@@ -794,7 +866,7 @@ color: #444;
 
 .sub-icones {
     background: transparent;
-    font-size: 30px;
+    font-size: 20px;
     padding: 5px;
     cursor: pointer;
     margin: 0 5px;
@@ -1284,26 +1356,6 @@ color: #444;
     width: 100%;
 }
 
-.sub-icones {
-    background: transparent;
-    font-size: 30px;
-    padding: 5px;
-    cursor: pointer;
-    margin: 0;
-    border: 0;
-    display: flex;
-    align-items: center;
-}
-
-.sub-icones i {
-    color: #ff842a;
-    background: transparent;
-}
-
-.sub-icones i:hover {
-    color: #222;
-}
-
 .sub-icones+label {
     margin: 5px;
     /* Espaçamento entre o ícone e o label */
@@ -1354,25 +1406,19 @@ color: #444;
     position: fixed;
     top: 90px;
     left: 20px;
-    z-index: 1999; /* Certifique-se de que o ícone esteja acima do conteúdo */
+    z-index: 1999; 
 }
 
-/* Adicione estilos de transição suave para o conteúdo lateral */
 .conteudo-lateral.active {
     display: block;
     position: fixed;
     top: 0;
     left: 0;
-    width: 80%; /* Ou a largura desejada para o conteúdo lateral */
+    width: 80%; 
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente para sobrepor a página */
-    z-index: 998; /* Certifique-se de que o conteúdo lateral esteja acima do conteúdo da página */
+    background-color: rgba(255, 255, 255, 0.9); 
+    z-index: 998;
     transition: transform 0.3s ease;
-}
-
-/* Estilize o conteúdo dentro do conteúdo lateral, se necessário */
-.conteudo-lateral.active .seu-elemento {
-    /* Estilos para o conteúdo dentro do conteúdo lateral quando aberto */
 }
 
 
