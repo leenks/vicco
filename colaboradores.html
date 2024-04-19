@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forms.css">
+    <style>
+        .mt-5 {margin-top: 10px !important;}
+    </style>
+</head>
+
+
+<title>Vicco Construtora</title>
+
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+            <div class="caixa-menu2"> </div>
+
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">INÍCIO</a>
+                        <span> > </span>
+                        <a href="#">CADASTROS</a>
+                        <span> > </span>
+                        <a href="#">GRUPOS DE PRODUTOS</a>
+                    </div>
+
+                    <div class="wrap-toggle">
+                        <div class="toggle-container">
+                            <button id="visualizacaoBtn" onclick="alterarModo()">
+                                <span class="fas fa-th-large"></span> &nbsp; VISUALIZAÇÃO
+                            </button>
+                        </div>
+                        <div class="toggle-container2">
+                            <div class="busca">
+                                <button onclick="buscar()"> <span id="modo-icon"
+                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                                <input type="text" id="inputBusca" placeholder="Digite aqui">
+                            </div>
+                        </div>
+
+                    </div><!--FIM DO TOGGLE DE VISUALIZAO-->
+
+                    <div class="conteudo-in">
+                        <h2>Colaboradores</h2>
+
+                    <div class="form-row">
+                        <button type="button" id="btnAbrirNovo" class="sub-icones" title="Criar Novo">
+                            <i class="fa-regular fa-square-plus"></i>&nbsp;
+                            <label>Criar Novo</label>
+                        </button>
+                    </div>
+                    <form id="formulario" class="form-content" style="display: none;">
+                        <br>
+                        <div class="form-row">
+                            <div class="col-md-2 mb-3">
+                                
+                                <label for="codigo">Código:</label>
+                                <input type="text" class="form-control" id="codigo" name="codigo" required>
+                            </div>
+                            <div class="col-md-7 mb-3">
+                                <label for="descricao">Descrição do Grupo de Produto:</label>
+                                <input type="text" class="form-control" id="descricao" name="descricao" required>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <label for="abreviacao">Abreviação:</label>
+                                <input type="text" class="form-control" id="abreviacao" name="abreviacao" required>
+                            </div>
+                            <div class="col-md-1 mb-3">
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="sal_r" name="salvar" class="sub-icones btn btn-primary"><i
+                                            class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                    
+                        <div id="tabelaContainer" style="display: none;">
+
+                            <div id="lis_i" class="col-md-12 p-0">
+                                <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+                                    <div class="form-row">
+                                        <div class="dataTables_length" id="tab-2_length">
+                                            <label>Demonstrar
+                                                <select name="tab-2_length" aria-controls="tab-2" class=""
+                                                    style="border: 1px solid #ccc;">
+                                                    <option value="10">10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">50</option>
+                                                    <option value="100">100</option>
+                                                </select>
+                                                linhas por página
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table id="tabelaGrupos">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20px;">Editar</th>
+                                        <th>Número</th>
+                                        <th>Código</th>
+                                        <th>Descrição do Grupo</th>
+                                        <th>Abreviação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></div>
+                                        </td>
+                                        <td colspan="7" style="text-align: center;">Conteúdo dinâmico</td>
+                                    </tr>
+                                    <!-- Aqui os itens serão adicionados dinamicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                       
+                    <div class="conteudo-in">
+                        <div class="cards-container">
+
+                            <div class="card2 setor-1">
+                                <div class="selo right">Donizete Mazzione</div>
+                                <div class="imagem-container2">
+                                    <img src="imgs/ft-ex.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card2 setor-2">
+                                <div class="selo right">Roberto Sales</div>
+                                <div class="imagem-container2">
+                                    <img src="imgs/ft-ex.png" alt="Descrição da Imagem">
+
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card2 setor-3">
+                                <div class="selo right">Fulano</div>
+                                <div class="imagem-container2">
+                                    <img src="imgs/ft-ex.png" alt="Descrição da Imagem">
+
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card2 setor-4">
+                                <div class="selo right">Fulaninho</div>
+                                <div class="imagem-container2">
+                                    <img src="imgs/ft-ex.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card2 setor-5">
+                                <div class="selo right">Beatriz Moreira</div>
+                                <div class="imagem-container2">
+                                    <img src="imgs/ft-ex.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card2">
+                                <div class="selo right">Joaquim Barbosa</div>
+                                <div class="imagem-container2">
+                                    <img src="imgs/ft-ex.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card2">
+                                <div class="selo right">Fulano Dois</div>
+                                <div class="imagem-container2">
+                                    <img src="imgs/ft-ex.png" alt="Descrição da Imagem">
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div>
+
+                            <div class="card2">
+                                <div class="selo right">Em Andamento</div>
+                                <div class="imagem-container2">
+                                    <img src="imgs/ft-ex.png" alt="Descrição da Imagem">
+
+                                </div>
+                                <div class="informacoes">
+                                    <h4>Nome da Obra</h4>
+                                    <p>INFO - Texto informativo sobre a obra</p>
+                                </div>
+                            </div><!--card--> 
+
+                        </div><!--div container-->
+                    </div><!--conteudo in -->
+
+                    </div><!--container desktop-->
+
+
+                </div>
+
+            </div>
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <script src="filtro-cad-gr-prod.js"></script> <!--AQUI ESTÁ TODOS OS SCRIPTS USADOS NESSA PÁGINA-->
+
+
+
+</body>
+
+</html>
