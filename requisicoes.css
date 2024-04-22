@@ -1,5 +1,6 @@
     body {
         font-family: 'Lato', sans-serif;
+        font-size: 14px;
         margin: 0;
         padding: 0;
         background: linear-gradient(to top, #e3e3e3, #fff);
@@ -502,8 +503,16 @@
         align-items: center;
         /* Alinha os elementos verticalmente */
         width: 100%;
-        /* Ocupa toda a largura */
+        margin-bottom: 10px;
     }
+
+     /* Estilo para o título em todos os modos */
+     .titulo-container h3 {
+        font-size: 20px;
+        color: #333;
+        min-width: 45%;
+    }
+
 
     /* Estilo para o ícone */
     .sub-icones-wrap {
@@ -552,24 +561,6 @@
         z-index: 1;
         /* Garante que o ícone fique sobre o botão */
         width: 35px;
-    }
-
-    /* Estilo para o contêiner do título */
-    .titulo-container {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 10px;
-        /* Mantém o espaçamento inferior para todos os modos */
-    }
-
-    /* Estilo para o título em todos os modos */
-    .titulo-container h3 {
-        font-size: 20px;
-        /* Tamanho da fonte */
-        color: #333;
-        /* Cor do texto */
     }
 
     /* Estilo para os status */
@@ -685,7 +676,7 @@
         background-color: orange;
         text-shadow: 1px 1px #c54f20;
         color: white;
-        padding: 7px 10px 6px 10px;
+        padding: 3px 10px 4px 10px;
         border-radius: 5px;
         font-size: 18px;
     }
@@ -824,7 +815,7 @@
     }
 
     .box-info-requisicao-ultima4 {
-        width: 235px;
+        width: 130px;
         height: 115px;
         white-space: nowrap;
         padding: 2px 5px 2px;
@@ -834,6 +825,20 @@
         border-radius: 10px;
         /* Borda arredondada */
         margin-right: 1px;
+        min-height: 60px;
+    }
+
+    .box-info-requisicao-ultima5 {
+        width: 235px;
+        height: 115px;
+        white-space: nowrap;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #fff;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
         min-height: 60px;
     }
 
@@ -884,7 +889,7 @@
     label {
         display: block;
         margin-bottom: 5px;
-        font-size: 13px;
+        font-size: 14px;
         white-space: nowrap;
     }
 
@@ -1003,7 +1008,7 @@
     /* Nova classe para o modo-simples */
     .cards-container.modo-simples .card {
         width: 100%;
-        max-height: 55px;
+        max-height: 120px;
         margin: 10px;
         padding: 5px 5px 0 5px;
         background-color: #f9f9f9;
