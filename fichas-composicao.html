@@ -213,14 +213,26 @@
                         </div>
                         <hr width="100%">
 
-                        <div class="form-row cinza-medio">
+                        <div class="col-md-3" style="padding: 0;">
+                            <form name=" " action="#" method="POST">
+                                <!-- Botão para abrir novo bloco -->
+                                <button type="button" id="btnNovoBloco" class="sub-icones" title="Adicionar Novo Bloco"
+                                    onclick="adicionarNovoBloco()">
+                                    <i class="fa-regular fa-square-plus"></i>
+                                    <label>Adicionar Novo Bloco</label>
+                                </button>
+                            </form>
+                        </div><!--col md1-->
+                        <div class="container">
+                        <div class="form-row cinza-medio" style="padding-bottom: 15px;">
+
                             <div class="col-md-1">
                                 <label>Código</label>
                                 <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
                                     value="" />
                             </div>
                             <div class="col-md-6">
-                                <label>Descrição dos Materiais</label>
+                                <label>Descrição dos Serviços</label>
                                 <input type="text" class="form-control text-center" maxlength="5" id="uni_i"
                                     name="uni_i" value="" />
                             </div>
@@ -239,33 +251,24 @@
                                 <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
                                     value="" />
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-md-2">
                                 <label>Valor</label>
                                 <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
                                     value="" />
                             </div>
-                            <div class="col-md-1">
-                                <form name=" " action="nova-requisicao.html" method="POST">
-                                    <button type="submit" id="nov" name="novo" class="sub-icones"
-                                        title="Abrir Nova Requisição no sistema">
-                                        <i class="fa-regular fa-square-plus"></i><br><br>
-                                        <label>Novo</label>
-                                    </button>
-                                </form>
 
-                            </div><!--form-row-->
+                        </div><!--form row cinza medio-->
+                        </div><!--container-->
 
-                        </div><!--conteudo sidebar-->
-
-
-                        <div class="form-row cinza-medio">
+                        <div class="container">
+                        <div class="form-row cinza-medio" style="padding-bottom: 15px;">
                             <div class="col-md-1">
                                 <label>Código</label>
                                 <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
                                     value="" />
                             </div>
                             <div class="col-md-6">
-                                <label>Descrição dos Materiais</label>
+                                <label>Descrição dos Serviços</label>
                                 <input type="text" class="form-control text-center" maxlength="5" id="uni_i"
                                     name="uni_i" value="" />
                             </div>
@@ -284,22 +287,13 @@
                                 <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
                                     value="" />
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-md-2">
                                 <label>Valor</label>
                                 <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
                                     value="" />
                             </div>
-                            <div class="col-md-1">
-                                <form name=" " action="nova-requisicao.html" method="POST">
-                                    <button type="submit" id="nov" name="novo" class="sub-icones"
-                                        title="Abrir Nova Requisição no sistema">
-                                        <i class="fa-regular fa-square-plus"></i><br><br>
-                                        <label>Novo</label>
-                                    </button>
-                                </form>
-                            </div>
 
-                        </div><!--form-row-->
+                        </div><!--form-row--></div><!--container-->
                     </div><!--div form-content-->
 
                     <div id="lis_i" class="col-md-12  p-0">
@@ -358,6 +352,26 @@
                         $('.form-content').slideToggle(); // Correção aqui: alterei o seletor para classe '.form-content'
                     });
                 });
+            </script>
+
+            <script>
+                function adicionarNovoBloco() {
+                    // Clona o bloco existente
+                    var blocoExistente = document.querySelector('.form-row.cinza-medio');
+                    var novoBloco = blocoExistente.cloneNode(true);
+
+                    // Limpa os valores dos campos no novo bloco
+                    var inputs = novoBloco.querySelectorAll('input[type="text"]');
+                    inputs.forEach(function (input) {
+                        input.value = '';
+                    });
+
+                    // Encontra o elemento onde o novo bloco será adicionado
+                    var container = document.querySelector('.container'); // Altere para a classe ou id correta
+
+                    // Adiciona o novo bloco ao final do container
+                    container.appendChild(novoBloco);
+                }
             </script>
 
             <script>

@@ -123,7 +123,6 @@
             <div class="conteudo">
 
                 <!--Filtros e Visualizção modos-->
-
                 <div class="wrap-toggle">
                     <div class="toggle-container">
                         <button onclick="alterarModo()">
@@ -134,20 +133,18 @@
                         <button onclick="openFilterModal(); updateFilterDisplay();">
                             <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
                         </button>
-                    </div>
-
-                    <div class="filtros-selecionados">
-                        <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
-                        <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                        <div class="filtros-selecionados">
+                            <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
+                            <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                        </div>
                     </div>
 
                     <div class="toggle-container2">
-                        
+                        <div class="busca">
                             <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
                              <input type="text" id="inputBusca" placeholder="Digite aqui">
-                        
+                        </div>
                     </div>
-
 
                 </div>
 
