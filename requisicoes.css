@@ -295,10 +295,8 @@
 
     .filtros-selecionados {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        /* Alinha os filtros à direita */
-        margin-top: 10px;
+        /*flex-wrap: wrap;
+        justify-content: flex-end;*/
     }
 
     .filtros-selecionados span {
@@ -1065,7 +1063,14 @@
         right: 0;
         display: flex;
         margin-left: auto;
+        align-items: center;
         z-index: 1000;
+        justify-content: space-between;
+    }
+
+    .toggle-container2 {
+        display: flex;
+        align-items: center;
     }
 
     .toggle-container,
