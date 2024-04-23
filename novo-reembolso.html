@@ -113,14 +113,20 @@
                                         </div>-->
                                         <div class="col-md-2 d-none d-md-block">&nbsp;</div>
                                         <div class="col-md-2">
-                                            <label>Status</label>
-                                            <div class="box-info-requisicao-btn">
+                                            <label>Status:</label>
+                                            <select id="status" name="status" class="form-control" required>
+                                                <option value="Aberto" selected>Aberto</option>
+                                                <option value="Aprovação">Aprovação</option>
+                                                <option value="Pagamento">Pagamento</option>
+                                                <option value="Pago">Pago</option>
+                                            </select>
+                                            <!--<div class="box-info-requisicao-btn">
                                                 <span class="botao-aberta">
                                                     <img class="icones" src="imgs/ico-aberta-azul.png"
                                                         alt="Ícone de Pré-Compra">
                                                     ABERTA
                                                 </span>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <hr style="width: 100%;">
                                         <div class="form-row">
@@ -544,6 +550,43 @@
             </script>
 
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            
+            <script>
+                // Função para atualizar a imagem do status
+                function atualizarImagemStatus() {
+                    var statusSelect = document.getElementById("status");
+                    var imagemStatus = document.querySelector(".status");
+            
+                    // Mapeamento de opções de status para imagens correspondentes
+                    var imagensStatus = {
+                        "Aberto": "21.png",
+                        "Aprovação": "22.png",
+                        "Reprovada": "23.png",
+                        "Pagamento": "24.png",
+                        "Pago": "24b.png",
+                    };
+            
+                    // Verifica se o valor selecionado está presente no mapeamento
+                    var statusSelecionado = statusSelect.value;
+                    if (statusSelecionado in imagensStatus) {
+                        // Atualiza a imagem com base no mapeamento
+                        imagemStatus.src = "imgs/icons-status/" + imagensStatus[statusSelecionado];
+                    } else {
+                        // Caso contrário, mantém a imagem como "03.png"
+                        imagemStatus.src = "imgs/icons-status/03.png";
+                    }
+                }
+            
+                // Adiciona um ouvinte de evento para o evento change do select
+                document.getElementById("status").addEventListener("change", atualizarImagemStatus);
+            
+                // Chamada inicial para garantir que a imagem seja atualizada corretamente
+                atualizarImagemStatus();
+            </script>
+
+  	
+            
 
             <script>
                 $(document).ready(function () {

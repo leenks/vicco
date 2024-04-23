@@ -34,7 +34,7 @@
                         <img src="imgs/logo.png" alt="Logo">
                     </div>
                     <div class="menu">
-                        <div class="menu-item">
+                        <div class="menu-item"> 
                             <a href="home.html">
                                 <img src="imgs/ico-home.png" alt="Início" width="50px">
                                 <p>Início</p>
@@ -92,18 +92,24 @@
                                             <input type="text" class="form-control text-center" maxlength="6" id="cod"
                                                 name="cod" value="6513" disabled />
                                         </div>
-
                                        
                                         <div class="col-md-3 d-none d-md-block">&nbsp;</div>
                                         <div class="col-md-4 d-none d-md-block">&nbsp;</div>
                                         <div class="col-md-2">
-                                            <label>Status</label>
+                                            <select id="status" name="status" class="form-control" required>
+                                                <option value="Aberta" selected>Aberta</option>
+                                                <option value="Cotacao">Cotação</option>
+                                                <option value="Analise">Análise</option>                                                
+                                                <option value="Conversao">Conversão</option>
+                                            </select>
+                                            
+                                            <!--<label>Status</label>
                                             <div class="box-info-requisicao-btn">
                                                 <span class="botao-aberta">
                                                     <img class="icones" src="imgs/ico-aberta-azul.png" alt="Ícone">
                                                     ABERTA
                                                 </span>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         
                                         <div class="form-row">
@@ -422,63 +428,41 @@
                     window.history.back();
                 }
             </script>
-
+   
 <script>
-    // Função para mudar a imagem de status
-    function mudarStatus() {
-        // Selecionar a imagem de status
-        var imagem = document.getElementById("imagemStatus");
-        
-        // Verificar o src atual da imagem
-        var srcAtual = imagem.src.substring(imagem.src.lastIndexOf("/") + 1);
-        
-        // Array com os nomes das imagens disponíveis
-        var imagens = ["27.png", "28.png", "29.png", "29b.png"];
-        
-        // Encontrar o índice da imagem atual no array
-        var indiceAtual = imagens.indexOf(srcAtual);
-        
-        // Calcular o próximo índice
-        var proximoIndice = (indiceAtual + 1) % imagens.length;
-        
-        // Atualizar o src da imagem com o próximo índice
-        imagem.src = "imgs/icons-status/" + imagens[proximoIndice];
+    // Função para atualizar a imagem do status
+    function atualizarImagemStatus() {
+        var statusSelect = document.getElementById("status");
+        var imagemStatus = document.querySelector(".status");
+
+        // Mapeamento de opções de status para imagens correspondentes
+        var imagensStatus = {
+            "Aberta": "27.png",
+            "Cotacao": "28.png",
+            "Analise": "29.png",
+            "Conversao": "29b.png"
+        };
+
+        // Verifica se o valor selecionado está presente no mapeamento
+        var statusSelecionado = statusSelect.value;
+        if (statusSelecionado in imagensStatus) {
+            // Atualiza a imagem com base no mapeamento
+            imagemStatus.src = "imgs/icons-status/" + imagensStatus[statusSelecionado];
+        } else {
+            // Caso contrário, mantém a imagem como "03.png"
+            imagemStatus.src = "imgs/icons-status/27.png";
+        }
     }
-    
-    // Adicionar um ouvinte de eventos para o clique no botão
-    document.getElementById("fot_carrega").addEventListener("click", mudarStatus);
+
+    // Adiciona um ouvinte de evento para o evento change do select
+    document.getElementById("status").addEventListener("change", atualizarImagemStatus);
+
+    // Chamada inicial para garantir que a imagem seja atualizada corretamente
+    atualizarImagemStatus();
 </script>
 
 
-    <script>
-    // Capturando o botão e o label
-    const botao = document.getElementById('fot_carrega');
-    const labelStatus = document.querySelector('.box-info-requisicao-btn span');
 
-    // Array com os status disponíveis
-    const status = [
-        { classe: 'cotacao', texto: 'COTAÇÃO', icone: 'imgs/ico-cotacao-azul.png' },
-        { classe: 'analise', texto: 'ANÁLISE', icone: 'imgs/ico-analise-azul.png' },
-        { classe: 'conversao', texto: 'CONVERSÃO', icone: 'imgs/ico-conversao-azul.png' },
-        { classe: 'aberta', texto: 'ABERTA', icone: 'imgs/ico-aberta-azul.png' }
-    ];
-
-    // Índice para controlar o status atual
-    let indiceStatus = 0;
-
-    // Adicionando evento de clique ao botão
-    botao.addEventListener('click', function() {
-        // Alterando a classe do span para o próximo status
-        labelStatus.className = 'botao-' + status[indiceStatus].classe;
-        // Alterando o texto e o ícone do span
-        labelStatus.innerHTML = `
-            <img class="icones" src="${status[indiceStatus].icone}" alt="Ícone">
-            ${status[indiceStatus].texto}
-        `;
-        // Atualizando o índice do status
-        indiceStatus = (indiceStatus + 1) % status.length;
-    });
-</script>
 
 
 <!--FUNCAO QUE HABILITA OS CAMPOS BLOQUEADOS-->
