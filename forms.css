@@ -84,6 +84,12 @@ select {
     width: 100%;
 }
 
+.align-center {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
 
 .align-right {
     display: flex;
@@ -91,6 +97,11 @@ select {
     width: 100%;
     padding-right: 10px;
 }
+
+/*Estilo para tabela de visualização de requisições*/
+.table-striped-custom tbody tr:nth-child(odd) td:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
 
 .campo-valor {
     padding: 5px 20px;

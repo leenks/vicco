@@ -26,6 +26,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     border-top: 3px solid #999;
+    font-family: 'Lato' sans-serif ;
 }
 
 th,
@@ -33,6 +34,7 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    font-size: 14px;
 }
 
 th {
@@ -843,11 +845,17 @@ color: #444;
 
 
 .conteudo-in h3 {
-    margin: 20px 0px 20px;
+    margin: 30px 10px 30px;
     font-size: 24px;
     color: orangered;
     font-weight: normal;
 }
+
+.conteudo-in h4 {
+    font-size: 20px;
+    color: #333;
+    min-width: 45%;
+    }
 
 /* Estilo para o contêiner do título */
 .titulo-container {
