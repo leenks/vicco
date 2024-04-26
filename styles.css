@@ -23,10 +23,10 @@ body {
     margin-top: 20px;
     border-collapse: collapse;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     border-top: 3px solid #999;
-    font-family: 'Lato' sans-serif ;
+    font-size: 12px;
 }
 
 th,
@@ -34,7 +34,7 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    font-size: 14px;
+    font-size: 14px;    
 }
 
 th {
@@ -856,6 +856,35 @@ color: #444;
     color: #333;
     min-width: 45%;
     }
+
+/* tabela de editar requisicao*/
+#edit-req.clean-table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+
+}
+#edit-req.clean-table td {
+    border: 0px solid #dddddd;
+    padding: 2px;
+}
+
+
+#edit-req.clean-table td {
+    border: 0px solid #dddddd;
+    padding: 2px;
+}
+
+#edit-req.clean-table .title {
+    font-weight: normal;
+}
+
+#edit-req.clean-table .highlight {
+    font-weight: bold;
+    color: #0487fd;
+}
+
+
 
 /* Estilo para o contêiner do título */
 .titulo-container {
