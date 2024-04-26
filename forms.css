@@ -15,9 +15,20 @@ textarea,
 select {
     font-family: 'Lato', sans-serif;
 }
-.cinza-medio {    
+
+.cinza-claro {    
     border: 1px solid #ccc; 
     background-color: #e7e7e7;
+    border-radius: 10px;
+}
+.cinza-medio {    
+    border: 1px solid #ccc; 
+    background-color: #dbdbdb;
+    border-radius: 10px;
+}
+.cinza-escuro {    
+    border: 1px solid #ccc; 
+    background-color: #cecece;
     border-radius: 10px;
 }
 
