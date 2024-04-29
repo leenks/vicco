@@ -542,6 +542,7 @@
         font-size: 20px;
         color: #333;
         min-width: 45%;
+        text-transform: uppercase;
     }
 
 
@@ -577,29 +578,14 @@
         margin: 5px;
         /* Espaçamento entre o ícone e o label */
     }
+    
 
-
-    /* Estilo para o ícone de pré-compra */
-    .icone-pre-compra {
-        position: absolute;
-        /* Posicionamento absoluto em relação ao botão */
-        left: -15%;
-        /* Ajusta a posição para que fique sobre o início do botão */
-        top: 50%;
-        /* Alinha o ícone verticalmente ao centro */
-        transform: translateY(-50%);
-        /* Ajusta a posição vertical */
-        z-index: 1;
-        /* Garante que o ícone fique sobre o botão */
-        width: 35px;
-    }
-
-    /* Estilo para os status */
+    /* Estilos para os status */
     .box-info-requisicao-btn .botao-pre-compra {
         background-color: #79C14E;
         text-shadow: 1px 1px #356619;
         color: white;
-        padding: 7px 10px 6px 20px;
+        padding: 7px 10px 6px 15px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -614,7 +600,7 @@
         background-color: rgb(187, 2, 144);
         text-shadow: 1px 1px #550135;
         color: white;
-        padding: 7px 10px 6px 20px;
+        padding: 7px 10px 6px 15px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -629,7 +615,7 @@
         background-color: orangered;
         text-shadow: 1px 1px rgb(118, 31, 0);
         color: white;
-        padding: 7px 25px 6px 25px;
+        padding: 7px 15px 6px 15px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -644,7 +630,7 @@
         background-color: rgb(214, 0, 0);
         text-shadow: 1px 1px rgb(91, 0, 0);
         color: white;
-        padding: 7px 10px 6px 25px;
+        padding: 7px 10px 6px 15px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -659,7 +645,52 @@
         background-color: rgb(12, 204, 175);
         text-shadow: 1px 1px rgb(1, 66, 67);
         color: white;
-        padding: 7px 10px 6px 25px;
+        padding: 7px 10px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
+    
+    .box-info-requisicao-btn .botao-aprovado {
+        background-color: #579531;
+        text-shadow: 1px 1px #356619;
+        color: white;
+        padding: 7px 10px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
+
+    .box-info-requisicao-btn .botao-analise {
+        background-color: #ff973c;
+        text-shadow: 1px 1px #9f6d41;
+        color: white;
+        padding: 7px 10px 6px 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
+
+    .box-info-requisicao-btn .botao-orcamento {
+        background-color: #ffc416;
+        text-shadow: 1px 1px #b58d16;
+        color: white;
+        padding: 7px 10px 6px 15px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -684,7 +715,7 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 1;
-        width: 35px;
+        width: 25px;
     }
 
     /* Estilo para o preço */
@@ -709,16 +740,7 @@
         color: white;
         padding: 3px 10px 4px 10px;
         border-radius: 5px;
-        font-size: 18px;
-    }
-
-    .titulo-container .pagamento {
-        background-color: rgb(187, 2, 144);
-        text-shadow: 1px 1px #550135;
-        color: white;
-        padding: 7px 10px 6px 10px;
-        border-radius: 5px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .span-infos-requisicao {
@@ -767,6 +789,9 @@
         background-color: #eee;
         height: 55px;
         text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .box-info-requisicao-borda3 {
@@ -871,6 +896,46 @@
         /* Borda arredondada */
         margin-right: 5px;
         min-height: 60px;
+    }
+    
+    .box-info-requisicao-branca-larga {
+        width: 235px;
+        text-align: center;
+        white-space: nowrap;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #fff;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+    }
+
+    
+    .box-info-requisicao-cinza-metade {
+        width: 400px;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-align: center;
+    }
+
+    .box-info-requisicao-cinza-metade2 {
+        width: 505px;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-align: center;
     }
 
 
@@ -1366,7 +1431,10 @@
         .caption-container .botao-pagamento,
         .caption-container .botao-cotacao,
         .caption-container .botao-cancelada,
-        .caption-container .botao-aprovacao {
+        .caption-container .botao-aprovacao,
+        .caption-container .botao-analise,
+        .caption-container .botao-orçamento,
+        .caption-container .botao-aprovado {
             font-size: 10px;
         }
 
