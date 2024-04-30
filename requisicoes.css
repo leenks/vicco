@@ -1302,9 +1302,8 @@
         #mobile-conteudoModoSimples2 .table-requisicoes {
             margin-bottom: 10px;
             max-width: 100%;
-            /* Define a largura máxima da tabela como 100% do contêiner pai */
             overflow-x: auto;
-            /* Adiciona uma barra de rolagem horizontal caso a tabela exceda a largura do contêiner */
+            min-width: 380px;
         }
 
         #mobile-conteudoModoSimples2 .table-requisicoes td {
@@ -1629,6 +1628,21 @@
             margin-top: 5px;
             /* Adiciona margem acima do título */
         }
+
+        /*botões de status na tabela mobile*/
+        
+    .box-info-requisicao-btn .botao-aprovado {
+        padding: 7px 10px 6px 25px;
+    }
+
+    .box-info-requisicao-btn .botao-analise {
+        padding: 7px 10px 6px 25px;
+        
+    }
+
+    .box-info-requisicao-btn .botao-orcamento {
+         padding: 7px 5px 6px 20px;
+    }
     }
 
 
