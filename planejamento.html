@@ -108,8 +108,8 @@
 
                         <div class="toggle-container2">
                             <div class="busca">
-                                <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
                                  <input type="text" id="inputBusca" placeholder="Digite aqui">
+                                 <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
                             </div>
                         </div>
 
@@ -225,10 +225,11 @@
                                                     <h3>Smart - Itaim Bibi</h3>
                                                     <div class="box-info-requisicao-btn">
                                                         <span class="botao-orcamento">
-                                                            <img class="icones" src="imgs/ico-budget-azul.png"
+                                                            <img class="icones" src="imgs/ico-analise-azul.png"
                                                                 alt="Ícone">
                                                             ORÇAMENTO
                                                         </span>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </caption>
@@ -475,29 +476,33 @@
                                                             </span>
 
                                 <div class="box-info-requisicao" id="oculta">
-                                    <div class="box-info-requisicao-borda2">
+                                    <div class="box-info-requisicao-borda2-p">
                                         <label for="numero">Nº ID:</label>
                                         <span class="span-infos-requisicao" id="numero">019</span>
                                     </div>
-                                    <div class="box-info-requisicao-borda2">
+                                    <div class="box-info-requisicao-borda2-m">
                                         <label for="empenho">Sigla Orçamento:</label>
                                         <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
                                     </div>
                                 
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-m">
                                     <label for="empenho">Tipo:</label>
                                     <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
                                 </div>
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-p">
                                     <label for="empenho">Revisão:</label>
                                     <span class="span-infos-requisicao" id="empenho">0</span>
                                 </div>
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-p">
                                     <label for="empenho">Itens:</label>
                                     <span class="span-infos-requisicao" id="empenho">24 itens</span>
                                 </div>
-                                    <div class="box-info-requisicao-branca-larga">
-                                        <label for="descricao">Data Orçamento/Revisão:</label>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Depto. Comercial:</label>
+                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Depto. Orçamento:</label>
                                         <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
                                     </div>
                                     
@@ -507,15 +512,46 @@
                                     <div class="box-info-requisicao-cinza-metade" id="oculta">
                                         <label for="grupo">Nome do Cliente:</label>
                                         <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
-                                        
+                                </div>
+                                
+                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                
+                                    <label for="grupo">Gestor Construtora:</label>
+                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
+                                </div>
+
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Análise:</label>
+                                        <span class="span-infos-requisicao" id="descricao">5 dias</span>
                                     </div>
-                                    <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                        <label for="grupo">Descrição do Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição detalhada</span>
-                                        
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Aprovação:</label>
+                                        <span class="span-infos-requisicao" id="descricao">2 dias</span>
                                     </div>
                                 </div><!-- box-info-requisicao -->
+                            
+                                <div class="box-info-requisicao">
+                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                        <label for="grupo">Descrição do Orçamento:</label>
+                                        <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição detalhada</span>
+                                </div>
                                 
+                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                
+                                    <label for="grupo">Gestor Cliente:</label>
+                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
+                                </div>
+
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Reformulação:</label>
+                                        <span class="span-infos-requisicao" id="descricao">3 dias</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Fechamento:</label>
+                                        <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
+                                    </div>
+                                </div><!-- box-info-requisicao -->
+
                             </div><!--div card-->
 
                             
@@ -524,7 +560,6 @@
                                 <span class="titulo-container" id="oculta">
                                     <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
                                     <h3>Smart - Itaim Bibi</h3>
-
                                     <div class="box-info-requisicao-btn">
                                         <div class="preco-container">
                                             <span class="preco-texto">Valor:</span>
@@ -543,29 +578,33 @@
                                 
 
                                 <div class="box-info-requisicao" id="oculta">
-                                    <div class="box-info-requisicao-borda2">
+                                    <div class="box-info-requisicao-borda2-p">
                                         <label for="numero">Nº ID:</label>
-                                        <span class="span-infos-requisicao" id="numero">020</span>
+                                        <span class="span-infos-requisicao" id="numero">019</span>
                                     </div>
-                                    <div class="box-info-requisicao-borda2">
+                                    <div class="box-info-requisicao-borda2-m">
                                         <label for="empenho">Sigla Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="empenho">SFITAIM</span>
+                                        <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
                                     </div>
                                 
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-m">
                                     <label for="empenho">Tipo:</label>
                                     <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
                                 </div>
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-p">
                                     <label for="empenho">Revisão:</label>
                                     <span class="span-infos-requisicao" id="empenho">0</span>
                                 </div>
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-p">
                                     <label for="empenho">Itens:</label>
                                     <span class="span-infos-requisicao" id="empenho">24 itens</span>
                                 </div>
-                                    <div class="box-info-requisicao-branca-larga">
-                                        <label for="descricao">Data Orçamento/Revisão:</label>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Depto. Comercial:</label>
+                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Depto. Orçamento:</label>
                                         <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
                                     </div>
                                     
@@ -574,15 +613,46 @@
                                 <div class="box-info-requisicao">
                                     <div class="box-info-requisicao-cinza-metade" id="oculta">
                                         <label for="grupo">Nome do Cliente:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente">SmartFit Anita Mall - Retrofit</span>
-                                        
+                                        <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                                </div>
+                                
+                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                
+                                    <label for="grupo">Gestor Construtora:</label>
+                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
+                                </div>
+
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Análise:</label>
+                                        <span class="span-infos-requisicao" id="descricao">5 dias</span>
                                     </div>
-                                    <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Aprovação:</label>
+                                        <span class="span-infos-requisicao" id="descricao">2 dias</span>
+                                    </div>
+                                </div><!-- box-info-requisicao -->
+                            
+                                <div class="box-info-requisicao">
+                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
                                         <label for="grupo">Descrição do Orçamento:</label>
                                         <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição detalhada</span>
-                                    </div>
+                                </div>
+                                
+                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                
+                                    <label for="grupo">Gestor Cliente:</label>
+                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
+                                </div>
 
-                                    </div><!--box info requisicao-->
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Reformulação:</label>
+                                        <span class="span-infos-requisicao" id="descricao">3 dias</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Fechamento:</label>
+                                        <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
+                                    </div>
+                                </div><!-- box-info-requisicao -->
 
                                 </div><!--div card-->
 
@@ -613,29 +683,33 @@
                                 </span>
 
                                 <div class="box-info-requisicao" id="oculta">
-                                    <div class="box-info-requisicao-borda2">
+                                    <div class="box-info-requisicao-borda2-p">
                                         <label for="numero">Nº ID:</label>
                                         <span class="span-infos-requisicao" id="numero">019</span>
                                     </div>
-                                    <div class="box-info-requisicao-borda2">
+                                    <div class="box-info-requisicao-borda2-m">
                                         <label for="empenho">Sigla Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="empenho">SFANITTA</span>
+                                        <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
                                     </div>
                                 
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-m">
                                     <label for="empenho">Tipo:</label>
-                                    <span class="span-infos-requisicao" id="empenho">Retrofit-Shopping</span>
+                                    <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
                                 </div>
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-p">
                                     <label for="empenho">Revisão:</label>
                                     <span class="span-infos-requisicao" id="empenho">0</span>
                                 </div>
-                                <div class="box-info-requisicao-borda2">
+                                <div class="box-info-requisicao-borda2-p">
                                     <label for="empenho">Itens:</label>
                                     <span class="span-infos-requisicao" id="empenho">24 itens</span>
                                 </div>
-                                    <div class="box-info-requisicao-branca-larga">
-                                        <label for="descricao">Data Orçamento/Revisão:</label>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Depto. Comercial:</label>
+                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Depto. Orçamento:</label>
                                         <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
                                     </div>
                                     
@@ -644,16 +718,46 @@
                                 <div class="box-info-requisicao">
                                     <div class="box-info-requisicao-cinza-metade" id="oculta">
                                         <label for="grupo">Nome do Cliente:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente">SmartFit Anita Mall - Retrofit</span>
-                                        
+                                        <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                                </div>
+                                
+                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                
+                                    <label for="grupo">Gestor Construtora:</label>
+                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
+                                </div>
+
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Análise:</label>
+                                        <span class="span-infos-requisicao" id="descricao">5 dias</span>
                                     </div>
-                                    <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                        <label for="grupo">Descrição do Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição detalhada</span>
-                                        
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Aprovação:</label>
+                                        <span class="span-infos-requisicao" id="descricao">2 dias</span>
                                     </div>
                                 </div><!-- box-info-requisicao -->
+                            
+                                <div class="box-info-requisicao">
+                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                        <label for="grupo">Descrição do Orçamento:</label>
+                                        <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição detalhada</span>
+                                </div>
+                                
+                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                
+                                    <label for="grupo">Gestor Cliente:</label>
+                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
+                                </div>
 
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Tempo Reformulação:</label>
+                                        <span class="span-infos-requisicao" id="descricao">3 dias</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-m">
+                                        <label for="descricao">Data Fechamento:</label>
+                                        <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
+                                    </div>
+                                </div><!-- box-info-requisicao -->
                             </div><!--div card-->
 
                             <div class="col-md-6">

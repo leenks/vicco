@@ -21,7 +21,7 @@
 
     .container-desktop {
         width: 100%;
-        max-width: 960px;
+        max-width: 1024px;
         margin: 0 auto;
     }
 
@@ -390,7 +390,7 @@
         position: relative;
         background-color: #efefef;
         padding: 1px 20px;
-        max-width: 960px;
+        max-width: 1024px;
         margin: 2% auto;
     }
     .modal-wrap {
@@ -401,7 +401,7 @@
         position: relative;
         background-color: #f5f5f5;
         margin: 2% auto;
-        max-width: 960px;
+        max-width: 1024px;
         border-radius: 10px;
         border: 3px solid #f47332;
     }
@@ -583,11 +583,22 @@
     
 
     /* Estilos para os status */
-    .box-info-requisicao-btn .botao-pre-compra {
-        background-color: #79C14E;
-        text-shadow: 1px 1px #356619;
+
+    .botao-pre-compra,
+    .botao-pagamento,
+    .botao-pre-compra,
+    .botao-pagamento,
+    .botao-cotacao,
+    .botao-cancelada,
+    .botao-aprovacao,
+    .botao-analise,
+    .botao-orcamento,
+    .botao-aprovado {
+        font-size: 10px;
+        width: 110px;
+        text-align: center;
+        padding: 5px;
         color: white;
-        padding: 7px 10px 6px 15px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -596,112 +607,48 @@
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+    
+    }
+
+    .box-info-requisicao-btn .botao-pre-compra {
+        background-color: #79C14E;
+        text-shadow: 1px 1px #356619;
     }
 
     .box-info-requisicao-btn .botao-pagamento {
         background-color: rgb(187, 2, 144);
         text-shadow: 1px 1px #550135;
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
     }
 
     .box-info-requisicao-btn .botao-cotacao {
         background-color: orangered;
         text-shadow: 1px 1px rgb(118, 31, 0);
-        color: white;
-        padding: 7px 15px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
     }
 
     .box-info-requisicao-btn .botao-cancelada {
         background-color: rgb(214, 0, 0);
         text-shadow: 1px 1px rgb(91, 0, 0);
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
     }
 
     .box-info-requisicao-btn .botao-aprovacao {
         background-color: rgb(12, 204, 175);
         text-shadow: 1px 1px rgb(1, 66, 67);
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
     }
     
     .box-info-requisicao-btn .botao-aprovado {
         background-color: #579531;
         text-shadow: 1px 1px #356619;
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
     }
 
     .box-info-requisicao-btn .botao-analise {
         background-color: #ff973c;
         text-shadow: 1px 1px #9f6d41;
-        color: white;
-        padding: 7px 10px 6px 18px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
     }
 
     .box-info-requisicao-btn .botao-orcamento {
         background-color: #ffc416;
         text-shadow: 1px 1px #b58d16;
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-    }
+        }
 
     /* Estilo para o ícone */
     .titulo-container .icone-abrir {
@@ -764,7 +711,21 @@
     }
 
     .box-info-requisicao-borda {
-        width: 130px;
+        width: 140px;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 2px 5px 2px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        background-color: #fff;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin-right: 5px;
+        /* Espaçamento entre as divs */
+        height: 55px;
+        text-align: center;
+    }
+    .box-info-requisicao-borda-m {
+        width: 186px;
         /* Ajusta a largura para caberem seis divs lado a lado */
         padding: 2px 5px 2px;
         border: 2px solid #888;
@@ -778,8 +739,44 @@
         text-align: center;
     }
 
-    .box-info-requisicao-borda2 {
+    .box-info-requisicao-borda2-p {
+        width: 105px;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 2px 5px 2px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin-right: 5px;
+        /* Espaçamento entre as divs */
+        background-color: #eee;
+        height: 55px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .box-info-requisicao-borda2-m {
         width: 130px;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 2px 5px 2px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin-right: 5px;
+        /* Espaçamento entre as divs */
+        background-color: #eee;
+        height: 55px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .box-info-requisicao-borda2 {
+        width: 140px;
         /* Ajusta a largura para caberem seis divs lado a lado */
         padding: 2px 5px 2px;
         border: 2px solid #888;
@@ -797,7 +794,7 @@
     }
 
     .box-info-requisicao-borda3 {
-        width: 131px;
+        width: 141px;
         /* Ajusta a largura para caberem seis divs lado a lado */
         padding: 5px;
         border: 2px solid #888;
@@ -812,7 +809,7 @@
     }
 
     .box-info-requisicao-borda4 {
-        width: 129px;
+        width: 139px;
         /* Ajusta a largura para caberem seis divs lado a lado */
         padding: 2px 5px 2px;
         border: 2px solid #888;
@@ -827,7 +824,7 @@
     }
 
     .box-info-requisicao-ultima {
-        width: 235px;
+        width: 250px;
         /* Ajusta a largura para caberem seis divs lado a lado */
         padding: 2px 5px 2px;
         box-sizing: border-box;
@@ -844,7 +841,7 @@
     }
 
     .box-info-requisicao-ultima2 {
-        width: 265px;
+        width: 285px;
         /* Ajusta a largura para caberem seis divs lado a lado */
         padding: 2px 5px 2px;
         box-sizing: border-box;
@@ -873,7 +870,7 @@
     }
 
     .box-info-requisicao-ultima4 {
-        width: 130px;
+        width: 140px;
         height: 115px;
         white-space: nowrap;
         padding: 2px 5px 2px;
@@ -884,10 +881,11 @@
         /* Borda arredondada */
         margin-right: 1px;
         min-height: 60px;
+        text-align: center;
     }
 
     .box-info-requisicao-ultima5 {
-        width: 235px;
+        width: 250px;
         height: 115px;
         white-space: nowrap;
         padding: 2px 5px 2px;
@@ -915,7 +913,7 @@
 
     
     .box-info-requisicao-cinza-metade {
-        width: 400px;
+        width: 375px;
         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
@@ -928,7 +926,7 @@
     }
 
     .box-info-requisicao-cinza-metade2 {
-        width: 505px;
+        width: 215px;
         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
@@ -1077,10 +1075,6 @@
 
 
     /* CARDS MODOS DE LISTAGEM*/
-    .cards-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
 
     .cards-container.modo-lista .card {
         width: 100%;
@@ -1105,7 +1099,7 @@
     /* Nova classe para o modo-simples */
     .cards-container.modo-simples .card {
         width: 100%;
-        max-height: 120px;
+        max-height: 118px;
         margin: 10px;
         padding: 5px 5px 0 5px;
         background-color: #f9f9f9;
@@ -1138,7 +1132,7 @@
     }
 
     .box-info-requisicao-btn {
-        display: inline-block;
+        display: flex;
         vertical-align: top;
         margin-left: 10px;
     }
@@ -1437,9 +1431,12 @@
         .caption-container .botao-cancelada,
         .caption-container .botao-aprovacao,
         .caption-container .botao-analise,
-        .caption-container .botao-orçamento,
+        .caption-container .botao-orcamento,
         .caption-container .botao-aprovado {
             font-size: 10px;
+            padding: 5px 25px;
+            width: 105px;
+            text-align: center;
         }
 
         /* OCULTA A TABELA GRANDE E MOSTRA A PEQUENA */
@@ -1629,20 +1626,6 @@
             /* Adiciona margem acima do título */
         }
 
-        /*botões de status na tabela mobile*/
-        
-    .box-info-requisicao-btn .botao-aprovado {
-        padding: 7px 10px 6px 25px;
-    }
-
-    .box-info-requisicao-btn .botao-analise {
-        padding: 7px 10px 6px 25px;
-        
-    }
-
-    .box-info-requisicao-btn .botao-orcamento {
-         padding: 7px 5px 6px 20px;
-    }
     }
 
 
