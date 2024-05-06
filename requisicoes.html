@@ -1332,17 +1332,13 @@
     </script>
 
 
-<!--CLIQUE NAS LINHAS DA TABELA -->
-<script>
-    // Função para mostrar o aviso
-    function mostrarAviso() {
-        // Verificar se a popup já está aberta
-        if (!document.querySelector('.aviso-aberto')) {
+
+    <!--CLIQUE NAS LINHAS DA TABELA -->
+    <script>
+        // Função para mostrar o aviso
+        function mostrarAviso() {
             alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
-            // Adicionar classe para indicar que a popup está aberta
-            document.body.classList.add('aviso-aberto');
         }
-    }
 
     // Vincular a função ao evento de clique da linha da tabela
     document.addEventListener("DOMContentLoaded", function() {

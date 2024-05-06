@@ -982,41 +982,36 @@
 
 
 
-<!--CLIQUE NAS LINHAS DA TABELA -->
-<script>
-    // Função para mostrar o aviso
-    function mostrarAviso() {
-        // Verificar se a popup já está aberta
-        if (!document.querySelector('.aviso-aberto')) {
+    <!--CLIQUE NAS LINHAS DA TABELA -->
+    <script>
+        // Função para mostrar o aviso
+        function mostrarAviso() {
             alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
-            // Adicionar classe para indicar que a popup está aberta
-            document.body.classList.add('aviso-aberto');
         }
-    }
 
-    // Vincular a função ao evento de clique da linha da tabela
-    document.addEventListener("DOMContentLoaded", function() {
-        var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
-        linhasTabela.forEach(function(linha) {
-            linha.addEventListener("click", mostrarAviso);
-            linha.addEventListener("mouseover", function() {
-                this.classList.add('destaque-mouseover');
-            });
-            linha.addEventListener("mouseout", function() {
-                this.classList.remove('destaque-mouseover');
-                // Reaplicar as regras de alternância de cores
-                var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
-                linhas.forEach(function(linha, indice) {
-                    if (indice % 2 === 0) {
-                        linha.style.backgroundColor = "#f2f2f2";
-                    } else {
-                        linha.style.backgroundColor = "#ffffff";
-                    }
+        // Vincular a função ao evento de clique da linha da tabela
+        document.addEventListener("DOMContentLoaded", function () {
+            var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
+            linhasTabela.forEach(function (linha) {
+                linha.addEventListener("click", mostrarAviso);
+                linha.addEventListener("mouseover", function () {
+                    this.classList.add('destaque-mouseover');
+                });
+                linha.addEventListener("mouseout", function () {
+                    this.classList.remove('destaque-mouseover');
+                    // Reaplicar as regras de alternância de cores
+                    var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
+                    linhas.forEach(function (linha, indice) {
+                        if (indice % 2 === 0) {
+                            linha.style.backgroundColor = "#f2f2f2";
+                        } else {
+                            linha.style.backgroundColor = "#ffffff";
+                        }
+                    });
                 });
             });
         });
-    });
-</script>
+    </script>
 
 
     <script src="filtro-plan.js"></script>
