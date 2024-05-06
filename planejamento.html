@@ -88,7 +88,7 @@
                         <span> > </span>
                         <a href="#">PLANEJAMENTO</a>
                     </div>
-                    
+
                     <!--Filtros e Visualizção modos-->
                     <div class="wrap-toggle">
                         <div class="toggle-container">
@@ -108,8 +108,9 @@
 
                         <div class="toggle-container2">
                             <div class="busca">
-                                 <input type="text" id="inputBusca" placeholder="Digite aqui">
-                                 <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                                <input type="text" id="inputBusca" placeholder="Digite aqui">
+                                <button onclick="buscar()"> <span id="modo-icon"
+                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
                             </div>
                         </div>
 
@@ -136,786 +137,889 @@
                                         </label>
                                     </div>
                                 </div>
-                                
-                                </div>
+
                             </div>
                         </div>
+                    </div>
 
-                        <div class="cards-container">
+                    <div class="cards-container">
 
-                            <div class="card">
+                        <div class="card">
 
-                                <!--tabela de requisicao MOBILE-->
-                                <div class="cards-container modo-simples2" id="mobile-conteudoModoSimples2"
-                                    style="display: none;">
+                            <!--tabela de requisicao MOBILE-->
+                            <div class="cards-container modo-simples2" id="mobile-conteudoModoSimples2"
+                                style="display: none;">
 
-                                    <div class="table-container">
+                                <div class="table-container">
 
-                                        <table class="table-requisicoes">
-                                            <caption>
-                                                <div class="caption-container">
-                                                    <a href="edit-req-01.html"><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></a>
-                                                    <h3>Particular Vicco I</h3>
-                                                    <div class="box-info-requisicao-btn">
-                                                        <span class="botao-analise">
-                                                            <img class="icones" src="imgs/ico-analise-azul.png"
-                                                                alt="Ícone">
-                                                            ANÁLISE
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </caption>
-
-                                            <thead>
-                                                <tr>
-                                                    <th width="33%">Nº ID</th>
-                                                    <th width="33%">Sigla Orçamento</th>
-                                                    <th width="33%">Tipo</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>019</td>
-                                                    <td>PART-GLAV</td>
-                                                    <td>Obra Nova-Rua</td>
-                                                </tr>
-                                            </tbody>
-                                            <thead>
-                                                <tr>
-                                                    <th>Itens</th>
-                                                    <th>Valor</th>
-                                                    <th>Data Orçamento/Revisão</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>24 itens</td>
-                                                    <td>R$ 30.765,08</td>
-                                                    <td>24/02/2024</td>
-                                                </tr>
-                                            </tbody>
-
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="3">Nome do Cliente</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td colspan="3">Glauco Vicco</td>
-                                                </tr>
-                                            </tbody>
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="3">Descrição do Orçamento</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td colspan="3">Orçamento descrição detalhada</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
-                                        <table class="table-requisicoes">
-                                            <caption>
-                                                <div class="caption-container">
-                                                    <span class="sub-icones"><i
-                                                            class="fa-regular fa-pen-to-square"></i></span>
-                                                    <h3>Smart - Itaim Bibi</h3>
-                                                    <div class="box-info-requisicao-btn">
-                                                        <span class="botao-orcamento">
-                                                            <img class="icones" src="imgs/ico-analise-azul.png"
-                                                                alt="Ícone">
-                                                            ORÇAMENTO
-                                                        </span>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </caption>
-
-
-                                            <thead>
-                                                <tr>
-                                                    <th width="33%">Nº ID</th>
-                                                    <th width="33%">Sigla Orçamento</th>
-                                                    <th width="33%">Tipo</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>019</td>
-                                                    <td>PART-GLAV</td>
-                                                    <td>Obra Nova-Rua</td>
-                                                </tr>
-                                            </tbody>
-                                            <thead>
-                                                <tr>
-                                                    <th>Itens</th>
-                                                    <th>Valor</th>
-                                                    <th>Data Orçamento/Revisão</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>24 itens</td>
-                                                    <td>R$ 30.765,08</td>
-                                                    <td>24/02/2024</td>
-                                                </tr>
-                                            </tbody>
-
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="3">Nome do Cliente</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td colspan="3">Glauco Vicco</td>
-                                                </tr>
-                                            </tbody>
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="3">Descrição do Orçamento</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td colspan="3">Orçamento descrição detalhada</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
-
-                                        <table class="table-requisicoes">
-                                            <caption>
-                                                <div class="caption-container">
-                                                    <span class="sub-icones"><i
-                                                            class="fa-regular fa-pen-to-square"></i></span>
-                                                    <h3>SmartFit- Anitta Mall - Retrofit</h3>
-                                                    <div class="box-info-requisicao-btn">
-                                                        <span class="botao-aprovado">
-                                                            <img class="icones" src="imgs/ico-aprovado-azul.png"
-                                                                alt="Ícone">
-                                                            APROVADO
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </caption>
-
-
-                                            <thead>
-                                                <tr>
-                                                    <th width="33%">Nº ID</th>
-                                                    <th width="33%">Sigla Orçamento</th>
-                                                    <th width="33%">Tipo</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>019</td>
-                                                    <td>PART-GLAV</td>
-                                                    <td>Obra Nova-Rua</td>
-                                                </tr>
-                                            </tbody>
-                                            <thead>
-                                                <tr>
-                                                    <th>Itens</th>
-                                                    <th>Valor</th>
-                                                    <th>Data Orçamento/Revisão</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>24 itens</td>
-                                                    <td>R$ 30.765,08</td>
-                                                    <td>24/02/2024</td>
-                                                </tr>
-                                            </tbody>
-
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="3">Nome do Cliente</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td colspan="3">Glauco Vicco</td>
-                                                </tr>
-                                            </tbody>
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="3">Descrição do Orçamento</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td colspan="3">Orçamento descrição detalhada</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
-
-                                <!-- tabela para desktop-->
-                                <div class="cards-container modo-simples2" id="conteudoModoSimples2"
-                                    style="display: none;">
 
                                     <table class="table-requisicoes">
+                                        <caption>
+                                            <div class="caption-container">
+                                                <a href="#"><span class="sub-icones"><i
+                                                            class="fa-regular fa-pen-to-square"></i></span></a>
+                                                <h3>Particular Vicco I</h3>
+                                                <div class="box-info-requisicao-btn">
+                                                    <span class="botao-analise">
+                                                        <img class="icones" src="imgs/ico-analise-azul.png" alt="Ícone">
+                                                        ANÁLISE
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </caption>
+
                                         <thead>
-                                            <tr>
-                                                <th>Editar</th>
-                                                <th>Nº ID</th>
-                                                <th>Sigla Orçamento </th>
-                                                <th>Tipo</th>
-                                                <th>Revisão</th>
-                                                <th>Itens</th>
-                                                <th>Cliente </th>
-                                                <th>Obra</th>
-                                                <th>Descrição</th>
-                                                <th>Valor</th>
-                                                <th>Data Orç./Revisão</th>
-                                                <th>Status</th>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th width="33%">Nº ID</th>
+                                                <th width="33%">Sigla Orçamento</th>
+                                                <th width="33%">Tipo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- Linhas da tabela aqui -->
-                                            <tr>
-                                                <td> <a href="edit-req-01.html"><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></a></td>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
                                                 <td>019</td>
                                                 <td>PART-GLAV</td>
                                                 <td>Obra Nova-Rua</td>
-                                                <td>0</td>
-                                                <td>24 itens</td>
-                                                <td>Glauco Vicco</td>
-                                                <td>Particular Vicco</td>
-                                                <td>Orçamento Descrição detalhada</td>
-                                                <td>R$ 30.675,08</td>
-                                                <td>24/02/2024</td>
-                                                <td>
-                                                    <div class="box-info-requisicao-btn">
-                                                        <span class="botao-analise">
-                                                            <img class="icones"
-                                                                src="imgs/ico-analise-azul.png"
-                                                                alt="Ícone">
-                                                            ANÁLISE
-                                                        </span>
-                                                    </div>
-                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td> <a href="edit-req-01.html"><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></a></td>
-                                                <td>020</td>
-                                                <td>SFITAIM</td>
-                                                <td>Obra Nova-Rua</td>
-                                                <td>0</td>
-                                                <td>24 itens</td>
-                                                <td>Smart - Itaim Bibi</td>
-                                                <td>Smart - Itaim Bibi</td>
-                                                <td>Orçamento Descrição detalhada</td>
-                                                <td>R$ 5.100,08</td>
-                                                <td>24/02/2024</td>
-                                                <td>
-                                                    <div class="box-info-requisicao-btn">
-                                                        <span class="botao-orcamento">
-                                                            <img class="icones"
-                                                                src="imgs/ico-budget-azul.png"
-                                                                alt="Ícone">
-                                                            ORÇAMENTO
-                                                        </span>
-                                                    </div>
-                                                </td>
+                                        </tbody>
+                                        <thead>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th>Itens</th>
+                                                <th>Valor</th>
+                                                <th>Data Orçamento/Revisão</th>
                                             </tr>
-                                            <tr>
-                                                <td> <a href="edit-req-01.html"><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></a></td>
-                                                <td>021</td>
-                                                <td>SFANITTA</td>
-                                                <td>Retrofit-Shopping</td>
-                                                <td>0</td>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
                                                 <td>24 itens</td>
-                                                <td>SmartFit Anitta Mall -Retrofit</td>
-                                                <td>SmartFit Anitta Mall -Retrofit</td>
-                                                <td>Orçamento Descrição detalhada</td>
-                                                <td>R$ 125.100,08</td>
+                                                <td>R$30.765,08</td>
                                                 <td>24/02/2024</td>
-                                                <td>
-                                                    <div class="box-info-requisicao-btn">
-                                                        <span class="botao-aprovado">
-                                                            <img class="icones"
-                                                                src="imgs/ico-aprovado-azul.png"
-                                                                alt="Ícone">
-                                                            APROVADO
-                                                        </span>
-                                                    </div>
-                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <thead>
+
+                                            <tr>
+                                                <th colspan="3">Nome do Cliente</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td colspan="3">Glauco Vicco</td>
+                                            </tr>
+                                        </tbody>
+                                        <thead>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th colspan="3">Descrição do Orçamento</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td colspan="3">Orçamento descrição detalhada</td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
 
-                                                                <!-- Adiciona o ícone, título e botão ao título -->
-                                                                <span class="titulo-container" id="oculta">
-                                                                    <a href="edit-req-01.html"><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></a>
-                                                                    <h3>PARTICULAR VICCO I</h3>
-                                                                
-                                                                <div class="box-info-requisicao-btn">
-                                                                    <div class="preco-container">
-                                                                        <span class="preco-texto">Valor:</span>
-                                                                        <span class="preco-valor">R$ 30.675,08</span>
-                                                                    </div>
-                                                                </div>
-                                
-                                                                <div class="box-info-requisicao-btn">
-                                                                    <span class="botao-analise">
-                                                                        <img class="icones" src="imgs/ico-analise-azul.png"
-                                                                            alt="Ícone de Em análise">
-                                                                        ANÁLISE
-                                                                    </span>
-                                                                </div>
-                                                            </span>
+                                    <table class="table-requisicoes">
+                                        <caption>
+                                            <div class="caption-container">
+                                                <span class="sub-icones"><i
+                                                        class="fa-regular fa-pen-to-square"></i></span>
+                                                <h3>Smart - Itaim Bibi</h3>
+                                                <div class="box-info-requisicao-btn">
+                                                    <span class="botao-orcamento">
+                                                        <img class="icones" src="imgs/ico-analise-azul.png" alt="Ícone">
+                                                        ORÇAMENTO
+                                                    </span>
+                                                </div>
+                                            </div>
+                                </div>
+                                </caption>
 
-                                <div class="box-info-requisicao" id="oculta">
-                                    <div class="box-info-requisicao-borda2-p">
-                                        <label for="numero">Nº ID:</label>
-                                        <span class="span-infos-requisicao" id="numero">019</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda2-m">
-                                        <label for="empenho">Sigla Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
-                                    </div>
-                                
-                                <div class="box-info-requisicao-borda2-m">
-                                    <label for="empenho">Tipo:</label>
-                                    <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
-                                </div>
-                                <div class="box-info-requisicao-borda2-p">
-                                    <label for="empenho">Revisão:</label>
-                                    <span class="span-infos-requisicao" id="empenho">0</span>
-                                </div>
-                                <div class="box-info-requisicao-borda2-p">
-                                    <label for="empenho">Itens:</label>
-                                    <span class="span-infos-requisicao" id="empenho">24 itens</span>
-                                </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Depto. Comercial:</label>
-                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Depto. Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
-                                    </div>
-                                    
-                                </div><!--box info requisicao-->
 
-                                <div class="box-info-requisicao">
-                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                        <label for="grupo">Nome do Cliente:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
-                                </div>
-                                
-                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                
-                                    <label for="grupo">Gestor Construtora:</label>
-                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
-                                </div>
+                                <thead>
 
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Análise:</label>
-                                        <span class="span-infos-requisicao" id="descricao">5 dias</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Aprovação:</label>
-                                        <span class="span-infos-requisicao" id="descricao">2 dias</span>
-                                    </div>
-                                </div><!-- box-info-requisicao -->
-                            
-                                <div class="box-info-requisicao">
-                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                        <label for="grupo">Descrição do Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição detalhada</span>
-                                </div>
-                                
-                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                
-                                    <label for="grupo">Gestor Cliente:</label>
-                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
-                                </div>
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <th width="33%">Nº ID</th>
+                                        <th width="33%">Sigla Orçamento</th>
+                                        <th width="33%">Tipo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Reformulação:</label>
-                                        <span class="span-infos-requisicao" id="descricao">3 dias</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Fechamento:</label>
-                                        <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
-                                    </div>
-                                </div><!-- box-info-requisicao -->
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <td>019</td>
+                                        <td>PART-GLAV</td>
+                                        <td>Obra Nova-Rua</td>
+                                    </tr>
+                                </tbody>
+                                <thead>
 
-                            </div><!--div card-->
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <th>Itens</th>
+                                        <th>Valor</th>
+                                        <th>Data Orçamento/Revisão</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                            
-                            <div class="card" id="oculta">
-                                <!-- Adiciona o ícone, título e botão ao título -->
-                                <span class="titulo-container" id="oculta">
-                                    <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
-                                    <h3>Smart - Itaim Bibi</h3>
-                                    <div class="box-info-requisicao-btn">
-                                        <div class="preco-container">
-                                            <span class="preco-texto">Valor:</span>
-                                            <span class="preco-valor">R$ 5.100,00</span>
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <td>24 itens</td>
+                                        <td>R$30.765,08</td>
+                                        <td>24/02/2024</td>
+                                    </tr>
+                                </tbody>
+
+                                <thead>
+
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <th colspan="3">Nome do Cliente</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <td colspan="3">Glauco Vicco</td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <th colspan="3">Descrição do Orçamento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <td colspan="3">Orçamento descrição detalhada</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+
+
+                                <table class="table-requisicoes">
+                                    <caption>
+                                        <div class="caption-container">
+                                            <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
+                                            <h3>SmartFit- Anitta Mall - Retrofit</h3>
+                                            <div class="box-info-requisicao-btn">
+                                                <span class="botao-aprovado">
+                                                    <img class="icones" src="imgs/ico-aprovado-azul.png" alt="Ícone">
+                                                    APROVADO
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </caption>
 
-                                    <div class="box-info-requisicao-btn">
-                                        <span class="botao-orcamento">
-                                            <img class="icones" src="imgs/ico-budget-azul.png"
-                                                alt="Ícone de ORÇAMENTO">
-                                            ORÇAMENTO
-                                        </span>
-                                    </div>
-                                </span>
-                                
 
-                                <div class="box-info-requisicao" id="oculta">
-                                    <div class="box-info-requisicao-borda2-p">
-                                        <label for="numero">Nº ID:</label>
-                                        <span class="span-infos-requisicao" id="numero">019</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda2-m">
-                                        <label for="empenho">Sigla Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
-                                    </div>
-                                
-                                <div class="box-info-requisicao-borda2-m">
-                                    <label for="empenho">Tipo:</label>
-                                    <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
+                                    <thead>
+
+                                        <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                            onmouseout="this.style.backgroundColor='transparent';"
+                                            style="cursor: pointer;" onclick="mostrarAviso()">
+                                            <th width="33%">Nº ID</th>
+                                            <th width="33%">Sigla Orçamento</th>
+                                            <th width="33%">Tipo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                            onmouseout="this.style.backgroundColor='transparent';"
+                                            style="cursor: pointer;" onclick="mostrarAviso()">
+                                            <td>019</td>
+                                            <td>PART-GLAV</td>
+                                            <td>Obra Nova-Rua</td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+
+                                        <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                            onmouseout="this.style.backgroundColor='transparent';"
+                                            style="cursor: pointer;" onclick="mostrarAviso()">
+                                            <th>Itens</th>
+                                            <th>Valor</th>
+                                            <th>Data Orçamento/Revisão</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                            onmouseout="this.style.backgroundColor='transparent';"
+                                            style="cursor: pointer;" onclick="mostrarAviso()">
+                                            <td>24 itens</td>
+                                            <td>R$30.765,08</td>
+                                            <td>24/02/2024</td>
+                                        </tr>
+                                    </tbody>
+
+                                    <thead>
+
+                                        <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                            onmouseout="this.style.backgroundColor='transparent';"
+                                            style="cursor: pointer;" onclick="mostrarAviso()">
+                                            <th colspan="3">Nome do Cliente</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                            onmouseout="this.style.backgroundColor='transparent';"
+                                            style="cursor: pointer;" onclick="mostrarAviso()">
+                                            <td colspan="3">Glauco Vicco</td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+
+                                        <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                            onmouseout="this.style.backgroundColor='transparent';"
+                                            style="cursor: pointer;" onclick="mostrarAviso()">
+                                            <th colspan="3">Descrição do Orçamento</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                            onmouseout="this.style.backgroundColor='transparent';"
+                                            style="cursor: pointer;" onclick="mostrarAviso()">
+                                            <td colspan="3">Orçamento descrição detalhada</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+                        <!-- tabela para desktop-->
+                        <div class="cards-container modo-simples2" id="conteudoModoSimples2" style="display: none;">
+
+                            <table class="table-requisicoes">
+                                <thead>
+                                    <tr>
+                                        <th>Nº ID</th>
+                                        <th>Sigla Orçamento </th>
+                                        <th>Tipo</th>
+                                        <th>Itens</th>
+                                        <th>Cliente </th>
+                                        <th>Obra</th>
+                                        <th>Descrição</th>
+                                        <th>Valor</th>
+                                        <th>Data Orç./Revisão</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Linhas da tabela aqui -->
+
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <script>function mostrarAviso() { alert("- - - - ->RECURSO EM CONSTRUÇÃO <- - - - - -"); }</script>
+                                        <td>019</td>
+                                        <td>PART-GLAV</td>
+                                        <td>Obra Nova-Rua</td>
+                                        <td>24 itens</td>
+                                        <td>Glauco Vicco</td>
+                                        <td>Particular Vicco</td>
+                                        <td>Orçamento Descrição detalhada</td>
+                                        <td>R$30.675,08</td>
+                                        <td>24/02/2024</td>
+                                        <td>
+                                            <div class="box-info-requisicao-btn">
+                                                <span class="botao-analise">
+                                                    <img class="icones" src="imgs/ico-analise-azul.png" alt="Ícone">
+                                                    ANÁLISE
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <script>function mostrarAviso() { alert("- - - - ->RECURSO EM CONSTRUÇÃO <- - - - - -"); }</script>
+                                        <td>020</td>
+                                        <td>SFITAIM</td>
+                                        <td>Obra Nova-Rua</td>
+                                        <td>24 itens</td>
+                                        <td>Smart - Itaim Bibi</td>
+                                        <td>Smart - Itaim Bibi</td>
+                                        <td>Orçamento Descrição detalhada</td>
+                                        <td>R$5.100,08</td>
+                                        <td>24/02/2024</td>
+                                        <td>
+                                            <div class="box-info-requisicao-btn">
+                                                <span class="botao-orcamento">
+                                                    <img class="icones" src="imgs/ico-budget-azul.png" alt="Ícone">
+                                                    ORÇAMENTO
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                        onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"
+                                        onclick="mostrarAviso()">
+                                        <script>function mostrarAviso() { alert("- - - - ->RECURSO EM CONSTRUÇÃO <- - - - - -"); }</script>
+                                        <td>021</td>
+                                        <td>SFANITTA</td>
+                                        <td>Retrofit-Shopping</td>
+                                        <td>24 itens</td>
+                                        <td>SmartFit Anitta Mall -Retrofit</td>
+                                        <td>SmartFit Anitta Mall -Retrofit</td>
+                                        <td>Orçamento Descrição detalhada</td>
+                                        <td>R$125.100,08</td>
+                                        <td>24/02/2024</td>
+                                        <td>
+                                            <div class="box-info-requisicao-btn">
+                                                <span class="botao-aprovado">
+                                                    <img class="icones" src="imgs/ico-aprovado-azul.png" alt="Ícone">
+                                                    APROVADO
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Adiciona o ícone, título e botão ao título -->
+                        <span class="titulo-container" id="oculta">
+                            <a href="#"><span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span></a>
+                            <h3>PARTICULAR VICCO I</h3>
+
+                            <div class="box-info-requisicao-btn">
+                                <div class="preco-container">
+                                    <span class="preco-texto">Valor:</span>
+                                    <span class="preco-valor">R$ 30.675,08</span>
                                 </div>
-                                <div class="box-info-requisicao-borda2-p">
-                                    <label for="empenho">Revisão:</label>
-                                    <span class="span-infos-requisicao" id="empenho">0</span>
-                                </div>
-                                <div class="box-info-requisicao-borda2-p">
-                                    <label for="empenho">Itens:</label>
-                                    <span class="span-infos-requisicao" id="empenho">24 itens</span>
-                                </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Depto. Comercial:</label>
-                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Depto. Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
-                                    </div>
-                                    
-                                </div><!--box info requisicao-->
-
-                                <div class="box-info-requisicao">
-                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                        <label for="grupo">Nome do Cliente:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
-                                </div>
-                                
-                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                
-                                    <label for="grupo">Gestor Construtora:</label>
-                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
-                                </div>
-
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Análise:</label>
-                                        <span class="span-infos-requisicao" id="descricao">5 dias</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Aprovação:</label>
-                                        <span class="span-infos-requisicao" id="descricao">2 dias</span>
-                                    </div>
-                                </div><!-- box-info-requisicao -->
-                            
-                                <div class="box-info-requisicao">
-                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                        <label for="grupo">Descrição do Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição detalhada</span>
-                                </div>
-                                
-                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                
-                                    <label for="grupo">Gestor Cliente:</label>
-                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
-                                </div>
-
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Reformulação:</label>
-                                        <span class="span-infos-requisicao" id="descricao">3 dias</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Fechamento:</label>
-                                        <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
-                                    </div>
-                                </div><!-- box-info-requisicao -->
-
-                                </div><!--div card-->
-
-
-
-
-                            <div class="card" id="oculta">
-                                <!-- Adiciona o ícone, título e botão ao título -->
-                                <span class="titulo-container" id="oculta">
-                                    <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
-                                    <h3>SmartFit Anita Mall - Retrofit</h3>
-
-                                    <div class="box-info-requisicao-btn">
-                                        <div class="preco-container">
-                                            <span class="preco-texto">Valor:</span>
-                                            <span class="preco-valor">R$ 125.100,00</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="box-info-requisicao-btn">
-                                        <span class="botao-aprovado">
-                                            <img class="icones" src="imgs/ico-aprovado-azul.png"
-                                                alt="Ícone de APROVADO">
-                                            APROVADO
-                                        </span>
-                                    </div>
-
-                                </span>
-
-                                <div class="box-info-requisicao" id="oculta">
-                                    <div class="box-info-requisicao-borda2-p">
-                                        <label for="numero">Nº ID:</label>
-                                        <span class="span-infos-requisicao" id="numero">019</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda2-m">
-                                        <label for="empenho">Sigla Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
-                                    </div>
-                                
-                                <div class="box-info-requisicao-borda2-m">
-                                    <label for="empenho">Tipo:</label>
-                                    <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
-                                </div>
-                                <div class="box-info-requisicao-borda2-p">
-                                    <label for="empenho">Revisão:</label>
-                                    <span class="span-infos-requisicao" id="empenho">0</span>
-                                </div>
-                                <div class="box-info-requisicao-borda2-p">
-                                    <label for="empenho">Itens:</label>
-                                    <span class="span-infos-requisicao" id="empenho">24 itens</span>
-                                </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Depto. Comercial:</label>
-                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Depto. Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
-                                    </div>
-                                    
-                                </div><!--box info requisicao-->
-
-                                <div class="box-info-requisicao">
-                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                        <label for="grupo">Nome do Cliente:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
-                                </div>
-                                
-                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                
-                                    <label for="grupo">Gestor Construtora:</label>
-                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
-                                </div>
-
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Análise:</label>
-                                        <span class="span-infos-requisicao" id="descricao">5 dias</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Aprovação:</label>
-                                        <span class="span-infos-requisicao" id="descricao">2 dias</span>
-                                    </div>
-                                </div><!-- box-info-requisicao -->
-                            
-                                <div class="box-info-requisicao">
-                                    <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                        <label for="grupo">Descrição do Orçamento:</label>
-                                        <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição detalhada</span>
-                                </div>
-                                
-                                <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                
-                                    <label for="grupo">Gestor Cliente:</label>
-                                    <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>        
-                                </div>
-
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Tempo Reformulação:</label>
-                                        <span class="span-infos-requisicao" id="descricao">3 dias</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-m">
-                                        <label for="descricao">Data Fechamento:</label>
-                                        <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
-                                    </div>
-                                </div><!-- box-info-requisicao -->
-                            </div><!--div card-->
-
-                            <div class="col-md-6">
-                                <div class="dataTables_info" id="tab-9_info" role="status" aria-live="polite">Mostrada
-                                    página 1 de 1</div>
                             </div>
 
-                        </div><!--div cards-container-->
+                            <div class="box-info-requisicao-btn">
+                                <span class="botao-analise">
+                                    <img class="icones" src="imgs/ico-analise-azul.png" alt="Ícone de Em análise">
+                                    ANÁLISE
+                                </span>
+                            </div>
+                        </span>
 
-                    </div><!--div conteudo in-->
-                </div><!--div container desktop-->
+                        <div class="box-info-requisicao" id="oculta">
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="numero">Nº ID:</label>
+                                <span class="span-infos-requisicao" id="numero">019</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-m">
+                                <label for="empenho">Sigla Orçamento:</label>
+                                <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
+                            </div>
 
-            </div><!--div conteudo-->
+                            <div class="box-info-requisicao-borda2-m">
+                                <label for="empenho">Tipo:</label>
+                                <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="empenho">Revisão:</label>
+                                <span class="span-infos-requisicao" id="empenho">0</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="empenho">Itens:</label>
+                                <span class="span-infos-requisicao" id="empenho">24 itens</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Depto. Comercial:</label>
+                                <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Depto. Orçamento:</label>
+                                <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                            </div>
 
-           
-                    <!-- Ícone no footer -->
-                    <div class="ico-subir-footer" onclick="scrollToTop()">
-                        <i class="fas fa-arrow-up"></i>
+                        </div><!--box info requisicao-->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="grupo">Nome do Cliente:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+
+                                <label for="grupo">Gestor Construtora:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Análise:</label>
+                                <span class="span-infos-requisicao" id="descricao">5 dias</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Aprovação:</label>
+                                <span class="span-infos-requisicao" id="descricao">2 dias</span>
+                            </div>
+                        </div><!-- box-info-requisicao -->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="grupo">Descrição do Orçamento:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição
+                                    detalhada</span>
+                            </div>
+
+                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+
+                                <label for="grupo">Gestor Cliente:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Reformulação:</label>
+                                <span class="span-infos-requisicao" id="descricao">3 dias</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Fechamento:</label>
+                                <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
+                            </div>
+                        </div><!-- box-info-requisicao -->
+
+                    </div><!--div card-->
+
+
+                    <div class="card" id="oculta">
+                        <!-- Adiciona o ícone, título e botão ao título -->
+                        <span class="titulo-container" id="oculta">
+                            <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
+                            <h3>Smart - Itaim Bibi</h3>
+                            <div class="box-info-requisicao-btn">
+                                <div class="preco-container">
+                                    <span class="preco-texto">Valor:</span>
+                                    <span class="preco-valor">R$ 5.100,00</span>
+                                </div>
+                            </div>
+
+                            <div class="box-info-requisicao-btn">
+                                <span class="botao-orcamento">
+                                    <img class="icones" src="imgs/ico-budget-azul.png" alt="Ícone de ORÇAMENTO">
+                                    ORÇAMENTO
+                                </span>
+                            </div>
+                        </span>
+
+
+                        <div class="box-info-requisicao" id="oculta">
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="numero">Nº ID:</label>
+                                <span class="span-infos-requisicao" id="numero">019</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-m">
+                                <label for="empenho">Sigla Orçamento:</label>
+                                <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda2-m">
+                                <label for="empenho">Tipo:</label>
+                                <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="empenho">Revisão:</label>
+                                <span class="span-infos-requisicao" id="empenho">0</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="empenho">Itens:</label>
+                                <span class="span-infos-requisicao" id="empenho">24 itens</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Depto. Comercial:</label>
+                                <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Depto. Orçamento:</label>
+                                <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                            </div>
+
+                        </div><!--box info requisicao-->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="grupo">Nome do Cliente:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+
+                                <label for="grupo">Gestor Construtora:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Análise:</label>
+                                <span class="span-infos-requisicao" id="descricao">5 dias</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Aprovação:</label>
+                                <span class="span-infos-requisicao" id="descricao">2 dias</span>
+                            </div>
+                        </div><!-- box-info-requisicao -->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="grupo">Descrição do Orçamento:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição
+                                    detalhada</span>
+                            </div>
+
+                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+
+                                <label for="grupo">Gestor Cliente:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Reformulação:</label>
+                                <span class="span-infos-requisicao" id="descricao">3 dias</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Fechamento:</label>
+                                <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
+                            </div>
+                        </div><!-- box-info-requisicao -->
+
+                    </div><!--div card-->
+
+
+
+
+                    <div class="card" id="oculta">
+                        <!-- Adiciona o ícone, título e botão ao título -->
+                        <span class="titulo-container" id="oculta">
+                            <span class="sub-icones"><i class="fa-regular fa-pen-to-square"></i></span>
+                            <h3>SmartFit Anita Mall - Retrofit</h3>
+
+                            <div class="box-info-requisicao-btn">
+                                <div class="preco-container">
+                                    <span class="preco-texto">Valor:</span>
+                                    <span class="preco-valor">R$ 125.100,00</span>
+                                </div>
+                            </div>
+
+                            <div class="box-info-requisicao-btn">
+                                <span class="botao-aprovado">
+                                    <img class="icones" src="imgs/ico-aprovado-azul.png" alt="Ícone de APROVADO">
+                                    APROVADO
+                                </span>
+                            </div>
+
+                        </span>
+
+                        <div class="box-info-requisicao" id="oculta">
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="numero">Nº ID:</label>
+                                <span class="span-infos-requisicao" id="numero">019</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-m">
+                                <label for="empenho">Sigla Orçamento:</label>
+                                <span class="span-infos-requisicao" id="empenho">PART-GLAV</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda2-m">
+                                <label for="empenho">Tipo:</label>
+                                <span class="span-infos-requisicao" id="empenho">Obra Nova-Rua</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="empenho">Revisão:</label>
+                                <span class="span-infos-requisicao" id="empenho">0</span>
+                            </div>
+                            <div class="box-info-requisicao-borda2-p">
+                                <label for="empenho">Itens:</label>
+                                <span class="span-infos-requisicao" id="empenho">24 itens</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Depto. Comercial:</label>
+                                <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Depto. Orçamento:</label>
+                                <span class="span-infos-requisicao" id="descricao">24/02/2024</span>
+                            </div>
+
+                        </div><!--box info requisicao-->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="grupo">Nome do Cliente:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+
+                                <label for="grupo">Gestor Construtora:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Análise:</label>
+                                <span class="span-infos-requisicao" id="descricao">5 dias</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Aprovação:</label>
+                                <span class="span-infos-requisicao" id="descricao">2 dias</span>
+                            </div>
+                        </div><!-- box-info-requisicao -->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="grupo">Descrição do Orçamento:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Orçamento descrição
+                                    detalhada</span>
+                            </div>
+
+                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+
+                                <label for="grupo">Gestor Cliente:</label>
+                                <span class="span-infos-requisicao" id="nome-cliente"> Glauco Vicco</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Tempo Reformulação:</label>
+                                <span class="span-infos-requisicao" id="descricao">3 dias</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-m">
+                                <label for="descricao">Data Fechamento:</label>
+                                <span class="span-infos-requisicao" id="descricao">05/03/2024</span>
+                            </div>
+                        </div><!-- box-info-requisicao -->
+                    </div><!--div card-->
+
+                    <div class="col-md-6">
+                        <div class="dataTables_info" id="tab-9_info" role="status" aria-live="polite">Mostrada
+                            página 1 de 1</div>
                     </div>
-        </div><!--container desktop-->
+
+                </div><!--div cards-container-->
+
+            </div><!--div conteudo in-->
+        </div><!--div container desktop-->
+
+    </div><!--div conteudo-->
 
 
-        <!-- Modal de Filtro -->
-        <div id="filterModal" class="modal">
-            <div class="modal-envolto">
-                <div class="modal-content">
+    <!-- Ícone no footer -->
+    <div class="ico-subir-footer" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    </div><!--container desktop-->
 
-                    <span class="close" onclick="closeFilterModal()">&times;</span>
-                    <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
 
-                    <div class="modal-wrap">
-                        <!-- Tabela de Filtros -->
-                        <div class="filtro-tabela">
+    <!-- Modal de Filtro -->
+    <div id="filterModal" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
 
-                            <!-- Primeira Coluna -->
-                            <div class="filtro-coluna">
-                                <h3>Data Inicial:</h3>
-                                <input type="date" id="dataInicial">
+                <span class="close" onclick="closeFilterModal()">&times;</span>
+                <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
 
-                                <h3>Tipo:</h3>
-                                <label>
-                                    <input type="checkbox" id="tipoRequisicao"> Requisições
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="tipoReembolso"> Reembolsos
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                                </label>
-                            </div>
+                <div class="modal-wrap">
+                    <!-- Tabela de Filtros -->
+                    <div class="filtro-tabela">
 
-                            <!-- Segunda Coluna -->
-                            <div class="filtro-coluna">
-                                <h3>Data Final:</h3>
-                                <input type="date" id="dataFinal">
-                            </div>
+                        <!-- Primeira Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Data Inicial:</h3>
+                            <input type="date" id="dataInicial">
 
-                            <!-- Terceira Coluna -->
-                            <div class="filtro-coluna">
-                                <h3>Status da Requisição:</h3>
-                                <label>
-                                    <input type="checkbox" id="statusAberta"> Aberta
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusCotacao"> Cotação
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusAprovacao"> Aprovação
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusReprovado"> Reprovado
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusPagamento"> Pagamento
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusComprada"> Comprada
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusEntregue"> Entregue
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusCancelada"> Cancelada
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusRecusada"> Recusada
-                                </label>
-                            </div>
-
-                            <!-- Quarta Coluna -->
-                            <div class="filtro-coluna">
-                                <h3>Obras:</h3>
-                                <label>
-                                    <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                                </label>
-
-                                <ul>
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
-                                            (financeiro e
-                                            rh)
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-
+                            <h3>Tipo:</h3>
+                            <label>
+                                <input type="checkbox" id="tipoRequisicao"> Requisições
+                            </label>
+                            <label>
+                                <input type="checkbox" id="tipoReembolso"> Reembolsos
+                            </label>
+                            <label>
+                                <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                            </label>
                         </div>
 
-                        <!-- Botões de Ação -->
-
-                        <div class="linha subsub-botoes">
-                            <div>
-                                <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img src="imgs/sub-icone-filtro.png"></button>
-                                <label for="sal_r">Filtrar</label>
-                            </div>
-    
-                            <div>
-                                <button type="submit" id="cancel" class="sub-icones" name="limpar"><img src="imgs/sub-icone-limpar.png"></button>
-                                <label for="cancel">Limpar</label>
-                            </div>
+                        <!-- Segunda Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Data Final:</h3>
+                            <input type="date" id="dataFinal">
                         </div>
-                       
-                    </div><!--modal wrap-->
 
-                </div><!--div modal content-->
-            </div><!--modal envolto-->
-        </div><!--div filter modal-->
+                        <!-- Terceira Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Status da Requisição:</h3>
+                            <label>
+                                <input type="checkbox" id="statusAberta"> Aberta
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusCotacao"> Cotação
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusAprovacao"> Aprovação
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusReprovado"> Reprovado
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusPagamento"> Pagamento
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusComprada"> Comprada
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusEntregue"> Entregue
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusCancelada"> Cancelada
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusRecusada"> Recusada
+                            </label>
+                        </div>
 
-        <script>
-            // Função para rolar até o topo da página
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' // Para fazer uma rolagem suave
+                        <!-- Quarta Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Obras:</h3>
+                            <label>
+                                <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                            </label>
+
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
+                                        (financeiro e
+                                        rh)
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Botões de Ação -->
+
+                    <div class="linha subsub-botoes">
+                        <div>
+                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
+                                    src="imgs/sub-icone-filtro.png"></button>
+                            <label for="sal_r">Filtrar</label>
+                        </div>
+
+                        <div>
+                            <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
+                                    src="imgs/sub-icone-limpar.png"></button>
+                            <label for="cancel">Limpar</label>
+                        </div>
+                    </div>
+
+                </div><!--modal wrap-->
+
+            </div><!--div modal content-->
+        </div><!--modal envolto-->
+    </div><!--div filter modal-->
+
+    <script>
+        // Função para rolar até o topo da página
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para fazer uma rolagem suave
+            });
+        }
+    </script>
+
+
+
+<!--CLIQUE NAS LINHAS DA TABELA -->
+<script>
+    // Função para mostrar o aviso
+    function mostrarAviso() {
+        // Verificar se a popup já está aberta
+        if (!document.querySelector('.aviso-aberto')) {
+            alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
+            // Adicionar classe para indicar que a popup está aberta
+            document.body.classList.add('aviso-aberto');
+        }
+    }
+
+    // Vincular a função ao evento de clique da linha da tabela
+    document.addEventListener("DOMContentLoaded", function() {
+        var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
+        linhasTabela.forEach(function(linha) {
+            linha.addEventListener("click", mostrarAviso);
+            linha.addEventListener("mouseover", function() {
+                this.classList.add('destaque-mouseover');
+            });
+            linha.addEventListener("mouseout", function() {
+                this.classList.remove('destaque-mouseover');
+                // Reaplicar as regras de alternância de cores
+                var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
+                linhas.forEach(function(linha, indice) {
+                    if (indice % 2 === 0) {
+                        linha.style.backgroundColor = "#f2f2f2";
+                    } else {
+                        linha.style.backgroundColor = "#ffffff";
+                    }
                 });
-            }
-        </script>
+            });
+        });
+    });
+</script>
 
 
-
-        <script src="filtro-req.js"></script>
+    <script src="filtro-plan.js"></script>
 </body>
 
 </html>

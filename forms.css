@@ -16,6 +16,7 @@ select {
     font-family: 'Lato', sans-serif;
 }
 
+
 .cinza-claro {    
     border: 1px solid #ccc; 
     background-color: #e7e7e7;
@@ -27,6 +28,23 @@ select {
     border-radius: 10px;
 }
 .cinza-escuro {    
+    border: 1px solid #ccc; 
+    background-color: #cecece;
+    border-radius: 10px;
+}
+
+
+.table-ficha .cinza-claro {    
+    border: 1px solid #ccc; 
+    background-color: #e7e7e7;
+    border-radius: 10px;
+}
+.table-ficha .cinza-medio {    
+    border: 1px solid #ccc; 
+    background-color: #dbdbdb;
+    border-radius: 10px;
+}
+.table-ficha .cinza-escuro {    
     border: 1px solid #ccc; 
     background-color: #cecece;
     border-radius: 10px;
@@ -92,12 +110,11 @@ select {
 .align-left {
     display: flex;
     justify-content: flex-start;
-    width: 100%;
 }
 
 .align-center {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
 }
 
@@ -108,6 +125,8 @@ select {
     width: 100%;
     padding-right: 10px;
 }
+
+
 
 /*Estilo para tabela de visualização de requisições*/
 .table-striped-custom tbody tr:nth-child(odd) td:nth-child(odd) {
@@ -135,42 +154,127 @@ select {
     color: white;
 }
 
-.box-info-requisicao-btn .botao-pre-compra {
-    background-color: #79C14E;
-    text-shadow: 1px 1px #356619;
-    color: white;
-    padding: 7px 10px 6px 20px;
-    border: none;
-    border-radius: 5px;
-}
 
-.box-info-requisicao-btn .botao-pagamento {
-    background-color: rgb(187, 2, 144);
-    text-shadow: 1px 1px #550135;
-    color: white;
-    padding: 8px 10px 8px 20px;
-    border: none;
-    border-radius: 5px;
-}
+    /* Estilos para os status */
+    .box-info-requisicao-btn .botao-pre-compra {
+        background-color: #79C14E;
+        text-shadow: 1px 1px #356619;
+        color: white;
+        padding: 7px 10px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
-.box-info-requisicao-btn .botao-cotacao {
-    background-color: orangered;
-    text-shadow: 1px 1px rgb(118, 31, 0);
-    color: white;
-    padding: 8px 25px 8px 25px;
-    border: none;
-    border-radius: 5px;
-}
+    .box-info-requisicao-btn .botao-pagamento {
+        background-color: rgb(187, 2, 144);
+        text-shadow: 1px 1px #550135;
+        color: white;
+        padding: 7px 10px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
+    .box-info-requisicao-btn .botao-cotacao {
+        background-color: orangered;
+        text-shadow: 1px 1px rgb(118, 31, 0);
+        color: white;
+        padding: 7px 15px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
-.box-info-requisicao-btn .botao-analise {
-    background-color: #a82de5;
-    text-shadow: 1px 1px rgb(113, 0, 136);
-    color: white;
-    padding: 8px 25px 8px 35px;
-    border: none;
-    border-radius: 5px;
-}
+    .box-info-requisicao-btn .botao-cancelada {
+        background-color: rgb(214, 0, 0);
+        text-shadow: 1px 1px rgb(91, 0, 0);
+        color: white;
+        padding: 7px 10px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
+
+    .box-info-requisicao-btn .botao-aprovacao {
+        background-color: rgb(12, 204, 175);
+        text-shadow: 1px 1px rgb(1, 66, 67);
+        color: white;
+        padding: 7px 10px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
+    
+    .box-info-requisicao-btn .botao-aprovado {
+        background-color: #579531;
+        text-shadow: 1px 1px #356619;
+        color: white;
+        padding: 7px 10px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
+
+    .box-info-requisicao-btn .botao-analise {
+        background-color: #ff973c;
+        text-shadow: 1px 1px #9f6d41;
+        color: white;
+        padding: 7px 10px 6px 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
+
+    .box-info-requisicao-btn .botao-orcamento {
+        background-color: #ffc416;
+        text-shadow: 1px 1px #b58d16;
+        color: white;
+        padding: 7px 10px 6px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+    }
 
 .box-info-requisicao-btn .botao-conversao {
     background-color: #01e8a7;
@@ -200,37 +304,14 @@ select {
     border-radius: 5px;
 }
 
-/* Estilo para ícones */
-.box-info-requisicao-btn .icones {
-    position: absolute;
-    left: -15%;
-    margin-top: 10px;
-    transform: translateY(-50%);
-    z-index: 1;
-    width: 40px;
-}
-
 .space-btn {
-    max-width: 10%;
+    max-width: 20%;
 }
 .space-btn img {
     width: 20px;
     height: 30;
     border: 0;
 }
-.box-info-requisicao-btn {
-    display: inline-block;
-    vertical-align: top;
-    /* Alinha verticalmente com as outras divs */
-    font-size: 14px;
-    color: white;
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-    margin: 10px 0 0 10px;
-    top: 10%;
-}
-
 
 
 .label-input-container {
@@ -252,6 +333,7 @@ select {
     border-radius: 10px;
     padding: 20px; 
 }
+.sidebar-form h3 {color: #333; font-size: 28px; margin: 0; font-family: 'Lato' sans-serif;}
 
 @media (max-width: 768px) {
 

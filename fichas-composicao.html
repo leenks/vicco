@@ -53,18 +53,18 @@
 
             <div class="caixa-menu2">
                 <div class="menu-item2">
-                    <a href="nova-requisicao.html"><img src="imgs/ico-budget.png" alt="Orçamentos">
+                    <a href="#"><img src="imgs/ico-budget.png" alt="Orçamentos">
                         <p>Orçamentos</p>
                     </a>
                 </div>
                 <div class="menu-item2">
-                    <a href="novo-reembolso.html"><img src="imgs/ico-mapa-quant.png" alt="Mapa">
+                    <a href="#"><img src="imgs/ico-mapa-quant.png" alt="Mapa">
                         <p>Mapa Quantitativo</p>
                     </a>
                 </div>
 
                 <div class="menu-item2">
-                    <a href="nova-cotacao.html"><img src="imgs/ico-cadastros.png" alt="Cadastros">
+                    <a href="#"><img src="imgs/ico-cadastros.png" alt="Cadastros">
                         <p>Cadastros</p>
                     </a>
                 </div>
@@ -218,11 +218,11 @@
                             <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
                                 <form name="" action="#" method="POST">
                                     <!-- Botão para abrir novo bloco -->
-                                    <button type="button" id="btnNovoBloco" class="sub-icones"
-                                        title="Adicionar Novo Bloco" onclick="adicionarNovoBloco()">
+                                    <button type="button" id="btnNovoBlocoClaro" class="sub-icones" title="Adicionar Novo Bloco de Serviços" onclick="adicionarNovoBloco('cinza-claro')">
                                         <i class="fa-regular fa-square-plus"></i>
                                         <label>Novo</label>
                                     </button>
+                                    
 
                                 </form>
                             </div><!--col md1-->
@@ -257,18 +257,17 @@
                                 <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
                                     value="" />
                             </div>
-                        </div><!--form row cinza medio-->
+                        </div><!--form row cinza claro-->
 
                         <div class="form-row cinza-medio" style="padding-bottom: 15px;">
                             <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
                                 <form name="" action="#" method="POST">
                                     <!-- Botão para abrir novo bloco -->
-                                    <button type="button" id="btnNovoBloco" class="sub-icones"
-                                        title="Adicionar Novo Bloco" onclick="adicionarNovoBloco()">
+                                    <button type="button" id="btnNovoBlocoMedio" class="sub-icones" title="Adicionar Novo Bloco de Materiais" onclick="adicionarNovoBloco('cinza-medio')">
                                         <i class="fa-regular fa-square-plus"></i>
                                         <label>Novo</label>
                                     </button>
-
+                                    
                                 </form>
                             </div><!--col md1-->
 
@@ -308,16 +307,14 @@
                             <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
                                 <form name="" action="#" method="POST">
                                     <!-- Botão para abrir novo bloco -->
-                                    <button type="button" id="btnNovoBloco" class="sub-icones"
-                                        title="Adicionar Novo Bloco" onclick="adicionarNovoBloco()">
+                                    <button type="button" id="btnNovoBlocoEscuro" class="sub-icones" title="Adicionar Novo Bloco de Equipamentos" onclick="adicionarNovoBloco('cinza-escuro')">
                                         <i class="fa-regular fa-square-plus"></i>
                                         <label>Novo</label>
                                     </button>
+                                    
 
                                 </form>
                             </div><!--col md1-->
-
-                            <!--AO CLICAR NO BOTÃO ACIMA DO SEGUNDO FORM-ROW ADICIONE OS CAMPOS AQUI -->
 
                             <div class="col-md-1">
                                 <label>Código</label>
@@ -349,42 +346,108 @@
                                 <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
                                     value="" />
                             </div>
-                        </div><!--form row cinza medio-->
+                        </div><!--form row cinza escuro-->
+
+                        <div id="lis_i" class="col-md-12  p-0">
+                            <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+
+                                <div class="overflow-auto" style="max-width: 100vw;">
+                                    
+                                    <div class="tab-1 table-responsive form-row-table">
+                                        <table id="tab-2">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th width="3%">Excluir</th>
+                                                    <th>Seq.</th>
+                                                    <th>Tipo</th>
+                                                    <th>Cód.</th>
+                                                    <th>Descrição do Item</th>
+                                                    <th>Unid.</th>
+                                                    <th>Quant.</th>
+                                                    <th>R$ Unit.</th>
+                                                    <th>R$ Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-row align-center">
+
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                            class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                </div>
+
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
+                                        title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
+                                            class="fa-regular fa-rectangle-xmark"></i><label>Fechar</label></button>
+                                </div>
+                            </div>
+                        </div>
 
                     </div><!--div form-content-->
 
-                    <div id="lis_i" class="col-md-12  p-0">
-                        <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
 
-                            <div class="overflow-auto" style="max-width: 90vw;">
-                                <div class="tab-1 table-responsive form-row-table">
-                                    <table id="tab-2" class="table table-sm table-striped table-bordered">
-                                        <thead class="thead-light">
+                                <!-- tabela para desktop-->
+                                <div class="cards-container modo-simples2" id="conteudoModoSimples2" style="display: block;">
+
+                                    <table class="table-requisicoes">
+    
+                                <thead>
                                             <tr>
-                                                <th width="3%">Excluir</th>
-                                                <th>Tipo</th>
-                                                <th class="text-center">Cód.</th>
-                                                <th>Descrição do Item</th>
-                                                <th>Unid.</th>
-                                                <th class="text-center">Quant.</th>
-                                                <th class="text-center">R$ Unit.</th>
-                                                <th class="text-center">R$ Total</th>
+                                                <th>Nº Ficha</th>
+                                                <th>Grupo</th>
+                                                <th>Descrição Atividade/Serviço</th>
+                                                <th>Valor Material</th>
+                                                <th>Valor Mão-de-Obra</th>
+                                                <th>Custo Final</th>
+                                                <th>Itens</th>
+                                                <th>Data da Revisão</th>
+                                                <th>Status</th>
                                             </tr>
+
                                         </thead>
                                         <tbody>
+                                            <tr onclick="window.location.href='visu-ficha-comp.html';" onmouseover="this.style.backgroundColor='#d3ecff';" onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;">
+                                                <td>6513</td>
+                                                <td>11-Instalações Hidráulicas</td>
+                                                <td  style="text-align: justify;">2.8.6.1 - Bacia Sanitária para deficientes - DECA Linha Confort,
+                                                    Vogue PLUS, S/ ABERT - Mod. P510, (195)</td>
+                                                <td>749,54</td>
+                                                <td>901,50</td>
+                                                <td>1.442,80</td>
+                                                <td>6</td>
+                                                <td>***</td>
+                                                <td>botãozinho de status</td>
+                                            </tr>
+                                            <tr onclick="window.location.href='visu-ficha-comp.html';" onmouseover="this.style.backgroundColor='#d3ecff';" onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;">
+                                                <td>6513</td>
+                                                <td>11-Instalações Hidráulicas</td>
+                                                <td  style="text-align: justify;">2.8.6.1 - Bacia Sanitária para deficientes - DECA Linha Confort,
+                                                    Vogue PLUS, S/ ABERT - Mod. P510, (195)</td>
+                                                <td>749,54</td>
+                                                <td>901,50</td>
+                                                <td>1.442,80</td>
+                                                <td>6</td>
+                                                <td>***</td>
+                                                <td>botãozinho de status</td>
+                                            </tr>
 
                                         </tbody>
                                     </table>
 
                                     <div class="dataTables_paginate paging_simple_numbers" id="tab-2_paginate">
-                                        <a class="paginate_button previous disabled" aria-controls="tab-2"
-                                            data-dt-idx="0" tabindex="0" id="tab-2_previous">Anterior</a>
-                                        <span></span>
-                                        <a class="paginate_button next disabled" aria-controls="tab-2" data-dt-idx="1"
-                                            tabindex="0" id="tab-2_next">Próximo</a>
+
                                     </div>
-                                </div>
-                            </div>
+
 
                         </div><!--tab-2 wrapper-->
                     </div><!--#lis-cold-md-->
@@ -406,26 +469,30 @@
                     });
                 });
             </script>
+            
             <script>
-                function adicionarNovoBloco() {
+                // Função para adicionar um novo bloco com base no tipo de botão clicado
+                function adicionarNovoBloco(tipo) {
+                    // Seleciona o bloco correspondente ao tipo de botão clicado
+                    var blocoExistente = document.querySelector('.form-row.' + tipo);
+            
                     // Clona o bloco existente
-                    var blocoExistente = document.querySelector('.form-row.cinza-medio');
                     var novoBloco = blocoExistente.cloneNode(true);
-
+            
                     // Limpa os valores dos campos no novo bloco
                     var inputs = novoBloco.querySelectorAll('input[type="text"]');
                     inputs.forEach(function (input) {
                         input.value = '';
                     });
-
+            
                     // Encontra o elemento pai do bloco existente
                     var container = blocoExistente.parentElement;
-
+            
                     // Adiciona o novo bloco logo após o bloco existente
-                    container.appendChild(novoBloco);
+                    container.insertBefore(novoBloco, blocoExistente.nextSibling);
                 }
-
             </script>
+            
 
 
             <script>
@@ -442,56 +509,53 @@
 
 
             <script>
-                $(document).ready(function () {
-                    // Monitora as mudanças no estado do checkbox
-                    $('#check_sub').change(function () {
-                        // Se o checkbox estiver selecionado
-                        if ($(this).is(':checked')) {
-                            // Desativa os campos "Grupo" e "Sub-Grupo"
-                            $('#gru').prop('disabled', true);
-                            $('#sub').prop('disabled', true);
-                        } else {
-                            // Caso contrário, habilita os campos "Grupo" e "Sub-Grupo"
-                            $('#gru').prop('disabled', false);
-                            $('#sub').prop('disabled', false);
-                        }
-                    });
-                });
-            </script>
-
-
-            <script>
                 function goBack() {
                     window.history.back();
                 }
             </script>
-
-            <!--FUNCAO PARA ILUSTRAR COMO VAI SER O DINAMISMO DA ADIÇÃO NA TABELA-->
-            <script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Seleciona todos os campos de entrada
-        var inputs = document.querySelectorAll('.form-row input');
+        var sequencia = 1; // Variável para controlar a sequência numérica
 
-        // Adiciona evento de teclado a cada campo de entrada
+        // Função para adicionar eventos de teclado aos campos de entrada de cada bloco
+        function adicionarEventosTeclado(bloco) {
+            var inputs = bloco.querySelectorAll('input');
+            inputs.forEach(function (input) {
+                input.addEventListener('keyup', function (event) {
+                    if (event.key === 'Enter') {
+                        var codigo = bloco.querySelector('.col-md-1 input').value;
+                        var descricao = bloco.querySelector('.col-md-6 input').value;
+                        var unidade = bloco.querySelector('.col-md-1 input').value;
+                        var preco = bloco.querySelector('.col-md-1 input').value;
+                        var indice = bloco.querySelector('.col-md-1 input').value;
+                        var valor = bloco.querySelector('.col-md-2 input').value;
+                        var corDeFundo = bloco.classList[1];
+
+                        adicionarNaTabela(codigo, descricao, unidade, preco, indice, valor, corDeFundo);
+
+                        inputs.forEach(function (input) {
+                            input.value = '';
+                        });
+                    }
+                });
+            });
+        }
+
+        // Adiciona eventos de teclado aos campos de entrada dos blocos existentes
+        var inputs = document.querySelectorAll('.form-row input');
         inputs.forEach(function (input) {
             input.addEventListener('keyup', function (event) {
-                // Verifica se a tecla pressionada é "Enter"
                 if (event.key === 'Enter') {
-                    // Coleta os valores dos campos da linha atual
                     var codigo = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
                     var descricao = this.parentNode.parentNode.querySelector('.col-md-6 input').value;
                     var unidade = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
                     var preco = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
                     var indice = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
                     var valor = this.parentNode.parentNode.querySelector('.col-md-2 input').value;
+                    var corDeFundo = this.parentNode.parentNode.classList[1];
 
-                    // Determina a classe de cor de fundo da linha
-                    var corDeFundo = this.parentNode.parentNode.classList[1]; // Obtém a segunda classe da div pai (que corresponde à cor de fundo)
-
-                    // Adiciona os valores coletados à tabela
                     adicionarNaTabela(codigo, descricao, unidade, preco, indice, valor, corDeFundo);
 
-                    // Limpa os campos de entrada
                     this.parentNode.parentNode.querySelectorAll('input').forEach(function (input) {
                         input.value = '';
                     });
@@ -501,44 +565,64 @@
 
         // Função para adicionar os valores à tabela
         function adicionarNaTabela(codigo, descricao, unidade, preco, indice, valor, corDeFundo) {
-            // Seleciona a tabela
             var tabela = document.getElementById('tab-2').getElementsByTagName('tbody')[0];
-
-            // Cria uma nova linha na tabela
             var novaLinha = tabela.insertRow();
-
-            // Aplica a classe de cor de fundo à nova linha
             novaLinha.classList.add(corDeFundo);
 
-            // Insere as células com os valores
             var cellExcluir = novaLinha.insertCell(0);
-            var cellTipo = novaLinha.insertCell(1);
-            var cellCodigo = novaLinha.insertCell(2);
-            var cellDescricao = novaLinha.insertCell(3);
-            var cellUnidade = novaLinha.insertCell(4);
-            var cellQuantidade = novaLinha.insertCell(5);
-            var cellPrecoUnitario = novaLinha.insertCell(6);
-            var cellPrecoTotal = novaLinha.insertCell(7);
+            var cellSequencia = novaLinha.insertCell(1);
+            var cellTipo = novaLinha.insertCell(2);
+            var cellCodigo = novaLinha.insertCell(3);
+            var cellDescricao = novaLinha.insertCell(4);
+            var cellUnidade = novaLinha.insertCell(5);
+            var cellQuantidade = novaLinha.insertCell(6);
+            var cellPrecoUnitario = novaLinha.insertCell(7);
+            var cellPrecoTotal = novaLinha.insertCell(8);
 
-            // Insere os valores nas células
             cellExcluir.innerHTML = '<button type="button" class="btn btn-danger btn-sm" onclick="excluirLinha(this)">Excluir</button>';
-            cellTipo.innerHTML = ''; // Aqui você pode inserir o tipo conforme necessário
-            cellCodigo.innerHTML = codigo;
-            cellDescricao.innerHTML = descricao;
-            cellUnidade.innerHTML = unidade;
-            cellQuantidade.innerHTML = ''; // Aqui você pode inserir a quantidade conforme necessário
-            cellPrecoUnitario.innerHTML = preco;
-            cellPrecoTotal.innerHTML = ''; // Aqui você pode inserir o preço total conforme necessário
+            cellSequencia.textContent = sequencia++;
+            cellTipo.textContent = determinarTipo(corDeFundo);
+            cellCodigo.textContent = codigo;
+            cellDescricao.textContent = descricao;
+            cellUnidade.textContent = unidade;
+            cellQuantidade.textContent = '';
+            cellPrecoUnitario.textContent = preco;
+            cellPrecoTotal.textContent = '';
         }
-        
+
+        // Função para determinar o tipo com base na cor de fundo
+        function determinarTipo(corDeFundo) {
+            if (corDeFundo === 'cinza-claro') {
+                return 'Serviços';
+            } else if (corDeFundo === 'cinza-medio') {
+                return 'Materiais';
+            } else if (corDeFundo === 'cinza-escuro') {
+                return 'Equipamentos';
+            } else {
+                return '';
+            }
+        }
+
         // Função para excluir a linha
         function excluirLinha(botao) {
             var linha = botao.parentNode.parentNode;
             linha.parentNode.removeChild(linha);
         }
+
+        // Adiciona eventos de teclado aos campos de entrada dos blocos recém-adicionados
+        var botoesNovoBloco = document.querySelectorAll('.sub-icones');
+        botoesNovoBloco.forEach(function (botao) {
+            botao.addEventListener('click', function () {
+                var tipo = this.parentNode.parentNode.classList[1];
+                var blocoExistente = document.querySelector('.form-row.' + tipo);
+                var novoBloco = blocoExistente.cloneNode(true);
+                var container = blocoExistente.parentElement;
+                container.insertBefore(novoBloco, blocoExistente.nextSibling);
+                adicionarEventosTeclado(novoBloco); // Adiciona eventos de teclado ao novo bloco
+            });
+        });
     });
 </script>
-
 
 </body>
 

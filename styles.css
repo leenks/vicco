@@ -61,7 +61,7 @@ background-color: #ffffff;
 
 .container-desktop {
     width: 100%;
-    max-width: 960px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
@@ -334,6 +334,7 @@ background-color: #ffffff;
 .conteudo span {
     font-size: 11px;
     color: #444;
+    font-family: 'Lato' sans-serif;
 }
 
 .conteudo a {
@@ -457,7 +458,7 @@ color: #444;
     position: relative;
     background-color: #efefef;
     padding: 1px 20px;
-    max-width: 960px;
+    max-width: 1024px;
     margin: 2% auto;
 }
 .modal-wrap {
@@ -468,7 +469,7 @@ color: #444;
     position: relative;
     background-color: #f5f5f5;
     margin: 2% auto;
-    max-width: 960px;
+    max-width: 1024px;
     border-radius: 10px;
     border: 3px solid #f47332;
 }
@@ -920,6 +921,7 @@ color: #444;
 .sub-icones i {
     color: #ff842a;
     background: transparent;
+    border: 0;
 }
 
 .sub-icones i:hover {
@@ -943,6 +945,12 @@ color: #444;
     margin-top: 10px;
     font-size: 12px;
 }
+
+#tab-2.table-ficha tr,
+#tab-2.table-ficha td {
+    /* Estilos da nova tabela */
+}
+
 
 /*CATEGORIAS RETRATIL*/
 
@@ -1407,7 +1415,7 @@ color: #444;
     margin: 5px;
     color: #444;
     font-family: 'Lato', 'sans-serif';
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .ico-subir-footer {
