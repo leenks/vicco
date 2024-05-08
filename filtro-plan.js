@@ -40,8 +40,8 @@ function alterarModo() {
 function atualizarModoExibicao() {
     const cardsContainer = document.querySelector('.cards-container');
     const iconElement = document.getElementById('modo-icon');
-    const conteudoModoSimples2 = document.getElementById('conteudoModoSimples2');
-    const conteudoModoSimples = document.querySelector('.conteudo-in');
+    const conteudoModoSimples2 = document.getElementById('mobile-conteudoModoSimples2');
+    const conteudoIn = document.getElementById('conteudo-in');
 
     // Remove todas as classes de modo
     cardsContainer.classList.remove('modo-simples2');
@@ -51,16 +51,15 @@ function atualizarModoExibicao() {
         cardsContainer.classList.add('modo-simples2');
         iconElement.classList.remove('fa-th-large');
         iconElement.classList.add('fa-th-list');
-        conteudoModoSimples2.style.display = 'block'; // Exibe a tabela
-        conteudoModoSimples.style.display = 'none'; // Oculta o conteúdo abaixo da tabela
+        conteudoModoSimples2.classList.add('ocultar'); // Oculta a tabela móvel
     } else {
-        cardsContainer.classList.remove('modo-simples2'); // Remover outras classes se estiverem presentes
-        iconElement.classList.remove('fa-th-list'); // Remover outras classes se estiverem presentes
-        iconElement.classList.add('fa-th-large'); // Adiciona a classe do ícone padrão
-        conteudoModoSimples2.style.display = 'none'; // Ocultar a tabela
-        conteudoModoSimples.style.display = 'block'; // Exibir o conteúdo abaixo da tabela
+        cardsContainer.classList.remove('modo-simples2');
+        iconElement.classList.remove('fa-th-list');
+        iconElement.classList.add('fa-th-large');
+        conteudoModoSimples2.classList.remove('ocultar'); // Garante que a tabela móvel esteja visível
     }
 }
+
 
 // Verifica se o dispositivo é um dispositivo móvel
 function isMobileDevice() {

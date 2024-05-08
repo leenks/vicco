@@ -81,8 +81,12 @@
                         <span>FICHAS DE COMPOSIÇÃO</span>
                     </div>
 
+                     
+                    </div>
+
                     <div class="conteudo-in">
                         <h2>Fichas de Composição</h2>
+
 
                         <!-- Botão para abrir a criação de ficha -->
                         <button type="button" id="btnAbrirNovo" class="sub-icones" title="Abrir Nova Ficha">
@@ -91,6 +95,7 @@
                         </button>
                     </div>
 
+                    
                     <!-- criar ficha oculto -->
                     <div class="form-content" style="display: none;">
                         <div class="col-md-7">
@@ -395,8 +400,40 @@
 
                     </div><!--div form-content-->
 
+                    <div class="form-content2">
+                        
+                        <div class="col-md-12">
+                            <div class="form-row">
+                                <div class="col-md-4">
+                                    <label>Atividade: </label>
+                                    <input type="text" class="form-control text-center"  id="inputBusca" placeholder=" ">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Grupo:</label>
+                                    <input type="text" class="form-control text-center" id="inputBusca" placeholder="">
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Status</label>
+                                    <select id="status" name="status" class="form-control text-center">
+                                        <option value="status_pronto">Todos</option>
+                                        <option>Lançamento</option>
+                                        <option>Pronta</option>
+                                        <option>Aprovada</option>
+                                        <option>Suspensa</option>
+                                        <option>Cancelada</option>
+                                    </select>
+                                    
+                                </div>
+                                
+                                <div class="col-md-2" style="padding-top: 20px;">
+                                    <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
 
-                                <!-- tabela para desktop-->
+
+                                <!-- tabela para desktop--> 
                                 <div class="cards-container modo-simples2" id="conteudoModoSimples2" style="display: block;">
 
                                     <table class="table-requisicoes">

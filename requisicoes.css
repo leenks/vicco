@@ -1297,7 +1297,6 @@
             margin-bottom: 10px;
             max-width: 100%;
             overflow-x: auto;
-            min-width: 380px;
         }
 
         #mobile-conteudoModoSimples2 .table-requisicoes td {
@@ -1357,20 +1356,7 @@
             justify-content: flex-start;
             margin: 5px 0;
             padding: 2px;
-        }
-
-        .filtros-selecionados span {
-            background-color: #79C14E;
-            color: white;
-            border-radius: 5px;
-            padding: 5px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            font-size: 10px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            /* Adiciona cursor para indicar que é clicável */
+            font-size: 9px;
         }
 
         .filtros-selecionados span:hover {
@@ -1382,11 +1368,13 @@
             background-color: #fff;
             border-radius: 5px;
             border: 1px solid #444;
-            font-size: 10px;
+            font-size: 9px;
             margin: 2px 0;
         }
         .busca {display: flex;}
         .busca input {max-width: 100px;}
+        .busca button {width: 68px;}
+        .wrap-toggle button {font-size: 10px;}
 
         .wrap-toggle {
             align-items: start;
