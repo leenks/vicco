@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="requisicoes.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vicco Construtora</title>
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+            <center><img class="status" src="imgs/icons-status/08.png" /></center>
+
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">TODAS AS OBRAS</a>
+                        <span> > </span>
+                        <a href="#">SUPRIMENTOS</a>
+                    </div>
+
+                    <!--Filtros e Visualizção modos-->
+                    <div class="wrap-toggle">
+
+                        <div class="toggle-container2">
+                            <button onclick="openFilterModal(); updateFilterDisplay();">
+                                <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
+                            </button>
+                            <div class="filtros-selecionados">
+                                <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
+                                <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                            </div>
+                        </div>
+
+                        <div class="toggle-container2">
+                            <div class="busca">
+                                <input type="text" id="inputBusca" placeholder="Digite aqui">
+                                <button onclick="buscar()"> <span id="modo-icon"
+                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="conteudo-in">
+                        <h2>Requisições</h2>
+
+                        <h3>Requisição de Compra - SMART FIT - PIRITUBA 2</h3>
+
+                        <div class="box-info-requisicao" id="oculta">
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="contrato">Cliente:</label>
+                                <span class="span-infos-requisicao" id="cliente">Smart Fit Pirituba</span>
+                            </div>
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="contrato">Obra:</label>
+                                <span class="span-infos-requisicao" id="obra">Smart Fit Pirituba</span>
+                            </div>
+                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                <label for="contrato">Solicitante:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda-g" id="oculta">
+                                <label for="contrato">Data do Cadastro:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
+                        </div><!--box info requisicao-->
+
+                        <div class="box-info-requisicao" id="oculta">
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="contrato">Cnpj: :</label>
+                                <span class="span-infos-requisicao" id="cliente">13.552.726/0001-89</span>
+                            </div>
+                            <div class="box-info-requisicao-cinza-metade" id="oculta">
+                                <label for="contrato">Inscrição Est:</label>
+                                <span class="span-infos-requisicao" id="obra">...</span>
+                            </div>
+                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                                <label for="contrato">Tipo de Requisição:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Reembolso / Obra</span>
+                            </div>
+
+                            <div class="box-info-requisicao-borda-g" id="oculta">
+                                <label for="contrato">Data da Cotação:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
+                        </div><!--box info requisicao-->
+
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade-g" id="oculta">
+                                <label for="contrato">Descrição:</label>
+                                <span class="span-infos-requisicao" id="cliente">Material para cobertura da área técnica</span>
+                            </div>
+                            <div class="box-info-requisicao-cinza-metade-g" id="oculta">
+                                <label for="contrato">Observação:</label>
+                                <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor siamet</span>
+                            </div>
+
+                           <div class="box-info-requisicao-borda-g" id="oculta">
+                                <label for="contrato">Data da Aprovação:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
+
+                        </div><!-- box-info-requisicao -->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade-m" id="oculta">
+                                <label for="contrato">Grupo:</label>
+                                <span class="span-infos-requisicao" id="cliente">20 - Serralheria</span>
+                            </div>
+                            <div class="box-info-requisicao-cinza-metade-m" id="oculta">
+                                <label for="contrato">Sub-Grupo:</label>
+                                <span class="span-infos-requisicao" id="obra">Coberturas</span>
+                            </div>
+
+                           <div class="box-info-requisicao-borda-g" id="oculta">
+                                <label for="contrato">Data do Cadastro:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
+
+                        </div><!-- box-info-requisicao -->
+
+                        <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-borda-g" id="oculta">
+                                <label for="contrato">Data de Compra:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-g" id="oculta">
+                                <label for="contrato">Data de Entrega:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
+                            <div class="box-info-requisicao-borda-g" id="oculta">
+                                <label for="contrato">Data de Pagamento:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</Data de Compra:
+                        </div><!-- box-info-requisicao -->
+
+
+                    </div><!--div card-->
+
+
+
+                </div><!--div cards-container-->
+
+            </div><!--div conteudo in-->
+        </div><!--div container desktop-->
+
+    </div><!--div conteudo-->
+
+
+    <!-- Ícone no footer -->
+    <div class="ico-subir-footer" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    </div><!--container desktop-->
+
+
+    <!-- Modal de Filtro -->
+    <div id="filterModal" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+
+                <span class="close" onclick="closeFilterModal()">&times;</span>
+                <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
+
+                <div class="modal-wrap">
+                    <!-- Tabela de Filtros -->
+                    <div class="filtro-tabela">
+
+                        <!-- Primeira Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Data Inicial:</h3>
+                            <input type="date" id="dataInicial">
+
+                            <h3>Tipo:</h3>
+                            <label>
+                                <input type="checkbox" id="tipoRequisicao"> Requisições
+                            </label>
+                            <label>
+                                <input type="checkbox" id="tipoReembolso"> Reembolsos
+                            </label>
+                            <label>
+                                <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                            </label>
+                        </div>
+
+                        <!-- Segunda Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Data Final:</h3>
+                            <input type="date" id="dataFinal">
+                        </div>
+
+                        <!-- Terceira Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Status da Requisição:</h3>
+                            <label>
+                                <input type="checkbox" id="statusAberta"> Aberta
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusCotacao"> Cotação
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusAprovacao"> Aprovação
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusReprovado"> Reprovado
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusPagamento"> Pagamento
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusComprada"> Comprada
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusEntregue"> Entregue
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusCancelada"> Cancelada
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusRecusada"> Recusada
+                            </label>
+                        </div>
+
+                        <!-- Quarta Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Obras:</h3>
+                            <label>
+                                <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                            </label>
+
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
+                                        (financeiro e
+                                        rh)
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Botões de Ação -->
+
+                    <div class="linha subsub-botoes">
+                        <div>
+                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
+                                    src="imgs/sub-icone-filtro.png"></button>
+                            <label for="sal_r">Filtrar</label>
+                        </div>
+
+                        <div>
+                            <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
+                                    src="imgs/sub-icone-limpar.png"></button>
+                            <label for="cancel">Limpar</label>
+                        </div>
+                    </div>
+
+                </div><!--modal wrap-->
+
+            </div><!--div modal content-->
+        </div><!--modal envolto-->
+    </div><!--div filter modal-->
+
+    <script>
+        // Função para rolar até o topo da página
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para fazer uma rolagem suave
+            });
+        }
+    </script>
+
+
+
+    <!--CLIQUE NAS LINHAS DA TABELA -->
+    <script>
+        // Função para mostrar o aviso
+        function mostrarAviso() {
+            alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
+        }
+
+        // Vincular a função ao evento de clique da linha da tabela
+        document.addEventListener("DOMContentLoaded", function () {
+            var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
+            linhasTabela.forEach(function (linha) {
+                linha.addEventListener("click", mostrarAviso);
+                linha.addEventListener("mouseover", function () {
+                    this.classList.add('destaque-mouseover');
+                });
+                linha.addEventListener("mouseout", function () {
+                    this.classList.remove('destaque-mouseover');
+                    // Reaplicar as regras de alternância de cores
+                    var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
+                    linhas.forEach(function (linha, indice) {
+                        if (indice % 2 === 0) {
+                            linha.style.backgroundColor = "#f2f2f2";
+                        } else {
+                            linha.style.backgroundColor = "#ffffff";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+
+
+    <script src="filtro-req.js"></script>
+</body>
+
+</html>

@@ -724,6 +724,22 @@
         height: 55px;
         text-align: center;
     }
+
+    .box-info-requisicao-borda-g {
+        width: 215px;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 2px 5px 2px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        background-color: #fff;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin-right: 5px;
+        /* Espaçamento entre as divs */
+        height: 55px;
+        text-align: center;
+    }
+
     .box-info-requisicao-borda-m {
         width: 186px;
         /* Ajusta a largura para caberem seis divs lado a lado */
@@ -911,9 +927,34 @@
         margin-right: 5px;
     }
 
-    
+    .box-info-requisicao-cinza-metade-g {
+        width: 490px;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-align: center;
+    }
+
     .box-info-requisicao-cinza-metade {
         width: 375px;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-align: center;
+    }
+
+    .box-info-requisicao-cinza-metade-m {
+        width: 315px;
         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
