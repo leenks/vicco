@@ -3,11 +3,44 @@
         font-size: 14px;
         margin: 0;
         padding: 0;
-        background: linear-gradient(to top, #e3e3e3, #fff);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 33%, rgba(227, 227, 224, 1) 100%);
         color: #555;
         line-height: 20px;
         letter-spacing: 1px;
     }
+
+    
+ /* Estilo para a tabela */
+ table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-top: 3px solid #999;
+    font-size: 12px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;    
+}
+
+th {
+    background-color: #f2f2f2;
+    font-size: 12px;
+}
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+background-color: #ffffff;
+}
 
     .menu-item,
     .menu-item2 p {
@@ -523,7 +556,7 @@
     }
 
     .conteudo-in h3 {
-        margin: 20px 0px 20px;
+        margin: 20px 10px 20px;
         font-size: 24px;
         color: orangered;
     }
@@ -579,6 +612,18 @@
     .sub-icones+label {
         margin: 5px;
         /* Espaçamento entre o ícone e o label */
+    }
+
+    
+.sub-icones label {
+    margin: 5px;
+    color: #444;
+    font-family: 'Lato', 'sans-serif';
+    font-size: 12px;
+}
+
+    .status {
+        height: 100px;
     }
     
 
@@ -928,7 +973,7 @@
     }
 
     .box-info-requisicao-cinza-metade-g {
-        width: 490px;
+        width: 755px;
         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
@@ -955,6 +1000,19 @@
 
     .box-info-requisicao-cinza-metade-m {
         width: 315px;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-align: center;
+    }
+
+    .box-info-requisicao-cinza-metade-p {
+        width: 375px;
         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
@@ -1325,7 +1383,9 @@
     /* VERSAO MOBILE */
 
     @media screen and (max-width: 768px) {
-
+        .status {
+            height: 60px;
+        }
 
         #mobile-conteudoModoSimples2 th,
         td {
