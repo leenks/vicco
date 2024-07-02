@@ -16,6 +16,12 @@ select {
     font-family: 'Lato', sans-serif;
 }
 
+.btn-sm-custom {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    margin-bottom: 5px;
+}
+
 
 .cinza-claro {    
     border: 1px solid #ccc; 
@@ -33,21 +39,13 @@ select {
     border-radius: 10px;
 }
 
+/* Estilos para alternar as cores das linhas da tabela */
+.table-ficha tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Cinza claro */
+}
 
-.table-ficha .cinza-claro {    
-    border: 1px solid #ccc; 
-    background-color: #e7e7e7;
-    border-radius: 10px;
-}
-.table-ficha .cinza-medio {    
-    border: 1px solid #ccc; 
-    background-color: #dbdbdb;
-    border-radius: 10px;
-}
-.table-ficha .cinza-escuro {    
-    border: 1px solid #ccc; 
-    background-color: #cecece;
-    border-radius: 10px;
+.table-ficha tbody tr:nth-child(even) {
+    background-color: #ffffff; /* Branco */
 }
 
 .form-content {

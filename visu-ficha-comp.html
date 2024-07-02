@@ -330,7 +330,6 @@
                                                 <thead class="thead-light">
                                                     <tr>
                                                         <th width="3%">Ação</th>
-                                                        <th>Seq.</th>
                                                         <th>Tipo</th>
                                                         <th>Cód.</th>
                                                         <th>Descrição do Item</th>
@@ -342,16 +341,11 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr class="cinza-claro">
-                                                        <td><!-- Botão para editar ficha -->
-                                                            <button type="button" class="btn btn-primary btn-sm btn-editar-table" onclick="editarFicha(this)">
-                                                                Editar
-                                                            </button>
-                                                            <!-- Botão para cancelar edição -->
-                                                            <button type="button" class="btn btn-success btn-sm btn-cancelar-edicao" style="display: none;" onclick="cancelarEdicao(this)">
-                                                                Concluir
-                                                            </button>
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-sm btn-sm-custom btn-editar-table">Editar</button>
+                                                            <button type="button" class="btn btn-success btn-sm btn-sm-custom btn-concluir-edicao" style="display: none;">Concluir</button>
+                                                            <button type="button" class="btn btn-danger btn-sm btn-sm-custom btn-excluir-edicao" style="display: none;">Excluir</button>
                                                         </td>
-                                                        <td>1</td>
                                                         <td>Serviços</td>
                                                         <td>001</td>
                                                         <td>Descrição detalhada aqui</td>
@@ -361,16 +355,11 @@
                                                         <td>R$ 20,00</td>
                                                     </tr>
                                                     <tr class="cinza-claro">
-                                                       <td><!-- Botão para editar ficha -->
-                                                            <button type="button" class="btn btn-primary btn-sm btn-editar-table" onclick="editarFicha(this)">
-                                                                Editar
-                                                            </button>
-                                                            <!-- Botão para cancelar edição -->
-                                                            <button type="button" class="btn btn-success btn-sm btn-cancelar-edicao" style="display: none;" onclick="cancelarEdicao(this)">
-                                                                Concluir
-                                                            </button>
+                                                       <td>
+                                                            <button type="button" class="btn btn-primary btn-sm btn-sm-custom btn-editar-table">Editar</button>
+                                                            <button type="button" class="btn btn-success btn-sm btn-sm-custom btn-concluir-edicao" style="display: none;">Concluir</button>
+                                                            <button type="button" class="btn btn-danger btn-sm btn-sm-custom btn-excluir-edicao" style="display: none;">Excluir</button>
                                                         </td>
-                                                        <td>2</td>
                                                         <td>Serviços</td>
                                                         <td>001</td>
                                                         <td>Descrição detalhada aqui</td>
@@ -380,16 +369,11 @@
                                                         <td>R$ 20,00</td>
                                                     </tr>
                                                     <tr class="cinza-medio">
-                                                       <td><!-- Botão para editar ficha -->
-                                                            <button type="button" class="btn btn-primary btn-sm btn-editar-table" onclick="editarFicha(this)">
-                                                                Editar
-                                                            </button>
-                                                            <!-- Botão para cancelar edição -->
-                                                            <button type="button" class="btn btn-success btn-sm btn-cancelar-edicao" style="display: none;" onclick="cancelarEdicao(this)">
-                                                                Concluir
-                                                            </button>
+                                                       <td>
+                                                            <button type="button" class="btn btn-primary btn-sm btn-sm-custom btn-editar-table">Editar</button>
+                                                            <button type="button" class="btn btn-success btn-sm btn-sm-custom btn-concluir-edicao" style="display: none;">Concluir</button>
+                                                            <button type="button" class="btn btn-danger btn-sm btn-sm-custom btn-excluir-edicao" style="display: none;">Excluir</button>
                                                         </td>
-                                                        <td>3</td>
                                                         <td>Materiais</td>
                                                         <td>001</td>
                                                         <td>Descrição detalhada aqui</td>
@@ -399,16 +383,11 @@
                                                         <td>R$ 20,00</td>
                                                     </tr>
                                                     <tr class="cinza-escuro">
-                                                       <td><!-- Botão para editar ficha -->
-                                                            <button type="button" class="btn btn-primary btn-sm btn-editar-table" onclick="editarFicha(this)">
-                                                                Editar
-                                                            </button>
-                                                            <!-- Botão para cancelar edição -->
-                                                            <button type="button" class="btn btn-success btn-sm btn-cancelar-edicao" style="display: none;" onclick="cancelarEdicao(this)">
-                                                                Concluir
-                                                            </button>
+                                                       <td>
+                                                            <button type="button" class="btn btn-primary btn-sm btn-sm-custom btn-editar-table">Editar</button>
+                                                            <button type="button" class="btn btn-success btn-sm btn-sm-custom btn-concluir-edicao" style="display: none;">Concluir</button>
+                                                            <button type="button" class="btn btn-danger btn-sm btn-sm-custom btn-excluir-edicao" style="display: none;">Excluir</button>
                                                         </td>
-                                                        <td>4</td>
                                                         <td>Equipamentos</td>
                                                         <td>001</td>
                                                         <td>Descrição detalhada aqui</td>
@@ -486,60 +465,72 @@
 
 
             <!--DEIXA EDITAVEL COLUNAS DA TABELA-->
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-    // Seleciona todos os botões "Editar" dentro da tabela
-    var botoesEditar = document.querySelectorAll('.btn-editar-table');
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Seleciona todos os botões "Editar" dentro da tabela
+                var botoesEditar = document.querySelectorAll('.btn-editar-table');
+    
+                // Adiciona evento de clique a cada botão "Editar"
+                botoesEditar.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                        // Obtém a linha pai do botão clicado
+                        var linha = this.parentNode.parentNode;
+    
+                        // Torna todas as células da linha editáveis
+                        linha.querySelectorAll('td').forEach(function (celula, index) {
+                            if (index > 0) { // Ignora a primeira célula com os botões
+                                var valorOriginal = celula.textContent;
+                                celula.innerHTML = '<input type="text" value="' + valorOriginal + '">';
+                            }
+                        });
+    
+                        // Exibe os botões "Concluir" e "Excluir"
+                        var botaoConcluir = linha.querySelector('.btn-concluir-edicao');
+                        var botaoExcluir = linha.querySelector('.btn-excluir-edicao');
+                        botaoConcluir.style.display = 'inline-block';
+                        botaoExcluir.style.display = 'inline-block';
+    
+                        // Oculta o botão "Editar"
+                        botao.style.display = 'none';
+                    });
+                });
+    
+                // Adiciona evento de clique a cada botão "Concluir"
+                var botoesConcluir = document.querySelectorAll('.btn-concluir-edicao');
+                botoesConcluir.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                        // Obtém a linha pai do botão clicado
+                        var linha = this.parentNode.parentNode;
+    
+                        // Transforma os campos de entrada de volta em texto simples
+                        linha.querySelectorAll('td').forEach(function (celula, index) {
+                            if (index > 0) { // Ignora a primeira célula com os botões
+                                celula.textContent = celula.querySelector('input').value;
+                            }
+                        });
+    
+                        // Exibe o botão "Editar" e oculta os botões "Concluir" e "Excluir"
+                        var botaoEditar = linha.querySelector('.btn-editar-table');
+                        botaoEditar.style.display = 'inline-block';
+                        this.style.display = 'none';
+    
+                        var botaoExcluir = linha.querySelector('.btn-excluir-edicao');
+                        botaoExcluir.style.display = 'none';
+                    });
+                });
+    
+                // Adiciona evento de clique a cada botão "Excluir"
+                var botoesExcluir = document.querySelectorAll('.btn-excluir-edicao');
+                botoesExcluir.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                        // Obtém a linha pai do botão clicado e remove a linha da tabela
+                        var linha = this.parentNode.parentNode;
+                        linha.remove();
+                    });
+                });
+            });
+        </script>
 
-    // Adiciona evento de clique a cada botão "Editar"
-    botoesEditar.forEach(function (botao) {
-        botao.addEventListener('click', function () {
-            // Obtém a linha pai do botão clicado
-            var linha = this.parentNode.parentNode;
-
-            // Torna apenas as colunas Seq. e Índice editáveis
-            var celulaSeq = linha.querySelector('td:nth-child(2)');
-            var celulaIndice = linha.querySelector('td:nth-child(8)');
-
-            // Armazena os valores originais das células
-            var valorOriginalSeq = celulaSeq.textContent;
-            var valorOriginalIndice = celulaIndice.textContent;
-
-            // Transforma as células em campos de entrada editáveis
-            celulaSeq.innerHTML = '<input type="text" value="' + valorOriginalSeq + '">';
-            celulaIndice.innerHTML = '<input type="text" value="' + valorOriginalIndice + '">';
-
-            // Exibe o botão "Cancelar"
-            var botaoCancelar = linha.querySelector('.btn-cancelar-edicao');
-            botaoCancelar.style.display = 'inline-block';
-
-            // Oculta o botão "Editar"
-            botao.style.display = 'none';
-        });
-    });
-
-    // Adiciona evento de clique a cada botão "Cancelar"
-    var botoesCancelar = document.querySelectorAll('.btn-cancelar-edicao');
-    botoesCancelar.forEach(function (botao) {
-        botao.addEventListener('click', function () {
-            // Obtém a linha pai do botão clicado
-            var linha = this.parentNode.parentNode;
-
-            // Transforma os campos de entrada de volta em texto simples
-            var celulaSeq = linha.querySelector('td:nth-child(2)');
-            var celulaIndice = linha.querySelector('td:nth-child(8)');
-            celulaSeq.textContent = celulaSeq.querySelector('input').value;
-            celulaIndice.textContent = celulaIndice.querySelector('input').value;
-
-            // Exibe o botão "Editar" e oculta o botão "Cancelar"
-            var botaoEditar = linha.querySelector('.btn-editar-table');
-            botaoEditar.style.display = 'inline-block';
-            this.style.display = 'none';
-        });
-    });
-});
-
-            </script>
 
 
             

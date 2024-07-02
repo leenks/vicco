@@ -770,6 +770,21 @@ background-color: #ffffff;
         text-align: center;
     }
 
+    .box-info-requisicao-borda-g2 {
+        width: 215px;
+        /* Ajusta a largura para caberem seis divs lado a lado */
+        padding: 2px 5px 2px;
+        border: 2px solid #888;
+        border-radius: 10px;
+        background-color: #fff;
+        /* Borda arredondada */
+        box-sizing: border-box;
+        margin: 11px 0 0 -7px;
+        /* Espaçamento entre as divs */
+        height: 55px;
+        text-align: center;
+    }
+
     .box-info-requisicao-borda-g {
         width: 215px;
         /* Ajusta a largura para caberem seis divs lado a lado */
@@ -1022,6 +1037,34 @@ background-color: #ffffff;
         margin-right: 5px;
         min-height: 55px;
         text-align: center;
+    }
+
+    .box-info-requisicao-cinza-metade-p2 {
+        width: 375px;
+        height: 115px;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #fff;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-align: center;
+    }
+    
+    
+    .box-info-requisicao-cinza-3-col {
+        width: 248px;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-wrap:nowrap;
     }
 
     .box-info-requisicao-cinza-metade2 {
