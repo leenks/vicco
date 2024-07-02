@@ -1065,6 +1065,7 @@ background-color: #ffffff;
         margin-right: 5px;
         min-height: 55px;
         text-wrap:nowrap;
+        text-align: center;
     }
 
     .box-info-requisicao-cinza-metade2 {
