@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" onclick="goBack()"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+            <center><img class="status" src="imgs/icons-status/22.png" /></center>
+
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">INÍCIO</a>
+                        <span> > </span>
+                        <a href="#">SUPRIMENTOS</a>
+                        <span> > </span>
+                        <span>REQUISIÇÃO</span>
+                    </div>
+
+                    <div class="conteudo-in">
+                        <h2>Editar Requisição de Compra </h2>
+                            <h3>SMART FIT - PIRITUBA 2</h3>
+                    
+
+                        <!-- visualizar ficha -->
+
+                        <div class="form-content">
+   
+                            <div id="tel-4">
+                                <form id="formularioReembolso" class="qua-5" name="frmTelMan" action="man-requisicao.php" method="POST"
+                                    enctype="multipart/form-data">
+                                    <div class="form-row">
+                                        <div class="col-md-3 col-6">
+                                            <label>Número</label>
+                                            <input type="text" class="form-control text-center" maxlength="6" id="cod"
+                                                name="cod" value="6513" disabled />
+                                        </div>
+
+                                        <!--<div class="col-md-3">
+                                            <label>Data Entrega</label>
+                                            <input type="date" class="form-control text-center" required>
+
+                                        </div>-->
+                                        <div class="col-md-3 d-none d-md-block">&nbsp;</div>
+                                        <div class="col-md-2 col-6">
+
+                                            <input type="checkbox" id="rtb" name="rtb" value="1" />
+                                            <label for="rtb" style="display: inline-block;">Retrabalho</label>
+                                        </div>
+
+                                        <!--<div class="col-md-2">
+                                            <input type="checkbox" id="ocu" name="ocu" value="1" />
+                                            <label for="ocu" style="display: inline-block;">Sigilosa</label>
+                                        </div>-->
+                                        <div class="col-md-2 d-none d-md-block">&nbsp;</div>
+                                        <div class="col-md-2">
+                                            <label>Status:</label>
+                                            <select id="status" name="status" class="form-control" required>
+                                                <option value="Aberto">Aberto</option>
+                                                <option value="Aprovação">Aprovação</option>
+                                                <option value="Reprovada" selected>Reprovada</option>
+                                                <option value="Pagamento">Pagamento</option>
+                                                <option value="Pago">Pago</option>
+                                            </select>
+                                            <!--<div class="box-info-requisicao-btn">
+                                                <span class="botao-aberta">
+                                                    <img class="icones" src="imgs/ico-aberta-azul.png"
+                                                        alt="Ícone de Pré-Compra">
+                                                    ABERTA
+                                                </span>
+                                            </div>-->
+                                        </div>
+                                        <hr style="width: 100%;">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <label>Nome da Obra</label>
+                                                <select id="obr" name="obr" class="form-control" required>
+                                                    <option value="108" selected="selected">Bio Ritmo - Alto das Nações
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Nome do Cliente</label>
+                                                <input type="text" class="form-control" maxlength="75" id="cli"
+                                                    name="cli" value="Bio Ritmo - Alto das Nações" required />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Nº Contrato</label>
+                                                <select id="con" name="con" class="form-control">
+                                                    <option value="0" selected="selected">Selecione contrato ...
+                                                    </option>
+                                                    <option value="8" selected>002-Teste contr</option>
+                                                    <option value="2">C21-SFSBC7-CIV1</option>
+                                                    <option value="1">C21-SFSBC7-ELE1</option>
+                                                    <option value="3">C21-SFSBC7-INC1</option>
+                                                    <option value="4">SF-R-Gesso0001</option>
+                                                    <option value="12">SFCRD3-REB_RM</option>
+                                                    <option value="9">SFTAQ4-CLIMAUP</option>
+                                                    <option value="7">Teste 01-contra</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <hr style="width: 100%;">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <label>Descrição (finalidade e motivo da requisição) </label>
+                                                <textarea class="form-control" rows="5" id="des"
+                                                    placeholder="Capriche no texto, esse texto será lido pelo seu superior, ele tem que entender do que se trata (não digite itens aqui)."
+                                                    name="des">Descrição detalhada para editar aqui</textarea>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Observação</label>
+                                                <textarea class="form-control" rows="5" id="obs"
+                                                    placeholder="Preencha esse campo com informações complementares e observações"
+                                                    name="obs">Informações detalhadas para editar aqui</textarea>
+                                            </div>
+                                        </div><!--div form-row-->
+                                        
+                                        <hr style="width: 100%;">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <label>Nome do Fornecedor</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="" />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Tipo de Documento</label>
+                                                <select id="tip_d" name="tip_d" class="form-control">
+                                                    <option value="0" selected="selected">Nota
+                                                        Fiscal
+                                                    </option>
+                                                    <option value="1">
+                                                        Cupom Fiscal</option>
+                                                    <option value="2">
+                                                        Recibo</option>
+                                                    <option value="3">
+                                                        Sem Docto</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Nº Documento</label>
+                                                <input type="number" class="form-control text-right" maxlength="15"
+                                                    id="qtd_i" name="qtd_i" value="" />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Data Documento</label>
+                                                <input type="date" class="form-control text-right" maxlength="15"
+                                                    id="qtd_i" name="qtd_i" value="" />
+                                            </div>
+                                            <div class="form-row align-right">
+                                                <div>
+                                                    <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                                        style="display: none;" />
+                                                    <button type="button" id="fot_carrega" class="sub-icones"
+                                                        name="subir"
+                                                        title="Abrir janela para carregar imagem para a requisição de compra"
+                                                        onclick="document.getElementById('anexo').click();">
+                                                        <i class="fa-solid fa-paperclip"></i><label>Nota Fiscal</label>
+                                                    </button>
+                                                </div>
+
+                                                <div class="space-btn text-center">
+                                                    <div class="space-btn text-center">
+                                                        <button type="submit" id="sal_r" name="salvar"
+                                                            class="sub-icones"><i
+                                                                class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                                    </div>
+                                                </div>
+                                            </div><!--div dorm-row align-right-->
+
+                                            <hr width="100%">
+                                            <div id="lis_i" class="col-md-12  p-0">
+                                <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+    
+                                    <div class="overflow-auto" style="max-width: 100vw;">
+                                        <div class="tab-1 table-responsive form-row-table">
+                                            <table id="tab-2" class="table-ficha">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th width="3%">Ação</th>
+                                                        <th>Sigla</th>
+                                                        <th>Descrição do Produto</th>
+                                                        <th>U.M</th>
+                                                        <th>Marca</th>
+                                                        <th>Quantidade</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="cinza-claro">
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-sm btn-sm-custom btn-editar-table">Editar</button>
+                                                            <button type="button" class="btn btn-success btn-sm btn-sm-custom btn-concluir-edicao" style="display: none;">Concluir</button>
+                                                            <button type="button" class="btn btn-danger btn-sm btn-sm-custom btn-excluir-edicao" style="display: none;">Excluir</button>
+                                                        </td>
+                                                        <td>PIN-141</td>
+                                                        <td>Tinta Borracha Clorada Azul - 3,6L</td>
+                                                        <td>unid.</td>
+                                                        <td>Qualquer</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr class="cinza-claro">
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-sm btn-sm-custom btn-editar-table">Editar</button>
+                                                            <button type="button" class="btn btn-success btn-sm btn-sm-custom btn-concluir-edicao" style="display: none;">Concluir</button>
+                                                            <button type="button" class="btn btn-danger btn-sm btn-sm-custom btn-excluir-edicao" style="display: none;">Excluir</button>
+                                                        </td>
+                                                        <td>PIN-141</td>
+                                                        <td>Tinta Borracha Clorada Azul - 3,6L</td>
+                                                        <td>unid.</td>
+                                                        <td>Qualquer</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr class="cinza-medio">
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-sm btn-sm-custom btn-editar-table">Editar</button>
+                                                            <button type="button" class="btn btn-success btn-sm btn-sm-custom btn-concluir-edicao" style="display: none;">Concluir</button>
+                                                            <button type="button" class="btn btn-danger btn-sm btn-sm-custom btn-excluir-edicao" style="display: none;">Excluir</button>
+                                                        </td>
+                                                        <td>PIN-141</td>
+                                                        <td>Tinta Borracha Clorada Azul - 3,6L</td>
+                                                        <td>unid.</td>
+                                                        <td>Qualquer</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr class="cinza-escuro">
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-sm btn-sm-custom btn-editar-table">Editar</button>
+                                                            <button type="button" class="btn btn-success btn-sm btn-sm-custom btn-concluir-edicao" style="display: none;">Concluir</button>
+                                                            <button type="button" class="btn btn-danger btn-sm btn-sm-custom btn-excluir-edicao" style="display: none;">Excluir</button>
+                                                        </td>
+                                                        <td>PIN-141</td>
+                                                        <td>Tinta Borracha Clorada Azul - 3,6L</td>
+                                                        <td>unid.</td>
+                                                        <td>Qualquer</td>
+                                                        <td>1</td>
+                                                    </tr>
+    
+                                                </tbody>
+                                            </table>
+    
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                                        <div class="form-row"><br></div>
+
+                                    <div class="form-row align-right">
+                                        <div class="col-md-2 text-center">
+                                            <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                                    class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                        </div>
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="fecha" class="sub-icones" name="fechar"
+                                                title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i
+                                                    class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
+                                        </div>
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="cancel" class="sub-icones" name="cancel"
+                                                title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
+                                                    class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
+                                        </div>
+                                        <div class="space-btn text-center">
+                                            <div>
+                                                <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                                    style="display: none;" />
+                                                <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                                    title="Abrir janela para carregar imagem para a requisição de compra"
+                                                    onclick="document.getElementById('anexo').click();">
+                                                    <i class="fa-solid fa-paperclip"></i><label>Solicitação</label>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            
+                            <hr width="100%">
+                            
+                        </div>
+                    
+
+                    </div>
+                </div>
+
+                <!-- Ícone no footer -->
+                <div class="ico-subir-footer" onclick="scrollToTop()">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+
+            </div><!--conteudo desktop-->
+        </div><!--div conteudo-->
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+        <script>
+            function habilitarCampos() {
+                // Selecionar todos os campos exceto os especificados
+                var campos = document.querySelectorAll('.form-control:not(#cod, #unid, #des, #valor_encargos, #valor_custos_indiretos, #valor_lucro_liquido, #valor_impostos, #valor_potencializador)');
+
+                // Habilitar os campos selecionados
+                campos.forEach(function (campo) {
+                    campo.removeAttribute('disabled');
+                });
+            }
+
+            // Adicionando o evento de clique fora da função
+            document.getElementById('editarFicha').addEventListener('click', function () {
+                habilitarCampos();
+            });
+        </script>
+
+
+        <script>
+            // Função para rolar até o topo da página
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Para fazer uma rolagem suave
+                });
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            // Função para atualizar a imagem do status
+            function atualizarImagemStatus() {
+                var statusSelect = document.getElementById("status");
+                var imagemStatus = document.querySelector(".status");
+
+                // Mapeamento de opções de status para imagens correspondentes
+                var imagensStatus = {
+                    "Aberto": "21.png",
+                    "Aprovação": "22.png",
+                    "Reprovada": "23.png",
+                    "Pagamento": "24.png",
+                    "Pago": "24b.png"
+                };
+
+                // Verifica se o valor selecionado está presente no mapeamento
+                var statusSelecionado = statusSelect.value;
+                if (statusSelecionado in imagensStatus) {
+                    // Atualiza a imagem com base no mapeamento
+                    imagemStatus.src = "imgs/icons-status/" + imagensStatus[statusSelecionado];
+                } else {
+                    // Caso contrário, mantém a imagem como "21.png"
+                    imagemStatus.src = "imgs/icons-status/21.png";
+                }
+            }
+
+            // Adiciona um ouvinte de evento para o evento change do select
+            document.getElementById("status").addEventListener("change", atualizarImagemStatus);
+
+            // Chamada inicial para garantir que a imagem seja atualizada corretamente
+            atualizarImagemStatus();
+        </script>
+
+
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+
+
+        <!--DEIXA EDITAVEL COLUNAS DA TABELA-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Seleciona todos os botões "Editar" dentro da tabela
+                var botoesEditar = document.querySelectorAll('.btn-editar-table');
+    
+                // Adiciona evento de clique a cada botão "Editar"
+                botoesEditar.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                        // Obtém a linha pai do botão clicado
+                        var linha = this.parentNode.parentNode;
+    
+                        // Torna todas as células da linha editáveis
+                        linha.querySelectorAll('td').forEach(function (celula, index) {
+                            if (index > 0) { // Ignora a primeira célula com os botões
+                                var valorOriginal = celula.textContent;
+                                celula.innerHTML = '<input type="text" value="' + valorOriginal + '">';
+                            }
+                        });
+    
+                        // Exibe os botões "Concluir" e "Excluir"
+                        var botaoConcluir = linha.querySelector('.btn-concluir-edicao');
+                        var botaoExcluir = linha.querySelector('.btn-excluir-edicao');
+                        botaoConcluir.style.display = 'inline-block';
+                        botaoExcluir.style.display = 'inline-block';
+    
+                        // Oculta o botão "Editar"
+                        botao.style.display = 'none';
+                    });
+                });
+    
+                // Adiciona evento de clique a cada botão "Concluir"
+                var botoesConcluir = document.querySelectorAll('.btn-concluir-edicao');
+                botoesConcluir.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                        // Obtém a linha pai do botão clicado
+                        var linha = this.parentNode.parentNode;
+    
+                        // Transforma os campos de entrada de volta em texto simples
+                        linha.querySelectorAll('td').forEach(function (celula, index) {
+                            if (index > 0) { // Ignora a primeira célula com os botões
+                                celula.textContent = celula.querySelector('input').value;
+                            }
+                        });
+    
+                        // Exibe o botão "Editar" e oculta os botões "Concluir" e "Excluir"
+                        var botaoEditar = linha.querySelector('.btn-editar-table');
+                        botaoEditar.style.display = 'inline-block';
+                        this.style.display = 'none';
+    
+                        var botaoExcluir = linha.querySelector('.btn-excluir-edicao');
+                        botaoExcluir.style.display = 'none';
+                    });
+                });
+    
+                // Adiciona evento de clique a cada botão "Excluir"
+                var botoesExcluir = document.querySelectorAll('.btn-excluir-edicao');
+                botoesExcluir.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                        // Obtém a linha pai do botão clicado e remove a linha da tabela
+                        var linha = this.parentNode.parentNode;
+                        linha.remove();
+                    });
+                });
+            });
+        </script>
+
+
+
+</body>
+
+</html>
