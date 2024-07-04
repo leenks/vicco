@@ -561,6 +561,14 @@ background-color: #ffffff;
         color: orangered;
     }
 
+    .conteudo h4 {
+        margin: 30px 10px 30px;
+        font-size: 24px;
+        color: orangered;;
+        font-weight: normal;
+    }
+
+
     /* Estilo para o contêiner do título */
     .titulo-container {
         display: flex;
@@ -1015,6 +1023,33 @@ background-color: #ffffff;
 
     .box-info-requisicao-cinza-metade-m {
         width: 315px;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-align: center;
+    }
+
+        
+    .box-info-requisicao-cinza-17 {
+        width: 17%;
+        padding: 2px 5px 2px;
+        box-sizing: border-box;
+        border: 2px solid #888;
+        background-color: #eee;
+        border-radius: 10px;
+        /* Borda arredondada */
+        margin-right: 5px;
+        min-height: 55px;
+        text-align: center;
+    }
+
+    .box-info-requisicao-cinza-33 {
+        width: 33%;
         padding: 2px 5px 2px;
         box-sizing: border-box;
         border: 2px solid #888;
