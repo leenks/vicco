@@ -325,10 +325,91 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
                             
-                            <hr width="100%">
-                            
+                                <hr width="100%">
+
+                                <div class="form-row">
+                                    <div class="col-md-5">
+                                        <label>Nome do Favorecido</label>
+                                        <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                            name="pro_i" value="Fulano de Tal" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Data de Vencimento</label>
+                                        <input type="date" class="form-control" maxlength="50" id="pro_i"
+                                               name="pro_i" value="2024-01-20"/>
+                                    </div>
+                                    
+                                    <div class="col-md-1 col-4">
+                                        <label>DOC</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="qtd_i"
+                                                id="qtd_i_doc" value="DOC">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 col-4">
+                                        <label>TEF</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="qtd_i"
+                                                id="qtd_i_tef" value="TEF">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 col-4">
+                                        <label>PIX</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="qtd_i"
+                                                id="qtd_i_pix" value="PIX" checked>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col-md-3">
+                                        <label>Banco</label>
+                                        <select id="con" name="con" class="form-control">
+                                            <option value="0" selected="selected">Banco do Brasil</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label>Agência</label>
+                                        <input type="text" class="form-control" maxlength="50"
+                                            id="pro_i_agencia" name="pro_i_agencia" value="105-1" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Conta Corrente</label>
+                                        <input type="text" class="form-control" maxlength="50" id="pro_i_conta"
+                                            name="pro_i_conta" value="00001" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Tipo Chave Pix</label>
+                                        <select id="con_tipo_pix" name="con_tipo_pix" class="form-control">
+                                            <option value="0" selected="selected">Celular</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Chave PIX</label>
+                                        <input type="text" class="form-control" maxlength="50" id="pro_i_pix"
+                                            name="pro_i_pix" value="(11) 98765-4321" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>CNPJ/CPF</label>
+                                        <input type="text" class="form-control" maxlength="50"
+                                            id="pro_i_cnpj_cpf" name="pro_i_cnpj_cpf" value="123.456.789-00"/>
+                                    </div>
+                                </div>
+    
+                                <hr style="width: 100%;">
+    
+                                <div class="form-row align-right">
+                                    <div class="space-btn text-center">
+                                        <button type="submit" id="fecha" class="sub-icones" name="fechar"
+                                            title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i
+                                                class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
                         </div>
                     
 
