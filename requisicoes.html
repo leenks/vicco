@@ -531,7 +531,7 @@
                                     <tbody>
                                         <!-- Linhas da tabela aqui -->
 
-                                         <tr  onmouseover="this.style.backgroundColor='#d3ecff';"  onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"  onclick="mostrarAviso()">
+                                         <tr data-status="precompra" onmouseover="this.style.backgroundColor='#d3ecff';" >
                                             <td>005420</td>
                                             <td>SFFV2-039</td>
                                             <td>SmartFit Pirituba 2</td>
@@ -553,7 +553,7 @@
                                             </td>
                                         </tr>
 
-                                         <tr  onmouseover="this.style.backgroundColor='#d3ecff';"  onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"  onclick="mostrarAviso()">
+                                         <tr data-status="pagamento"  onmouseover="this.style.backgroundColor='#d3ecff';">
                                             <td>005420</td>
                                             <td>SFFV2-039</td>
                                             <td>Bio Ritmo - Alto das Nações</td>
@@ -575,7 +575,7 @@
                                             </td>
                                         </tr>
 
-                                         <tr  onmouseover="this.style.backgroundColor='#d3ecff';"  onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"  onclick="mostrarAviso()">
+                                         <tr data-status="cotacao"  onmouseover="this.style.backgroundColor='#d3ecff';">
                                             <td>005420</td>
                                             <td>SFFV2-039</td>
                                             <td>SmartFit Pirituba 2</td>
@@ -597,7 +597,7 @@
                                             </td>
                                         </tr>
 
-                                         <tr  onmouseover="this.style.backgroundColor='#d3ecff';"  onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"  onclick="mostrarAviso()">
+                                         <tr data-status="cancelada"  onmouseover="this.style.backgroundColor='#d3ecff';">
                                             <td>005420</td>
                                             <td>SFFV2-039</td>
                                             <td>Bio Ritmo - Alto das Nações</td>
@@ -619,7 +619,7 @@
                                             </td>
                                         </tr>
 
-                                         <tr  onmouseover="this.style.backgroundColor='#d3ecff';"  onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;"  onclick="mostrarAviso()">
+                                         <tr data-status="aprovacao" onmouseover="this.style.backgroundColor='#d3ecff';">
                                             <td>005420</td>
                                             <td>SFFV2-039</td>
                                             <td>SmartFit Pirituba 2</td>
@@ -634,7 +634,7 @@
                                                 <div class="box-info-requisicao-btn">
                                                     <span class="botao-aprovacao">
                                                         <img class="icones" src="imgs/ico-aprovacao-azul.png"
-                                                            alt="Ícone de Pré-Compra">
+                                                            alt="Ícone de Aprovação">
                                                         APROVAÇÃO
                                                     </span>
                                                 </div>
@@ -1339,17 +1339,37 @@
 
 
     <!--CLIQUE NAS LINHAS DA TABELA -->
-    <script>
-        // Função para mostrar o aviso
-        function mostrarAviso() {
-            alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
+    <!--CLIQUE NAS LINHAS DA TABELA -->
+<script>
+    // Função para redirecionar para a página correspondente
+    function redirecionarPagina(event) {
+        var linha = event.currentTarget;
+        var status = linha.getAttribute('data-status'); // Supondo que você tenha um atributo data-status nas linhas
+
+        switch (status) {
+            case 'precompra':
+                window.location.href = 'visu-req-modelo-precompra.html';
+                break;
+            case 'aprovacao':
+                window.location.href = 'visu-req-modelo-aprovacao.html';
+                break;
+            case 'cancelada':
+                window.location.href = 'visu-req-modelo-cancelada.html';
+                break;
+            case 'pagamento':
+                window.location.href = 'visu-req-modelo-pagamento.html';
+                break;
+            default:
+                alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
+                break;
         }
+    }
 
     // Vincular a função ao evento de clique da linha da tabela
     document.addEventListener("DOMContentLoaded", function() {
         var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
         linhasTabela.forEach(function(linha) {
-            linha.addEventListener("click", mostrarAviso);
+            linha.addEventListener("click", redirecionarPagina);
             linha.addEventListener("mouseover", function() {
                 this.classList.add('destaque-mouseover');
             });
@@ -1368,6 +1388,7 @@
         });
     });
 </script>
+
 
 
 
