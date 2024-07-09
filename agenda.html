@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calendario.css">
+    <title>Vicco Construtora</title>
+
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+
+            <div class="caixa-menu2">
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-agendamento.png" alt="Agendamento">
+                        <p>Agendamento</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="fichas-composicao.html"><img src="imgs/ico-relogio.png" alt="Agora">
+                        <p>Agora</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-calendario.png" alt="Calendário">
+                        <p>Calendário</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-agenda-colaboradores.png" alt="Colaboradores">
+                        <p>Colaboradores</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-edit-agenda.png" alt="Edição">
+                        <p>Edição</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-filtro.png" alt="Filtro">
+                        <p>Filtro</p>
+                    </a>
+                </div>
+
+            </div><!--caixa menu-2-->
+
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">INÍCIO</a>
+                        <span> > </span>
+                        <a href="#">TODAS AS OBRAS</a>
+                        <span> > </span>
+                        <a href="#">AGENDA</a>
+                    </div>
+
+
+                    <div class="conteudo-in">
+                        <h2>Agenda</h2>
+
+                        <div class="box-content">
+
+                            <div class="calendar-container">
+                                <div class="calendar-header">
+                                    <button onclick="previousMonth()">
+                                        <i class="fas fa-arrow-left"></i>
+                                    </button>
+                                    <h2 id="month-year"></h2>
+                                    <button onclick="nextMonth()">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                                <div class="view-buttons">
+                                    <button onclick="showMonthView()">Mês</button>
+                                    <button onclick="showWeekView()">Semana</button>
+                                    <button onclick="showDayView()">Dia</button>
+                                </div>
+                                <div class="calendar-body" id="calendar-body">
+                                    <!-- Dias do calendário serão gerados aqui -->
+                                </div>
+                            </div>
+
+                        </div><!--box content-->
+
+
+                        &nbsp;
+                        <br>
+
+                    </div>
+                    
+                    
+                    <!-- Ícone no footer -->
+                    <div class="ico-subir-footer" onclick="scrollToTop()">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                <script>
+                    // Função para rolar até o topo da página
+                    function scrollToTop() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth' // Para fazer uma rolagem suave
+                        });
+                    }
+
+                    const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+                    const dayNames = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+                    let currentMonth = new Date().getMonth();
+                    let currentYear = new Date().getFullYear();
+                    let currentView = 'month'; // Default view
+
+                    function generateCalendar(month, year) {
+                        const calendarBody = document.getElementById("calendar-body");
+                        calendarBody.innerHTML = "";
+                        calendarBody.classList.remove('week-view', 'day-view');
+                        calendarBody.classList.add('month-view');
+
+                        const firstDay = (new Date(year, month)).getDay();
+                        const daysInMonth = 32 - new Date(year, month, 32).getDate();
+
+                        document.getElementById("month-year").textContent = `${monthNames[month]} ${year}`;
+
+                        for (let i = 0; i < dayNames.length; i++) {
+                            const dayNameCell = document.createElement("div");
+                            dayNameCell.textContent = dayNames[i];
+                            calendarBody.appendChild(dayNameCell);
+                        }
+
+                        for (let i = 0; i < firstDay; i++) {
+                            const emptyCell = document.createElement("div");
+                            calendarBody.appendChild(emptyCell);
+                        }
+
+                        for (let i = 1; i <= daysInMonth; i++) {
+                            const dayCell = document.createElement("div");
+                            dayCell.textContent = i;
+                            calendarBody.appendChild(dayCell);
+                        }
+                    }
+
+                    function generateWeekCalendar(month, year) {
+                        const calendarBody = document.getElementById("calendar-body");
+                        calendarBody.innerHTML = "";
+                        calendarBody.classList.remove('month-view', 'day-view');
+                        calendarBody.classList.add('week-view');
+
+                        const firstDayOfMonth = new Date(year, month, 1);
+                        const currentDate = new Date();
+                        const currentWeekDay = currentDate.getDay();
+                        const startOfWeek = new Date(currentDate.setDate(currentDate.getDate() - currentWeekDay));
+
+                        document.getElementById("month-year").textContent = `Semana de ${startOfWeek.getDate()} ${monthNames[month]} ${year}`;
+
+                        for (let i = 0; i < 7; i++) {
+                            const dayCell = document.createElement("div");
+                            dayCell.textContent = `${dayNames[i]} ${startOfWeek.getDate() + i}`;
+                            calendarBody.appendChild(dayCell);
+                        }
+                    }
+
+                    function generateDayCalendar() {
+                        const calendarBody = document.getElementById("calendar-body");
+                        calendarBody.innerHTML = "";
+                        calendarBody.classList.remove('month-view', 'week-view');
+                        calendarBody.classList.add('day-view');
+
+                        const currentDate = new Date();
+                        document.getElementById("month-year").textContent = `Dia ${currentDate.getDate()} ${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+
+                        for (let i = 0; i < 24; i++) {
+                            const timeSlot = document.createElement("div");
+                            timeSlot.textContent = `${i}:00`;
+                            calendarBody.appendChild(timeSlot);
+                        }
+                    }
+
+                    function previousMonth() {
+                        if (currentMonth === 0) {
+                            currentMonth = 11;
+                            currentYear--;
+                        } else {
+                            currentMonth--;
+                        }
+                        generateCalendar(currentMonth, currentYear);
+                    }
+
+                    function nextMonth() {
+                        if (currentMonth === 11) {
+                            currentMonth = 0;
+                            currentYear++;
+                        } else {
+                            currentMonth++;
+                        }
+                        generateCalendar(currentMonth, currentYear);
+                    }
+
+                    function showMonthView() {
+                        currentView = 'month';
+                        generateCalendar(currentMonth, currentYear);
+                    }
+
+                    function showWeekView() {
+                        currentView = 'week';
+                        generateWeekCalendar(currentMonth, currentYear);
+                    }
+
+                    function showDayView() {
+                        currentView = 'day';
+                        generateDayCalendar();
+                    }
+
+                    // Inicializa o calendário com a visualização mensal
+                    window.onload = () => {
+                        generateCalendar(currentMonth, currentYear);
+                    };
+                </script>
+</body>
+
+</html>
