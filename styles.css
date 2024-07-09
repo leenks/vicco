@@ -34,7 +34,7 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    font-size: 14px;    
+    font-size: 12px;    
 }
 
 th {
@@ -344,6 +344,10 @@ background-color: #ffffff;
 text-decoration: underline;
 color: #444;
 } 
+
+#oculta {
+    display: none;
+}
 
 
 .form-row {
