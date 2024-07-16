@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+        <a href="#" onclick="goBack()">
+            <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+            <p>Voltar</p>
+        </a>
+    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+            <div class="caixa-menu2">
+                <div class="menu-item2">
+                    <a href="nova-requisicao.html"><img src="imgs/ico-budget.png" alt="Orçamentos">
+                        <p>Orçamentos</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="novo-reembolso.html"><img src="imgs/ico-mapa-quant.png" alt="Mapa">
+                        <p>Mapa Quantitativo</p>
+                    </a>
+                </div>
+
+                <div class="menu-item2">
+                    <a href="nova-cotacao.html"><img src="imgs/ico-cadastros.png" alt="Cadastros">
+                        <p>Cadastros</p>
+                    </a>
+                </div>
+
+            </div>
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">INÍCIO</a>
+                        <span> > </span>
+                        <a href="#">PLANEJAMENTO</a>
+                        <span> > </span>
+                        <span>FICHAS DE COMPOSIÇÃO</span>
+                    </div>
+
+                    <div class="conteudo-in">
+                        <h2>Fichas de Composição</h2>
+
+                        <div class="form-content">
+                            <div class="form-row">
+                                <form name=" " action="nova-requisicao.html" method="POST">
+                                    <button type="submit" id="nov" name="novo" class="sub-icones"
+                                        title="Abrir Nova Ficha">
+                                        <i class="fa-regular fa-square-plus"></i>
+                                        <label>Criar Nova Ficha</label>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div id="tel-4">
+                                <form id="formularioRequisicao" name="frmTelMan" action="" method="POST"
+                                    enctype="multipart/form-data">
+                                    
+                                        <div class="form-row">
+                                            
+
+                                            <div class="col-md-4">
+                                                <label>Grupo</label>
+                                                <select id="gru" name="gru" class="form-control" required>
+                                                    <option value="0" selected="selected">Selecione Grupo desejado
+                                                    </option>
+                                                    <option value="64">01 - Pré - Obra</option>
+                                                    <option value="20">02 - Custos Administrativos</option>
+                                                    <option value="1">03 - Serviços Preliminares</option>
+                                                    <option value="21">04 - Demolições e Remoções</option>
+                                                    <option value="69">05-Estruturas de Concreto Armado</option>
+                                                    <option value="47">06 - Estruturas Metálicas</option>
+                                                    <option value="2">07 - Paredes e Divisórias</option>
+                                                    <option value="4">08 - Revestimentos de Paredes</option>
+                                                    <option value="5">09 - Impermeabilização</option>
+                                                    <option value="6">10 - Pisos</option>
+                                                    <option value="26">11 - Instalações Hidráulicas</option>
+                                                    <option value="27">12 - Instalações Elétricas</option>
+                                                    <option value="52">13 - T.I. / Sonorização / Automação</option>
+                                                    <option value="41">14 - Ar Condicionado e Exaustão</option>
+                                                    <option value="33">15 - Combate de Incêndio </option>
+                                                    <option value="9">16 - Forros</option>
+                                                    <option value="10">17 - Pintura</option>
+                                                    <option value="11">18 - Vidros e Espelhos</option>
+                                                    <option value="12">19 - Granitos</option>
+                                                    <option value="48">20 - Serralheria</option>
+                                                    <option value="14">21 - Esquadrias</option>
+                                                    <option value="22">22 - Plataformas e Elevadores</option>
+                                                    <option value="43">23 - Coberturas</option>
+                                                    <option value="54">24 - Divisórias</option>
+                                                    <option value="56">25 - Luminárias</option>
+                                                    <option value="57">26 - Aquecedores</option>
+                                                    <option value="58">27 - Marcenaria</option>
+                                                    <option value="59">28 - Eletro Eletrônicos</option>
+                                                    <option value="73">29 - Isolamento Térmico e Acústico</option>
+                                                    <option value="71">30 - Fachadas e Comunicação Visual</option>
+                                                    <option value="62">31 - Urbanização e Serviços Externos</option>
+                                                    <option value="51">32 - Apoio Civil</option>
+                                                    <option value="49">33- Limpeza de Obra</option>
+                                                    <option value="61">34 - Omissos</option>
+                                                    <option value="46">39 - Gerenciamento</option>
+                                                    <option value="78">40 - Dry Wall</option>
+                                                    <option value="83">Implantação</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="col-md-2 col-6">
+                                                <label>Número</label>
+                                                <input type="text" class="form-control text-center" maxlength="6"
+                                                    id="cod" name="cod" value="6513" disabled />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Status</label>
+                                                <select id="obr" name="obr" class="form-control" required>
+                                                    <option value="108" selected="selected">Pronta
+                                                    </option>
+                                                    <option>Vista</option>
+                                                    <option>Aprovada</option>
+                                                    <option>Suspensa</option>
+                                                    <option>Cancelada</option>
+                                                </select>
+                                            </div>
+                                            
+
+                                            <div class="col-md-6">
+                                                    <label>Descrição do Serviço Prestado</label>
+                                                    <select id="obr" name="obr" class="form-control" required>
+                                                        <option value="108" selected="selected">Informe Serviço a
+                                                            Prestar desejado
+                                                        </option>
+                                                        <option>Opção 01</option>
+                                                        <option>Opção 02</option>
+                                                        <option value="64">Opção 03</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Unid. Medida</label>
+                                                    <input type="text" class="form-control" maxlength="4" id="cli"
+                                                        name="cli" value="(Unid. Automático)" required disabled />
+                                                </div>
+                                                
+                                                <div class="col-md-8">
+                                                    <label>Observações para a Ficha Técnica</label>
+                                                    <textarea class="form-control" rows="5" id="des" placeholder=" "
+                                                        name="des"></textarea>
+                                                </div>
+
+                                                <div class="col-md-4 sidebar-form"> <!-- Renomeie a classe do sidebar e coloque-o dentro do mesmo contêiner -->
+                                                    <h3>Meu Sidebar</h3>
+                                                    <p>Este é um conteúdo de exemplo para o seu sidebar.</p>
+                                                </div>
+                                            </div><!--div form-row-->
+
+                                            <hr width="100%">
+
+
+
+                                            <div class="form-row">
+                                                <div class="col-md-1">
+                                                    <label>Código</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                        name="pro_i" value="" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Descrição dos Materiais</label>
+                                                    <input type="text" class="form-control text-center" maxlength="5"
+                                                        id="uni_i" name="uni_i" value="" />
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <label>Unid.</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                        name="pro_i" value="" />
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <label>Preço</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                        name="pro_i" value="" />
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <label>Indice</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                        name="pro_i" value="" />
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <label>Valor</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                        name="pro_i" value="" />
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <form name=" " action="nova-requisicao.html" method="POST">
+                                                        <button type="submit" id="nov" name="novo" class="sub-icones"
+                                                            title="Abrir Nova Requisição no sistema">
+                                                            <i class="fa-regular fa-square-plus"></i><br><br>
+                                                            <label>Novo</label>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div><!--form-row-->
+                                        <div class="form-row">
+                                            <div class="col-md-1">
+                                                <label>Código</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Descrição dos Materiais</label>
+                                                <input type="text" class="form-control text-center" maxlength="5"
+                                                    id="uni_i" name="uni_i" value="" />
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>Unid.</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="" />
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>Preço</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="" />
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>Indice</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="" />
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>Valor</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="" />
+                                            </div>
+                                            <div class="col-md-1">
+                                                <form name=" " action="nova-requisicao.html" method="POST">
+                                                    <button type="submit" id="nov" name="novo" class="sub-icones"
+                                                        title="Abrir Nova Requisição no sistema">
+                                                        <i class="fa-regular fa-square-plus"></i><br><br>
+                                                        <label>Novo</label>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div><!--form-row-->
+
+
+
+                                    <div id="lis_i" class="col-md-12  p-0">
+                                        <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+
+                                            <div class="overflow-auto" style="max-width: 90vw;">
+                                                <div class="tab-1 table-responsive form-row-table">
+                                                    <table id="tab-2"
+                                                        class="table table-sm table-striped table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th width="3%">Excluir</th>
+                                                                <th>Sigla</th>
+                                                                <th>Descrição</th>
+                                                                <th class="text-center">U.M.</th>
+                                                                <th>Marca</th>
+                                                                <th class="text-center">Quantidade</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="odd bg-light">
+                                                                <td valign="top" colspan="7"
+                                                                    class="dataTables_empty py-3">Nada foi adicionado
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <div class="dataTables_paginate paging_simple_numbers"
+                                                        id="tab-2_paginate">
+                                                        <a class="paginate_button previous disabled"
+                                                            aria-controls="tab-2" data-dt-idx="0" tabindex="0"
+                                                            id="tab-2_previous">Anterior</a>
+                                                        <span></span>
+                                                        <a class="paginate_button next disabled" aria-controls="tab-2"
+                                                            data-dt-idx="1" tabindex="0" id="tab-2_next">Próximo</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div><!--conteudo in-->
+                                    </div><!--container desktop-->
+
+                            </div><!--div conteudo-->
+
+                            <!-- Ícone no footer -->
+                            <div class="ico-subir-footer" onclick="scrollToTop()">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+
+                        </div>
+                    </div><!--div contaiber full-->
+
+
+                    <script>
+                        // Função para rolar até o topo da página
+                        function scrollToTop() {
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth' // Para fazer uma rolagem suave
+                            });
+                        }
+                    </script>
+
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                    <script>
+                        $(document).ready(function () {
+                            // Monitora as mudanças no estado do checkbox
+                            $('#check_sub').change(function () {
+                                // Se o checkbox estiver selecionado
+                                if ($(this).is(':checked')) {
+                                    // Desativa os campos "Grupo" e "Sub-Grupo"
+                                    $('#gru').prop('disabled', true);
+                                    $('#sub').prop('disabled', true);
+                                } else {
+                                    // Caso contrário, habilita os campos "Grupo" e "Sub-Grupo"
+                                    $('#gru').prop('disabled', false);
+                                    $('#sub').prop('disabled', false);
+                                }
+                            });
+                        });
+                    </script>
+
+
+                    <script>
+                        function goBack() {
+                            window.history.back();
+                        }
+                    </script>
+
+                    <script>
+                        // Função para mudar a imagem de status
+                        function mudarStatus() {
+                            // Selecionar a imagem de status
+                            var imagem = document.getElementById("imagemStatus");
+
+                            // Verificar o src atual da imagem
+                            var srcAtual = imagem.src.substring(imagem.src.lastIndexOf("/") + 1);
+
+                            // Array com os nomes das imagens disponíveis
+                            var imagens = ["27.png", "28.png", "29.png", "29b.png"];
+
+                            // Encontrar o índice da imagem atual no array
+                            var indiceAtual = imagens.indexOf(srcAtual);
+
+                            // Calcular o próximo índice
+                            var proximoIndice = (indiceAtual + 1) % imagens.length;
+
+                            // Atualizar o src da imagem com o próximo índice
+                            imagem.src = "imgs/icons-status/" + imagens[proximoIndice];
+                        }
+
+                        // Adicionar um ouvinte de eventos para o clique no botão
+                        document.getElementById("fot_carrega").addEventListener("click", mudarStatus);
+                    </script>
+
+
+                    <script>
+                        // Capturando o botão e o label
+                        const botao = document.getElementById('fot_carrega');
+                        const labelStatus = document.querySelector('.box-info-requisicao-btn span');
+
+                        // Array com os status disponíveis
+                        const status = [
+                            { classe: 'cotacao', texto: 'COTAÇÃO', icone: 'imgs/ico-cotacao-azul.png' },
+                            { classe: 'analise', texto: 'ANÁLISE', icone: 'imgs/ico-analise-azul.png' },
+                            { classe: 'conversao', texto: 'CONVERSÃO', icone: 'imgs/ico-conversao-azul.png' },
+                            { classe: 'aberta', texto: 'ABERTA', icone: 'imgs/ico-aberta-azul.png' }
+                        ];
+
+                        // Índice para controlar o status atual
+                        let indiceStatus = 0;
+
+                        // Adicionando evento de clique ao botão
+                        botao.addEventListener('click', function () {
+                            // Alterando a classe do span para o próximo status
+                            labelStatus.className = 'botao-' + status[indiceStatus].classe;
+                            // Alterando o texto e o ícone do span
+                            labelStatus.innerHTML = `
+            <img class="icones" src="${status[indiceStatus].icone}" alt="Ícone">
+            ${status[indiceStatus].texto}
+        `;
+                            // Atualizando o índice do status
+                            indiceStatus = (indiceStatus + 1) % status.length;
+                        });
+                    </script>
+
+
+                    <!--FUNCAO QUE HABILITA OS CAMPOS BLOQUEADOS-->
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            document.getElementById("salvar").addEventListener("click", function () {
+                                // Elementos que serão habilitados
+                                var elementosHabilitar = document.querySelectorAll("#gru, #sub, #check_sub, #pro_i, #qtd_i, #mar_i");
+
+                                // Para cada elemento a ser habilitado, remova o atributo "disabled"
+                                elementosHabilitar.forEach(function (elemento) {
+                                    elemento.removeAttribute("disabled");
+                                });
+                            });
+                        });
+                    </script>
+</body>
+
+</html>

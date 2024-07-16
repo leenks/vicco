@@ -40,11 +40,12 @@
                                 <p>Relatórios</p>
                             </a>
                         </div>
-                        <div class="menu-item">
-                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
-                                <p>Voltar</p>
-                            </a>
-                        </div>
+                       <div class="menu-item">
+        <a href="#" onclick="goBack()">
+            <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+            <p>Voltar</p>
+        </a>
+    </div>
                     </div>
                 </div>
 
@@ -631,6 +632,13 @@
             });
         }
     </script>
+
+<script>
+    //volta um nível de página na navegação quando clicar no menu Voltar
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 
 

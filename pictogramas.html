@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+        <a href="#" onclick="goBack()">
+            <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+            <p>Voltar</p>
+        </a>
+    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+            <div class="caixa-menu2">
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-fotos.png" alt="Fotos">
+                        <p>Adicionar Foto</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-upload.png" alt="Upload">
+                        <p>Upload</p>
+                    </a>
+                </div>
+                <div class="menu-item2">
+                    <a href="#"><img src="imgs/ico-plus.png" alt="Nova Tarefa">
+                        <p>Nova Tarefa</p>
+                    </a>
+                </div>
+             </div>
+            <div class="conteudo">
+                <div class="container-desktop">
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">TODAS AS OBRAS</a>
+                        <span> > </span>
+                        <a href="#">ENGENHARIA</a>
+                        <span> > </span>
+                        <span>GESTÃO DE OBRAS</span>
+                    </div>
+
+                    <div class="conteudo-in">
+                        <h2> T.R.A Gerenciamento e Construções LTDA</h2>
+                    
+                        <div class="agenda">
+                            <div class="container">
+
+                                <form name="frmTelChe" action="checklist-obr.php" method="POST"
+                                    enctype="multipart/form-data">
+
+                                    
+                                    <div class="fun-1">
+                                        <div class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col-4">
+                                                <input type="checkbox" id="obr_d" class="tip_o" name="obr_d" value="1"
+                                                    checked="checked" /><span class="cpo-1"> Em Dia</span>
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="checkbox" id="obr_a" class="tip_o" name="obr_a" value="2"
+                                                    checked="checked" /><span class="cpo-1"> Atrasada</span>
+                                            </div>
+                                            <div class="col-2"></div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <table width="100%">
+                                                    <tbody>
+                                                        <tr class="text-center">
+                                                            <td width="20%" class="sta_o cur-1 fun-2" sta=9><span
+                                                                    class="cpo-2 cor-l">0</span><br /><span
+                                                                    class="fon-0">Geral</span></td>
+                                                            <td width="20%" class="sta_o cur-1 fun-2" sta=0><span
+                                                                    class="cpo-2 cor-l">0</span><br /><span
+                                                                    class="fon-0">Espera</span></td>
+                                                            <td width="20%" class="sta_o cur-1 fun-2" sta=1><span
+                                                                    class="cpo-2 cor-l">0</span><br /><span
+                                                                    class="fon-0">Executando</span></td>
+                                                            <td width="20%" class="sta_o cur-1 fun-2" sta=2><span
+                                                                    class="cpo-2 cor-l">0</span><br /><span
+                                                                    class="fon-0">Travado 3º</span></td>
+                                                            <td width="20%" class="sta_o cur-1 fun-2" sta=3><span
+                                                                    class="cpo-2 cor-l">0</span><br /><span
+                                                                    class="fon-0">Pronto</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="form-row">
+                                        <div class="fon-1 cpo-1 col-12 text-center">AGRUPAMENTO</div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-3">
+                                            <input type="radio" id="lis_g" class="tip_a" name="tip_a" value="1"
+                                                checked="checked" /><span class="fon-0"> Geral</span>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="radio" id="lis_a" class="tip_a" name="tip_a" value="2" /><span
+                                                class="fon-0">
+                                                Ambiente</span>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="radio" id="lis_s" class="tip_a" name="tip_a" value="3" /><span
+                                                class="fon-0">
+                                                Segmento</span>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="radio" id="lis_e" class="tip_a" name="tip_a" value="3" /><span
+                                                class="fon-0">
+                                                Equipe</span>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div id="lis_o">
+                                        <div class="cur-1 nom_o" cod=1>
+                                            <div class="form-row">
+                                                <div class="col-4"><span class="cor-07">Solicitante</span><br />
+                                                    <p class="bor-1 fon-0 cor-08 text-center">paulo</p>
+                                                </div>
+                                                <div class="col-4"><span class="cor-07">Segmento</span><br />
+                                                    <p class="bor-1 fon-0 cor-09 text-center">Automação Portas</p>
+                                                </div>
+                                                <div class="col-4"><span class="cor-07">Status</span><br />
+                                                    <p class="bor-1 fon-0 cor-0 cor-00 text-center">Espera</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-4"><span class="cor-07">Coordenador</span><br />
+                                                    <p class="bor-1 fon-0 cor-08 text-center">Jackeline</p>
+                                                </div>
+                                                <div class="col-4"><span class="cor-07">Equipe</span><br />
+                                                    <p class="bor-1 fon-0 cor-09 text-center">04-Madrid - Materiais de
+                                                        Construção</p>
+                                                </div>
+                                                <div class="col-4"><span class="cor-07">Tipo</span><br />
+                                                    <p class="bor-1 fon-0 cor-4 cor-00 text-center">Planejado</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-4 text-center"><img class="img-fluid"
+                                                        src="upload/ser_000254_000.png"></div>
+                                                <div class="col-8"><span
+                                                        class="cor-07">Tarefa</span><br /><span><strong>2. 4. 7 - Parede
+                                                            em drywall 01 face - Placa Verde -
+                                                            RU</strong></span><br /><br /><span
+                                                        class="cor-07">Ambiente</span><br /><span>Escritório</span><br /><br />
+                                                    <table width="100%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="50%" class="cor-07">Início</td>
+                                                                <td width="50%" class="cor-07 text-right">Final</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>01/08/2022</td>
+                                                                <td class="cor-v text-right">31/08/2022</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="form-row">
+                                                <div class="col-6"><span class="cor-07">Passo Atual</span><br /></div>
+                                                <div class="col-6"><span class="cor-07">Próximo Passo</span><br /></div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="cur-1 nom_o" cod=2>
+                                            <div class="form-row">
+                                                <div class="col-4"><span class="cor-07">Solicitante</span><br />
+                                                    <p class="bor-1 fon-0 cor-08 text-center">Glauco</p>
+                                                </div>
+                                                <div class="col-4"><span class="cor-07">Segmento</span><br />
+                                                    <p class="bor-1 fon-0 cor-09 text-center">Gesso Drywall</p>
+                                                </div>
+                                                <div class="col-4"><span class="cor-07">Status</span><br />
+                                                    <p class="bor-1 fon-0 cor-0 cor-00 text-center">Espera</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-4"><span class="cor-07">Coordenador</span><br />
+                                                    <p class="bor-1 fon-0 cor-08 text-center">Jackeline</p>
+                                                </div>
+                                                <div class="col-4"><span class="cor-07">Equipe</span><br />
+                                                    <p class="bor-1 fon-0 cor-09 text-center">04-Madrid - Materiais de
+                                                        Construção</p>
+                                                </div>
+                                                <div class="col-4"><span class="cor-07">Tipo</span><br />
+                                                    <p class="bor-1 fon-0 cor-2 cor-00 text-center">Adicional</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-4 text-center"><img class="img-fluid"
+                                                        src="upload/ser_000012_000.png"></div>
+                                                <div class="col-8"><span
+                                                        class="cor-07">Tarefa</span><br /><span><strong>Parede em
+                                                            drywall 02 faces - Placa Rosa -
+                                                            RF</strong></span><br /><br /><span
+                                                        class="cor-07">Ambiente</span><br /><span>Casa de
+                                                        Máquinas</span><br /><br />
+                                                    <table width="100%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="50%" class="cor-07">Início</td>
+                                                                <td width="50%" class="cor-07 text-right">Final</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>13/08/2022</td>
+                                                                <td class="cor-v text-right">16/08/2022</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="form-row">
+                                                <div class="col-6"><span class="cor-07">Passo Atual</span><br /></div>
+                                                <div class="col-6"><span class="cor-07">Próximo Passo</span><br /></div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                    </div>
+                                    <input name="fot_j[]" type="file" id="fot_j" class="bot-4"
+                                        accept=".jpg, .jpeg, .png, .JPG, .JPEG, .PNG" multiple="multiple" />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img class="subir" src="img/subir.png" />
+                        </div>
+</body>
+
+
+</html>

@@ -38,7 +38,8 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a href="#" onclick="goBack()"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                            <a href="#" onclick="goBack()">
+                                <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
                                 <p>Voltar</p>
                             </a>
                         </div>
@@ -616,7 +617,7 @@
             var cellPrecoUnitario = novaLinha.insertCell(7);
             var cellPrecoTotal = novaLinha.insertCell(8);
 
-            cellExcluir.innerHTML = '<button type="button" class="btn btn-danger btn-sm" onclick="excluirLinha(this)">Excluir</button>';
+            cellExcluir.innerHTML = '<button type="button" class="btn btn-sm btn-sm-custom btn-excluir-edicao" style="color:#dc3545;" title="EXCLUIR"> <i class="fa-solid fa-trash-alt"></i> </button>';
             cellSequencia.textContent = sequencia++;
             cellTipo.textContent = determinarTipo(corDeFundo);
             cellCodigo.textContent = codigo;
@@ -660,6 +661,7 @@
         });
     });
 </script>
+
 
 </body>
 

@@ -40,11 +40,12 @@
                                 <p>Relatórios</p>
                             </a>
                         </div>
-                        <div class="menu-item">
-                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
-                                <p>Voltar</p>
-                            </a>
-                        </div>
+                       <div class="menu-item">
+        <a href="#" onclick="goBack()">
+            <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+            <p>Voltar</p>
+        </a>
+    </div>
                     </div>
                 </div>
 
@@ -87,7 +88,7 @@
                         </div>
 
                     </div>
-
+                    
 
 
                     <div class="conteudo-in">
@@ -96,17 +97,13 @@
                         <h3>Requisição de Compra - SMART FIT - PIRITUBA 2</h3>
 
                         <div class="box-info-requisicao" id="oculta">
-                            <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                <label for="contrato">Cliente:</label>
-                                <span class="span-infos-requisicao" id="cliente">Smart Fit Pirituba</span>
-                            </div>
-                            <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                <label for="contrato">Obra:</label>
-                                <span class="span-infos-requisicao" id="obra">Smart Fit Pirituba</span>
-                            </div>
-                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
+                            <div class="box-info-requisicao-cinza-metade-p" id="oculta">
                                 <label for="contrato">Solicitante:</label>
                                 <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
+                            <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                <label for="contrato">Tipo de Requisição:</label>
+                                <span class="span-infos-requisicao" id="solicitante">Reembolso / Obra</span>
                             </div>
 
                             <div class="box-info-requisicao-borda-g" id="oculta">
@@ -116,19 +113,16 @@
                         </div><!--box info requisicao-->
 
                         <div class="box-info-requisicao" id="oculta">
-                            <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                <label for="contrato">Cnpj: :</label>
-                                <span class="span-infos-requisicao" id="cliente">13.552.726/0001-89</span>
+                            
+                            <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                <label for="contrato">Cliente:</label>
+                                <span class="span-infos-requisicao" id="cliente">Smart Fit Pirituba</span>
                             </div>
-                            <div class="box-info-requisicao-cinza-metade" id="oculta">
-                                <label for="contrato">Inscrição Est:</label>
-                                <span class="span-infos-requisicao" id="obra">...</span>
+                            <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                <label for="contrato">Obra:</label>
+                                <span class="span-infos-requisicao" id="obra">Smart Fit Pirituba</span>
                             </div>
-                            <div class="box-info-requisicao-cinza-metade2" id="oculta">
-                                <label for="contrato">Tipo de Requisição:</label>
-                                <span class="span-infos-requisicao" id="solicitante">Reembolso / Obra</span>
-                            </div>
-
+                           
                             <div class="box-info-requisicao-borda-g" id="oculta">
                                 <label for="contrato">Data da Cotação:</label>
                                 <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
@@ -137,13 +131,14 @@
 
 
                         <div class="box-info-requisicao">
-                            <div class="box-info-requisicao-cinza-metade-g" id="oculta">
-                                <label for="contrato">Descrição:</label>
-                                <span class="span-infos-requisicao" id="cliente">Material para cobertura da área técnica</span>
+                            
+                            <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                <label for="contrato">Cnpj: :</label>
+                                <span class="span-infos-requisicao" id="cliente">13.552.726/0001-89</span>
                             </div>
-                            <div class="box-info-requisicao-cinza-metade-g" id="oculta">
-                                <label for="contrato">Observação:</label>
-                                <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor siamet</span>
+                            <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                <label for="contrato">Inscrição Est:</label>
+                                <span class="span-infos-requisicao" id="obra">...</span>
                             </div>
 
                            <div class="box-info-requisicao-borda-g" id="oculta">
@@ -154,34 +149,42 @@
                         </div><!-- box-info-requisicao -->
 
                         <div class="box-info-requisicao">
-                            <div class="box-info-requisicao-cinza-metade-m" id="oculta">
+                            
+                            <div class="box-info-requisicao-cinza-metade-p" id="oculta">
                                 <label for="contrato">Grupo:</label>
                                 <span class="span-infos-requisicao" id="cliente">20 - Serralheria</span>
                             </div>
-                            <div class="box-info-requisicao-cinza-metade-m" id="oculta">
+                            <div class="box-info-requisicao-cinza-metade-p" id="oculta">
                                 <label for="contrato">Sub-Grupo:</label>
                                 <span class="span-infos-requisicao" id="obra">Coberturas</span>
                             </div>
-
-                           <div class="box-info-requisicao-borda-g" id="oculta">
-                                <label for="contrato">Data do Cadastro:</label>
+                            <div class="box-info-requisicao-borda-g" id="oculta">
+                                <label for="contrato">Data de Compra:</label>
                                 <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
                             </div>
 
                         </div><!-- box-info-requisicao -->
 
                         <div class="box-info-requisicao">
-                            <div class="box-info-requisicao-borda-g" id="oculta">
-                                <label for="contrato">Data de Compra:</label>
-                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            
+                            <div class="box-info-requisicao-cinza-metade-g" id="oculta">
+                                <label for="contrato">Descrição:</label>
+                                <span class="span-infos-requisicao" id="cliente">Material para cobertura da área técnica</span>
                             </div>
                             <div class="box-info-requisicao-borda-g" id="oculta">
                                 <label for="contrato">Data de Entrega:</label>
                                 <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
                             </div>
+                            </div><!--box-info-requisicao-->                            
+                            <div class="box-info-requisicao">
+                            <div class="box-info-requisicao-cinza-metade-g" id="oculta">
+                                <label for="contrato">Observação:</label>
+                                <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor siamet</span>
+                            </div>
                             <div class="box-info-requisicao-borda-g" id="oculta">
                                 <label for="contrato">Data de Pagamento:</label>
-                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</Data de Compra:
+                                <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                            </div>
                         </div><!-- box-info-requisicao -->
 
 
@@ -338,6 +341,13 @@
             });
         }
     </script>
+
+<script>
+    //volta um nível de página na navegação quando clicar no menu Voltar
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 
 
