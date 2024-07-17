@@ -76,6 +76,21 @@ select {
     justify-content: space-between;
 }
 
+.form-content-orange {
+    margin: 10px 0px;
+    padding: 5px 5px 15px;
+    background-color: #f37334;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    position: relative;
+    align-items: flex-start;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .form-control {font-family: 'Lato', sans-serif;}
 
 .form-row {

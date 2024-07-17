@@ -23,8 +23,11 @@
 
                 <div class="topo">
                     <div class="logo">
-                        <img src="imgs/logo.png" alt="Logo">
-                    </div>
+    <a href="home.html">
+        <img src="imgs/logo.png" alt="Logo">
+    </a>
+</div>
+
                     <div class="menu">
                         <div class="menu-item">
                             <a href="home.html">
@@ -82,585 +85,662 @@
                         <span>FICHAS DE COMPOSIÇÃO</span>
                     </div>
 
-                     
+
+                </div>
+
+                <div class="conteudo-in">
+                    <h2>Fichas de Composição</h2>
+
+
+                    <!-- Botão para abrir a criação de ficha -->
+                    <button type="button" id="btnAbrirNovo" class="sub-icones" title="Abrir Nova Ficha">
+                        <i class="fa-regular fa-square-plus"></i>
+                        <label>Criar Nova Ficha</label>
+                    </button>
+                </div>
+
+
+                <!-- criar ficha oculto -->
+                <div class="form-content" style="display: none;">
+                    <div class="col-md-7">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label>Grupo</label>
+
+                                <select id="gru_c" name="gru_c" class="form-control" required="">
+                                    <option value="0" selected="selected">Selecione o grupo &#x2193;</option>
+                                    <option value="64">01 - Pré - Obra</option>
+                                    <option value="20">02 - Custos Administrativos</option>
+                                    <option value="1">03 - Serviços Preliminares</option>
+                                    <option value="21">04 - Demolições e Remoções</option>
+                                    <option value="69">05-Estruturas de Concreto Armado</option>
+                                    <option value="47">06 - Estruturas Metálicas</option>
+                                    <option value="2">07 - Paredes e Divisórias</option>
+                                    <option value="4">08 - Revestimentos de Paredes</option>
+                                    <option value="5">09 - Impermeabilização</option>
+                                    <option value="6">10 - Pisos</option>
+                                    <option value="26">11 - Instalações Hidráulicas</option>
+                                    <option value="27">12 - Instalações Elétricas</option>
+                                    <option value="52">13 - T.I. / Sonorização / Automação</option>
+                                    <option value="41">14 - Ar Condicionado e Exaustão</option>
+                                    <option value="33">15 - Combate de Incêndio </option>
+                                    <option value="9">16 - Forros</option>
+                                    <option value="10">17 - Pintura</option>
+                                    <option value="11">18 - Vidros e Espelhos</option>
+                                    <option value="12">19 - Granitos</option>
+                                    <option value="48">20 - Serralheria</option>
+                                    <option value="14">21 - Esquadrias</option>
+                                    <option value="22">22 - Plataformas e Elevadores</option>
+                                    <option value="43">23 - Coberturas</option>
+                                    <option value="54">24 - Divisórias</option>
+                                    <option value="56">25 - Luminárias</option>
+                                    <option value="57">26 - Aquecedores</option>
+                                    <option value="58">27 - Marcenaria</option>
+                                    <option value="59">28 - Eletro Eletrônicos</option>
+                                    <option value="73">29 - Isolamento Térmico e Acústico</option>
+                                    <option value="71">30 - Fachadas e Comunicação Visual</option>
+                                    <option value="62">31 - Urbanização e Serviços Externos</option>
+                                    <option value="51">32 - Apoio Civil</option>
+                                    <option value="49">33- Limpeza de Obra</option>
+                                    <option value="61">34 - Omissos</option>
+                                    <option value="46">39 - Gerenciamento</option>
+                                    <option value="78">40 - Dry Wall</option>
+                                    <option value="83">Implantação</option>
+                                    <option value="84">OMISSOS</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Número da Ficha</label>
+                                <input type="text" class="form-control text-center" maxlength="6" id="cod" name="cod"
+                                    value="6513" disabled />
+                            </div>
+                            <div class="col-md-3">
+                                <label>Status</label>
+                                <select id="sta" name="sta" class="form-control" required="">
+                                    <option value="0">Pronta</option>
+                                    <option value="1">Vista</option>
+                                    <option value="2">Aprovada</option>
+                                    <option value="3">Suspensa</option>
+                                    <option value="4">Cancelado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Linha 2: Descrição do Serviço Prestado e Unidade de Medida -->
+                        <div class="form-row">
+                            <div class="col-md-9">
+                                <label>Descrição do Serviço Prestado</label>
+                                <select id="obr" name="obr" class="form-control" required>
+                                    <option>Informe serviço a prestar desejado...
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Unid. Medida</label>
+                                <input type="text" class="form-control" maxlength="4" id="cli" name="cli"
+                                    value="(Unid. Automático)" required disabled />
+                            </div>
+                        </div>
+                        <!-- Linha 3: Observações -->
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <label>Observações para a Ficha Técnica</label>
+                                <textarea class="form-control" rows="12" id="des" placeholder=" " name="des"></textarea>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="conteudo-in">
-                        <h2>Fichas de Composição</h2>
+                    <div class="col-md-5">
+                        <!-- Sidebar -->
+                        <div class="sidebar-form cinza-medio">
+                            <!-- Conteúdo do sidebar aqui -->
+                            <h3>Composição BDI</h3>
 
-
-                        <!-- Botão para abrir a criação de ficha -->
-                        <button type="button" id="btnAbrirNovo" class="sub-icones" title="Abrir Nova Ficha">
-                            <i class="fa-regular fa-square-plus"></i>
-                            <label>Criar Nova Ficha</label>
-                        </button>
-                    </div>
-
-                    
-                    <!-- criar ficha oculto -->
-                    <div class="form-content" style="display: none;">
-                        <div class="col-md-7">
+                            <!-- Continuação dos campos de formulário -->
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <label>Grupo</label>
-                                    <select id="gru" name="gru" class="form-control" required>
-                                        <!-- Opções do select aqui -->
-                                    </select>
+                                    <label>% Encargos</label>
+                                    <input type="text" class="form-control" maxlength="50" id="encargos" name="encargos"
+                                        value="" />
                                 </div>
-                                <div class="col-md-3">
-                                    <label>Número da Ficha</label>
-                                    <input type="text" class="form-control text-center" maxlength="6" id="cod"
-                                        name="cod" value="6513" disabled />
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Status</label>
-                                    <select id="obr" name="obr" class="form-control" required>
-                                        <!-- Opções do select aqui -->
-                                    </select>
+                                <div class="col-md-6">
+                                    <label>R$ Encargos</label>
+                                    <input type="text" class="form-control" maxlength="50" id="valor_encargos"
+                                        name="valor_encargos" value="" />
                                 </div>
                             </div>
-                            <!-- Linha 2: Descrição do Serviço Prestado e Unidade de Medida -->
+
                             <div class="form-row">
-                                <div class="col-md-9">
-                                    <label>Descrição do Serviço Prestado</label>
-                                    <select id="obr" name="obr" class="form-control" required>
-                                        <option>Informe serviço a prestar desejado...
-                                    </select>
+                                <div class="col-md-6">
+                                    <label>% Custos Indiretos</label>
+                                    <input type="text" class="form-control" maxlength="50" id="custos_indiretos"
+                                        name="custos_indiretos" value="" />
                                 </div>
-                                <div class="col-md-3">
-                                    <label>Unid. Medida</label>
-                                    <input type="text" class="form-control" maxlength="4" id="cli" name="cli"
-                                        value="(Unid. Automático)" required disabled />
+                                <div class="col-md-6">
+                                    <label>R$ Custos Indiretos</label>
+                                    <input type="text" class="form-control" maxlength="50" id="valor_custos_indiretos"
+                                        name="valor_custos_indiretos" value="" />
                                 </div>
                             </div>
-                            <!-- Linha 3: Observações -->
+
                             <div class="form-row">
-                                <div class="col-md-12">
-                                    <label>Observações para a Ficha Técnica</label>
-                                    <textarea class="form-control" rows="12" id="des" placeholder=" "
-                                        name="des"></textarea>
+                                <div class="col-md-6">
+                                    <label>% Lucro Líquido</label>
+                                    <input type="text" class="form-control" maxlength="50" id="lucro_liquido"
+                                        name="lucro_liquido" value="" />
                                 </div>
+                                <div class="col-md-6">
+                                    <label>R$ Lucro Líquido</label>
+                                    <input type="text" class="form-control" maxlength="50" id="valor_lucro_liquido"
+                                        name="valor_lucro_liquido" value="" />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label>% Impostos</label>
+                                    <input type="text" class="form-control" maxlength="50" id="impostos" name="impostos"
+                                        value="" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label>R$ Impostos</label>
+                                    <input type="text" class="form-control" maxlength="50" id="valor_impostos"
+                                        name="valor_impostos" value="" />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label>% Potencializador</label>
+                                    <input type="text" class="form-control" maxlength="50" id="potencializador"
+                                        name="potencializador" value="" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label>R$ Potencializador</label>
+                                    <input type="text" class="form-control" maxlength="50" id="valor_potencializador"
+                                        name="valor_potencializador" value="" />
+                                </div>
+
                             </div>
                         </div>
+                    </div>
+                    <hr width="100%">
 
-                        <div class="col-md-5">
-                            <!-- Sidebar -->
-                            <div class="sidebar-form cinza-medio">
-                                <!-- Conteúdo do sidebar aqui -->
-                                <h3>Composição BDI</h3>
 
-                                <!-- Continuação dos campos de formulário -->
-                                <div class="form-row">
-                                    <div class="col-md-6">
-                                        <label>% Encargos</label>
-                                        <input type="text" class="form-control" maxlength="50" id="encargos"
-                                            name="encargos" value="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>R$ Encargos</label>
-                                        <input type="text" class="form-control" maxlength="50" id="valor_encargos"
-                                            name="valor_encargos" value="" />
-                                    </div>
-                                </div>
+                    <div class="form-row cinza-claro" style="padding-bottom: 15px;">
+                        <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
+                            <form name="" action="#" method="POST">
+                                <!-- Botão para abrir novo bloco -->
+                                <button type="button" id="btnNovoBlocoClaro" class="sub-icones"
+                                    title="Adicionar Novo Bloco de Serviços"
+                                    onclick="adicionarNovoBloco('cinza-claro')">
+                                    <i class="fa-regular fa-square-plus"></i>
+                                    <label>Novo</label>
+                                </button>
 
-                                <div class="form-row">
-                                    <div class="col-md-6">
-                                        <label>% Custos Indiretos</label>
-                                        <input type="text" class="form-control" maxlength="50" id="custos_indiretos"
-                                            name="custos_indiretos" value="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>R$ Custos Indiretos</label>
-                                        <input type="text" class="form-control" maxlength="50"
-                                            id="valor_custos_indiretos" name="valor_custos_indiretos" value="" />
-                                    </div>
-                                </div>
 
-                                <div class="form-row">
-                                    <div class="col-md-6">
-                                        <label>% Lucro Líquido</label>
-                                        <input type="text" class="form-control" maxlength="50" id="lucro_liquido"
-                                            name="lucro_liquido" value="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>R$ Lucro Líquido</label>
-                                        <input type="text" class="form-control" maxlength="50" id="valor_lucro_liquido"
-                                            name="valor_lucro_liquido" value="" />
-                                    </div>
-                                </div>
+                            </form>
+                        </div><!--col md1-->
 
-                                <div class="form-row">
-                                    <div class="col-md-6">
-                                        <label>% Impostos</label>
-                                        <input type="text" class="form-control" maxlength="50" id="impostos"
-                                            name="impostos" value="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>R$ Impostos</label>
-                                        <input type="text" class="form-control" maxlength="50" id="valor_impostos"
-                                            name="valor_impostos" value="" />
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="col-md-6">
-                                        <label>% Potencializador</label>
-                                        <input type="text" class="form-control" maxlength="50" id="potencializador"
-                                            name="potencializador" value="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>R$ Potencializador</label>
-                                        <input type="text" class="form-control" maxlength="50"
-                                            id="valor_potencializador" name="valor_potencializador" value="" />
-                                    </div>
-
-                                </div>
-                            </div>
+                        <div class="col-md-1">
+                            <label>Código</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
                         </div>
-                        <hr width="100%">
-
-
-                        <div class="form-row cinza-claro" style="padding-bottom: 15px;">
-                            <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
-                                <form name="" action="#" method="POST">
-                                    <!-- Botão para abrir novo bloco -->
-                                    <button type="button" id="btnNovoBlocoClaro" class="sub-icones" title="Adicionar Novo Bloco de Serviços" onclick="adicionarNovoBloco('cinza-claro')">
-                                        <i class="fa-regular fa-square-plus"></i>
-                                        <label>Novo</label>
-                                    </button>
-                                    
-
-                                </form>
-                            </div><!--col md1-->
-
-                            <div class="col-md-1">
-                                <label>Código</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-6">
-                                <label>Descrição dos Serviços</label>
-                                <input type="text" class="form-control text-center" maxlength="200" id="uni_i"
-                                    name="uni_i" value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Unid.</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Preço</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Indice</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-2">
-                                <label>Valor</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                        </div><!--form row cinza claro-->
-
-                        <div class="form-row cinza-medio" style="padding-bottom: 15px;">
-                            <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
-                                <form name="" action="#" method="POST">
-                                    <!-- Botão para abrir novo bloco -->
-                                    <button type="button" id="btnNovoBlocoMedio" class="sub-icones" title="Adicionar Novo Bloco de Materiais" onclick="adicionarNovoBloco('cinza-medio')">
-                                        <i class="fa-regular fa-square-plus"></i>
-                                        <label>Novo</label>
-                                    </button>
-                                    
-                                </form>
-                            </div><!--col md1-->
-
-                            <div class="col-md-1">
-                                <label>Código</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-6">
-                                <label>Descrição dos Materiais</label>
-                                <input type="text" class="form-control text-center" maxlength="200" id="uni_i"
-                                    name="uni_i" value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Unid.</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Preço</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Indice</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-2">
-                                <label>Valor</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                        </div><!--form row cinza medio-->
-
-                        <div class="form-row cinza-escuro" style="padding-bottom: 15px;">
-                            <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
-                                <form name="" action="#" method="POST">
-                                    <!-- Botão para abrir novo bloco -->
-                                    <button type="button" id="btnNovoBlocoEscuro" class="sub-icones" title="Adicionar Novo Bloco de Equipamentos" onclick="adicionarNovoBloco('cinza-escuro')">
-                                        <i class="fa-regular fa-square-plus"></i>
-                                        <label>Novo</label>
-                                    </button>
-                                    
-
-                                </form>
-                            </div><!--col md1-->
-
-                            <div class="col-md-1">
-                                <label>Código</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-6">
-                                <label>Descrição dos Equipamentos</label>
-                                <input type="text" class="form-control text-center" maxlength="200" id="uni_i"
-                                    name="uni_i" value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Unid.</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Preço</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-1">
-                                <label>Indice</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                            <div class="col-md-2">
-                                <label>Valor</label>
-                                <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i"
-                                    value="" />
-                            </div>
-                        </div><!--form row cinza escuro-->
-
-                        <div id="lis_i" class="col-md-12  p-0">
-                            <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
-
-                                <div class="overflow-auto" style="max-width: 100vw;">
-                                    
-                                    <div class="tab-1 table-responsive form-row-table">
-                                        <table id="tab-2">
-                                            <thead class="thead-light">
-                                                <tr>
-                                                    <th width="3%">Excluir</th>
-                                                    <th>Seq.</th>
-                                                    <th>Tipo</th>
-                                                    <th>Cód.</th>
-                                                    <th>Descrição do Item</th>
-                                                    <th>Unid.</th>
-                                                    <th>Quant.</th>
-                                                    <th>R$ Unit.</th>
-                                                    <th>R$ Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="form-row align-center">
-
-                                <div class="space-btn text-center">
-                                    <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
-                                            class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
-                                </div>
-
-                                <div class="space-btn text-center">
-                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
-                                            class="fa-regular fa-rectangle-xmark"></i><label>Fechar</label></button>
-                                </div>
-                            </div>
+                        <div class="col-md-6">
+                            <label>Descrição dos Serviços</label>
+                            <input type="text" class="form-control text-center" maxlength="200" id="uni_i" name="uni_i"
+                                value="" />
                         </div>
+                        <div class="col-md-1">
+                            <label>Unid.</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Preço</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Indice</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-2">
+                            <label>Valor</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                    </div><!--form row cinza claro-->
 
-                    </div><!--div form-content-->
+                    <div class="form-row cinza-medio" style="padding-bottom: 15px;">
+                        <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
+                            <form name="" action="#" method="POST">
+                                <!-- Botão para abrir novo bloco -->
+                                <button type="button" id="btnNovoBlocoMedio" class="sub-icones"
+                                    title="Adicionar Novo Bloco de Materiais"
+                                    onclick="adicionarNovoBloco('cinza-medio')">
+                                    <i class="fa-regular fa-square-plus"></i>
+                                    <label>Novo</label>
+                                </button>
 
-                    <div class="form-content2">
-                        
-                        <div class="col-md-12">
-                            <div class="form-row">
-                                <div class="col-md-4">
-                                    <label>Atividade: </label>
-                                    <input type="text" class="form-control text-center"  id="inputBusca" placeholder=" ">
-                                </div>
-                                <div class="col-md-4">
-                                    <label>Grupo:</label>
-                                    <input type="text" class="form-control text-center" id="inputBusca" placeholder="">
-                                </div>
-                                <div class="col-md-2">
-                                    <label>Status</label>
-                                    <select id="status" name="status" class="form-control text-center">
-                                        <option value="status_pronto">Todos</option>
-                                        <option>Lançamento</option>
-                                        <option>Pronta</option>
-                                        <option>Aprovada</option>
-                                        <option>Suspensa</option>
-                                        <option>Cancelada</option>
-                                    </select>
-                                    
-                                </div>
-                                
-                                <div class="col-md-2" style="padding-top: 20px;">
-                                    <button onclick="buscar()"> <span id="modo-icon" class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
+                            </form>
+                        </div><!--col md1-->
+
+                        <div class="col-md-1">
+                            <label>Código</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Descrição dos Materiais</label>
+                            <input type="text" class="form-control text-center" maxlength="200" id="uni_i" name="uni_i"
+                                value="" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Unid.</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Preço</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Indice</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-2">
+                            <label>Valor</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                    </div><!--form row cinza medio-->
+
+                    <div class="form-row cinza-escuro" style="padding-bottom: 15px;">
+                        <div class="col-md-12 d-flex justify-content-end" style="padding: 0;">
+                            <form name="" action="#" method="POST">
+                                <!-- Botão para abrir novo bloco -->
+                                <button type="button" id="btnNovoBlocoEscuro" class="sub-icones"
+                                    title="Adicionar Novo Bloco de Equipamentos"
+                                    onclick="adicionarNovoBloco('cinza-escuro')">
+                                    <i class="fa-regular fa-square-plus"></i>
+                                    <label>Novo</label>
+                                </button>
 
 
-                                <!-- tabela para desktop--> 
-                                <div class="cards-container modo-simples2" id="conteudoModoSimples2" style="display: block;">
+                            </form>
+                        </div><!--col md1-->
 
-                                    <table class="table-requisicoes">
-    
-                                <thead>
+                        <div class="col-md-1">
+                            <label>Código</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Descrição dos Equipamentos</label>
+                            <input type="text" class="form-control text-center" maxlength="200" id="uni_i" name="uni_i"
+                                value="" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Unid.</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Preço</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-1">
+                            <label>Indice</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                        <div class="col-md-2">
+                            <label>Valor</label>
+                            <input type="text" class="form-control" maxlength="50" id="pro_i" name="pro_i" value="" />
+                        </div>
+                    </div><!--form row cinza escuro-->
+
+                    <div id="lis_i" class="col-md-12  p-0">
+                        <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+
+                            <div class="overflow-auto" style="max-width: 100vw;">
+
+                                <div class="tab-1 table-responsive form-row-table">
+                                    <table id="tab-2">
+                                        <thead class="thead-light">
                                             <tr>
-                                                <th>Nº Ficha</th>
-                                                <th>Grupo</th>
-                                                <th>Descrição Atividade/Serviço</th>
-                                                <th>Valor Material</th>
-                                                <th>Valor Mão-de-Obra</th>
-                                                <th>Custo Final</th>
-                                                <th>Itens</th>
-                                                <th>Data da Revisão</th>
-                                                <th>Status</th>
+                                                <th width="3%">Excluir</th>
+                                                <th>Seq.</th>
+                                                <th>Tipo</th>
+                                                <th>Cód.</th>
+                                                <th>Descrição do Item</th>
+                                                <th>U.M</th>
+                                                <th>Preço</th>
+                                                <th>índice</th>
+                                                <th>Valor Total</th>
                                             </tr>
-
                                         </thead>
                                         <tbody>
-                                            <tr onclick="window.location.href='visu-ficha-comp.html';" onmouseover="this.style.backgroundColor='#d3ecff';" onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;">
-                                                <td>6513</td>
-                                                <td>11-Instalações Hidráulicas</td>
-                                                <td  style="text-align: justify;">2.8.6.1 - Bacia Sanitária para deficientes - DECA Linha Confort,
-                                                    Vogue PLUS, S/ ABERT - Mod. P510, (195)</td>
-                                                <td>749,54</td>
-                                                <td>901,50</td>
-                                                <td>1.442,80</td>
-                                                <td>6</td>
-                                                <td>***</td>
-                                                <td>botãozinho de status</td>
-                                            </tr>
-                                            <tr onclick="window.location.href='visu-ficha-comp.html';" onmouseover="this.style.backgroundColor='#d3ecff';" onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;">
-                                                <td>6513</td>
-                                                <td>11-Instalações Hidráulicas</td>
-                                                <td  style="text-align: justify;">2.8.6.1 - Bacia Sanitária para deficientes - DECA Linha Confort,
-                                                    Vogue PLUS, S/ ABERT - Mod. P510, (195)</td>
-                                                <td>749,54</td>
-                                                <td>901,50</td>
-                                                <td>1.442,80</td>
-                                                <td>6</td>
-                                                <td>***</td>
-                                                <td>botãozinho de status</td>
-                                            </tr>
 
                                         </tbody>
                                     </table>
+                                   
+                                </div>
+                            </div>
 
-                                    <div class="dataTables_paginate paging_simple_numbers" id="tab-2_paginate">
+                        </div>
 
-                                    </div>
-
-
-                        </div><!--tab-2 wrapper-->
-                    </div><!--#lis-cold-md-->
-
-                    <!-- Ícone no footer -->
-                    <div class="ico-subir-footer" onclick="scrollToTop()">
-                        <i class="fas fa-arrow-up"></i>
+                        <div class="form-row align-center">
+                            <div class="space-btn text-center">
+                                <button type="submit" id="sal_r" name="salvar" class="sub-icones">
+                                    <i class="fa-regular fa-floppy-disk"></i><label>Salvar</label>
+                                </button>
+                            </div>
+                
+                            <div class="space-btn text-center">
+                                <button type="button" id="btnCancelar" class="sub-icones" title="Cancelar Nova Ficha">
+                                    <i class="fa-regular fa-rectangle-xmark"></i><label>Fechar</label>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                </div><!--conteudo desktop-->
-            </div><!--div conteudo-->
+                </div><!--div form-content-->
 
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    // Ao clicar no botão, alternar a exibição do conteúdo do formulário
-                    $('#btnAbrirNovo').click(function () {
-                        $('.form-content').slideToggle(); // Correção aqui: alterei o seletor para classe '.form-content'
+                <div class="form-content-orange">
+
+                    <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <label>Atividade: </label>
+                                <input type="text" class="form-control text-center" id="inputBusca" placeholder=" ">
+                            </div>
+                            <div class="col-md-4">
+                                <label>Grupo:</label>
+                                <select id="gru_c" name="gru_c" class="form-control" required="">
+                                    <option value="0" selected="selected">Selecione o grupo &#x2193;</option>
+                                    <option value="64">01 - Pré - Obra</option>
+                                    <option value="20">02 - Custos Administrativos</option>
+                                    <option value="1">03 - Serviços Preliminares</option>
+                                    <option value="21">04 - Demolições e Remoções</option>
+                                    <option value="69">05-Estruturas de Concreto Armado</option>
+                                    <option value="47">06 - Estruturas Metálicas</option>
+                                    <option value="2">07 - Paredes e Divisórias</option>
+                                    <option value="4">08 - Revestimentos de Paredes</option>
+                                    <option value="5">09 - Impermeabilização</option>
+                                    <option value="6">10 - Pisos</option>
+                                    <option value="26">11 - Instalações Hidráulicas</option>
+                                    <option value="27">12 - Instalações Elétricas</option>
+                                    <option value="52">13 - T.I. / Sonorização / Automação</option>
+                                    <option value="41">14 - Ar Condicionado e Exaustão</option>
+                                    <option value="33">15 - Combate de Incêndio </option>
+                                    <option value="9">16 - Forros</option>
+                                    <option value="10">17 - Pintura</option>
+                                    <option value="11">18 - Vidros e Espelhos</option>
+                                    <option value="12">19 - Granitos</option>
+                                    <option value="48">20 - Serralheria</option>
+                                    <option value="14">21 - Esquadrias</option>
+                                    <option value="22">22 - Plataformas e Elevadores</option>
+                                    <option value="43">23 - Coberturas</option>
+                                    <option value="54">24 - Divisórias</option>
+                                    <option value="56">25 - Luminárias</option>
+                                    <option value="57">26 - Aquecedores</option>
+                                    <option value="58">27 - Marcenaria</option>
+                                    <option value="59">28 - Eletro Eletrônicos</option>
+                                    <option value="73">29 - Isolamento Térmico e Acústico</option>
+                                    <option value="71">30 - Fachadas e Comunicação Visual</option>
+                                    <option value="62">31 - Urbanização e Serviços Externos</option>
+                                    <option value="51">32 - Apoio Civil</option>
+                                    <option value="49">33- Limpeza de Obra</option>
+                                    <option value="61">34 - Omissos</option>
+                                    <option value="46">39 - Gerenciamento</option>
+                                    <option value="78">40 - Dry Wall</option>
+                                    <option value="83">Implantação</option>
+                                    <option value="84">OMISSOS</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Status</label>
+                                <select id="status" name="status" class="form-control text-center">
+                                    <option value="status_pronto">Todos</option>
+                                    <option>Lançamento</option>
+                                    <option>Pronta</option>
+                                    <option>Aprovada</option>
+                                    <option>Suspensa</option>
+                                    <option>Cancelada</option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-2" style="padding-top: 20px;">
+                                <button onclick="buscar()"> <span id="modo-icon"
+                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- tabela para desktop-->
+                <div class="cards-container modo-simples2" id="conteudoModoSimples2" style="display: block;">
+
+                    <table class="table-requisicoes">
+
+                        <thead>
+                            <tr>
+                                <th>Nº Ficha</th>
+                                <th>Grupo</th>
+                                <th>Descrição Atividade/Serviço</th>
+                                <th>Valor Material</th>
+                                <th>Valor Mão-de-Obra</th>
+                                <th>Custo Final</th>
+                                <th>Itens</th>
+                                <th>Data da Revisão</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr onclick="window.location.href='visu-ficha-comp.html';"
+                                onmouseover="this.style.backgroundColor='#d3ecff';"
+                                onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;">
+                                <td>6513</td>
+                                <td>11-Instalações Hidráulicas</td>
+                                <td style="text-align: justify;">2.8.6.1 - Bacia Sanitária para deficientes - DECA Linha
+                                    Confort,
+                                    Vogue PLUS, S/ ABERT - Mod. P510, (195)</td>
+                                <td>749,54</td>
+                                <td>901,50</td>
+                                <td>1.442,80</td>
+                                <td>6</td>
+                                <td>***</td>
+                                <td>botãozinho de status</td>
+                            </tr>
+                            <tr onclick="window.location.href='visu-ficha-comp.html';"
+                                onmouseover="this.style.backgroundColor='#d3ecff';"
+                                onmouseout="this.style.backgroundColor='transparent';" style="cursor: pointer;">
+                                <td>6513</td>
+                                <td>11-Instalações Hidráulicas</td>
+                                <td style="text-align: justify;">2.8.6.1 - Bacia Sanitária para deficientes - DECA Linha
+                                    Confort,
+                                    Vogue PLUS, S/ ABERT - Mod. P510, (195)</td>
+                                <td>749,54</td>
+                                <td>901,50</td>
+                                <td>1.442,80</td>
+                                <td>6</td>
+                                <td>***</td>
+                                <td>botãozinho de status</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class="dataTables_paginate paging_simple_numbers" id="tab-2_paginate">
+
+                    </div>
+
+
+                </div><!--tab-2 wrapper-->
+            </div><!--#lis-cold-md-->
+
+            <!-- Ícone no footer -->
+            <div class="ico-subir-footer" onclick="scrollToTop()">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+
+        </div><!--conteudo desktop-->
+    </div><!--div conteudo-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        // Função para adicionar um novo bloco com base no tipo de botão clicado
+        function adicionarNovoBloco(tipo) {
+            // Seleciona o bloco correspondente ao tipo de botão clicado
+            var blocoExistente = document.querySelector('.form-row.' + tipo);
+
+            // Clona o bloco existente
+            var novoBloco = blocoExistente.cloneNode(true);
+
+            // Limpa os valores dos campos no novo bloco
+            var inputs = novoBloco.querySelectorAll('input[type="text"]');
+            inputs.forEach(function (input) {
+                input.value = '';
+            });
+
+            // Encontra o elemento pai do bloco existente
+            var container = blocoExistente.parentElement;
+
+            // Adiciona o novo bloco logo após o bloco existente
+            container.insertBefore(novoBloco, blocoExistente.nextSibling);
+        }
+    </script>
+
+
+    <script>
+        // Função para rolar até o topo da página
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para fazer uma rolagem suave
+            });
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <!--ABRE NOVA FICHA E CRIA A TABELA DE DESCRIÇAO DE ITENS-->
+    <script>
+        $(document).ready(function () {
+            // Alternar a exibição do conteúdo do formulário ao clicar no botão "Criar Nova Ficha"
+            $('#btnAbrirNovo').click(function () {
+                $('.form-content').slideToggle(); 
+            });
+
+            // Ocultar o conteúdo do formulário de baixo para cima ao clicar no botão "Fechar"
+            $('#btnCancelar').click(function () {
+                $('.form-content').slideToggle('slow');
+            });
+
+            // Função para adicionar eventos de teclado aos campos de entrada de cada bloco
+            function adicionarEventosTeclado(bloco) {
+                var inputs = bloco.querySelectorAll('input');
+                inputs.forEach(function (input) {
+                    input.addEventListener('keyup', function (event) {
+                        if (event.key === 'Enter') {
+                            var codigo = bloco.querySelector('.col-md-1 input').value;
+                            var descricao = bloco.querySelector('.col-md-6 input').value;
+                            var unidade = bloco.querySelector('.col-md-1 input').value;
+                            var preco = bloco.querySelector('.col-md-1 input').value;
+                            var indice = bloco.querySelector('.col-md-1 input').value;
+                            var valor = bloco.querySelector('.col-md-2 input').value;
+                            var corDeFundo = bloco.classList[1];
+
+                            adicionarNaTabela(codigo, descricao, unidade, preco, indice, valor, corDeFundo);
+
+                            inputs.forEach(function (input) {
+                                input.value = '';
+                            });
+                        }
                     });
                 });
-            </script>
-            
-            <script>
-                // Função para adicionar um novo bloco com base no tipo de botão clicado
-                function adicionarNovoBloco(tipo) {
-                    // Seleciona o bloco correspondente ao tipo de botão clicado
-                    var blocoExistente = document.querySelector('.form-row.' + tipo);
-            
-                    // Clona o bloco existente
-                    var novoBloco = blocoExistente.cloneNode(true);
-            
-                    // Limpa os valores dos campos no novo bloco
-                    var inputs = novoBloco.querySelectorAll('input[type="text"]');
-                    inputs.forEach(function (input) {
-                        input.value = '';
-                    });
-            
-                    // Encontra o elemento pai do bloco existente
-                    var container = blocoExistente.parentElement;
-            
-                    // Adiciona o novo bloco logo após o bloco existente
-                    container.insertBefore(novoBloco, blocoExistente.nextSibling);
+            }
+
+            // Inicialize a variável de sequência
+            var sequencia = 1;
+
+            // Função para adicionar os valores à tabela
+            function adicionarNaTabela(codigo, descricao, unidade, preco, indice, valorTotal, corDeFundo) {
+                var tabela = document.getElementById('tab-2').getElementsByTagName('tbody')[0];
+                var novaLinha = tabela.insertRow();
+                novaLinha.classList.add(corDeFundo);
+
+                var cellExcluir = novaLinha.insertCell(0);
+                var cellSequencia = novaLinha.insertCell(1);
+                var cellTipo = novaLinha.insertCell(2);
+                var cellCodigo = novaLinha.insertCell(3);
+                var cellDescricao = novaLinha.insertCell(4);
+                var cellUnidade = novaLinha.insertCell(5);
+                var cellPrecoUnitario = novaLinha.insertCell(6);
+                var cellIndice = novaLinha.insertCell(7);
+                var cellValorTotal = novaLinha.insertCell(8);
+
+                cellExcluir.innerHTML = '<button type="button" class="btn btn-sm btn-sm-custom btn-excluir-edicao" style="color:#dc3545;" title="EXCLUIR"> <i class="fa-solid fa-trash-alt"></i> </button>';
+                cellSequencia.textContent = sequencia++;
+                cellTipo.textContent = determinarTipo(corDeFundo);
+                cellCodigo.textContent = codigo;
+                cellDescricao.textContent = descricao;
+                cellUnidade.textContent = unidade;
+                cellPrecoUnitario.textContent = preco;
+                cellIndice.textContent = indice;
+                cellValorTotal.textContent = valorTotal;
+
+                // Adiciona evento de clique ao botão de excluir
+                var botaoExcluir = cellExcluir.querySelector('button');
+                botaoExcluir.addEventListener('click', function () {
+                    excluirLinha(this);
+                });
+            }
+
+            // Função para determinar o tipo com base na cor de fundo
+            function determinarTipo(corDeFundo) {
+                if (corDeFundo === 'cinza-claro') {
+                    return 'Serviços';
+                } else if (corDeFundo === 'cinza-medio') {
+                    return 'Materiais';
+                } else if (corDeFundo === 'cinza-escuro') {
+                    return 'Equipamentos';
+                } else {
+                    return '';
                 }
-            </script>
-            
+            }
 
+            // Função para excluir a linha
+            function excluirLinha(botao) {
+                var linha = botao.parentNode.parentNode;
+                linha.parentNode.removeChild(linha);
+            }
 
-            <script>
-                // Função para rolar até o topo da página
-                function scrollToTop() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth' // Para fazer uma rolagem suave
-                    });
-                }
-            </script>
-
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-            <script>
-                function goBack() {
-                    window.history.back();
-                }
-            </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var sequencia = 1; // Variável para controlar a sequência numérica
-
-        // Função para adicionar eventos de teclado aos campos de entrada de cada bloco
-        function adicionarEventosTeclado(bloco) {
-            var inputs = bloco.querySelectorAll('input');
+            // Adiciona eventos de teclado aos campos de entrada dos blocos existentes
+            var inputs = document.querySelectorAll('.form-row input');
             inputs.forEach(function (input) {
                 input.addEventListener('keyup', function (event) {
                     if (event.key === 'Enter') {
-                        var codigo = bloco.querySelector('.col-md-1 input').value;
-                        var descricao = bloco.querySelector('.col-md-6 input').value;
-                        var unidade = bloco.querySelector('.col-md-1 input').value;
-                        var preco = bloco.querySelector('.col-md-1 input').value;
-                        var indice = bloco.querySelector('.col-md-1 input').value;
-                        var valor = bloco.querySelector('.col-md-2 input').value;
-                        var corDeFundo = bloco.classList[1];
+                        var codigo = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
+                        var descricao = this.parentNode.parentNode.querySelector('.col-md-6 input').value;
+                        var unidade = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
+                        var preco = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
+                        var indice = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
+                        var valor = this.parentNode.parentNode.querySelector('.col-md-2 input').value;
+                        var corDeFundo = this.parentNode.parentNode.classList[1];
 
                         adicionarNaTabela(codigo, descricao, unidade, preco, indice, valor, corDeFundo);
 
-                        inputs.forEach(function (input) {
+                        this.parentNode.parentNode.querySelectorAll('input').forEach(function (input) {
                             input.value = '';
                         });
                     }
                 });
             });
-        }
-
-        // Adiciona eventos de teclado aos campos de entrada dos blocos existentes
-        var inputs = document.querySelectorAll('.form-row input');
-        inputs.forEach(function (input) {
-            input.addEventListener('keyup', function (event) {
-                if (event.key === 'Enter') {
-                    var codigo = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
-                    var descricao = this.parentNode.parentNode.querySelector('.col-md-6 input').value;
-                    var unidade = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
-                    var preco = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
-                    var indice = this.parentNode.parentNode.querySelector('.col-md-1 input').value;
-                    var valor = this.parentNode.parentNode.querySelector('.col-md-2 input').value;
-                    var corDeFundo = this.parentNode.parentNode.classList[1];
-
-                    adicionarNaTabela(codigo, descricao, unidade, preco, indice, valor, corDeFundo);
-
-                    this.parentNode.parentNode.querySelectorAll('input').forEach(function (input) {
-                        input.value = '';
-                    });
-                }
-            });
         });
-
-        // Função para adicionar os valores à tabela
-        function adicionarNaTabela(codigo, descricao, unidade, preco, indice, valor, corDeFundo) {
-            var tabela = document.getElementById('tab-2').getElementsByTagName('tbody')[0];
-            var novaLinha = tabela.insertRow();
-            novaLinha.classList.add(corDeFundo);
-
-            var cellExcluir = novaLinha.insertCell(0);
-            var cellSequencia = novaLinha.insertCell(1);
-            var cellTipo = novaLinha.insertCell(2);
-            var cellCodigo = novaLinha.insertCell(3);
-            var cellDescricao = novaLinha.insertCell(4);
-            var cellUnidade = novaLinha.insertCell(5);
-            var cellQuantidade = novaLinha.insertCell(6);
-            var cellPrecoUnitario = novaLinha.insertCell(7);
-            var cellPrecoTotal = novaLinha.insertCell(8);
-
-            cellExcluir.innerHTML = '<button type="button" class="btn btn-sm btn-sm-custom btn-excluir-edicao" style="color:#dc3545;" title="EXCLUIR"> <i class="fa-solid fa-trash-alt"></i> </button>';
-            cellSequencia.textContent = sequencia++;
-            cellTipo.textContent = determinarTipo(corDeFundo);
-            cellCodigo.textContent = codigo;
-            cellDescricao.textContent = descricao;
-            cellUnidade.textContent = unidade;
-            cellQuantidade.textContent = '';
-            cellPrecoUnitario.textContent = preco;
-            cellPrecoTotal.textContent = '';
-        }
-
-        // Função para determinar o tipo com base na cor de fundo
-        function determinarTipo(corDeFundo) {
-            if (corDeFundo === 'cinza-claro') {
-                return 'Serviços';
-            } else if (corDeFundo === 'cinza-medio') {
-                return 'Materiais';
-            } else if (corDeFundo === 'cinza-escuro') {
-                return 'Equipamentos';
-            } else {
-                return '';
-            }
-        }
-
-        // Função para excluir a linha
-        function excluirLinha(botao) {
-            var linha = botao.parentNode.parentNode;
-            linha.parentNode.removeChild(linha);
-        }
-
-        // Adiciona eventos de teclado aos campos de entrada dos blocos recém-adicionados
-        var botoesNovoBloco = document.querySelectorAll('.sub-icones');
-        botoesNovoBloco.forEach(function (botao) {
-            botao.addEventListener('click', function () {
-                var tipo = this.parentNode.parentNode.classList[1];
-                var blocoExistente = document.querySelector('.form-row.' + tipo);
-                var novoBloco = blocoExistente.cloneNode(true);
-                var container = blocoExistente.parentElement;
-                container.insertBefore(novoBloco, blocoExistente.nextSibling);
-                adicionarEventosTeclado(novoBloco); // Adiciona eventos de teclado ao novo bloco
-            });
-        });
-    });
-</script>
+    </script>
 
 
 </body>
