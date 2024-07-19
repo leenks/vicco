@@ -925,12 +925,9 @@ color: #444;
 .sub-icones i {
     color: #ff842a;
     background: transparent;
-    border: 0;
-}
+    font-size: 25px;
+}}
 
-.sub-icones i:hover {
-    color: #222;
-}
 
 .sub-icones+label {
     margin: 5px;
