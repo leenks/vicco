@@ -39,6 +39,7 @@ select {
     border-radius: 10px;
 }
 
+
 /* Estilos para alternar as cores das linhas da tabela */
 .table-ficha tbody tr:nth-child(odd) {
     background-color: #f9f9f9; /* Cinza claro */
@@ -47,6 +48,53 @@ select {
 .table-ficha tbody tr:nth-child(even) {
     background-color: #ffffff; /* Branco */
 }
+
+/* Estilos para centralizar o conteúdo das células */
+.table-ficha {
+    width: 100%;
+    border-collapse: collapse; /* Para remover os espaços entre as bordas das células */
+    font-size: 12px;
+}
+
+.table-ficha th, .table-ficha td {
+    text-align: center;
+    vertical-align: middle; 
+    padding: 5px 2px 5px;
+    border: 1px solid #ddd; 
+    font-size: 12px;
+}
+
+/* Estilos adicionais para cabeçalho */
+.table-ficha thead th {
+    background-color: #f2f2f2; /* Cor de fundo para o cabeçalho */
+    font-weight: bold;
+}
+
+/* Estilo para os ícones dentro da tabela com a classe .table-ficha-icon */
+.table-ficha-icon i {
+    color: #e07b39; /* Cor laranja */
+    font-size: 2rem; /* Tamanho dos ícones */
+}
+
+/* Estilo para os ícones com a classe .table-ficha-icon ao passar o mouse */
+.table-ficha-icon i:hover {
+    color: #e07b39; /* Cor laranja mais escura ao passar o mouse */
+}
+
+/* Estilo geral para ícones com a classe .sub-icones */
+.table-ficha .sub-icones {
+    color: #ff842a;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para garantir que todos os ícones com a classe .sub-icones fiquem com a mesma cor */
+.sub-icones i {
+    color: #ff842a;
+}
+
+
+
 
 .form-content {
     margin: 0px;
@@ -155,6 +203,7 @@ select {
     display: flex;
     justify-content: center;
     width: 100%;
+    align-items: center;
 }
 
 
@@ -347,8 +396,8 @@ select {
     max-width: 20%;
 }
 .space-btn img {
-    width: 20px;
-    height: 30;
+    width: 25px;
+    height: 25px;
     border: 0;
 }
 
