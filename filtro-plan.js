@@ -1,23 +1,39 @@
-// Efeito de slide na caixa de filtro
-function openFilterModal() {
-    var modal = document.getElementById('filterModal');
-    modal.style.display = 'block';
-    modal.classList.add('slideIn'); // Adiciona a classe de animação
+// função para os modais popup
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'block';
+        modal.classList.add('slideIn');
+    }
 }
 
-// Fecha o modal quando clica no Xis
-function closeFilterModal() {
-    var modal = document.getElementById('filterModal');
-    modal.style.display = 'none';
-}
-
-// Fecha o modal quando clica fora dele
-window.onclick = function (event) {
-    var modal = document.getElementById('filterModal');
-    if (event.target === modal) {
+// Função para fechar o modal
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    if (modal) {
         modal.style.display = 'none';
     }
 }
+
+// Fecha o modal quando clica fora dele
+window.onclick = function(event) {
+    var modals = document.getElementsByClassName('modal');
+    for (var i = 0; i < modals.length; i++) {
+        var modal = modals[i];
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+}
+
+// Adiciona event listener para os spans com a classe "close"
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('close')) {
+        var modalId = event.target.parentElement.parentElement.id; // Obtém o ID do modal pai
+        closeModal(modalId);
+    }
+});
+
 
 // Adiciona o filtro à lista de filtros selecionados
 function adicionarFiltro(nomeFiltro) {

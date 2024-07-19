@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="requisicoes.css">
+    <link rel="stylesheet" href="forms.css">
+    <title>Vicco Construtora</title>
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" onclick="goBack()">
+                                <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+
+            <center><img class="status" src="imgs/icons-status/04.png" /></center>
+
+            <div class="conteudo">
+                <div class="container-desktop">
+
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">INÍCIO</a>
+                        <span> > </span>
+                        <a href="#">TODAS AS OBRAS</a>
+                        <span> > </span>
+                        <a href="#">SUPRIMENTOS</a>
+                        <span> > </span>
+                        <a href="#">COTAÇÕES</a>
+                    </div>
+
+                    <!--Filtros e Visualizção modos-->
+                    <div class="wrap-toggle">
+                        <div class="toggle-container2">
+                            <button onclick="openModal('filterModal'); updateFilterDisplay();">
+                                <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
+                            </button>
+                        
+                            <div class="filtros-selecionados">
+                                <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
+                                <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
+                            </div>
+                        </div>
+
+                        <div class="toggle-container2">
+                            <div class="busca">
+                                <input type="text" id="inputBusca" placeholder="Digite aqui">
+                                <button onclick="buscar()"> <span id="modo-icon"
+                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="conteudo-in" id="conteudo-in">
+                        <h2>Cotações</h2>
+
+                        <h3>FECHAMENTO DE COTAÇÃO - SPGUAPUGL-083 - Nº 7.274</h3>
+                    </div>
+
+                    <div class="cards-container">
+
+                        <div class="card">
+
+                            <!--tabela de requisicao MOBILE-->
+                            <div class="cards-container modo-simples2" id="mobile-conteudoModoSimples2"
+                                style="display: none;">
+
+                                <div class="table-container">
+
+                                    <table class="table-requisicoes">
+                                        <thead>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th width="33%">Solicitante</th>
+                                                <th width="33%">Tipo de Requisição</th>
+                                                <th width="33%">Cliente</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td>Jackeline Costa da Silva</td>
+                                                <td>Requisição</td>
+                                                <td>Smart Fit Pirituba</td>
+                                            </tr>
+                                        </tbody>
+                                        <thead>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th>Obra</th>
+                                                <th>CNPJ:</th>
+                                                <th>Inscrição Est.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td>Smart Fit Pirituba</td>
+                                                <td>13.552.726/0001-89</td>
+                                                <td>...</td>
+                                            </tr>
+                                        </tbody>
+
+                                        <thead>
+
+                                            <tr>
+                                                <th colspan="2">Grupo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td colspan="2">20 - Serralheria</td>
+                                            </tr>
+                                        </tbody>
+                                        <thead>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th colspan="3">Descrição do Orçamento</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td colspan="3">Orçamento descrição detalhada</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="box-info-requisicao" id="oculta">
+                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                    <label for="contrato">Solicitante:</label>
+                                    <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                                </div>
+                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                    <label for="contrato">Cliente:</label>
+                                    <span class="span-infos-requisicao" id="solicitante">Smart Fit Pirituba</span>
+                                </div>
+                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                    <label for="contrato">Tipo de Requisição:</label>
+                                    <span class="span-infos-requisicao" id="solicitante">Requisição</span>
+                                </div>
+
+                                <div class="box-info-requisicao-borda-g" id="oculta">
+                                    <label for="contrato">Data do Cadastro:</label>
+                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                </div>
+                            </div><!--box info requisicao-->
+
+                            <div class="box-info-requisicao" id="oculta">
+
+                                <div class="box-info-requisicao-cinza-metade-g" id="oculta">
+                                    <label for="contrato">Obra:</label>
+                                    <span class="span-infos-requisicao" id="obra">Smart Fit Pirituba</span>
+                                </div>
+
+                                <div class="box-info-requisicao-borda-g" id="oculta">
+                                    <label for="contrato">Data da Cotação:</label>
+                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                </div>
+                            </div><!--box info requisicao-->
+
+
+                            <div class="box-info-requisicao">
+
+                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                    <label for="contrato">Cnpj: :</label>
+                                    <span class="span-infos-requisicao" id="cliente">13.552.726/0001-89</span>
+                                </div>
+                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                    <label for="contrato">Inscrição Est:</label>
+                                    <span class="span-infos-requisicao" id="obra">...</span>
+                                </div>
+
+                                <div class="box-info-requisicao-borda-g" id="oculta">
+                                    <label for="contrato">Data da Aprovação:</label>
+                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                </div>
+
+                            </div><!-- box-info-requisicao -->
+
+                            <div class="box-info-requisicao">
+
+                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                    <label for="contrato">Grupo:</label>
+                                    <span class="span-infos-requisicao" id="cliente">20 - Serralheria</span>
+                                </div>
+                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                    <label for="contrato">Sub-Grupo:</label>
+                                    <span class="span-infos-requisicao" id="obra">Coberturas</span>
+                                </div>
+                                <div class="box-info-requisicao-borda-g" id="oculta">
+                                    <label for="contrato">Data de Compra:</label>
+                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                </div>
+
+                            </div><!-- box-info-requisicao -->
+
+                            <div class="box-info-requisicao">
+
+                                <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
+                                    <label for="contrato">Descrição:</label>
+                                    <span class="span-infos-requisicao" id="cliente">Material para cobertura da área
+                                        técnica</span>
+                                </div>
+                                <div class="box-info-requisicao">
+                                    <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
+                                        <label for="contrato">Observação:</label>
+                                        <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor siamet</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-g" id="oculta">
+                                        <label for="contrato">Data de Entrega:</label>
+                                        <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+
+                                        <div class="box-info-requisicao-borda-g2" id="oculta">
+                                            <label for="contrato">Data de Pagamento:</label>
+                                            <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                        </div>
+                                    </div>
+                                </div><!--box-info-requisicao-->
+
+
+
+                            </div><!-- box-info-requisicao -->
+
+                            <hr width="100%">
+
+                            <div id="lis_i" class="p-0">
+                                <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
+                                    <div class="overflow-auto" style="max-width: 100vw;">
+                                        <div class="tab-1 table-responsive form-row-table">
+                                            <table id="tab-2" class="table-ficha">
+                                                <thead>
+                                                    <tr class="tab-4"
+                                                        style="font-weight: bold; background-color: #888; color: white    ;">
+                                                        <td colspan="3">SOLICITAÇÕES</td>
+                                                        <td colspan="4">COTAÇÕES</td>
+                                                        <td colspan="3">HISTÓRICO</td>
+                                                    </tr>
+                                                    <tr class="tab-5" style="font-weight: bolder;">
+                                                        <td width="8%">Sigla</td>
+                                                        <td width="30%">Produto</td>
+                                                        <td width="5%">Qtd</td>
+                                                        <td>Canto Metal Comercio LTDA</td>
+                                                        <td>*****</td>
+                                                        <td>*****</td>
+                                                        <td>Compra Ideal</td>
+                                                        <td>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></td>
+                                                        <td>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></td>
+                                                        <td>R$ Médio</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">EST-257</td>
+                                                        <td>Cantoneira em L 1x1, em alumínio cor Natural</td>
+                                                        <td class="text-right">20</td>
+                                                        <td class="cor-v text-center" style="color: red;">49,68&nbsp;
+                                                            &nbsp; <input type="radio" name="lin_4469" value="409">
+                                                            <br>R$ 993,60
+                                                        </td>
+                                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio"
+                                                                name="lin_4469" value="0"> <br>R$ 0,00</td>
+                                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio"
+                                                                name="lin_4469" value="0"><br>R$ 0,00</td>
+                                                        <td class="text-center">49,68<br>R$ 993,60</td>
+                                                        <td class="text-center">25,77</td>
+                                                        <td class="text-center">85,20</td>
+                                                        <td class="text-center">33,51</td>
+                                                    </tr>
+                                                    <tr class="cpo-1">
+                                                        <td colspan="3" class="text-center">Valor dos Produtos</td>
+                                                        <td class="text-center">R$ 993,60</td>
+                                                        <td class="text-center">R$ 0,00</td>
+                                                        <td class="text-center">R$ 0,00</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="cpo-1">
+                                                        <td colspan="3" class="text-center">Valor do Frete</td>
+                                                        <td class="text-center">R$ 0,00</td>
+                                                        <td class="text-center">***</td>
+                                                        <td class="text-center">***</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="cpo-1">
+                                                        <td colspan="3" class="text-center">Outras Despesas</td>
+                                                        <td class="text-center">R$ 0,00</td>
+                                                        <td class="text-center">***</td>
+                                                        <td class="text-center">***</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="cpo-1">
+                                                        <td colspan="3" class="text-center">VALOR TOTAL &nbsp; <i
+                                                                class="fa fa-arrow-right" aria-hidden="true"></i> </td>
+                                                        <td class="text-center">R$ 993,60</td>
+                                                        <td class="text-center">R$ 0,00</td>
+                                                        <td class="text-center">R$ 0,00</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="cpo-1">
+                                                        <td colspan="3" class="text-center">Forma de Pagamento</td>
+                                                        <td class="text-center">Boleto</td>
+                                                        <td class="text-center">*****</td>
+                                                        <td class="text-center">*****</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="cpo-1">
+                                                        <td colspan="3" class="text-center">Data de Entrega</td>
+                                                        <td class="text-center">24/06/2024</td>
+                                                        <td class="text-center">**/**/*****</td>
+                                                        <td class="text-center">**/**/*****</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="3" class="cpo-1 text-center">Anexos</td>
+                                                        <td class="text-center">
+                                                            <input type="file" id="anexo" style="display: none;">
+
+                                                            <a href="#"
+                                                                onclick="document.getElementById('anexo').click(); return false;">
+                                                                <i class="fa fa-paperclip sub-icones fa-2x"
+                                                                    aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" target="_blank"><i
+                                                                    class="fa fa-eye sub-icones fa-2x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <input type="file" id="anexo" style="display: none;">
+
+                                                            <a href="#"
+                                                                onclick="document.getElementById('anexo').click(); return false;">
+                                                                <i class="fa fa-paperclip sub-icones fa-2x"
+                                                                    aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" target="_blank"><i
+                                                                    class="fa fa-eye sub-icones fa-2x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <input type="file" id="anexo" style="display: none;">
+
+                                                            <a href="#"
+                                                                onclick="document.getElementById('anexo').click(); return false;">
+                                                                <i class="fa fa-paperclip sub-icones fa-2x"
+                                                                    aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" target="_blank"><i
+                                                                    class="fa fa-eye sub-icones fa-2x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="cpo-1">
+                                                        <td colspan="3" class="text-center">Edição de Compras</td>
+                                                        <td class="space-btn text-center">
+                                                            <!-- Ícone de Edição -->
+                                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
+                                                                title="Abre janela da cotação com preços e condições para alteração."
+                                                                onclick="openModal('visualizar-popup-req');"></i>
+
+
+                                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
+                                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
+                                                                title="Abre janela da cotação com preços e condições para alteração."></i>
+                                                            &nbsp; &nbsp;
+                                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
+                                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
+                                                                title="Abre janela da cotação com preços e condições para alteração."></i>
+                                                            &nbsp; &nbsp;
+                                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
+                                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--div card-->
+
+                <div class="form-row align-center">
+
+                    <div class="space-btn text-center">
+                        <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                    </div>
+                    <div class="space-btn text-center">
+                        <button type="button" id="visualizar_cotacao" name="visualizar_cotacao" class="sub-icones">
+                            <i class="fa-regular fa-comment-dots"></i><label>Comunicados</label>
+                        </button>
+                    </div>
+
+                </div><!--div form-row align-right-->
+
+            </div><!--tab-2 wrapper-->
+        </div><!--#lis-cold-md-->
+
+    </div>
+
+
+    </div><!--div cards-container-->
+
+
+    </div><!--div conteudo in-->
+
+
+    </div><!--div container desktop-->
+
+    </div><!--div conteudo-->
+
+
+
+    <!-- Ícone no footer -->
+    <div class="ico-subir-footer" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    </div><!--container desktop-->
+
+
+    <!-- Modal de Filtro -->
+    <div id="filterModal" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+
+                <span class="close" onclick="closeModal('filterModal')">&times;</span>
+                <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
+
+                <div class="modal-wrap">
+                    <!-- Tabela de Filtros -->
+                    <div class="filtro-tabela">
+
+                        <!-- Primeira Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Data Inicial:</h3>
+                            <input type="date" id="dataInicial">
+
+                            <h3>Tipo:</h3>
+                            <label>
+                                <input type="checkbox" id="tipoRequisicao"> Requisições
+                            </label>
+                            <label>
+                                <input type="checkbox" id="tipoReembolso"> Reembolsos
+                            </label>
+                            <label>
+                                <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                            </label>
+                        </div>
+
+                        <!-- Segunda Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Data Final:</h3>
+                            <input type="date" id="dataFinal">
+                        </div>
+
+                        <!-- Terceira Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Status da Requisição:</h3>
+                            <label>
+                                <input type="checkbox" id="statusAberta"> Aberta
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusCotacao"> Cotação
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusAprovacao"> Aprovação
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusReprovado"> Reprovado
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusPagamento"> Pagamento
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusComprada"> Comprada
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusEntregue"> Entregue
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusCancelada"> Cancelada
+                            </label>
+                            <label>
+                                <input type="checkbox" id="statusRecusada"> Recusada
+                            </label>
+                        </div>
+
+                        <!-- Quarta Coluna -->
+                        <div class="filtro-coluna">
+                            <h3>Obras:</h3>
+                            <label>
+                                <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                            </label>
+
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
+                                        (financeiro e
+                                        rh)
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Botões de Ação -->
+
+                    <div class="linha subsub-botoes">
+                        <div>
+                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
+                                    src="imgs/sub-icone-filtro.png"></button>
+                            <label for="sal_r">Filtrar</label>
+                        </div>
+
+                        <div>
+                            <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
+                                    src="imgs/sub-icone-limpar.png"></button>
+                            <label for="cancel">Limpar</label>
+                        </div>
+                    </div>
+
+                </div><!--modal wrap-->
+
+            </div><!--div modal content-->
+        </div><!--modal envolto-->
+    </div><!--div filter modal-->
+
+
+
+
+    <!--MODAL VISUALIZAR COTACAO-->
+
+    <div id="visualizar-popup-req" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+
+                <span class="close" onclick="closeModal('visualizar-popup-req')">&times;</span>
+                <h2 class="tit-modal">Dados da Cotação do Fornecedor</h2>
+
+                <div class="modal-wrap">
+                    <!-- Tabela de Filtros -->
+                    <div class="filtro-tabela">
+
+
+                        <div class="qua-4 modal-body">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 text-center">
+                                    <h4 id="for_c">CANTO METAL COMERCIO LTDA</h4>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="cpo_c">
+                                        <table class="qua-4 tab-6 table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th width="15%">Sigla</th>
+                                                    <th>Produto</th>
+                                                    <th width="15%">Quantidade</th>
+                                                    <th width="15%">Preço</th>
+                                                    <th width="15%">Valor</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input type="text" class="form-control text-left" maxlength="10" name="sig_i" value="EST-257" disabled></td>
+                                                    <td><input type="text" class="form-control text-left" maxlength="50" name="des_i" value="Cantoneira em L 1x1, em alumínio cor Natural" disabled></td>
+                                                    <td><input type="text" class="qtd_i form-control text-right" maxlength="7" name="qtd_i[]" value="20" disabled></td>
+                                                    <td><input type="text" class="pre_i form-control text-right" maxlength="10" name="pre_i[]" value="49,68" required></td>
+                                                    <td><input type="text" class="val_i form-control text-right" maxlength="10" name="val_i[]" value="993,60" disabled></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Valor de Frete</label>
+                                    <input type="text" class="form-control" maxlength="10" id="fre_c" name="fre_c" value="">
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Outras Despesas</label>
+                                    <input type="text" class="form-control" maxlength="10" id="des_c" name="des_c" value="">
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Forma de Pagamento</label>
+                                    <select id="fpg_c" name="fpg_c" class="form-control">
+                                        <option value="0" selected="selected">Boleto</option>
+                                        <option value="1">PIX</option>
+                                        <option value="2">Transferência</option>
+                                        <option value="3">Carteira</option>
+                                        <option value="4">Permuta</option>
+                                        <option value="5">Outras</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Data de Entrega</label>
+                                    <input type="text" class="form-control text-center hasDatepicker" maxlength="10" id="ent_c" name="ent_c" value="" required="">
+                                </div>
+                            </div>
+                            
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Observação</label>
+                                        <textarea class="form-control" rows="3" id="obs_c" name="obs_c"></textarea>
+                                    </div>
+                                </div>
+                                
+                            <!--BOTOES-->
+                                <div class="linha subsub-botoes">
+
+                                    <div>
+                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones" title="Anexar nova Cotação para Produtos" onclick="document.getElementById('anexo').click();">
+
+                                            <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i></button>
+                                        <label for="sal_r">Anexar</label>
+                                    </div>
+            
+                                    <div>
+
+                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
+                                            <a href="ex.pdf" target="_blank" class="bot-3" id="pdf_v" name="ver" title="Abre página a parte para demonstrar PDF com cotação dos produtos do fornecedor para a requisição">
+                                                 <i
+                                                class="fa fa-eye sub-icones fa-2x"
+                                                aria-hidden="true"></i></a></button>
+                                        <label for="sal_r">Visualizar</label>
+                                    </div>
+
+                                    <div>
+                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones" title="Salva alterações feitas">
+                                            <i class="fa-regular sub-icones fa-floppy-disk"></i></button>
+                                        <label for="sal_r">&nbsp;Salvar</label>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <br>
+
+                    </div>
+                </div>
+
+                <script>
+                    // Função para rolar até o topo da página
+                    function scrollToTop() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth' // Para fazer uma rolagem suave
+                        });
+                    }
+                </script>
+
+                <script>
+                    //volta um nível de página na navegação quando clicar no menu Voltar
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+
+
+
+                <!--CLIQUE NAS LINHAS DA TABELA -->
+                <script>
+                    // Função para mostrar o aviso
+                    function mostrarAviso() {
+                        alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
+                    }
+
+                    // Vincular a função ao evento de clique da linha da tabela
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
+                        linhasTabela.forEach(function (linha) {
+                            linha.addEventListener("click", mostrarAviso);
+                            linha.addEventListener("mouseover", function () {
+                                this.classList.add('destaque-mouseover');
+                            });
+                            linha.addEventListener("mouseout", function () {
+                                this.classList.remove('destaque-mouseover');
+                                // Reaplicar as regras de alternância de cores
+                                var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
+                                linhas.forEach(function (linha, indice) {
+                                    if (indice % 2 === 0) {
+                                        linha.style.backgroundColor = "#f2f2f2";
+                                    } else {
+                                        linha.style.backgroundColor = "#ffffff";
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
+
+
+                <script src="filtro-plan.js"></script>
+</body>
+
+</html>

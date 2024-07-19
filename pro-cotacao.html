@@ -40,12 +40,12 @@
                                 <p>Relatórios</p>
                             </a>
                         </div>
-                       <div class="menu-item">
-        <a href="#" onclick="goBack()">
-            <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
-            <p>Voltar</p>
-        </a>
-    </div>
+                        <div class="menu-item">
+                            <a href="#" onclick="goBack()">
+                                <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -69,8 +69,7 @@
                         <span> > </span>
                         <a href="#">SUPRIMENTOS</a>
                         <span> > </span>
-                        <a href="#">APROVAÇÃO/REPROVAÇÃO</a>
-                        
+                        <a href="#">COTAÇÕES</a>
                     </div>
 
                     <!--Filtros e Visualizção modos-->
@@ -97,22 +96,11 @@
 
 
                     <div class="conteudo-in" id="conteudo-in">
-                        <h2>Requisições</h2>
+                        <h2>Cotações</h2>
 
-                        <h3>Requisição de Compra - SMART FIT - PIRITUBA 2</h3>
+                        <h3>COTAÇÃO DE FORNECEDORES - SPGUAPUGL-098 - Nº 7.371</h3>
                     </div>
 
-                    <div class="form-row align-left">
-                        <div class="space-btn text-center">
-                            <button type="submit" id="btnEditar" name="editar" class="sub-icones">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                                <a href="edit-req-03.html">
-                                    <label>Editar Requisição - (Esse botão só aparece para quem tem permissão)</label>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                    
                     <div class="cards-container">
 
                         <div class="card">
@@ -280,22 +268,29 @@
                                         <label for="contrato">Observação:</label>
                                         <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor siamet</span>
                                     </div>
-                                <div class="box-info-requisicao-borda-g" id="oculta">
-                                    <label for="contrato">Data de Entrega:</label>
-                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
-                                
-                                    <div class="box-info-requisicao-borda-g2" id="oculta">
-                                        <label for="contrato">Data de Pagamento:</label>
+                                    <div class="box-info-requisicao-borda-g" id="oculta">
+                                        <label for="contrato">Data de Entrega:</label>
                                         <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
-                                    </div>
-                                </div>
-                            </div><!--box-info-requisicao-->
 
-                            
-                            
+                                        <div class="box-info-requisicao-borda-g2" id="oculta">
+                                            <label for="contrato">Data de Pagamento:</label>
+                                            <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                        </div>
+                                    </div>
+                                </div><!--box-info-requisicao-->
+
+
+
                             </div><!-- box-info-requisicao -->
 
                             <hr width="100%">
+
+                            <h4>Inserir Dados da Cotação</h4>
+
+
+                            <label>
+                                Nome do Fornecedor</label>
+                            <input type="text" class="form-control" style="width: 100%;">
 
 
                             <div id="lis_i" class="p-0">
@@ -307,143 +302,142 @@
                                                     <tr>
                                                         <th>Sigla</th>
                                                         <th>Descrição Produto</th>
-                                                        <th>Fornecedor</th>
-                                                        <th>Marca</th>
+                                                        <th>U.M.</th>
                                                         <th>Qtde.</th>
-                                                        <th>U.M</th>
-                                                        <th>Preço</th>
-                                                        <th>Valor</th>
-                                                        <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
-                                                        <th>R$ <i class="fa fa-minus" aria-hidden="true"></i></th>
-                                                        <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>      
+                                                        <th>Marca</th>
+                                                        <th>Outra Marca</th>
+                                                        <th>Preço Unitário</th>
+                                                        <th>Valor do Item</th>
                                                         <th>Observações</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>APO-016</td>
-                                                        <td>Porcelanato - Portobello 60x60 cm, linha essencial cor: Cimento Cinza Bold</td>
-                                                        <td>Atlanta Materiais para Construção Ltda</td>
-                                                        <td>Qualquer</td>
-                                                        <td>10</td>
-                                                        <td>Unid.</td>
-                                                        <td>R$ 25,7000</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>Detalhes e Observação</td>
+                                                        <td>CIV-069</td>
+                                                        <td>Areia Média Saco- 20kg</td>
+                                                        <td>Saco</td>
+                                                        <td>25</td>
+                                                        <td>Tal Marca</td>
+                                                        <td style="text-align: center;"><input type="checkbox" value="">
+                                                        </td>
+                                                        <td><input type="text"></td>
+                                                        <td><input type="text" disabled></td>
+                                                        <td><input type="text"></td>
                                                     </tr>
+
                                                     <tr>
-                                                        <td>APO-016</td>
-                                                        <td>Caçamba - 3m³</td>
-                                                        <td>Fulano</td>
-                                                        <td>Qualquer</td>
-                                                        <td>10</td>
-                                                        <td>Unid.</td>
-                                                        <td>R$ 25,7000</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>Detalhes e Observação</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>APO-016</td>
-                                                        <td>Caçamba - 3m³</td>
-                                                        <td>Fulano</td>
-                                                        <td>Qualquer</td>
-                                                        <td>10</td>
-                                                        <td>Unid.</td>
-                                                        <td>R$ 25,7000</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>Detalhes e Observação</td>
+                                                        <td>CIV-069</td>
+                                                        <td>Areia Média Saco- 20kg</td>
+                                                        <td>Saco</td>
+                                                        <td>25</td>
+                                                        <td>Tal Marca</td>
+                                                        <td style="text-align: center;"><input type="checkbox" value="">
+                                                        </td>
+                                                        <td><input type="text"></td>
+                                                        <td><input type="text" disabled></td>
+                                                        <td><input type="text"></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
+                                        <br />
+                                        <hr>
+
                                         <div class="form-row">
-                                            <div class="col-md-12">
-                                                <div style="display: flex; flex-direction: column; align-items: center;">
-                                                    <div style="display: flex; align-items: center; margin: 20px 0;">
-                                                        <p style="margin-right: 10px;">Produtos:</p>
-                                                        <input type="text" class="form-control text-center"
-                                                               style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                               maxlength="50" id="pro_i" name="pro_i" value="R$ 1.31,11"
-                                                               disabled />
-                                                        <p style="margin-right: 10px; text-wrap: nowrap;">Valor do Frete:</p>
-                                                        <input type="text" class="form-control text-center"
-                                                               style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                               maxlength="50" id="frete_i" name="frete_i" value="R$ 00,00"
-                                                               disabled />
-                                                        <p style="margin-right: 10px; text-wrap: nowrap;">Outras Despesas:</p>
-                                                        <input type="text" class="form-control text-center"
-                                                               style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                               maxlength="50" id="despesas_i" name="despesas_i"
-                                                               value="R$ 600,34" disabled />
-                                                    </div>
-                                                    <div style="display: flex; align-items: center;  margin: 20px 0;">
-                                                        <p style="margin-right: 10px;"><strong><br>TOTAL:</strong></p>
-                                                        <input type="text" class="form-control text-center"
-                                                               style="background-color: orange; color: #fff; text-shadow: 1px 1px #c54f20; width: 120px;"
-                                                               maxlength="50" id="total_i" name="total_i"
-                                                               value="R$ 5.100,00" disabled />
-                                                    </div>
-                                                </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="valorFrete">Valor de Frete</label>
+                                                <input type="text" class="form-control" id="valorFrete"
+                                                    placeholder="Valor de Frete">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="outrasDespesas">Outras Despesas</label>
+                                                <input type="text" class="form-control" id="outrasDespesas"
+                                                    placeholder="Outras Despesas">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="descricaoDespesas">Descrição de Outras Despesas</label>
+                                                <input type="text" class="form-control" id="descricaoDespesas"
+                                                    placeholder="Descrição de Outras Despesas">
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                                <label for="dataEntrega">Data de Entrega</label>
+                                                <input type="date" class="form-control" id="dataEntrega">
                                             </div>
                                         </div>
+
+                                        <!-- Linha 2: Forma de Pagamento, Número de Parcelas, Periodo D+, Data Inicial, Observação -->
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <label for="formaPagamento">Forma de Pagamento</label>
+                                                <select id="formaPagamento" class="form-control">
+                                                    <option>PIX</option>
+                                                    <option>Boleto</option>
+                                                    <option>Transferência</option>
+                                                    <option>Carteira</option>
+                                                    <option>Permuta</option>
+                                                    <option>Outras</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                                <label for="numeroParcelas">Número de Parcelas</label>
+                                                <input type="number" class="form-control" id="numeroParcelas"
+                                                    placeholder="Número de Parcelas">
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                                <label for="periodoD">Período D+</label>
+                                                <select class="form-control" id="periodoD">
+                                                    <option>D+ 1 dia</option>
+                                                    <option>10 dias</option>
+                                                    <option>15 dias</option>
+                                                    <option>20 dias</option>
+                                                    <option>28 dias</option>
+                                                    <option>30 dias</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="dataInicial">Data Inicial</label>
+                                                <input type="date" class="form-control" id="dataInicial">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="observacao">Observação</label>
+                                                <textarea class="form-control" id="observacao" rows="5"
+                                                    placeholder="Observação"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- Botões -->
+                                        <div class="form-row align-right">
+                                            <div>
+                                                <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                                    style="display: none;" />
+                                                <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                                    title="Abrir janela para carregar imagem para a requisição de compra"
+                                                    onclick="document.getElementById('anexo').click();">
+                                                    <i class="fa-solid fa-paperclip"></i><label>Anexar Orçamento</label>
+                                                </button>
+                                            </div>
+
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-row align-center">
-                                <div class="space-btn text-center">
-                                    <a href="edit-req-03.html" class="sub-icones">
-                                        <img src="imgs/ico-editar.png"><label>Editar</label>
-                                    </a>
-                                </div>
-
-                                <div class="space-btn text-center">
-                                    <a href="pro-cotacao.html" target="_blank">
-                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua recusa de requisição de compra solicitada">
-                                        <img src="imgs/ico-cotar.png"><label>Cotar</label></button>
-                                        </a>
-                                </div>
-                                <div class="space-btn text-center">
-                                    <a href="finaliza-cot.html" target="_blank">
-                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua recusa de requisição de compra solicitada">
-                                        <i class="fa-regular fa-handshake"></i><label>Fechamento</label></button>
-                                        </a>
-                                </div>
-
-                                <div class="space-btn text-center">
-                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua recusa de requisição de compra solicitada">
-                                        <img src="imgs/ico-transferir.png"><label>Transferir</label></button>
-                                </div>
-
-                                <div class="space-btn text-center">
-                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua recusa de requisição de compra solicitada"><i
-                                            class="fa-regular fa-rectangle-xmark"></i><label>Recusar</label></button>
-                                </div>
-
-                                <div class="space-btn text-center">
-                                    <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
-                                        class="sub-icones">
-                                        <i class="fa-regular fa-eye"></i><label>Visualizar Cotação</label>
-                                    </button>
-                                </div>
-
-                            </div><!--div form-row align-right-->
-
-
                         </div><!--div card-->
+
+                        <div class="form-row align-center">
+
+                            <div class="space-btn text-center">
+                                <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                        class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                            </div>
+                            <div class="space-btn text-center">
+                                <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
+                                    class="sub-icones">
+                                    <i class="fa-regular fa-eye"></i><label>Visualizar</label>
+                                </button>
+                            </div>
+
+                        </div><!--div form-row align-right-->
 
                     </div><!--tab-2 wrapper-->
                 </div><!--#lis-cold-md-->
@@ -605,12 +599,12 @@
         }
     </script>
 
-     <script>
-                    //volta um nível de página na navegação quando clicar no menu Voltar
-                    function goBack() {
-                        window.history.back();
-                    }
-                </script>
+    <script>
+        //volta um nível de página na navegação quando clicar no menu Voltar
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 
 
