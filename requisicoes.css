@@ -1038,32 +1038,31 @@ background-color: #ffffff;
         text-align: center;
     }
 
-        
-    .box-info-requisicao-cinza-17 {
-        width: 17%;
-        padding: 2px 5px 2px;
-        box-sizing: border-box;
-        border: 2px solid #888;
-        background-color: #eee;
-        border-radius: 10px;
-        /* Borda arredondada */
-        margin-right: 5px;
-        min-height: 55px;
-        text-align: center;
-    }
+   
+.box-info-requisicao-cinza-17 {
+    flex: 0 0 20.90%; /* Ajuste a largura para 33.33% */
+    padding: 2px 5px;
+    box-sizing: border-box;
+    border: 2px solid #888;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-right: 5px;
+    min-height: 55px;
+    text-align: center;
+}
 
-    .box-info-requisicao-cinza-33 {
-        width: 33%;
-        padding: 2px 5px 2px;
-        box-sizing: border-box;
-        border: 2px solid #888;
-        background-color: #eee;
-        border-radius: 10px;
-        /* Borda arredondada */
-        margin-right: 5px;
-        min-height: 55px;
-        text-align: center;
-    }
+.box-info-requisicao-cinza-33 {
+    flex: 0 0 66.33%; /* Ajuste a largura para 33.33% */
+    padding: 2px 5px;
+    box-sizing: border-box;
+    border: 2px solid #888;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-right: 5px;
+    min-height: 55px;
+    text-align: center;
+    
+}
 
     .box-info-requisicao-cinza-metade-p {
         width: 375px;

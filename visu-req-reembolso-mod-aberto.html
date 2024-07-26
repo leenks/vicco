@@ -78,7 +78,7 @@
                     <!--Filtros e Visualizção modos-->
                     <div class="wrap-toggle">
                         <div class="toggle-container2">
-                            <button onclick="openFilterModal(); updateFilterDisplay();">
+                             <button onclick="openModal('filterModal'); updateFilterDisplay();">
                                 <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
                             </button>
                             <div class="filtros-selecionados">
@@ -413,7 +413,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    
                                     <hr>
                                     <h4>Dados de Pagamento</h4>
                                 
@@ -449,6 +449,7 @@
                                             <label for="contrato">Conta Corrente:</label>
                                             <span class="span-infos-requisicao" id="obra">00001</span>
                                         </div>
+                                        
                                         <div class="box-info-requisicao-cinza-17" id="oculta">
                                             <label for="contrato">Tipo de Chave</label>
                                             <span class="span-infos-requisicao" id="obra">PIX</span>
