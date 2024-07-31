@@ -405,11 +405,13 @@
                                         title="Efetua transferencias de compras para outros setores">
                                         <i class="fa-solid fa-arrow-right-arrow-left"></i><label>Transferir</label></button>
                                 </div>
+                        
 
                                 <div class="space-btn text-center">
-                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua recusa de requisição de compra solicitada"><i
-                                            class="fa-regular fa-rectangle-xmark"  onclick="openModal('obs-recusar');"></i><label>Recusar</label></button>
+                                    <button type="button" id="btn-reprovar" name="btn-reprovar" class="sub-icones"
+                                        onclick="openModal('modal-reprovar')">
+                                        <i class="fa-regular fa-rectangle-xmark"></i><label>Recusar</label>
+                                    </button>
                                 </div>
 
                                 <div class="space-btn text-center">
@@ -451,6 +453,45 @@
 
 
 
+
+    <!-- Modal Reprovar Requisição -->
+    <div id="modal-reprovar" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-reprovar')">&times;</span>
+                <h2 class="tit-modal">Recusar Requisição</h2>
+                <div class="modal-wrap">
+                    <div class="filtro-tabela">
+                        <div class="qua-4 modal-body">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 text-center">
+                                    <h4>Motivos da Recusa</h4>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Por favor preencha explicando os motivos da recusa</label>
+                                    <textarea class="form-control" rows="5" id="modal-reprovar"
+                                        name="modal-reprovar"></textarea>
+                                </div>
+                            </div>
+                            <div class="linha subsub-botoes">
+                                <div>
+                                    <button type="submit" id="salvar-reprovar" name="salvar-reprovar"
+                                        class="sub-icones">
+                                        <i class="fa-regular fa-floppy-disk"></i>
+                                    </button>
+                                    <label for="salvar-reprovar">&nbsp;Salvar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
    
 
