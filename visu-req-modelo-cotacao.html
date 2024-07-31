@@ -73,28 +73,7 @@
                         
                     </div>
 
-                    <!--Filtros e Visualizção modos-->
-                    <div class="wrap-toggle">
-                        <div class="toggle-container2">
-                             <button onclick="openModal('filterModal'); updateFilterDisplay();">
-                                <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
-                            </button>
-                            <div class="filtros-selecionados">
-                                <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
-                                <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
-                            </div>
-                        </div>
-
-                        <div class="toggle-container2">
-                            <div class="busca">
-                                <input type="text" id="inputBusca" placeholder="Digite aqui">
-                                <button onclick="buscar()"> <span id="modo-icon"
-                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
-                            </div>
-                        </div>
-
-                    </div>
-
+                  
 
                     <div class="conteudo-in" id="conteudo-in">
                         <h2>Requisições</h2>
@@ -409,28 +388,28 @@
                                 <div class="space-btn text-center">
                                     <a href="pro-cotacao.html" target="_blank">
                                     <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua recusa de requisição de compra solicitada">
+                                        title="Efetua cotação de requisição de compra solicitada">
                                         <img src="imgs/ico-cotar.png"><label>Cotar</label></button>
                                         </a>
                                 </div>
                                 <div class="space-btn text-center">
                                     <a href="finaliza-cot.html" target="_blank">
                                     <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua recusa de requisição de compra solicitada">
+                                        title="Efetua fechamento de requisição de compra solicitada">
                                         <i class="fa-regular fa-handshake"></i><label>Fechamento</label></button>
                                         </a>
                                 </div>
 
                                 <div class="space-btn text-center">
                                     <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                        title="Efetua recusa de requisição de compra solicitada">
+                                        title="Efetua transferencias de compras para outros setores">
                                         <i class="fa-solid fa-arrow-right-arrow-left"></i><label>Transferir</label></button>
                                 </div>
 
                                 <div class="space-btn text-center">
                                     <button type="submit" id="cancel" class="sub-icones" name="cancel"
                                         title="Efetua recusa de requisição de compra solicitada"><i
-                                            class="fa-regular fa-rectangle-xmark"></i><label>Recusar</label></button>
+                                            class="fa-regular fa-rectangle-xmark"  onclick="openModal('obs-recusar');"></i><label>Recusar</label></button>
                                 </div>
 
                                 <div class="space-btn text-center">
@@ -471,130 +450,9 @@
     </div><!--container desktop-->
 
 
-    <!-- Modal de Filtro -->
-    <div id="filterModal" class="modal">
-        <div class="modal-envolto">
-            <div class="modal-content">
 
-                <span class="close" onclick="closeFilterModal()">&times;</span>
-                <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
 
-                <div class="modal-wrap">
-                    <!-- Tabela de Filtros -->
-                    <div class="filtro-tabela">
-
-                        <!-- Primeira Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Data Inicial:</h3>
-                            <input type="date" id="dataInicial">
-
-                            <h3>Tipo:</h3>
-                            <label>
-                                <input type="checkbox" id="tipoRequisicao"> Requisições
-                            </label>
-                            <label>
-                                <input type="checkbox" id="tipoReembolso"> Reembolsos
-                            </label>
-                            <label>
-                                <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                            </label>
-                        </div>
-
-                        <!-- Segunda Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Data Final:</h3>
-                            <input type="date" id="dataFinal">
-                        </div>
-
-                        <!-- Terceira Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Status da Requisição:</h3>
-                            <label>
-                                <input type="checkbox" id="statusAberta"> Aberta
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusCotacao"> Cotação
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusAprovacao"> Aprovação
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusReprovado"> Reprovado
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusPagamento"> Pagamento
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusComprada"> Comprada
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusEntregue"> Entregue
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusCancelada"> Cancelada
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusRecusada"> Recusada
-                            </label>
-                        </div>
-
-                        <!-- Quarta Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Obras:</h3>
-                            <label>
-                                <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                            </label>
-                            <label>
-                                <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                            </label>
-
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
-                                        (financeiro e
-                                        rh)
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <!-- Botões de Ação -->
-
-                    <div class="linha subsub-botoes">
-                        <div>
-                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
-                                    src="imgs/sub-icone-filtro.png"></button>
-                            <label for="sal_r">Filtrar</label>
-                        </div>
-
-                        <div>
-                            <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
-                                    src="imgs/sub-icone-limpar.png"></button>
-                            <label for="cancel">Limpar</label>
-                        </div>
-                    </div>
-
-                </div><!--modal wrap-->
-
-            </div><!--div modal content-->
-        </div><!--modal envolto-->
-    </div><!--div filter modal-->
+   
 
     <script>
         // Função para rolar até o topo da página

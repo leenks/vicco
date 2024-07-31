@@ -1,9 +1,8 @@
-// função para os modais popup
+// Função para abrir o modal
 function openModal(modalId) {
     var modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = 'block';
-        modal.classList.add('slideIn');
+        modal.style.display = 'block'; // Exibe o modal
     }
 }
 
@@ -11,9 +10,10 @@ function openModal(modalId) {
 function closeModal(modalId) {
     var modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = 'none';
+        modal.style.display = 'none'; // Oculta o modal
     }
 }
+
 
 // Fecha o modal quando clica fora dele
 window.onclick = function(event) {
@@ -25,14 +25,6 @@ window.onclick = function(event) {
         }
     }
 }
-
-// Adiciona event listener para os spans com a classe "close"
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('close')) {
-        var modalId = event.target.parentElement.parentElement.id; // Obtém o ID do modal pai
-        closeModal(modalId);
-    }
-});
 
 
 // Adiciona o filtro à lista de filtros selecionados

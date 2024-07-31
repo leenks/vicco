@@ -75,27 +75,7 @@
                         <a href="#">REEMBOLSO DE MATERIAIS</a>
                     </div>
 
-                    <!--Filtros e Visualizção modos-->
-                    <div class="wrap-toggle">
-                        <div class="toggle-container2">
-                             <button onclick="openModal('filterModal'); updateFilterDisplay();">
-                                <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
-                            </button>
-                            <div class="filtros-selecionados">
-                                <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
-                                <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
-                            </div>
-                        </div>
-
-                        <div class="toggle-container2">
-                            <div class="busca">
-                                <input type="text" id="inputBusca" placeholder="Digite aqui">
-                                <button onclick="buscar()"> <span id="modo-icon"
-                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
-                            </div>
-                        </div>
-
-                    </div>
+                  
 
 
                     <div class="conteudo-in" id="conteudo-in">
@@ -109,7 +89,7 @@
                             <button type="submit" id="btnEditar" name="editar" class="sub-icones">
                                 <i class="fa-regular fa-pen-to-square"></i>
                                 <a href="edit-req-reemb-04.html">
-                                    <label>Editar Reembolso - (Esse botão só aparece para quem tem permissão)</label>
+                                    <label>Editar Reembolso</label>
                                 </a>
                             </button>
                         </div>
@@ -473,27 +453,38 @@
 
                             <div class="form-row align-center">
 
-                                <div class="space-btn text-center">
-                                    <button type="button" id="reprovar_requisicao" name="reprovar_requisicao"
-                                        class="sub-icones">
-                                        <i class="fa-regular fa-thumbs-down"></i><label>Reprovar Reembolso</label>
-                                    </button>
-                                </div>
+                                <!-- Botões -->
+                            
+                                    <div class="space-btn text-center">
+                                        <button type="submit" id="btnEditar" name="editar" class="sub-icones">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                            <a href="edit-req-reemb-04.html">
+                                                <label>Editar Reembolso</label>
+                                            </a>
+                                        </button>
+                                    </div>
+                            
+                            
+                            <div class="space-btn text-center">
+                                <button type="button" id="btn-reprovar" name="btn-reprovar" class="sub-icones"
+                                    onclick="openModal('modal-reprovar')">
+                                    <i class="fa-regular fa-thumbs-down"></i><label>Reprovar Reembolso</label>
+                                </button>
+                            </div>
 
-                                <div class="space-btn text-center">
-                                    <button type="button" id="aprovar_requisicao" name="aprovar_requisicao"
-                                        class="sub-icones">
-                                        <i class="fa-regular fa-thumbs-up"></i><label>Aprovar Reembolso</label>
-                                    </button>
-                                </div>
+                            <div class="space-btn text-center">
+                                <button type="button" id="btn-aprovar" name="btn-aprovar" class="sub-icones"
+                                    onclick="openModal('modal-aprovar')">
+                                    <i class="fa-regular fa-thumbs-up"></i><label>Aprovar Reembolso</label>
+                                </button>
+                            </div>
 
                                 <div class="space-btn text-center">
                                     <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
-                                        class="sub-icones">
+                                        class="sub-icones" onclick="openModal('modal-pdf')">
                                         <i class="fa-regular fa-file-pdf"></i><label>Visualizar Nota Fiscal</label>
                                     </button>
                                 </div>
-
                             </div><!--div form-row align-right-->
 
                         </div><!--div card-->
@@ -523,130 +514,112 @@
     </div><!--container desktop-->
 
 
-    <!-- Modal de Filtro -->
-    <div id="filterModal" class="modal">
+ 
+
+    
+
+    <!-- Modal Reprovar Requisição -->
+    <div id="modal-reprovar" class="modal">
         <div class="modal-envolto">
             <div class="modal-content">
-
-                <span class="close" onclick="closeFilterModal()">&times;</span>
-                <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
-
+                <span class="close" onclick="closeModal('modal-reprovar')">&times;</span>
+                <h2 class="tit-modal">Reprovar Reembolso</h2>
                 <div class="modal-wrap">
-                    <!-- Tabela de Filtros -->
                     <div class="filtro-tabela">
-
-                        <!-- Primeira Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Data Inicial:</h3>
-                            <input type="date" id="dataInicial">
-
-                            <h3>Tipo:</h3>
-                            <label>
-                                <input type="checkbox" id="tipoRequisicao"> Requisições
-                            </label>
-                            <label>
-                                <input type="checkbox" id="tipoReembolso"> Reembolsos
-                            </label>
-                            <label>
-                                <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                            </label>
-                        </div>
-
-                        <!-- Segunda Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Data Final:</h3>
-                            <input type="date" id="dataFinal">
-                        </div>
-
-                        <!-- Terceira Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Status da Requisição:</h3>
-                            <label>
-                                <input type="checkbox" id="statusAberta"> Aberta
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusCotacao"> Cotação
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusAprovacao"> Aprovação
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusReprovado"> Reprovado
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusPagamento"> Pagamento
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusComprada"> Comprada
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusEntregue"> Entregue
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusCancelada"> Cancelada
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusRecusada"> Recusada
-                            </label>
-                        </div>
-
-                        <!-- Quarta Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Obras:</h3>
-                            <label>
-                                <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                            </label>
-                            <label>
-                                <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                            </label>
-
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
-                                        (financeiro e
-                                        rh)
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <!-- Botões de Ação -->
-
-                    <div class="linha subsub-botoes">
-                        <div>
-                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
-                                    src="imgs/sub-icone-filtro.png"></button>
-                            <label for="sal_r">Filtrar</label>
-                        </div>
-
-                        <div>
-                            <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
-                                    src="imgs/sub-icone-limpar.png"></button>
-                            <label for="cancel">Limpar</label>
+                        <div class="qua-4 modal-body">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 text-center">
+                                    <h4>Motivos da Recusa</h4>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Por favor preencha explicando os motivos da recusa</label>
+                                    <textarea class="form-control" rows="5" id="obs-reprovar"
+                                        name="obs-reprovar"></textarea>
+                                </div>
+                            </div>
+                            <div class="linha subsub-botoes">
+                                <div>
+                                    <button type="submit" id="salvar-reprovar" name="salvar-reprovar"
+                                        class="sub-icones">
+                                        <i class="fa-regular fa-floppy-disk"></i>
+                                    </button>
+                                    <label for="salvar-reprovar">&nbsp;Salvar</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                </div><!--modal wrap-->
 
-            </div><!--div modal content-->
-        </div><!--modal envolto-->
-    </div><!--div filter modal-->
+    <!-- Modal Aprovar Requisição -->
+    <div id="modal-aprovar" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-aprovar')">&times;</span>
+                <h2 class="tit-modal">Aprovar Reembolso</h2>
+                <div class="modal-wrap">
+                    <div class="filtro-tabela">
+                        <div class="qua-4 modal-body">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 text-center">
+                                    <h4>Observações da Aprovação</h4>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Por favor preencha explicando os motivos da aprovação</label>
+                                    <textarea class="form-control" rows="5" id="obs-aprovar"
+                                        name="obs-aprovar"></textarea>
+                                </div>
+                            </div>
+                            <div class="linha subsub-botoes">
+                                <div>
+                                    <button type="submit" id="salvar-aprovar" name="salvar-aprovar" class="sub-icones">
+                                        <i class="fa-regular fa-floppy-disk"></i>
+                                    </button>
+                                    <label for="salvar-aprovar">&nbsp;Salvar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- Modal Abrir PDF-->
+    <div id="modal-pdf" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-pdf')">&times;</span>
+                <h2 class="tit-modal">Visualização de Nota Fiscal</h2>
+                <div class="modal-wrap">
+                    <div class="filtro-tabela">
+                        <div class="qua-4 modal-body">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 text-center">
+                                    <iframe src="https://i.pinimg.com/564x/01/7f/0d/017f0d497120bcf5d1a40eaa0d341c37.jpg" width="100%" height="500px"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         // Função para rolar até o topo da página
