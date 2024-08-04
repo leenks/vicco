@@ -141,6 +141,10 @@ select {
 
 .form-control {font-family: 'Lato', sans-serif;}
 
+.hidden {
+    display: none;
+}
+
 .form-row {
     display: flex;
     flex-direction: row;

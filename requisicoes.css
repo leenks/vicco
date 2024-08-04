@@ -766,6 +766,11 @@ background-color: #ffffff;
         margin: -60px 0 10px;
 
     }
+    .box-info-requisicao3 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     .box-info-requisicao-borda {
         width: 140px;
@@ -1029,7 +1034,7 @@ background-color: #ffffff;
         width: 315px;
         padding: 2px 5px 2px;
         box-sizing: border-box;
-        border: 2px solid #888;f
+        border: 2px solid #888;
         background-color: #eee;
         border-radius: 10px;
         /* Borda arredondada */
@@ -1063,46 +1068,33 @@ background-color: #ffffff;
     text-align: center;
     
 }
-
-
-.box-info-requisicao-cinza-50 {
-    width: 485px;
-    padding: 2px 5px;
-    box-sizing: border-box;
-    border: 2px solid #888;
-    background-color: #eee;
-    border-radius: 10px;
-    margin-right: 5px;
-    min-height: 55px;
-    text-align: center;
-    
-}
-
-
+.box-info-requisicao-cinza-50,
 .box-info-requisicao-branco-50 {
-    width: 485px;
+    flex: 1 1 48%; /* Ocupa 48% do espaço com um pouco de margem */
     padding: 2px 5px;
     box-sizing: border-box;
     border: 2px solid #888;
-    background-color: #fff;
     border-radius: 10px;
-    margin-right: 5px;
     min-height: 55px;
     text-align: center;
-    
+    margin: 0 5px 5px 0;
 }
-
 .box-info-requisicao-branco-100 {
-    width: 975px;
+    flex: 1 1 100%; /* Ocupa 100% do espaço */
+    max-width: 100%;
     padding: 2px 5px;
     box-sizing: border-box;
     border: 2px solid #888;
-    background-color: #fff;
     border-radius: 10px;
-    margin-right: 5px;
     min-height: 55px;
     text-align: center;
-    
+    margin: 0 5px 5px 0;
+}
+.box-info-requisicao-cinza-50 {
+    background-color: #eee;
+}
+.box-info-requisicao-branco-50, .box-info-requisicao-branco-100 {
+    background-color: #fff;
 }
 
     .box-info-requisicao-cinza-metade-p {
@@ -1207,7 +1199,7 @@ background-color: #ffffff;
     label {
         display: block;
         margin-bottom: 5px;
-        font-size: 14px;
+        font-size: 12px;
         white-space: nowrap;
     }
 
@@ -1293,6 +1285,15 @@ background-color: #ffffff;
         position: relative;
         align-items: flex-start;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    
+    .card2 {
+        background-color: #f9f9f9;
+        border: 2px solid #f37334;
+        border-radius: 5px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+        padding: 5px;
     }
 
 
@@ -1768,8 +1769,6 @@ background-color: #ffffff;
             top: -50px;
         }
 
-
-        .card {
             display: flex;
             margin: 10px;
             padding: 10px;
