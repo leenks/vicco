@@ -116,7 +116,7 @@
                                         </div>
                                         <div class="col-md-2">
                                             <label>Status:</label>
-                                            <select id="status" name="status" class="form-control" required>
+                                            <select id="status" name="status" class="form-control" disabled>
                                                 <option value="Aberto" selected>Aberto</option>
                                                 <option value="Pré-Aprovado">Pré-Aprovado</option>
                                                 <option value="Cotação">Cotação</option>
@@ -198,6 +198,13 @@
                                                     name="obs"></textarea>
                                             </div>
                                         </div>
+                                        <div class="form-row align-right">
+                                            <div class="col-md-2"> </div>
+                                            <div class="space-btn text-center">
+                                                <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                                        class="fa-regular fa-floppy-disk" title="Salvar cabeçalho para seguir" ></i><label>Salvar</label></button>
+                                            </div>
+    
                                         <hr style="width: 100%;">
                                         <div class="form-row">
                                             <div class="col-md-4">
@@ -358,14 +365,7 @@
                                     </div>
                                     <br /><br />
                                     <div class="form-row align-right">
-                                        <div class="col-md-2 text-center">
-                                            <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
-                                        </div>
                                         <div class="col-md-2"> </div>
-                                        <div class="space-btn text-center">
-                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
-                                                    class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
-                                        </div>
 
                                         <div class="space-btn text-center">
                                             <button type="submit" id="fecha" class="sub-icones" name="fechar"
@@ -511,6 +511,15 @@
                         }
                     });
                 });
+
+                document.getElementById('sal_r').addEventListener('click', function(event) {
+    event.preventDefault(); // Impede o envio do formulário, se necessário
+
+    document.getElementById('pro_i').disabled = false;
+    document.getElementById('uni_i').disabled = false;
+    document.getElementById('mar_i').disabled = false;
+    document.getElementById('qtd_i').disabled = false;
+});
             </script>
 
 
