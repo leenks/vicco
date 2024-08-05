@@ -20,6 +20,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
         </script>
+
+        <style>
+            .tooltip-inner {
+    background-color: #333; /* Cor de fundo da tooltip */
+    color: #fff;           /* Cor do texto da tooltip */
+    padding: 5px 10px;     /* Padding da tooltip */
+    font-size: 14px;       /* Tamanho da fonte da tooltip */
+    border-radius: 4px;    /* Arredondamento dos cantos da tooltip */
+}
+
+.tooltip.bs-tooltip-top .arrow::before {
+    border-top-color: #333; /* Cor da seta da tooltip */
+}
+        </style>
 </head>
 
 <body>
@@ -202,7 +216,7 @@
                                             <div class="col-md-2"> </div>
                                             <div class="space-btn text-center">
                                                 <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
-                                                        class="fa-regular fa-floppy-disk" title="Salvar cabeçalho para seguir" ></i><label>Salvar</label></button>
+                                                        class="fa-regular fa-floppy-disk" title="Salvar Cabeçalho para Seguir" ></i><label>Salvar</label></button>
                                             </div>
     
                                         <hr style="width: 100%;">
@@ -439,7 +453,7 @@
 
                 </div>
             </div><!--div contaiber full-->
-
+            
 
             <script>
                 // Função para rolar até o topo da página

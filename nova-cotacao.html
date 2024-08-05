@@ -101,7 +101,7 @@
                                         <div class="col-md-3 d-none d-md-block">&nbsp;</div>
                                         <div class="col-md-4 d-none d-md-block">&nbsp;</div>
                                         <div class="col-md-2">
-                                            <select id="status" name="status" class="form-control" required>
+                                            <select id="status" name="status" class="form-control" disabled>
                                                 <option value="Aberta" selected>Aberta</option>
                                                 <option value="Cotacao">Cotação</option>
                                                 <option value="Analise">Análise</option>                                                
@@ -149,206 +149,211 @@
                                         </div><!--div form-row-->
                                         
                                           <br>
-                                          <div class="form-row">
-                                            <div class="space-btn text-center" style="margin: 0 auto;">
-                                                <button type="button" id="salvar" name="salvar" class="sub-icones">
-                                                    <i class="fa-regular fa-floppy-disk"></i><label>Salvar</label>
+                                          <div class="form-row align-right">
+                                            <div class="col-md-2"> </div>
+                                            <div class="space-btn text-center">
+                                                <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                                        class="fa-regular fa-floppy-disk" title="Salvar Cabeçalho para Seguir" ></i><label>Salvar</label></button>
+                                            </div><!--form row-->
+
+                                            
+                                        <hr style="width: 100%;">
+                                        <div class="form-row">
+                                            <div class="col-md-4">
+                                                <label>Grupo</label>
+                                                <select id="gru" name="gru" class="form-control" required>
+                                                    <option value="0" selected="selected">Selecione o grupo ...</option>
+                                                    <option value="64">01 - Pré - Obra</option>
+                                                    <option value="20">02 - Custos Administrativos</option>
+                                                    <option value="1">03 - Serviços Preliminares</option>
+                                                    <option value="21">04 - Demolições e Remoções</option>
+                                                    <option value="69">05-Estruturas de Concreto Armado</option>
+                                                    <option value="47">06 - Estruturas Metálicas</option>
+                                                    <option value="2">07 - Paredes e Divisórias</option>
+                                                    <option value="4">08 - Revestimentos de Paredes</option>
+                                                    <option value="5">09 - Impermeabilização</option>
+                                                    <option value="6">10 - Pisos</option>
+                                                    <option value="26">11 - Instalações Hidráulicas</option>
+                                                    <option value="27">12 - Instalações Elétricas</option>
+                                                    <option value="52">13 - T.I. / Sonorização / Automação</option>
+                                                    <option value="41">14 - Ar Condicionado e Exaustão</option>
+                                                    <option value="33">15 - Combate de Incêndio </option>
+                                                    <option value="9">16 - Forros</option>
+                                                    <option value="10">17 - Pintura</option>
+                                                    <option value="11">18 - Vidros e Espelhos</option>
+                                                    <option value="12">19 - Granitos</option>
+                                                    <option value="48">20 - Serralheria</option>
+                                                    <option value="14">21 - Esquadrias</option>
+                                                    <option value="22">22 - Plataformas e Elevadores</option>
+                                                    <option value="43">23 - Coberturas</option>
+                                                    <option value="54">24 - Divisórias</option>
+                                                    <option value="56">25 - Luminárias</option>
+                                                    <option value="57">26 - Aquecedores</option>
+                                                    <option value="58">27 - Marcenaria</option>
+                                                    <option value="59">28 - Eletro Eletrônicos</option>
+                                                    <option value="73">29 - Isolamento Térmico e Acústico</option>
+                                                    <option value="71">30 - Fachadas e Comunicação Visual</option>
+                                                    <option value="62">31 - Urbanização e Serviços Externos</option>
+                                                    <option value="51">32 - Apoio Civil</option>
+                                                    <option value="49">33- Limpeza de Obra</option>
+                                                    <option value="61">34 - Omissos</option>
+                                                    <option value="46">39 - Gerenciamento</option>
+                                                    <option value="78">40 - Dry Wall</option>
+                                                    <option value="83">Implantação</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Sub-Grupo</label>
+                                                <select id="sub" name="sub" class="form-control" required>
+                                                    <option value="0" selected="selected">Selecione o sub-grupo ...
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="checkbox" id="check_sub" name="gsg" value="1" /><label
+                                                    for="check_sub" style="display: inline-block;"><br>Utilizar Grupo e
+                                                    SubGrupo <br>selecionado
+                                                    anteriormente</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row col-md-12">
+                                            <div class="col-md-4">
+                                                <label>Produto</label>
+                                                <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                    name="pro_i" value="" disabled />
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>U.M.</label>
+                                                <input type="text" class="form-control text-center" maxlength="5"
+                                                    id="uni_i" name="uni_i" value="" disabled />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Marca</label>
+                                                <select id="mar_i" name="mar_i" class="form-control" disabled>
+                                                    <option value="0" selected="selected">Selecione a marca ...</option>
+                                                    <option value="56">3M</option>
+                                                    <option value="45">Aço Plano</option>
+                                                    <option value="4">Amanco</option>
+                                                    <option value="73">Ancora</option>
+                                                    <option value="22">Atlanta</option>
+                                                    <option value="51">Aubicon</option>
+                                                    <option value="30">Bautech</option>
+                                                    <option value="49">Bellaluce</option>
+                                                    <option value="6">Bisnaga</option>
+                                                    <option value="5">Blunkit</option>
+                                                    <option value="71">Bosch</option>
+                                                    <option value="48">Casa dos Bebedouros</option>
+                                                    <option value="52">Cativa</option>
+                                                    <option value="8">Celite</option>
+                                                    <option value="20">Ciplak</option>
+                                                    <option value="26">Coral</option>
+                                                    <option value="7">Deca</option>
+                                                    <option value="18">Denver</option>
+                                                    <option value="16">Docol</option>
+                                                    <option value="42">Dryko</option>
+                                                    <option value="67">Duratex</option>
+                                                    <option value="37">Dutotec</option>
+                                                    <option value="2">Eluma</option>
+                                                    <option value="3">Equation</option>
+                                                    <option value="13">Eternit</option>
+                                                    <option value="60">Eucatex</option>
+                                                    <option value="74">Fischer</option>
+                                                    <option value="54">Fortify</option>
+                                                    <option value="75">Gerdau</option>
+                                                    <option value="59">Glassmar</option>
+                                                    <option value="31">Guardian</option>
+                                                    <option value="9">Icasa</option>
+                                                    <option value="69">Incefra</option>
+                                                    <option value="14">Incepa</option>
+                                                    <option value="72">Isonar</option>
+                                                    <option value="15">Jacuzzi</option>
+                                                    <option value="24">JBS</option>
+                                                    <option value="46">Jomarca</option>
+                                                    <option value="41">Leinertex</option>
+                                                    <option value="28">LG</option>
+                                                    <option value="50">Light Design</option>
+                                                    <option value="58">LightDesing</option>
+                                                    <option value="47">Longitech</option>
+                                                    <option value="66">LorenMetais</option>
+                                                    <option value="12">Makita</option>
+                                                    <option value="23">Monofil</option>
+                                                    <option value="63">Owa</option>
+                                                    <option value="34">Pertech</option>
+                                                    <option value="44">Piacaba</option>
+                                                    <option value="57">Pial</option>
+                                                    <option value="33">Portinari</option>
+                                                    <option value="29">Portobello</option>
+                                                    <option value="76">Portokoll</option>
+                                                    <option value="61">Prysmian</option>
+                                                    <option value="11">Qualquer</option>
+                                                    <option value="55">Quartzolit</option>
+                                                    <option value="10">Roca</option>
+                                                    <option value="68">S.B. Esquadrias</option>
+                                                    <option value="35">Santa Luzia</option>
+                                                    <option value="21">Sato</option>
+                                                    <option value="36">Schneider</option>
+                                                    <option value="19">Sika</option>
+                                                    <option value="38">Sparlack</option>
+                                                    <option value="64">Stam</option>
+                                                    <option value="40">Super Massa</option>
+                                                    <option value="39">Super Nova</option>
+                                                    <option value="25">Suvinil</option>
+                                                    <option value="1">Tigre</option>
+                                                    <option value="62">Tramontina</option>
+                                                    <option value="65">Vedacit</option>
+                                                    <option value="53">Vedovati</option>
+                                                    <option value="17">Viapol</option>
+                                                    <option value="70">Viva Cerâmica</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label>Quantidade</label>
+                                                <input type="number" class="form-control text-right" maxlength="15"
+                                                    id="qtd_i" name="qtd_i" value="" disabled />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Preço</label>
+                                                <input type="text" class="form-control text-right" maxlength="15"
+                                                    id="preco_i" name="qtd_i" value="" disabled />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Valor</label>
+                                                <input type="text" class="form-control text-right" maxlength="15"
+                                                    id="valor_i" name="qtd_i" value="" disabled />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <br /><br />
+                                    <div class="form-row align-right">
+                                        <div class="col-md-2"> </div>
+
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="fecha" class="sub-icones" name="fechar"
+                                                title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i
+                                                    class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
+
+                                        </div>
+                                        <div class="space-btn text-center">
+                                            <button type="submit" id="cancel" class="sub-icones" name="cancel"
+                                                title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
+                                                    class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
+
+                                        </div>
+                                        <div class="space-btn text-center">
+                                            <div>
+                                                <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                                    style="display: none;" />
+                                                <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                                    title="Abrir janela para carregar imagem para a requisição de compra"
+                                                    onclick="document.getElementById('anexo').click();">
+                                                    <i class="fa-solid fa-paperclip"></i><label>Solicitação</label>
                                                 </button>
                                             </div>
-                                        </div><!--form row-->
+                                        </div>
+                                    </div>
 
-                                            <hr width="100%">
-
-                                            <div class="form-row">
-                                                <div class="col-md-4">
-                                                    <label>Grupo</label>
-                                                    <select id="gru" name="gru" class="form-control" required disabled>
-                                                        <option value="0" selected="selected">Selecione o grupo ...
-                                                        </option>
-                                                        <option value="64">01 - Pré - Obra</option>
-                                                        <option value="20">02 - Custos Administrativos</option>
-                                                        <option value="1">03 - Serviços Preliminares</option>
-                                                        <option value="21">04 - Demolições e Remoções</option>
-                                                        <option value="69">05-Estruturas de Concreto Armado</option>
-                                                        <option value="47">06 - Estruturas Metálicas</option>
-                                                        <option value="2">07 - Paredes e Divisórias</option>
-                                                        <option value="4">08 - Revestimentos de Paredes</option>
-                                                        <option value="5">09 - Impermeabilização</option>
-                                                        <option value="6">10 - Pisos</option>
-                                                        <option value="26">11 - Instalações Hidráulicas</option>
-                                                        <option value="27">12 - Instalações Elétricas</option>
-                                                        <option value="52">13 - T.I. / Sonorização / Automação</option>
-                                                        <option value="41">14 - Ar Condicionado e Exaustão</option>
-                                                        <option value="33">15 - Combate de Incêndio </option>
-                                                        <option value="9">16 - Forros</option>
-                                                        <option value="10">17 - Pintura</option>
-                                                        <option value="11">18 - Vidros e Espelhos</option>
-                                                        <option value="12">19 - Granitos</option>
-                                                        <option value="48">20 - Serralheria</option>
-                                                        <option value="14">21 - Esquadrias</option>
-                                                        <option value="22">22 - Plataformas e Elevadores</option>
-                                                        <option value="43">23 - Coberturas</option>
-                                                        <option value="54">24 - Divisórias</option>
-                                                        <option value="56">25 - Luminárias</option>
-                                                        <option value="57">26 - Aquecedores</option>
-                                                        <option value="58">27 - Marcenaria</option>
-                                                        <option value="59">28 - Eletro Eletrônicos</option>
-                                                        <option value="73">29 - Isolamento Térmico e Acústico</option>
-                                                        <option value="71">30 - Fachadas e Comunicação Visual</option>
-                                                        <option value="62">31 - Urbanização e Serviços Externos</option>
-                                                        <option value="51">32 - Apoio Civil</option>
-                                                        <option value="49">33- Limpeza de Obra</option>
-                                                        <option value="61">34 - Omissos</option>
-                                                        <option value="46">39 - Gerenciamento</option>
-                                                        <option value="78">40 - Dry Wall</option>
-                                                        <option value="83">Implantação</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label>Sub-Grupo</label>
-                                                    <select id="sub" name="sub" class="form-control" required disabled>
-                                                        <option value="0" selected="selected">Selecione o sub-grupo ...
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <input type="checkbox" id="check_sub" name="gsg" value="1" disabled /><label
-                                                        for="check_sub" style="display: inline-block;"><br>Utilizar
-                                                        Grupo e SubGrupo <br>selecionado
-                                                        anteriormente</label>
-                                                </div>
-                                            </div><!--form-row-->
-
-                                           
-
-                                            <div class="form-row">
-                                                <div class="col-md-6">
-                                                    <label>Produto</label>
-                                                    <input type="text" class="form-control" maxlength="50" id="pro_i"
-                                                        name="pro_i" value="" disabled />
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <label>U.M.</label>
-                                                    <input type="text" class="form-control text-right" maxlength="15"
-                                                        id="qtd_i" name="qtd_i" value="" disabled />
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>Marca</label>
-                                                    <select id="mar_i" name="mar_i" class="form-control" disabled>
-                                                        <option value="0" selected="selected">Selecione marca:</option>
-                                                        <option value="56">3M</option>
-                                                        <option value="45">Aço Plano</option>
-                                                        <option value="4">Amanco</option>
-                                                        <option value="73">Ancora</option>
-                                                        <option value="22">Atlanta</option>
-                                                        <option value="51">Aubicon</option>
-                                                        <option value="30">Bautech</option>
-                                                        <option value="49">Bellaluce</option>
-                                                        <option value="6">Bisnaga</option>
-                                                        <option value="5">Blunkit</option>
-                                                        <option value="71">Bosch</option>
-                                                        <option value="48">Casa dos Bebedouros</option>
-                                                        <option value="52">Cativa</option>
-                                                        <option value="8">Celite</option>
-                                                        <option value="20">Ciplak</option>
-                                                        <option value="26">Coral</option>
-                                                        <option value="7">Deca</option>
-                                                        <option value="18">Denver</option>
-                                                        <option value="16">Docol</option>
-                                                        <option value="42">Dryko</option>
-                                                        <option value="67">Duratex</option>
-                                                        <option value="37">Dutotec</option>
-                                                        <option value="2">Eluma</option>
-                                                        <option value="3">Equation</option>
-                                                        <option value="13">Eternit</option>
-                                                        <option value="60">Eucatex</option>
-                                                        <option value="74">Fischer</option>
-                                                        <option value="54">Fortify</option>
-                                                        <option value="75">Gerdau</option>
-                                                        <option value="59">Glassmar</option>
-                                                        <option value="31">Guardian</option>
-                                                        <option value="9">Icasa</option>
-                                                        <option value="69">Incefra</option>
-                                                        <option value="14">Incepa</option>
-                                                        <option value="72">Isonar</option>
-                                                        <option value="15">Jacuzzi</option>
-                                                        <option value="24">JBS</option>
-                                                        <option value="46">Jomarca</option>
-                                                        <option value="41">Leinertex</option>
-                                                        <option value="28">LG</option>
-                                                        <option value="50">Light Design</option>
-                                                        <option value="58">LightDesing</option>
-                                                        <option value="47">Longitech</option>
-                                                        <option value="66">LorenMetais</option>
-                                                        <option value="12">Makita</option>
-                                                        <option value="23">Monofil</option>
-                                                        <option value="63">Owa</option>
-                                                        <option value="34">Pertech</option>
-                                                        <option value="44">Piacaba</option>
-                                                        <option value="57">Pial</option>
-                                                        <option value="33">Portinari</option>
-                                                        <option value="29">Portobello</option>
-                                                        <option value="76">Portokoll</option>
-                                                        <option value="61">Prysmian</option>
-                                                        <option value="11">Qualquer</option>
-                                                        <option value="55">Quartzolit</option>
-                                                        <option value="10">Roca</option>
-                                                        <option value="68">S.B. Esquadrias</option>
-                                                        <option value="35">Santa Luzia</option>
-                                                        <option value="21">Sato</option>
-                                                        <option value="36">Schneider</option>
-                                                        <option value="19">Sika</option>
-                                                        <option value="38">Sparlack</option>
-                                                        <option value="64">Stam</option>
-                                                        <option value="40">Super Massa</option>
-                                                        <option value="39">Super Nova</option>
-                                                        <option value="25">Suvinil</option>
-                                                        <option value="1">Tigre</option>
-                                                        <option value="62">Tramontina</option>
-                                                        <option value="65">Vedacit</option>
-                                                        <option value="53">Vedovati</option>
-                                                        <option value="17">Viapol</option>
-                                                        <option value="70">Viva Cerâmica</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <label>Quantidade</label>
-                                                    <input type="text" class="form-control text-right" maxlength="15"
-                                                        id="qtd_i" name="qtd_i" value="" disabled />
-                                                </div>
-                                               
-                                               
-                                            </div>
-                                            <div class="form-row d-none d-md-block"><br></div>
-                                        
-                                            <div class="form-row align-right">
-                                                
-                                                
-                                                <div class="space-btn text-center">
-                                                    <div>
-                                                        <input type="file" id="anexo" name="anexo" class="sub-icones"
-                                                            style="display: none;" />
-                                                        <button type="button" id="fot_carrega" class="sub-icones" name="subir"
-                                                            title="Abrir janela para carregar imagem para a requisição de compra"
-                                                            onclick="document.getElementById('anexo').click();">
-                                                            <i class="fa-solid fa-paperclip"></i><label>Anexos</label>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="space-btn text-center">
-                                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                                        title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
-                                                            class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
-                                                </div>
-                                                
-                                                <div class="space-btn text-center">
-                                                    <button type="submit" id="fecha" class="sub-icones" name="fechar"
-                                                        title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i
-                                                            class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
-                                                </div>
-                                                <div class="form-row d-none d-md-block"><br></div>
-
-                                            </div>
                                     <div id="lis_i" class="col-md-12  p-0">
                                         <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
                                     
@@ -410,22 +415,34 @@
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
             <script>
-                $(document).ready(function () {
-                    // Monitora as mudanças no estado do checkbox
-                    $('#check_sub').change(function () {
-                        // Se o checkbox estiver selecionado
-                        if ($(this).is(':checked')) {
-                            // Desativa os campos "Grupo" e "Sub-Grupo"
-                            $('#gru').prop('disabled', true);
-                            $('#sub').prop('disabled', true);
-                        } else {
-                            // Caso contrário, habilita os campos "Grupo" e "Sub-Grupo"
-                            $('#gru').prop('disabled', false);
-                            $('#sub').prop('disabled', false);
-                        }
-                    });
-                });
-            </script>
+                            $(document).ready(function () {
+                                // Monitora as mudanças no estado do checkbox
+                                $('#check_sub').change(function () {
+                                    // Se o checkbox estiver selecionado
+                                    if ($(this).is(':checked')) {
+                                        // Desativa os campos "Grupo" e "Sub-Grupo"
+                                        $('#gru').prop('disabled', true);
+                                        $('#sub').prop('disabled', true);
+                                    } else {
+                                        // Caso contrário, habilita os campos "Grupo" e "Sub-Grupo"
+                                        $('#gru').prop('disabled', false);
+                                        $('#sub').prop('disabled', false);
+                                    }
+                                });
+                            });
+
+                            document.getElementById('sal_r').addEventListener('click', function (event) {
+                                event.preventDefault(); // Impede o envio do formulário, se necessário
+
+                                document.getElementById('pro_i').disabled = false;
+                                document.getElementById('uni_i').disabled = false;
+                                document.getElementById('mar_i').disabled = false;
+                                document.getElementById('qtd_i').disabled = false;
+                                document.getElementById('preco_i').disabled = false;
+                                document.getElementById('valor_i').disabled = false;
+                            });
+                        </script>
+
 
 
             <script>
