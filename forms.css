@@ -180,6 +180,7 @@ select {
     font-size: 14px;
     text-transform: capitalize;
     font-family: 'Lato', sans-serif;
+    background: none;
 }
 
 .form-row-table {
