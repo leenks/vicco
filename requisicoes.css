@@ -439,6 +439,37 @@ background-color: #ffffff;
         border: 3px solid #f47332;
     }
 
+    /*PASTAS PARA MODAL DE HISTORICO DE ARQUIVOS*/
+    
+
+    .folder-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px; /* Espaço entre os folders */
+        justify-content: center;
+    }
+    
+    .folder {
+        flex: 1 1 calc(33.333% - 15px); /* Três itens por linha, menos o espaço do gap */
+        background-color: #f0f0f0; /* Cor de fundo cinza quase branco */
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra ao redor */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .folder:hover {
+        background-color: #e0e0e0; /* Cor um pouco mais escura ao passar o mouse */
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Sombra mais forte ao passar o mouse */
+    }
+
 
     /* CLASSE DE ANIMAÇÃO PRO SLIDER DO FILTRO */
 

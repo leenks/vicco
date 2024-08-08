@@ -139,11 +139,16 @@ select {
     justify-content: space-between;
 }
 
-.form-control {font-family: 'Lato', sans-serif;}
+.form-control {font-family: 'Lato', sans-serif; font-size: 14px !important;}
 
 .hidden {
     display: none;
 }
+hr {
+    background: #ccc;
+}
+
+.container-fluid {margin: 0 !important;}
 
 .form-row {
     display: flex;

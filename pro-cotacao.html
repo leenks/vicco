@@ -72,27 +72,6 @@
                         <a href="#">COTAÇÕES</a>
                     </div>
 
-                    <!--Filtros e Visualizção modos-->
-                    <div class="wrap-toggle">
-                        <div class="toggle-container2">
-                             <button onclick="openModal('filterModal'); updateFilterDisplay();">
-                                <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
-                            </button>
-                            <div class="filtros-selecionados">
-                                <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
-                                <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
-                            </div>
-                        </div>
-
-                        <div class="toggle-container2">
-                            <div class="busca">
-                                <input type="text" id="inputBusca" placeholder="Digite aqui">
-                                <button onclick="buscar()"> <span id="modo-icon"
-                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
-                            </div>
-                        </div>
-
-                    </div>
 
 
                     <div class="conteudo-in" id="conteudo-in">
@@ -292,159 +271,295 @@
                                 Nome do Fornecedor</label>
                             <input type="text" class="form-control" style="width: 100%;">
 
-                                            <table id="tab-2" class="table-ficha">
-                                                <thead class="thead-light">
-                                                    <tr>
-                                                        <th>Sigla</th>
-                                                        <th>Descrição Produto</th>
-                                                        <th>U.M.</th>
-                                                        <th>Qtde.</th>
-                                                        <th>Marca</th>
-                                                        <th>Outra Marca</th>
-                                                        <th>Preço Unitário</th>
-                                                        <th>Valor do Item</th>
-                                                        <th>Observações</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>CIV-069</td>
-                                                        <td>Areia Média Saco- 20kg</td>
-                                                        <td>Saco</td>
-                                                        <td>25</td>
-                                                        <td>Tal Marca</td>
-                                                        <td style="text-align: center;"><input type="checkbox" value="">
-                                                        </td>
-                                                        <td><input type="text"></td>
-                                                        <td><input type="text" disabled></td>
-                                                        <td><input type="text"></td>
-                                                    </tr>
+                            <table id="tab-2" class="table-ficha">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Sigla</th>
+                                        <th>Descrição Produto</th>
+                                        <th>U.M.</th>
+                                        <th>Qtde.</th>
+                                        <th>Marca</th>
+                                        <th>Outra Marca</th>
+                                        <th>Preço Unitário</th>
+                                        <th>Valor do Item</th>
+                                        <th>Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CIV-069</td>
+                                        <td>Areia Média Saco- 20kg</td>
+                                        <td>Saco</td>
+                                        <td>25</td>
+                                        <td>Tal Marca</td>
+                                        <td style="text-align: center;"><input type="checkbox" value="">
+                                        </td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text" disabled></td>
+                                        <td><input type="text"></td>
+                                    </tr>
 
-                                                    <tr>
-                                                        <td>CIV-069</td>
-                                                        <td>Areia Média Saco- 20kg</td>
-                                                        <td>Saco</td>
-                                                        <td>25</td>
-                                                        <td>Tal Marca</td>
-                                                        <td style="text-align: center;"><input type="checkbox" value="">
-                                                        </td>
-                                                        <td><input type="text"></td>
-                                                        <td><input type="text" disabled></td>
-                                                        <td><input type="text"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        
-                                            <br />
-                                        <hr width="100%">
+                                    <tr>
+                                        <td>CIV-069</td>
+                                        <td>Areia Média Saco- 20kg</td>
+                                        <td>Saco</td>
+                                        <td>25</td>
+                                        <td>Tal Marca</td>
+                                        <td style="text-align: center;"><input type="checkbox" value="">
+                                        </td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text" disabled></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-                                        <div class="form-row">
-                                            <div class="form-group col-md-3">
-                                                <label for="valorFrete">Valor de Frete</label>
-                                                <input type="text" class="form-control" id="valorFrete"
-                                                    placeholder="Valor de Frete">
+                            <br />
+                            <hr width="100%">
+                            <div class="container-fluid">
+                                <div class="form-row">
+                                    <div class="col-md-2">
+                                        <label for="valorFrete">Valor de Frete</label>
+                                        <input type="text" class="form-control" id="valorFrete"
+                                            placeholder="Valor de Frete">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="outrasDespesas">Outras Despesas</label>
+                                        <input type="text" class="form-control" id="outrasDespesas"
+                                            placeholder="Outras Despesas">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="descricaoDespesas">Descrição de Outras Despesas</label>
+                                        <input type="text" class="form-control" id="descricaoDespesas"
+                                            placeholder="Descrição de Outras Despesas">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="dataEntrega">Data de Entrega</label>
+                                        <input type="date" class="form-control" id="dataEntrega">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <br>
+                                        <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                            style="display: none;" />
+                                        <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                            title="Abrir janela para carregar orçamento"
+                                            onclick="document.getElementById('anexo').click();">
+                                            <i class="fa-solid fa-paperclip"></i><label>Anexar Orçamento</label>
+                                        </button>
+                                    </div>
+
+                                    <!-- Forma de Pagamento -->
+                                    <div class="form-row">
+                                        <div class="col-md-4">
+                                            <label>Forma de Pagamento</label>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="pagamento"
+                                                    id="boleto" value="boleto">
+                                                <label class="form-check-label" for="boleto">Boleto</label>
                                             </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="outrasDespesas">Outras Despesas</label>
-                                                <input type="text" class="form-control" id="outrasDespesas"
-                                                    placeholder="Outras Despesas">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="pagamento"
+                                                    id="transferencia" value="transferencia">
+                                                <label clTIPO-ass="form-check-label" for="transferencia">Transferência
+                                                    Bancária</label>
                                             </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="descricaoDespesas">Descrição de Outras Despesas</label>
-                                                <input type="text" class="form-control" id="descricaoDespesas"
-                                                    placeholder="Descrição de Outras Despesas">
-                                            </div>
-                                            <div class="form-group col-md-2">
-                                                <label for="dataEntrega">Data de Entrega</label>
-                                                <input type="date" class="form-control" id="dataEntrega">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="pagamento" id="pix"
+                                                    value="pix">
+                                                <label class="form-check-label" for="pix">PIX</label>
                                             </div>
                                         </div>
 
-                                        <!-- Linha 2: Forma de Pagamento, Número de Parcelas, Periodo D+, Data Inicial, Observação -->
-                                        <div class="form-row">
-                                            <div class="form-group col-md-3">
-                                                <label for="formaPagamento">Forma de Pagamento</label>
-                                                <select id="formaPagamento" class="form-control">
-                                                    <option>PIX</option>
-                                                    <option>Boleto</option>
-                                                    <option>Transferência</option>
-                                                    <option>Carteira</option>
-                                                    <option>Permuta</option>
-                                                    <option>Outras</option>
-                                                </select>
+
+
+
+                                        <div class="container-fluid">
+                                            <!-- Campos específicos de Boleto -->
+                                            <div id="boletoFields" class="hidden">
+                                                <div class="form-row">
+                                                    <div class="col-md-2 space-btn">
+                                                        <br>
+                                                        <input type="file" id="uploadFile" style="display:none;" />
+                                                        <button type="button" id="anexarBoleto" class="sub-icones"
+                                                            title="Anexar Boleto"  onclick="document.getElementById('anexo').click();"> 
+                                                            <img src="imgs/ico-boleto.png" alt="Ícone Boleto">
+                                                            <label>Anexar Boleto</label>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label for="pgto">Tipo de Parcela</label>
+                                                        <select class="form-control" id="pgto">
+                                                            <option>Pgto Único</option>
+                                                            <option>2x</option>
+                                                            <option>3x</option>
+                                                            <option>4x</option>
+                                                            <option>5x</option>
+                                                            <option>6x</option>
+                                                            <option>7x</option>
+                                                            <option>8x</option>
+                                                            <option>9x</option>
+                                                            <option>10x</option>
+                                                            <option>11x</option>
+                                                            <option>12x</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label for="valorParcela">Valor da Parcela</label>
+                                                        <input type="text" class="form-control" id="valorParcela"
+                                                            min="1">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <label for="percentual">% da Parcela</label>
+                                                        <input type="text" class="form-control" id="percentual" min="1">
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label for="vencimentos">Data Vencimento Parcelas</label>
+                                                        <input type="date" class="form-control" id="vencimentos"
+                                                            placeholder="dd/mm/aaaa">
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label for="vencimentos">Status da Programação</label>
+
+                                                            <select id="statusPagamento" class="form-control"
+                                                                name="statusPagamento" disabled>
+                                                                <option value="pendente" selected>Aberto</option>
+                                                                <option value="aprovado">Aprovado</option>
+                                                                <option value="emProcessamento">Em Processamento</option>
+                                                                <option value="concluido">Concluído</option>
+                                                                <option value="cancelado">Cancelado</option>
+                                                                <option value="falhou">Falhou</option>
+                                                                <option value="reembolsado">Reembolsado</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="form-group col-md-2">
-                                                <label for="numeroParcelas">Número de Parcelas</label>
-                                                <input type="number" class="form-control" id="numeroParcelas"
-                                                    placeholder="Número de Parcelas">
+
+                                            <!-- Campos específicos de Transferência Bancária -->
+                                            <div id="transferenciaFields" class="hidden">
+                                                <div class="form-row">
+                                                    <div class="col-md-3">
+                                                        <label for="banco">Banco</label>
+                                                        <select class="form-control" id="banco">
+                                                            <option value="">Selecione o Banco</option>
+                                                            <option value="001">Banco do Brasil</option>
+                                                            <option value="033">Banco Santander</option>
+                                                            <option value="104">Caixa Econômica Federal</option>
+                                                            <option value="237">Bradesco</option>
+                                                            <option value="341">Itaú</option>
+                                                            <option value="399">HSBC</option>
+                                                            <option value="745">Citibank</option>
+                                                            <option value="077">Banco Inter</option>
+                                                            <option value="756">Bancoob</option>
+                                                            <option value="041">Banrisul</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="agencia">Agência</label>
+                                                        <input type="text" class="form-control" id="agencia">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="conta">Conta</label>
+                                                        <input type="text" class="form-control" id="conta">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="titular">Tipo de Transferência</label>
+                                                        <select class="form-control" id="banco">
+                                                            <option value="" selected>TED</option>
+                                                            <option value="001">DOC</option>
+                                                            <option value="033">TEF</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="form-group col-md-2">
-                                                <label for="periodoD">Período D+</label>
-                                                <select class="form-control" id="periodoD">
-                                                    <option>D+ 1 dia</option>
-                                                    <option>10 dias</option>
-                                                    <option>15 dias</option>
-                                                    <option>20 dias</option>
-                                                    <option>28 dias</option>
-                                                    <option>30 dias</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label for="dataInicial">Data Inicial</label>
-                                                <input type="date" class="form-control" id="dataInicial">
-                                            </div>
-                                            <div class="form-group col-md-12">
-                                                <label for="observacao">Observação</label>
-                                                <textarea class="form-control" id="observacao" rows="5"
-                                                    placeholder="Observação"></textarea>
+
+                                            <!-- Campos específicos de PIX -->
+                                            <div id="pixFields" class="hidden">
+                                                <div class="form-row">
+                                                    <div class="col-md-4">
+                                                        <label for="tipoChave">Tipo de Chave PIX</label>
+                                                        <select class="form-control" id="tipoChave">
+                                                            <option value="cpf">CPF</option>
+                                                            <option value="cnpj">CNPJ</option>
+                                                            <option value="email">E-mail</option>
+                                                            <option value="telefone">Telefone</option>
+                                                            <option value="chaveAleatoria">Chave Aleatória</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="chavePix">Chave PIX</label>
+                                                        <input type="text" class="form-control" id="chavePix">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="statusPagamento">Status da Programação</label>
+                                                        <select id="statusPagamento" class="form-control"
+                                                            name="statusPagamento" disabled>
+                                                            <option value="pendente" selected>Pendente</option>
+                                                            <option value="aprovado">Aprovado</option>
+                                                            <option value="emProcessamento">Em Processamento</option>
+                                                            <option value="concluido">Concluído</option>
+                                                            <option value="cancelado">Cancelado</option>
+                                                            <option value="falhou">Falhou</option>
+                                                            <option value="reembolsado">Reembolsado</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <!-- Botões -->
-                                        <div class="form-row align-left ">
-                                            <div>
-                                                <input type="file" id="anexo" name="anexo" class="sub-icones"
-                                                    style="display: none;" />
-                                                <button type="button" id="fot_carrega" class="sub-icones" name="subir"
-                                                    title="Abrir janela para carregar imagem para a requisição de compra"
-                                                    onclick="document.getElementById('anexo').click();">
-                                                    <i class="fa-solid fa-paperclip"></i><label>Anexar Orçamento</label>
-                                                </button>
-                                            </div>
 
+                                        <div class="col-md-12">
+                                            <label>Observação</label>
+                                            <textarea class="form-control" rows="3" id="obs" name="obs"></textarea>
                                         </div>
+
+
+
+
 
                                     </div>
                                 </div>
-                            </div>
-                        </div><!--div card-->
 
-                        <div class="form-row align-center">
+                            </div><!--div card-->
 
-                            <div class="space-btn text-center">
-                                <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
-                                        class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
-                            </div>
-                            <div class="space-btn text-center">
-                                <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
-                                    class="sub-icones">
-                                    <a href="ver-requisicao.html">
-                                    <i class="fa-regular fa-eye"></i></a><label>Visualizar</label>
-                                </button>
-                            </div>
+                            <div class="form-row align-center">
 
-                        </div><!--div form-row align-right-->
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                            class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                </div>
+                                <div class="space-btn text-center">
+                                    <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
+                                        class="sub-icones">
+                                        <a href="ver-requisicao.html">
+                                            <i class="fa-regular fa-eye"></i></a><label>Visualizar</label>
+                                    </button>
+                                </div>
 
-                    </div><!--tab-2 wrapper-->
-                </div><!--#lis-cold-md-->
+                            </div><!--div form-row align-right-->
 
-            </div>
+                        </div><!--tab-2 wrapper-->
+                    </div><!--#lis-cold-md-->
 
 
-        </div><!--div cards-container-->
+
+                    <div class="form-row align-right">
+                        <div class="space-btn text-center">
+                            <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
+                                <i class="fa-regular fa-folder"></i>
+                                <label>Histórico Geral</label>
+                            </button>
+                        </div>
+                    </div>
 
 
-    </div><!--div conteudo in-->
+                </div>
+
+
+            </div><!--div cards-container-->
+
+
+        </div><!--div conteudo in-->
 
 
     </div><!--div container desktop-->
@@ -460,130 +575,32 @@
     </div><!--container desktop-->
 
 
-    <!-- Modal de Filtro -->
-    <div id="filterModal" class="modal">
+    <!-- Janela Modal -->
+    <div id="modal-historico" class="modal">
         <div class="modal-envolto">
             <div class="modal-content">
-
-                <span class="close" onclick="closeFilterModal()">&times;</span>
-                <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
-
+                <span class="close" onclick="closeModal('modal-historico')">&times;</span>
+                <h2 class="tit-modal">Arquivos Gerais</h2>
                 <div class="modal-wrap">
-                    <!-- Tabela de Filtros -->
                     <div class="filtro-tabela">
-
-                        <!-- Primeira Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Data Inicial:</h3>
-                            <input type="date" id="dataInicial">
-
-                            <h3>Tipo:</h3>
-                            <label>
-                                <input type="checkbox" id="tipoRequisicao"> Requisições
-                            </label>
-                            <label>
-                                <input type="checkbox" id="tipoReembolso"> Reembolsos
-                            </label>
-                            <label>
-                                <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                            </label>
-                        </div>
-
-                        <!-- Segunda Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Data Final:</h3>
-                            <input type="date" id="dataFinal">
-                        </div>
-
-                        <!-- Terceira Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Status da Requisição:</h3>
-                            <label>
-                                <input type="checkbox" id="statusAberta"> Aberta
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusCotacao"> Cotação
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusAprovacao"> Aprovação
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusReprovado"> Reprovado
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusPagamento"> Pagamento
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusComprada"> Comprada
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusEntregue"> Entregue
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusCancelada"> Cancelada
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusRecusada"> Recusada
-                            </label>
-                        </div>
-
-                        <!-- Quarta Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Obras:</h3>
-                            <label>
-                                <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                            </label>
-                            <label>
-                                <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                            </label>
-
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
-                                        (financeiro e
-                                        rh)
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <!-- Botões de Ação -->
-
-                    <div class="linha subsub-botoes">
-                        <div>
-                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
-                                    src="imgs/sub-icone-filtro.png"></button>
-                            <label for="sal_r">Filtrar</label>
-                        </div>
-
-                        <div>
-                            <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
-                                    src="imgs/sub-icone-limpar.png"></button>
-                            <label for="cancel">Limpar</label>
+                        <div class="qua-4 modal-body">
+                            <div class="row">
+                                <div class="folder-grid">
+                                    <div class="folder" data-folder="cotacoes">COTAÇÕES</div>
+                                    <div class="folder" data-folder="ordens-de-compra">ORDENS DE COMPRA</div>
+                                    <div class="folder" data-folder="notas-fiscais">NOTAS FISCAIS</div>
+                                    <div class="folder" data-folder="boletos">BOLETOS</div>
+                                    <div class="folder" data-folder="recibos">RECIBOS</div>
+                                    <div class="folder" data-folder="relatorios-de-recebimento">RELATÓRIOS DE RECEBIMENTO</div>
+                                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+    </div>
 
-                </div><!--modal wrap-->
-
-            </div><!--div modal content-->
-        </div><!--modal envolto-->
-    </div><!--div filter modal-->
 
     <script>
         // Função para rolar até o topo da página
@@ -604,36 +621,7 @@
 
 
 
-    <!--CLIQUE NAS LINHAS DA TABELA -->
-    <script>
-        // Função para mostrar o aviso
-        function mostrarAviso() {
-            alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
-        }
-
-        // Vincular a função ao evento de clique da linha da tabela
-        document.addEventListener("DOMContentLoaded", function () {
-            var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
-            linhasTabela.forEach(function (linha) {
-                linha.addEventListener("click", mostrarAviso);
-                linha.addEventListener("mouseover", function () {
-                    this.classList.add('destaque-mouseover');
-                });
-                linha.addEventListener("mouseout", function () {
-                    this.classList.remove('destaque-mouseover');
-                    // Reaplicar as regras de alternância de cores
-                    var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
-                    linhas.forEach(function (linha, indice) {
-                        if (indice % 2 === 0) {
-                            linha.style.backgroundColor = "#f2f2f2";
-                        } else {
-                            linha.style.backgroundColor = "#ffffff";
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+    <script src="formas-pgto.js"></script>
 
 
     <script src="filtro-plan.js"></script>
