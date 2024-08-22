@@ -14,6 +14,14 @@
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="requisicoes.css">
     <link rel="stylesheet" href="forms.css">
+    <style>
+        .cotacoes-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            min-width: 300px;
+            /* Ajuste o valor conforme necessário */
+        }
+    </style>
     <title>Vicco Construtora</title>
 </head>
 
@@ -72,28 +80,6 @@
                         <a href="#">COTAÇÕES</a>
                     </div>
 
-                    <!--Filtros e Visualizção modos-->
-                    <div class="wrap-toggle">
-                        <div class="toggle-container2">
-                            <button onclick="openModal('filterModal'); updateFilterDisplay();">
-                                <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
-                            </button>
-                        
-                            <div class="filtros-selecionados">
-                                <button onclick="adicionarFiltroExemplo()">FILTRO SELECIONADO 01</button>
-                                <button onclick="adicionarFiltroExemplo()">FILTRO 02</button>
-                            </div>
-                        </div>
-
-                        <div class="toggle-container2">
-                            <div class="busca">
-                                <input type="text" id="inputBusca" placeholder="Digite aqui">
-                                <button onclick="buscar()"> <span id="modo-icon"
-                                        class="fa-solid fa-magnifying-glass"></span> BUSCAR</button>
-                            </div>
-                        </div>
-
-                    </div>
 
 
                     <div class="conteudo-in" id="conteudo-in">
@@ -285,183 +271,181 @@
                             </div><!-- box-info-requisicao -->
 
                             <hr width="100%">
-                                            <table id="tab-2" class="table-ficha">
-                                                <thead>
-                                                    <tr class="tab-4"
-                                                        style="font-weight: bold; background-color: #888; color: white    ;">
-                                                        <td colspan="3">SOLICITAÇÕES</td>
-                                                        <td colspan="4">COTAÇÕES</td>
-                                                        <td colspan="3">HISTÓRICO</td>
-                                                    </tr>
-                                                    <tr class="tab-5" style="font-weight: bolder;">
-                                                        <td width="8%">Sigla</td>
-                                                        <td width="30%">Produto</td>
-                                                        <td width="5%">Qtd</td>
-                                                        <td>Canto Metal Comercio LTDA</td>
-                                                        <td>*****</td>
-                                                        <td>*****</td>
-                                                        <td>Compra Ideal</td>
-                                                        <td>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></td>
-                                                        <td>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></td>
-                                                        <td>R$ Médio</td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="text-center">EST-257</td>
-                                                        <td>Cantoneira em L 1x1, em alumínio cor Natural</td>
-                                                        <td class="text-right">20</td>
-                                                        <td class="cor-v text-center" style="color: red;">49,68&nbsp;
-                                                            &nbsp; <input type="radio" name="lin_4469" value="409">
-                                                            <br>R$ 993,60
-                                                        </td>
-                                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio"
-                                                                name="lin_4469" value="0"> <br>R$ 0,00</td>
-                                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio"
-                                                                name="lin_4469" value="0"><br>R$ 0,00</td>
-                                                        <td class="text-center">49,68<br>R$ 993,60</td>
-                                                        <td class="text-center">25,77</td>
-                                                        <td class="text-center">85,20</td>
-                                                        <td class="text-center">33,51</td>
-                                                    </tr>
-                                                    <tr class="cpo-1">
-                                                        <td colspan="3" class="text-center">Valor dos Produtos</td>
-                                                        <td class="text-center">R$ 993,60</td>
-                                                        <td class="text-center">R$ 0,00</td>
-                                                        <td class="text-center">R$ 0,00</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cpo-1">
-                                                        <td colspan="3" class="text-center">Valor do Frete</td>
-                                                        <td class="text-center">R$ 0,00</td>
-                                                        <td class="text-center">***</td>
-                                                        <td class="text-center">***</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cpo-1">
-                                                        <td colspan="3" class="text-center">Outras Despesas</td>
-                                                        <td class="text-center">R$ 0,00</td>
-                                                        <td class="text-center">***</td>
-                                                        <td class="text-center">***</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cpo-1" style="font-weight: bolder;">
-                                                        <td colspan="3" class="text-center">VALOR TOTAL &nbsp; <i
-                                                                class="fa fa-arrow-right" aria-hidden="true"></i> </td>
-                                                        <td class="text-center">R$ 993,60</td>
-                                                        <td class="text-center">R$ 0,00</td>
-                                                        <td class="text-center">R$ 0,00</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cpo-1">
-                                                        <td colspan="3" class="text-center">Forma de Pagamento</td>
-                                                        <td class="text-center">Boleto</td>
-                                                        <td class="text-center">*****</td>
-                                                        <td class="text-center">*****</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cpo-1">
-                                                        <td colspan="3" class="text-center">Data de Entrega</td>
-                                                        <td class="text-center">24/06/2024</td>
-                                                        <td class="text-center">**/**/*****</td>
-                                                        <td class="text-center">**/**/*****</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="3" class="cpo-1 text-center">Anexos</td>
-                                                        <td class="text-center">
-                                                            <input type="file" id="anexo" style="display: none;">
 
-                                                            <a href="#"
-                                                                onclick="document.getElementById('anexo').click(); return false;">
-                                                                <i class="fa fa-paperclip sub-icones fa-2x"
-                                                                    aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" target="_blank"><i
-                                                                    class="fa fa-eye sub-icones fa-2x"
-                                                                    aria-hidden="true"></i></a>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="file" id="anexo" style="display: none;">
+                         
 
-                                                            <a href="#"
-                                                                onclick="document.getElementById('anexo').click(); return false;">
-                                                                <i class="fa fa-paperclip sub-icones fa-2x"
-                                                                    aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" target="_blank"><i
-                                                                    class="fa fa-eye sub-icones fa-2x"
-                                                                    aria-hidden="true"></i></a>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="file" id="anexo" style="display: none;">
+                            <table id="tab-2" class="table-ficha">
+                                <thead>
+                                    <tr class="tab-4"
+                                        style="font-weight: bold; background-color: #888; color: white    ;">
+                                        <td colspan="3">SOLICITAÇÕES</td>
+                                        <td colspan="4">COTAÇÕES</td>
+                                        <td colspan="3">HISTÓRICO</td>
+                                    </tr>
+                                    <tr class="tab-5" style="font-weight: bolder;">
+                                        <td width="8%">Sigla</td>
+                                        <td width="30%">Produto</td>
+                                        <td width="5%">Qtd</td>
+                                        <td>Canto Metal Comercio LTDA</td>
+                                        <td>*****</td>
+                                        <td>*****</td>
+                                        <td>Compra Ideal</td>
+                                        <td>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></td>
+                                        <td>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></td>
+                                        <td>R$ Médio</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        
+                                        <td class="text-center">EST-257</td>
+                                        <td>Cantoneira em L 1x1, em alumínio cor Natural</td>
+                                        <td class="text-right">20</td>
+                                        <td class="cor-v text-center" style="color: red;">49,68&nbsp;
+                                            &nbsp; <input type="radio" name="lin_4469" value="409">
+                                            <br>R$ 993,60
+                                        </td>
+                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469"
+                                                value="0"> <br>R$ 0,00</td>
+                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469"
+                                                value="0"><br>R$ 0,00</td>
+                                        <td class="text-center">49,68<br>R$ 993,60</td>
+                                        <td class="text-center">25,77</td>
+                                        <td class="text-center">85,20</td>
+                                        <td class="text-center">33,51</td>
+                                    </tr>
+                                    <tr class="cpo-1">
+                                        <td colspan="3" class="text-center">Valor dos Produtos</td>
+                                        <td class="text-center">R$ 993,60</td>
+                                        <td class="text-center">R$ 0,00</td>
+                                        <td class="text-center">R$ 0,00</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="cpo-1">
+                                        <td colspan="3" class="text-center">Valor do Frete</td>
+                                        <td class="text-center">R$ 0,00</td>
+                                        <td class="text-center">***</td>
+                                        <td class="text-center">***</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="cpo-1">
+                                        <td colspan="3" class="text-center">Outras Despesas</td>
+                                        <td class="text-center">R$ 0,00</td>
+                                        <td class="text-center">***</td>
+                                        <td class="text-center">***</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="cpo-1" style="font-weight: bolder;">
+                                        <td colspan="3" class="text-center">VALOR TOTAL &nbsp; <i
+                                                class="fa fa-arrow-right" aria-hidden="true"></i> </td>
+                                        <td class="text-center">R$ 993,60</td>
+                                        <td class="text-center">R$ 0,00</td>
+                                        <td class="text-center">R$ 0,00</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="cpo-1">
+                                        <td colspan="3" class="text-center">Forma de Pagamento</td>
+                                        <td class="text-center">Boleto</td>
+                                        <td class="text-center">*****</td>
+                                        <td class="text-center">*****</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="cpo-1">
+                                        <td colspan="3" class="text-center">Data de Entrega</td>
+                                        <td class="text-center">24/06/2024</td>
+                                        <td class="text-center">**/**/*****</td>
+                                        <td class="text-center">**/**/*****</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="cpo-1 text-center">Anexos</td>
+                                        <td class="text-center">
+                                            <input type="file" id="anexo" style="display: none;">
 
-                                                            <a href="#"
-                                                                onclick="document.getElementById('anexo').click(); return false;">
-                                                                <i class="fa fa-paperclip sub-icones fa-2x"
-                                                                    aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" target="_blank"><i
-                                                                    class="fa fa-eye sub-icones fa-2x"
-                                                                    aria-hidden="true"></i></a>
-                                                        </td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cpo-1">
-                                                        <td colspan="3" class="text-center">Edição de Compras</td>
-                                                        <td class="space-btn text-center">
-                                                            <!-- Ícone de Edição -->
-                                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
-                                                                title="Abre janela da cotação com preços e condições para alteração."
-                                                                onclick="openModal('visualizar-popup-req');"></i>
+                                            <a href="#"
+                                                onclick="document.getElementById('anexo').click(); return false;">
+                                                <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#" target="_blank"><i class="fa fa-eye sub-icones fa-2x"
+                                                    aria-hidden="true"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="file" id="anexo" style="display: none;">
+
+                                            <a href="#"
+                                                onclick="document.getElementById('anexo').click(); return false;">
+                                                <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#" target="_blank"><i class="fa fa-eye sub-icones fa-2x"
+                                                    aria-hidden="true"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="file" id="anexo" style="display: none;">
+
+                                            <a href="#"
+                                                onclick="document.getElementById('anexo').click(); return false;">
+                                                <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#" target="_blank"><i class="fa fa-eye sub-icones fa-2x"
+                                                    aria-hidden="true"></i></a>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="cpo-1">
+                                        <td colspan="3" class="text-center">Edição de Compras</td>
+                                        <td class="space-btn text-center">
+                                            <!-- Ícone de Edição -->
+                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
+                                                title="Abre janela da cotação com preços e condições para alteração."
+                                                onclick="openModal('visualizar-popup-req');"></i>
 
 
-                                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
-                                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
-                                                                title="Abre janela da cotação com preços e condições para alteração."></i>
-                                                            &nbsp; &nbsp;
-                                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
-                                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
-                                                                title="Abre janela da cotação com preços e condições para alteração."></i>
-                                                            &nbsp; &nbsp;
-                                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
-                                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
-                                                        </td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
+                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
+                                        </td>
+                                        <td class="text-center">
+                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
+                                                title="Abre janela da cotação com preços e condições para alteração."></i>
+                                            &nbsp; &nbsp;
+                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
+                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
+                                        </td>
+                                        <td class="text-center">
+                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
+                                                title="Abre janela da cotação com preços e condições para alteração."></i>
+                                            &nbsp; &nbsp;
+                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
+                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
                 </div><!--div card-->
@@ -473,10 +457,11 @@
                                 class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
                     </div>
                     <div class="space-btn text-center">
-                        <button type="button" id="visualizar_cotacao" name="visualizar_cotacao" class="sub-icones">
+                        <button id="openComunicadoModalBtn" class="sub-icones" onclick="openModal('modal-comunicados')">
                             <i class="fa-regular fa-comment-dots"></i><label>Comunicados</label>
                         </button>
                     </div>
+
 
                 </div><!--div form-row align-right-->
 
@@ -504,211 +489,305 @@
     </div>
     </div><!--container desktop-->
 
-
-    <!-- Modal de Filtro -->
-    <div id="filterModal" class="modal">
+    <!-- Janela Modal para Comunicados -->
+    <div id="modal-comunicados" class="modal">
         <div class="modal-envolto">
             <div class="modal-content">
-
-                <span class="close" onclick="closeModal('filterModal')">&times;</span>
-                <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
-
+                <span id="close" class="close-btn" onclick="closeModal('modal-comunicados')">&times;</span>
+                <h2 class="tit-modal">Enviar Comunicado</h2>
                 <div class="modal-wrap">
-                    <!-- Tabela de Filtros -->
-                    <div class="filtro-tabela">
 
-                        <!-- Primeira Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Data Inicial:</h3>
-                            <input type="date" id="dataInicial">
+                    <div class="form-group">
+                        <label for="comunicadoText">Faça seu comunicado:</label>
+                        <textarea id="comunicadoText" class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="customSelect">Quem Receberá o Comunicado:</label>
 
-                            <h3>Tipo:</h3>
-                            <label>
-                                <input type="checkbox" id="tipoRequisicao"> Requisições
-                            </label>
-                            <label>
-                                <input type="checkbox" id="tipoReembolso"> Reembolsos
-                            </label>
-                            <label>
-                                <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                            </label>
+                        <div class="select-selected">Selecione um usuário</div>
+                        <div class="select-items select-hide">
+                            <div class="custom-option" data-value="funcionario1">
+                                <img src="imgs/ft-ex.png" class="foto-redonda"> Funcionário 1
+                            </div>
+                            <div class="custom-option" data-value="funcionario2">
+                                <img src="imgs/ft-ex2.jpg" class="foto-redonda"> Funcionário 2
+                            </div>
+                            <div class="custom-option" data-value="funcionario3">
+                                <img src="imgs/ft-ex.png" class="foto-redonda"> Funcionário 3
+                            </div>
+
+                            <!-- Adicione mais opções conforme necessário -->
                         </div>
-
-                        <!-- Segunda Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Data Final:</h3>
-                            <input type="date" id="dataFinal">
-                        </div>
-
-                        <!-- Terceira Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Status da Requisição:</h3>
-                            <label>
-                                <input type="checkbox" id="statusAberta"> Aberta
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusCotacao"> Cotação
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusAprovacao"> Aprovação
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusReprovado"> Reprovado
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusPagamento"> Pagamento
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusComprada"> Comprada
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusEntregue"> Entregue
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusCancelada"> Cancelada
-                            </label>
-                            <label>
-                                <input type="checkbox" id="statusRecusada"> Recusada
-                            </label>
-                        </div>
-
-                        <!-- Quarta Coluna -->
-                        <div class="filtro-coluna">
-                            <h3>Obras:</h3>
-                            <label>
-                                <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                            </label>
-                            <label>
-                                <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                            </label>
-
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
-                                        (financeiro e
-                                        rh)
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-
                     </div>
 
-                    <!-- Botões de Ação -->
+
 
                     <div class="linha subsub-botoes">
                         <div>
-                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
-                                    src="imgs/sub-icone-filtro.png"></button>
-                            <label for="sal_r">Filtrar</label>
+                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                            <label for="sal_r">Enviar</label>
                         </div>
 
                         <div>
-                            <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
-                                    src="imgs/sub-icone-limpar.png"></button>
-                            <label for="cancel">Limpar</label>
+                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
+                                <i class="fa-regular fa-rectangle-xmark"></i>
+                            </button>
+                            <label for="sal_r">Cancelar</label>
                         </div>
                     </div>
 
-                </div><!--modal wrap-->
-
-            </div><!--div modal content-->
-        </div><!--modal envolto-->
-    </div><!--div filter modal-->
 
 
+                </div>
+            </div>
+        </div>
 
+        <script>
+            document.querySelector('.select-selected').addEventListener('click', function () {
+                this.nextElementSibling.classList.toggle('select-hide');
+                this.classList.toggle('select-arrow-active');
+            });
 
-    <!--MODAL VISUALIZAR COTACAO-->
+            var options = document.querySelectorAll('.custom-option');
+            options.forEach(function (option) {
+                option.addEventListener('click', function () {
+                    document.querySelector('.select-selected').textContent = this.textContent.trim();
+                    document.querySelector('.select-items').classList.add('select-hide');
+                    document.querySelector('.select-selected').classList.remove('select-arrow-active');
+                    // Aqui você pode adicionar lógica para capturar o valor selecionado
+                });
+            });
 
-    <div id="visualizar-popup-req" class="modal">
-        <div class="modal-envolto">
-            <div class="modal-content">
+            // Fecha o dropdown se o usuário clicar fora dele
+            window.addEventListener('click', function (event) {
+                if (!event.target.matches('.select-selected')) {
+                    var items = document.querySelector('.select-items');
+                    if (items && !items.classList.contains('select-hide')) {
+                        items.classList.add('select-hide');
+                    }
+                }
+            });
+        </script>
 
-                <span class="close" onclick="closeModal('visualizar-popup-req')">&times;</span>
-                <h2 class="tit-modal">Dados da Cotação do Fornecedor</h2>
+        <!-- Modal de Filtro -->
+        <div id="filterModal" class="modal">
+            <div class="modal-envolto">
+                <div class="modal-content">
 
-                <div class="modal-wrap">
-                    <!-- Tabela de Filtros -->
-                    <div class="filtro-tabela">
+                    <span class="close" onclick="closeModal('filterModal')">&times;</span>
+                    <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
 
+                    <div class="modal-wrap">
+                        <!-- Tabela de Filtros -->
+                        <div class="filtro-tabela">
 
-                        <div class="qua-4 modal-body">
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8 text-center">
-                                    <h4 id="for_c">CANTO METAL COMERCIO LTDA</h4>
-                                </div>
-                                <div class="col-md-2"></div>
+                            <!-- Primeira Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Data Inicial:</h3>
+                                <input type="date" id="dataInicial">
+
+                                <h3>Tipo:</h3>
+                                <label>
+                                    <input type="checkbox" id="tipoRequisicao"> Requisições
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="tipoReembolso"> Reembolsos
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="tipoLevantamento"> Levantamentos
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div id="cpo_c">
-                                        <table class="qua-4 tab-6 table table-sm">
-                                            <thead>
-                                                <tr>
-                                                    <th width="15%">Sigla</th>
-                                                    <th>Produto</th>
-                                                    <th width="15%">Quantidade</th>
-                                                    <th width="15%">Preço</th>
-                                                    <th width="15%">Valor</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><input type="text" class="form-control text-left" maxlength="10" name="sig_i" value="EST-257" disabled></td>
-                                                    <td><input type="text" class="form-control text-left" maxlength="50" name="des_i" value="Cantoneira em L 1x1, em alumínio cor Natural" disabled></td>
-                                                    <td><input type="text" class="qtd_i form-control text-right" maxlength="7" name="qtd_i[]" value="20" disabled></td>
-                                                    <td><input type="text" class="pre_i form-control text-right" maxlength="10" name="pre_i[]" value="49,68" required></td>
-                                                    <td><input type="text" class="val_i form-control text-right" maxlength="10" name="val_i[]" value="993,60" disabled></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+
+                            <!-- Segunda Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Data Final:</h3>
+                                <input type="date" id="dataFinal">
+                            </div>
+
+                            <!-- Terceira Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Status da Requisição:</h3>
+                                <label>
+                                    <input type="checkbox" id="statusAberta"> Aberta
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusCotacao"> Cotação
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusAprovacao"> Aprovação
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusReprovado"> Reprovado
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusPreCompra"> Pré-Compra
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusPagamento"> Pagamento
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusComprada"> Comprada
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusEntregue"> Entregue
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusCancelada"> Cancelada
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="statusRecusada"> Recusada
+                                </label>
+                            </div>
+
+                            <!-- Quarta Coluna -->
+                            <div class="filtro-coluna">
+                                <h3>Obras:</h3>
+                                <label>
+                                    <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
+                                </label>
+
+                                <ul>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
+                                            (financeiro e
+                                            rh)
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra2"> Smart Fit - Pirituba
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <!-- Botões de Ação -->
+
+                        <div class="linha subsub-botoes">
+                            <div>
+                                <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
+                                        src="imgs/sub-icone-filtro.png"></button>
+                                <label for="sal_r">Filtrar</label>
+                            </div>
+
+                            <div>
+                                <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
+                                        src="imgs/sub-icone-limpar.png"></button>
+                                <label for="cancel">Limpar</label>
+                            </div>
+                        </div>
+
+                    </div><!--modal wrap-->
+
+                </div><!--div modal content-->
+            </div><!--modal envolto-->
+        </div><!--div filter modal-->
+
+
+
+
+        <!--MODAL VISUALIZAR COTACAO-->
+
+        <div id="visualizar-popup-req" class="modal">
+            <div class="modal-envolto">
+                <div class="modal-content">
+
+                    <span class="close" onclick="closeModal('visualizar-popup-req')">&times;</span>
+                    <h2 class="tit-modal">Dados da Cotação do Fornecedor</h2>
+
+                    <div class="modal-wrap">
+                        <!-- Tabela de Filtros -->
+                        <div class="filtro-tabela">
+
+
+                            <div class="qua-4 modal-body">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8 text-center">
+                                        <h4 id="for_c">CANTO METAL COMERCIO LTDA</h4>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="cpo_c">
+                                            <table class="qua-4 tab-6 table table-sm">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="15%">Sigla</th>
+                                                        <th>Produto</th>
+                                                        <th width="15%">Quantidade</th>
+                                                        <th width="15%">Preço</th>
+                                                        <th width="15%">Valor</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="text" class="form-control text-left"
+                                                                maxlength="10" name="sig_i" value="EST-257" disabled>
+                                                        </td>
+                                                        <td><input type="text" class="form-control text-left"
+                                                                maxlength="50" name="des_i"
+                                                                value="Cantoneira em L 1x1, em alumínio cor Natural"
+                                                                disabled></td>
+                                                        <td><input type="text" class="qtd_i form-control text-right"
+                                                                maxlength="7" name="qtd_i[]" value="20" disabled></td>
+                                                        <td><input type="text" class="pre_i form-control text-right"
+                                                                maxlength="10" name="pre_i[]" value="49,68" required>
+                                                        </td>
+                                                        <td><input type="text" class="val_i form-control text-right"
+                                                                maxlength="10" name="val_i[]" value="993,60" disabled>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label>Valor de Frete</label>
-                                    <input type="text" class="form-control" maxlength="10" id="fre_c" name="fre_c" value="">
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Valor de Frete</label>
+                                        <input type="text" class="form-control" maxlength="10" id="fre_c" name="fre_c"
+                                            value="">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Outras Despesas</label>
+                                        <input type="text" class="form-control" maxlength="10" id="des_c" name="des_c"
+                                            value="">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Forma de Pagamento</label>
+                                        <select id="fpg_c" name="fpg_c" class="form-control">
+                                            <option value="0" selected="selected">Boleto</option>
+                                            <option value="1">PIX</option>
+                                            <option value="2">Transferência</option>
+                                            <option value="3">Carteira</option>
+                                            <option value="4">Permuta</option>
+                                            <option value="5">Outras</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Data de Entrega</label>
+                                        <input type="text" class="form-control text-center hasDatepicker" maxlength="10"
+                                            id="ent_c" name="ent_c" value="" required="">
+                                    </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <label>Outras Despesas</label>
-                                    <input type="text" class="form-control" maxlength="10" id="des_c" name="des_c" value="">
-                                </div>
-                                <div class="col-md-2">
-                                    <label>Forma de Pagamento</label>
-                                    <select id="fpg_c" name="fpg_c" class="form-control">
-                                        <option value="0" selected="selected">Boleto</option>
-                                        <option value="1">PIX</option>
-                                        <option value="2">Transferência</option>
-                                        <option value="3">Carteira</option>
-                                        <option value="4">Permuta</option>
-                                        <option value="5">Outras</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Data de Entrega</label>
-                                    <input type="text" class="form-control text-center hasDatepicker" maxlength="10" id="ent_c" name="ent_c" value="" required="">
-                                </div>
-                            </div>
-                            
+
 
                                 <div class="row">
                                     <div class="col-md-12">
@@ -716,92 +795,95 @@
                                         <textarea class="form-control" rows="3" id="obs_c" name="obs_c"></textarea>
                                     </div>
                                 </div>
-                                
-                            <!--BOTOES-->
+
+                                <!--BOTOES-->
                                 <div class="linha subsub-botoes">
 
                                     <div>
-                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones" title="Anexar nova Cotação para Produtos" onclick="document.getElementById('anexo').click();">
+                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones"
+                                            title="Anexar nova Cotação para Produtos"
+                                            onclick="document.getElementById('anexo').click();">
 
                                             <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i></button>
                                         <label for="sal_r">Anexar</label>
                                     </div>
-            
+
                                     <div>
 
                                         <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
-                                            <a href="ex.pdf" target="_blank" class="bot-3" id="pdf_v" name="ver" title="Abre página a parte para demonstrar PDF com cotação dos produtos do fornecedor para a requisição">
-                                                 <i
-                                                class="fa fa-eye sub-icones fa-2x"
-                                                aria-hidden="true"></i></a></button>
+                                            <a href="ex.pdf" target="_blank" class="bot-3" id="pdf_v" name="ver"
+                                                title="Abre página a parte para demonstrar PDF com cotação dos produtos do fornecedor para a requisição">
+                                                <i class="fa fa-eye sub-icones fa-2x"
+                                                    aria-hidden="true"></i></a></button>
                                         <label for="sal_r">Visualizar</label>
                                     </div>
 
                                     <div>
-                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones" title="Salva alterações feitas">
+                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones"
+                                            title="Salva alterações feitas">
                                             <i class="fa-regular sub-icones fa-floppy-disk"></i></button>
                                         <label for="sal_r">&nbsp;Salvar</label>
                                     </div>
                                 </div>
-                            
+
+                            </div>
+                            <br>
+
                         </div>
-                        <br>
-
                     </div>
-                </div>
 
-                <script>
-                    // Função para rolar até o topo da página
-                    function scrollToTop() {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth' // Para fazer uma rolagem suave
-                        });
-                    }
-                </script>
-
-                <script>
-                    //volta um nível de página na navegação quando clicar no menu Voltar
-                    function goBack() {
-                        window.history.back();
-                    }
-                </script>
-
-
-
-                <!--CLIQUE NAS LINHAS DA TABELA -->
-                <script>
-                    // Função para mostrar o aviso
-                    function mostrarAviso() {
-                        alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
-                    }
-
-                    // Vincular a função ao evento de clique da linha da tabela
-                    document.addEventListener("DOMContentLoaded", function () {
-                        var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
-                        linhasTabela.forEach(function (linha) {
-                            linha.addEventListener("click", mostrarAviso);
-                            linha.addEventListener("mouseover", function () {
-                                this.classList.add('destaque-mouseover');
+                    <script>
+                        // Função para rolar até o topo da página
+                        function scrollToTop() {
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth' // Para fazer uma rolagem suave
                             });
-                            linha.addEventListener("mouseout", function () {
-                                this.classList.remove('destaque-mouseover');
-                                // Reaplicar as regras de alternância de cores
-                                var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
-                                linhas.forEach(function (linha, indice) {
-                                    if (indice % 2 === 0) {
-                                        linha.style.backgroundColor = "#f2f2f2";
-                                    } else {
-                                        linha.style.backgroundColor = "#ffffff";
-                                    }
+                        }
+                    </script>
+
+                    <script>
+                        //volta um nível de página na navegação quando clicar no menu Voltar
+                        function goBack() {
+                            window.history.back();
+                        }
+                    </script>
+
+
+
+                    <!--CLIQUE NAS LINHAS DA TABELA -->
+                    <script>
+                        // Função para mostrar o aviso
+                        function mostrarAviso() {
+                            alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
+                        }
+
+                        // Vincular a função ao evento de clique da linha da tabela
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
+                            linhasTabela.forEach(function (linha) {
+                                linha.addEventListener("click", mostrarAviso);
+                                linha.addEventListener("mouseover", function () {
+                                    this.classList.add('destaque-mouseover');
+                                });
+                                linha.addEventListener("mouseout", function () {
+                                    this.classList.remove('destaque-mouseover');
+                                    // Reaplicar as regras de alternância de cores
+                                    var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
+                                    linhas.forEach(function (linha, indice) {
+                                        if (indice % 2 === 0) {
+                                            linha.style.backgroundColor = "#f2f2f2";
+                                        } else {
+                                            linha.style.backgroundColor = "#ffffff";
+                                        }
+                                    });
                                 });
                             });
                         });
-                    });
-                </script>
+                    </script>
 
 
-                <script src="filtro-plan.js"></script>
+                    <script src="filtro-plan.js"></script>
 </body>
 
 </html>

@@ -440,6 +440,18 @@ background-color: #ffffff;
     }
 
     /*PASTAS PARA MODAL DE HISTORICO DE ARQUIVOS*/
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .grid-item {
+        display: flex;
+        flex-direction: column;
+    }
+    
     
 
     .folder-grid {
@@ -451,6 +463,7 @@ background-color: #ffffff;
     
     .folder {
         flex: 1 1 calc(33.333% - 15px); /* Três itens por linha, menos o espaço do gap */
+        height: 10vh;
         background-color: #f0f0f0; /* Cor de fundo cinza quase branco */
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra ao redor */

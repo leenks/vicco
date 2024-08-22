@@ -575,31 +575,218 @@
     </div><!--container desktop-->
 
 
-    <!-- Janela Modal -->
-    <div id="modal-historico" class="modal">
-        <div class="modal-envolto">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal-historico')">&times;</span>
-                <h2 class="tit-modal">Arquivos Gerais</h2>
-                <div class="modal-wrap">
-                    <div class="filtro-tabela">
-                        <div class="qua-4 modal-body">
-                            <div class="row">
-                                <div class="folder-grid">
-                                    <div class="folder" data-folder="cotacoes">COTAÇÕES</div>
-                                    <div class="folder" data-folder="ordens-de-compra">ORDENS DE COMPRA</div>
-                                    <div class="folder" data-folder="notas-fiscais">NOTAS FISCAIS</div>
-                                    <div class="folder" data-folder="boletos">BOLETOS</div>
-                                    <div class="folder" data-folder="recibos">RECIBOS</div>
-                                    <div class="folder" data-folder="relatorios-de-recebimento">RELATÓRIOS DE RECEBIMENTO</div>
+    <!-- Janela Modal Principal -->
+<div id="modal-historico" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-historico')">&times;</span>
+            <h2 class="tit-modal">Arquivos Gerais</h2>
+            
+            <div class="modal-wrap">
+                <br>
+                <p>Aqui você pode acessar todo o histórico de arquivos do sistema, como cotações, ordens de compra, notas fiscais, boletos, recibos e relatórios de recebimento.</p>
+                <div class="filtro-tabela">
+                    <div class="qua-4 modal-body">
+                        <div class="row">
+                            <div class="folder-grid">
+                                <div class="folder" data-folder="cotacoes" onclick="openFolder('modal-cotacoes')">
+                                    <i class="fa-solid fa-file-invoice-dollar sub-icones"></i> COTAÇÕES
                                 </div>
+                                <div class="folder" data-folder="ordens-de-compra" onclick="openFolder('modal-ordens-compra')">
+                                    <i class="fa-solid fa-cart-arrow-down sub-icones"></i> ORDENS DE COMPRA
+                                </div>
+                                <div class="folder" data-folder="notas-fiscais" onclick="openFolder('modal-notas-fiscais')">
+                                    <i class="fa-solid fa-receipt sub-icones"></i> NOTAS FISCAIS
+                                </div>
+                                <div class="folder" data-folder="boletos" onclick="openFolder('modal-boletos')">
+                                    <i class="fa-solid fa-barcode sub-icones"></i> BOLETOS
+                                </div>
+                                <div class="folder" data-folder="recibos" onclick="openFolder('modal-recibos')">
+                                    <i class="fa-solid fa-hand-holding-dollar sub-icones"></i> RECIBOS
+                                </div>
+                                <div class="folder" data-folder="relatorios-de-recebimento" onclick="openFolder('modal-relatorios-recebimento')">
+                                    <i class="fa-solid fa-chart-line sub-icones"></i> RELATÓRIOS DE RECEBIMENTO
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
+</div>
+
+<!-- Modal Cotações -->
+<div id="modal-cotacoes" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-cotacoes')">&times;</span>
+            <h2 class="tit-modal">Filtrar Cotações</h2>
+            <div class="modal-wrap">
+                <br>           
+                <p>Selecione os filtros desejados para visualizar as cotações.</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="cotacao-data">Data:</label>
+                        <input type="date" id="cotacao-data" name="cotacao-data">
+                    </div>
+                    <div class="grid-item">
+                        <label for="cotacao-fornecedor">Fornecedor:</label>
+                        <input type="text" id="cotacao-fornecedor" name="cotacao-fornecedor">
+                    </div>
+                    <!-- Adicione mais campos de filtro conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Ordens de Compra -->
+<div id="modal-ordens-compra" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-ordens-compra')">&times;</span>
+            <h2 class="tit-modal">Filtrar Ordens de Compra</h2>
+            <div class="modal-wrap">
+                <br>           
+                <p>Selecione os filtros desejados para visualizar as ordens de compra.</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="ordem-data">Data:</label>
+                        <input type="date" id="ordem-data" name="ordem-data">
+                    </div>
+                    <div class="grid-item">
+                        <label for="ordem-fornecedor">Fornecedor:</label>
+                        <input type="text" id="ordem-fornecedor" name="ordem-fornecedor">
+                    </div>
+                    <!-- Adicione mais campos de filtro conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Notas Fiscais -->
+<div id="modal-notas-fiscais" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-notas-fiscais')">&times;</span>
+            <h2 class="tit-modal">Filtrar Notas Fiscais</h2>
+            <div class="modal-wrap">
+                <br>           
+                <p>Selecione os filtros desejados para visualizar as notas fiscais.</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="nota-data">Data:</label>
+                        <input type="date" id="nota-data" name="nota-data">
+                    </div>
+                    <div class="grid-item">
+                        <label for="nota-obra">Nome da Obra:</label>
+                        <input type="text" id="nota-obra" name="nota-obra">
+                    </div>
+                    <!-- Adicione mais campos de filtro conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Boletos -->
+<div id="modal-boletos" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-boletos')">&times;</span>
+            <h2 class="tit-modal">Filtrar Boletos</h2>
+            <div class="modal-wrap">
+                <br>           
+                <p>Selecione os filtros desejados para visualizar os boletos.</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="boleto-data">Data:</label>
+                        <input type="date" id="boleto-data" name="boleto-data">
+                    </div>
+                    <div class="grid-item">
+                        <label for="boleto-fornecedor">Fornecedor:</label>
+                        <input type="text" id="boleto-fornecedor" name="boleto-fornecedor">
+                    </div>
+                    <!-- Adicione mais campos de filtro conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Recibos -->
+<div id="modal-recibos" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-recibos')">&times;</span>
+            <h2 class="tit-modal">Filtrar Recibos</h2>
+            <div class="modal-wrap">
+                <br>           
+                <p>Selecione os filtros desejados para visualizar os recibos.</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="recibo-data">Data:</label>
+                        <input type="date" id="recibo-data" name="recibo-data">
+                    </div>
+                    <div class="grid-item">
+                        <label for="recibo-fornecedor">Fornecedor:</label>
+                        <input type="text" id="recibo-fornecedor" name="recibo-fornecedor">
+                    </div>
+                    <!-- Adicione mais campos de filtro conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Relatórios de Recebimento -->
+<div id="modal-relatorios-recebimento" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-relatorios-recebimento')">&times;</span>
+            <h2 class="tit-modal">Filtrar Relatórios de Recebimento</h2>
+            <div class="modal-wrap">
+                <br>           
+                <p>Selecione os filtros desejados para visualizar os relatórios de recebimento.</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="relatorio-data">Data:</label>
+                        <input type="date" id="relatorio-data" name="relatorio-data">
+                    </div>
+                    <div class="grid-item">
+                        <label for="relatorio-obra">Nome da Obra:</label>
+                        <input type="text" id="relatorio-obra" name="relatorio-obra">
+                    </div>
+                    <!-- Adicione mais campos de filtro conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript para controlar os modais -->
+<script>
+function openFolder(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Fecha o modal ao clicar fora dele
+window.onclick = function(event) {
+    var modals = document.getElementsByClassName('modal');
+    for (var i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+}
+</script>
 
 
     <script>

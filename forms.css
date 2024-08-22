@@ -93,6 +93,55 @@ select {
     color: #ff842a;
 }
 
+/* Estilo para a foto redonda */
+.foto-redonda {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Estilo para o select customizado */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-selected {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    z-index: 99;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.select-items div {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.select-items div:hover {
+    background-color: #f1f1f1;
+}
+
+.select-hide {
+    display: none;
+}
 
 
 
@@ -149,6 +198,7 @@ hr {
 }
 
 .container-fluid {margin: 0 !important;}
+
 
 .form-row {
     display: flex;
