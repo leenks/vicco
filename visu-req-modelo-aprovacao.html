@@ -12,8 +12,121 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="requisicoes.css">
     <link rel="stylesheet" href="forms.css">
+    <style>
+        .modal {
+            display: none;
+            /* Oculta o modal por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .modal-envolto {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            overflow: hidden;
+        }
+
+        .modal-content {
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        .modal-body {
+            margin: 0;
+        }
+
+        .grafico {
+            margin-bottom: 20px;
+        }
+
+        .timeline-horizontal {
+            margin-bottom: 20px;
+        }
+
+        .timeline-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 100px;
+            /* Altura ajustada para ícones e conteúdo */
+            padding: 0 10px;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 120px;
+            /* Largura ajustada para os itens */
+        }
+
+        .timeline-icon {
+            font-size: 24px;
+            /* Tamanho dos ícones */
+            margin-bottom: 5px;
+        }
+
+        .timeline-item.atrasado .timeline-icon {
+            color: #f44336;
+            /* Ícone vermelho para atraso */
+        }
+
+        .timeline-item.atual .timeline-icon {
+            color: #4caf50;
+            /* Ícone verde para o status atual */
+        }
+
+        .timeline-bar {
+            flex: 1;
+            height: 4px;
+            background: #ffcb3b;
+            /* Linha amarela para indicar o progresso */
+            position: relative;
+        }
+
+        .timeline-content {
+            text-align: center;
+        }
+
+        .timeline-item .data {
+            font-weight: bold;
+        }
+
+        .timeline-item .descricao {
+            margin-top: 5px;
+        }
+
+
+        .descricao {
+            margin-top: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
     <title>Vicco Construtora</title>
 </head>
 
@@ -273,190 +386,148 @@
                             <hr width="100%">
 
 
-                            <div id="lis_i" class="p-0">
-                                <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
 
-                                    <div class="overflow-auto" style="max-width: 100vw;">
-                                        <div class="tab-1 table-responsive form-row-table">
-                                            <table id="tab-2" class="table-ficha">
-                                                <thead class="thead-light">
-                                                    <tr>
-                                                        <th>Sigla</th>
-                                                        <th>Descrição Produto</th>
-                                                        <th>Nome Fornecedor</th>
-                                                        <th>Marca</th>
-                                                        <th>Quantidade</th>
-                                                        <th>U.M</th>
-                                                        <th>Preço</th>
-                                                        <th>Valor</th>
-                                                        <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
-                                                        <th>R$ <i class="fa fa-minus" aria-hidden="true"></i></th>
-                                                        <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
-                                                        <th>Observações</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="cinza-claro">
-                                                        <td>APO-016</td>
-                                                        <td>Caçamba - 3m³</td>
-                                                        <td>Fulano</td>
-                                                        <td>Qualquer</td>
-                                                        <td>10</td>
-                                                        <td>Unid.</td>
-                                                        <td>R$ 25,7000</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>Detalhes e Observação</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Sigla</th>
-                                                        <th>Descrição Produto</th>
-                                                        <th>Nome Fornecedor</th>
-                                                        <th>Marca</th>
-                                                        <th>Quantidade</th>
-                                                        <th>U.M</th>
-                                                        <th>Preço</th>
-                                                        <th>Valor</th>
-                                                        <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
-                                                        <th>R$ <i class="fa fa-minus" aria-hidden="true"></i></th>
-                                                        <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
-                                                        <th>Observações</th>
-                                                    </tr>
-                                                    </thead>
-                                                <tbody>
-                                                    <tr class="cinza-claro">
-                                                        <td>APO-016</td>
-                                                        <td>Caçamba - 3m³</td>
-                                                        <td>Fulano</td>
-                                                        <td>Qualquer</td>
-                                                        <td>10</td>
-                                                        <td>Unid.</td>
-                                                        <td>R$ 25,7000</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>Detalhes e Observação</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Sigla</th>
-                                                        <th>Descrição Produto</th>
-                                                        <th>Nome Fornecedor</th>
-                                                        <th>Marca</th>
-                                                        <th>Quantidade</th>
-                                                        <th>U.M</th>
-                                                        <th>Preço</th>
-                                                        <th>Valor</th>
-                                                        <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
-                                                        <th>R$ <i class="fa fa-minus" aria-hidden="true"></i></th>
-                                                        <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
-                                                        <th>Observações</th>
-                                                    </tr>
-                                                    </thead>
-                                                <tbody>
-                                                    <tr class="cinza-claro">
-                                                        <td>APO-016</td>
-                                                        <td>Caçamba - 3m³</td>
-                                                        <td>Fulano</td>
-                                                        <td>Qualquer</td>
-                                                        <td>10</td>
-                                                        <td>Unid.</td>
-                                                        <td>R$ 25,7000</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>R$ 20,00</td>
-                                                        <td>Detalhes e Observação</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                            <div class="tab-1 table-responsive form-row-table">
+                                <table id="tab-2" class="table-ficha">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Sigla</th>
+                                            <th>Descrição Produto</th>
+                                            <th>Fornecedor</th>
+                                            <th>Marca</th>
+                                            <th>Qtde.</th>
+                                            <th>U.M</th>
+                                            <th>Preço</th>
+                                            <th>Valor</th>
+                                            <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
+                                            <th>R$ <i class="fa fa-minus" aria-hidden="true"></i></th>
+                                            <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
+                                            <th>Observações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>APO-016</td>
+                                            <td>Porcelanato - Portobello 60x60 cm, linha essencial cor: Cimento Cinza
+                                                Bold</td>
+                                            <td>Atlanta Materiais para Construção Ltda</td>
+                                            <td>Qualquer</td>
+                                            <td>10</td>
+                                            <td>Unid.</td>
+                                            <td>R$ 25,7000</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>Detalhes e Observação</td>
+                                        </tr>
+                                        <tr>
+                                            <td>APO-016</td>
+                                            <td>Caçamba - 3m³</td>
+                                            <td>Fulano</td>
+                                            <td>Qualquer</td>
+                                            <td>10</td>
+                                            <td>Unid.</td>
+                                            <td>R$ 25,7000</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>Detalhes e Observação</td>
+                                        </tr>
+                                        <tr>
+                                            <td>APO-016</td>
+                                            <td>Caçamba - 3m³</td>
+                                            <td>Fulano</td>
+                                            <td>Qualquer</td>
+                                            <td>10</td>
+                                            <td>Unid.</td>
+                                            <td>R$ 25,7000</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>Detalhes e Observação</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <div style="display: flex; flex-direction: column; align-items: center;">
+                                        <div style="display: flex; align-items: center; margin: 20px 0;">
+                                            <p style="margin-right: 10px;">Produtos:</p>
+                                            <input type="text" class="form-control text-center"
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
+                                                maxlength="50" id="pro_i" name="pro_i" value="R$ 1.31,11" disabled />
+                                            <p style="margin-right: 10px; text-wrap: nowrap;">Valor do
+                                                Frete:</p>
+                                            <input type="text" class="form-control text-center"
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
+                                                maxlength="50" id="frete_i" name="frete_i" value="R$ 00,00" disabled />
+                                            <p style="margin-right: 10px; text-wrap: nowrap;">Outras
+                                                Despesas:</p>
+                                            <input type="text" class="form-control text-center"
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
+                                                maxlength="50" id="despesas_i" name="despesas_i" value="R$ 600,34"
+                                                disabled />
+                                        </div>
+                                        <div style="display: flex; align-items: center;  margin: 20px 0;">
+                                            <p style="margin-right: 10px;"><strong><br>TOTAL:</strong></p>
+                                            <input type="text" class="form-control text-center"
+                                                style="background-color: orange; color: #fff; text-shadow: 1px 1px #c54f20; width: 120px;"
+                                                maxlength="50" id="total_i" name="total_i" value="R$ 5.100,00"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row align-center">
+
+                                        <!-- Botões -->
+
+
+                                        <div class="space-btn text-center">
+                                            <button type="button" id="btn-aprovar" name="btn-aprovar" class="sub-icones"
+                                                onclick="openModal('modal-aprovar')">
+                                                <i class="fa-regular fa-thumbs-up"></i><label>Aprovar Requisição</label>
+                                            </button>
                                         </div>
 
-                                        <div class="form-row">
-                                            <div class="col-md-12">
-                                                <div
-                                                    style="display: flex; flex-direction: column; align-items: center;">
-                                                    <div style="display: flex; align-items: center; margin: 20px 0;">
-                                                        <p style="margin-right: 10px;">Produtos:</p>
-                                                        <input type="text" class="form-control text-center"
-                                                            style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                            maxlength="50" id="pro_i" name="pro_i" value="R$ 1.31,11"
-                                                            disabled />
-                                                        <p style="margin-right: 10px; text-wrap: nowrap;">Valor do
-                                                            Frete:</p>
-                                                        <input type="text" class="form-control text-center"
-                                                            style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                            maxlength="50" id="frete_i" name="frete_i" value="R$ 00,00"
-                                                            disabled />
-                                                        <p style="margin-right: 10px; text-wrap: nowrap;">Outras
-                                                            Despesas:</p>
-                                                        <input type="text" class="form-control text-center"
-                                                            style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                            maxlength="50" id="despesas_i" name="despesas_i"
-                                                            value="R$ 600,34" disabled />
-                                                    </div>
-                                                    <div style="display: flex; align-items: center;  margin: 20px 0;">
-                                                        <p style="margin-right: 10px;"><strong><br>TOTAL:</strong></p>
-                                                        <input type="text" class="form-control text-center"
-                                                            style="background-color: orange; color: #fff; text-shadow: 1px 1px #c54f20; width: 120px;"
-                                                            maxlength="50" id="total_i" name="total_i"
-                                                            value="R$ 5.100,00" disabled />
-                                                    </div>
-                                            </div>
-
-                            <div class="form-row align-center">
-
-                                <!-- Botões -->
-                                <div class="space-btn text-center">
-                                    <button type="button" id="btn-reprovar" name="btn-reprovar" class="sub-icones"
-                                        onclick="openModal('modal-reprovar')">
-                                        <i class="fa-regular fa-thumbs-down"></i><label>Reprovar Requisição</label>
-                                    </button>
-                                </div>
-
-                                <div class="space-btn text-center">
-                                    <button type="button" id="btn-aprovar" name="btn-aprovar" class="sub-icones"
-                                        onclick="openModal('modal-aprovar')">
-                                        <i class="fa-regular fa-thumbs-up"></i><label>Aprovar Requisição</label>
-                                    </button>
-                                </div>
-
-                                <div class="space-btn text-center">
+                                        <!--div class="space-btn text-center">
                                     <button type="button" id="btn-cf" name="btn-cf" class="sub-icones"
                                         onclick="openModal('modal-cf')">
                                         <img src="imgs/ico-reembolso.png"><label>Aprovar para CF</label>
                                     </button>
-                                </div>
+                                </div-->
 
-                                <div class="space-btn text-center">
-                                    <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
-                                        class="sub-icones">
-                                        <a href="ver-requisicao.html">
-                                            <i class="fa-regular fa-eye"></i></a><label>Visualizar Cotação</label>
-                                        
-                                    </button>
-                                </div>
+                                        <div class="space-btn text-center">
+                                            <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
+                                                class="sub-icones">
+                                                <a href="ver-requisicao.html">
+                                                    <i class="fa-regular fa-eye"></i></a><label>Visualizar
+                                                    Cotação</label>
 
-                            </div><!--div form-row align-right-->
+                                            </button>
+                                        </div>
 
-                        </div><!--div card-->
+                                    </div><!--div form-row align-right-->
 
-                    </div><!--tab-2 wrapper-->
-                </div><!--#lis-cold-md-->
+                                </div><!--div card-->
 
-            </div>
+                            </div><!--tab-2 wrapper-->
+                        </div><!--#lis-cold-md-->
 
-
-        </div><!--div cards-container-->
+                    </div>
 
 
-    </div><!--div conteudo in-->
+                </div><!--div cards-container-->
 
 
-    </div><!--div container desktop-->
+            </div><!--div conteudo in-->
+
+
+        </div><!--div container desktop-->
 
     </div><!--div conteudo-->
 
@@ -508,38 +579,83 @@
         </div>
     </div>
 
-
     <!-- Modal Aprovar Requisição -->
     <div id="modal-aprovar" class="modal">
         <div class="modal-envolto">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal-aprovar')">&times;</span>
-                <h2 class="tit-modal">Aprovar Requisição</h2>
-                <div class="modal-wrap">
-                    <div class="filtro-tabela">
-                        <div class="qua-4 modal-body">
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8 text-center">
-                                    <h4>Observações da Aprovação</h4>
+                <h2 class="tit-modal">Aprovação da Requisição</h2>
+                <div class="modal-body">
+                    <!-- Gráfico de Verba e Gasto -->
+                    <div class="grafico">
+                        <br><br> <br>
+                        <canvas id="grafico-verba-gasto" width="600" height="200"></canvas>
+                    </div>
+                    <hr>
+                    <!-- Linha do Tempo Horizontal -->
+                    <div class="timeline-horizontal">
+                        <p style="text-align: center"><b>Timeline de Entrega</b></p>
+                        <div class="timeline-container">
+                            <div class="timeline-item atual">
+                                <div class="timeline-icon">
+                                    <i class="fa-solid fa-calendar-days"></i>
                                 </div>
-                                <div class="col-md-2"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label>Por favor preencha explicando os motivos da aprovação</label>
-                                    <textarea class="form-control" rows="5" id="obs-aprovar"
-                                        name="obs-aprovar"></textarea>
-                                </div>
-                            </div>
-                            <div class="linha subsub-botoes">
-                                <div>
-                                    <button type="submit" id="salvar-aprovar" name="salvar-aprovar" class="sub-icones">
-                                        <i class="fa-regular fa-floppy-disk"></i>
-                                    </button>
-                                    <label for="salvar-aprovar">&nbsp;Salvar</label>
+                                <div class="timeline-content">
+                                    <div class="data">01/08/2024</div>
+                                    <div class="descricao">Data de Entrega Prevista</div>
                                 </div>
                             </div>
+                            <div class="timeline-bar"></div>
+                            <div class="timeline-item atrasado">
+                                <div class="timeline-icon">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="data">26/08/2024</div>
+                                    <div class="descricao">Data Atual (atrasado)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Por favor preencha explicando os motivos da decisão</label>
+                            <textarea class="form-control" rows="5" id="obs-aprovar" name="obs-aprovar"></textarea>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" id="salvar-sem-comentario"
+                                    onclick="toggleTextarea(this)">
+                                <label class="form-check-label" for="salvar-sem-comentario">
+                                    Salvar sem nenhum comentário
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-icones align-right mt-3">
+                        <div style="display: flex; align-items: center; margin-right: 10px;">
+                            <input type="radio" id="reprovar-requisicao" name="acao-requisicao" value="reprovar"
+                                style="margin-right: 5px;">
+                            <label for="reprovar-requisicao" style="display: flex; align-items: center;">
+                                <i class="fa-regular fa-thumbs-down"></i><span style="margin-left: 5px;"> Reprovar
+                                    Requisição</span>
+                            </label>
+                        </div>
+
+                        <div style="display: flex; align-items: center; margin-right: 10px;">
+                            <input type="radio" id="aprovar-requisicao" name="acao-requisicao" value="aprovar"
+                                style="margin-right: 5px;">
+                            <label for="aprovar-requisicao" style="display: flex; align-items: center;">
+                                <i class="fa-regular fa-thumbs-up"></i><span style="margin-left: 5px;"> Aprovar
+                                    Requisição</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <button type="submit" id="salvar-aprovar" name="salvar-aprovar" class="sub-icones">
+                                <i class="fa-regular fa-floppy-disk"></i>
+                                <label for="salvar-aprovar">&nbsp;Salvar</label>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -547,48 +663,69 @@
         </div>
     </div>
 
+    <!-- Inclusão do Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <script>
+        // Configuração do gráfico com Chart.js
+        var ctx = document.getElementById('grafico-verba-gasto').getContext('2d');
+        var grafico = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Verba Grupo', 'Verba Subgrupo', 'Verba Desejada', 'Verba Total Gasto'],
+                datasets: [{
+                    label: 'Valores',
+                    data: [3000, 5000, 7000, 8000], // Dados fictícios
+                    backgroundColor: [
+                        'rgba(255, 193, 7, 0.6)',
+                        'rgba(33, 150, 243, 0.6)',
+                        'rgba(76, 175, 80, 0.6)',
+                        'rgba(244, 67, 54, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 193, 7, 1)',
+                        'rgba(33, 150, 243, 1)',
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(244, 67, 54, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Altera o gráfico para barras horizontais
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valor ($)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Categoria'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Verbas',
+                        padding: {
+                            bottom: 20
+                        }
+                    }
+                }
+            }
+        });
 
-    <!-- Modal Aprovar para CF -->
-    <div id="modal-cf" class="modal">
-        <div class="modal-envolto">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal-cf')">&times;</span>
-                <h2 class="tit-modal">Aprovar para CF</h2>
-                <div class="modal-wrap">
-                    <div class="filtro-tabela">
-                        <div class="qua-4 modal-body">
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8 text-center">
-                                    <h4>Descrição do motivo</h4>
-                                </div>
-                                <div class="col-md-2"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label>Por favor preencha explicando os motivos da aprovação para CF</label>
-                                    <textarea class="form-control" rows="5" id="obs-cf" name="obs-cf"></textarea>
-                                </div>
-                            </div>
-                            <div class="linha subsub-botoes">
-                                <div>
-                                    <button type="submit" id="salvar-cf" name="salvar-cf" class="sub-icones">
-                                        <i class="fa-regular fa-floppy-disk"></i>
-                                    </button>
-                                    <label for="salvar-cf">&nbsp;Salvar</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </script>
 
-
-
-
+    
 
     <script>
         // Função para rolar até o topo da página
@@ -602,36 +739,6 @@
 
 
 
-    <!--CLIQUE NAS LINHAS DA TABELA -->
-    <script>
-        // Função para mostrar o aviso
-        function mostrarAviso() {
-            alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
-        }
-
-        // Vincular a função ao evento de clique da linha da tabela
-        document.addEventListener("DOMContentLoaded", function () {
-            var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
-            linhasTabela.forEach(function (linha) {
-                linha.addEventListener("click", mostrarAviso);
-                linha.addEventListener("mouseover", function () {
-                    this.classList.add('destaque-mouseover');
-                });
-                linha.addEventListener("mouseout", function () {
-                    this.classList.remove('destaque-mouseover');
-                    // Reaplicar as regras de alternância de cores
-                    var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
-                    linhas.forEach(function (linha, indice) {
-                        if (indice % 2 === 0) {
-                            linha.style.backgroundColor = "#f2f2f2";
-                        } else {
-                            linha.style.backgroundColor = "#ffffff";
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 
 
     <script src="filtro-plan.js"></script>

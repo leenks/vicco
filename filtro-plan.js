@@ -26,6 +26,12 @@ window.onclick = function(event) {
     }
 }
 
+// desabilita se clicar no box de aprovar sem comentarios
+function toggleTextarea(checkbox) {
+    var textarea = document.getElementById('obs-aprovar');
+    textarea.disabled = checkbox.checked;
+}
+
 
 // Adiciona o filtro à lista de filtros selecionados
 function adicionarFiltro(nomeFiltro) {
