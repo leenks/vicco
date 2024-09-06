@@ -144,6 +144,10 @@ select {
 }
 
 
+.form-check-inline .form-check-input  {
+    margin-top: 10px;
+    margin-right: 5px;
+}
 
 .form-content {
     margin: 0px;
