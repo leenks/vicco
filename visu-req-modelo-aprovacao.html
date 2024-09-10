@@ -13,7 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    
 
+    
     <link rel="stylesheet" href="requisicoes.css">
     <link rel="stylesheet" href="forms.css">
     <style>
@@ -134,8 +138,13 @@
             margin: 20px;
         }
         .chart {
-            width: 200px; /* Ajuste a largura conforme necessário */
+            position: relative; /* Permite o ajuste do gráfico dentro do contêiner */
+            width: 2000px; /* Ajuste a largura conforme necessário */
             height: 200px; /* Ajuste a altura conforme necessário */
+        }
+        .chart canvas {
+            width: 100% !important; /* Força o canvas a ocupar 100% do tamanho do contêiner */
+            height: 100% !important; /* Força o canvas a ocupar 100% do tamanho do contêiner */
         }
     </style>
 
@@ -614,74 +623,143 @@
                     </div>
                 
                     <script>
-                      // Dados fictícios para os gráficos
-const verbaGrupoTotal = 100000; // Exemplo: verba total do grupo
-const verbaGrupoGasta = 60000;  // Exemplo: verba já gasta no grupo
-
-const verbaSubgrupoTotal = 50000;  // Exemplo: verba total do subgrupo
-const verbaSubgrupoGasta = 25000;  // Exemplo: verba já gasta no subgrupo
-
-const verbaDesejada = 120000;  // Exemplo: valor desejado
-const verbaGasta = verbaGrupoGasta + verbaSubgrupoGasta; // Soma dos gastos
-
-// Função para criar gráficos de pizza
-function criarGraficoPizza(idCanvas, labelTotal, labelGasto, total, gasto) {
-    new Chart(document.getElementById(idCanvas), {
-        type: 'pie',
-        data: {
-            labels: [labelGasto, labelTotal],
-            datasets: [{
-                data: [gasto, total - gasto],
-                backgroundColor: ['#FF6384', '#36A2EB'],
-                hoverBackgroundColor: ['#FF6384', '#36A2EB']
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                },
-                datalabels: {
-                    color: '#ffffff',
-                    font: {
-                        weight: 'bold',
-                        size: 14
-                    },
-                    formatter: (value, ctx) => {
-                        let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
-                        let percentage = (value / total * 100).toFixed(1);
-                        return `${percentage}%`;
-                    },
-                    anchor: 'end',
-                    align: 'end',
-                    offset: 4
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function (context) {
-                            let label = context.label || '';
-                            let value = context.raw || 0;
-                            let percentage = (value / total * 100).toFixed(2);
-                            return `${label}: ${value} (${percentage}%)`;
+                        // Dados fictícios para os gráficos
+                        const verbaGrupoTotal = 100000; // Exemplo: verba total do grupo
+                        const verbaGrupoGasta = 60000;  // Exemplo: verba já gasta no grupo
+                    
+                        const verbaSubgrupoTotal = 50000;  // Exemplo: verba total do subgrupo
+                        const verbaSubgrupoGasta = 25000;  // Exemplo: verba já gasta no subgrupo
+                    
+                        const verbaDesejada = 120000;  // Exemplo: valor desejado
+                        const verbaGasta = verbaGrupoGasta + verbaSubgrupoGasta; // Soma dos gastos
+                        const verbaResidual = verbaDesejada - verbaGasta; // Cálculo do gasto residual
+                    
+                        // Função para criar gráficos de pizza com 2 informações
+                        function criarGraficoPizzaCom2Infos(idCanvas, labelTotal, labelGasto, total, gasto) {
+                            new Chart(document.getElementById(idCanvas), {
+                                type: 'pie',
+                                data: {
+                                    labels: [labelGasto, labelTotal],
+                                    datasets: [{
+                                        data: [gasto, total - gasto],
+                                        backgroundColor: ['#FF6384', '#36A2EB'],
+                                        hoverBackgroundColor: ['#FF6384', '#36A2EB']
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
+                                    plugins: {
+                                        legend: {
+                                            position: 'bottom',
+                                        },
+                                        datalabels: {
+                                            color: '#ffffff',
+                                            font: {
+                                                weight: 'bold',
+                                                size: 14
+                                            },
+                                            formatter: (value, ctx) => {
+                                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
+                                                let percentage = (value / total * 100).toFixed(1);
+                                                return `${percentage}%`;
+                                            },
+                                            anchor: 'end',
+                                            align: 'end',
+                                            offset: 4
+                                        },
+                                        tooltip: {
+                                            callbacks: {
+                                                label: function (context) {
+                                                    let label = context.label || '';
+                                                    let value = context.raw || 0;
+                                                    let percentage = (value / total * 100).toFixed(2);
+                                                    return `${label}: ${value} (${percentage}%)`;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            });
                         }
-                    }
-                }
-            }
-        }
-    });
-}
-
-// Criando os gráficos
-window.onload = function () {
-    criarGraficoPizza('graficoGrupo', 'Verba Total do Grupo', 'Verba Gasta do Grupo', verbaGrupoTotal, verbaGrupoGasta);
-    criarGraficoPizza('graficoSubgrupo', 'Verba Total do Subgrupo', 'Verba Gasta do Subgrupo', verbaSubgrupoTotal, verbaSubgrupoGasta);
-    criarGraficoPizza('graficoDesejado', 'Verba Desejada', 'Verba Gasta', verbaDesejada, verbaGasta);
-};
-
-
+                    
+                        // Função para criar gráficos de pizza com 3 informações
+                        function criarGraficoPizzaCom3Infos(idCanvas, label1, label2, label3, valor1, valor2, valor3) {
+                            new Chart(document.getElementById(idCanvas), {
+                                type: 'pie',
+                                data: {
+                                    labels: [label1, label2, label3],
+                                    datasets: [{
+                                        data: [valor1, valor2, valor3],
+                                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                                        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
+                                    plugins: {
+                                        legend: {
+                                            position: 'bottom',
+                                        },
+                                        datalabels: {
+                                            color: '#ffffff',
+                                            font: {
+                                                weight: 'bold',
+                                                size: 14
+                                            },
+                                            formatter: (value, ctx) => {
+                                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
+                                                let percentage = (value / total * 100).toFixed(1);
+                                                return `${percentage}%`;
+                                            },
+                                            anchor: 'end',
+                                            align: 'end',
+                                            offset: 4
+                                        },
+                                        tooltip: {
+                                            callbacks: {
+                                                label: function (context) {
+                                                    let label = context.label || '';
+                                                    let value = context.raw || 0;
+                                                    let percentage = (value / total * 100).toFixed(2);
+                                                    return `${label}: ${value} (${percentage}%)`;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    
+                        // Criando os gráficos
+                        window.onload = function () {
+                            criarGraficoPizzaCom2Infos(
+                                'graficoGrupo',
+                                'Verba Gasta do Grupo',
+                                'Verba Total do Grupo',
+                                verbaGrupoTotal,
+                                verbaGrupoGasta
+                            );
+                            criarGraficoPizzaCom2Infos(
+                                'graficoSubgrupo',
+                                'Verba Gasta do Subgrupo',
+                                'Verba Total do Subgrupo',
+                                verbaSubgrupoTotal,
+                                verbaSubgrupoGasta
+                            );
+                            criarGraficoPizzaCom3Infos(
+                                'graficoDesejado',
+                                'Gasto Residual',
+                                'Verba Gasta',
+                                'Verba Desejada',
+                                verbaResidual,
+                                verbaGasta,
+                                verbaDesejada
+                            );
+                        };
                     </script>
+                    
                     <hr>
                     <!-- Linha do Tempo Horizontal -->
                     <div class="timeline-horizontal">
