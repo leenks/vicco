@@ -19,8 +19,80 @@
             overflow-x: auto;
             white-space: nowrap;
             min-width: 300px;
-            /* Ajuste o valor conforme necessário */
         }
+        .chat-history {
+            background-color: #fbfbfb;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+            height: 250px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            background-color: #dfffe3;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat-message span {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .chat-message p {
+            margin: 5px 0;
+        }
+
+        .chat-message .info {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .chat-message .info span {
+            display: block;
+        }
+
+        /* Estilos do select customizado */
+        .select-selected {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .select-items {
+            position: absolute;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            z-index: 99;
+            display: none;
+        }
+
+        .select-items div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .select-items div:hover {
+            background-color: #ddd;
+        }
+
+        .select-arrow-active {
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* Ajustar a altura da caixa de texto */
+        textarea.form-control {
+            height: 70px; /* Ajuste a altura conforme necessário */
+        }
+        
     </style>
     <title>Vicco Construtora</title>
 </head>
@@ -272,179 +344,206 @@
 
                             <hr width="100%">
 
-                         
 
                             <table id="tab-2" class="table-ficha">
                                 <thead>
-                                    <tr class="tab-4"
-                                        style="font-weight: bold; background-color: #888; color: white    ;">
+                                    <!-- Cabeçalho da Tabela -->
+                                    <tr style="font-weight: bold; background-color: #888; color: white;">
                                         <td colspan="3">SOLICITAÇÕES</td>
-                                        <td colspan="4">COTAÇÕES</td>
-                                        <td colspan="3">HISTÓRICO</td>
+                                        <td colspan="5">COTAÇÕES</td>
                                     </tr>
-                                    <tr class="tab-5" style="font-weight: bolder;">
-                                        <td width="8%">Sigla</td>
+                                    <tr style="font-weight: bolder;">
+                                        <!-- Cabeçalhos de Solicitações -->
+                                        <td>Sigla</td>
                                         <td width="30%">Produto</td>
-                                        <td width="5%">Qtd</td>
-                                        <td>Canto Metal Comercio LTDA</td>
+                                        <td width="4%">Qtd</td>
+                                        <!-- Cabeçalhos de Cotações -->
+                                        <td width="15%">Canto Metal Comercio LTDA</td>
+                                        <td>Fornecedor 2</td>
+                                        <td>Fornecedor 3</td>
                                         <td>*****</td>
                                         <td>*****</td>
-                                        <td>Compra Ideal</td>
-                                        <td>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></td>
-                                        <td>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></td>
-                                        <td>R$ Médio</td>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Linha 1 -->
                                     <tr>
-                                        
-                                        <td class="text-center">EST-257</td>
+                                        <!-- Solicitações -->
+                                        <td>EST-257</td>
                                         <td>Cantoneira em L 1x1, em alumínio cor Natural</td>
-                                        <td class="text-right">20</td>
+                                        <td>20</td>
+                                        <!-- Cotações -->
                                         <td class="cor-v text-center" style="color: red;">49,68&nbsp;
                                             &nbsp; <input type="radio" name="lin_4469" value="409">
                                             <br>R$ 993,60
                                         </td>
-                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469"
-                                                value="0"> <br>R$ 0,00</td>
-                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469"
-                                                value="0"><br>R$ 0,00</td>
-                                        <td class="text-center">49,68<br>R$ 993,60</td>
-                                        <td class="text-center">25,77</td>
-                                        <td class="text-center">85,20</td>
-                                        <td class="text-center">33,51</td>
+                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469" value="0"> <br>R$ 0,00</td>
+                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469" value="0"> <br>R$ 0,00</td>
+                                        <td class="text-center">R$ 48,50<br>R$ 970,00</td>
+                                        <td class="text-center">R$ 49,00<br>R$ 980,00</td>
                                     </tr>
-                                    <tr class="cpo-1">
-                                        <td colspan="3" class="text-center">Valor dos Produtos</td>
-                                        <td class="text-center">R$ 993,60</td>
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                            
+                                    <!-- Linha 2 -->
+                                    <tr>
+                                        <!-- Solicitações -->
+                                        
+                                        <td colspan="3">Valor dos Produtos</td>
+                                        
+                                        <!-- Cotações -->
+                                        <td class="text-center">R$ 900,00</td>
+                                        <td class="text-center"> R$ 0,00</td>
+                                        <td class="text-center">R$ 0,00 </td>
+                                        <td class="text-center"> ***</td>
+                                        <td class="text-center"> ***</td>
                                     </tr>
-                                    <tr class="cpo-1">
-                                        <td colspan="3" class="text-center">Valor do Frete</td>
+                            
+                                    <!-- Linha 3 -->
+                                    <tr>
+                                        <!-- Solicitações -->
+                                        <td colspan="3">Valor do Frete</td>
+                                        <!-- Cotações -->
                                         <td class="text-center">R$ 0,00</td>
-                                        <td class="text-center">***</td>
-                                        <td class="text-center">***</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="cpo-1">
-                                        <td colspan="3" class="text-center">Outras Despesas</td>
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td class="text-center">***</td>
-                                        <td class="text-center">***</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="cpo-1" style="font-weight: bolder;">
-                                        <td colspan="3" class="text-center">VALOR TOTAL &nbsp; <i
-                                                class="fa fa-arrow-right" aria-hidden="true"></i> </td>
-                                        <td class="text-center">R$ 993,60</td>
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="cpo-1">
-                                        <td colspan="3" class="text-center">Forma de Pagamento</td>
-                                        <td class="text-center">Boleto</td>
-                                        <td class="text-center">*****</td>
-                                        <td class="text-center">*****</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="cpo-1">
-                                        <td colspan="3" class="text-center">Data de Entrega</td>
-                                        <td class="text-center">24/06/2024</td>
-                                        <td class="text-center">**/**/*****</td>
-                                        <td class="text-center">**/**/*****</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td class="text-center"> ***</td>
+                                        <td class="text-center">*** </td>
+                                        <td class="text-center"> ***</td>
+                                        <td class="text-center">*** </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" class="cpo-1 text-center">Anexos</td>
-                                        <td class="text-center">
-                                            <input type="file" id="anexo" style="display: none;">
-
-                                            <a href="#"
-                                                onclick="document.getElementById('anexo').click(); return false;">
-                                                <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i>
-                                            </a>
-                                            <a href="#" target="_blank"><i class="fa fa-eye sub-icones fa-2x"
-                                                    aria-hidden="true"></i></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <input type="file" id="anexo" style="display: none;">
-
-                                            <a href="#"
-                                                onclick="document.getElementById('anexo').click(); return false;">
-                                                <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i>
-                                            </a>
-                                            <a href="#" target="_blank"><i class="fa fa-eye sub-icones fa-2x"
-                                                    aria-hidden="true"></i></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <input type="file" id="anexo" style="display: none;">
-
-                                            <a href="#"
-                                                onclick="document.getElementById('anexo').click(); return false;">
-                                                <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i>
-                                            </a>
-                                            <a href="#" target="_blank"><i class="fa fa-eye sub-icones fa-2x"
-                                                    aria-hidden="true"></i></a>
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <!-- Solicitações -->
+                                        <td colspan="3">Outras Despesas</td>
+                                        <!-- Cotações -->
+                                        <td class="text-center">R$ 0,00</td>
+                                        <td class="text-center"> ***</td>
+                                        <td class="text-center"> ***</td>
+                                        <td class="text-center"> ***</td>
+                                        <td class="text-center"> ***</td>
                                     </tr>
-                                    <tr class="cpo-1">
-                                        <td colspan="3" class="text-center">Edição de Compras</td>
-                                        <td class="space-btn text-center">
-                                            <!-- Ícone de Edição -->
-                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
-                                                title="Abre janela da cotação com preços e condições para alteração."
-                                                onclick="openModal('visualizar-popup-req');"></i>
-
-
-                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
-                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
-                                                title="Abre janela da cotação com preços e condições para alteração."></i>
-                                            &nbsp; &nbsp;
-                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
-                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
-                                        </td>
-                                        <td class="text-center">
-                                            <i class="fa fa-wrench sub-icones fa-2x" aria-hidden="true"
-                                                title="Abre janela da cotação com preços e condições para alteração."></i>
-                                            &nbsp; &nbsp;
-                                            <i class="fa fa-trash sub-icones fa-2x" aria-hidden="true"
-                                                title="Abre janela da cotação com preços e condições para efetuar exclusão."></i>
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                    <tr>
+                                        <!-- Solicitações -->
+                                        <td colspan="3" style=" font-weight: bold;">VALOR TOTAL &nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i> </td>
+                                        <!-- Cotações -->
+                                        <td class="text-center" style=" font-weight: bold;">R$ 993,60</td>
+                                        <td class="text-center"> R$ 0,00</td>
+                                        <td class="text-center">R$ 0,00 </td>
+                                        <td class="text-center"> R$ 0,00</td>
+                                        <td class="text-center"> R$ 0,00</td>
+                                    </tr>
+                                    <tr>
+                                        <!-- Solicitações -->
+                                        <td colspan="3">Forma de Pagamento</td>
+                                        <!-- Cotações -->
+                                        <td class="text-center">Boleto</td>
+                                        <td class="text-center"> ***</td>
+                                        <td class="text-center"> ***</td>
+                                        <td class="text-center">*** </td>
+                                        <td class="text-center"> ***</td>
+                                    </tr>
+                                    <tr>
+                                        <!-- Solicitações -->
+                                        <td colspan="3">Data de Entrega</td>
+                                        <!-- Cotações -->
+                                        <td class="text-center">24/06/2024</td>
+                                        <td class="text-center"> **/**/*****</td>
+                                        <td class="text-center"> **/**/*****</td>
+                                        <td class="text-center"> **/**/*****</td>
+                                        <td class="text-center">**/**/***** </td>
                                     </tr>
                                 </tbody>
                             </table>
+                            
+
+                            <!-- Tabela de Histórico -->
+                            <table id="tab-historico" class="table-ficha">
+                                <thead>
+                                    <tr style="font-weight: bold; background-color: #888; color: white;">
+                                        <td colspan="4">HISTÓRICO</td>
+                                    </tr>
+                                    <tr style="font-weight: bolder;">
+                                        <td>Compra Ideal</td>
+                                        <td>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></td>
+                                        <td>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></td>
+                                        <td>R$ Médio</td>                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"  style="color: rgb(29, 171, 29); font-weight: bold;">49,68  <br>R$ 993,60</td>
+                                        <td class="text-center">33,51</td>
+                                        <td class="text-center">55,88</td>
+                                        <td class="text-center">55,88</td>                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <!-- Gráfico de Comparação de Cotações -->
+<canvas id="graficoCotacoes" width="400" height="200"></canvas>
+
+<!-- Legenda do valor ideal -->
+<div style="margin-top: 10px; text-align: center;">
+    <div style="display: inline-block; width: 20px; height: 20px; background-color: rgba(255, 99, 132, 0.2); border: 1px solid rgba(255, 99, 132, 1);"></div>
+    <span>Compra Ideal</span>
+</div>
+
+<!-- Inclua o Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var ctx = document.getElementById('graficoCotacoes').getContext('2d');
+    var graficoCotacoes = new Chart(ctx, {
+        type: 'bar', // Gráfico de barras
+        data: {
+            labels: ['Canto Metal Comercio LTDA', 'Fornecedor 2', 'Fornecedor 3', 'Fornecedor 4', 'Fornecedor 5'], // Nomes dos fornecedores
+            datasets: [{
+                label: 'Cotações (R$)',
+                data: [900.60, 1050, 1051, 970, 980], // Valores das cotações
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)', // Destaque para "Canto Metal Comercio LTDA"
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)', // Borda do "Canto Metal Comercio LTDA"
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }, {
+                label: 'Preço Ideal (R$)',
+                data: [900.60, 900.60, 900.60, 900.60, 900.60], // Linha que representa o preço ideal
+                type: 'line',
+                borderColor: 'rgba(0, 255, 0, 0.6)',
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Valores (R$)'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                    labels: {
+                        color: 'rgb(0, 0, 0)',
+                        backgroundColor:  'rgb(128, 128, 128)',
+                        
+                    }
+                }
+            }
+        }
+    });
+</script>
+
                         </div>
 
                     </div>
@@ -489,38 +588,53 @@
     </div>
     </div><!--container desktop-->
 
-    <!-- Janela Modal para Comunicados -->
+     <!-- Janela Modal para Comunicados -->
     <div id="modal-comunicados" class="modal">
         <div class="modal-envolto">
             <div class="modal-content">
                 <span id="close" class="close-btn" onclick="closeModal('modal-comunicados')">&times;</span>
                 <h2 class="tit-modal">Enviar Comunicado</h2>
-                <div class="modal-wrap">
+                <br><br>
 
+                <!-- Histórico de Comunicados -->
+                <div class="chat-history">
+                    <div class="chat-message">
+                        <span>Enviado por: Glauco</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla, augue sed facilisis sagittis.</p>
+                        <div class="info">
+                            <span>Para: Funcionario 1</span>
+                            <span>Data: 01/09/2024</span>
+                        </div>
+                    </div>
+                    <div class="chat-message">
+                        <span>Enviado por: Glauco</span>
+                        <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
+                        <div class="info">
+                            <span>Para: Funcionario 2</span>
+                            <span>Data: 02/09/2024</span>
+                        </div>
+                    </div>
+                    <div class="chat-message">
+                        <span>Enviado por: Glauco</span>
+                        <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
+                        <div class="info">
+                            <span>Para: Funcionario 2</span>
+                            <span>Data: 02/09/2024</span>
+                        </div>
+                    </div>
+                    <!-- Adicione mais comunicados antigos conforme necessário -->
+                </div>
+
+                <div class="modal-wrap">
                     <div class="form-group">
                         <label for="comunicadoText">Faça seu comunicado:</label>
                         <textarea id="comunicadoText" class="form-control" rows="4"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="customSelect">Quem Receberá o Comunicado:</label>
-
-                        <div class="select-selected">Selecione um usuário</div>
-                        <div class="select-items select-hide">
-                            <div class="custom-option" data-value="funcionario1">
-                                <img src="imgs/ft-ex.png" class="foto-redonda"> Funcionário 1
-                            </div>
-                            <div class="custom-option" data-value="funcionario2">
-                                <img src="imgs/ft-ex2.jpg" class="foto-redonda"> Funcionário 2
-                            </div>
-                            <div class="custom-option" data-value="funcionario3">
-                                <img src="imgs/ft-ex.png" class="foto-redonda"> Funcionário 3
-                            </div>
-
-                            <!-- Adicione mais opções conforme necessário -->
+                    <div class="form-control">
+                        <label for="comunicado">Quem Receberá o Comunicado:</label>
+                       
                         </div>
                     </div>
-
-
 
                     <div class="linha subsub-botoes">
                         <div>
@@ -531,46 +645,60 @@
                         </div>
 
                         <div>
-                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
+                            <button type="button" id="cancel" name="cancelar" class="sub-icones" onclick="closeModal('modal-comunicados')">
                                 <i class="fa-regular fa-rectangle-xmark"></i>
                             </button>
-                            <label for="sal_r">Cancelar</label>
+                            <label for="cancel">Cancelar</label>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
+    </div> 
 
-        <script>
-            document.querySelector('.select-selected').addEventListener('click', function () {
-                this.nextElementSibling.classList.toggle('select-hide');
-                this.classList.toggle('select-arrow-active');
-            });
+    <script>
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
 
-            var options = document.querySelectorAll('.custom-option');
-            options.forEach(function (option) {
-                option.addEventListener('click', function () {
-                    document.querySelector('.select-selected').textContent = this.textContent.trim();
-                    document.querySelector('.select-items').classList.add('select-hide');
-                    document.querySelector('.select-selected').classList.remove('select-arrow-active');
-                    // Aqui você pode adicionar lógica para capturar o valor selecionado
-                });
-            });
+        document.querySelector('.select-selected').addEventListener('click', function () {
+            this.nextElementSibling.classList.toggle('select-hide');
+            this.classList.toggle('select-arrow-active');
+        });
 
-            // Fecha o dropdown se o usuário clicar fora dele
-            window.addEventListener('click', function (event) {
-                if (!event.target.matches('.select-selected')) {
-                    var items = document.querySelector('.select-items');
-                    if (items && !items.classList.contains('select-hide')) {
-                        items.classList.add('select-hide');
-                    }
+        var options = document.querySelectorAll('.custom-option');
+        options.forEach(function (option) {
+            option.addEventListener('click', function () {
+                var selected = document.querySelector('.select-selected');
+                var selectedValues = Array.from(document.querySelectorAll('.select-items .custom-option.selected'))
+                                          .map(opt => opt.textContent.trim());
+                var optionText = this.textContent.trim();
+
+                if (selectedValues.includes(optionText)) {
+                    this.classList.remove('selected');
+                    selectedValues = selectedValues.filter(val => val !== optionText);
+                } else {
+                    this.classList.add('selected');
+                    selectedValues.push(optionText);
                 }
-            });
-        </script>
 
+                selected.textContent = selectedValues.length ? selectedValues.join(', ') : 'Selecione um ou mais usuários';
+                document.querySelector('.select-items').classList.add('select-hide');
+                document.querySelector('.select-selected').classList.remove('select-arrow-active');
+                // Aqui você pode adicionar lógica para capturar os valores selecionados
+            });
+        });
+
+        // Fecha o dropdown se o usuário clicar fora dele
+        window.addEventListener('click', function (event) {
+            if (!event.target.matches('.select-selected')) {
+                var items = document.querySelector('.select-items');
+                if (items && !items.classList.contains('select-hide')) {
+                    items.classList.add('select-hide');
+                }
+            }
+        });
+    </script>
         <!-- Modal de Filtro -->
         <div id="filterModal" class="modal">
             <div class="modal-envolto">
