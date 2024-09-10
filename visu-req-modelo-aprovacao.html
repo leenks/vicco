@@ -125,7 +125,22 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 300px; /* Ajuste a altura conforme necessário */
+            margin: 20px;
+        }
+        .chart {
+            width: 200px; /* Ajuste a largura conforme necessário */
+            height: 200px; /* Ajuste a altura conforme necessário */
+        }
     </style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 
     <title>Vicco Construtora</title>
 </head>
@@ -586,11 +601,87 @@
                 <span class="close" onclick="closeModal('modal-aprovar')">&times;</span>
                 <h2 class="tit-modal">Aprovação da Requisição</h2>
                 <div class="modal-body">
-                    <!-- Gráfico de Verba e Gasto -->
-                    <div class="grafico">
-                        <br><br> <br>
-                        <canvas id="grafico-verba-gasto" width="600" height="200"></canvas>
+                    <div class="chart-container">
+                        <div class="chart">
+                            <canvas id="graficoGrupo"></canvas>
+                        </div>
+                        <div class="chart">
+                            <canvas id="graficoSubgrupo"></canvas>
+                        </div>
+                        <div class="chart">
+                            <canvas id="graficoDesejado"></canvas>
+                        </div>
                     </div>
+                
+                    <script>
+                      // Dados fictícios para os gráficos
+const verbaGrupoTotal = 100000; // Exemplo: verba total do grupo
+const verbaGrupoGasta = 60000;  // Exemplo: verba já gasta no grupo
+
+const verbaSubgrupoTotal = 50000;  // Exemplo: verba total do subgrupo
+const verbaSubgrupoGasta = 25000;  // Exemplo: verba já gasta no subgrupo
+
+const verbaDesejada = 120000;  // Exemplo: valor desejado
+const verbaGasta = verbaGrupoGasta + verbaSubgrupoGasta; // Soma dos gastos
+
+// Função para criar gráficos de pizza
+function criarGraficoPizza(idCanvas, labelTotal, labelGasto, total, gasto) {
+    new Chart(document.getElementById(idCanvas), {
+        type: 'pie',
+        data: {
+            labels: [labelGasto, labelTotal],
+            datasets: [{
+                data: [gasto, total - gasto],
+                backgroundColor: ['#FF6384', '#36A2EB'],
+                hoverBackgroundColor: ['#FF6384', '#36A2EB']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                datalabels: {
+                    color: '#ffffff',
+                    font: {
+                        weight: 'bold',
+                        size: 14
+                    },
+                    formatter: (value, ctx) => {
+                        let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
+                        let percentage = (value / total * 100).toFixed(1);
+                        return `${percentage}%`;
+                    },
+                    anchor: 'end',
+                    align: 'end',
+                    offset: 4
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            let label = context.label || '';
+                            let value = context.raw || 0;
+                            let percentage = (value / total * 100).toFixed(2);
+                            return `${label}: ${value} (${percentage}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Criando os gráficos
+window.onload = function () {
+    criarGraficoPizza('graficoGrupo', 'Verba Total do Grupo', 'Verba Gasta do Grupo', verbaGrupoTotal, verbaGrupoGasta);
+    criarGraficoPizza('graficoSubgrupo', 'Verba Total do Subgrupo', 'Verba Gasta do Subgrupo', verbaSubgrupoTotal, verbaSubgrupoGasta);
+    criarGraficoPizza('graficoDesejado', 'Verba Desejada', 'Verba Gasta', verbaDesejada, verbaGasta);
+};
+
+
+                    </script>
                     <hr>
                     <!-- Linha do Tempo Horizontal -->
                     <div class="timeline-horizontal">

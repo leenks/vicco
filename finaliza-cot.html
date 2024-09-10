@@ -630,10 +630,13 @@
                         <label for="comunicadoText">Faça seu comunicado:</label>
                         <textarea id="comunicadoText" class="form-control" rows="4"></textarea>
                     </div>
-                    <div class="form-control">
-                        <label for="comunicado">Quem Receberá o Comunicado:</label>
-                       
-                        </div>
+                    <div class="form-group">
+                        <label>Escolha quem vai receber o comunicado:</label>
+                        <ul id="options-list" class="options-list">
+                            <!-- As opções serão injetadas aqui pelo JavaScript -->
+                        </ul>
+                    </div>
+
                     </div>
 
                     <div class="linha subsub-botoes">
@@ -657,47 +660,68 @@
     </div> 
 
     <script>
+        // Função para abrir o modal
+        function openModal() {
+            document.getElementById('modal-comunicados').style.display = 'block';
+        }
+
+        // Função para fechar o modal
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
         }
 
-        document.querySelector('.select-selected').addEventListener('click', function () {
-            this.nextElementSibling.classList.toggle('select-hide');
-            this.classList.toggle('select-arrow-active');
+        // Abrir o modal ao clicar no botão
+        document.getElementById('openModalBtn').onclick = openModal;
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const optionsData = [
+        { value: 'opcao1', text: 'Opção 1', image: 'foto1.jpg' },
+        { value: 'opcao2', text: 'Opção 2', image: 'foto2.jpg' },
+        { value: 'opcao3', text: 'Opção 3', image: 'foto3.jpg' },
+        { value: 'opcao4', text: 'Opção 4', image: 'foto4.jpg' },
+        { value: 'opcao5', text: 'Opção 5', image: 'foto5.jpg' }
+    ];
+
+    const optionsList = document.getElementById('options-list');
+
+    optionsData.forEach(option => {
+        // Cria o item da lista
+        const listItem = document.createElement('li');
+        listItem.className = 'option-item';
+        listItem.dataset.value = option.value;
+
+        // Cria a imagem
+        const img = document.createElement('img');
+        img.src = option.image;
+        img.alt = option.text;
+        img.className = 'option-image';
+
+        // Cria o texto
+        const text = document.createElement('span');
+        text.className = 'option-text';
+        text.textContent = option.text;
+
+        // Cria a checkbox
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'option-checkbox';
+
+        // Adiciona a imagem, texto e checkbox ao item da lista
+        listItem.appendChild(img);
+        listItem.appendChild(text);
+        listItem.appendChild(checkbox);
+
+        // Adiciona o item da lista ao contêiner
+        optionsList.appendChild(listItem);
+
+        // Adiciona o evento de clique para alternar seleção
+        listItem.addEventListener('click', function () {
+            checkbox.checked = !checkbox.checked;
+            listItem.classList.toggle('selected', checkbox.checked);
         });
+    });
+});
 
-        var options = document.querySelectorAll('.custom-option');
-        options.forEach(function (option) {
-            option.addEventListener('click', function () {
-                var selected = document.querySelector('.select-selected');
-                var selectedValues = Array.from(document.querySelectorAll('.select-items .custom-option.selected'))
-                                          .map(opt => opt.textContent.trim());
-                var optionText = this.textContent.trim();
-
-                if (selectedValues.includes(optionText)) {
-                    this.classList.remove('selected');
-                    selectedValues = selectedValues.filter(val => val !== optionText);
-                } else {
-                    this.classList.add('selected');
-                    selectedValues.push(optionText);
-                }
-
-                selected.textContent = selectedValues.length ? selectedValues.join(', ') : 'Selecione um ou mais usuários';
-                document.querySelector('.select-items').classList.add('select-hide');
-                document.querySelector('.select-selected').classList.remove('select-arrow-active');
-                // Aqui você pode adicionar lógica para capturar os valores selecionados
-            });
-        });
-
-        // Fecha o dropdown se o usuário clicar fora dele
-        window.addEventListener('click', function (event) {
-            if (!event.target.matches('.select-selected')) {
-                var items = document.querySelector('.select-items');
-                if (items && !items.classList.contains('select-hide')) {
-                    items.classList.add('select-hide');
-                }
-            }
-        });
     </script>
         <!-- Modal de Filtro -->
         <div id="filterModal" class="modal">
