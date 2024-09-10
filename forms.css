@@ -39,6 +39,9 @@ select {
     border-radius: 10px;
 }
 
+.table-responsive {
+    overflow-x: auto;
+}
 
 /* Estilos para alternar as cores das linhas da tabela */
 .table-ficha tbody tr:nth-child(odd) {
@@ -458,7 +461,7 @@ hr {
 }
 
 .space-btn {
-    max-width: 20%;
+    max-width: 35%;
 }
 .space-btn img {
     width: 25px;
@@ -518,9 +521,21 @@ hr {
     .box-info-requisicao-btn {
         margin-top: 10px;
     }
- 
+    .table-ficha td, .table-ficha th {
+    font-size: 14px; /* Tamanho da fonte no desktop */
+    padding: 8px;    /* Espaçamento */
 }
 
+.table-responsive {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Para uma rolagem suave no iOS */
+}
+
+.table-ficha {
+    width: 100%; /* A largura da tabela será mantida dentro do container */
+}
+}
 
 
 .form-row input[type="text"],

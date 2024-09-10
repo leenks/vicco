@@ -388,7 +388,7 @@
 
 
                             <div class="tab-1 table-responsive form-row-table">
-                                <table id="tab-2" class="table-ficha">
+                                <table id="tab-2" class="table-ficha table table-striped table-bordered">
                                     <thead class="thead-light">
                                         <tr>
                                             <th>Sigla</th>
@@ -408,8 +408,7 @@
                                     <tbody>
                                         <tr>
                                             <td>APO-016</td>
-                                            <td>Porcelanato - Portobello 60x60 cm, linha essencial cor: Cimento Cinza
-                                                Bold</td>
+                                            <td>Porcelanato - Portobello 60x60 cm, linha essencial cor: Cimento Cinza Bold</td>
                                             <td>Atlanta Materiais para Construção Ltda</td>
                                             <td>Qualquer</td>
                                             <td>10</td>
@@ -452,6 +451,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            
 
                             <div class="form-row">
                                 <div class="col-md-12">
@@ -490,7 +490,7 @@
                                         <div class="space-btn text-center">
                                             <button type="button" id="btn-aprovar" name="btn-aprovar" class="sub-icones"
                                                 onclick="openModal('modal-aprovar')">
-                                                <i class="fa-regular fa-thumbs-up"></i><label>Aprovar Requisição</label>
+                                                <i class="fa-regular fa-thumbs-up"></i> &nbsp;&nbsp;<i class="fa-regular fa-thumbs-down"></i><label>Aprovar/Reprovar Requisição</label>
                                             </button>
                                         </div>
 
@@ -624,7 +624,7 @@
                             <label>Por favor preencha explicando os motivos da decisão</label>
                             <textarea class="form-control" rows="5" id="obs-aprovar" name="obs-aprovar"></textarea>
                             <div class="form-check mt-2">
-                                <input class="form-check-input" type="checkbox" id="salvar-sem-comentario"
+                                <input class="form-check-input" style="margin-top: 0;" type="checkbox" id="salvar-sem-comentario"
                                     onclick="toggleTextarea(this)">
                                 <label class="form-check-label" for="salvar-sem-comentario">
                                     Salvar sem nenhum comentário
