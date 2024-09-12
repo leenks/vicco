@@ -58,7 +58,7 @@
         <div class="container-desktop">
 
 
-            <center><img class="status" src="imgs/icons-status/10.png" /></center>
+            <center><img class="status" src="imgs/icons-status/11.png" /></center>
 
             <div class="conteudo">
                 <div class="container-desktop">
@@ -83,7 +83,7 @@
                         <div class="space-btn text-center">
                             <button id="toggleButton" class="sub-icones mb-3">
                                 <i class="fa fa-eye-slash"></i> 
-                                <label> Ocultar </label>
+                                <label> Ocultar Ordem de Compra</label>
                             </button>
                         </div>
                     </div>
@@ -139,6 +139,8 @@
                                 </div>
                             </div>
                             <hr width="100%">          
+                        </div>
+                           
                             
                             <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
                             <p style="text-transform: uppercase; margin-left: 5px;">MARCA S.A SOLUTIONS</p>
@@ -153,7 +155,7 @@
                                     <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva" disabled>
                                 </div>
                             </div>
-                        </div>
+                        
 
                      
                         <div class="form-row align-center">
@@ -185,7 +187,7 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th>Descrição Produto/ Marca</th>
-                                                    <th>Qtde. Comprada x Recebida</th>
+                                                    <th>Qtde. Comprada <br>xfor Recebida</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
@@ -194,23 +196,143 @@
                                                     <td>
                                                         Tubo de polietileno de alta densidade, para rede de agua ou esgoto
                                                         ( nbr 15561) / Qualquer</td>
-                                                    <td>1/0</td>
-                                                    <td>Status</td>
+                                                    <td>0/1</td>
+                                                    <td><img src="imgs/status-entrega/ico-entrega-recusado.png" width="40px"><br>Entrega Recusada</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Incoerências:
-                                                        01-17/05/2023 15:40:11</td>
-                                                    
-                                                    <td>1/0</td>
-                                                    <td>colocar</td>
-
+                                                    <td>
+                                                        Areia Grossa Saco 8kg / Qualquer</td>
+                                                    <td>20/20</td>
+                                                    <td><img src="imgs/status-entrega/ico-entrega-ressalva.png" width="40px"><br>Recebido Ressalva</td>
                                                 </tr>
+                                                <tr>
+                                                    <td>
+                                                        Talhadeira - 5/8" / Qualquer</td>
+                                                    <td>20/20</td>
+                                                    <td><img src="imgs/status-entrega/ico-recebido-completo.png" height="40px"><br>Recebido Completo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Marreta Oitavada - 1kg / Qualquer</td>
+                                                    <td>3/3</td>
+                                                    <td><img src="imgs/status-entrega/ico-recusado-parcial.png" height="40px"><br>Recusado Parcial</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Talhadeira - 5/8" / Qualquer</td>
+                                                    <td>20/20</td>
+                                                    <td><img src="imgs/status-entrega/ico-entrega-incompleta.png" height="40px"><br>Entrega Incompleta</td>
+                                                </tr>
+                                                <tr style="background-color: #cccccc;">
+                                                    <td>
+                                                        Incoerências:<br>
+                                                        01-Areia Recusada<br>
+                                                        02-Talhadeira com ressalva<br>
+                                                        03- Outros</td>
+                                                    <td>3/3</td>
+                                                    <td><img src="imgs/status-entrega/ico-entrega-finalizada.png" height="40px">Recebimento Finalizado</td>
+                                                </tr>
+                                                
                                             </tbody>
                                         </table>
+                                 
+                      <p><br><br> </p>
+                      <hr width="100%">
+
+                                <h4 style="text-align: left;">Entrega Fornecedor 02/02</h4>
+                                <p style="text-transform: uppercase; margin-left: 5px;">HIDRÁULICA E FERRAGENS TINDIBA LTDA</p>
+                            
+                                <div class="form-row">
+                                    <div class="col-md-6 col-6 mb-3">
+                                        <label for="dataEntrega2">Data da Entrega:</label>
+                                        <input type="text" class="form-control" id="dataEntrega2" value="20/07/2024 13:30" disabled>
+                                    </div>
+                                    <div class="col-md-6 col-6 mb-3">
+                                        <label for="responsavel2">Responsável pelo Recebimento:</label>
+                                        <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva" disabled>
                                     </div>
                                 </div>
-                      
-
+                            
+    
+                         
+                            <div class="form-row align-center">
+    
+                                <div style="display: flex; align-items: center; margin: 20px 0;">
+                                    <label for="nota_fiscal" style="margin-right: 10px;">Número de Documento:</label>
+                                    <input type="text" class="form-control text-center"
+                                        style="background-color: #ffffff; color: #666; width: 200px; border: solid 1px #9b9b9b"
+                                        maxlength="100" id="nota_fiscal" name="nota_fiscal" placeholder="Digite Nº da Nota" />
+                                </div>
+    
+    
+    
+                                <button type="button" id="visualizar_cotacao" name="visualizar_cotacao" class="sub-icones"
+                                    onclick="openModal('modal-pdf');">
+                                    <i class="fa-regular fa-file-pdf"></i><label>Visualizar Nota Fiscal</label>
+                                </button>
+    
+    
+                                <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                    title="Abrir janela para carregar imagem para a requisição de compra"
+                                    onclick="document.getElementById('anexo').click();">
+                                    <i class="fa-solid fa-paperclip"></i>
+                                    <label>Nota Fiscal Romaneio</label>
+                                </button>
+                            </div>
+    
+                                            <table id="tab-2" class="table-ficha">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Descrição Produto/ Marca</th>
+                                                        <th>Qtde. Comprada <br>xfor Recebida</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            Tubo de polietileno de alta densidade, para rede de agua ou esgoto
+                                                            ( nbr 15561) / Qualquer</td>
+                                                        <td>0/1</td>
+                                                        <td><img src="imgs/status-entrega/ico-entrega-parcial.png" width="40px"><br>Entrega parcial</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Areia Grossa Saco 8kg / Qualquer</td>
+                                                        <td>20/20</td>
+                                                        <td><img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"><br>Aguardando Entrega</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Talhadeira - 5/8" / Qualquer</td>
+                                                        <td>20/20</td>
+                                                        <td><img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"><br>Aguardando Entrega</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Marreta Oitavada - 1kg / Qualquer</td>
+                                                        <td>3/3</td>
+                                                        <td><img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"><br>Aguardando Entrega</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Talhadeira - 5/8" / Qualquer</td>
+                                                        <td>20/20</td>
+                                                        <td><img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"><br>Aguardando Entrega</td>
+                                                    </tr>
+                                                    <tr style="background-color: #cccccc;">
+                                                        <td>
+                                                           <br></td>
+                                                        <td>3/3</td>
+                                                        <td><img src="imgs/status-entrega/ico-aguardando-finalizar.png" height="40px">Aguardando</td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                          
+    
 
             </div><!--div conteudo-->
 
@@ -243,9 +365,9 @@
             formContent.classList.toggle('hidden');
             var icon = this.querySelector('i');
             if (formContent.classList.contains('hidden')) {
-                this.innerHTML = '<i class="fa fa-eye"></i> <label> Mostrar</label>';
+                this.innerHTML = '<i class="fa fa-eye"></i> <label> Mostrar Ordem de Compra</label>';
             } else {
-                this.innerHTML = '<i class="fa fa-eye-slash"></i> <label> Ocultar</label>';
+                this.innerHTML = '<i class="fa fa-eye-slash"></i> <label> Ocultar Ordem de Compra</label>';
             }
         });
     </script>

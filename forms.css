@@ -46,6 +46,7 @@ select {
 /* Estilos para alternar as cores das linhas da tabela */
 .table-ficha tbody tr:nth-child(odd) {
     background-color: #f9f9f9; /* Cinza claro */
+    margin-bottom: 20px;
 }
 
 .table-ficha tbody tr:nth-child(even) {
@@ -560,7 +561,7 @@ hr {
     }
     .table-ficha td, .table-ficha th {
     font-size: 14px; /* Tamanho da fonte no desktop */
-    padding: 8px;    /* Espaçamento */
+    padding: 2px;    /* Espaçamento */
 }
 
 .table-responsive {
