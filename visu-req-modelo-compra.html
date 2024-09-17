@@ -82,7 +82,7 @@
                     <div class="form-row align-left">
                         <div class="space-btn text-center">
                             <button id="toggleButton" class="sub-icones mb-3">
-                                <i class="fa fa-eye-slash"></i> 
+                                <i class="fa fa-eye-slash"></i>
                                 <label> Ocultar Ordem de Compra </label>
                             </button>
                         </div>
@@ -138,23 +138,25 @@
                                         disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis quis justo luctus faucibus. Vivamus sodales ipsum ut odio commodo, sit amet pharetra ipsum fringilla. Sed ut tortor leo. Nullam ut arcu id velit accumsan volutpat nec sit amet justo.</textarea>
                                 </div>
                             </div>
-                            <hr width="100%">          
-                            
+                            <hr width="100%">
+
                             <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
                             <p style="text-transform: uppercase; margin-left: 5px;">ANDRA S A ELECTRIC SOLUTIONS</p>
-                        
+
                             <div class="form-row">
                                 <div class="col-md-6 col-6 mb-3">
                                     <label for="dataEntrega2">Data da Entrega:</label>
-                                    <input type="text" class="form-control" id="dataEntrega2" value="20/07/2024 13:30" disabled>
+                                    <input type="text" class="form-control" id="dataEntrega2" value="20/07/2024 13:30"
+                                        disabled>
                                 </div>
                                 <div class="col-md-6 col-6 mb-3">
                                     <label for="responsavel2">Responsável pelo Recebimento:</label>
-                                    <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva" disabled>
+                                    <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva"
+                                        disabled>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-row align-center">
 
                             <div style="display: flex; align-items: center; margin: 20px 0;">
@@ -181,7 +183,8 @@
                         </div>
 
 
-                       
+                        
+
                         <table id="tab-2" class="table-ficha">
                             <thead class="thead-light">
                                 <tr>
@@ -191,40 +194,72 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
                                 <tr>
-                                    <td>
-                                        Areia Grossa Saco 8kg / Qualquer</td>
+                                    <td>Areia Grossa Saco 8kg / Qualquer</td>
                                     <td>0/20</td>
-                                    <td><img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"><br>Aguardando Entrega</td>
+                                    <td>
+                                        <div class="tooltip-container">
+                                            <img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"
+                                                data-description="Areia Grossa Saco 8kg" class="status-icon"
+                                                onclick="openModal('modal-check-entrega')">
+                                            <span class="tooltip-text">Iniciar Check-List da Entrega</span>
+                                            <br>Aguardando Entrega
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        Talhadeira - 5/8" / Qualquer</td>
+                                    <td>Talhadeira - 5/8\" / Qualquer</td>
                                     <td>0/20</td>
-                                    <td><img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"><br>Aguardando Entrega</td>
+                                    <td>
+                                        <div class="tooltip-container">
+                                            <img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"
+                                                data-description="Talhadeira - 5/8\" class="status-icon"
+                                                onclick="openModal('modal-check-entrega')">
+                                            <span class="tooltip-text">Iniciar Check-List da Entrega</span>
+                                            <br>Aguardando Entrega
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        Marreta Oitavada - 1kg / Qualquer</td>
+                                    <td>Marreta Oitavada - 1kg / Qualquer</td>
                                     <td>0/3</td>
-                                    <td><img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"><br>Aguardando Entrega</td>
+                                    <td>
+                                        <div class="tooltip-container">
+                                            <img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"
+                                                data-description="Marreta Oitavada - 1kg" class="status-icon"
+                                                onclick="openModal('modal-check-entrega')">
+                                            <span class="tooltip-text">Iniciar Check-List da Entrega</span>
+                                            <br>Aguardando Entrega
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        Talhadeira - 5/8" / Qualquer</td>
+                                    <td>Talhadeira - 5/8\" / Qualquer</td>
                                     <td>0/20</td>
-                                    <td><img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"><br>Aguardando Entrega</td>
+                                    <td>
+                                        <div class="tooltip-container">
+                                            <img src="imgs/status-entrega/ico-aguardando-entrega.png" width="40px"
+                                                data-description="Talhadeira - 5/8\" class="status-icon"
+                                                onclick="openModal('modal-check-entrega')">
+                                            <span class="tooltip-text">Iniciar Check-List da Entrega</span>
+                                            <br>Aguardando Entrega
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr style="background-color: #cccccc;">
-                                    <td>
-                                       <br></td>
+                                    <td><br></td>
                                     <td>0/0</td>
-                                    <td><img src="imgs/status-entrega/ico-aguardando-finalizar.png" height="40px">Aguardando</td>
+                                    <td>
+                                        <div class="tooltip-container">
+                                            <img src="imgs/status-entrega/ico-aguardando-finalizar.png" height="40px">
+                                            <span class="tooltip-text">Iniciar Check-List da Entrega</span>
+                                            Aguardando
+                                        </div>
+                                    </td>
                                 </tr>
-                                
                             </tbody>
                         </table>
+                        
                     </div>
                 </div>
 
@@ -234,6 +269,193 @@
         </div><!--container desktop-->
     </div><!--container full-->
 
+   <!-- Modal CheckList de Entrega -->
+<div id="modal-check-entrega" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-check-entrega')">&times;</span>
+            <h2 class="tit-modal">Andra SA Eletric Solutions</h2>
+            <div class="modal-wrap">
+                <div class="filtro-tabela">
+                    <div class="qua-4 modal-body" style="margin-left: -15px;">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 text-center"></div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12"
+                                style="background-color: #fbfbfb; border-radius: 10px; margin-left: 15px; margin-bottom: 15px; width: 95%;">
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <h3 style="color: orangered; font-size: 28px;">Areia Grossa - Saco 8kg / Qualquer</h3>
+                                        <h4>Qual a Quantidade Recebida</h4>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <input type="text" id="quantity-received" class="form-control mr-2"
+                                                style="width: 120px;" placeholder="Quantidade" oninput="validateNumber(this)" />
+                                            <input class="form-control" style="width: 80px;" placeholder="KG" disabled>
+                                        </div>
+                                        <span class="text-muted mt-2 d-block">
+                                            Conte o produto que está sendo entregue antes de apontar a quantidade no sistema. Observe bem a unidade do Pedido x Nota.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Espaço em branco para conteúdo futuro -->
+                        
+                            
+                                <h4 class="text-center">Check-List da Entrega</h4>
+                                <div class="checklist">
+                                    <!-- Checklist Item 1 -->
+                                    <div class="checklist-item">
+                                        <div class="checklist-content">
+                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
+                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
+                                                    class="checkbox-icon-img" data-state="unchecked">
+                                                <div class="checkbox-label">Sim</div>
+                                            </div>
+                                            <span class="question">O produto está correto?</span>
+                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
+                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
+                                                    class="checkbox-icon-img" data-state="unchecked">
+                                                <div class="checkbox-label">Não</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-muted">Observe se as características do produto estão condizentes com o solicitado.</div>
+                                    </div>
+
+                                    <!-- Checklist Item 2 -->
+                                    <div class="checklist-item">
+                                        <div class="checklist-content">
+                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
+                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
+                                                    class="checkbox-icon-img" data-state="unchecked">
+                                                <div class="checkbox-label">Sim</div>
+                                            </div>
+                                            <span class="question">O produto está em bom estado?</span>
+                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
+                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
+                                                    class="checkbox-icon-img" data-state="unchecked">
+                                                <div class="checkbox-label">Não</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-muted">Observe se o produto não tem avarias ou defeitos de fabricação.</div>
+                                    </div>
+
+                                    <!-- Checklist Item 3 -->
+                                    <div class="checklist-item">
+                                        <div class="checklist-content">
+                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
+                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
+                                                    class="checkbox-icon-img" data-state="unchecked">
+                                                <div class="checkbox-label">Sim</div>
+                                            </div>
+                                            <span class="question">A marca está correta?</span>
+                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
+                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
+                                                    class="checkbox-icon-img" data-state="unchecked">
+                                                <div class="checkbox-label">Não</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-muted">Se existe uma marca apontada no pedido, leve isso em consideração.</div>
+                                    </div>
+
+                                    <!-- Checklist Item 4 -->
+                                    <div class="checklist-item">
+                                        <div class="checklist-content">
+                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
+                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
+                                                    class="checkbox-icon-img" data-state="unchecked">
+                                                <div class="checkbox-label">Sim</div>
+                                            </div>
+                                            <span class="question">Recebeu a mercadoria?</span>
+                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
+                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
+                                                    class="checkbox-icon-img" data-state="unchecked">
+                                                <div class="checkbox-label">Não</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-muted">A decisão de aceitar a mercadoria é sua e do seu departamento. Tenha em mente os pilares: PRAZO, CUSTO e QUALIDADE.</div>
+                                    </div>
+
+                                    <!-- Observações -->
+                                    <div class="checklist-item">
+                                        <div class="checklist-content">
+                                            <span class="question">Observações</span>
+                                        </div>
+                                        <div class="observations-wrapper">
+                                            <textarea class="observations-input" placeholder="Digite suas observações aqui..."></textarea>
+                                            <div class="status-container">
+                                                <img src="imgs/status-entrega/ico-aguardando-finalizar.png" alt="Status" class="entrega-status-icon" onclick="toggleStatus(this)">
+                                                <div class="checkbox-label">Recebimento finalizado?</div>
+                                            </div>
+                                        </div>
+                                        
+                                  
+                        </div>
+                        
+                    </div>
+                   <!-- Botão Salvar e Fechar -->
+                <div class="align-center subsub-botoes">
+                    <div>
+                        <button type="button" id="salvar-reprovar" name="salvar-reprovar" class="sub-icones align-center">
+                            <i class="fa-regular fa-floppy-disk"></i>
+                        </button>
+                        <label for="salvar-reprovar">&nbsp;Salvar e Fechar</label>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+        // Adiciona um evento de clique ao botão "Salvar e Fechar"
+    document.getElementById('salvar-reprovar').addEventListener('click', function() {
+        closeModal('modal-check-entrega');
+    });
+    
+        function toggleCheckbox(element, isChecked) {
+            // Obter o ícone de checkbox dentro do elemento clicado
+            const icon = element.querySelector('.checkbox-icon-img');
+
+            // Atualiza o estado dos checkboxes
+            if (isChecked) {
+                // Marca como "Sim"
+                icon.src = 'imgs/status-entrega/ico-check-sim.png';
+                icon.classList.add('checked');
+                icon.classList.remove('unchecked');
+            } else {
+                // Marca como "Não"
+                icon.src = 'imgs/status-entrega/ico-check-no.png';
+                icon.classList.add('unchecked');
+                icon.classList.remove('checked');
+            }
+
+            // Atualiza os ícones "Sim" e "Não" do item
+            const siblingIcons = element.parentNode.querySelectorAll('.checkbox-icon');
+            siblingIcons.forEach(icon => {
+                if (icon !== element) {
+                    icon.querySelector('.checkbox-icon-img').src = 'imgs/status-entrega/ico-uncheck.png';
+                    icon.querySelector('.checkbox-icon-img').classList.remove('checked', 'unchecked');
+                }
+            });
+        }
+
+        function toggleStatus(icon) {
+            const iconElement = icon;
+            const currentSrc = iconElement.getAttribute('src');
+
+            if (currentSrc.includes('ico-aguardando-finalizar.png')) {
+                iconElement.setAttribute('src', 'imgs/status-entrega/ico-entrega-finalizada.png');
+            } else {
+                iconElement.setAttribute('src', 'imgs/status-entrega/ico-aguardando-finalizar.png');
+            }
+        }
+    </script>
 
 
     <!-- Ícone no footer -->
@@ -241,10 +463,6 @@
         <i class="fas fa-arrow-up"></i>
     </div>
     </div><!--container desktop-->
-
-
-
-
 
 
     <script>
@@ -266,7 +484,6 @@
             }
         });
     </script>
-
 
 
     <script src="filtro-plan.js"></script>

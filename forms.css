@@ -283,6 +283,167 @@ hr {
     padding-right: 10px;
 }
 
+.checklist {
+    margin-top: 15px;
+    text-align: center; 
+}
+
+.checklist-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 15px; 
+}
+
+.checklist-item:last-of-type {
+    border-bottom: none; /* Remove a linha da última checklist-item */
+}
+
+.checklist-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.checkbox-icon-img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px 0 10px;
+}
+
+.text-muted {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.question {
+    font-weight: bold;
+    font-size: 18px;
+    color: #0055ff;
+    margin: 0 10px; 
+}
+
+/* Container for the observations input and icon */
+.observations-wrapper {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o textarea e o status-container */
+}
+
+.status-container {
+    display:flow-root;
+    flex-direction: column; /* Organiza ícone e texto verticalmente */
+    align-items: center; /* Alinha o ícone e o texto no centro */
+    margin-left: 10px; /* Adiciona um espaço entre o textarea e o status-container */
+}
+
+
+.checkbox-label {
+    margin-top: 5px; /* Adiciona um espaço entre o ícone e o texto */
+    text-align: center; /* Alinha o texto ao centro */
+    font-size: 0.9em;
+    color:#6c757d;
+}
+
+/* Container para a imagem e o tooltip */
+.tooltip-container {
+    position: relative; /* Necessário para o posicionamento absoluto do tooltip */
+    display: inline-block; /* Mantém a imagem e o tooltip alinhados */
+}
+
+/* Tooltip (dica de ferramenta) */
+.tooltip-text {
+    visibility: hidden; /* Oculta o tooltip por padrão */
+    width: 200px; /* Define a largura do tooltip */
+    background-color: #333; /* Cor de fundo do tooltip */
+    color: #fff; /* Cor do texto do tooltip */
+    text-align: center; /* Alinha o texto no centro */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 5px; /* Espaçamento interno */
+    position: absolute; /* Posiciona o tooltip em relação ao container */
+    bottom: 125%; /* Posiciona o tooltip acima da imagem */
+    left: 50%; /* Centraliza o tooltip horizontalmente em relação ao container */
+    margin-left: -100px; /* Ajusta o alinhamento horizontal do tooltip */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s; /* Suaviza a transição de opacidade */
+    z-index: 1; /* Garante que o tooltip esteja acima da imagem */
+}
+
+/* Exibe o tooltip quando o mouse está sobre o container */
+.tooltip-container:hover .tooltip-text {
+    visibility: visible; /* Torna o tooltip visível */
+    opacity: 1; /* Define a opacidade para totalmente visível */
+}
+
+
+
+.observations-input {
+    flex-grow: 1;
+    height: 70px; /* Adjust height as needed */
+    width: 100%; /* Full width available */
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allow resizing vertically */
+}
+
+/* Status icon styling */
+.entrega-status-icon {
+    height: 50px; /* Make the icon larger */
+    width: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    align-self: flex-start; 
+    margin-top: -5px;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .observations-wrapper {
+        flex-direction: column; /* Alinha o textarea e o status-container verticalmente */
+        align-items: stretch; /* Faz o textarea ocupar a largura total disponível */
+    }
+
+    .observations-input {
+        width: 100%; /* Garante que o textarea ocupe toda a largura disponível */
+        
+    }
+
+    .status-container {
+        width: 100%; /* Garante que o status-container ocupe toda a largura disponível */
+        align-items: center; /* Alinha o ícone e o texto no centro horizontalmente */
+        margin-left: 0; /* Remove a margem esquerda */
+        text-align: center; /* Centraliza o texto abaixo do ícone */
+    }
+    .text-muted {
+        font-size: 0.8em;
+    }
+
+    .entrega-status-icon {
+        height: 40px; /* Ajusta o tamanho do ícone para telas menores */
+        width: auto; /* Mantém a proporção do ícone */
+        margin: 0; /* Remove a margem ao redor do ícone */
+    }
+    
+    .question {
+        font-size: 16px; /* Reduz o tamanho da fonte para melhor ajuste em telas menores */
+       width: 160px;
+    }
+
+    .checkbox-label {
+        margin-top: 5px; /* Mantém o espaço entre o ícone e o texto */
+        font-size:  0.9em;
+    }
+}
+
 
 
 /*Estilo para tabela de visualização de requisições*/
