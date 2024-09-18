@@ -544,10 +544,7 @@
     });
 </script>
 
-                        </div>
-
-                    </div>
-                </div><!--div card-->
+                        
 
                 <div class="form-row align-center">
 
@@ -563,8 +560,19 @@
 
 
                 </div><!--div form-row align-right-->
+                
 
             </div><!--tab-2 wrapper-->
+
+            <div class="form-row align-right">
+                <div class="space-btn text-center">
+                    <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
+                        <i class="fa-regular fa-folder"></i>
+                        <label>Histórico Geral</label>
+                    </button>
+                </div>
+            </div>
+
         </div><!--#lis-cold-md-->
 
     </div>
@@ -588,401 +596,199 @@
     </div>
     </div><!--container desktop-->
 
-     <!-- Janela Modal para Comunicados -->
-    <div id="modal-comunicados" class="modal">
+<!-- Janela Modal para Comunicados -->
+<div id="modal-comunicados" class="modal" style="display: none;">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-comunicados')">&times;</span>
+            <h2 class="tit-modal">Enviar Comunicado</h2>
+            <br><br>
+
+            <!-- Histórico de Comunicados -->
+            <div class="chat-history">
+                <div class="chat-message">
+                    <span>Enviado por: Glauco</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="info">
+                        <span>Para: Funcionario 1</span>
+                        <span>Data: 01/09/2024</span>
+                    </div>
+                </div>
+                <div class="chat-message">
+                    <span>Enviado por: Glauco</span>
+                    <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
+                    <div class="info">
+                        <span>Para: Funcionario 2</span>
+                        <span>Data: 02/09/2024</span>
+                    </div>
+                </div>
+                <div class="chat-message">
+                    <span>Enviado por: Glauco</span>
+                    <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
+                    <div class="info">
+                        <span>Para: Funcionario 2</span>
+                        <span>Data: 02/09/2024</span>
+                    </div>
+                </div>
+                <div class="chat-message">
+                    <span>Enviado por: Glauco</span>
+                    <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
+                    <div class="info">
+                        <span>Para: Funcionario 2</span>
+                        <span>Data: 02/09/2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-wrap">
+                <!-- Botão para alternar a lista de opções -->
+                <button id="toggleOptions" class="toggle-button">Quem Receberá o Comunicado <i class="fa-solid fa-arrow-down"></i></button>
+                <ul id="options-list" class="options-list" style="display: none;"></ul>
+
+                <div class="form-group">
+                    <label for="comunicadoText">Faça seu comunicado:</label>
+                    <textarea id="comunicadoText" class="form-control" rows="4"></textarea>
+                </div>                
+            </div>
+
+            <div class="linha subsub-botoes">
+                <div>
+                    <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </button>
+                    <label for="sal_r">Enviar</label>
+                </div>
+                <div>
+                    <button type="button" id="cancel" name="cancelar" class="sub-icones" onclick="closeModal('modal-comunicados')">
+                        <i class="fa-regular fa-rectangle-xmark"></i>
+                    </button>
+                    <label for="cancel">Cancelar</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+    // Adicionando opções à lista
+    document.addEventListener('DOMContentLoaded', function () {
+        const optionsData = [
+           { value: 'opcao1', text: 'Funcionário 1', image: 'imgs/ft-ex.png' },
+            { value: 'opcao2', text: 'Funcionário 2', image: 'imgs/ft-ex2.jpg' },
+            { value: 'opcao3', text: 'Funcionário 3', image: 'imgs/ft-ex.png' },
+            { value: 'opcao4', text: 'Funcionário 4', image: 'imgs/ft-ex2.jpg' },
+            { value: 'opcao5', text: 'Funcionário 5', image: 'imgs/ft-ex.png' }
+        ];
+
+        const optionsList = document.getElementById('options-list');
+
+        optionsData.forEach(option => {
+            const listItem = document.createElement('li');
+            listItem.className = 'option-item';
+            listItem.dataset.value = option.value;
+
+            const img = document.createElement('img');
+            img.src = option.image;
+            img.alt = option.text;
+            img.className = 'option-image';
+
+            const text = document.createElement('span');
+            text.className = 'option-text';
+            text.textContent = option.text;
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'option-checkbox';
+
+            listItem.appendChild(img);
+            listItem.appendChild(text);
+            listItem.appendChild(checkbox);
+
+            optionsList.appendChild(listItem);
+
+            listItem.addEventListener('click', function () {
+                checkbox.checked = !checkbox.checked;
+                listItem.classList.toggle('selected', checkbox.checked);
+            });
+        });
+
+        // Toggle da lista de opções
+        document.getElementById('toggleOptions').addEventListener('click', function () {
+            const list = document.getElementById('options-list');
+            list.style.display = list.style.display === 'none' ? 'block' : 'none';
+        });
+    });
+</script>
+
+
+    <!-- Janela Modal Principal -->
+    <div id="modal-historico" class="modal">
         <div class="modal-envolto">
             <div class="modal-content">
-                <span id="close" class="close-btn" onclick="closeModal('modal-comunicados')">&times;</span>
-                <h2 class="tit-modal">Enviar Comunicado</h2>
-                <br><br>
+                <span class="close" onclick="closeModal('modal-historico')">&times;</span>
+                <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
 
-                <!-- Histórico de Comunicados -->
-                <div class="chat-history">
-                    <div class="chat-message">
-                        <span>Enviado por: Glauco</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla, augue sed facilisis sagittis.</p>
-                        <div class="info">
-                            <span>Para: Funcionario 1</span>
-                            <span>Data: 01/09/2024</span>
+                <div class="modal-wrap" style="margin-top: 20px;">
+                    <div class="carrosel-container">
+                        <!-- Setas de navegação -->
+                        <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
+                        <span class="next" onclick="mudarSlide(1)">&#10095;</span>
+
+                        <!-- Slides dos documentos -->
+                        <div class="slide" style="display: block; padding-top: 20px;">
+                            <p>Nota Fiscal referente à compra de xxxx no dia xx/xx/xxxx</p>
+                            <img src="imgs/ex-nota.png" alt="Nota Fiscal" class="document-img">
                         </div>
-                    </div>
-                    <div class="chat-message">
-                        <span>Enviado por: Glauco</span>
-                        <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
-                        <div class="info">
-                            <span>Para: Funcionario 2</span>
-                            <span>Data: 02/09/2024</span>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p>Boleto referente à primeira parcela do serviço xxxxxxx</p>
+                            <img src="imgs/ex-boleto.webp" alt="Boleto" class="document-img">
                         </div>
-                    </div>
-                    <div class="chat-message">
-                        <span>Enviado por: Glauco</span>
-                        <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
-                        <div class="info">
-                            <span>Para: Funcionario 2</span>
-                            <span>Data: 02/09/2024</span>
-                        </div>
-                    </div>
-                    <!-- Adicione mais comunicados antigos conforme necessário -->
-                </div>
-
-                <div class="modal-wrap">
-                    <div class="form-group">
-                        <label for="comunicadoText">Faça seu comunicado:</label>
-                        <textarea id="comunicadoText" class="form-control" rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Escolha quem vai receber o comunicado:</label>
-                        <ul id="options-list" class="options-list">
-                            <!-- As opções serão injetadas aqui pelo JavaScript -->
-                        </ul>
-                    </div>
-
-                    </div>
-
-                    <div class="linha subsub-botoes">
-                        <div>
-                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
-                                <i class="fa-regular fa-paper-plane"></i>
-                            </button>
-                            <label for="sal_r">Enviar</label>
-                        </div>
-
-                        <div>
-                            <button type="button" id="cancel" name="cancelar" class="sub-icones" onclick="closeModal('modal-comunicados')">
-                                <i class="fa-regular fa-rectangle-xmark"></i>
-                            </button>
-                            <label for="cancel">Cancelar</label>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
+                            <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
+    
 
+    <!-- JavaScript -->
     <script>
-        // Função para abrir o modal
-        function openModal() {
-            document.getElementById('modal-comunicados').style.display = 'block';
+        let slideIndex = 0;
+
+        function mudarSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
+
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+
+            // Esconder todos os slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Mostrar o slide atual
+            slides[slideIndex].style.display = "block";
+            document.getElementById("titulo-documento").textContent = titulos[slideIndex];
         }
 
-        // Função para fechar o modal
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        // Abrir o modal ao clicar no botão
-        document.getElementById('openModalBtn').onclick = openModal;
-
-        document.addEventListener('DOMContentLoaded', function () {
-    const optionsData = [
-        { value: 'opcao1', text: 'Opção 1', image: 'foto1.jpg' },
-        { value: 'opcao2', text: 'Opção 2', image: 'foto2.jpg' },
-        { value: 'opcao3', text: 'Opção 3', image: 'foto3.jpg' },
-        { value: 'opcao4', text: 'Opção 4', image: 'foto4.jpg' },
-        { value: 'opcao5', text: 'Opção 5', image: 'foto5.jpg' }
-    ];
-
-    const optionsList = document.getElementById('options-list');
-
-    optionsData.forEach(option => {
-        // Cria o item da lista
-        const listItem = document.createElement('li');
-        listItem.className = 'option-item';
-        listItem.dataset.value = option.value;
-
-        // Cria a imagem
-        const img = document.createElement('img');
-        img.src = option.image;
-        img.alt = option.text;
-        img.className = 'option-image';
-
-        // Cria o texto
-        const text = document.createElement('span');
-        text.className = 'option-text';
-        text.textContent = option.text;
-
-        // Cria a checkbox
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'option-checkbox';
-
-        // Adiciona a imagem, texto e checkbox ao item da lista
-        listItem.appendChild(img);
-        listItem.appendChild(text);
-        listItem.appendChild(checkbox);
-
-        // Adiciona o item da lista ao contêiner
-        optionsList.appendChild(listItem);
-
-        // Adiciona o evento de clique para alternar seleção
-        listItem.addEventListener('click', function () {
-            checkbox.checked = !checkbox.checked;
-            listItem.classList.toggle('selected', checkbox.checked);
-        });
-    });
-});
-
+        // Fechar o modal
+        function closeModal(element) {
+        // Encontra o modal pai do elemento que chamou a função
+        const modal = element.closest('.modal');
+        modal.style.display = "none";
+    }
     </script>
-        <!-- Modal de Filtro -->
-        <div id="filterModal" class="modal">
-            <div class="modal-envolto">
-                <div class="modal-content">
-
-                    <span class="close" onclick="closeModal('filterModal')">&times;</span>
-                    <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
-
-                    <div class="modal-wrap">
-                        <!-- Tabela de Filtros -->
-                        <div class="filtro-tabela">
-
-                            <!-- Primeira Coluna -->
-                            <div class="filtro-coluna">
-                                <h3>Data Inicial:</h3>
-                                <input type="date" id="dataInicial">
-
-                                <h3>Tipo:</h3>
-                                <label>
-                                    <input type="checkbox" id="tipoRequisicao"> Requisições
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="tipoReembolso"> Reembolsos
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="tipoLevantamento"> Levantamentos
-                                </label>
-                            </div>
-
-                            <!-- Segunda Coluna -->
-                            <div class="filtro-coluna">
-                                <h3>Data Final:</h3>
-                                <input type="date" id="dataFinal">
-                            </div>
-
-                            <!-- Terceira Coluna -->
-                            <div class="filtro-coluna">
-                                <h3>Status da Requisição:</h3>
-                                <label>
-                                    <input type="checkbox" id="statusAberta"> Aberta
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusCotacao"> Cotação
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusAprovacao"> Aprovação
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusReprovado"> Reprovado
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusPreCompra"> Pré-Compra
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusPagamento"> Pagamento
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusComprada"> Comprada
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusEntregue"> Entregue
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusCancelada"> Cancelada
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="statusRecusada"> Recusada
-                                </label>
-                            </div>
-
-                            <!-- Quarta Coluna -->
-                            <div class="filtro-coluna">
-                                <h3>Obras:</h3>
-                                <label>
-                                    <input type="checkbox" id="obrasAtivas"><b> Obras Ativas</b>
-                                </label>
-                                <label>
-                                    <input type="checkbox" id="todasObras"> <b>Todas as Obras</b>
-                                </label>
-
-                                <ul>
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" id="obra1"> 3° andar USC - Fases 1, 2, 3 e 4
-                                            (financeiro e
-                                            rh)
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" id="obra2"> Smart Fit - Pirituba
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" id="obra3"> SmartFit - Osasco - Roldão
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                        <!-- Botões de Ação -->
-
-                        <div class="linha subsub-botoes">
-                            <div>
-                                <button type="submit" id="sal_r" name="filtrar" class="sub-icones"><img
-                                        src="imgs/sub-icone-filtro.png"></button>
-                                <label for="sal_r">Filtrar</label>
-                            </div>
-
-                            <div>
-                                <button type="submit" id="cancel" class="sub-icones" name="limpar"><img
-                                        src="imgs/sub-icone-limpar.png"></button>
-                                <label for="cancel">Limpar</label>
-                            </div>
-                        </div>
-
-                    </div><!--modal wrap-->
-
-                </div><!--div modal content-->
-            </div><!--modal envolto-->
-        </div><!--div filter modal-->
+    
 
 
-
-
-        <!--MODAL VISUALIZAR COTACAO-->
-
-        <div id="visualizar-popup-req" class="modal">
-            <div class="modal-envolto">
-                <div class="modal-content">
-
-                    <span class="close" onclick="closeModal('visualizar-popup-req')">&times;</span>
-                    <h2 class="tit-modal">Dados da Cotação do Fornecedor</h2>
-
-                    <div class="modal-wrap">
-                        <!-- Tabela de Filtros -->
-                        <div class="filtro-tabela">
-
-
-                            <div class="qua-4 modal-body">
-                                <div class="row">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-8 text-center">
-                                        <h4 id="for_c">CANTO METAL COMERCIO LTDA</h4>
-                                    </div>
-                                    <div class="col-md-2"></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div id="cpo_c">
-                                            <table class="qua-4 tab-6 table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th width="15%">Sigla</th>
-                                                        <th>Produto</th>
-                                                        <th width="15%">Quantidade</th>
-                                                        <th width="15%">Preço</th>
-                                                        <th width="15%">Valor</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><input type="text" class="form-control text-left"
-                                                                maxlength="10" name="sig_i" value="EST-257" disabled>
-                                                        </td>
-                                                        <td><input type="text" class="form-control text-left"
-                                                                maxlength="50" name="des_i"
-                                                                value="Cantoneira em L 1x1, em alumínio cor Natural"
-                                                                disabled></td>
-                                                        <td><input type="text" class="qtd_i form-control text-right"
-                                                                maxlength="7" name="qtd_i[]" value="20" disabled></td>
-                                                        <td><input type="text" class="pre_i form-control text-right"
-                                                                maxlength="10" name="pre_i[]" value="49,68" required>
-                                                        </td>
-                                                        <td><input type="text" class="val_i form-control text-right"
-                                                                maxlength="10" name="val_i[]" value="993,60" disabled>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <label>Valor de Frete</label>
-                                        <input type="text" class="form-control" maxlength="10" id="fre_c" name="fre_c"
-                                            value="">
-                                    </div>
-                                    <div class="col-md-2">
-                                        <label>Outras Despesas</label>
-                                        <input type="text" class="form-control" maxlength="10" id="des_c" name="des_c"
-                                            value="">
-                                    </div>
-                                    <div class="col-md-2">
-                                        <label>Forma de Pagamento</label>
-                                        <select id="fpg_c" name="fpg_c" class="form-control">
-                                            <option value="0" selected="selected">Boleto</option>
-                                            <option value="1">PIX</option>
-                                            <option value="2">Transferência</option>
-                                            <option value="3">Carteira</option>
-                                            <option value="4">Permuta</option>
-                                            <option value="5">Outras</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label>Data de Entrega</label>
-                                        <input type="text" class="form-control text-center hasDatepicker" maxlength="10"
-                                            id="ent_c" name="ent_c" value="" required="">
-                                    </div>
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Observação</label>
-                                        <textarea class="form-control" rows="3" id="obs_c" name="obs_c"></textarea>
-                                    </div>
-                                </div>
-
-                                <!--BOTOES-->
-                                <div class="linha subsub-botoes">
-
-                                    <div>
-                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones"
-                                            title="Anexar nova Cotação para Produtos"
-                                            onclick="document.getElementById('anexo').click();">
-
-                                            <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i></button>
-                                        <label for="sal_r">Anexar</label>
-                                    </div>
-
-                                    <div>
-
-                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
-                                            <a href="ex.pdf" target="_blank" class="bot-3" id="pdf_v" name="ver"
-                                                title="Abre página a parte para demonstrar PDF com cotação dos produtos do fornecedor para a requisição">
-                                                <i class="fa fa-eye sub-icones fa-2x"
-                                                    aria-hidden="true"></i></a></button>
-                                        <label for="sal_r">Visualizar</label>
-                                    </div>
-
-                                    <div>
-                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones"
-                                            title="Salva alterações feitas">
-                                            <i class="fa-regular sub-icones fa-floppy-disk"></i></button>
-                                        <label for="sal_r">&nbsp;Salvar</label>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <br>
-
-                        </div>
-                    </div>
 
                     <script>
                         // Função para rolar até o topo da página
@@ -1001,38 +807,6 @@
                         }
                     </script>
 
-
-
-                    <!--CLIQUE NAS LINHAS DA TABELA -->
-                    <script>
-                        // Função para mostrar o aviso
-                        function mostrarAviso() {
-                            alert("- - - - -> RECURSO EM CONSTRUÇÃO <- - - - - -");
-                        }
-
-                        // Vincular a função ao evento de clique da linha da tabela
-                        document.addEventListener("DOMContentLoaded", function () {
-                            var linhasTabela = document.querySelectorAll(".table-requisicoes tbody tr");
-                            linhasTabela.forEach(function (linha) {
-                                linha.addEventListener("click", mostrarAviso);
-                                linha.addEventListener("mouseover", function () {
-                                    this.classList.add('destaque-mouseover');
-                                });
-                                linha.addEventListener("mouseout", function () {
-                                    this.classList.remove('destaque-mouseover');
-                                    // Reaplicar as regras de alternância de cores
-                                    var linhas = document.querySelectorAll('.table-requisicoes tbody tr');
-                                    linhas.forEach(function (linha, indice) {
-                                        if (indice % 2 === 0) {
-                                            linha.style.backgroundColor = "#f2f2f2";
-                                        } else {
-                                            linha.style.backgroundColor = "#ffffff";
-                                        }
-                                    });
-                                });
-                            });
-                        });
-                    </script>
 
 
                     <script src="filtro-plan.js"></script>

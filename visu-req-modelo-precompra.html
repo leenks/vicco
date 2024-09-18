@@ -692,10 +692,10 @@
                         <div class="space-btn text-center">
                             <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
                                 <i class="fa-regular fa-folder"></i>
-                            <label>Histórico Geral</label>
+                                <label>Histórico Geral</label>
                             </button>
-                            </div>
                         </div>
+                    </div>
 
 
                 </div><!--div container desktop-->
@@ -704,30 +704,71 @@
 
             </div><!--div conteudo-->
 
-            <div id="modal-historico" class="modal">
-                <div class="modal-envolto">
-                    <div class="modal-content">
-                        <span class="close" onclick="closeModal('modal-historico')">&times;</span>
-                        <h2 class="tit-modal">Arquivos Gerais</h2>
-                        <div class="modal-wrap">
-                            <div class="filtro-tabela">
-                                <div class="qua-4 modal-body">
-                                    <div class="row">
-                                        <div class="folder-grid">
-                                            <div class="folder" data-folder="cotacoes">COTAÇÕES</div>
-                                            <div class="folder" data-folder="ordens-de-compra">ORDENS DE COMPRA</div>
-                                            <div class="folder" data-folder="notas-fiscais">NOTAS FISCAIS</div>
-                                            <div class="folder" data-folder="boletos">BOLETOS</div>
-                                            <div class="folder" data-folder="recibos">RECIBOS</div>
-                                            <div class="folder" data-folder="relatorios-de-recebimento">RELATÓRIOS DE RECEBIMENTO</div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+           
+
+    <!-- Janela Modal Principal -->
+    <div id="modal-historico" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-historico')">&times;</span>
+                <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
+
+                <div class="modal-wrap" style="margin-top: 20px;">
+                    <div class="carrosel-container">
+                        <!-- Setas de navegação -->
+                        <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
+                        <span class="next" onclick="mudarSlide(1)">&#10095;</span>
+
+                        <!-- Slides dos documentos -->
+                        <div class="slide" style="display: block; padding-top: 20px;">
+                            <p>Nota Fiscal referente à compra de xxxx no dia xx/xx/xxxx</p>
+                            <img src="imgs/ex-nota.png" alt="Nota Fiscal" class="document-img">
+                        </div>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p>Boleto referente à primeira parcela do serviço xxxxxxx</p>
+                            <img src="imgs/ex-boleto.webp" alt="Boleto" class="document-img">
+                        </div>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
+                            <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
                         </div>
                     </div>
+                </div>
             </div>
+        </div>
+    </div>
+    
+
+    <!-- JavaScript -->
+    <script>
+        let slideIndex = 0;
+
+        function mudarSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
+
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+
+            // Esconder todos os slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Mostrar o slide atual
+            slides[slideIndex].style.display = "block";
+            document.getElementById("titulo-documento").textContent = titulos[slideIndex];
+        }
+
+        // Fechar o modal
+        function closeModal(element) {
+        // Encontra o modal pai do elemento que chamou a função
+        const modal = element.closest('.modal');
+        modal.style.display = "none";
+    }
+    </script>
+    
 
 
 

@@ -6,6 +6,12 @@ function openModal(modalId) {
     }
 }
 
+
+function validateNumber(input) {
+    // Remove qualquer caractere não numérico
+    input.value = input.value.replace(/[^0-9]/g, '');
+}
+
 // Função para fechar o modal
 function closeModal(modalId) {
     var modal = document.getElementById(modalId);
@@ -13,7 +19,6 @@ function closeModal(modalId) {
         modal.style.display = 'none'; // Oculta o modal
     }
 }
-
 
 // Fecha o modal quando clica fora dele
 window.onclick = function(event) {
