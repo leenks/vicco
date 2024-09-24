@@ -20,6 +20,7 @@
             white-space: nowrap;
             min-width: 300px;
         }
+
         .chat-history {
             background-color: #fbfbfb;
             border: 1px solid #ddd;
@@ -90,9 +91,9 @@
 
         /* Ajustar a altura da caixa de texto */
         textarea.form-control {
-            height: 70px; /* Ajuste a altura conforme necessário */
+            height: 70px;
+            /* Ajuste a altura conforme necessário */
         }
-        
     </style>
     <title>Vicco Construtora</title>
 </head>
@@ -344,244 +345,526 @@
 
                             <hr width="100%">
 
+                            <div class="table-container">
+                                <table id="tab-2" class="table-ficha">
+                                    <thead>
+                                        <tr style="font-weight: bold; background-color: #888; color: white;">
+                                            <td colspan="3">SOLICITAÇÕES</td>
+                                            <td colspan="6">COTAÇÕES</td>
+                                            <td colspan="4">HISTÓRICO</td> <!-- Nova coluna -->
+                                        </tr>
+                                        <th class="sticky">Sigla</th>
+                                        <th class="sticky" width="30%" style="white-space: normal;">Produto</th>
+                                        <th width="4%">Qtd</th>
+                                        <th class="tit-forne" width="30%" style="white-space: normal; position: relative;">
+                                            <span class="fornecedor-link" onclick="openModal('modal-edit-forne')">Canto Metal Comercio LTDA</span>
+                                            <span class="tooltip-fornecedor">Clique para entrar em edição desse fornecedor</span>
+                                        </th>
+                                        <th class="tit-forne" width="30%" style="white-space: normal; position: relative;">
+                                            <span class="fornecedor-link" onclick="openModal('modal-edit-forne')">Fornecedor 2</span>
+                                            <span class="tooltip-fornecedor">Clique para entrar em edição desse fornecedor</span>
+                                        </th>
+                                        <th class="tit-forne" width="30%" style="white-space: normal; position: relative;">
+                                            <span class="fornecedor-link" onclick="openModal(event)">Fornecedor 3</span>
+                                            <span class="tooltip-fornecedor">Clique para entrar em edição desse
+                                                fornecedor</span>
+                                        </th>
 
-                            <table id="tab-2" class="table-ficha">
-                                <thead>
-                                    <!-- Cabeçalho da Tabela -->
-                                    <tr style="font-weight: bold; background-color: #888; color: white;">
-                                        <td colspan="3">SOLICITAÇÕES</td>
-                                        <td colspan="5">COTAÇÕES</td>
-                                    </tr>
-                                    <tr style="font-weight: bolder;">
-                                        <!-- Cabeçalhos de Solicitações -->
-                                        <td>Sigla</td>
-                                        <td width="30%">Produto</td>
-                                        <td width="4%">Qtd</td>
-                                        <!-- Cabeçalhos de Cotações -->
-                                        <td width="15%">Canto Metal Comercio LTDA</td>
-                                        <td>Fornecedor 2</td>
-                                        <td>Fornecedor 3</td>
-                                        <td>*****</td>
-                                        <td>*****</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Linha 1 -->
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td>EST-257</td>
-                                        <td>Cantoneira em L 1x1, em alumínio cor Natural</td>
-                                        <td>20</td>
-                                        <!-- Cotações -->
-                                        <td class="cor-v text-center" style="color: red;">49,68&nbsp;
-                                            &nbsp; <input type="radio" name="lin_4469" value="409">
-                                            <br>R$ 993,60
-                                        </td>
-                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469" value="0"> <br>R$ 0,00</td>
-                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469" value="0"> <br>R$ 0,00</td>
-                                        <td class="text-center">R$ 48,50<br>R$ 970,00</td>
-                                        <td class="text-center">R$ 49,00<br>R$ 980,00</td>
-                                    </tr>
-                            
-                                    <!-- Linha 2 -->
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        
-                                        <td colspan="3">Valor dos Produtos</td>
-                                        
-                                        <!-- Cotações -->
-                                        <td class="text-center">R$ 900,00</td>
-                                        <td class="text-center"> R$ 0,00</td>
-                                        <td class="text-center">R$ 0,00 </td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                    </tr>
-                            
-                                    <!-- Linha 3 -->
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3">Valor do Frete</td>
-                                        <!-- Cotações -->
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center">*** </td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center">*** </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3">Outras Despesas</td>
-                                        <!-- Cotações -->
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3" style=" font-weight: bold;">VALOR TOTAL &nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i> </td>
-                                        <!-- Cotações -->
-                                        <td class="text-center" style=" font-weight: bold;">R$ 993,60</td>
-                                        <td class="text-center"> R$ 0,00</td>
-                                        <td class="text-center">R$ 0,00 </td>
-                                        <td class="text-center"> R$ 0,00</td>
-                                        <td class="text-center"> R$ 0,00</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3">Forma de Pagamento</td>
-                                        <!-- Cotações -->
-                                        <td class="text-center">Boleto</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center">*** </td>
-                                        <td class="text-center"> ***</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3">Data de Entrega</td>
-                                        <!-- Cotações -->
-                                        <td class="text-center">24/06/2024</td>
-                                        <td class="text-center"> **/**/*****</td>
-                                        <td class="text-center"> **/**/*****</td>
-                                        <td class="text-center"> **/**/*****</td>
-                                        <td class="text-center">**/**/***** </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
+                                        <th>*****</th>
+                                        <th>*****</th>
+                                        <th>*****</th>
+                                        <th>Compra Ideal</th>
+                                        <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
+                                        <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
+                                        <th>R$ Médio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>EST-257</td>
+                                            <td>Cantoneira em L 1x1, em alumínio cor Natural</td>
+                                            <td>20</td>
+                                            <td class="cor-v text-center" style="color: red;">
+                                                49,68&nbsp; <input type="radio" name="product_EST-257" value="409">
+                                                <br>R$ 993,60
+                                            </td>
+                                            <td class="text-center">
+                                                0,00&nbsp; <input type="radio" name="product_EST-257" value="0"> <br>R$
+                                                0,00
+                                            </td>
+                                            <td class="text-center">
+                                                0,00&nbsp; <input type="radio" name="product_EST-257" value="0"> <br>R$
+                                                0,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 48,50<input type="radio" name="product_EST-257" value="409"> <br>R$
+                                                970,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 49,00<input type="radio" name="product_EST-257" value="409"> <br>R$
+                                                980,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 50,00<input type="radio" name="product_EST-257" value="409"> <br>R$
+                                                1.000,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                49,68 <br>R$ 993,60
+                                            </td>
+                                            <td class="text-center">33,51</td>
+                                            <td class="text-center">55,88</td>
+                                            <td class="text-center">55,88</td>
+                                        </tr>
 
-                            <!-- Tabela de Histórico -->
-                            <table id="tab-historico" class="table-ficha">
-                                <thead>
-                                    <tr style="font-weight: bold; background-color: #888; color: white;">
-                                        <td colspan="4">HISTÓRICO</td>
-                                    </tr>
-                                    <tr style="font-weight: bolder;">
-                                        <td>Compra Ideal</td>
-                                        <td>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></td>
-                                        <td>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></td>
-                                        <td>R$ Médio</td>                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center"  style="color: rgb(29, 171, 29); font-weight: bold;">49,68  <br>R$ 993,60</td>
-                                        <td class="text-center">33,51</td>
-                                        <td class="text-center">55,88</td>
-                                        <td class="text-center">55,88</td>                                        
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        <tr>
+                                            <td>EST-258</td>
+                                            <td>Tubo de Alumínio 1,5" x 3m</td>
+                                            <td>15</td>
+                                            <td class="text-center">
+                                                R$ 25,00<input type="radio" name="product_EST-258" value="25"> <br>R$
+                                                375,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 24,00<input type="radio" name="product_EST-258" value="24"> <br>R$
+                                                360,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 26,00<input type="radio" name="product_EST-258" value="26"> <br>R$
+                                                390,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 24,50<input type="radio" name="product_EST-258" value="24.5"> <br>R$
+                                                367,50
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 25,50<input type="radio" name="product_EST-258" value="25.5"> <br>R$
+                                                382,50
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 24,80<input type="radio" name="product_EST-258" value="24.8"> <br>R$
+                                                372,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                25,00 <br>R$ 375,00
+                                            </td>
+                                            <td class="text-center">25,00</td>
+                                            <td class="text-center">26,00</td>
+                                            <td class="text-center">25,60</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-259</td>
+                                            <td>Perfil de Alumínio 2x4cm</td>
+                                            <td>10</td>
+                                            <td class="text-center">
+                                                R$ 15,00<input type="radio" name="product_EST-259" value="15"> <br>R$
+                                                150,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 14,50<input type="radio" name="product_EST-259" value="14.5"> <br>R$
+                                                145,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 15,50<input type="radio" name="product_EST-259" value="15.5"> <br>R$
+                                                155,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 14,75<input type="radio" name="product_EST-259" value="14.75"> <br>R$
+                                                147,50
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 15,25<input type="radio" name="product_EST-259" value="15.25"> <br>R$
+                                                152,50
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 15,00<input type="radio" name="product_EST-259" value="15"> <br>R$
+                                                150,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                15,00 <br>R$ 150,00
+                                            </td>
+                                            <td class="text-center">14,75</td>
+                                            <td class="text-center">15,50</td>
+                                            <td class="text-center">15,10</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-260</td>
+                                            <td>Parafuso de Aço 1/4"</td>
+                                            <td>100</td>
+                                            <td class="text-center">
+                                                R$ 0,10<input type="radio" name="product_EST-260" value="0.1"> <br>R$
+                                                10,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 0,09<input type="radio" name="product_EST-260" value="0.09"> <br>R$
+                                                9,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 0,12<input type="radio" name="product_EST-260" value="0.12"> <br>R$
+                                                12,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 0,11<input type="radio" name="product_EST-260" value="0.11"> <br>R$
+                                                11,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 0,10<input type="radio" name="product_EST-260" value="0.10"> <br>R$
+                                                10,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 0,10<input type="radio" name="product_EST-260" value="0.10"> <br>R$
+                                                10,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                0,10 <br>R$ 10,00
+                                            </td>
+                                            <td class="text-center">0,09</td>
+                                            <td class="text-center">0,12</td>
+                                            <td class="text-center">0,11</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-261</td>
+                                            <td>Revestimento de Alumínio 1m²</td>
+                                            <td>50</td>
+                                            <td class="text-center">
+                                                R$ 35,00<input type="radio" name="product_EST-261" value="35"> <br>R$
+                                                1.750,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 34,00<input type="radio" name="product_EST-261" value="34"> <br>R$
+                                                1.700,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 36,00<input type="radio" name="product_EST-261" value="36"> <br>R$
+                                                1.800,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 34,50<input type="radio" name="product_EST-261" value="34.5"> <br>R$
+                                                1.725,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 35,50<input type="radio" name="product_EST-261" value="35.5"> <br>R$
+                                                1.775,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 34,80<input type="radio" name="product_EST-261" value="34.8"> <br>R$
+                                                1.740,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                35,00 <br>R$ 1.750,00
+                                            </td>
+                                            <td class="text-center">34,00</td>
+                                            <td class="text-center">36,00</td>
+                                            <td class="text-center">35,00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-262</td>
+                                            <td>Conector em Alumínio 1"</td>
+                                            <td>25</td>
+                                            <td class="text-center">
+                                                R$ 12,00<input type="radio" name="product_EST-262" value="12"> <br>R$
+                                                300,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 11,50<input type="radio" name="product_EST-262" value="11.5"> <br>R$
+                                                287,50
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 12,50<input type="radio" name="product_EST-262" value="12.5"> <br>R$
+                                                312,50
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 11,80<input type="radio" name="product_EST-262" value="11.8"> <br>R$
+                                                295,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 12,20<input type="radio" name="product_EST-262" value="12.2"> <br>R$
+                                                305,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 12,00<input type="radio" name="product_EST-262" value="12"> <br>R$
+                                                300,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                12,00 <br>R$ 300,00
+                                            </td>
+                                            <td class="text-center">11,50</td>
+                                            <td class="text-center">12,50</td>
+                                            <td class="text-center">12,00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-263</td>
+                                            <td>Placa de Alumínio 2mm 1m²</td>
+                                            <td>30</td>
+                                            <td class="text-center">
+                                                R$ 60,00<input type="radio" name="product_EST-263" value="60"> <br>R$
+                                                1.800,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 58,00<input type="radio" name="product_EST-263" value="58"> <br>R$
+                                                1.740,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 62,00<input type="radio" name="product_EST-263" value="62"> <br>R$
+                                                1.860,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 59,00<input type="radio" name="product_EST-263" value="59"> <br>R$
+                                                1.770,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 61,00<input type="radio" name="product_EST-263" value="61"> <br>R$
+                                                1.830,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 60,00<input type="radio" name="product_EST-263" value="60"> <br>R$
+                                                1.800,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                60,00 <br>R$ 1.800,00
+                                            </td>
+                                            <td class="text-center">58,00</td>
+                                            <td class="text-center">62,00</td>
+                                            <td class="text-center">60,00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-264</td>
+                                            <td>Grade de Alumínio 1m²</td>
+                                            <td>20</td>
+                                            <td class="text-center">
+                                                R$ 45,00<input type="radio" name="product_EST-264" value="45"> <br>R$
+                                                900,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 44,00<input type="radio" name="product_EST-264" value="44"> <br>R$
+                                                880,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 46,00<input type="radio" name="product_EST-264" value="46"> <br>R$
+                                                920,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 44,50<input type="radio" name="product_EST-264" value="44.5"> <br>R$
+                                                890,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 45,50<input type="radio" name="product_EST-264" value="45.5"> <br>R$
+                                                910,00
+                                            </td>
+                                            <td class="text-center">
+                                                R$ 45,00<input type="radio" name="product_EST-264" value="45"> <br>R$
+                                                900,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                45,00 <br>R$ 900,00
+                                            </td>
+                                            <td class="text-center">44,00</td>
+                                            <td class="text-center">46,00</td>
+                                            <td class="text-center">45,00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="3">Valor dos Produtos</td>
+                                            <td class="text-center">R$ 900,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Valor do Frete</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Outras Despesas</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" style="font-weight: bold;">VALOR TOTAL &nbsp; <i
+                                                    class="fa fa-arrow-right" aria-hidden="true"></i> </td>
+                                            <td class="text-center" style="font-weight: bold;">R$ 993,60</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                            <td class="text-center">R$ 0,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Forma de Pagamento</td>
+                                            <td class="text-center">Boleto</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Data de Entrega</td>
+                                            <td class="text-center">24/06/2024</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+
+
                             <br>
                             <!-- Gráfico de Comparação de Cotações -->
-<canvas id="graficoCotacoes" width="400" height="200"></canvas>
+                            <canvas id="graficoCotacoes" width="400" height="200"></canvas>
 
-<!-- Legenda do valor ideal -->
-<div style="margin-top: 10px; text-align: center;">
-    <div style="display: inline-block; width: 20px; height: 20px; background-color: rgba(255, 99, 132, 0.2); border: 1px solid rgba(255, 99, 132, 1);"></div>
-    <span>Compra Ideal</span>
-</div>
+                            <!-- Legenda do valor ideal -->
+                            <div style="margin-top: 10px; text-align: center;">
+                                <div
+                                    style="display: inline-block; width: 20px; height: 20px; background-color: rgba(255, 99, 132, 0.2); border: 1px solid rgba(255, 99, 132, 1);">
+                                </div>
+                                <span>Compra Ideal</span>
+                            </div>
 
-<!-- Inclua o Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <!-- Inclua o Chart.js -->
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
-    var ctx = document.getElementById('graficoCotacoes').getContext('2d');
-    var graficoCotacoes = new Chart(ctx, {
-        type: 'bar', // Gráfico de barras
-        data: {
-            labels: ['Canto Metal Comercio LTDA', 'Fornecedor 2', 'Fornecedor 3', 'Fornecedor 4', 'Fornecedor 5'], // Nomes dos fornecedores
-            datasets: [{
-                label: 'Cotações (R$)',
-                data: [900.60, 1050, 1051, 970, 980], // Valores das cotações
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)', // Destaque para "Canto Metal Comercio LTDA"
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)', // Borda do "Canto Metal Comercio LTDA"
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }, {
-                label: 'Preço Ideal (R$)',
-                data: [900.60, 900.60, 900.60, 900.60, 900.60], // Linha que representa o preço ideal
-                type: 'line',
-                borderColor: 'rgba(0, 255, 0, 0.6)',
-                borderWidth: 2,
-                fill: false
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Valores (R$)'
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    display: false,
-                    labels: {
-                        color: 'rgb(0, 0, 0)',
-                        backgroundColor:  'rgb(128, 128, 128)',
-                        
-                    }
-                }
-            }
-        }
-    });
-</script>
+                            <script>
+                                var ctx = document.getElementById('graficoCotacoes').getContext('2d');
+                                var graficoCotacoes = new Chart(ctx, {
+                                    type: 'bar', // Gráfico de barras
+                                    data: {
+                                        labels: ['Canto Metal Comercio LTDA', 'Fornecedor 2', 'Fornecedor 3', 'Fornecedor 4', 'Fornecedor 5'], // Nomes dos fornecedores
+                                        datasets: [{
+                                            label: 'Cotações (R$)',
+                                            data: [900.60, 1050, 1051, 970, 980], // Valores das cotações
+                                            backgroundColor: [
+                                                'rgba(255, 99, 132, 0.2)', // Destaque para "Canto Metal Comercio LTDA"
+                                                'rgba(54, 162, 235, 0.2)',
+                                                'rgba(255, 206, 86, 0.2)',
+                                                'rgba(75, 192, 192, 0.2)',
+                                                'rgba(153, 102, 255, 0.2)'
+                                            ],
+                                            borderColor: [
+                                                'rgba(255, 99, 132, 1)', // Borda do "Canto Metal Comercio LTDA"
+                                                'rgba(54, 162, 235, 1)',
+                                                'rgba(255, 206, 86, 1)',
+                                                'rgba(75, 192, 192, 1)',
+                                                'rgba(153, 102, 255, 1)'
+                                            ],
+                                            borderWidth: 1
+                                        }, {
+                                            label: 'Preço Ideal (R$)',
+                                            data: [900.60, 900.60, 900.60, 900.60, 900.60], // Linha que representa o preço ideal
+                                            type: 'line',
+                                            borderColor: 'rgba(0, 255, 0, 0.6)',
+                                            borderWidth: 2,
+                                            fill: false
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true,
+                                                title: {
+                                                    display: true,
+                                                    text: 'Valores (R$)'
+                                                }
+                                            }
+                                        },
+                                        plugins: {
+                                            legend: {
+                                                display: false,
+                                                labels: {
+                                                    color: 'rgb(0, 0, 0)',
+                                                    backgroundColor: 'rgb(128, 128, 128)',
 
-                        
-
-                <div class="form-row align-center">
-
-                    <div class="space-btn text-center">
-                        <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
-                                class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
-                    </div>
-                    <div class="space-btn text-center">
-                        <button id="openComunicadoModalBtn" class="sub-icones" onclick="openModal('modal-comunicados')">
-                            <i class="fa-regular fa-comment-dots"></i><label>Comunicados</label>
-                        </button>
-                    </div>
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                            </script>
 
 
-                </div><!--div form-row align-right-->
-                
 
-            </div><!--tab-2 wrapper-->
+                            <div class="form-row align-center">
 
-            <div class="form-row align-right">
-                <div class="space-btn text-center">
-                    <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
-                        <i class="fa-regular fa-folder"></i>
-                        <label>Histórico Geral</label>
-                    </button>
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                            class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                </div>
+                                <div class="space-btn text-center">
+                                    <button id="openComunicadoModalBtn" class="sub-icones"
+                                        onclick="openModal('modal-comunicados')">
+                                        <i class="fa-regular fa-comment-dots"></i><label>Comunicados</label>
+                                    </button>
+                                </div>
+
+
+                            </div><!--div form-row align-right-->
+
+
+                        </div><!--tab-2 wrapper-->
+
+                        <div class="form-row align-right">
+                            <div class="space-btn text-center">
+                                <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
+                                    <i class="fa-regular fa-folder"></i>
+                                    <label>Histórico Geral</label>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div><!--#lis-cold-md-->
+
                 </div>
-            </div>
-
-        </div><!--#lis-cold-md-->
-
-    </div>
 
 
-    </div><!--div cards-container-->
+            </div><!--div cards-container-->
 
 
-    </div><!--div conteudo in-->
+        </div><!--div conteudo in-->
 
 
     </div><!--div container desktop-->
@@ -595,133 +878,348 @@
         <i class="fas fa-arrow-up"></i>
     </div>
     </div><!--container desktop-->
-
-<!-- Janela Modal para Comunicados -->
-<div id="modal-comunicados" class="modal" style="display: none;">
+<!-- Janela Modal para Editar Dados do Fornecedor -->
+<div id="modal-edit-forne" class="modal" style="display: none;">
     <div class="modal-envolto">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modal-comunicados')">&times;</span>
-            <h2 class="tit-modal">Enviar Comunicado</h2>
-            <br><br>
-
-            <!-- Histórico de Comunicados -->
-            <div class="chat-history">
-                <div class="chat-message">
-                    <span>Enviado por: Glauco</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="info">
-                        <span>Para: Funcionario 1</span>
-                        <span>Data: 01/09/2024</span>
+            <span class="close" onclick="closeModal('modal-edit-forne')">&times;</span>
+            <h2 id="titulo-documento" class="tit-modal">Dados de Cotação do Fornecedor</h2>
+            <div class="modal-body" style="margin-top: 40px;">
+                
+                <center><h2>CANTO METAL COMERCIO LTDA</h2></center>
+                <hr width="100%">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Sigla</label>
+                            <input type="text" class="form-control" value="EST-001" disabled>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Produto</label>
+                            <input type="text" class="form-control" value="Produto A" disabled>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Qtdade</label>
+                            <input type="number" class="form-control" value="10" disabled>
+                        </div>
+                        <div class="col-2">
+                            <label>Preço</label>
+                            <input type="text" class="form-control" value="R$ 25,00" disabled>
+                        </div>
+                        <div class="col-2">
+                            <label>Valor</label>
+                            <input type="text" class="form-control" value="R$ 250,00" disabled>
+                        </div>
                     </div>
-                </div>
-                <div class="chat-message">
-                    <span>Enviado por: Glauco</span>
-                    <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
-                    <div class="info">
-                        <span>Para: Funcionario 2</span>
-                        <span>Data: 02/09/2024</span>
+                    <br>
+                    
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" value="EST-001" disabled>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" value="Produto A" disabled>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" value="10" disabled>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="R$ 25,00" disabled>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="R$ 250,00" disabled>
+                        </div>
                     </div>
-                </div>
-                <div class="chat-message">
-                    <span>Enviado por: Glauco</span>
-                    <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
-                    <div class="info">
-                        <span>Para: Funcionario 2</span>
-                        <span>Data: 02/09/2024</span>
+                    <br> 
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" value="EST-001" disabled>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" value="Produto A" disabled>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" value="10" disabled>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="R$ 25,00" disabled>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="R$ 250,00" disabled>
+                        </div>
                     </div>
-                </div>
-                <div class="chat-message">
-                    <span>Enviado por: Glauco</span>
-                    <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
-                    <div class="info">
-                        <span>Para: Funcionario 2</span>
-                        <span>Data: 02/09/2024</span>
+                    <br> 
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" value="EST-001" disabled>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" value="Produto A" disabled>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" value="10" disabled>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="R$ 25,00" disabled>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="R$ 250,00" disabled>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="modal-wrap">
-                <!-- Botão para alternar a lista de opções -->
-                <button id="toggleOptions" class="toggle-button">Quem Receberá o Comunicado <i class="fa-solid fa-arrow-down"></i></button>
-                <ul id="options-list" class="options-list" style="display: none;"></ul>
-
-                <div class="form-group">
-                    <label for="comunicadoText">Faça seu comunicado:</label>
-                    <textarea id="comunicadoText" class="form-control" rows="4"></textarea>
-                </div>                
-            </div>
-
-            <div class="linha subsub-botoes">
-                <div>
-                    <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
-                        <i class="fa-regular fa-paper-plane"></i>
-                    </button>
-                    <label for="sal_r">Enviar</label>
-                </div>
-                <div>
-                    <button type="button" id="cancel" name="cancelar" class="sub-icones" onclick="closeModal('modal-comunicados')">
-                        <i class="fa-regular fa-rectangle-xmark"></i>
-                    </button>
-                    <label for="cancel">Cancelar</label>
+                    <br> 
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" value="EST-001" disabled>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" value="Produto A" disabled>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" value="10" disabled>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="R$ 25,00" disabled>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" value="R$ 250,00" disabled>
+                        </div>
+                    </div>
+                    <br> 
+                    <hr width="100%">
+                    <div class="row">
+                        <div class="col">
+                            <label>Valor de Frete</label>
+                            <input type="text" class="form-control" value="0,00">
+                        </div>
+                        <div class="col">
+                            <label>Outras Despesas</label>
+                            <input type="text" class="form-control" value="0,00">
+                        </div>
+                        <div class="col">
+                            <label>Forma de Pagamento</label>
+                            <input type="text" class="form-control" value="Boleto">
+                        </div>
+                        <div class="col">
+                            <label>Data de Entrega</label>
+                            <input type="text" class="form-control" value="24/06/2024">
+                        </div>
+                        <div class="form-row">
+                            <div class="space-btn2 text-center">
+                            <button type="button" id="salvar" class="sub-icones">
+                                <i class="fa-regular fa-floppy-disk"></i> <label>&nbsp;Salvar</label>
+                            </button>
+                            <button type="button" id="visualizar" class="sub-icones">
+                                <i class="fa-regular fa-eye"></i> <label>&nbsp;Visualizar</label>
+                            </button>
+                            <button type="button" id="excluir" class="sub-icones">
+                                <i class="fa-regular fa-trash-can"></i> <label>&nbsp;Excluir</label>
+                            </button>
+                            <button type="button" id="anexar" class="sub-icones">
+                                <i class="fas fa-paperclip"></i> <label>&nbsp;Anexar</label>
+                            </button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <label>Observação</label>
+                            <textarea class="form-control" rows="3" style="width: 100%;"></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script>
+<!-- Tabela com Fornecedores -->
 
 
 
-    // Adicionando opções à lista
-    document.addEventListener('DOMContentLoaded', function () {
-        const optionsData = [
-           { value: 'opcao1', text: 'Funcionário 1', image: 'imgs/ft-ex.png' },
-            { value: 'opcao2', text: 'Funcionário 2', image: 'imgs/ft-ex2.jpg' },
-            { value: 'opcao3', text: 'Funcionário 3', image: 'imgs/ft-ex.png' },
-            { value: 'opcao4', text: 'Funcionário 4', image: 'imgs/ft-ex2.jpg' },
-            { value: 'opcao5', text: 'Funcionário 5', image: 'imgs/ft-ex.png' }
-        ];
+    <script>
+       function openModal(event) {
+    event.stopPropagation(); // Impede que o clique no link feche o modal
+    document.getElementById("modal-edit-forne").style.display = "block";
+}
 
-        const optionsList = document.getElementById('options-list');
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
 
-        optionsData.forEach(option => {
-            const listItem = document.createElement('li');
-            listItem.className = 'option-item';
-            listItem.dataset.value = option.value;
+// Para fechar o modal ao clicar fora dele
+window.onclick = function(event) {
+    var modal = document.getElementById("modal-edit-forne");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
-            const img = document.createElement('img');
-            img.src = option.image;
-            img.alt = option.text;
-            img.className = 'option-image';
+    </script>
 
-            const text = document.createElement('span');
-            text.className = 'option-text';
-            text.textContent = option.text;
 
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.className = 'option-checkbox';
+    <!-- JavaScript -->
+    <script>
+        let slideIndex = 0;
 
-            listItem.appendChild(img);
-            listItem.appendChild(text);
-            listItem.appendChild(checkbox);
+        function mudarSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
 
-            optionsList.appendChild(listItem);
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
 
-            listItem.addEventListener('click', function () {
-                checkbox.checked = !checkbox.checked;
-                listItem.classList.toggle('selected', checkbox.checked);
+            // Esconder todos os slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Mostrar o slide atual
+            slides[slideIndex].style.display = "block";
+            document.getElementById("titulo-documento").textContent = titulos[slideIndex];
+        }
+
+        // Fechar o modal
+        function closeModal(element) {
+            // Encontra o modal pai do elemento que chamou a função
+            const modal = element.closest('.modal');
+            modal.style.display = "none";
+        }
+    </script>
+
+
+
+    <!-- Janela Modal para Comunicados -->
+    <div id="modal-comunicados" class="modal" style="display: none;">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-comunicados')">&times;</span>
+                <h2 class="tit-modal">Enviar Comunicado</h2>
+                <br><br>
+
+                <!-- Histórico de Comunicados -->
+                <div class="chat-history">
+                    <div class="chat-message">
+                        <span>Enviado por: Glauco</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="info">
+                            <span>Para: Funcionario 1</span>
+                            <span>Data: 01/09/2024</span>
+                        </div>
+                    </div>
+                    <div class="chat-message">
+                        <span>Enviado por: Glauco</span>
+                        <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
+                        <div class="info">
+                            <span>Para: Funcionario 2</span>
+                            <span>Data: 02/09/2024</span>
+                        </div>
+                    </div>
+                    <div class="chat-message">
+                        <span>Enviado por: Glauco</span>
+                        <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
+                        <div class="info">
+                            <span>Para: Funcionario 2</span>
+                            <span>Data: 02/09/2024</span>
+                        </div>
+                    </div>
+                    <div class="chat-message">
+                        <span>Enviado por: Glauco</span>
+                        <p>Comunicado antigo 2: Mais detalhes sobre o comunicado...</p>
+                        <div class="info">
+                            <span>Para: Funcionario 2</span>
+                            <span>Data: 02/09/2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-wrap">
+                    <!-- Botão para alternar a lista de opções -->
+                    <button id="toggleOptions" class="toggle-button">Quem Receberá o Comunicado <i
+                            class="fa-solid fa-arrow-down"></i></button>
+                    <ul id="options-list" class="options-list" style="display: none;"></ul>
+
+                    <div class="form-group">
+                        <label for="comunicadoText">Faça seu comunicado:</label>
+                        <textarea id="comunicadoText" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="linha subsub-botoes">
+                    <div>
+                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones">
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                        <label for="sal_r">Enviar</label>
+                    </div>
+                    <div>
+                        <button type="button" id="cancel" name="cancelar" class="sub-icones"
+                            onclick="closeModal('modal-comunicados')">
+                            <i class="fa-regular fa-rectangle-xmark"></i>
+                        </button>
+                        <label for="cancel">Cancelar</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+
+        // Adicionando opções à lista
+        document.addEventListener('DOMContentLoaded', function () {
+            const optionsData = [
+                { value: 'opcao1', text: 'Funcionário 1', image: 'imgs/ft-ex.png' },
+                { value: 'opcao2', text: 'Funcionário 2', image: 'imgs/ft-ex2.jpg' },
+                { value: 'opcao3', text: 'Funcionário 3', image: 'imgs/ft-ex.png' },
+                { value: 'opcao4', text: 'Funcionário 4', image: 'imgs/ft-ex2.jpg' },
+                { value: 'opcao5', text: 'Funcionário 5', image: 'imgs/ft-ex.png' }
+            ];
+
+            const optionsList = document.getElementById('options-list');
+
+            optionsData.forEach(option => {
+                const listItem = document.createElement('li');
+                listItem.className = 'option-item';
+                listItem.dataset.value = option.value;
+
+                const img = document.createElement('img');
+                img.src = option.image;
+                img.alt = option.text;
+                img.className = 'option-image';
+
+                const text = document.createElement('span');
+                text.className = 'option-text';
+                text.textContent = option.text;
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'option-checkbox';
+
+                listItem.appendChild(img);
+                listItem.appendChild(text);
+                listItem.appendChild(checkbox);
+
+                optionsList.appendChild(listItem);
+
+                listItem.addEventListener('click', function () {
+                    checkbox.checked = !checkbox.checked;
+                    listItem.classList.toggle('selected', checkbox.checked);
+                });
+            });
+
+            // Toggle da lista de opções
+            document.getElementById('toggleOptions').addEventListener('click', function () {
+                const list = document.getElementById('options-list');
+                list.style.display = list.style.display === 'none' ? 'block' : 'none';
             });
         });
-
-        // Toggle da lista de opções
-        document.getElementById('toggleOptions').addEventListener('click', function () {
-            const list = document.getElementById('options-list');
-            list.style.display = list.style.display === 'none' ? 'block' : 'none';
-        });
-    });
-</script>
+    </script>
 
 
     <!-- Janela Modal Principal -->
@@ -755,7 +1253,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <!-- JavaScript -->
     <script>
@@ -781,35 +1279,35 @@
 
         // Fechar o modal
         function closeModal(element) {
-        // Encontra o modal pai do elemento que chamou a função
-        const modal = element.closest('.modal');
-        modal.style.display = "none";
-    }
+            // Encontra o modal pai do elemento que chamou a função
+            const modal = element.closest('.modal');
+            modal.style.display = "none";
+        }
     </script>
-    
 
 
 
-                    <script>
-                        // Função para rolar até o topo da página
-                        function scrollToTop() {
-                            window.scrollTo({
-                                top: 0,
-                                behavior: 'smooth' // Para fazer uma rolagem suave
-                            });
-                        }
-                    </script>
 
-                    <script>
-                        //volta um nível de página na navegação quando clicar no menu Voltar
-                        function goBack() {
-                            window.history.back();
-                        }
-                    </script>
+    <script>
+        // Função para rolar até o topo da página
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para fazer uma rolagem suave
+            });
+        }
+    </script>
+
+    <script>
+        //volta um nível de página na navegação quando clicar no menu Voltar
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 
 
-                    <script src="filtro-plan.js"></script>
+    <script src="filtro-plan.js"></script>
 </body>
 
 </html>

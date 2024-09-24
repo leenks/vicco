@@ -54,6 +54,20 @@ select {
 }
 
 /* Estilos para centralizar o conteúdo das células */
+
+
+.sticky {
+    position: sticky;
+    left: 0;
+    background-color: white; /* Cor de fundo para a coluna fixa */
+    z-index: 1; /* Para garantir que a coluna fixa fique acima das outras */
+}
+
+.ontainer {
+    overflow-x: auto; /* Permite rolagem horizontal */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura do pai */
+}
+
 .table-ficha {
     width: 100%;
     border-collapse: collapse; /* Para remover os espaços entre as bordas das células */
@@ -351,6 +365,36 @@ hr {
     text-align: center; /* Alinha o texto ao centro */
     font-size: 0.9em;
     color:#6c757d;
+}
+
+/* TOOTLTIP PARA FORNECEDOR DENTRO DE COTACAO*/
+
+.tooltip-fornecedor {
+    visibility: hidden;
+    width: 200px; /* Largura do tooltip */
+    background-color: rgba(255, 255, 204, 0.8); /* Fundo suave */
+    color: black; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    position: absolute; /* Posiciona o tooltip */
+    z-index: 1; /* Coloca o tooltip acima de outros elementos */
+    bottom: 60%; /* Aponta o tooltip acima do cabeçalho */
+    left: 50%; /* Centraliza o tooltip */
+    transform: translateX(-50%); /* Ajusta para o centro */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s; /* Efeito de transição */
+    font-family: 'Lato' sans-serif;
+}
+
+th:hover .tooltip-fornecedor {
+    visibility: visible; /* Torna o tooltip visível ao passar o mouse */
+    opacity: 1; /* Torna o tooltip opaco */
+}
+
+.tit-forne:hover {
+    color: blue; /* Muda a cor do texto ao passar o mouse */
+    cursor: pointer;
 }
 
 /* Container para a imagem e o tooltip */
@@ -713,6 +757,10 @@ hr {
 .space-btn {
     max-width: 35%;
 }
+.space-btn2 {
+    width: 100%;
+}
+
 .space-btn img {
     width: 25px;
     height: 25px;
