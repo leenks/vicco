@@ -395,6 +395,12 @@ th:hover .tooltip-fornecedor {
     opacity: 1; /* Torna o tooltip opaco */
 }
 
+.sub-icones:hover .tooltip-fornecedor {
+    visibility: visible; /* Torna o tooltip visível ao passar o mouse */
+    opacity: 1; /* Torna o tooltip opaco */
+    bottom: 100%;
+}
+
 .tit-forne:hover {
     color: blue; /* Muda a cor do texto ao passar o mouse */
     cursor: pointer;
