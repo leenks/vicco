@@ -576,116 +576,114 @@
     </div><!--container desktop-->
 
 
-   <!-- Janela Modal Principal -->
-<div id="modal-historico" class="modal">
-    <div class="modal-envolto">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal-historico')">&times;</span>
-            <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
-            
-            <div class="modal-wrap">
-                <div class="carrosel-container">
-                    <!-- Setas de navegação -->
-                    <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
-                    <span class="next" onclick="mudarSlide(1)">&#10095;</span>
+    <!-- Janela Modal Principal -->
+    <div id="modal-historico" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-historico')">&times;</span>
+                <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
 
-                    <!-- Slides dos documentos -->
-                    <div class="slide" style="display: block; padding-top: 20px;">
-                        <p>Nota Fiscal referente à compra de xxxx no dia xx/xx/xxxx</p>
-                        <img src="imgs/ex-nota.png" alt="Nota Fiscal" class="document-img">
+                <div class="modal-wrap" style="margin-top: 60px;">
+
+                    <!-- Bloco de Itens -->
+                    <div class="itens-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <div class="folder" onclick="mostrarSlide(0)">
+                            Nota Fiscal
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(1)">
+                            Boleto
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(2)">
+                            Recibo
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(0)">
+                            Outro Doc
+                        </div>
                     </div>
-                    <div class="slide" style="display: none; padding-top: 20px;">
-                        <p>Boleto referente à primeira parcela do serviço xxxxxxx</p>
-                        <img src="imgs/ex-boleto.webp" alt="Boleto" class="document-img">
-                    </div>
-                    <div class="slide" style="display: none; padding-top: 20px;">
-                        <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
-                        <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
+
+                    <div class="carrosel-container">
+                        <!-- Setas de navegação -->
+                        <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
+                        <span class="next" onclick="mudarSlide(1)">&#10095;</span>
+
+                        <!-- Slides dos documentos -->
+                        <div class="slide" style="display: block; padding-top: 20px;">
+                            <p>Nota Fiscal referente à compra de xxxx no dia xx/xx/xxxx</p>
+                            <img src="imgs/ex-nota.png" alt="Nota Fiscal" class="document-img">
+                        </div>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p>Boleto referente à primeira parcela do serviço xxxxxxx</p>
+                            <img src="imgs/ex-boleto.webp" alt="Boleto" class="document-img">
+                        </div>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
+                            <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- CSS -->
-<style>
-.document-img {
-    width: 80%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-.carrosel-container {
-    position: relative;
-    max-width: 100%;
-}
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    padding: 10px;
-    color: black;
-    font-weight: bold;
-    font-size: 40px;
-    user-select: none;
-    z-index: 2;
-}
-.prev { left: 0; }
-.next { right: 0; }
-</style>
+    <!-- JavaScript -->
+    <script>
+        let slideIndex = 0;
 
-<!-- JavaScript -->
-<script>
-let slideIndex = 0;
+        function mudarSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
 
-function mudarSlide(n) {
-    const slides = document.getElementsByClassName("slide");
-    const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
-    
-    slideIndex += n;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    
-    // Esconder todos os slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    
-    // Mostrar o slide atual
-    slides[slideIndex].style.display = "block";
-    document.getElementById("titulo-documento").textContent = titulos[slideIndex];
-}
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
 
-// Fechar o modal
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
-</script>
+            // Esconder todos os slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
 
-
-<!-- JavaScript para controlar os modais -->
-<script>
-function openFolder(modalId) {
-    document.getElementById(modalId).style.display = "block";
-}
-
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
-
-// Fecha o modal ao clicar fora dele
-window.onclick = function(event) {
-    var modals = document.getElementsByClassName('modal');
-    for (var i = 0; i < modals.length; i++) {
-        if (event.target == modals[i]) {
-            modals[i].style.display = "none";
+            // Mostrar o slide atual
+            slides[slideIndex].style.display = "block";
+            document.getElementById("titulo-documento").textContent = titulos[slideIndex];
         }
+
+        function mostrarSlide(index) {
+            slideIndex = index;
+            mudarSlide(0); // Chama a função mudarSlide com n = 0 para mostrar o slide correto
+        }
+    </script>
+
+<style>
+    .folder {
+        width: 130px; /* Diminuído para caber na mesma linha */
+        height: 100px; /* Diminuído para melhor proporção */
+        margin: 10px; /* Margem entre os retângulos */
+        border-radius: 10px; /* Bordas arredondadas */
+        filter: drop-shadow(0 0 0.75rem grey); /* Sombra */
+        background: white; /* Cor de fundo */
+        position: relative;
+        transition: background 0.3s; /* Transição suave */
+        display: flex; /* Para centralizar o texto */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
     }
-}
-</script>
 
+    /* Estilo para mudar a cor ao passar o mouse */
+    .folder:hover {
+        background: #f0f0f0; /* Cor de fundo ao passar o mouse */
+    }
 
+    .itens-container {
+        display: flex; /* Para alinhar os blocos na mesma linha */
+        justify-content: center; /* Centraliza os itens */
+        gap: 10px; /* Espaçamento entre os blocos */
+        margin-bottom: 20px;
+    }
+</style>
     <script>
         // Função para rolar até o topo da página
         function scrollToTop() {
@@ -695,6 +693,15 @@ window.onclick = function(event) {
             });
         }
     </script>
+
+    <script>
+        //volta um nível de página na navegação quando clicar no menu Voltar
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+
 
     <script>
         //volta um nível de página na navegação quando clicar no menu Voltar

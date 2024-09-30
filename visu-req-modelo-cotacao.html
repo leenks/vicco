@@ -440,7 +440,6 @@
     </div>
     </div><!--container desktop-->
 
-
     <!-- Janela Modal Principal -->
     <div id="modal-historico" class="modal">
         <div class="modal-envolto">
@@ -448,7 +447,24 @@
                 <span class="close" onclick="closeModal('modal-historico')">&times;</span>
                 <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
 
-                <div class="modal-wrap" style="margin-top: 20px;">
+                <div class="modal-wrap" style="margin-top: 60px;">
+
+                    <!-- Bloco de Itens -->
+                    <div class="itens-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <div class="folder" onclick="mostrarSlide(0)">
+                            Nota Fiscal
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(1)">
+                            Boleto
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(2)">
+                            Recibo
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(0)">
+                            Outro Doc
+                        </div>
+                    </div>
+
                     <div class="carrosel-container">
                         <!-- Setas de navegação -->
                         <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
@@ -467,13 +483,12 @@
                             <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
                             <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- JavaScript -->
     <script>
@@ -497,10 +512,42 @@
             document.getElementById("titulo-documento").textContent = titulos[slideIndex];
         }
 
+        function mostrarSlide(index) {
+            slideIndex = index;
+            mudarSlide(0); // Chama a função mudarSlide com n = 0 para mostrar o slide correto
+        }
     </script>
 
+<style>
+    .folder {
+        width: 130px; /* Diminuído para caber na mesma linha */
+        height: 100px; /* Diminuído para melhor proporção */
+        margin: 10px; /* Margem entre os retângulos */
+        border-radius: 10px; /* Bordas arredondadas */
+        filter: drop-shadow(0 0 0.75rem grey); /* Sombra */
+        background: white; /* Cor de fundo */
+        position: relative;
+        transition: background 0.3s; /* Transição suave */
+        display: flex; /* Para centralizar o texto */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
+    /* Estilo para mudar a cor ao passar o mouse */
+    .folder:hover {
+        background: #f0f0f0; /* Cor de fundo ao passar o mouse */
+    }
 
+    .itens-container {
+        display: flex; /* Para alinhar os blocos na mesma linha */
+        justify-content: center; /* Centraliza os itens */
+        gap: 10px; /* Espaçamento entre os blocos */
+        margin-bottom: 20px;
+    }
+</style>
     <script>
         // Função para rolar até o topo da página
         function scrollToTop() {

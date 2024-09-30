@@ -97,6 +97,8 @@
             background: #ffcb3b;
             /* Linha amarela para indicar o progresso */
             position: relative;
+            top: 20px;
+            margin: 0 -10px 0 5px;
         }
 
         .timeline-content {
@@ -514,7 +516,7 @@
                                         <div class="space-btn text-center">
                                             <button type="button" id="btn-aprovar" name="btn-aprovar" class="sub-icones"
                                                 onclick="openModal('modal-aprovar')">
-                                                <i class="fa-regular fa-thumbs-up"></i> &nbsp;&nbsp;<i class="fa-regular fa-thumbs-down"></i><label>Aprovar/Reprovar Requisição</label>
+                                                <img src="imgs/sub-icone-aprova.png"><img src="imgs/sub-icone-reprova.png"> <label>Aprovar/Reprovar Requisição</label>
                                             </button>
                                         </div>
 
@@ -563,274 +565,254 @@
     </div>
     </div><!--container desktop-->
 
+<!-- Modal Aprovar Requisição -->
+<div id="modal-aprovar" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-aprovar')">&times;</span>
+            <h2 class="tit-modal">Aprovação da Requisição</h2>
+            <div class="modal-body" style="top:60px;">
 
-    <!-- Modal Reprovar Requisição -->
-    <div id="modal-reprovar" class="modal">
-        <div class="modal-envolto">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal-reprovar')">&times;</span>
-                <h2 class="tit-modal">Reprovar Requisição</h2>
-                <div class="modal-wrap">
-                    <div class="filtro-tabela">
-                        <div class="qua-4 modal-body">
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8 text-center">
-                                    <h4>Motivos da Recusa</h4>
-                                </div>
-                                <div class="col-md-2"></div>
+                <!-- Primeiro Bloco -->
+                <div class="bloco-container" style="border: 1px solid #e0e0e0; border-radius: 20px; margin-bottom: 20px;" >
+                    <div class="toggle-icon sub-icones" onclick="toggleBloco('bloco1', this)">
+                        <i class="fa-solid fa-eye"></i>
+                        <label>Mostrar/Esconder Dados</label>
+                    </div>
+                    <div class="bloco" id="bloco1">
+                        <div class="chart-container">
+                            <div class="chart">
+                                <canvas id="graficoGrupo"></canvas>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label>Por favor preencha explicando os motivos da recusa</label>
-                                    <textarea class="form-control" rows="5" id="obs-reprovar"
-                                        name="obs-reprovar"></textarea>
-                                </div>
+                            <div class="chart">
+                                <canvas id="graficoSubgrupo"></canvas>
                             </div>
-                            <div class="linha subsub-botoes">
-                                <div>
-                                    <button type="submit" id="salvar-reprovar" name="salvar-reprovar"
-                                        class="sub-icones">
-                                        <i class="fa-regular fa-floppy-disk"></i>
-                                    </button>
-                                    <label for="salvar-reprovar">&nbsp;Salvar</label>
+                            <div class="timeline-horizontal">
+                                <p style="text-align: center"><b>Timeline de Entrega</b></p>
+                                <div class="timeline-container">
+                                    <div class="timeline-item atual">
+                                        <div class="timeline-icon">
+                                            <i class="fa-solid fa-calendar-days"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <div class="data">01/08/2024</div>
+                                            <div class="descricao">Data de Entrega Prevista</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-bar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="timeline-item atrasado">
+                                        <div class="timeline-icon">
+                                            <i class="fa-solid fa-calendar-check"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <div class="data">26/08/2024</div>
+                                            <div class="descricao">Data Atual (atrasado)</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Modal Aprovar Requisição -->
-    <div id="modal-aprovar" class="modal">
-        <div class="modal-envolto">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal-aprovar')">&times;</span>
-                <h2 class="tit-modal">Aprovação da Requisição</h2>
-                <div class="modal-body">
-                    <div class="chart-container">
-                        <div class="chart">
-                            <canvas id="graficoGrupo"></canvas>
-                        </div>
-                        <div class="chart">
-                            <canvas id="graficoSubgrupo"></canvas>
-                        </div>
-                        <div class="chart">
-                            <canvas id="graficoDesejado"></canvas>
-                        </div>
-                    </div>
-                
-                    <script>
-                        // Dados fictícios para os gráficos
-                        const verbaGrupoTotal = 100000; // Exemplo: verba total do grupo
-                        const verbaGrupoGasta = 60000;  // Exemplo: verba já gasta no grupo
-                    
-                        const verbaSubgrupoTotal = 50000;  // Exemplo: verba total do subgrupo
-                        const verbaSubgrupoGasta = 25000;  // Exemplo: verba já gasta no subgrupo
-                    
-                        const verbaDesejada = 120000;  // Exemplo: valor desejado
-                        const verbaGasta = verbaGrupoGasta + verbaSubgrupoGasta; // Soma dos gastos
-                        const verbaResidual = verbaDesejada - verbaGasta; // Cálculo do gasto residual
-                    
-                        // Função para criar gráficos de pizza com 2 informações
-                        function criarGraficoPizzaCom2Infos(idCanvas, labelTotal, labelGasto, total, gasto) {
-                            new Chart(document.getElementById(idCanvas), {
-                                type: 'pie',
-                                data: {
-                                    labels: [labelGasto, labelTotal],
-                                    datasets: [{
-                                        data: [gasto, total - gasto],
-                                        backgroundColor:  ['#FF9F40', '#36A2EB'],
-                                        hoverBackgroundColor: ['#f58d25', '#0b8de5']
-                                    }]
-                                },
-                                options: {
-                                    responsive: true,
-                                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
-                                    plugins: {
-                                        legend: {
-                                            position: 'bottom',
-                                        },
-                                        datalabels: {
-                                            color: '#ffffff',
-                                            font: {
-                                                weight: 'bold',
-                                                size: 14
-                                            },
-                                            formatter: (value, ctx) => {
-                                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
-                                                let percentage = (value / total * 100).toFixed(1);
-                                                return `${percentage}%`;
-                                            },
-                                            anchor: 'end',
-                                            align: 'end',
-                                            offset: 4
-                                        },
-                                        tooltip: {
-                                            callbacks: {
-                                                label: function (context) {
-                                                    let label = context.label || '';
-                                                    let value = context.raw || 0;
-                                                    let percentage = (value / total * 100).toFixed(2);
-                                                    return `${label}: ${value} (${percentage}%)`;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            });
-                        }
-                    
-                        // Função para criar gráficos de pizza com 3 informações
-                        function criarGraficoPizzaCom3Infos(idCanvas, label1, label2, label3, valor1, valor2, valor3) {
-                            new Chart(document.getElementById(idCanvas), {
-                                type: 'pie',
-                                data: {
-                                    labels: [label1, label2, label3],
-                                    datasets: [{
-                                        data: [valor1, valor2, valor3],
-                                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-                                        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-                                    }]
-                                },
-                                options: {
-                                    responsive: true,
-                                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
-                                    plugins: {
-                                        legend: {
-                                            position: 'bottom',
-                                        },
-                                        datalabels: {
-                                            color: '#ffffff',
-                                            font: {
-                                                weight: 'bold',
-                                                size: 14
-                                            },
-                                            formatter: (value, ctx) => {
-                                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
-                                                let percentage = (value / total * 100).toFixed(1);
-                                                return `${percentage}%`;
-                                            },
-                                            anchor: 'end',
-                                            align: 'end',
-                                            offset: 4
-                                        },
-                                        tooltip: {
-                                            callbacks: {
-                                                label: function (context) {
-                                                    let label = context.label || '';
-                                                    let value = context.raw || 0;
-                                                    let percentage = (value / total * 100).toFixed(2);
-                                                    return `${label}: ${value} (${percentage}%)`;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            });
-                        }
-                    
-                        // Criando os gráficos
-                        window.onload = function () {
-                            criarGraficoPizzaCom2Infos(
-                                'graficoGrupo',
-                                'Verba Gasta do Grupo',
-                                'Verba Total do Grupo',
-                                verbaGrupoTotal,
-                                verbaGrupoGasta
-                            );
-                            criarGraficoPizzaCom2Infos(
-                                'graficoSubgrupo',
-                                'Verba Gasta do Subgrupo',
-                                'Verba Total do Subgrupo',
-                                verbaSubgrupoTotal,
-                                verbaSubgrupoGasta
-                            );
-                            criarGraficoPizzaCom3Infos(
-                                'graficoDesejado',
-                                'Gasto Residual',
-                                'Verba Gasta',
-                                'Verba Desejada',
-                                verbaResidual,
-                                verbaGasta,
-                                verbaDesejada
-                            );
-                        };
-                    </script>
-                    
-                    <hr>
-                    <!-- Linha do Tempo Horizontal -->
-                    <div class="timeline-horizontal">
-                        <p style="text-align: center"><b>Timeline de Entrega</b></p>
-                        <div class="timeline-container">
-                            <div class="timeline-item atual">
-                                <div class="timeline-icon">
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <div class="data">01/08/2024</div>
-                                    <div class="descricao">Data de Entrega Prevista</div>
-                                </div>
-                            </div>
-                            <div class="timeline-bar"></div>
-                            <div class="timeline-item atrasado">
-                                <div class="timeline-icon">
-                                    <i class="fa-solid fa-calendar-check"></i>
-                                </div>
-                                <div class="timeline-content">
-                                    <div class="data">26/08/2024</div>
-                                    <div class="descricao">Data Atual (atrasado)</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label>Por favor preencha explicando os motivos da decisão</label>
-                            <textarea class="form-control" rows="5" id="obs-aprovar" name="obs-aprovar"></textarea>
-                            <div class="form-check mt-2">
-                                <input class="form-check-input" style="margin-top: 0;" type="checkbox" id="salvar-sem-comentario"
-                                    onclick="toggleTextarea(this)">
-                                <label class="form-check-label" for="salvar-sem-comentario">
-                                    Salvar sem nenhum comentário
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sub-icones align-right mt-3">
-                        <div style="display: flex; align-items: center; margin-right: 10px;">
-                            <input type="radio" id="reprovar-requisicao" name="acao-requisicao" value="reprovar"
-                                style="margin-right: 5px;">
-                            <label for="reprovar-requisicao" style="display: flex; align-items: center;">
-                                <i class="fa-regular fa-thumbs-down"></i><span style="margin-left: 5px;"> Reprovar
-                                    Requisição</span>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Por favor preencha explicando os motivos da decisão</label>
+                        <textarea class="form-control" rows="5" id="obs-aprovar" name="obs-aprovar"></textarea>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" style="margin-top: 0;" type="checkbox" id="salvar-sem-comentario"
+                                onclick="toggleTextarea(this)">
+                            <label class="form-check-label" for="salvar-sem-comentario">
+                                Salvar sem nenhum comentário
                             </label>
                         </div>
+                    </div>
+                </div>
+                <div class="sub-icones align-right mt-3">
+                    <div style="display: flex; align-items: center; margin-right: 10px;">
+                        <input type="radio" id="reprovar-requisicao" name="acao-requisicao" value="reprovar"
+                            style="margin-right: 5px;">
+                        <label for="reprovar-requisicao" style="display: flex; align-items: center;">
+                            <i class="fa-regular fa-thumbs-down"></i><span style="margin-left: 5px;"> Reprovar
+                                Requisição</span>
+                        </label>
+                    </div>
 
-                        <div style="display: flex; align-items: center; margin-right: 10px;">
-                            <input type="radio" id="aprovar-requisicao" name="acao-requisicao" value="aprovar"
-                                style="margin-right: 5px;">
-                            <label for="aprovar-requisicao" style="display: flex; align-items: center;">
-                                <i class="fa-regular fa-thumbs-up"></i><span style="margin-left: 5px;"> Aprovar
-                                    Requisição</span>
-                            </label>
-                        </div>
+                    <div style="display: flex; align-items: center; margin-right: 10px;">
+                        <input type="radio" id="aprovar-requisicao" name="acao-requisicao" value="aprovar"
+                            style="margin-right: 5px;">
+                        <label for="aprovar-requisicao" style="display: flex; align-items: center;">
+                            <i class="fa-regular fa-thumbs-up"></i><span style="margin-left: 5px;"> Aprovar
+                                Requisição</span>
+                        </label>
+                    </div>
 
-                        <div>
-                            <button type="submit" id="salvar-aprovar" name="salvar-aprovar" class="sub-icones">
-                                <i class="fa-regular fa-floppy-disk"></i>
-                                <label for="salvar-aprovar">&nbsp;Salvar</label>
-                            </button>
-                        </div>
+                    <div>
+                        <button type="submit" id="salvar-aprovar" name="salvar-aprovar" class="sub-icones">
+                            <i class="fa-regular fa-floppy-disk"></i>
+                            <label for="salvar-aprovar">&nbsp;Salvar</label>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<script>
+    function toggleBloco(blocoId, icon) {
+    const bloco = document.getElementById(blocoId);
+    if (bloco.style.display === "none") {
+        bloco.style.display = "block";
+        icon.querySelector('i').classList.remove('fa-eye-slash');
+        icon.querySelector('i').classList.add('fa-eye');
+    } else {
+        bloco.style.display = "none";
+        icon.querySelector('i').classList.remove('fa-eye');
+        icon.querySelector('i').classList.add('fa-eye-slash');
+    }
+}
+</script>
+
+
+    <script>
+        // Dados fictícios para os gráficos
+        const verbaGrupoTotal = 100000; // Exemplo: verba total do grupo
+        const verbaGrupoGasta = 60000;  // Exemplo: verba já gasta no grupo
+    
+        const verbaSubgrupoTotal = 50000;  // Exemplo: verba total do subgrupo
+        const verbaSubgrupoGasta = 25000;  // Exemplo: verba já gasta no subgrupo
+    
+        const verbaDesejada = 120000;  // Exemplo: valor desejado
+        const verbaGasta = verbaGrupoGasta + verbaSubgrupoGasta; // Soma dos gastos
+        const verbaResidual = verbaDesejada - verbaGasta; // Cálculo do gasto residual
+    
+        // Função para criar gráficos de pizza com 2 informações
+        function criarGraficoPizzaCom2Infos(idCanvas, labelTotal, labelGasto, total, gasto) {
+            new Chart(document.getElementById(idCanvas), {
+                type: 'pie',
+                data: {
+                    labels: [labelGasto, labelTotal],
+                    datasets: [{
+                        data: [gasto, total - gasto],
+                        backgroundColor:  ['#FF9F40', '#36A2EB'],
+                        hoverBackgroundColor: ['#f58d25', '#0b8de5']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        datalabels: {
+                            color: '#ffffff',
+                            font: {
+                                weight: 'bold',
+                                size: 14
+                            },
+                            formatter: (value, ctx) => {
+                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
+                                let percentage = (value / total * 100).toFixed(1);
+                                return `${percentage}%`;
+                            },
+                            anchor: 'end',
+                            align: 'end',
+                            offset: 4
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    let value = context.raw || 0;
+                                    let percentage = (value / total * 100).toFixed(2);
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    
+        // Função para criar gráficos de pizza com 3 informações
+        function criarGraficoPizzaCom3Infos(idCanvas, label1, label2, label3, valor1, valor2, valor3) {
+            new Chart(document.getElementById(idCanvas), {
+                type: 'pie',
+                data: {
+                    labels: [label1, label2, label3],
+                    datasets: [{
+                        data: [valor1, valor2, valor3],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        datalabels: {
+                            color: '#ffffff',
+                            font: {
+                                weight: 'bold',
+                                size: 14
+                            },
+                            formatter: (value, ctx) => {
+                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
+                                let percentage = (value / total * 100).toFixed(1);
+                                return `${percentage}%`;
+                            },
+                            anchor: 'end',
+                            align: 'end',
+                            offset: 4
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    let value = context.raw || 0;
+                                    let percentage = (value / total * 100).toFixed(2);
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    
+        // Criando os gráficos
+        window.onload = function () {
+            criarGraficoPizzaCom2Infos(
+                'graficoGrupo',
+                'Verba Gasta do Grupo',
+                'Verba Total do Grupo',
+                verbaGrupoTotal,
+                verbaGrupoGasta
+            );
+            criarGraficoPizzaCom2Infos(
+                'graficoSubgrupo',
+                'Verba Gasta do Subgrupo',
+                'Verba Total do Subgrupo',
+                verbaSubgrupoTotal,
+                verbaSubgrupoGasta
+            );
+            criarGraficoPizzaCom3Infos(
+                'graficoDesejado',
+                'Gasto Residual',
+                'Verba Gasta',
+                'Verba Desejada',
+                verbaResidual,
+                verbaGasta,
+                verbaDesejada
+            );
+        };
+    </script>
+    
 
     <!-- Inclusão do Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
