@@ -1,17 +1,22 @@
-// função para os modais popup
+// Função para abrir o modal
 function openModal(modalId) {
     var modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = 'block';
-        modal.classList.add('slideIn'); 
+        modal.style.display = 'block'; // Exibe o modal
     }
 }
 
-// Fecha o modal quando clica no Xis
+
+function validateNumber(input) {
+    // Remove qualquer caractere não numérico
+    input.value = input.value.replace(/[^0-9]/g, '');
+}
+
+// Função para fechar o modal
 function closeModal(modalId) {
     var modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = 'none';
+        modal.style.display = 'none'; // Oculta o modal
     }
 }
 
@@ -25,7 +30,6 @@ window.onclick = function(event) {
         }
     }
 }
-
 
 // Adiciona o filtro à lista de filtros selecionados
 function adicionarFiltro(nomeFiltro) {

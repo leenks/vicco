@@ -102,7 +102,7 @@
                             </button>
                         </div>
                         <div class="toggle-container2">
-                            <button onclick="openFilterModal(); updateFilterDisplay();">
+                            <button onclick="openModal('filterModal'); updateFilterDisplay();">
                                 <span id="modo-icon" class="fas fa-sliders-h"></span> &nbsp; FILTRAR
                             </button>
                             <div class="filtros-selecionados">
@@ -1210,7 +1210,7 @@
         <div class="modal-envolto">
             <div class="modal-content">
 
-                <span class="close" onclick="closeFilterModal()">&times;</span>
+                <span class="close" onclick="closeModal('filterModal')">&times;</span>
                 <h2 class="tit-modal">Informações de Filtro para Requisições</h2>
 
                 <div class="modal-wrap">
