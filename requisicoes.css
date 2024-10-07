@@ -443,6 +443,11 @@ background-color: #ffffff;
     }
 
     
+    .bloco-qtd {
+        background-color: #fbfbfb; border-radius: 10px; margin: 20px 15px; width: 90%;
+    }
+
+    
     
     .checklist-item {
         margin-bottom: 10px; /* Espaço entre os itens do checklist */
@@ -460,29 +465,7 @@ background-color: #ffffff;
     }
     
     /* Estilos responsivos */
-    @media (max-width: 768px) {
-
-        .tit-modal {width: 90% !important;}
-
-        .modal-envolto {
-            width: 95%; /* Aumenta a largura em telas pequenas */
-        }
-    
-        .modal-content {
-            padding: 10px; /* Ajuste de padding para telas pequenas */
-            width: 95%;
-        }
-    
-        .checklist-item {
-            padding: 5px; /* Espaço reduzido para itens do checklist */
-        }
-        
-        h3, h4 {
-            font-size: 20px; /* Ajuste do tamanho do texto */
-        }
-
-    }
-
+   
     @media (max-width: 400px) {
         }
     
@@ -1730,8 +1713,21 @@ background-color: #ffffff;
             padding: 70px 0px 10px;
         }
 
+        .modal-envolto {
+            padding: 0;
+        }
+
+        .modal-content {
+            width: 100%;
+            
+        }
+
         .checklist-content {
             width: 380px;
+        }
+
+        .bloco-qtd {
+            background-color: #fbfbfb; border-radius: 10px; margin: 20px 15px; width: 60%;
         }
     
 
