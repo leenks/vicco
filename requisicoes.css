@@ -484,13 +484,6 @@ background-color: #ffffff;
     }
 
     @media (max-width: 400px) {
-        .modal-envolto {
-            width: 95%; /* Largura do modal */
-            max-width: 400px; /* Limite máximo */
-        }
-    
-        .modal-content {
-            padding: 10px; /* Padding reduzido */
         }
     
         .checklist {
@@ -502,7 +495,7 @@ background-color: #ffffff;
             display: flex;
             flex-direction: column; /* Mantenha a coluna */
             margin-bottom: 10px; /* Reduz o espaço entre os itens */
-            padding: 5px; /* Ajusta o padding para ocupar menos espaço */
+            
         }
     
         .checklist-content {
@@ -564,7 +557,6 @@ background-color: #ffffff;
             font-size: 0.9em;
             color: #555;
         }
-    }
     
     
     
@@ -1735,7 +1727,11 @@ background-color: #ffffff;
         /* ESSA É A CAIXA DE FILTROS */
 
         .modal-wrap {
-            padding: 70px 10px 10px;
+            padding: 70px 0px 10px;
+        }
+
+        .checklist-content {
+            width: 380px;
         }
     
 
