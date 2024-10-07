@@ -526,7 +526,7 @@ background-color: #ffffff;
         right: 10px;
         font-size: 24px;
         cursor: pointer;
-        z-index: 2;
+        z-index: 3;
     }
 
     .close:hover,
@@ -549,6 +549,7 @@ background-color: #ffffff;
         font-family: 'Lato', 'sans-serif';
         position: absolute;
         width: 100%;
+        z-index: 2;
     }
 
 
@@ -693,10 +694,13 @@ background-color: #ffffff;
     .botao-pre-compra,
     .botao-pagamento,
     .botao-cotacao,
+    .botao-compra,
     .botao-cancelada,
     .botao-aprovacao,
     .botao-analise,
     .botao-orcamento,
+    .bota-entrega,
+    .botao-recebido,
     .botao-aprovado {
         font-size: 10px;
         width: 110px;
@@ -715,8 +719,14 @@ background-color: #ffffff;
     }
 
     .box-info-requisicao-btn .botao-pre-compra {
+
         background-color: #79C14E;
         text-shadow: 1px 1px #356619;
+    }
+
+    .box-info-requisicao-btn .botao-compra {
+        background-color: #298a2b;
+        text-shadow: 1px 1px #19662b;
     }
 
     .box-info-requisicao-btn .botao-pagamento {
@@ -737,6 +747,15 @@ background-color: #ffffff;
     .box-info-requisicao-btn .botao-aprovacao {
         background-color: rgb(12, 204, 175);
         text-shadow: 1px 1px rgb(1, 66, 67);
+    }
+    .box-info-requisicao-btn .botao-entrega {
+        background-color: rgb(12, 121, 204);
+        text-shadow: 1px 1px rgb(1, 27, 67);
+    }
+
+    .box-info-requisicao-btn .botao-recebido {
+        background-color: rgb(249, 126, 17);
+        text-shadow: 1px 1px rgb(92, 59, 2);
     }
     
     .box-info-requisicao-btn .botao-aprovado {
@@ -803,7 +822,7 @@ background-color: #ffffff;
 
     .box-info-requisicao {
         display: flex;
-        justify-content: start;
+        justify-content: space-between;
         margin-bottom: 5px;
     }
 
@@ -1691,11 +1710,13 @@ background-color: #ffffff;
         .caption-container .botao-cancelada,
         .caption-container .botao-aprovacao,
         .caption-container .botao-analise,
+        .caption-container .botao-entrega,
+        .caption-container .botao-recebido,
         .caption-container .botao-orcamento,
         .caption-container .botao-aprovado {
             font-size: 10px;
             padding: 5px 25px;
-            width: 105px;
+            width: 60px;
             text-align: center;
         }
 

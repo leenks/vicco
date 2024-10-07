@@ -326,6 +326,18 @@ hr {
     align-items: center;
     cursor: pointer;
     margin: 0 10px;
+    /* Bordas arredondadas */
+    border-radius: 20px;
+    border: 2px solid #fff;
+    
+    /* Sombra para o efeito de relevo */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.4);
+
+    /* Degradê interno */
+    background-color:#cac7c7;
+    
+    /* Tamanho e padding */
+    padding: 20px 10px; /* Ajuste conforme necessário */
 }
 
 .checkbox-icon-img {
@@ -364,7 +376,7 @@ hr {
     margin-top: 5px; /* Adiciona um espaço entre o ícone e o texto */
     text-align: center; /* Alinha o texto ao centro */
     font-size: 0.9em;
-    color:#6c757d;
+    color:#555;
 }
 
 /* TOOTLTIP PARA FORNECEDOR DENTRO DE COTACAO*/
@@ -608,13 +620,38 @@ th:hover .tooltip-fornecedor {
     background-color: #5fc9ed;
     text-shadow: 1px 1px #195a66;
     padding: 8px 20px 8px 31px;
+    color: white;
+    padding: 7px 10px 6px 30px;
     border: none;
     border-radius: 5px;
-    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+    width: 110px;
 }
 
 
     /* Estilos para os status */
+    .box-info-requisicao-btn .botao-compra {
+        background-color: #298a2b;
+        text-shadow: 1px 1px #19662b;
+        color: white;
+        padding: 7px 10px 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        margin-left: 5px;
+        top: 20%;
+        height: 35px;
+    }
+
     .box-info-requisicao-btn .botao-pre-compra {
         background-color: #79C14E;
         text-shadow: 1px 1px #356619;
@@ -628,6 +665,7 @@ th:hover .tooltip-fornecedor {
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+        height: 35px;
     }
 
     .box-info-requisicao-btn .botao-pagamento {
@@ -643,6 +681,7 @@ th:hover .tooltip-fornecedor {
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+        height: 35px;
     }
 
     .box-info-requisicao-btn .botao-cotacao {
@@ -658,6 +697,7 @@ th:hover .tooltip-fornecedor {
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+        height: 35px;
     }
 
     .box-info-requisicao-btn .botao-cancelada {
@@ -673,6 +713,7 @@ th:hover .tooltip-fornecedor {
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+        height: 35px;
     }
 
     .box-info-requisicao-btn .botao-aprovacao {
@@ -688,6 +729,7 @@ th:hover .tooltip-fornecedor {
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+        height: 35px;
     }
     
     .box-info-requisicao-btn .botao-aprovado {
@@ -703,6 +745,7 @@ th:hover .tooltip-fornecedor {
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+        height: 35px;
     }
 
     .box-info-requisicao-btn .botao-analise {
@@ -718,6 +761,7 @@ th:hover .tooltip-fornecedor {
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+        height: 35px;
     }
 
     .box-info-requisicao-btn .botao-orcamento {
@@ -733,6 +777,7 @@ th:hover .tooltip-fornecedor {
         white-space: nowrap;
         margin-left: 5px;
         top: 20%;
+        height: 35px;
     }
 
 .box-info-requisicao-btn .botao-conversao {
@@ -742,6 +787,7 @@ th:hover .tooltip-fornecedor {
     padding: 8px 10px 8px 25px;
     border: none;
     border-radius: 5px;
+    height: 35px;
 }
 
 .box-info-requisicao-btn .botao-cancelada {
@@ -751,6 +797,7 @@ th:hover .tooltip-fornecedor {
     padding: 8px 10px 8px 25px;
     border: none;
     border-radius: 5px;
+    height: 35px;
 }
 
 
@@ -758,11 +805,34 @@ th:hover .tooltip-fornecedor {
     background-color: rgb(12, 204, 175);
     text-shadow: 1px 1px rgb(1, 66, 67);
     color: white;
-    padding: 8px 10px 8px 25px;
+    padding: 8px 10px 8px 15px;
     border: none;
     border-radius: 5px;
-}
+    height: 35px;
 
+}
+.box-info-requisicao-btn .botao-entrega {
+    background-color: rgb(12, 121, 204);
+    text-shadow: 1px 1px rgb(1, 27, 67);
+    color: white;
+    padding: 8px 10px 8px 20px;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 110px;
+
+}
+.box-info-requisicao-btn .botao-recebido {
+    background-color: rgb(249, 126, 17);
+    text-shadow: 1px 1px rgb(92, 59, 2);
+    color: white;
+    padding: 8px 10px 8px 20px;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 110px;
+
+}
 .space-btn {
     max-width: 35%;
 }
