@@ -14,6 +14,10 @@
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="requisicoes.css">
     <link rel="stylesheet" href="forms.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+
     <style>
         .cotacoes-scroll {
             overflow-x: auto;
@@ -107,6 +111,33 @@
         textarea.form-control {
             height: 70px;
             /* Ajuste a altura conforme necessário */
+        }
+        .titulo {
+            background-color: #969696; 
+            margin: 20px 0;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            width: 100%; /* Ocupa toda a largura da tela */
+            box-sizing: border-box; /* Inclui padding no tamanho total */
+            font-family: 'Lato' sans-serif;
+        }
+        .texto-apoio {
+            text-align: center;
+            font-size: 18px;
+            margin: 0 auto;
+            width: 100%;
+            font-family: 'Lato' sans-serif;
+        }
+        .diferenca {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lato' sans-serif;
+        }
+        .diferenca span {
+            margin: 0 5px;
         }
     </style>
     <title>Vicco Construtora</title>
@@ -727,81 +758,123 @@
                                     </tbody>
                                 </table>
                             </div>
-
-
-
-
                             <br>
-                            <!-- Gráfico de Comparação de Cotações -->
-                            <canvas id="graficoCotacoes" width="400" height="200"></canvas>
 
-                            <!-- Legenda do valor ideal -->
-                            <div style="margin-top: 10px; text-align: center;">
-                                <div
-                                    style="display: inline-block; width: 20px; height: 20px; background-color: rgba(255, 99, 132, 0.2); border: 1px solid rgba(255, 99, 132, 1);">
-                                </div>
-                                <span>Compra Ideal</span>
-                            </div>
+            <!-- Título -->
+<div class="titulo">Central de Decisões de Fechamento</div>
 
-                            <!-- Inclua o Chart.js -->
-                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Textos de Apoio -->
+<div class="texto-apoio">
+    <div class="diferenca">
+        <div style="margin-right: 10px;">
+            <strong>Compra Ideal:</strong> <span style="color: green;">R$ 975,00</span>
+        </div>
+        <div style="font-weight: bold; color: red; font-size: 1em; margin: 0 10px;">&#10005;</div> <!-- Símbolo de diferença (X) -->
+        <div style="margin-left: 10px;">
+            <strong>Compra Selecionada:</strong> <span style="color: blue;">R$ 1.000,00</span>
+        </div>
+    </div>
 
-                            <script>
-                                var ctx = document.getElementById('graficoCotacoes').getContext('2d');
-                                var graficoCotacoes = new Chart(ctx, {
-                                    type: 'bar', // Gráfico de barras
-                                    data: {
-                                        labels: ['Canto Metal Comercio LTDA', 'Fornecedor 2', 'Fornecedor 3', 'Fornecedor 4', 'Fornecedor 5'], // Nomes dos fornecedores
-                                        datasets: [{
-                                            label: 'Cotações (R$)',
-                                            data: [900.60, 1050, 1051, 970, 980], // Valores das cotações
-                                            backgroundColor: [
-                                                'rgba(255, 99, 132, 0.2)', // Destaque para "Canto Metal Comercio LTDA"
-                                                'rgba(54, 162, 235, 0.2)',
-                                                'rgba(255, 206, 86, 0.2)',
-                                                'rgba(75, 192, 192, 0.2)',
-                                                'rgba(153, 102, 255, 0.2)'
-                                            ],
-                                            borderColor: [
-                                                'rgba(255, 99, 132, 1)', // Borda do "Canto Metal Comercio LTDA"
-                                                'rgba(54, 162, 235, 1)',
-                                                'rgba(255, 206, 86, 1)',
-                                                'rgba(75, 192, 192, 1)',
-                                                'rgba(153, 102, 255, 1)'
-                                            ],
-                                            borderWidth: 1
-                                        }, {
-                                            label: 'Preço Ideal (R$)',
-                                            data: [900.60, 900.60, 900.60, 900.60, 900.60], // Linha que representa o preço ideal
-                                            type: 'line',
-                                            borderColor: 'rgba(0, 255, 0, 0.6)',
-                                            borderWidth: 2,
-                                            fill: false
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            y: {
-                                                beginAtZero: true,
-                                                title: {
-                                                    display: true,
-                                                    text: 'Valores (R$)'
-                                                }
-                                            }
-                                        },
-                                        plugins: {
-                                            legend: {
-                                                display: false,
-                                                labels: {
-                                                    color: 'rgb(0, 0, 0)',
-                                                    backgroundColor: 'rgb(128, 128, 128)',
+  
+  <div class="diferenca" style="font-size: 1.1em; margin-top: 10px; text-align: center;">
+      <div style="font-weight: bold; color: red; font-size: 1em;">&ne;</div>
+      <span>Diferença:</span> 
+      <span style="color: red;">R$ 25,00</span> <span>(5%)</span>
+  </div>
+</div>
 
-                                                }
-                                            }
-                                        }
-                                    }
-                                });
-                            </script>
+    <!-- Gráfico de Comparação de Cotações -->
+    <canvas id="graficoCotacoes" width="400" height="200"></canvas>
+
+    <!-- Legenda do valor ideal -->
+    <div style="margin-top: 10px; text-align: center;">
+        <div style="display: inline-block; width: 20px; height: 20px; background-color: rgba(255, 99, 132, 0.2); border: 1px solid rgba(255, 99, 132, 1);"></div>
+        <span>Compra Ideal</span>
+        <div style="display: inline-block; width: 20px; height: 20px; background-color: rgba(75, 192, 192, 0.2); border: 1px solid rgba(255, 99, 132, 5); margin-left: 10px;"></div>
+        <span>Compra Selecionada</span>
+    </div>
+    <script>
+        // Gráfico de Cotações
+        var ctxCotacoes = document.getElementById('graficoCotacoes').getContext('2d');
+        
+        // Calcular o valor mínimo
+        var valores = [1200, 1050, 1051, 990, 985, 975, 1000];
+        var valorMinimo = Math.min(...valores); // Encontre o valor mínimo
+    
+        var graficoCotacoes = new Chart(ctxCotacoes, {
+            type: 'bar', // Gráfico de barras
+            data: {
+                labels: ['Canto Metal Comercio LTDA', 'Fornecedor 2', 'Fornecedor 3', 'Fornecedor 4', 'Fornecedor 5', 'Compra Ideal', 'Compra Selecionada'], // Nomes dos fornecedores e as compras
+                datasets: [{
+                    data: valores, // Valores das cotações
+                    backgroundColor: [
+                        'rgba(144, 238, 144, 0.2)', // Destaque para "Canto Metal Comercio LTDA"
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 99, 132, 0.8)', // Cor para "Compra Ideal" (igual à legenda)
+                        'rgba(75, 192, 192, 0.8)'  // Cor para "Compra Selecionada" (igual à legenda)
+                    ],
+                    borderColor: [
+                        'rgba(144, 238, 144, 1)', // Borda do "Canto Metal Comercio LTDA"
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 99, 132, 1)', // Borda do "Compra Ideal"
+                        'rgba(75, 192, 192, 1)'  // Borda do "Compra Selecionada"
+                    ],
+                    borderWidth: 1,
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: 'black',
+                        formatter: (value) => value.toFixed(2),
+                    }
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valores (R$)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                        labels: {
+                            color: 'rgb(0, 0, 0)',
+                        }
+                    },
+                    datalabels: {
+                        color: 'black'
+                    },
+                    annotation: { // Adiciona a configuração para o plugin de anotação
+                        annotations: {
+                            linhaMinima: {
+                                type: 'line',
+                                yMin: valorMinimo,
+                                yMax: valorMinimo,
+                                borderColor: 'gray',
+                                borderWidth: 1,
+                                label: {
+                                    content: 'Valor Mínimo',
+                                    enabled: true,
+                                    position: 'end'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    
 
 
 
@@ -970,7 +1043,7 @@
                         <hr width="100%">
 
                         <br>
-                        <div class="row">
+                        <div class="row" style="justify-content: center;">
                             <div class="col-6 col-md-3">
                                 <label>Valor de Frete</label>
                                 <input type="text" class="form-control" value="R$ 0,00" disabled>
@@ -978,6 +1051,14 @@
                             <div class="col-6 col-md-3">
                                 <label>Outras Despesas</label>
                                 <input type="text" class="form-control" value="R$ 0,00" disabled>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label>Desconto</label>
+                                <input type="text" class="form-control" value="10%" disabled>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label>Valor Total</label>
+                                <input type="text" class="form-control" value="975,00" disabled>
                             </div>
                             <div class="col-6 col-md-3">
                                 <label>Forma de Pagamento</label>
