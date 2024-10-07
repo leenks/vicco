@@ -13,6 +13,36 @@
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="requisicoes.css">
     <link rel="stylesheet" href="forms.css">
+    <style>
+.box-info-requisicao-btn {
+    position: relative; /* Permite o uso de posicionamento absoluto nos filhos */
+}
+
+.botao-entrega {
+    display: flex; /* Usar flexbox para alinhar o ícone e o texto */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    position: relative; /* Para o ícone posicionado dentro do botão */
+}
+
+.botao-entrega img {
+    width: 30px; /* Largura do ícone */
+    position: absolute; /* Permite posicionar o ícone */
+    top: 44.5%; /* Ajuste vertical do ícone */
+}
+
+/* Estilo padrão para telas grandes */
+.botao-entrega img {
+    left: 87%; /* Posição do ícone em telas grandes */
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .botao-entrega img {
+        left: 60%; /* Posição do ícone em telas pequenas */
+    }
+}
+
+    </style>
     <title>Vicco Construtora</title>
 </head>
 
@@ -81,7 +111,7 @@
     
                             <div class="box-info-requisicao-btn">
                                 <span class="botao-entrega">
-                                    <img class="icones" style="left: 87%; top: 4.5%; width: 30px;" src="imgs/ico-entregar-azul.png"
+                                    <img class="icones" src="imgs/ico-entregar-azul.png"
                                         alt="Ícone de pagamento">
                                     ENTREGA
                                 </span>

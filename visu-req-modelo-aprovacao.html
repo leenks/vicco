@@ -211,8 +211,6 @@
                         <a href="#">TODAS AS OBRAS</a>
                         <span> > </span>
                         <a href="#">SUPRIMENTOS</a>
-                        <span> > </span>
-                        <a href="#">APROVAÇÃO/REPROVAÇÃO</a>
                     </div>
 
 
@@ -240,7 +238,7 @@
                             <button type="submit" id="btnEditar" name="editar" class="sub-icones">
                                 <i class="fa-regular fa-pen-to-square"></i>
                                 <a href="edit-req-05.html">
-                                    <label>Editar Requisição - (Esse botão só aparece para quem tem permissão)</label>
+                                    <label>Editar Requisição</label>
                                 </a>
                             </button>
                         </div>
@@ -501,32 +499,32 @@
 
                             <div class="form-row">
                                 <div class="col-md-12">
-                                    <div style="display: flex; flex-direction: column; align-items: center;">
-                                        <div style="display: flex; align-items: center; margin: 20px 0;">
-                                            <p style="margin-right: 10px;">Produtos:</p>
+                                    <div style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                                        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin: 10px 0;">
+                                            <label style="margin-right: 10px;">Produtos:</label>
                                             <input type="text" class="form-control text-center"
-                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 80%; max-width: 120px;"
                                                 maxlength="50" id="pro_i" name="pro_i" value="R$ 1.31,11" disabled />
-                                            <p style="margin-right: 10px; text-wrap: nowrap;">Valor do
-                                                Frete:</p>
+                                            
+                                            <label style="margin-right: 10px;">Valor do Frete:</label>
                                             <input type="text" class="form-control text-center"
-                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 80%; max-width: 120px;"
                                                 maxlength="50" id="frete_i" name="frete_i" value="R$ 00,00" disabled />
-                                            <p style="margin-right: 10px; text-wrap: nowrap;">Outras
-                                                Despesas:</p>
+                                            
+                                            <label style="margin-right: 10px;">Outras Despesas:</label>
                                             <input type="text" class="form-control text-center"
-                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                maxlength="50" id="despesas_i" name="despesas_i" value="R$ 600,34"
-                                                disabled />
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 80%; max-width: 120px;"
+                                                maxlength="50" id="despesas_i" name="despesas_i" value="R$ 600,34" disabled />
                                         </div>
-                                        <div style="display: flex; align-items: center;  margin: 20px 0;">
-                                            <p style="margin-right: 10px;"><strong><br>TOTAL:</strong></p>
+                                        <div style="align-items: center; justify-content: center; margin: 10px 0;">
+                                            <strong style="margin-right: 10px;">TOTAL:</strong>
                                             <input type="text" class="form-control text-center"
-                                                style="background-color: orange; color: #fff; text-shadow: 1px 1px #c54f20; width: 120px;"
-                                                maxlength="50" id="total_i" name="total_i" value="R$ 5.100,00"
-                                                disabled />
+                                                style="background-color: orange; color: #fff; text-shadow: 1px 1px #c54f20; width: 80%; max-width: 200px;"
+                                                maxlength="50" id="total_i" name="total_i" value="R$ 5.100,00" disabled />
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
                                     <div class="form-row align-center">
 
