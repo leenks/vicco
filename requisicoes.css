@@ -475,6 +475,42 @@ background-color: #ffffff;
         }
 
     }
+
+    @media (max-width: 400px) {
+        .modal-envolto {
+            width: 95%; /* Aumenta a largura do modal em telas pequenas */
+        }
+    
+        .modal-content {
+            padding: 8px; /* Ajusta o padding do modal */
+            border-radius: 8px; /* Reduz a borda para se ajustar melhor */
+        }
+    
+        .checklist-item {
+            padding: 5px; /* Reduz o espaço entre os itens do checklist */
+            font-size: 14px; /* Ajusta o tamanho da fonte para melhor legibilidade */
+        }
+    
+        input[type="text"],
+        textarea {
+            width: calc(100% - 10px); /* Ajusta a largura para caber melhor no modal */
+            font-size: 14px; /* Ajuste do tamanho da fonte para inputs */
+        }
+    
+        h3, h4 {
+            font-size: 18px; /* Ajusta o tamanho do título para telas menores */
+        }
+    
+        .checkbox-label {
+            font-size: 12px; /* Ajusta o tamanho do texto dos rótulos das checkboxes */
+        }
+    
+        .observations-input {
+            font-size: 14px; /* Ajusta o tamanho da fonte da área de texto */
+            padding: 5px; /* Reduz o padding da área de texto */
+        }
+    }
+    
     
     /*PASTAS PARA MODAL DE HISTORICO DE ARQUIVOS*/
 
