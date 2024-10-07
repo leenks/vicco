@@ -478,38 +478,87 @@ background-color: #ffffff;
 
     @media (max-width: 400px) {
         .modal-envolto {
-            width: 95%; /* Aumenta a largura do modal em telas pequenas */
+            width: 95%; /* Largura do modal */
+            max-width: 400px; /* Limite máximo */
         }
     
         .modal-content {
-            padding: 8px; /* Ajusta o padding do modal */
-            border-radius: 8px; /* Reduz a borda para se ajustar melhor */
+            padding: 10px; /* Padding reduzido */
+        }
+    
+        .checklist {
+            margin-top: 15px;
+            text-align: center; 
         }
     
         .checklist-item {
-            padding: 5px; /* Reduz o espaço entre os itens do checklist */
-            font-size: 14px; /* Ajusta o tamanho da fonte para melhor legibilidade */
+            display: flex;
+            flex-direction: column; /* Mantenha a coluna */
+            margin-bottom: 10px; /* Reduz o espaço entre os itens */
+            padding: 5px; /* Ajusta o padding para ocupar menos espaço */
         }
     
-        input[type="text"],
-        textarea {
-            width: calc(100% - 10px); /* Ajusta a largura para caber melhor no modal */
-            font-size: 14px; /* Ajuste do tamanho da fonte para inputs */
+        .checklist-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Mantenha espaço entre os ícones e a pergunta */
+            margin-bottom: 5px; /* Ajuste a margem inferior */
         }
     
-        h3, h4 {
-            font-size: 18px; /* Ajusta o tamanho do título para telas menores */
+        .checkbox-icon {
+            display: flex;
+            flex-direction: column; /* Mantenha em coluna */
+            align-items: center; /* Centraliza os ícones */
+            cursor: pointer;
+            margin: 0; /* Remove a margem lateral */
+            padding: 5px; /* Ajuste o padding */
         }
     
-        .checkbox-label {
-            font-size: 12px; /* Ajusta o tamanho do texto dos rótulos das checkboxes */
+        .checkbox-icon-img {
+            width: 20px; /* Reduz o tamanho da imagem */
+            height: 20px; /* Reduz o tamanho da imagem */
+            margin: 2px; /* Margem reduzida */
+        }
+    
+        .text-muted {
+            margin-top: 5px; /* Ajusta a margem */
+            font-size: 0.8em; /* Reduz o tamanho da fonte */
+        }
+    
+        .question {
+            font-weight: bold;
+            font-size: 16px; /* Mantém um tamanho de fonte legível */
+            color: #0055ff;
+            margin: 0; /* Remove margens desnecessárias */
+        }
+    
+        .observations-wrapper {
+            display: flex;
+            flex-direction: column; /* Mantenha em coluna */
+            align-items: stretch; /* Alinha o textarea e o status-container */
         }
     
         .observations-input {
-            font-size: 14px; /* Ajusta o tamanho da fonte da área de texto */
-            padding: 5px; /* Reduz o padding da área de texto */
+            width: 100%; /* Faz com que a textarea ocupe 100% da largura */
+            font-size: 14px; /* Ajusta o tamanho da fonte */
+            padding: 8px; /* Ajusta o padding */
+        }
+    
+        .status-container {
+            display: flex; /* Mantém em linha */
+            flex-direction: column; /* Organiza ícone e texto verticalmente */
+            align-items: center;
+            margin-top: 5px; /* Espaço entre textarea e status-container */
+        }
+    
+        .checkbox-label {
+            margin-top: 5px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
         }
     }
+    
     
     
     /*PASTAS PARA MODAL DE HISTORICO DE ARQUIVOS*/
