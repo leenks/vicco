@@ -333,8 +333,6 @@ hr {
     /* Sombra para o efeito de relevo */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.4);
 
-    /* Degradê interno */
-    background-color:#cac7c7;
     
     /* Tamanho e padding */
     padding: 20px 10px; /* Ajuste conforme necessário */
@@ -906,6 +904,25 @@ th:hover .tooltip-fornecedor {
 }
 
 @media (max-width: 768px) {
+
+
+    .box-info-requisicao-btn .botao-pre-compra,
+    .box-info-requisicao-btn .botao-pagamento,
+    .box-info-requisicao-btn .botao-pre-compra,
+    .box-info-requisicao-btn .botao-pagamento,
+    .box-info-requisicao-btn .botao-cotacao,
+    .box-info-requisicao-btn .botao-compra,
+    .box-info-requisicao-btn .botao-cancelada,
+    .box-info-requisicao-btn  .botao-aprovacao,
+    .box-info-requisicao-btn  .botao-analise,
+    .box-info-requisicao-btn  .botao-orcamento,
+    .box-info-requisicao-btn  .bota-entrega,
+    .box-info-requisicao-btn  .botao-recebido,
+    .box-info-requisicao-btn  .botao-aprovado {
+       height: 20px;
+    
+    }
+
 
     .align-right,
     .status-container,
