@@ -784,21 +784,21 @@
 </div>
 
     <!-- Gráfico de Comparação de Cotações -->
-    <canvas id="graficoCotacoes" width="400" height="200"></canvas>
+    <canvas id="graficoCotacoes" width="400" height="150"></canvas>
+<!-- Legenda do valor ideal -->
+<div style="margin-top: 10px; text-align: center;">
+    <div style="display: inline-block; width: 20px; height: 20px; background-color:  rgba(0, 128, 0, 0.5); border: 1px solid rgba(0, 128, 0);"></div>
+    <span style="font-weight: bold;">Compra Ideal</span>
+    <div style="display: inline-block; width: 20px; height: 20px; background-color: rgba(75, 192, 192, 0.5); border: 1px solid rgba(54, 162, 235); margin-left: 10px;"></div>
+    <span style="font-weight: bold;">Compra Selecionada</span>
+</div>
 
-    <!-- Legenda do valor ideal -->
-    <div style="margin-top: 10px; text-align: center;">
-        <div style="display: inline-block; width: 20px; height: 20px; background-color: rgba(255, 99, 132, 0.2); border: 1px solid rgba(255, 99, 132, 1);"></div>
-        <span>Compra Ideal</span>
-        <div style="display: inline-block; width: 20px; height: 20px; background-color: rgba(75, 192, 192, 0.2); border: 1px solid rgba(255, 99, 132, 5); margin-left: 10px;"></div>
-        <span>Compra Selecionada</span>
-    </div>
     <script>
         // Gráfico de Cotações
         var ctxCotacoes = document.getElementById('graficoCotacoes').getContext('2d');
         
         // Calcular o valor mínimo
-        var valores = [1200, 1050, 1051, 990, 985, 975, 1000];
+        var valores = [1200, 1050, 1051, 1010, 995, 975, 1000];
         var valorMinimo = Math.min(...valores); // Encontre o valor mínimo
     
         var graficoCotacoes = new Chart(ctxCotacoes, {
@@ -808,22 +808,22 @@
                 datasets: [{
                     data: valores, // Valores das cotações
                     backgroundColor: [
-                        'rgba(144, 238, 144, 0.2)', // Destaque para "Canto Metal Comercio LTDA"
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 99, 132, 0.8)', // Cor para "Compra Ideal" (igual à legenda)
-                        'rgba(75, 192, 192, 0.8)'  // Cor para "Compra Selecionada" (igual à legenda)
+                       'rgba(144, 238, 144, 0.2)', // Verde com opacidade
+                'rgba(255, 206, 86, 0.2)', // Amarelo com opacidade para o segundo gráfico
+                'rgba(255, 99, 132, 0.2)', // Vermelho com opacidade para o terceiro gráfico
+                'rgba(128, 128, 128, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                        'rgba(0, 128, 0, 0.3)',
+                        'rgba(75, 192, 192, 0.3)' 
                     ],
                     borderColor: [
-                        'rgba(144, 238, 144, 1)', // Borda do "Canto Metal Comercio LTDA"
-                        'rgba(54, 162, 235, 1)',
+                        'rgba(144, 238, 144, 1)',
+                        'rgba(255, 206, 86, 1)',
                         'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
-                        'rgba(255, 99, 132, 1)', // Borda do "Compra Ideal"
-                        'rgba(75, 192, 192, 1)'  // Borda do "Compra Selecionada"
+                        'rgba(0, 128, 0, 1)', 
+                        'rgba(75, 192, 192, 1)'  
                     ],
                     borderWidth: 1,
                     datalabels: {
