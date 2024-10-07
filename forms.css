@@ -903,25 +903,7 @@ th:hover .tooltip-fornecedor {
     height: 20px;
 }
 
-@media (max-width: 768px) {
 
-
-    .box-info-requisicao-btn .botao-pre-compra,
-    .box-info-requisicao-btn .botao-pagamento,
-    .box-info-requisicao-btn .botao-pre-compra,
-    .box-info-requisicao-btn .botao-pagamento,
-    .box-info-requisicao-btn .botao-cotacao,
-    .box-info-requisicao-btn .botao-compra,
-    .box-info-requisicao-btn .botao-cancelada,
-    .box-info-requisicao-btn  .botao-aprovacao,
-    .box-info-requisicao-btn  .botao-analise,
-    .box-info-requisicao-btn  .botao-orcamento,
-    .box-info-requisicao-btn  .bota-entrega,
-    .box-info-requisicao-btn  .botao-recebido,
-    .box-info-requisicao-btn  .botao-aprovado {
-       height: 20px;
-    
-    }
 
 
     .align-right,

@@ -437,6 +437,18 @@ background-color: #ffffff;
         padding: 20px; /* Adiciona espaçamento interno */
     }
     
+    /* Ajustes para os inputs e textareas */
+    input[type="text"], 
+    textarea {
+        max-width: 100%; /* Evita que os inputs excedam a largura do modal */
+        width: auto; /* Permite que o input se ajuste ao espaço disponível */
+    }
+    
+    .d-flex {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os itens se ajustem em múltiplas linhas */
+    }
+    
     /* Estilos responsivos */
     @media (max-width: 768px) {
         .modal-envolto {
