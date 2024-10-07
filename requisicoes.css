@@ -434,23 +434,30 @@ background-color: #ffffff;
         border: 3px solid #f47332;
         overflow: auto; /* Permite rolagem se necessário */
         max-height: 90vh; /* Limita a altura do modal */
-        padding: 20px; /* Adiciona espaçamento interno */
+        padding: 15px; /* Adiciona espaçamento interno */
     }
     
-    /* Ajustes para os inputs e textareas */
-    input[type="text"], 
+    
+    .checklist-item {
+        margin-bottom: 10px; /* Espaço entre os itens do checklist */
+    }
+    
+    .d-flex {
+        display: flex;
+        justify-content: space-between; /* Ajusta o espaçamento entre os itens */
+    }
+    
+    input[type="text"],
     textarea {
         max-width: 100%; /* Evita que os inputs excedam a largura do modal */
         width: auto; /* Permite que o input se ajuste ao espaço disponível */
     }
     
-    .d-flex {
-        display: flex;
-        flex-wrap: wrap; /* Permite que os itens se ajustem em múltiplas linhas */
-    }
-    
     /* Estilos responsivos */
     @media (max-width: 768px) {
+
+        .tit-modal {width: 90% !important;}
+
         .modal-envolto {
             width: 95%; /* Aumenta a largura em telas pequenas */
         }
@@ -458,6 +465,15 @@ background-color: #ffffff;
         .modal-content {
             padding: 10px; /* Ajuste de padding para telas pequenas */
         }
+    
+        .checklist-item {
+            padding: 5px; /* Espaço reduzido para itens do checklist */
+        }
+        
+        h3, h4 {
+            font-size: 20px; /* Ajuste do tamanho do texto */
+        }
+
     }
     
     /*PASTAS PARA MODAL DE HISTORICO DE ARQUIVOS*/
