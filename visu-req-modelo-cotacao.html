@@ -14,6 +14,56 @@
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="requisicoes.css">
     <link rel="stylesheet" href="forms.css">
+    <style>
+        .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.input-row label {
+    margin-right: 10px;
+}
+
+.total-row {
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+/* Estilo para desktop */
+@media (min-width: 769px) {
+    .input-row {
+        display: flex;
+    }
+}
+
+/* Estilo para mobile */
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column; /* Alinha os campos em coluna */
+        align-items: flex-start; /* Alinha os labels à esquerda */
+    }
+    
+    .input-row label {
+        margin-bottom: 5px; /* Adiciona espaçamento entre label e input */
+    }
+    
+    .total-row {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+    </style>
     <title>Vicco Construtora</title>
 </head>
 
@@ -336,37 +386,33 @@
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12">
-                                    <div style="display: flex; flex-direction: column; align-items: center;">
-                                        <div style="display: flex; align-items: center; margin: 20px 0;">
-                                            <p style="margin-right: 10px;">Produtos:</p>
+                                    <div class="form-container">
+                                        <div class="input-row">
+                                            <label>Produtos:</label>
                                             <input type="text" class="form-control text-center"
-                                                   style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                   maxlength="50" id="pro_i" name="pro_i" value="R$ 1.31,11"
-                                                   disabled />
-                                            <p style="margin-right: 10px; text-wrap: nowrap;">Valor do Frete:</p>
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 80%; max-width: 120px;"
+                                                maxlength="50" id="pro_i" name="pro_i" value="R$ 1.31,11" disabled />
+                                            
+                                            <label>Valor do Frete:</label>
                                             <input type="text" class="form-control text-center"
-                                                   style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                   maxlength="50" id="frete_i" name="frete_i" value="R$ 00,00"
-                                                   disabled />
-                                            <p style="margin-right: 10px; text-wrap: nowrap;">Outras Despesas:</p>
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 80%; max-width: 120px;"
+                                                maxlength="50" id="frete_i" name="frete_i" value="R$ 00,00" disabled />
+                                            
+                                            <label>Outras Despesas:</label>
                                             <input type="text" class="form-control text-center"
-                                                   style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                   maxlength="50" id="despesas_i" name="despesas_i"
-                                                   value="R$ 600,34" disabled />
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 80%; max-width: 120px;"
+                                                maxlength="50" id="despesas_i" name="despesas_i" value="R$ 600,34" disabled />
                                         </div>
-                                        <div style="display: flex; align-items: center;  margin: 20px 0;">
-                                            <p style="margin-right: 10px;"><strong><br>TOTAL:</strong></p>
+                                        <div class="total-row">
+                                            <strong style="margin-right: 10px;">TOTAL:</strong>
                                             <input type="text" class="form-control text-center"
-                                                   style="background-color: orange; color: #fff; text-shadow: 1px 1px #c54f20; width: 120px;"
-                                                   maxlength="50" id="total_i" name="total_i"
-                                                   value="R$ 5.100,00" disabled />
+                                                style="background-color: orange; color: #fff; text-shadow: 1px 1px #c54f20; width: 80%; max-width: 200px;"
+                                                maxlength="50" id="total_i" name="total_i" value="R$ 5.100,00" disabled />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                            
                             
 
                             <div class="form-row align-center">
