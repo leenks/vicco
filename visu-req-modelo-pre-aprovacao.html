@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    
+
+    
+    <link rel="stylesheet" href="requisicoes.css">
+    <link rel="stylesheet" href="forms.css">
+    <style>
+        .modal {
+            display: none;
+            /* Oculta o modal por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        .modal-envolto {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            overflow: hidden;
+        }
+
+        .modal-content {
+            max-height: 80vh;
+        }
+
+        .modal-body {
+            margin: 0;
+            overflow-y: auto;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            position: static;
+            margin-top: 60px;
+            
+        }
+
+        .grafico {
+            margin-bottom: 20px;
+        }
+
+        .timeline-horizontal {
+            margin-bottom: 20px;
+        }
+
+        .timeline-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 100px;
+            /* Altura ajustada para ícones e conteúdo */
+            padding: 0 10px;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 120px;
+            /* Largura ajustada para os itens */
+        }
+
+        .timeline-icon {
+            font-size: 24px;
+            /* Tamanho dos ícones */
+            margin-bottom: 5px;
+        }
+
+        .timeline-item.atrasado .timeline-icon {
+            color: #f44336;
+            /* Ícone vermelho para atraso */
+        }
+
+        .timeline-item.atual .timeline-icon {
+            color: #4caf50;
+            /* Ícone verde para o status atual */
+        }
+
+        .timeline-bar {
+            flex: 1;
+            height: 4px;
+            background: #ffcb3b;
+            /* Linha amarela para indicar o progresso */
+            position: relative;
+            top: 20px;
+            margin: 0 -10px 0 5px;
+        }
+
+        .timeline-content {
+            text-align: center;
+        }
+
+        .timeline-item .data {
+            font-weight: bold;
+        }
+
+        .timeline-item .descricao {
+            margin-top: 5px;
+        }
+
+
+        .descricao {
+            margin-top: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 300px; /* Ajuste a altura conforme necessário */
+            margin: 20px;
+        }
+        .chart {
+            position: relative; /* Permite o ajuste do gráfico dentro do contêiner */
+            width: 2000px; /* Ajuste a largura conforme necessário */
+            height: 200px; /* Ajuste a altura conforme necessário */
+        }
+        .chart canvas {
+            width: 100% !important; /* Força o canvas a ocupar 100% do tamanho do contêiner */
+            height: 100% !important; /* Força o canvas a ocupar 100% do tamanho do contêiner */
+        }
+    </style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+    <title>Vicco Construtora</title>
+</head>
+
+<body>
+
+    <div class="container-full">
+
+        <div class="topo-container">
+            <div class="container-desktop">
+
+                <div class="topo">
+                    <div class="logo">
+                        <img src="imgs/logo.png" alt="Logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="home.html">
+                                <img src="imgs/ico-home.png" alt="Início" width="50px">
+                                <p>Início</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-relatorios.png" alt="Relatórios" width="50px">
+                                <p>Relatórios</p>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#"><img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="separa-topo"> &nbsp;</div>
+
+        <div class="container-desktop">
+
+
+            <center><img class="status" src="imgs/icons-status/06b.png" /></center>
+
+            <div class="conteudo">
+                <div class="container-desktop">
+
+                    <!-- Novo Menu de Migalhas (Breadcrumbs) -->
+                    <div class="breadcrumbs">
+                        <a href="#">INÍCIO</a>
+                        <span> > </span>
+                        <a href="#">TODAS AS OBRAS</a>
+                        <span> > </span>
+                        <a href="#">SUPRIMENTOS</a>
+                    </div>
+
+
+                    
+                    <div class="conteudo-in" id="conteudo-in">
+
+                        <div class="box-info-requisicao">
+                       
+
+                        <h3>Requisição de Compra - SMART FIT - PIRITUBA 2</h3>
+
+                        <div class="box-info-requisicao-btn" >
+                            <span class="botao-aprovacao">
+                                <img class="icones" src="imgs/ico-aprovacao-azul.png"
+                                    alt="Ícone de Aprovação">
+                                PRÉ-APROVAÇÃO
+                            </span>
+                        </div>
+                        </div>
+                    
+                   
+
+                    <div class="form-row align-left">
+                        <div class="space-btn text-center">
+                            <button type="submit" id="btnEditar" name="editar" class="sub-icones">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                <a href="edit-req-05.html">
+                                    <label>Editar Requisição</label>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cards-container">
+
+                        <div class="card">
+
+                            <!--tabela de requisicao MOBILE-->
+                            <div class="cards-container modo-simples2" id="mobile-conteudoModoSimples2"
+                                style="display: none;">
+
+                                <div class="table-container">
+
+
+                                    <table class="table-requisicoes">
+                                        <thead>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th width="33%">Solicitante</th>
+                                                <th width="33%">Tipo de Requisição</th>
+                                                <th width="33%">Cliente</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td>Jackeline Costa da Silva</td>
+                                                <td>Requisição</td>
+                                                <td>Smart Fit Pirituba</td>
+                                            </tr>
+                                        </tbody>
+                                        <thead>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th>Obra</th>
+                                                <th>CNPJ:</th>
+                                                <th>Inscrição Est.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td>Smart Fit Pirituba</td>
+                                                <td>13.552.726/0001-89</td>
+                                                <td>...</td>
+                                            </tr>
+                                        </tbody>
+
+                                        <thead>
+
+                                            <tr>
+                                                <th colspan="2">Grupo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td colspan="2">20 - Serralheria</td>
+                                            </tr>
+                                        </tbody>
+                                        <thead>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <th colspan="3">Descrição do Orçamento</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                onmouseout="this.style.backgroundColor='transparent';"
+                                                style="cursor: pointer;" onclick="mostrarAviso()">
+                                                <td colspan="3">Orçamento descrição detalhada</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="box-info-requisicao" id="oculta">
+                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                    <label for="contrato">Solicitante:</label>
+                                    <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
+                                </div>
+                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                    <label for="contrato">Cliente:</label>
+                                    <span class="span-infos-requisicao" id="solicitante">Smart Fit Pirituba</span>
+                                </div>
+                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                    <label for="contrato">Tipo de Requisição:</label>
+                                    <span class="span-infos-requisicao" id="solicitante">Requisição</span>
+                                </div>
+
+                                <div class="box-info-requisicao-borda-g" id="oculta">
+                                    <label for="contrato">Data do Cadastro:</label>
+                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                </div>
+                            </div><!--box info requisicao-->
+
+                            <div class="box-info-requisicao" id="oculta">
+
+                                <div class="box-info-requisicao-cinza-metade-g" id="oculta">
+                                    <label for="contrato">Obra:</label>
+                                    <span class="span-infos-requisicao" id="obra">Smart Fit Pirituba</span>
+                                </div>
+
+                                <div class="box-info-requisicao-borda-g" id="oculta">
+                                    <label for="contrato">Data da Cotação:</label>
+                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                </div>
+                            </div><!--box info requisicao-->
+
+
+                            <div class="box-info-requisicao">
+
+                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                    <label for="contrato">Cnpj: :</label>
+                                    <span class="span-infos-requisicao" id="cliente">13.552.726/0001-89</span>
+                                </div>
+                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                    <label for="contrato">Inscrição Est:</label>
+                                    <span class="span-infos-requisicao" id="obra">...</span>
+                                </div>
+
+                                <div class="box-info-requisicao-borda-g" id="oculta">
+                                    <label for="contrato">Data da Aprovação:</label>
+                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                </div>
+
+                            </div><!-- box-info-requisicao -->
+
+                            <div class="box-info-requisicao">
+
+                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                    <label for="contrato">Grupo:</label>
+                                    <span class="span-infos-requisicao" id="cliente">20 - Serralheria</span>
+                                </div>
+                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                    <label for="contrato">Sub-Grupo:</label>
+                                    <span class="span-infos-requisicao" id="obra">Coberturas</span>
+                                </div>
+                                <div class="box-info-requisicao-borda-g" id="oculta">
+                                    <label for="contrato">Data de Compra:</label>
+                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                </div>
+
+                            </div><!-- box-info-requisicao -->
+
+                            <div class="box-info-requisicao">
+
+                                <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
+                                    <label for="contrato">Descrição:</label>
+                                    <span class="span-infos-requisicao" id="cliente">Material para cobertura da área
+                                        técnica</span>
+                                </div>
+                                <div class="box-info-requisicao">
+                                    <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
+                                        <label for="contrato">Observação:</label>
+                                        <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor siamet</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-g" id="oculta">
+                                        <label for="contrato">Data de Entrega:</label>
+                                        <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+
+                                        <div class="box-info-requisicao-borda-g2" id="oculta">
+                                            <label for="contrato">Data de Pagamento:</label>
+                                            <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                        </div>
+                                    </div>
+                                </div><!--box-info-requisicao-->
+
+
+
+                            </div><!-- box-info-requisicao -->
+
+                            <hr width="100%">
+
+
+
+                            <div class="tab-1 table-responsive form-row-table">
+                                <table id="tab-2" class="table-ficha table table-striped table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Sigla</th>
+                                            <th>Descrição Produto</th>
+                                            <th>Fornecedor</th>
+                                            <th>Marca</th>
+                                            <th>Qtde.</th>
+                                            <th>U.M</th>
+                                            <th>Preço</th>
+                                            <th>Valor</th>
+                                            <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
+                                            <th>R$ <i class="fa fa-minus" aria-hidden="true"></i></th>
+                                            <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
+                                            <th>Observações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>APO-016</td>
+                                            <td>Porcelanato - Portobello 60x60 cm, linha essencial cor: Cimento Cinza Bold</td>
+                                            <td>Atlanta Materiais para Construção Ltda</td>
+                                            <td>Qualquer</td>
+                                            <td>10</td>
+                                            <td>Unid.</td>
+                                            <td>R$ 25,7000</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>Detalhes e Observação</td>
+                                        </tr>
+                                        <tr>
+                                            <td>APO-016</td>
+                                            <td>Caçamba - 3m³</td>
+                                            <td>Fulano</td>
+                                            <td>Qualquer</td>
+                                            <td>10</td>
+                                            <td>Unid.</td>
+                                            <td>R$ 25,7000</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>Detalhes e Observação</td>
+                                        </tr>
+                                        <tr>
+                                            <td>APO-016</td>
+                                            <td>Caçamba - 3m³</td>
+                                            <td>Fulano</td>
+                                            <td>Qualquer</td>
+                                            <td>10</td>
+                                            <td>Unid.</td>
+                                            <td>R$ 25,7000</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>R$ 20,00</td>
+                                            <td>Detalhes e Observação</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <div style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                                        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin: 10px 0;">
+                                            <label style="margin-right: 10px;">Produtos:</label>
+                                            <input type="text" class="form-control text-center"
+                                                style="background-color: #444; color: #fff; margin-right: 10px; width: 80%; max-width: 120px;"
+                                                maxlength="50" id="pro_i" name="pro_i" value="R$ 1.31,11" disabled />
+                                            
+                                          
+                                    </div>
+                                </div>
+                            </div>
+
+                                    <div class="form-row align-center">
+
+                                        <!-- Botões -->
+
+
+                                        <div class="space-btn text-center">
+                                            <button type="button" id="btn-aprovar" name="btn-aprovar" class="sub-icones"
+                                                onclick="openModal('modal-aprovar')">
+                                                <img src="imgs/sub-icone-aprova.png"><label>Aprovar Requisição</label>
+                                            </button>
+                                        </div>
+                                        <div class="space-btn text-center">
+                                            <button type="button" id="btn-aprovar" name="btn-aprovar" class="sub-icones"
+                                                onclick="openModal('modal-aprovar')">
+                                                <img src="imgs/sub-icone-reprova.png"> <label>Reprovar Requisição</label>
+                                            </button>
+                                        </div>
+
+                                        <!--div class="space-btn text-center">
+                                    <button type="button" id="btn-cf" name="btn-cf" class="sub-icones"
+                                        onclick="openModal('modal-cf')">
+                                        <img src="imgs/ico-reembolso.png"><label>Aprovar para CF</label>
+                                    </button>
+                                </div-->
+
+                                        <!--div class="space-btn text-center">
+                                            <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
+                                                class="sub-icones">
+                                                <a href="ver-requisicao.html">
+                                                    <i class="fa-regular fa-eye"></i></a><label>Visualizar
+                                                    Cotação</label>
+
+                                            </button>
+                                        </div-->
+
+                                    </div><!--div form-row align-right-->
+
+                                </div><!--div card-->
+
+                            </div><!--tab-2 wrapper-->
+                        </div><!--#lis-cold-md-->
+
+                    </div>
+
+
+                </div><!--div cards-container-->
+
+
+            </div><!--div conteudo in-->
+
+
+        </div><!--div container desktop-->
+
+    </div><!--div conteudo-->
+
+
+
+    <!-- Ícone no footer -->
+    <div class="ico-subir-footer" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    </div><!--container desktop-->
+
+<!-- Modal Aprovar Requisição -->
+<div id="modal-aprovar" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-aprovar')">&times;</span>
+            <h2 class="tit-modal">Aprovação da Requisição</h2>
+            <div class="modal-body" style="top:60px;">
+
+                <!-- Primeiro Bloco -->
+                <div class="bloco-container" style="border: 1px solid #e0e0e0; border-radius: 20px; margin-bottom: 20px;" >
+                    <div class="toggle-icon sub-icones" onclick="toggleBloco('bloco1', this)">
+                        <i class="fa-solid fa-eye"></i>
+                        <label>Mostrar/Esconder Dados</label>
+                    </div>
+                    <div class="bloco" id="bloco1">
+                        <div class="chart-container">
+                            <div class="chart">
+                                <canvas id="graficoGrupo"></canvas>
+                            </div>
+                           <!-- <div class="chart">
+                                <canvas id="graficoSubgrupo"></canvas>
+                            </div> -->
+                            <div class="timeline-horizontal">
+                                <p style="text-align: center"><b>Timeline de Entrega</b></p>
+                                <div class="timeline-container">
+                                    <div class="timeline-item atual">
+                                        <div class="timeline-icon">
+                                            <i class="fa-solid fa-calendar-days"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <div class="data">01/08/2024</div>
+                                            <div class="descricao">Data de Entrega Prevista</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-bar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="timeline-item atrasado">
+                                        <div class="timeline-icon">
+                                            <i class="fa-solid fa-calendar-check"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <div class="data">26/08/2024</div>
+                                            <div class="descricao">Data Atual (atrasado)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Por favor preencha explicando os motivos da decisão</label>
+                        <textarea class="form-control" rows="5" id="obs-aprovar" name="obs-aprovar"></textarea>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" style="margin-top: 0;" type="checkbox" id="salvar-sem-comentario"
+                                onclick="toggleTextarea(this)">
+                            <label class="form-check-label" for="salvar-sem-comentario">
+                                Salvar sem nenhum comentário
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-icones align-right mt-3">
+                    <div style="display: flex; align-items: center; margin-right: 10px;">
+                        <input type="radio" id="reprovar-requisicao" name="acao-requisicao" value="reprovar"
+                            style="margin-right: 5px;">
+                        <label for="reprovar-requisicao" style="display: flex; align-items: center;">
+                            <i class="fa-regular fa-thumbs-down"></i><span style="margin-left: 5px;"> Reprovar
+                                Requisição</span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-right: 10px;">
+                        <input type="radio" id="aprovar-requisicao" name="acao-requisicao" value="aprovar"
+                            style="margin-right: 5px;">
+                        <label for="aprovar-requisicao" style="display: flex; align-items: center;">
+                            <i class="fa-regular fa-thumbs-up"></i><span style="margin-left: 5px;"> Aprovar
+                                Requisição</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <button type="submit" id="salvar-aprovar" name="salvar-aprovar" class="sub-icones">
+                            <i class="fa-regular fa-floppy-disk"></i>
+                            <label for="salvar-aprovar">&nbsp;Salvar</label>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleBloco(blocoId, icon) {
+    const bloco = document.getElementById(blocoId);
+    if (bloco.style.display === "none") {
+        bloco.style.display = "block";
+        icon.querySelector('i').classList.remove('fa-eye-slash');
+        icon.querySelector('i').classList.add('fa-eye');
+    } else {
+        bloco.style.display = "none";
+        icon.querySelector('i').classList.remove('fa-eye');
+        icon.querySelector('i').classList.add('fa-eye-slash');
+    }
+}
+</script>
+
+
+    <script>
+        // Dados fictícios para os gráficos
+        const verbaGrupoTotal = 100000; // Exemplo: verba total do grupo
+        const verbaGrupoGasta = 60000;  // Exemplo: verba já gasta no grupo
+    
+        const verbaSubgrupoTotal = 50000;  // Exemplo: verba total do subgrupo
+        const verbaSubgrupoGasta = 25000;  // Exemplo: verba já gasta no subgrupo
+    
+        const verbaDesejada = 120000;  // Exemplo: valor desejado
+        const verbaGasta = verbaGrupoGasta + verbaSubgrupoGasta; // Soma dos gastos
+        const verbaResidual = verbaDesejada - verbaGasta; // Cálculo do gasto residual
+    
+        // Função para criar gráficos de pizza com 2 informações
+        function criarGraficoPizzaCom2Infos(idCanvas, labelTotal, labelGasto, total, gasto) {
+            new Chart(document.getElementById(idCanvas), {
+                type: 'pie',
+                data: {
+                    labels: [labelGasto, labelTotal],
+                    datasets: [{
+                        data: [gasto, total - gasto],
+                        backgroundColor:  ['#FF9F40', '#36A2EB'],
+                        hoverBackgroundColor: ['#f58d25', '#0b8de5']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        datalabels: {
+                            color: '#ffffff',
+                            font: {
+                                weight: 'bold',
+                                size: 14
+                            },
+                            formatter: (value, ctx) => {
+                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
+                                let percentage = (value / total * 100).toFixed(1);
+                                return `${percentage}%`;
+                            },
+                            anchor: 'end',
+                            align: 'end',
+                            offset: 4
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    let value = context.raw || 0;
+                                    let percentage = (value / total * 100).toFixed(2);
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    
+        // Função para criar gráficos de pizza com 3 informações
+        function criarGraficoPizzaCom3Infos(idCanvas, label1, label2, label3, valor1, valor2, valor3) {
+            new Chart(document.getElementById(idCanvas), {
+                type: 'pie',
+                data: {
+                    labels: [label1, label2, label3],
+                    datasets: [{
+                        data: [valor1, valor2, valor3],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        datalabels: {
+                            color: '#ffffff',
+                            font: {
+                                weight: 'bold',
+                                size: 14
+                            },
+                            formatter: (value, ctx) => {
+                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
+                                let percentage = (value / total * 100).toFixed(1);
+                                return `${percentage}%`;
+                            },
+                            anchor: 'end',
+                            align: 'end',
+                            offset: 4
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    let value = context.raw || 0;
+                                    let percentage = (value / total * 100).toFixed(2);
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    
+        // Criando os gráficos
+        window.onload = function () {
+            criarGraficoPizzaCom2Infos(
+                'graficoGrupo',
+                'Verba Gasta do Grupo',
+                'Verba Total do Grupo',
+                verbaGrupoTotal,
+                verbaGrupoGasta
+            );
+            criarGraficoPizzaCom2Infos(
+                'graficoSubgrupo',
+                'Verba Gasta do Subgrupo',
+                'Verba Total do Subgrupo',
+                verbaSubgrupoTotal,
+                verbaSubgrupoGasta
+            );
+            criarGraficoPizzaCom3Infos(
+                'graficoDesejado',
+                'Gasto Residual',
+                'Verba Gasta',
+                'Verba Desejada',
+                verbaResidual,
+                verbaGasta,
+                verbaDesejada
+            );
+        };
+    </script>
+    
+
+    <!-- Inclusão do Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Configuração do gráfico com Chart.js
+        var ctx = document.getElementById('grafico-verba-gasto').getContext('2d');
+        var grafico = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Verba Grupo', 'Verba Subgrupo', 'Verba Desejada', 'Verba Total Gasto'],
+                datasets: [{
+                    label: 'Valores',
+                    data: [3000, 5000, 7000, 8000], // Dados fictícios
+                    backgroundColor: [
+                        'rgba(255, 193, 7, 0.6)',
+                        'rgba(33, 150, 243, 0.6)',
+                        'rgba(76, 175, 80, 0.6)',
+                        'rgba(244, 67, 54, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 193, 7, 1)',
+                        'rgba(33, 150, 243, 1)',
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(244, 67, 54, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Altera o gráfico para barras horizontais
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valor ($)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Categoria'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Verbas',
+                        padding: {
+                            bottom: 20
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+
+    
+
+    <script>
+        // Função para rolar até o topo da página
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para fazer uma rolagem suave
+            });
+        }
+    </script>
+
+
+
+
+
+    <script src="filtro-plan.js"></script>
+</body>
+
+</html>
