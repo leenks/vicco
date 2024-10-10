@@ -804,7 +804,7 @@ background-color: #ffffff;
     .botao-recebido,
     .botao-aprovado {
         font-size: 10px;
-        width: 110px;
+        min-width: 110px;
         text-align: center;
         padding: 5px;
         color: white;
