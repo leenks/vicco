@@ -21,6 +21,53 @@
     <link rel="stylesheet" href="requisicoes.css">
     <link rel="stylesheet" href="forms.css">
     <style>
+          .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.input-row label {
+    margin-right: 10px;
+}
+
+.total-row {
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+/* Estilo para desktop */
+@media (min-width: 769px) {
+    .input-row {
+        display: flex;
+    }
+}
+
+/* Estilo para mobile */
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column; /* Alinha os campos em coluna */
+        align-items: flex-start; /* Alinha os labels à esquerda */
+    }
+    
+    .input-row label {
+        margin-bottom: 5px; /* Adiciona espaçamento entre label e input */
+    }
+    
+    .total-row {
+        width: 100%;
+        text-align: center;
+    }
+}
         .modal {
             display: none;
             /* Oculta o modal por padrão */
@@ -497,16 +544,15 @@
                             </div>
                             
 
+                            
                             <div class="form-row">
                                 <div class="col-md-12">
-                                    <div style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
-                                        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin: 10px 0;">
-                                            <label style="margin-right: 10px;">Produtos:</label>
+                                    <div class="form-container">
+                                        <div class="input-row">
+                                            <label>Produtos:</label>
                                             <input type="text" class="form-control text-center"
                                                 style="background-color: #444; color: #fff; margin-right: 10px; width: 80%; max-width: 120px;"
                                                 maxlength="50" id="pro_i" name="pro_i" value="R$ 1.31,11" disabled />
-                                            
-                                          
                                     </div>
                                 </div>
                             </div>

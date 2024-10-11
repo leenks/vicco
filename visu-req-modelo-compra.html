@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
     <link rel="stylesheet" href="requisicoes.css">
@@ -76,720 +76,400 @@
 
                     <div class="conteudo-in" id="conteudo-in">
                         <div class="box-info-requisicao">
-                       
+
 
                             <h3>Requisição de Compra - SMART FIT - PIRITUBA 2</h3>
-    
+
                             <div class="box-info-requisicao-btn">
                                 <span class="botao-compra">
-                                    <img class="icones" src="imgs/ico-compra-azul.png"
-                                        alt="Ícone de compra">
+                                    <img class="icones" src="imgs/ico-compra-azul.png" alt="Ícone de compra">
                                     COMPRA
                                 </span>
                             </div>
-                            </div>
-                    <div class="form-row align-left">
-                        <div class="space-btn text-center">
-                            <button id="toggleButton" class="sub-icones mb-3">
-                                <i class="fa fa-eye-slash"></i>
-                                <label> Ocultar Ordem de Compra </label>
-                            </button>
                         </div>
-                    </div>
-
-                    <div class="form-content">
-
-                        <div class="col-md-12" id="dados-req">
-
-                            <div class="form-row">
-                                <div class="col-md-12">
-                                    <label>Descrição:</label>
-                                    <span
-                                        style="font-size: 20px; font-weight: bold; padding: 2px; max-width: 600px; word-wrap: break-word;">Material
-                                        para Apoio Civil</span>
-                                </div>
-
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 col-12 mb-3">
-                                    <label>Cliente:</label>
-                                    <span style="font-weight: bold; text-transform: uppercase;">SMART FIT ESCOLA DE
-                                        GINÁSTICA E DANÇA LTDA</span>
-                                </div>
-
-                                <div class="col-md-6 col-12 mb-3">
-                                    <label>Obra:</label>
-                                    <span style="font-weight: bold; text-transform: uppercase;">SMARTFIT - JARDINS
-                                        5</span>
-                                </div>
-
-                                <div class="col-md-6 col-12 mb-3">
-                                    <label>Endereço:</label>
-                                    <span style="font-weight: bold; text-transform: uppercase;">AVENIDA PAULISTA, 1234 -
-                                        BELA VISTA - SP</span>
-                                </div>
-
-                                <div class="col-6 mb-3">
-                                    <label>Grupo:</label>
-                                    <select id="grupo" name="grupo" class="form-control" required disabled>
-                                        <option value="20" selected>02 - Custos Administrativos</option>
-                                    </select>
-                                </div>
-                                <div class="col-6 mb-3">
-                                    <label>Sub-Grupo:</label>
-                                    <select id="sub_grupo" name="sub_grupo" class="form-control" required disabled>
-                                        <option value="1" selected>Transportes</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <label for="obs">Observações:</label>
-                                    <textarea class="form-control" rows="4" id="obs" placeholder=" " name="obs"
-                                        disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis quis justo luctus faucibus. Vivamus sodales ipsum ut odio commodo, sit amet pharetra ipsum fringilla. Sed ut tortor leo. Nullam ut arcu id velit accumsan volutpat nec sit amet justo.</textarea>
-                                </div>
+                        <div class="form-row align-left">
+                            <div class="space-btn text-center">
+                                <button id="toggleButton" class="sub-icones mb-3">
+                                    <i class="fa fa-eye-slash"></i>
+                                    <label> Ocultar Ordem de Compra </label>
+                                </button>
                             </div>
                         </div>
+
+                        <div class="form-content">
+
+                            <div class="col-md-12" id="dados-req">
+
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <label>Descrição:</label>
+                                        <span
+                                            style="font-size: 20px; font-weight: bold; padding: 2px; max-width: 600px; word-wrap: break-word;">Material
+                                            para Apoio Civil</span>
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <label>Cliente:</label>
+                                        <span style="font-weight: bold; text-transform: uppercase;">SMART FIT ESCOLA DE
+                                            GINÁSTICA E DANÇA LTDA</span>
+                                    </div>
+
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <label>Obra:</label>
+                                        <span style="font-weight: bold; text-transform: uppercase;">SMARTFIT - JARDINS
+                                            5</span>
+                                    </div>
+
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <label>Endereço:</label>
+                                        <span style="font-weight: bold; text-transform: uppercase;">AVENIDA PAULISTA,
+                                            1234 -
+                                            BELA VISTA - SP</span>
+                                    </div>
+
+                                    <div class="col-6 mb-3">
+                                        <label>Grupo:</label>
+                                        <select id="grupo" name="grupo" class="form-control" required disabled>
+                                            <option value="20" selected>02 - Custos Administrativos</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label>Sub-Grupo:</label>
+                                        <select id="sub_grupo" name="sub_grupo" class="form-control" required disabled>
+                                            <option value="1" selected>Transportes</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="obs">Observações:</label>
+                                        <textarea class="form-control" rows="4" id="obs" placeholder=" " name="obs"
+                                            disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis quis justo luctus faucibus. Vivamus sodales ipsum ut odio commodo, sit amet pharetra ipsum fringilla. Sed ut tortor leo. Nullam ut arcu id velit accumsan volutpat nec sit amet justo.</textarea>
+                                    </div>
+                                </div>
+                            </div>
                             <hr width="100%">
 
                             <div class="col-md-12">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
-                                    <p
-                                        style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
+                                    <p style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
                                         MARCA S.A
                                         SOLUTIONS</p>
-                                    <p
-                                        style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
+                                    <p style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
                                         R$ 300,00</p>
                                 </div>
-    
-
-                            <div class="form-row">
-                                <div class="col-md-6 col-6 mb-3">
-                                    <label for="dataEntrega2">Data da Entrega:</label>
-                                    <input type="text" class="form-control" id="dataEntrega2" value="20/07/2024 13:30"
-                                        disabled>
-                                </div>
-                                <div class="col-md-6 col-6 mb-3">
-                                    <label for="responsavel2">Responsável pelo Recebimento:</label>
-                                    <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva"
-                                        disabled>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row align-center">
-
-                            <div style="display: flex; align-items: center; margin: 20px 0;">
-                                <label for="nota_fiscal" style="margin-right: 10px;">Número de Documento:</label>
-                                <input type="text" class="form-control text-center"
-                                    style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
-                                    maxlength="100" id="nota_fiscal" name="nota_fiscal" value="Digite Nº da Nota" />
-                            </div>
 
 
-
-                            <button type="button" id="visualizar_cotacao" name="visualizar_cotacao" class="sub-icones"
-                                onclick="openModal('modal-pdf')">
-                                <i class="fa-regular fa-file-pdf"></i><label>Visualizar Nota Fiscal</label>
-                            </button>
-
-
-                            <button type="button" id="fot_carrega" class="sub-icones" name="subir"
-                                title="Abrir janela para carregar imagem para a requisição de compra"
-                                onclick="document.getElementById('anexo').click();">
-                                <i class="fa-solid fa-paperclip"></i>
-                                <label>Nota Fiscal Romaneio</label>
-                            </button>
-                        </div>
-
-
-                        
-
-                        <hr width="100%">
-
-                        
-                            <form>
-
-                                <div class="form-row justify-content-end">
-                                    <div class="col-md-5 text-right">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" value="obra"
-                                                checked disabled>
-                                            <label class="form-check-label">Dados do Fornecedor</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" value="outro"
-                                                disabled>
-                                            <label class="form-check-label">Outros Dados</label>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="form-row">
-                                    <div class="col-md-5">
-                                        <label>Nome do Favorecido</label>
-                                        <input type="text" class="form-control" maxlength="50"
-                                            id="pro_i" name="pro_i" value="MARCA S.A SOLUTIONS"
-                                            disabled />
+                                    <div class="col-md-6 col-6 mb-3">
+                                        <label for="dataEntrega2">Data da Entrega:</label>
+                                        <input type="text" class="form-control" id="dataEntrega2"
+                                            value="20/07/2024 13:30" disabled>
                                     </div>
-                                    <div class="col-md-3">
-                                        <label>CNPJ/CPF</label>
-                                        <input type="text" class="form-control" maxlength="50"
-                                            id="pro_i" name="pro_i" value="121.234.567-99" disabled />
-                                    </div>
-
-                                    <!-- Forma de Pagamento -->
-                                    <div class="col-md-4">
-                                        <label>Forma de Pagamento</label>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio"
-                                                name="pagamento" id="boleto" value="boleto" disabled>
-                                            <label class="form-check-label" for="boleto">Boleto</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio"
-                                                name="pagamento" id="transferencia"
-                                                value="transferencia" disabled>
-                                            <label clTIPO-ass="form-check-label"
-                                                for="transferencia">Transferência Bancária</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio"
-                                                name="pagamento" id="pix" value="pix" disabled>
-                                            <label class="form-check-label" for="pix">PIX</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- Campos específicos de Boleto -->
-                                <div id="boletoFields" class="hidden">
-                                    <div class="form-row">
-                                        <div class="col-md-2 space-btn">
-                                            <br>
-                                            <input type="file" id="uploadFile" style="display:none;" />
-                                            <button type="button" id="anexarBoleto" class="sub-icones"
-                                                title="Anexar Boleto"
-                                                onclick="document.getElementById('anexo').click();">
-                                                <img src="imgs/ico-boleto.png" alt="Ícone Boleto">
-                                                <label>Anexar Boleto</label>
-                                            </button>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label for="pgto">Tipo de Parcela</label>
-                                            <select class="form-control" id="pgto">
-                                                <option>Pgto Único</option>
-                                                <option>2x</option>
-                                                <option>3x</option>
-                                                <option>4</option>
-                                                <option>5x</option>
-                                                <option>6x</option>
-                                                <option>7x</option>
-                                                <option>8x</option>
-                                                <option>9x</option>
-                                                <option>10x</option>
-                                                <option>11x</option>
-                                                <option>12x</option>
-
-                                            </select>
-
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label for="parcelas">Valor da Parcela</label>
-                                            <input type="text" class="form-control" id="parcelas"
-                                                min="1">
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label for="parcelas">Percentual da Parcela</label>
-                                            <input type="text" class="form-control" id="parcelas"
-                                                min="1">
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label for="vencimentos">Data de Vencimento das
-                                                Parcelas</label>
-                                            <input type="date" class="form-control" id="vencimentos"
-                                                placeholder="dd/mm/aaaa">
-                                        </div>
-
-
+                                    <div class="col-md-6 col-6 mb-3">
+                                        <label for="responsavel2">Responsável pelo Recebimento:</label>
+                                        <input type="text" class="form-control" id="responsavel2"
+                                            value="Fulana da Silva" disabled>
                                     </div>
                                 </div>
-
-                                <!-- Campos específicos de Transferência Bancária -->
-                                <div id="transferenciaFields" class="hidden">
-                                    <div class="form-row">
-                                        <div class="col-md-3">
-                                            <label for="banco">Banco</label>
-                                            <select class="form-control" id="banco" disabled>
-                                                <option value="">Selecione o Banco</option>
-                                                <option value="001" selected>Banco do Brasil</option>
-                                                <option value="033">Banco Santander</option>
-                                                <option value="104">Caixa Econômica Federal</option>
-                                                <option value="237">Bradesco</option>
-                                                <option value="341">Itaú</option>
-                                                <option value="399">HSBC</option>
-                                                <option value="745">Citibank</option>
-                                                <option value="077">Banco Inter</option>
-                                                <option value="756">Bancoob</option>
-                                                <option value="041">Banrisul</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label for="agencia">Agência</label>
-                                            <input type="text" class="form-control" id="agencia"
-                                                value="1234" disabled>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label for="conta">Conta</label>
-                                            <input type="text" class="form-control" id="conta"
-                                                value="56789-0" disabled>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label for="tipoTransferencia">Tipo de Transferência</label>
-                                            <select class="form-control" id="tipoTransferencia"
-                                                disabled>
-                                                <option value="TED" selected>TED</option>
-                                                <option value="DOC">DOC</option>
-                                                <option value="TEF">TEF</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-                                
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Tipo de Parcela</th>
-                                                <th>Valor da Parcela</th>
-                                                <th>% da Parcela</th>
-                                                <th>Data de Vencimento</th>
-                                                <th>Saldo</th>
-                                                <th>Status Programação</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><input type="text" class="form-control table-input"
-                                                        value="Pgto Único" disabled></td>
-                                                <td><input type="text" class="form-control table-input"
-                                                        value="R$ 2.500,00" disabled></td>
-                                                <td><input type="text" class="form-control table-input"
-                                                        value="100%" disabled></td>
-                                                <td><input type="text" class="form-control table-input"
-                                                        value="01/08/2024" disabled></td>
-                                                <td><input type="text" class="form-control table-input"
-                                                        value="R$ 0,00" disabled></td>
-                                                <td><div class="box-info-requisicao-btn">
-                                                    <span class="botao-pagamento">
-                                                        <img class="icones" src="imgs/ico-pagamento-azul.png" alt="Ícone de Pré-Compra">
-                                                        PAGO
-                                                    </span>
-                                                </div></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    </div>
-                                <!-- Campos específicos de PIX -->
-                                <div id="pixFields" class="hidden">
-                                    <div class="form-row">
-                                        <div class="col-md-4">
-                                            <label for="tipoChave">Tipo de Chave PIX</label>
-                                            <select class="form-control" id="tipoChave">
-                                                <option value="cpf">CPF</option>
-                                                <option value="cnpj">CNPJ</option>
-                                                <option value="email">E-mail</option>
-                                                <option value="telefone">Telefone</option>
-                                                <option value="chaveAleatoria">Chave Aleatória</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label for="chavePix">Chave PIX</label>
-                                            <input type="text" class="form-control" id="chavePix">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label for="statusPagamento">Status da Programação:</label>
-                                            <select id="statusPagamento" class="form-control"
-                                                name="statusPagamento">
-                                                <option value="pendente">Aberto</option>
-                                                <option value="aprovado">Aprovado</option>
-                                                <option value="emProcessamento">Em Processamento
-                                                </option>
-                                                <option value="concluido">Concluído</option>
-                                                <option value="cancelado">Cancelado</option>
-                                                <option value="falhou">Falhou</option>
-                                                <option value="reembolsado">Reembolsado</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </form>
-
+                            </div>
 
                             <div class="form-row align-center">
 
-                                <!-- Botões -->
-                                <div class="space-btn text-center">
-                                    <button type="submit" id="salvar-encerrar" name="salvar-encerrar"
-                                        class="sub-icones">
-                                        <i class="fa-regular fa-floppy-disk"></i> <label
-                                            for="salvar-reprovar">&nbsp;Salvar</label>
-                                    </button>
+                                <div style="display: flex; align-items: center; margin: 20px 0;">
+                                    <label for="nota_fiscal" style="margin-right: 10px;">Número de Documento:</label>
+                                    <input type="text" class="form-control text-center"
+                                        style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
+                                        maxlength="100" id="nota_fiscal" name="nota_fiscal" value="Digite Nº da Nota" />
                                 </div>
-</div>
-</div>
-                            </div><!--div form-row align-center-->
-
-                <div class="form-row align-right">
-                    <div class="space-btn text-center">
-                        <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
-                            <i class="fa-regular fa-folder"></i>
-                            <label>Histórico Geral</label>
-                        </button>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-        </div><!--div cards-container-->
-
-
-    </div><!--div conteudo in-->
-
-
-</div><!--div container desktop-->
-
-</div><!--div conteudo-->
 
 
 
-<!-- Ícone no footer -->
-<div class="ico-subir-footer" onclick="scrollToTop()">
-<i class="fas fa-arrow-up"></i>
-</div>
-</div><!--container desktop-->
+                                <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
+                                    class="sub-icones" onclick="openModal('modal-pdf')">
+                                    <i class="fa-regular fa-file-pdf"></i><label>Visualizar Nota Fiscal</label>
+                                </button>
 
-<!-- Janela Modal Principal -->
-<div id="modal-historico" class="modal">
-<div class="modal-envolto">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal-historico')">&times;</span>
-        <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
 
-        <div class="modal-wrap" style="margin-top: 60px;">
+                                <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                    title="Abrir janela para carregar imagem para a requisição de compra"
+                                    onclick="document.getElementById('anexo').click();">
+                                    <i class="fa-solid fa-paperclip"></i>
+                                    <label>Nota Fiscal Romaneio</label>
+                                </button>
+                            </div>
 
-            <!-- Bloco de Itens -->
-            <div class="itens-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <div class="folder" onclick="mostrarSlide(0)">
-                    Nota Fiscal
-                </div>
-                <div class="folder" onclick="mostrarSlide(1)">
-                    Boleto
-                </div>
-                <div class="folder" onclick="mostrarSlide(2)">
-                    Recibo
-                </div>
-                <div class="folder" onclick="mostrarSlide(0)">
-                    Outro Doc
-                </div>
-            </div>
 
-            <div class="carrosel-container">
-                <!-- Setas de navegação -->
-                <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
-                <span class="next" onclick="mudarSlide(1)">&#10095;</span>
 
-                <!-- Slides dos documentos -->
-                <div class="slide" style="display: block; padding-top: 20px;">
-                    <p>Nota Fiscal referente à compra de xxxx no dia xx/xx/xxxx</p>
-                    <img src="imgs/ex-nota.png" alt="Nota Fiscal" class="document-img">
-                </div>
-                <div class="slide" style="display: none; padding-top: 20px;">
-                    <p>Boleto referente à primeira parcela do serviço xxxxxxx</p>
-                    <img src="imgs/ex-boleto.webp" alt="Boleto" class="document-img">
-                </div>
-                <div class="slide" style="display: none; padding-top: 20px;">
-                    <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
-                    <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-</div>
 
-<!-- JavaScript -->
-<script>
-let slideIndex = 0;
+                            <hr width="100%">
 
-function mudarSlide(n) {
-    const slides = document.getElementsByClassName("slide");
-    const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
+                            <div class="col-md-12">
 
-    slideIndex += n;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
 
-    // Esconder todos os slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+                                <form>
 
-    // Mostrar o slide atual
-    slides[slideIndex].style.display = "block";
-    document.getElementById("titulo-documento").textContent = titulos[slideIndex];
-}
-
-function mostrarSlide(index) {
-    slideIndex = index;
-    mudarSlide(0); // Chama a função mudarSlide com n = 0 para mostrar o slide correto
-}
-</script>
-
-<style>
-.folder {
-width: 130px; /* Diminuído para caber na mesma linha */
-height: 100px; /* Diminuído para melhor proporção */
-margin: 10px; /* Margem entre os retângulos */
-border-radius: 10px; /* Bordas arredondadas */
-filter: drop-shadow(0 0 0.75rem grey); /* Sombra */
-background: white; /* Cor de fundo */
-position: relative;
-transition: background 0.3s; /* Transição suave */
-display: flex; /* Para centralizar o texto */
-align-items: center;
-justify-content: center;
-text-align: center;
-cursor: pointer;
-font-size: 16px;
-}
-
-/* Estilo para mudar a cor ao passar o mouse */
-.folder:hover {
-background: #f0f0f0; /* Cor de fundo ao passar o mouse */
-}
-
-.itens-container {
-display: flex; /* Para alinhar os blocos na mesma linha */
-justify-content: center; /* Centraliza os itens */
-gap: 10px; /* Espaçamento entre os blocos */
-margin-bottom: 20px;
-}
-</style>
-<script>
-// Função para rolar até o topo da página
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Para fazer uma rolagem suave
-    });
-}
-</script>
-
-<script>
-//volta um nível de página na navegação quando clicar no menu Voltar
-function goBack() {
-    window.history.back();
-}
-</script>
-
-   <!-- Modal CheckList de Entrega -->
-<div id="modal-check-entrega" class="modal">
-    <div class="modal-envolto">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal-check-entrega')">&times;</span>
-            <h2 class="tit-modal">Andra SA Eletric Solutions</h2>
-            <div class="modal-wrap">
-                <div class="filtro-tabela">
-                    <div class="qua-4 modal-body" style="margin-left: -15px;">
-                        <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8 text-center"></div>
-                            <div class="col-md-2"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12"
-                                style="background-color: #fbfbfb; border-radius: 10px; margin: 20px 15px; width: 95%;">
-                                <div class="form-group">
-                                    <div class="text-center">
-                                        <h3 style="color: orangered; font-size: 26px;">Areia Grossa - Saco 8kg / Qualquer</h3>
-                                        <h4>Qual a Quantidade Recebida</h4>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <input type="text" id="quantity-received" class="form-control mr-2"
-                                                style="width: 120px;" placeholder="Quantidade" oninput="validateNumber(this)" />
-                                            <input class="form-control" style="width: 80px;" placeholder="KG" disabled>
+                                    <div class="form-row justify-content-end">
+                                        <div class="col-md-5 text-right">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" value="obra" checked
+                                                    disabled>
+                                                <label class="form-check-label">Dados do Fornecedor</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" value="outro" disabled>
+                                                <label class="form-check-label">Outros Dados</label>
+                                            </div>
                                         </div>
-                                        <span class="text-muted mt-2 d-block">
-                                            Conte o produto que está sendo entregue antes de apontar a quantidade no sistema. Observe bem a unidade do Pedido x Nota.
-                                        </span>
                                     </div>
-                                </div>
+                                    <div class="form-row">
+                                        <div class="col-md-5">
+                                            <label>Nome do Favorecido</label>
+                                            <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                name="pro_i" value="MARCA S.A SOLUTIONS" disabled />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>CNPJ/CPF</label>
+                                            <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                name="pro_i" value="121.234.567-99" disabled />
+                                        </div>
+
+
+
+                                        <!-- Forma de Pagamento -->
+                                        <div class="col-md-4">
+                                            <label>Forma de Pagamento</label>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="pagamento"
+                                                    id="boleto" value="boleto">
+                                                <label class="form-check-label" for="boleto">Boleto</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="pagamento" id="transferencia" value="transferencia" checked disabled>
+                                                <label class="form-check-label" for="transferencia">Transferência Bancária</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="pagamento" id="pix"
+                                                    value="pix">
+                                                <label class="form-check-label" for="pix">PIX</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Campos específicos de Boleto -->
+                                    <div id="boletoFields" class="hidden">
+                                        <div class="form-row">
+                                            <div class="col-md-2 space-btn">
+                                                <br>
+                                                <input type="file" id="uploadFile" style="display:none;" />
+                                                <button type="button" id="anexarBoleto" class="sub-icones"
+                                                    title="Anexar Boleto"
+                                                    onclick="document.getElementById('anexo').click();">
+                                                    <img src="imgs/ico-boleto.png" alt="Ícone Boleto">
+                                                    <label>Anexar Boleto</label>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="pgto">Tipo de Parcela</label>
+                                                <select class="form-control" id="pgto">
+                                                    <option>Pgto Único</option>
+                                                    <option>2x</option>
+                                                    <option>3x</option>
+                                                    <option>4</option>
+                                                    <option>5x</option>
+                                                    <option>6x</option>
+                                                    <option>7x</option>
+                                                    <option>8x</option>
+                                                    <option>9x</option>
+                                                    <option>10x</option>
+                                                    <option>11x</option>
+                                                    <option>12x</option>
+
+                                                </select>
+
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="parcelas">Valor da Parcela</label>
+                                                <input type="text" class="form-control" id="parcelas" min="1">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="parcelas">Percentual da Parcela</label>
+                                                <input type="text" class="form-control" id="parcelas" min="1">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="vencimentos">Data de Vencimento das
+                                                    Parcelas</label>
+                                                <input type="date" class="form-control" id="vencimentos"
+                                                    placeholder="dd/mm/aaaa">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Campos específicos de Transferência Bancária -->
+                                    <div id="transferenciaFields" class="hidden">
+                                        <div class="form-row">
+                                            <div class="col-md-3">
+                                                <label for="banco">Banco</label>
+                                                <select class="form-control" id="banco" disabled>
+                                                    <option value="">Selecione o Banco</option>
+                                                    <option value="001" selected>Banco do Brasil</option>
+                                                    <option value="033">Banco Santander</option>
+                                                    <option value="104">Caixa Econômica Federal</option>
+                                                    <option value="237">Bradesco</option>
+                                                    <option value="341">Itaú</option>
+                                                    <option value="399">HSBC</option>
+                                                    <option value="745">Citibank</option>
+                                                    <option value="077">Banco Inter</option>
+                                                    <option value="756">Bancoob</option>
+                                                    <option value="041">Banrisul</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="agencia">Agência</label>
+                                                <input type="text" class="form-control" id="agencia" value="1234"
+                                                    disabled>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="conta">Conta</label>
+                                                <input type="text" class="form-control" id="conta" value="56789-0"
+                                                    disabled>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="tipoTransferencia">Tipo de Transferência</label>
+                                                <select class="form-control" id="tipoTransferencia" disabled>
+                                                    <option value="TED" selected>TED</option>
+                                                    <option value="DOC">DOC</option>
+                                                    <option value="TEF">TEF</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <!-- Campos específicos de PIX -->
+                                    <div id="pixFields" class="hidden">
+                                        <div class="form-row">
+                                            <div class="col-md-4">
+                                                <label for="tipoChave">Tipo de Chave PIX</label>
+                                                <select class="form-control" id="tipoChave">
+                                                    <option value="cpf">CPF</option>
+                                                    <option value="cnpj">CNPJ</option>
+                                                    <option value="email">E-mail</option>
+                                                    <option value="telefone">Telefone</option>
+                                                    <option value="chaveAleatoria">Chave Aleatória</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="chavePix">Chave PIX</label>
+                                                <input type="text" class="form-control" id="chavePix">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="statusPagamento">Status da Programação:</label>
+                                                <select id="statusPagamento" class="form-control"
+                                                    name="statusPagamento">
+                                                    <option value="pendente">Aberto</option>
+                                                    <option value="aprovado">Aprovado</option>
+                                                    <option value="emProcessamento">Em Processamento
+                                                    </option>
+                                                    <option value="concluido">Concluído</option>
+                                                    <option value="cancelado">Cancelado</option>
+                                                    <option value="falhou">Falhou</option>
+                                                    <option value="reembolsado">Reembolsado</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tipo de Parcela</th>
+                                                    <th>Valor da Parcela</th>
+                                                    <th>% da Parcela</th>
+                                                    <th>Data de Vencimento</th>
+                                                    <th>Saldo</th>
+                                                    <th>Status Programação</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input type="text" class="form-control table-input"
+                                                            value="Pgto Único" disabled></td>
+                                                    <td><input type="text" class="form-control table-input"
+                                                            value="R$ 2.500,00" disabled></td>
+                                                    <td><input type="text" class="form-control table-input" value="100%"
+                                                            disabled></td>
+                                                    <td><input type="text" class="form-control table-input"
+                                                            value="01/08/2024" disabled></td>
+                                                    <td><input type="text" class="form-control table-input"
+                                                            value="R$ 0,00" disabled></td>
+                                                    <td>
+                                                        <div class="box-info-requisicao-btn">
+                                                            <span class="botao-pagamento">
+                                                                <img class="icones" src="imgs/ico-pagamento-azul.png"
+                                                                    alt="Ícone de Pré-Compra">
+                                                                PAGO
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                   
+
+                                </form>
+
+
+                                <div class="form-row align-center">
+
+                                    <!-- Botões -->
+                                    <div class="space-btn text-center">
+                                        <button type="submit" id="salvar-encerrar" name="salvar-encerrar"
+                                            class="sub-icones">
+                                            <i class="fa-regular fa-floppy-disk"></i> <label
+                                                for="salvar-reprovar">&nbsp;Salvar</label>
+                                        </button>
+                                    </div>
+
+                                </div><!--div form-row align-center-->
+
+                            </div>
+                        </div><!--div form-row align-center-->
+
+                        <div class="form-row align-right">
+                            <div class="space-btn text-center">
+                                <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
+                                    <i class="fa-regular fa-folder"></i>
+                                    <label>Histórico Geral</label>
+                                </button>
                             </div>
                         </div>
-                        <!-- Espaço em branco para conteúdo futuro -->
-                        
-                            
-                                <h4 class="text-center">Check-List da Entrega</h4>
-                                <div class="checklist">
-                                    <!-- Checklist Item 1 -->
-                                    <div class="checklist-item">
-                                        <div class="checklist-content">
-                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
-                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
-                                                    class="checkbox-icon-img" data-state="unchecked">
-                                                <div class="checkbox-label">Sim</div>
-                                            </div>
-                                            <span class="question">O produto está correto?</span>
-                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
-                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
-                                                    class="checkbox-icon-img" data-state="unchecked">
-                                                <div class="checkbox-label">Não</div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted">Observe se as características do produto estão condizentes com o solicitado.</div>
-                                    </div>
 
-                                    <!-- Checklist Item 2 -->
-                                    <div class="checklist-item">
-                                        <div class="checklist-content">
-                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
-                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
-                                                    class="checkbox-icon-img" data-state="unchecked">
-                                                <div class="checkbox-label">Sim</div>
-                                            </div>
-                                            <span class="question">O produto está em bom estado?</span>
-                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
-                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
-                                                    class="checkbox-icon-img" data-state="unchecked">
-                                                <div class="checkbox-label">Não</div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted">Observe se o produto não tem avarias ou defeitos de fabricação.</div>
-                                    </div>
 
-                                    <!-- Checklist Item 3 -->
-                                    <div class="checklist-item">
-                                        <div class="checklist-content">
-                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
-                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
-                                                    class="checkbox-icon-img" data-state="unchecked">
-                                                <div class="checkbox-label">Sim</div>
-                                            </div>
-                                            <span class="question">A marca está correta?</span>
-                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
-                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
-                                                    class="checkbox-icon-img" data-state="unchecked">
-                                                <div class="checkbox-label">Não</div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted">Se existe uma marca apontada no pedido, leve isso em consideração.</div>
-                                    </div>
-
-                                    <!-- Checklist Item 4 -->
-                                    <div class="checklist-item">
-                                        <div class="checklist-content">
-                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
-                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
-                                                    class="checkbox-icon-img" data-state="unchecked">
-                                                <div class="checkbox-label">Sim</div>
-                                            </div>
-                                            <span class="question">Recebeu a mercadoria?</span>
-                                            <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
-                                                <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
-                                                    class="checkbox-icon-img" data-state="unchecked">
-                                                <div class="checkbox-label">Não</div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted">A decisão de aceitar a mercadoria é sua e do seu departamento. Tenha em mente os pilares: PRAZO, CUSTO e QUALIDADE.</div>
-                                    </div>
-
-                                    <!-- Observações -->
-                                    <div class="checklist-item">
-                                        <div class="checklist-content">
-                                            <span class="question">Observações</span>
-                                        </div>
-                                        <div class="observations-wrapper">
-                                            <textarea class="observations-input" placeholder="Digite suas observações aqui..."></textarea>
-                                            <div class="status-container">
-                                                <img src="imgs/status-entrega/ico-aguardando-finalizar.png" alt="Status" class="entrega-status-icon" onclick="toggleStatus(this)">
-                                                <div class="checkbox-label">Recebimento finalizado?</div>
-                                            </div>
-                                        </div>
-                                        
-                                  
-                        </div>
-                        
                     </div>
-                   <!-- Botão Salvar e Fechar -->
-                <div class="align-center subsub-botoes">
-                    <div>
-                        <button type="button" id="salvar-reprovar" name="salvar-reprovar" class="sub-icones align-center">
-                            <i class="fa-regular fa-floppy-disk"></i>
-                        </button>
-                        <label for="salvar-reprovar">&nbsp;Salvar e Fechar</label>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-    <script>
-        // Adiciona um evento de clique ao botão "Salvar e Fechar"
-    document.getElementById('salvar-reprovar').addEventListener('click', function() {
-        closeModal('modal-check-entrega');
-    });
-    
-        function toggleCheckbox(element, isChecked) {
-            // Obter o ícone de checkbox dentro do elemento clicado
-            const icon = element.querySelector('.checkbox-icon-img');
+                </div><!--div cards-container-->
 
-            // Atualiza o estado dos checkboxes
-            if (isChecked) {
-                // Marca como "Sim"
-                icon.src = 'imgs/status-entrega/ico-check-sim.png';
-                icon.classList.add('checked');
-                icon.classList.remove('unchecked');
-            } else {
-                // Marca como "Não"
-                icon.src = 'imgs/status-entrega/ico-check-no.png';
-                icon.classList.add('unchecked');
-                icon.classList.remove('checked');
-            }
 
-            // Atualiza os ícones "Sim" e "Não" do item
-            const siblingIcons = element.parentNode.querySelectorAll('.checkbox-icon');
-            siblingIcons.forEach(icon => {
-                if (icon !== element) {
-                    icon.querySelector('.checkbox-icon-img').src = 'imgs/status-entrega/ico-uncheck.png';
-                    icon.querySelector('.checkbox-icon-img').classList.remove('checked', 'unchecked');
-                }
-            });
-        }
+            </div><!--div conteudo in-->
 
-        function toggleStatus(icon) {
-            const iconElement = icon;
-            const currentSrc = iconElement.getAttribute('src');
 
-            if (currentSrc.includes('ico-aguardando-finalizar.png')) {
-                iconElement.setAttribute('src', 'imgs/status-entrega/ico-entrega-finalizada.png');
-            } else {
-                iconElement.setAttribute('src', 'imgs/status-entrega/ico-aguardando-finalizar.png');
-            }
-        }
-    </script>
+        </div><!--div container desktop-->
+
+    </div><!--div conteudo-->
+
 
 
     <!-- Ícone no footer -->
@@ -798,12 +478,388 @@ function goBack() {
     </div>
     </div><!--container desktop-->
 
+    <!-- Janela Modal Principal -->
+    <div id="modal-historico" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-historico')">&times;</span>
+                <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
+
+                <div class="modal-wrap" style="margin-top: 60px;">
+
+                    <!-- Bloco de Itens -->
+                    <div class="itens-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <div class="folder" onclick="mostrarSlide(0)">
+                            Nota Fiscal
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(1)">
+                            Boleto
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(2)">
+                            Recibo
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(0)">
+                            Outro Doc
+                        </div>
+                    </div>
+
+                    <div class="carrosel-container">
+                        <!-- Setas de navegação -->
+                        <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
+                        <span class="next" onclick="mudarSlide(1)">&#10095;</span>
+
+                        <!-- Slides dos documentos -->
+                        <div class="slide" style="display: block; padding-top: 20px;">
+                            <p>Nota Fiscal referente à compra de xxxx no dia xx/xx/xxxx</p>
+                            <img src="imgs/ex-nota.png" alt="Nota Fiscal" class="document-img">
+                        </div>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p>Boleto referente à primeira parcela do serviço xxxxxxx</p>
+                            <img src="imgs/ex-boleto.webp" alt="Boleto" class="document-img">
+                        </div>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
+                            <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let slideIndex = 0;
+
+        function mudarSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
+
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+
+            // Esconder todos os slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Mostrar o slide atual
+            slides[slideIndex].style.display = "block";
+            document.getElementById("titulo-documento").textContent = titulos[slideIndex];
+        }
+
+        function mostrarSlide(index) {
+            slideIndex = index;
+            mudarSlide(0); // Chama a função mudarSlide com n = 0 para mostrar o slide correto
+        }
+    </script>
+
+    <style>
+        .folder {
+            width: 130px;
+            /* Diminuído para caber na mesma linha */
+            height: 100px;
+            /* Diminuído para melhor proporção */
+            margin: 10px;
+            /* Margem entre os retângulos */
+            border-radius: 10px;
+            /* Bordas arredondadas */
+            filter: drop-shadow(0 0 0.75rem grey);
+            /* Sombra */
+            background: white;
+            /* Cor de fundo */
+            position: relative;
+            transition: background 0.3s;
+            /* Transição suave */
+            display: flex;
+            /* Para centralizar o texto */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Estilo para mudar a cor ao passar o mouse */
+        .folder:hover {
+            background: #f0f0f0;
+            /* Cor de fundo ao passar o mouse */
+        }
+
+        .itens-container {
+            display: flex;
+            /* Para alinhar os blocos na mesma linha */
+            justify-content: center;
+            /* Centraliza os itens */
+            gap: 10px;
+            /* Espaçamento entre os blocos */
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        // Função para rolar até o topo da página
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para fazer uma rolagem suave
+            });
+        }
+    </script>
 
     <script>
         //volta um nível de página na navegação quando clicar no menu Voltar
         function goBack() {
             window.history.back();
         }
+    </script>
+
+    <!-- Modal CheckList de Entrega -->
+    <div id="modal-check-entrega" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-check-entrega')">&times;</span>
+                <h2 class="tit-modal">Andra SA Eletric Solutions</h2>
+                <div class="modal-wrap">
+                    <div class="filtro-tabela">
+                        <div class="qua-4 modal-body" style="margin-left: -15px;">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 text-center"></div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"
+                                    style="background-color: #fbfbfb; border-radius: 10px; margin: 20px 15px; width: 95%;">
+                                    <div class="form-group">
+                                        <div class="text-center">
+                                            <h3 style="color: orangered; font-size: 26px;">Areia Grossa - Saco 8kg /
+                                                Qualquer</h3>
+                                            <h4>Qual a Quantidade Recebida</h4>
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <input type="text" id="quantity-received" class="form-control mr-2"
+                                                    style="width: 120px;" placeholder="Quantidade"
+                                                    oninput="validateNumber(this)" />
+                                                <input class="form-control" style="width: 80px;" placeholder="KG"
+                                                    disabled>
+                                            </div>
+                                            <span class="text-muted mt-2 d-block">
+                                                Conte o produto que está sendo entregue antes de apontar a quantidade no
+                                                sistema. Observe bem a unidade do Pedido x Nota.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Espaço em branco para conteúdo futuro -->
+
+
+                            <h4 class="text-center">Check-List da Entrega</h4>
+                            <div class="checklist">
+                                <!-- Checklist Item 1 -->
+                                <div class="checklist-item">
+                                    <div class="checklist-content">
+                                        <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
+                                            <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
+                                                class="checkbox-icon-img" data-state="unchecked">
+                                            <div class="checkbox-label">Sim</div>
+                                        </div>
+                                        <span class="question">O produto está correto?</span>
+                                        <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
+                                            <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
+                                                class="checkbox-icon-img" data-state="unchecked">
+                                            <div class="checkbox-label">Não</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted">Observe se as características do produto estão condizentes
+                                        com o solicitado.</div>
+                                </div>
+
+                                <!-- Checklist Item 2 -->
+                                <div class="checklist-item">
+                                    <div class="checklist-content">
+                                        <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
+                                            <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
+                                                class="checkbox-icon-img" data-state="unchecked">
+                                            <div class="checkbox-label">Sim</div>
+                                        </div>
+                                        <span class="question">O produto está em bom estado?</span>
+                                        <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
+                                            <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
+                                                class="checkbox-icon-img" data-state="unchecked">
+                                            <div class="checkbox-label">Não</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted">Observe se o produto não tem avarias ou defeitos de
+                                        fabricação.</div>
+                                </div>
+
+                                <!-- Checklist Item 3 -->
+                                <div class="checklist-item">
+                                    <div class="checklist-content">
+                                        <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
+                                            <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
+                                                class="checkbox-icon-img" data-state="unchecked">
+                                            <div class="checkbox-label">Sim</div>
+                                        </div>
+                                        <span class="question">A marca está correta?</span>
+                                        <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
+                                            <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
+                                                class="checkbox-icon-img" data-state="unchecked">
+                                            <div class="checkbox-label">Não</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted">Se existe uma marca apontada no pedido, leve isso em
+                                        consideração.</div>
+                                </div>
+
+                                <!-- Checklist Item 4 -->
+                                <div class="checklist-item">
+                                    <div class="checklist-content">
+                                        <div class="checkbox-icon" onclick="toggleCheckbox(this, true)">
+                                            <img src="imgs/status-entrega/ico-uncheck.png" alt="Sim"
+                                                class="checkbox-icon-img" data-state="unchecked">
+                                            <div class="checkbox-label">Sim</div>
+                                        </div>
+                                        <span class="question">Recebeu a mercadoria?</span>
+                                        <div class="checkbox-icon" onclick="toggleCheckbox(this, false)">
+                                            <img src="imgs/status-entrega/ico-uncheck.png" alt="Não"
+                                                class="checkbox-icon-img" data-state="unchecked">
+                                            <div class="checkbox-label">Não</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted">A decisão de aceitar a mercadoria é sua e do seu
+                                        departamento. Tenha em mente os pilares: PRAZO, CUSTO e QUALIDADE.</div>
+                                </div>
+
+                                <!-- Observações -->
+                                <div class="checklist-item">
+                                    <div class="checklist-content">
+                                        <span class="question">Observações</span>
+                                    </div>
+                                    <div class="observations-wrapper">
+                                        <textarea class="observations-input"
+                                            placeholder="Digite suas observações aqui..."></textarea>
+                                        <div class="status-container">
+                                            <img src="imgs/status-entrega/ico-aguardando-finalizar.png" alt="Status"
+                                                class="entrega-status-icon" onclick="toggleStatus(this)">
+                                            <div class="checkbox-label">Recebimento finalizado?</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <!-- Botão Salvar e Fechar -->
+                            <div class="align-center subsub-botoes">
+                                <div>
+                                    <button type="button" id="salvar-reprovar" name="salvar-reprovar"
+                                        class="sub-icones align-center">
+                                        <i class="fa-regular fa-floppy-disk"></i>
+                                    </button>
+                                    <label for="salvar-reprovar">&nbsp;Salvar e Fechar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            // Adiciona um evento de clique ao botão "Salvar e Fechar"
+            document.getElementById('salvar-reprovar').addEventListener('click', function () {
+                closeModal('modal-check-entrega');
+            });
+
+            function toggleCheckbox(element, isChecked) {
+                // Obter o ícone de checkbox dentro do elemento clicado
+                const icon = element.querySelector('.checkbox-icon-img');
+
+                // Atualiza o estado dos checkboxes
+                if (isChecked) {
+                    // Marca como "Sim"
+                    icon.src = 'imgs/status-entrega/ico-check-sim.png';
+                    icon.classList.add('checked');
+                    icon.classList.remove('unchecked');
+                } else {
+                    // Marca como "Não"
+                    icon.src = 'imgs/status-entrega/ico-check-no.png';
+                    icon.classList.add('unchecked');
+                    icon.classList.remove('checked');
+                }
+
+                // Atualiza os ícones "Sim" e "Não" do item
+                const siblingIcons = element.parentNode.querySelectorAll('.checkbox-icon');
+                siblingIcons.forEach(icon => {
+                    if (icon !== element) {
+                        icon.querySelector('.checkbox-icon-img').src = 'imgs/status-entrega/ico-uncheck.png';
+                        icon.querySelector('.checkbox-icon-img').classList.remove('checked', 'unchecked');
+                    }
+                });
+            }
+
+            function toggleStatus(icon) {
+                const iconElement = icon;
+                const currentSrc = iconElement.getAttribute('src');
+
+                if (currentSrc.includes('ico-aguardando-finalizar.png')) {
+                    iconElement.setAttribute('src', 'imgs/status-entrega/ico-entrega-finalizada.png');
+                } else {
+                    iconElement.setAttribute('src', 'imgs/status-entrega/ico-aguardando-finalizar.png');
+                }
+            }
+        </script>
+
+
+        <!-- Ícone no footer -->
+        <div class="ico-subir-footer" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div><!--container desktop-->
+
+
+    <script>
+        //volta um nível de página na navegação quando clicar no menu Voltar
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const radios = document.querySelectorAll('input[name="pagamento"]');
+            const boletoFields = document.getElementById('boletoFields');
+            const transferenciaFields = document.getElementById('transferenciaFields');
+            const pixFields = document.getElementById('pixFields');
+
+            function toggleFields() {
+                // Ocultar todos os campos
+                boletoFields.classList.add('hidden');
+                transferenciaFields.classList.add('hidden');
+                pixFields.classList.add('hidden');
+
+                // Mostrar os campos corretos
+                if (document.getElementById('boleto').checked) {
+                    boletoFields.classList.remove('hidden');
+                } else if (document.getElementById('transferencia').checked) {
+                    transferenciaFields.classList.remove('hidden');
+                } else if (document.getElementById('pix').checked) {
+                    pixFields.classList.remove('hidden');
+                }
+            }
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', toggleFields);
+            });
+
+            // Inicializar a visibilidade dos campos ao carregar a página
+            toggleFields();
+        });
+
     </script>
 
     <script>
