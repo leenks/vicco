@@ -16,6 +16,11 @@ select {
     font-family: 'Lato', sans-serif;
 }
 
+.table-input {
+    width: 120px !important;
+    max-width: 100%; /* evita overflow */
+}
+
 .btn-sm-custom {
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
