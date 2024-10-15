@@ -264,186 +264,378 @@
 
                             <hr width="100%">
 
+                            <div class="table-responsive">
+                                <table id="tab-2" class="table-ficha">
+                                    <thead>
+                                        <tr style="font-weight: bold; background-color: #888; color: white;">
+                                            <td colspan="3">SOLICITAÇÕES</td>
+                                            <td colspan="6">COTAÇÕES</td>
+                                            <td colspan="4">HISTÓRICO</td> <!-- Nova coluna -->
+                                        </tr>
+                                        <th class="sticky">Sigla</th>
+                                        <th class="sticky" width="30%" style="white-space: normal;">Produto</th>
+                                        <th width="4%">Qtd</th>
+                                        <th class="tit-forne" width="25%"
+                                            style="white-space: normal; position: relative;">
+                                            <span class="fornecedor-link" onclick="openModal('modal-edit-forne')">Canto
+                                                Metal Comercio LTDA</span>
+                                            <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
+                                                entrar em edição desse fornecedor</span>
+                                        </th>
+                                        <th class="tit-forne" width="10%"
+                                            style="white-space: nowrap; position: relative;">
+                                            <span class="fornecedor-link"
+                                                onclick="openModal('modal-edit-forne')">Fornecedor 2</span>
+                                            <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
+                                                entrar em edição desse fornecedor</span>
+                                        </th>
+                                        <th class="tit-forne" width="10%"
+                                            style="white-space: nowrap; position: relative;">
+                                            <span class="fornecedor-link" onclick="openModal(event)">Fornecedor 3</span>
+                                            <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
+                                                entrar em edição desse fornecedor</span>
+                                        </th>
+                                        <th class="tit-forne" width="10%"
+                                            style="white-space: nowrap; position: relative;">
+                                            Fornecedor 4
+                                            <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
+                                                entrar em edição desse fornecedor</span>
+                                        </th>
+                                        <th class="tit-forne" width="10%"
+                                            style="white-space: nowrap; position: relative;">
+                                            Fornecedor 5
+                                            <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
+                                                entrar em edição desse fornecedor</span>
+                                        </th>
 
-                            <table id="tab-2" class="table-ficha">
-                                <thead>
-                                    <!-- Cabeçalho da Tabela -->
-                                    <tr style="font-weight: bold; background-color: #888; color: white;">
-                                        <td colspan="3">SOLICITAÇÕES</td>
-                                        <td colspan="5">COTAÇÕES</td>
-                                    </tr>
-                                    <tr style="font-weight: bolder;">
-                                        <!-- Cabeçalhos de Solicitações -->
-                                        <td>Sigla</td>
-                                        <td width="30%">Produto</td>
-                                        <td width="4%">Qtd</td>
-                                        <!-- Cabeçalhos de Cotações -->
-                                        <td width="15%">Canto Metal Comercio LTDA</td>
-                                        <td>Fornecedor 2</td>
-                                        <td>Fornecedor 3</td>
-                                        <td>*****</td>
-                                        <td>*****</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Linha 1 -->
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td>EST-257</td>
-                                        <td>Cantoneira em L 1x1, em alumínio cor Natural</td>
-                                        <td>20</td>
-                                        <!-- Cotações -->
-                                        <td class="cor-v text-center" style="color: red;">49,68&nbsp;
-                                            &nbsp; <input type="radio" name="lin_4469" value="409">
-                                            <br>R$ 993,60
-                                        </td>
-                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469" value="0"> <br>R$ 0,00</td>
-                                        <td class="text-center">0,00&nbsp; &nbsp; <input type="radio" name="lin_4469" value="0"> <br>R$ 0,00</td>
-                                        <td class="text-center">R$ 48,50<br>R$ 970,00</td>
-                                        <td class="text-center">R$ 49,00<br>R$ 980,00</td>
-                                    </tr>
-                            
-                                    <!-- Linha 2 -->
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        
-                                        <td colspan="3">Valor dos Produtos</td>
-                                        
-                                        <!-- Cotações -->
-                                        <td class="text-center">R$ 900,00</td>
-                                        <td class="text-center"> R$ 0,00</td>
-                                        <td class="text-center">R$ 0,00 </td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                    </tr>
-                            
-                                    <!-- Linha 3 -->
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3">Valor do Frete</td>
-                                        <!-- Cotações -->
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center">*** </td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center">*** </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3">Outras Despesas</td>
-                                        <!-- Cotações -->
-                                        <td class="text-center">R$ 0,00</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3" style=" font-weight: bold;">VALOR TOTAL &nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i> </td>
-                                        <!-- Cotações -->
-                                        <td class="text-center" style=" font-weight: bold;">R$ 993,60</td>
-                                        <td class="text-center"> R$ 0,00</td>
-                                        <td class="text-center">R$ 0,00 </td>
-                                        <td class="text-center"> R$ 0,00</td>
-                                        <td class="text-center"> R$ 0,00</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3">Forma de Pagamento</td>
-                                        <!-- Cotações -->
-                                        <td class="text-center">Boleto</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center"> ***</td>
-                                        <td class="text-center">*** </td>
-                                        <td class="text-center"> ***</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Solicitações -->
-                                        <td colspan="3">Data de Entrega</td>
-                                        <!-- Cotações -->
-                                        <td class="text-center">24/06/2024</td>
-                                        <td class="text-center"> **/**/*****</td>
-                                        <td class="text-center"> **/**/*****</td>
-                                        <td class="text-center"> **/**/*****</td>
-                                        <td class="text-center">**/**/***** </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
+                                        <th>Compra Ideal</th>
+                                        <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
+                                        <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
+                                        <th>R$ Médio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>EST-257</td>
+                                            <td>Cantoneira em L 1x1, em alumínio cor Natural</td>
+                                            <td>20</td>
+                                            <td class="cor-v text-center" style="color: red;">
+                                                49,68&nbsp; <input type="radio" name="product_EST-257" value="409">
+                                                <br>993,60
+                                            </td>
+                                            <td class="text-center">
+                                                0,00&nbsp; <input type="radio" name="product_EST-257" value="0"> <br>
+                                                0,00
+                                            </td>
+                                            <td class="text-center">
+                                                0,00&nbsp; <input type="radio" name="product_EST-257" value="0"> <br>
+                                                0,00
+                                            </td>
+                                            <td class="text-center">
+                                                48,50<input type="radio" name="product_EST-257" value="409"> <br>970,00
+                                            </td>
+                                            <td class="text-center">
+                                                49,00<input type="radio" name="product_EST-257" value="409"> <br> 980,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                49,68 <br>993,60
+                                            </td>
+                                            <td class="text-center">33,51</td>
+                                            <td class="text-center">55,88</td>
+                                            <td class="text-center">55,88</td>
+                                        </tr>
 
-                            <!-- Tabela de Histórico -->
-                            <table id="tab-historico" class="table-ficha">
-                                <thead>
-                                    <tr style="font-weight: bold; background-color: #888; color: white;">
-                                        <td colspan="4">HISTÓRICO</td>
-                                    </tr>
-                                    <tr style="font-weight: bolder;">
-                                        <td>Compra Ideal</td>
-                                        <td>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></td>
-                                        <td>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></td>
-                                        <td>R$ Médio</td>                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center"  style="color: rgb(29, 171, 29); font-weight: bold;">49,68  <br>R$ 993,60</td>
-                                        <td class="text-center">33,51</td>
-                                        <td class="text-center">55,88</td>
-                                        <td class="text-center">55,88</td>                                        
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        <tr>
+                                            <td>EST-258</td>
+                                            <td>Tubo de Alumínio 1,5" x 3m</td>
+                                            <td>15</td>
+                                            <td class="text-center">
+                                                25,00<input type="radio" name="product_EST-258" value="25"> <br> 375,00
+                                            </td>
+                                            <td class="text-center">
+                                                24,00<input type="radio" name="product_EST-258" value="24"> <br> 360,00
+                                            </td>
+                                            <td class="text-center">
+                                                26,00<input type="radio" name="product_EST-258" value="26"> <br> 390,00
+                                            </td>
+                                            <td class="text-center">
+                                                24,50<input type="radio" name="product_EST-258" value="24.5"> <br>
+                                                367,50
+                                            </td>
+                                            <td class="text-center">
+                                                25,50<input type="radio" name="product_EST-258" value="25.5"> <br>
+                                                382,50
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                25,00 <br>375,00
+                                            </td>
+                                            <td class="text-center">25,00</td>
+                                            <td class="text-center">26,00</td>
+                                            <td class="text-center">25,60</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-259</td>
+                                            <td>Perfil de Alumínio 2x4cm</td>
+                                            <td>10</td>
+                                            <td class="text-center">
+                                                15,00<input type="radio" name="product_EST-259" value="15"> <br> 150,00
+                                            </td>
+                                            <td class="text-center">
+                                                14,50<input type="radio" name="product_EST-259" value="14.5"> <br>
+                                                145,00
+                                            </td>
+                                            <td class="text-center">
+                                                15,50<input type="radio" name="product_EST-259" value="15.5"> <br>
+                                                155,00
+                                            </td>
+                                            <td class="text-center">
+                                                14,75<input type="radio" name="product_EST-259" value="14.75"> <br>
+                                                147,50
+                                            </td>
+                                            <td class="text-center">
+                                                15,25<input type="radio" name="product_EST-259" value="15.25"> <br>
+                                                152,50
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                15,00 <br>150,00
+                                            </td>
+                                            <td class="text-center">14,75</td>
+                                            <td class="text-center">15,50</td>
+                                            <td class="text-center">15,10</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-260</td>
+                                            <td>Parafuso de Aço 1/4"</td>
+                                            <td>100</td>
+                                            <td class="text-center">
+                                                0,10<input type="radio" name="product_EST-260" value="0.1"> <br> 10,00
+                                            </td>
+                                            <td class="text-center">
+                                                0,09<input type="radio" name="product_EST-260" value="0.09"> <br> 9,00
+                                            </td>
+                                            <td class="text-center">
+                                                0,12<input type="radio" name="product_EST-260" value="0.12"> <br> 12,00
+                                            </td>
+                                            <td class="text-center">
+                                                0,11<input type="radio" name="product_EST-260" value="0.11"> <br> 11,00
+                                            </td>
+                                            <td class="text-center">
+                                                0,10<input type="radio" name="product_EST-260" value="0.10"> <br> 10,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                0,10 <br>10,00
+                                            </td>
+                                            <td class="text-center">0,09</td>
+                                            <td class="text-center">0,12</td>
+                                            <td class="text-center">0,11</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-261</td>
+                                            <td>Revestimento de Alumínio 1m²</td>
+                                            <td>50</td>
+                                            <td class="text-center">
+                                                35,00<input type="radio" name="product_EST-261" value="35"> <br>
+                                                1.750,00
+                                            </td>
+                                            <td class="text-center">
+                                                34,00<input type="radio" name="product_EST-261" value="34"> <br>
+                                                1.700,00
+                                            </td>
+                                            <td class="text-center">
+                                                36,00<input type="radio" name="product_EST-261" value="36"> <br>
+                                                1.800,00
+                                            </td>
+                                            <td class="text-center">
+                                                34,50<input type="radio" name="product_EST-261" value="34.5"> <br>
+                                                1.725,00
+                                            </td>
+                                            <td class="text-center">
+                                                35,50<input type="radio" name="product_EST-261" value="35.5"> <br>
+                                                1.775,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                35,00 <br>1.750,00
+                                            </td>
+                                            <td class="text-center">34,00</td>
+                                            <td class="text-center">36,00</td>
+                                            <td class="text-center">35,00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-262</td>
+                                            <td>Conector em Alumínio 1"</td>
+                                            <td>25</td>
+                                            <td class="text-center">
+                                                12,00<input type="radio" name="product_EST-262" value="12"> <br> 300,00
+                                            </td>
+                                            <td class="text-center">
+                                                11,50<input type="radio" name="product_EST-262" value="11.5"> <br>
+                                                287,50
+                                            </td>
+                                            <td class="text-center">
+                                                12,50<input type="radio" name="product_EST-262" value="12.5"> <br>
+                                                312,50
+                                            </td>
+                                            <td class="text-center">
+                                                11,80<input type="radio" name="product_EST-262" value="11.8"> <br>
+                                                295,00
+                                            </td>
+                                            <td class="text-center">
+                                                12,20<input type="radio" name="product_EST-262" value="12.2"> <br>
+                                                305,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                12,00 <br>300,00
+                                            </td>
+                                            <td class="text-center">11,50</td>
+                                            <td class="text-center">12,50</td>
+                                            <td class="text-center">12,00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-263</td>
+                                            <td>Placa de Alumínio 2mm 1m²</td>
+                                            <td>30</td>
+                                            <td class="text-center">
+                                                60,00<input type="radio" name="product_EST-263" value="60"> <br>
+                                                1.800,00
+                                            </td>
+                                            <td class="text-center">
+                                                58,00<input type="radio" name="product_EST-263" value="58"> <br>
+                                                1.740,00
+                                            </td>
+                                            <td class="text-center">
+                                                62,00<input type="radio" name="product_EST-263" value="62"> <br>
+                                                1.860,00
+                                            </td>
+                                            <td class="text-center">
+                                                59,00<input type="radio" name="product_EST-263" value="59"> <br>
+                                                1.770,00
+                                            </td>
+                                            <td class="text-center">
+                                                61,00<input type="radio" name="product_EST-263" value="61"> <br>
+                                                1.830,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                60,00 <br>1.800,00
+                                            </td>
+                                            <td class="text-center">58,00</td>
+                                            <td class="text-center">62,00</td>
+                                            <td class="text-center">60,00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EST-264</td>
+                                            <td>Grade de Alumínio 1m²</td>
+                                            <td>20</td>
+                                            <td class="text-center">
+                                                45,00<input type="radio" name="product_EST-264" value="45"> <br> 900,00
+                                            </td>
+                                            <td class="text-center">
+                                                44,00<input type="radio" name="product_EST-264" value="44"> <br> 880,00
+                                            </td>
+                                            <td class="text-center">
+                                                46,00<input type="radio" name="product_EST-264" value="46"> <br> 920,00
+                                            </td>
+                                            <td class="text-center">
+                                                44,50<input type="radio" name="product_EST-264" value="44.5"> <br>
+                                                890,00
+                                            </td>
+                                            <td class="text-center">
+                                                45,50<input type="radio" name="product_EST-264" value="45.5"> <br>
+                                                910,00
+                                            </td>
+                                            <td class="text-center" style="color: rgb(29, 171, 29); font-weight: bold;">
+                                                45,00 <br>900,00
+                                            </td>
+                                            <td class="text-center">44,00</td>
+                                            <td class="text-center">46,00</td>
+                                            <td class="text-center">45,00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="3">Valor dos Produtos</td>
+                                            <td class="text-center">900,00</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Valor do Frete</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Outras Despesas</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" style="font-weight: bold;">VALOR TOTAL &nbsp; <i
+                                                    class="fa fa-arrow-right" aria-hidden="true"></i> </td>
+                                            <td class="text-center" style="font-weight: bold;">993,60</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">0,00</td>
+                                            <td class="text-center">0,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Forma de Pagamento</td>
+                                            <td class="text-center">Boleto</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                            <td class="text-center">***</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Data de Entrega</td>
+                                            <td class="text-center">24/06/2024</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                            <td class="text-center">**/**/*****</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <br>
-
-                                            <table id="tab-2" class="table-ficha">
-                                                <thead>
-                                                    <tr class="tab-4"
-                                                        style="font-weight: bold; background-color: #888; color: white    ;">
-                                                        <td colspan="5">ESTATÍSTICAS</td>
-                                                        <td colspan="4">OBSERVAÇÕES</td>
-                                                    </tr>
-                                                    <tr class="tab-5" style="font-weight: bolder;">
-                                                        <td width="8%">Sigla</td>
-                                                        <td width="8%">Menor</td>
-                                                        <td width="8%">Média</td>
-                                                        <td>Maior</td>
-                                                        <td>Delta</td>
-                                                        <td>Nº</td>
-                                                        <td>Nome</td>
-                                                        <td>Descrição</td>
-                                                        <td>Data</td>
-                                                        
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="text-center">EST-257</td>
-                                                        <td>33,51</td>
-                                                        <td class="text-right">20</td>
-                                                        <td class="cor-v text-center">33,5100
-                                                        </td>
-                                                        <td class="text-center">33,5100</td>
-                                                        <td class="text-center">33,5100</td>
-                                                        <td class="text-center">49,60</td>
-                                                        <td class="text-center">25,77</td>
-                                                        <td class="text-center">33,5100</td>
-                                                    </tr>
-                   
-                                                </tbody>
-                                            </table>
-                                        </div><!--CARD-->
                     </div><!--CARDS CONTAINER-->
                 </div><!--div CONTAINER DESKTOP-->
 
-                <div class="form-row align-center">
-
-                    <div class="space-btn text-center">
-                        <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i class="fa-regular fa-file-pdf"></i><label>Obter PFD</label></button>
-                    </div>
-                    
-
-                </div><!--div form-row align-right-->
 
             </div><!--tab-2 wrapper-->
         </div><!--#lis-cold-md-->
