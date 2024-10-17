@@ -547,6 +547,46 @@
         </div>
     </div>
 
+    
+<!-- Modal Aprovar Requisição -->
+<div id="modal-reprovar" class="modal">
+    <div class="modal-envolto">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-reprovar')">&times;</span>
+            <h2 class="tit-modal">Recusar Requisição</h2>
+            <div class="modal-body" style="top:60px;">
+
+                <!-- Primeiro Bloco -->
+                <div class="bloco-container" style="min-height: 300px;" >
+                    
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Motivo para Recusar a Requisição</label>
+                        <textarea class="form-control" rows="5" id="obs-aprovar" name="obs-aprovar"></textarea>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" style="margin-top: 0;" type="checkbox" id="salvar-sem-comentario"
+                                onclick="toggleTextarea(this)">
+                            <label class="form-check-label" for="salvar-sem-comentario">
+                                Salvar sem nenhum comentário
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-icones align-right mt-3">
+
+                    <div>
+                        <button type="submit" id="salvar-aprovar" name="salvar-aprovar" class="sub-icones">
+                            <i class="fa-regular fa-floppy-disk"></i>
+                            <label for="salvar-aprovar">&nbsp;Salvar</label>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- JavaScript -->
     <script>
         let slideIndex = 0;
