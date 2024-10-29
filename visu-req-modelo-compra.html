@@ -87,6 +87,23 @@
                                 </span>
                             </div>
                         </div>
+
+                        <div class="form-row align-left">
+                            <div class="space-btn text-center">
+                                <button type="submit" id="btnEditar" name="editar" class="sub-icones">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                    <a href="edit-req-07.html">
+                                        <label>Editar Requisição</label>
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+    
+
+                        
+
+                        <div class="form-content">
+                            
                         <div class="form-row align-left">
                             <div class="space-btn text-center">
                                 <button id="toggleButton" class="sub-icones mb-3">
@@ -96,129 +113,238 @@
                             </div>
                         </div>
 
-                        <div class="form-content">
-
                             <div class="col-md-12" id="dados-req">
 
-                                <div class="form-row">
-                                    <div class="col-md-12">
-                                        <label>Descrição:</label>
-                                        <span
-                                            style="font-size: 20px; font-weight: bold; padding: 2px; max-width: 600px; word-wrap: break-word;">Material
-                                            para Apoio Civil</span>
-                                    </div>
+                                   <!--tabela de requisicao MOBILE-->
+                                   <div class="cards-container modo-simples2" id="mobile-conteudoModoSimples2"
+                                   style="display: none;">
 
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-6 col-12 mb-3">
-                                        <label>Cliente:</label>
-                                        <span style="font-weight: bold; text-transform: uppercase;">SMART FIT ESCOLA DE
-                                            GINÁSTICA E DANÇA LTDA</span>
-                                    </div>
+                                   <div class="table-container">
 
-                                    <div class="col-md-6 col-12 mb-3">
-                                        <label>Obra:</label>
-                                        <span style="font-weight: bold; text-transform: uppercase;">SMARTFIT - JARDINS
-                                            5</span>
-                                    </div>
 
-                                    <div class="col-md-6 col-12 mb-3">
-                                        <label>Endereço:</label>
-                                        <span style="font-weight: bold; text-transform: uppercase;">AVENIDA PAULISTA,
-                                            1234 -
-                                            BELA VISTA - SP</span>
-                                    </div>
+                                       <table class="table-requisicoes">
+                                           <thead>
 
-                                    <div class="col-6 mb-3">
-                                        <label>Grupo:</label>
-                                        <select id="grupo" name="grupo" class="form-control" required disabled>
-                                            <option value="20" selected>02 - Custos Administrativos</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                        <label>Sub-Grupo:</label>
-                                        <select id="sub_grupo" name="sub_grupo" class="form-control" required disabled>
-                                            <option value="1" selected>Transportes</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <label for="obs">Observações:</label>
-                                        <textarea class="form-control" rows="4" id="obs" placeholder=" " name="obs"
-                                            disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis quis justo luctus faucibus. Vivamus sodales ipsum ut odio commodo, sit amet pharetra ipsum fringilla. Sed ut tortor leo. Nullam ut arcu id velit accumsan volutpat nec sit amet justo.</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr width="100%">
+                                               <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                   onmouseout="this.style.backgroundColor='transparent';"
+                                                   style="cursor: pointer;" onclick="mostrarAviso()">
+                                                   <th width="33%">Solicitante</th>
+                                                   <th width="33%">Tipo de Requisição</th>
+                                                   <th width="33%">Cliente</th>
+                                               </tr>
+                                           </thead>
+                                           <tbody>
+
+                                               <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                   onmouseout="this.style.backgroundColor='transparent';"
+                                                   style="cursor: pointer;" onclick="mostrarAviso()">
+                                                   <td>Jackeline Costa da Silva</td>
+                                                   <td>Requisição</td>
+                                                   <td>Smart Fit Pirituba</td>
+                                               </tr>
+                                           </tbody>
+                                           <thead>
+
+                                               <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                   onmouseout="this.style.backgroundColor='transparent';"
+                                                   style="cursor: pointer;" onclick="mostrarAviso()">
+                                                   <th>Obra</th>
+                                                   <th>CNPJ:</th>
+                                                   <th>Inscrição Est.</th>
+                                               </tr>
+                                           </thead>
+                                           <tbody>
+
+                                               <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                   onmouseout="this.style.backgroundColor='transparent';"
+                                                   style="cursor: pointer;" onclick="mostrarAviso()">
+                                                   <td>Smart Fit Pirituba</td>
+                                                   <td>13.552.726/0001-89</td>
+                                                   <td>...</td>
+                                               </tr>
+                                           </tbody>
+
+                                           <thead>
+
+                                               <tr>
+                                                   <th colspan="2">Grupo</th>
+                                               </tr>
+                                           </thead>
+                                           <tbody>
+
+                                               <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                   onmouseout="this.style.backgroundColor='transparent';"
+                                                   style="cursor: pointer;" onclick="mostrarAviso()">
+                                                   <td colspan="2">20 - Serralheria</td>
+                                               </tr>
+                                           </tbody>
+                                           <thead>
+
+                                               <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                   onmouseout="this.style.backgroundColor='transparent';"
+                                                   style="cursor: pointer;" onclick="mostrarAviso()">
+                                                   <th colspan="3">Descrição do Orçamento</th>
+                                               </tr>
+                                           </thead>
+                                           <tbody>
+
+                                               <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                   onmouseout="this.style.backgroundColor='transparent';"
+                                                   style="cursor: pointer;" onclick="mostrarAviso()">
+                                                   <td colspan="3">Orçamento descrição detalhada</td>
+                                               </tr>
+                                           </tbody>
+                                       </table>
+                                   </div>
+                               </div>
+
+                               <div class="box-info-requisicao" id="oculta">
+                                   <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                       <label for="contrato">Solicitante:</label>
+                                       <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da
+                                           Silva</span>
+                                   </div>
+                                   <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                       <label for="contrato">Cliente:</label>
+                                       <span class="span-infos-requisicao" id="solicitante">Smart Fit Pirituba</span>
+                                   </div>
+                                   <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                       <label for="contrato">Tipo de Requisição:</label>
+                                       <span class="span-infos-requisicao" id="solicitante">Reembolso / Obra</span>
+                                   </div>
+
+                                   <div class="box-info-requisicao-borda-g" id="oculta">
+                                       <label for="contrato">Data do Cadastro:</label>
+                                       <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                   </div>
+                               </div><!--box info requisicao-->
+
+                               <div class="box-info-requisicao" id="oculta">
+
+                                   <div class="box-info-requisicao-cinza-metade-g" id="oculta">
+                                       <label for="contrato">Obra:</label>
+                                       <span class="span-infos-requisicao" id="obra">Smart Fit Pirituba</span>
+                                   </div>
+
+                                   <div class="box-info-requisicao-borda-g" id="oculta">
+                                       <label for="contrato">Data da Cotação:</label>
+                                       <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                   </div>
+                               </div><!--box info requisicao-->
+
+
+                               <div class="box-info-requisicao">
+
+                                   <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                       <label for="contrato">Cnpj: :</label>
+                                       <span class="span-infos-requisicao" id="cliente">13.552.726/0001-89</span>
+                                   </div>
+                                   <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                       <label for="contrato">Inscrição Est:</label>
+                                       <span class="span-infos-requisicao" id="obra">...</span>
+                                   </div>
+
+                                   <div class="box-info-requisicao-borda-g" id="oculta">
+                                       <label for="contrato">Data da Aprovação:</label>
+                                       <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                   </div>
+
+                               </div><!-- box-info-requisicao -->
+
+                               <div class="box-info-requisicao">
+
+                                   <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                       <label for="contrato">Grupo:</label>
+                                       <span class="span-infos-requisicao" id="cliente">20 - Serralheria</span>
+                                   </div>
+                                   <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                       <label for="contrato">Sub-Grupo:</label>
+                                       <span class="span-infos-requisicao" id="obra">Coberturas</span>
+                                   </div>
+                                   <div class="box-info-requisicao-borda-g" id="oculta">
+                                       <label for="contrato">Data de Compra:</label>
+                                       <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                   </div>
+
+                               </div><!-- box-info-requisicao -->
+
+                               <div class="box-info-requisicao">
+
+                                   <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
+                                       <label for="contrato">Descrição:</label>
+                                       <span class="span-infos-requisicao" id="cliente">Material para cobertura da área
+                                           técnica</span>
+                                   </div>
+                                   <div class="box-info-requisicao">
+                                       <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
+                                           <label for="contrato">Observação:</label>
+                                           <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor
+                                               siamet</span>
+                                       </div>
+                                       <div class="box-info-requisicao-borda-g" id="oculta">
+                                           <label for="contrato">Data de Entrega:</label>
+                                           <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+
+                                           <div class="box-info-requisicao-borda-g2" id="oculta">
+                                               <label for="contrato">Data de Pagamento:</label>
+                                               <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                           </div>
+                                       </div>
+                                   </div><!--box-info-requisicao-->
+
+
+                                   </div>
+                               </div><!-- box-info-requisicao -->
+
+                               <hr width="100%">
+
+
 
                             <div class="col-md-12">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
-                                    <p style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
-                                        MARCA S.A
-                                        SOLUTIONS</p>
-                                    <p style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
-                                        R$ 300,00</p>
-                                </div>
-
-
-                                <div class="form-row">
-                                    <div class="col-md-6 col-6 mb-3">
-                                        <label for="dataEntrega2">Data da Entrega:</label>
-                                        <input type="text" class="form-control" id="dataEntrega2"
-                                            value="20/07/2024 13:30" disabled>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="width: 90%;">
+                                        <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
+                                        <p style="text-transform: uppercase; font-weight: bold; margin: 0 10px;">MARCA S.A SOLUTIONS</p>
+                                        <p style="text-transform: uppercase; font-weight: bold; margin: 0 10px;">R$ 300,00</p>
                                     </div>
-                                    <div class="col-md-6 col-6 mb-3">
-                                        <label for="responsavel2">Responsável pelo Recebimento:</label>
-                                        <input type="text" class="form-control" id="responsavel2"
-                                            value="Fulana da Silva" disabled>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row align-center">
-
-                                <div style="display: flex; align-items: center; margin: 20px 0;">
-                                    <label for="nota_fiscal" style="margin-right: 10px;">Número de Documento:</label>
-                                    <input type="text" class="form-control text-center"
-                                        style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
-                                        maxlength="100" id="nota_fiscal" name="nota_fiscal" value="Digite Nº da Nota" />
-                                </div>
-
-
-
-                                <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
-                                    class="sub-icones" onclick="openModal('modal-pdf')">
-                                    <i class="fa-regular fa-file-pdf"></i><label>Visualizar Nota Fiscal</label>
-                                </button>
-
+                                    
+                                    <div class="form-row align-items-center" style="text-align: right;">
+                                        <div style="display: flex; align-items: center; margin: 20px 0;">
+                                            <div style="display: flex; align-items: center; margin: 20px 0;">
+                                                <label for="nota_fiscal" style="margin-right: 10px;">Número de Documento:</label>
+                                                <input type="text" class="form-control text-center"
+                                                    style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
+                                                    maxlength="100" id="nota_fiscal" name="nota_fiscal" value="Digite Nº da Nota" />
+                                        </div>
+                            
+                                        
+                            
+                                
 
                                 <button type="button" id="fot_carrega" class="sub-icones" name="subir"
                                     title="Abrir janela para carregar imagem para a requisição de compra"
                                     onclick="document.getElementById('anexo').click();">
                                     <i class="fa-solid fa-paperclip"></i>
-                                    <label>Nota Fiscal Romaneio</label>
+                                    <label>Anexar Nota Fiscal Romaneio</label>
                                 </button>
+
+                                    </div>
+                                </div>
                             </div>
-
-
-
-
-                            <hr width="100%">
+                            </div>
 
                             <div class="col-md-12">
 
-
                                 <form>
 
-                                    <div class="form-row justify-content-end">
+                                    <div class="form-row justify-content-end"style="border-top: 2px solid #eee;">
                                         <div class="col-md-5 text-right">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" value="obra" checked
-                                                    disabled>
+                                                <input class="form-check-input" type="radio" value="obra" checked>
                                                 <label class="form-check-label">Dados do Fornecedor</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" value="outro" disabled>
+                                                <input class="form-check-input" type="radio" value="outro">
                                                 <label class="form-check-label">Outros Dados</label>
                                             </div>
                                         </div>
@@ -227,12 +353,12 @@
                                         <div class="col-md-5">
                                             <label>Nome do Favorecido</label>
                                             <input type="text" class="form-control" maxlength="50" id="pro_i"
-                                                name="pro_i" value="MARCA S.A SOLUTIONS" disabled />
+                                                name="pro_i" value="MARCA S.A SOLUTIONS"/>
                                         </div>
                                         <div class="col-md-3">
                                             <label>CNPJ/CPF</label>
                                             <input type="text" class="form-control" maxlength="50" id="pro_i"
-                                                name="pro_i" value="121.234.567-99" disabled />
+                                                name="pro_i" value="121.234.567-99"/>
                                         </div>
 
 
@@ -246,7 +372,7 @@
                                                 <label class="form-check-label" for="boleto">Boleto</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="pagamento" id="transferencia" value="transferencia" checked disabled>
+                                                <input class="form-check-input" type="radio" name="pagamento" id="transferencia" value="transferencia" checked>
                                                 <label class="form-check-label" for="transferencia">Transferência Bancária</label>
                                             </div>
                                             <div class="form-check form-check-inline">
@@ -316,7 +442,7 @@
                                         <div class="form-row">
                                             <div class="col-md-3">
                                                 <label for="banco">Banco</label>
-                                                <select class="form-control" id="banco" disabled>
+                                                <select class="form-control" id="banco" >
                                                     <option value="">Selecione o Banco</option>
                                                     <option value="001" selected>Banco do Brasil</option>
                                                     <option value="033">Banco Santander</option>
@@ -333,16 +459,16 @@
                                             <div class="col-md-3">
                                                 <label for="agencia">Agência</label>
                                                 <input type="text" class="form-control" id="agencia" value="1234"
-                                                    disabled>
+                                                    >
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="conta">Conta</label>
                                                 <input type="text" class="form-control" id="conta" value="56789-0"
-                                                    disabled>
+                                                    >
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="tipoTransferencia">Tipo de Transferência</label>
-                                                <select class="form-control" id="tipoTransferencia" disabled>
+                                                <select class="form-control" id="tipoTransferencia" >
                                                     <option value="TED" selected>TED</option>
                                                     <option value="DOC">DOC</option>
                                                     <option value="TEF">TEF</option>
@@ -472,6 +598,8 @@
     </div>
     </div><!--container desktop-->
 
+   
+
     <!-- Janela Modal Principal -->
     <div id="modal-historico" class="modal">
         <div class="modal-envolto">
@@ -492,7 +620,10 @@
                         <div class="folder" onclick="mostrarSlide(2)">
                             Recibo
                         </div>
-                        <div class="folder" onclick="mostrarSlide(0)">
+                        <div class="folder-vazio" onclick="mostrarSlide(0)">
+                            Solicitação
+                        </div>
+                        <div class="folder-vazio" onclick="mostrarSlide(0)">
                             Outro Doc
                         </div>
                     </div>
@@ -515,7 +646,7 @@
                             <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
                             <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
                         </div>
-
+                        
                     </div>
                 </div>
             </div>
@@ -550,48 +681,59 @@
         }
     </script>
 
-    <style>
-        .folder {
-            width: 130px;
-            /* Diminuído para caber na mesma linha */
-            height: 100px;
-            /* Diminuído para melhor proporção */
-            margin: 10px;
-            /* Margem entre os retângulos */
-            border-radius: 10px;
-            /* Bordas arredondadas */
-            filter: drop-shadow(0 0 0.75rem grey);
-            /* Sombra */
-            background: white;
-            /* Cor de fundo */
-            position: relative;
-            transition: background 0.3s;
-            /* Transição suave */
-            display: flex;
-            /* Para centralizar o texto */
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            cursor: pointer;
-            font-size: 16px;
-        }
+<style>
+    .folder {
+        width: 30%; 
+        height: 100px;
+        margin: 10px;
+        border-radius: 10px; 
+        filter: drop-shadow(0 0 0.75rem grey); 
+        background: white; 
+        position: relative;
+        transition: background 0.3s; 
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
 
-        /* Estilo para mudar a cor ao passar o mouse */
-        .folder:hover {
-            background: #f0f0f0;
-            /* Cor de fundo ao passar o mouse */
-        }
+        font-size: 16px;
+        border:#f47332 3px solid;
+    }
 
-        .itens-container {
-            display: flex;
-            /* Para alinhar os blocos na mesma linha */
-            justify-content: center;
-            /* Centraliza os itens */
-            gap: 10px;
-            /* Espaçamento entre os blocos */
-            margin-bottom: 20px;
-        }
-    </style>
+    .folder-vazio {
+        width: 30%; 
+        height: 100px;
+        margin: 10px; 
+        border-radius: 10px;
+        filter: drop-shadow(0 0 0.75rem grey); 
+        background: rgb(228, 228, 228); 
+        color: #aaaaaa;
+        position: relative;
+        transition: background 0.3s; 
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: not-allowed;
+        font-size: 16px;
+        
+        
+
+    }
+
+    /* Estilo para mudar a cor ao passar o mouse */
+    .folder:hover {
+        background: #f0f0f0; 
+    }
+
+    .itens-container {
+        display: flex; /* Para alinhar os blocos na mesma linha */
+        justify-content: center; /* Centraliza os itens */
+        gap: 10px; /* Espaçamento entre os blocos */
+        margin-bottom: 20px;
+    }
+</style>
     <script>
         // Função para rolar até o topo da página
         function scrollToTop() {

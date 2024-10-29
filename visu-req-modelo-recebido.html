@@ -141,20 +141,28 @@
                             <hr width="100%">          
                         </div>
                            
-                            
+                        <div style="display: flex; flex-direction: column; align-items: flex-start;">
                             <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
-                            <p style="text-transform: uppercase; margin-left: 5px;">MARCA S.A SOLUTIONS</p>
+                            <div style="text-transform: uppercase; margin-left: 5px;">MARCA S.A SOLUTIONS</div>
+                            <div style="text-transform: uppercase; margin-left: 5px;">R$ 300,00</div>
+                        </div>
                         
                             <div class="form-row">
-                                <div class="col-md-6 col-6 mb-3">
+                                <div>
                                     <label for="dataEntrega2">Data da Entrega:</label>
                                     <input type="text" class="form-control" id="dataEntrega2" value="20/07/2024 13:30" disabled>
                                 </div>
-                                <div class="col-md-6 col-6 mb-3">
+                                <div>
+                                    <label for="horaAgendada2">Hora Agendada Entrega:</label>
+                                    <input type="text" class="form-control" id="horaAgendada2" value="20/07/2024 13:30" disabled>
+                                </div>
+                                <div>
                                     <label for="responsavel2">Responsável pelo Recebimento:</label>
                                     <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva" disabled>
                                 </div>
                             </div>
+                        
+                       
                         
                         <div class="form-row align-center">
 
@@ -237,19 +245,28 @@
                       <p><br><br> </p>
                       <hr width="100%">
 
-                                <h4 style="text-align: left;">Entrega Fornecedor 02/02</h4>
-                                <p style="text-transform: uppercase; margin-left: 5px;">HIDRÁULICA E FERRAGENS TINDIBA LTDA</p>
-                            
-                                <div class="form-row">
-                                    <div class="col-md-6 col-6 mb-3">
-                                        <label for="dataEntrega2">Data da Entrega:</label>
-                                        <input type="text" class="form-control" id="dataEntrega2" value="20/07/2024 13:30" disabled>
-                                    </div>
-                                    <div class="col-md-6 col-6 mb-3">
-                                        <label for="responsavel2">Responsável pelo Recebimento:</label>
-                                        <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva" disabled>
-                                    </div>
-                                </div>
+                      <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                        <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
+                        <div style="text-transform: uppercase; margin-left: 5px;">MARCA S.A SOLUTIONS</div>
+                        <div style="text-transform: uppercase; margin-left: 5px;">R$ 300,00</div>
+                    </div>
+                    
+                        <div class="form-row">
+                            <div>
+                                <label for="dataEntrega2">Data da Entrega:</label>
+                                <input type="text" class="form-control" id="dataEntrega2" value="20/07/2024 13:30" disabled>
+                            </div>
+                            <div>
+                                <label for="horaAgendada2">Hora Agendada Entrega:</label>
+                                <input type="text" class="form-control" id="horaAgendada2" value="20/07/2024 13:30" disabled>
+                            </div>
+                            <div>
+                                <label for="responsavel2">Responsável pelo Recebimento:</label>
+                                <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva" disabled>
+                            </div>
+                        </div>
+                    
+
                             
     
                          
@@ -362,15 +379,15 @@
     </div>
     </div><!--container desktop-->
 
-<!-- Modal CheckList de Entrega -->
-<div id="modal-check-entrega" class="modal" style="display: none;">
+ <!-- Modal CheckList de Entrega -->
+ <div id="modal-check-entrega" class="modal">
     <div class="modal-envolto">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-check-entrega')">&times;</span>
             <h2 class="tit-modal">Andra SA Eletric Solutions</h2>
             <div class="modal-wrap">
                 <div class="filtro-tabela">
-                    <div class="qua-4 modal-body" style="margin-left: -15px;">
+                    <div class="qua-4 modal-body">
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-8 text-center"></div>
@@ -378,6 +395,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 bloco-qtd">
+                                
                                 <div class="form-group">
                                     <div class="text-center">
                                         <h3 style="color: orangered; font-size: 26px;">Areia Grossa - Saco 8kg / Qualquer</h3>

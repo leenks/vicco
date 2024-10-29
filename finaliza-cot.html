@@ -198,13 +198,21 @@
                         <a href="#">COTAÇÕES</a>
                     </div>
 
-
-
                     <div class="conteudo-in" id="conteudo-in">
-                        <h2>Cotações</h2>
+                        <div class="box-info-requisicao">
+                       
 
-                        <h3>FECHAMENTO DE COTAÇÃO - SPGUAPUGL-083 - Nº 7.274</h3>
-                    </div>
+                            <h3>FECHAMENTO DE COTAÇÃO - SPGUAPUGL-083 - Nº 7.274</h3>
+    
+                            <div class="box-info-requisicao-btn">
+                                <span class="botao-cotacao">
+                                    <img class="icones" src="imgs/ico-cotacao-azul.png"
+                                        alt="Ícone de cotação">
+                                    COTAÇÃO
+                                </span>
+                            </div>
+                            </div>
+
 
                     <div class="cards-container">
 
@@ -417,21 +425,25 @@
                                         </th>
                                         <th class="tit-forne" width="10%"
                                             style="white-space: nowrap; position: relative;">
-                                            <span class="fornecedor-link" onclick="openModal(event)">Fornecedor 3</span>
-                                            <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
-                                                entrar em edição desse fornecedor</span>
+                                            <span class="fornecedor-link"
+                                            onclick="openModal('modal-edit-forne')">Fornecedor 3</span>
+                                        <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
+                                            entrar em edição desse fornecedor</span>
+                                            
                                         </th>
                                         <th class="tit-forne" width="10%"
                                             style="white-space: nowrap; position: relative;">
-                                            Fornecedor 4
-                                            <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
-                                                entrar em edição desse fornecedor</span>
+                                            <span class="fornecedor-link"
+                                            onclick="openModal('modal-edit-forne')">Fornecedor 4</span>
+                                        <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
+                                            entrar em edição desse fornecedor</span>
                                         </th>
                                         <th class="tit-forne" width="10%"
                                             style="white-space: nowrap; position: relative;">
-                                            Fornecedor 5
-                                            <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
-                                                entrar em edição desse fornecedor</span>
+                                            <span class="fornecedor-link"
+                                            onclick="openModal('modal-edit-forne')">Fornecedor 5</span>
+                                        <span class="tooltip-fornecedor" style="white-space: normal;">Clique para
+                                            entrar em edição desse fornecedor</span>
                                         </th>
 
                                         <th>Compra Ideal</th>
@@ -945,15 +957,15 @@
                         <div class="row">
                             <div class="col-6 col-md-2">
                                 <label>Sigla</label>
-                                <input type="text" class="form-control" value="EST-001" disabled>
+                                <input type="text" class="form-control" value="EST-001">
                             </div>
                             <div class="col-6 col-md-4">
                                 <label>Produto</label>
-                                <input type="text" class="form-control" value="Produto A" disabled>
+                                <input type="text" class="form-control" value="Produto A">
                             </div>
                             <div class="col-6 col-md-2">
                                 <label>Qtdade</label>
-                                <input type="number" class="form-control" value="10" disabled>
+                                <input type="number" class="form-control" value="10">
                             </div>
                             <div class="col-6 col-md-2">
                                 <label>Preço</label>
@@ -961,7 +973,7 @@
                             </div>
                             <div class="col-6 col-md-2">
                                 <label>Valor</label>
-                                <input type="text" class="form-control" value="R$ 250,00" disabled>
+                                <input type="text" class="form-control" value="R$ 250,00">
                             </div>
                         </div>
 
@@ -969,74 +981,74 @@
 
                         <div class="row">
                             <div class="col-6 col-md-2">
-                                <input type="text" class="form-control" value="EST-001" disabled>
+                                <input type="text" class="form-control" value="EST-001">
                             </div>
                             <div class="col-6 col-md-4">
-                                <input type="text" class="form-control" value="Produto A" disabled>
+                                <input type="text" class="form-control" value="Produto A">
                             </div>
                             <div class="col-6 col-md-2">
-                                <input type="number" class="form-control" value="10" disabled>
+                                <input type="number" class="form-control" value="10">
                             </div>
                             <div class="col-6 col-md-2">
                                 <input type="text" class="form-control" value="R$ 25,00">
                             </div>
                             <div class="col-6 col-md-2">
-                                <input type="text" class="form-control" value="R$ 250,00" disabled>
+                                <input type="text" class="form-control" value="R$ 250,00">
                             </div>
                         </div>
 
                         <br>
                         <div class="row">
                             <div class="col-6 col-md-2">
-                                <input type="text" class="form-control" value="EST-001" disabled>
+                                <input type="text" class="form-control" value="EST-001">
                             </div>
                             <div class="col-6 col-md-4">
-                                <input type="text" class="form-control" value="Produto A" disabled>
+                                <input type="text" class="form-control" value="Produto A">
                             </div>
                             <div class="col-6 col-md-2">
-                                <input type="number" class="form-control" value="10" disabled>
+                                <input type="number" class="form-control" value="10">
                             </div>
                             <div class="col-6 col-md-2">
                                 <input type="text" class="form-control" value="R$ 25,00">
                             </div>
                             <div class="col-6 col-md-2">
-                                <input type="text" class="form-control" value="R$ 250,00" disabled>
+                                <input type="text" class="form-control" value="R$ 250,00">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-6 col-md-2">
-                                <input type="text" class="form-control" value="EST-001" disabled>
+                                <input type="text" class="form-control" value="EST-001">
                             </div>
                             <div class="col-6 col-md-4">
-                                <input type="text" class="form-control" value="Produto A" disabled>
+                                <input type="text" class="form-control" value="Produto A">
                             </div>
                             <div class="col-6 col-md-2">
-                                <input type="number" class="form-control" value="10" disabled>
+                                <input type="number" class="form-control" value="10">
                             </div>
                             <div class="col-6 col-md-2">
                                 <input type="text" class="form-control" value="R$ 25,00">
                             </div>
                             <div class="col-6 col-md-2">
-                                <input type="text" class="form-control" value="R$ 250,00" disabled>
+                                <input type="text" class="form-control" value="R$ 250,00">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-6 col-md-2">
-                                <input type="text" class="form-control" value="EST-001" disabled>
+                                <input type="text" class="form-control" value="EST-001">
                             </div>
                             <div class="col-6 col-md-4">
-                                <input type="text" class="form-control" value="Produto A" disabled>
+                                <input type="text" class="form-control" value="Produto A">
                             </div>
                             <div class="col-6 col-md-2">
-                                <input type="number" class="form-control" value="10" disabled>
+                                <input type="number" class="form-control" value="10">
                             </div>
                             <div class="col-6 col-md-2">
                                 <input type="text" class="form-control" value="R$ 25,00">
                             </div>
                             <div class="col-6 col-md-2">
-                                <input type="text" class="form-control" value="R$ 250,00" disabled>
+                                <input type="text" class="form-control" value="R$ 250,00">
                             </div>
                         </div>
                         <br>
@@ -1046,27 +1058,27 @@
                         <div class="row" style="justify-content: center;">
                             <div class="col-6 col-md-3">
                                 <label>Valor de Frete</label>
-                                <input type="text" class="form-control" value="R$ 0,00" disabled>
+                                <input type="text" class="form-control" value="R$ 0,00">
                             </div>
                             <div class="col-6 col-md-3">
                                 <label>Outras Despesas</label>
-                                <input type="text" class="form-control" value="R$ 0,00" disabled>
+                                <input type="text" class="form-control" value="R$ 0,00">
                             </div>
                             <div class="col-6 col-md-3">
                                 <label>Desconto</label>
-                                <input type="text" class="form-control" value="10%" disabled>
+                                <input type="text" class="form-control" value="10%">
                             </div>
                             <div class="col-6 col-md-3">
                                 <label>Valor Total</label>
-                                <input type="text" class="form-control" value="975,00" disabled>
+                                <input type="text" class="form-control" value="975,00">
                             </div>
                             <div class="col-6 col-md-3">
                                 <label>Forma de Pagamento</label>
-                                <input type="text" class="form-control" value="Boleto" disabled>
+                                <input type="text" class="form-control" value="Boleto">
                             </div>
                             <div class="col-6 col-md-3">
                                 <label>Data de Entrega</label>
-                                <input type="text" class="form-control" value="24/06/2024" disabled>
+                                <input type="text" class="form-control" value="24/06/2024">
                             </div>
                         </div>
                         <br>
@@ -1082,11 +1094,7 @@
                                 <button type="button" id="salvar" class="sub-icones">
                                     <i class="fa-regular fa-floppy-disk"></i> <label>&nbsp;Salvar</label>
                                 </button>
-                                <button type="button" id="visualizar" class="sub-icones" style="position: relative;">
-                                    <i class="fa-regular fa-eye"></i> <label>&nbsp;Visualizar</label>
-                                    <span class="tooltip-fornecedor" style="white-space: normal;">Abre demonstrativo em
-                                        PDF com cotações dos produtos do fornecedor para a Requisição</span>
-                                </button>
+                               
                                 <button type="button" id="anexar" class="sub-icones" style="position: relative;"
                                     onclick="document.getElementById('fileInput').click();">
                                     <i class="fas fa-paperclip"></i> <label>&nbsp;Anexar</label>

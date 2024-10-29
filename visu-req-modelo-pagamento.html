@@ -76,483 +76,477 @@
 
                     <div class="conteudo-in" id="conteudo-in">
                         <div class="box-info-requisicao">
-                       
+
 
                             <h3>Requisição de Compra - SMART FIT - PIRITUBA 2</h3>
-    
+
                             <div class="box-info-requisicao-btn">
                                 <span class="botao-pagamento">
-                                    <img class="icones" src="imgs/ico-pagamento-azul.png"
-                                        alt="Ícone de pagamento">
+                                    <img class="icones" src="imgs/ico-pagamento-azul.png" alt="Ícone de pagamento">
                                     PAGAMENTO
                                 </span>
                             </div>
-                            </div>
-
-                    <div class="form-row align-left">
-                        <div class="space-btn text-center">
-                            <button type="submit" id="btnEditar" name="editar" class="sub-icones">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                                <a href="edit-req-02.html">
-                                    <label>Editar Requisição</label>
-                                </a>
-                            </button>
                         </div>
-                    </div>
 
-                    <div class="cards-container">
+                        <div class="form-row align-left">
+                            <div class="space-btn text-center">
+                                <button type="submit" id="btnEditar" name="editar" class="sub-icones">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                    <a href="edit-req-02.html">
+                                        <label>Editar Requisição</label>
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
 
-                        <div class="card">
+                        <div class="cards-container">
 
-                            <!--tabela de requisicao MOBILE-->
-                            <div class="cards-container modo-simples2" id="mobile-conteudoModoSimples2"
-                                style="display: none;">
+                            <div class="card">
 
-                                <div class="table-container">
+                                <!--tabela de requisicao MOBILE-->
+                                <div class="cards-container modo-simples2" id="mobile-conteudoModoSimples2"
+                                    style="display: none;">
+
+                                    <div class="table-container">
 
 
-                                    <table class="table-requisicoes">
+                                        <table class="table-requisicoes">
+                                            <thead>
+
+                                                <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                    onmouseout="this.style.backgroundColor='transparent';"
+                                                    style="cursor: pointer;" onclick="mostrarAviso()">
+                                                    <th width="33%">Solicitante</th>
+                                                    <th width="33%">Tipo de Requisição</th>
+                                                    <th width="33%">Cliente</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                    onmouseout="this.style.backgroundColor='transparent';"
+                                                    style="cursor: pointer;" onclick="mostrarAviso()">
+                                                    <td>Jackeline Costa da Silva</td>
+                                                    <td>Requisição</td>
+                                                    <td>Bio Ritmo - Alto das Nações</td>
+                                                </tr>
+                                            </tbody>
+                                            <thead>
+
+                                                <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                    onmouseout="this.style.backgroundColor='transparent';"
+                                                    style="cursor: pointer;" onclick="mostrarAviso()">
+                                                    <th>Obra</th>
+                                                    <th>CNPJ:</th>
+                                                    <th>Inscrição Est.</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                    onmouseout="this.style.backgroundColor='transparent';"
+                                                    style="cursor: pointer;" onclick="mostrarAviso()">
+                                                    <td>Bio Ritmo - Alto das Nações</td>
+                                                    <td>13.552.726/0001-89</td>
+                                                    <td>...</td>
+                                                </tr>
+                                            </tbody>
+
+                                            <thead>
+
+                                                <tr>
+                                                    <th colspan="2">Grupo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                    onmouseout="this.style.backgroundColor='transparent';"
+                                                    style="cursor: pointer;" onclick="mostrarAviso()">
+                                                    <td colspan="2">20 - Serralheria</td>
+                                                </tr>
+                                            </tbody>
+                                            <thead>
+
+                                                <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                    onmouseout="this.style.backgroundColor='transparent';"
+                                                    style="cursor: pointer;" onclick="mostrarAviso()">
+                                                    <th colspan="3">Descrição do Orçamento</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr onmouseover="this.style.backgroundColor='#d3ecff';"
+                                                    onmouseout="this.style.backgroundColor='transparent';"
+                                                    style="cursor: pointer;" onclick="mostrarAviso()">
+                                                    <td colspan="3">Orçamento descrição detalhada</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="box-info-requisicao" id="oculta">
+                                    <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                        <label for="contrato">Solicitante:</label>
+                                        <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da
+                                            Silva</span>
+                                    </div>
+                                    <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                        <label for="contrato">Cliente:</label>
+                                        <span class="span-infos-requisicao" id="solicitante">Bio Ritmo - Alto das
+                                            Nações</span>
+                                    </div>
+                                    <div class="box-info-requisicao-cinza-3-col" id="oculta">
+                                        <label for="contrato">Tipo de Requisição:</label>
+                                        <span class="span-infos-requisicao" id="solicitante">Requisição</span>
+                                    </div>
+
+                                    <div class="box-info-requisicao-borda-g" id="oculta">
+                                        <label for="contrato">Data do Cadastro:</label>
+                                        <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                    </div>
+                                </div><!--box info requisicao-->
+
+                                <div class="box-info-requisicao" id="oculta">
+
+                                    <div class="box-info-requisicao-cinza-metade-g" id="oculta">
+                                        <label for="contrato">Obra:</label>
+                                        <span class="span-infos-requisicao" id="obra">Bio Ritmo - Alto das Nações</span>
+                                    </div>
+
+                                    <div class="box-info-requisicao-borda-g" id="oculta">
+                                        <label for="contrato">Data da Cotação:</label>
+                                        <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                    </div>
+                                </div><!--box info requisicao-->
+
+
+                                <div class="box-info-requisicao">
+
+                                    <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                        <label for="contrato">Cnpj: :</label>
+                                        <span class="span-infos-requisicao" id="cliente">13.552.726/0001-89</span>
+                                    </div>
+                                    <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                        <label for="contrato">Inscrição Est:</label>
+                                        <span class="span-infos-requisicao" id="obra">...</span>
+                                    </div>
+
+                                    <div class="box-info-requisicao-borda-g" id="oculta">
+                                        <label for="contrato">Data da Aprovação:</label>
+                                        <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                    </div>
+
+                                </div><!-- box-info-requisicao -->
+
+                                <div class="box-info-requisicao">
+
+                                    <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                        <label for="contrato">Grupo:</label>
+                                        <span class="span-infos-requisicao" id="cliente">20 - Serralheria</span>
+                                    </div>
+                                    <div class="box-info-requisicao-cinza-metade-p" id="oculta">
+                                        <label for="contrato">Sub-Grupo:</label>
+                                        <span class="span-infos-requisicao" id="obra">Coberturas</span>
+                                    </div>
+                                    <div class="box-info-requisicao-borda-g" id="oculta">
+                                        <label for="contrato">Data de Compra:</label>
+                                        <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                    </div>
+
+                                </div><!-- box-info-requisicao -->
+
+                                <div class="box-info-requisicao">
+
+                                    <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
+                                        <label for="contrato">Descrição:</label>
+                                        <span class="span-infos-requisicao" id="cliente">Material para cobertura da área
+                                            técnica</span>
+                                    </div>
+                                    <div class="box-info-requisicao">
+                                        <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
+                                            <label for="contrato">Observação:</label>
+                                            <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor
+                                                siamet</span>
+                                        </div>
+                                        <div class="box-info-requisicao-borda-g" id="oculta">
+                                            <label for="contrato">Data de Entrega:</label>
+                                            <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+
+                                            <div class="box-info-requisicao-borda-g2" id="oculta">
+                                                <label for="contrato">Data de Pagamento:</label>
+                                                <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
+                                            </div>
+                                        </div>
+                                    </div><!--box-info-requisicao-->
+
+
+
+                                </div><!-- box-info-requisicao -->
+
+                                <hr width="100%">
+
+
+
+                                <div class="table-responsive">
+                                    <table id="tab-2" class="table-ficha">
                                         <thead>
-
-                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
-                                                onmouseout="this.style.backgroundColor='transparent';"
-                                                style="cursor: pointer;" onclick="mostrarAviso()">
-                                                <th width="33%">Solicitante</th>
-                                                <th width="33%">Tipo de Requisição</th>
-                                                <th width="33%">Cliente</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
-                                                onmouseout="this.style.backgroundColor='transparent';"
-                                                style="cursor: pointer;" onclick="mostrarAviso()">
-                                                <td>Jackeline Costa da Silva</td>
-                                                <td>Requisição</td>
-                                                <td>Bio Ritmo - Alto das Nações</td>
-                                            </tr>
-                                        </tbody>
-                                        <thead>
-
-                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
-                                                onmouseout="this.style.backgroundColor='transparent';"
-                                                style="cursor: pointer;" onclick="mostrarAviso()">
-                                                <th>Obra</th>
-                                                <th>CNPJ:</th>
-                                                <th>Inscrição Est.</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
-                                                onmouseout="this.style.backgroundColor='transparent';"
-                                                style="cursor: pointer;" onclick="mostrarAviso()">
-                                                <td>Bio Ritmo - Alto das Nações</td>
-                                                <td>13.552.726/0001-89</td>
-                                                <td>...</td>
-                                            </tr>
-                                        </tbody>
-
-                                        <thead>
-
                                             <tr>
-                                                <th colspan="2">Grupo</th>
+                                                <th>Sigla</th>
+                                                <th>Descrição Produto</th>
+                                                <th>Fornecedor</th>
+                                                <th>Marca</th>
+                                                <th>Qtde.</th>
+                                                <th>U.M</th>
+                                                <th>Preço</th>
+                                                <th>Valor</th>
+                                                <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
+                                                <th>R$ <i class="fa fa-minus" aria-hidden="true"></i></th>
+                                                <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
+                                                <th>Observações</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-
-                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
-                                                onmouseout="this.style.backgroundColor='transparent';"
-                                                style="cursor: pointer;" onclick="mostrarAviso()">
-                                                <td colspan="2">20 - Serralheria</td>
+                                            <tr>
+                                                <td>APO-016</td>
+                                                <td>Porcelanato - Portobello 60x60 cm, linha essencial cor: Cimento
+                                                    Cinza Bold</td>
+                                                <td>Atlanta Materiais para Construção Ltda</td>
+                                                <td>Qualquer</td>
+                                                <td>10</td>
+                                                <td>Unid.</td>
+                                                <td>R$ 25,7000</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>Detalhes e Observação</td>
                                             </tr>
-                                        </tbody>
-                                        <thead>
-
-                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
-                                                onmouseout="this.style.backgroundColor='transparent';"
-                                                style="cursor: pointer;" onclick="mostrarAviso()">
-                                                <th colspan="3">Descrição do Orçamento</th>
+                                            <tr>
+                                                <td>APO-016</td>
+                                                <td>Caçamba - 3m³</td>
+                                                <td>Fulano</td>
+                                                <td>Qualquer</td>
+                                                <td>10</td>
+                                                <td>Unid.</td>
+                                                <td>R$ 25,7000</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>Detalhes e Observação</td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            <tr onmouseover="this.style.backgroundColor='#d3ecff';"
-                                                onmouseout="this.style.backgroundColor='transparent';"
-                                                style="cursor: pointer;" onclick="mostrarAviso()">
-                                                <td colspan="3">Orçamento descrição detalhada</td>
+                                            <tr>
+                                                <td>APO-016</td>
+                                                <td>Caçamba - 3m³</td>
+                                                <td>Fulano</td>
+                                                <td>Qualquer</td>
+                                                <td>10</td>
+                                                <td>Unid.</td>
+                                                <td>R$ 25,7000</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>R$ 20,00</td>
+                                                <td>Detalhes e Observação</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
 
-                            <div class="box-info-requisicao" id="oculta">
-                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
-                                    <label for="contrato">Solicitante:</label>
-                                    <span class="span-infos-requisicao" id="solicitante">Jackeline Costa da Silva</span>
-                                </div>
-                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
-                                    <label for="contrato">Cliente:</label>
-                                    <span class="span-infos-requisicao" id="solicitante">Bio Ritmo - Alto das
-                                        Nações</span>
-                                </div>
-                                <div class="box-info-requisicao-cinza-3-col" id="oculta">
-                                    <label for="contrato">Tipo de Requisição:</label>
-                                    <span class="span-infos-requisicao" id="solicitante">Requisição</span>
-                                </div>
-
-                                <div class="box-info-requisicao-borda-g" id="oculta">
-                                    <label for="contrato">Data do Cadastro:</label>
-                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
-                                </div>
-                            </div><!--box info requisicao-->
-
-                            <div class="box-info-requisicao" id="oculta">
-
-                                <div class="box-info-requisicao-cinza-metade-g" id="oculta">
-                                    <label for="contrato">Obra:</label>
-                                    <span class="span-infos-requisicao" id="obra">Bio Ritmo - Alto das Nações</span>
-                                </div>
-
-                                <div class="box-info-requisicao-borda-g" id="oculta">
-                                    <label for="contrato">Data da Cotação:</label>
-                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
-                                </div>
-                            </div><!--box info requisicao-->
-
-
-                            <div class="box-info-requisicao">
-
-                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
-                                    <label for="contrato">Cnpj: :</label>
-                                    <span class="span-infos-requisicao" id="cliente">13.552.726/0001-89</span>
-                                </div>
-                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
-                                    <label for="contrato">Inscrição Est:</label>
-                                    <span class="span-infos-requisicao" id="obra">...</span>
-                                </div>
-
-                                <div class="box-info-requisicao-borda-g" id="oculta">
-                                    <label for="contrato">Data da Aprovação:</label>
-                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
-                                </div>
-
-                            </div><!-- box-info-requisicao -->
-
-                            <div class="box-info-requisicao">
-
-                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
-                                    <label for="contrato">Grupo:</label>
-                                    <span class="span-infos-requisicao" id="cliente">20 - Serralheria</span>
-                                </div>
-                                <div class="box-info-requisicao-cinza-metade-p" id="oculta">
-                                    <label for="contrato">Sub-Grupo:</label>
-                                    <span class="span-infos-requisicao" id="obra">Coberturas</span>
-                                </div>
-                                <div class="box-info-requisicao-borda-g" id="oculta">
-                                    <label for="contrato">Data de Compra:</label>
-                                    <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
-                                </div>
-
-                            </div><!-- box-info-requisicao -->
-
-                            <div class="box-info-requisicao">
-
-                                <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
-                                    <label for="contrato">Descrição:</label>
-                                    <span class="span-infos-requisicao" id="cliente">Material para cobertura da área
-                                        técnica</span>
-                                </div>
-                                <div class="box-info-requisicao">
-                                    <div class="box-info-requisicao-cinza-metade-p2" id="oculta">
-                                        <label for="contrato">Observação:</label>
-                                        <span class="span-infos-requisicao" id="cliente">Lorem ipsum dolor siamet</span>
-                                    </div>
-                                    <div class="box-info-requisicao-borda-g" id="oculta">
-                                        <label for="contrato">Data de Entrega:</label>
-                                        <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
-
-                                        <div class="box-info-requisicao-borda-g2" id="oculta">
-                                            <label for="contrato">Data de Pagamento:</label>
-                                            <span class="span-infos-requisicao" id="data-cadastro">01/01/2024</span>
-                                        </div>
-                                    </div>
-                                </div><!--box-info-requisicao-->
-
-
-
-                            </div><!-- box-info-requisicao -->
-
-                            <hr width="100%">
-
-
-
-                            <div class="table-responsive">
-                                <table id="tab-2" class="table-ficha">
-                                    <thead>
-                                        <tr>
-                                            <th>Sigla</th>
-                                            <th>Descrição Produto</th>
-                                            <th>Fornecedor</th>
-                                            <th>Marca</th>
-                                            <th>Qtde.</th>
-                                            <th>U.M</th>
-                                            <th>Preço</th>
-                                            <th>Valor</th>
-                                            <th>R$ <i class="fa fa-arrow-down" aria-hidden="true"></i></th>
-                                            <th>R$ <i class="fa fa-minus" aria-hidden="true"></i></th>
-                                            <th>R$ <i class="fa fa-arrow-up" aria-hidden="true"></i></th>
-                                            <th>Observações</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>APO-016</td>
-                                            <td>Porcelanato - Portobello 60x60 cm, linha essencial cor: Cimento Cinza Bold</td>
-                                            <td>Atlanta Materiais para Construção Ltda</td>
-                                            <td>Qualquer</td>
-                                            <td>10</td>
-                                            <td>Unid.</td>
-                                            <td>R$ 25,7000</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>Detalhes e Observação</td>
-                                        </tr>
-                                        <tr>
-                                            <td>APO-016</td>
-                                            <td>Caçamba - 3m³</td>
-                                            <td>Fulano</td>
-                                            <td>Qualquer</td>
-                                            <td>10</td>
-                                            <td>Unid.</td>
-                                            <td>R$ 25,7000</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>Detalhes e Observação</td>
-                                        </tr>
-                                        <tr>
-                                            <td>APO-016</td>
-                                            <td>Caçamba - 3m³</td>
-                                            <td>Fulano</td>
-                                            <td>Qualquer</td>
-                                            <td>10</td>
-                                            <td>Unid.</td>
-                                            <td>R$ 25,7000</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>R$ 20,00</td>
-                                            <td>Detalhes e Observação</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                                        <div class="form-row">
-                                            <div class="col-md-12">
-                                                <div
-                                                    style="display: flex; flex-direction: column; align-items: center;">
-                                                    <div style="display: flex; align-items: center; margin: 20px 0;">
-                                                        <p style="margin:10px 10px;">Produtos:</p>
-                                                        <input type="text" class="form-control text-center"
-                                                            style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
-                                                            maxlength="50" id="pro_i" name="pro_i" value="R$ 300,00 "
-                                                            disabled />
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        <div class="form-row align-center">
-
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
                                             <div style="display: flex; align-items: center; margin: 20px 0;">
-                                                <label for="nota_fiscal" style="margin-right: 10px;">Nº da Nota
-                                                    Fiscal:</label>
+                                                <p style="margin:10px 10px;">Produtos:</p>
                                                 <input type="text" class="form-control text-center"
-                                                    style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
-                                                    maxlength="100" id="nota_fiscal" name="nota_fiscal"
-                                                    value="Digite Nº da Nota" />
+                                                    style="background-color: #444; color: #fff; margin-right: 10px; width: 100px;"
+                                                    maxlength="50" id="pro_i" name="pro_i" value="R$ 300,00 "
+                                                    disabled />
                                             </div>
 
-
-                                            <input type="file" id="anexo" name="anexo" class="sub-icones"
-                                                style="display: none;" />
-                                            <button type="submit" id="sal_r" name="filtrar" class="sub-icones"
-                                                title="Anexar Nova Nota Fiscal">
-                                                <i class="fa fa-paperclip sub-icones fa-2x"
-                                                    aria-hidden="true"></i><label>Anexar Nota
-                                                    Fiscal</label>
-                                            </button>
                                         </div>
-                                        
-                                        <hr width="100%">
+                                    </div>
+                                    <div class="form-row align-center">
 
-                            <div class="col-md-12">
-                                <div class="d-flex justify-content-between align-items-center">
-                                                <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
-                                                <p
-                                                    style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
-                                                    MARCA S.A
-                                                    SOLUTIONS</p>
-                                                <p
-                                                    style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
-                                                    R$ 300,00</p>
-                                            </div>
+                                        <div style="display: flex; align-items: center; margin: 20px 0;">
+                                            <label for="nota_fiscal" style="margin-right: 10px;">Nº da Nota
+                                                Fiscal:</label>
+                                            <input type="text" class="form-control text-center"
+                                                style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
+                                                maxlength="100" id="nota_fiscal" name="nota_fiscal"
+                                                value="Digite Nº da Nota" />
+                                        </div>
 
-                                            <form>
 
-                                                <div class="form-row justify-content-end">
-                                                    <div class="col-md-5 text-right">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" value="obra"
-                                                                checked disabled>
-                                                            <label class="form-check-label">Dados do Fornecedor</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" value="outro"
-                                                                disabled>
-                                                            <label class="form-check-label">Outros Dados</label>
-                                                        </div>
+                                        <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                            style="display: none;" />
+                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones"
+                                            title="Anexar Nova Nota Fiscal">
+                                            <i class="fa fa-paperclip sub-icones fa-2x"
+                                                aria-hidden="true"></i><label>Anexar Nota
+                                                Fiscal</label>
+                                        </button>
+                                    </div>
+
+                                    <hr width="100%">
+
+                                    <div class="col-md-12">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
+                                            <p style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
+                                                MARCA S.A
+                                                SOLUTIONS</p>
+                                            <p style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
+                                                R$ 300,00</p>
+                                        </div>
+
+                                        <form>
+
+                                            <div class="form-row justify-content-end">
+                                                <div class="col-md-5 text-right">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" value="obra"
+                                                            checked disabled>
+                                                        <label class="form-check-label">Dados do Fornecedor</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" value="outro"
+                                                            disabled>
+                                                        <label class="form-check-label">Outros Dados</label>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-5">
+                                                    <label>Nome do Favorecido</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                        name="pro_i" value="MARCA S.A SOLUTIONS" disabled />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>CNPJ/CPF</label>
+                                                    <input type="text" class="form-control" maxlength="50" id="pro_i"
+                                                        name="pro_i" value="121.234.567-99" disabled />
+                                                </div>
+
+                                                <!-- Forma de Pagamento -->
+                                                <div class="col-md-4">
+                                                    <label>Forma de Pagamento</label>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="pagamento"
+                                                            id="boleto" value="boleto" disabled>
+                                                        <label class="form-check-label" for="boleto">Boleto</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="pagamento"
+                                                            id="transferencia" value="transferencia" disabled>
+                                                        <label clTIPO-ass="form-check-label"
+                                                            for="transferencia">Transferência Bancária</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="pagamento"
+                                                            id="pix" value="pix" disabled>
+                                                        <label class="form-check-label" for="pix">PIX</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <!-- Campos específicos de Boleto -->
+                                            <div id="boletoFields" class="hidden">
                                                 <div class="form-row">
-                                                    <div class="col-md-5">
-                                                        <label>Nome do Favorecido</label>
-                                                        <input type="text" class="form-control" maxlength="50"
-                                                            id="pro_i" name="pro_i" value="MARCA S.A SOLUTIONS"
-                                                            disabled />
+                                                    <div class="col-md-2 space-btn">
+                                                        <br>
+                                                        <input type="file" id="uploadFile" style="display:none;" />
+                                                        <button type="button" id="anexarBoleto" class="sub-icones"
+                                                            title="Anexar Boleto"
+                                                            onclick="document.getElementById('anexo').click();">
+                                                            <img src="imgs/ico-boleto.png" alt="Ícone Boleto">
+                                                            <label>Anexar Boleto</label>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label for="pgto">Tipo de Parcela</label>
+                                                        <select class="form-control" id="pgto">
+                                                            <option>Pgto Único</option>
+                                                            <option>2x</option>
+                                                            <option>3x</option>
+                                                            <option>4</option>
+                                                            <option>5x</option>
+                                                            <option>6x</option>
+                                                            <option>7x</option>
+                                                            <option>8x</option>
+                                                            <option>9x</option>
+                                                            <option>10x</option>
+                                                            <option>11x</option>
+                                                            <option>12x</option>
+
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label for="parcelas">Valor da Parcela</label>
+                                                        <input type="text" class="form-control" id="parcelas" min="1">
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label for="parcelas">Percentual da Parcela</label>
+                                                        <input type="text" class="form-control" id="parcelas" min="1">
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label>CNPJ/CPF</label>
-                                                        <input type="text" class="form-control" maxlength="50"
-                                                            id="pro_i" name="pro_i" value="121.234.567-99" disabled />
+                                                        <label for="vencimentos">Data de Vencimento das
+                                                            Parcelas</label>
+                                                        <input type="date" class="form-control" id="vencimentos"
+                                                            placeholder="dd/mm/aaaa">
                                                     </div>
 
-                                                    <!-- Forma de Pagamento -->
-                                                    <div class="col-md-4">
-                                                        <label>Forma de Pagamento</label>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="pagamento" id="boleto" value="boleto" disabled>
-                                                            <label class="form-check-label" for="boleto">Boleto</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="pagamento" id="transferencia"
-                                                                value="transferencia" disabled>
-                                                            <label clTIPO-ass="form-check-label"
-                                                                for="transferencia">Transferência Bancária</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="pagamento" id="pix" value="pix" disabled>
-                                                            <label class="form-check-label" for="pix">PIX</label>
-                                                        </div>
-                                                    </div>
 
                                                 </div>
+                                            </div>
 
-
-
-                                                <!-- Campos específicos de Boleto -->
-                                                <div id="boletoFields" class="hidden">
-                                                    <div class="form-row">
-                                                        <div class="col-md-2 space-btn">
-                                                            <br>
-                                                            <input type="file" id="uploadFile" style="display:none;" />
-                                                            <button type="button" id="anexarBoleto" class="sub-icones"
-                                                                title="Anexar Boleto"
-                                                                onclick="document.getElementById('anexo').click();">
-                                                                <img src="imgs/ico-boleto.png" alt="Ícone Boleto">
-                                                                <label>Anexar Boleto</label>
-                                                            </button>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <label for="pgto">Tipo de Parcela</label>
-                                                            <select class="form-control" id="pgto">
-                                                                <option>Pgto Único</option>
-                                                                <option>2x</option>
-                                                                <option>3x</option>
-                                                                <option>4</option>
-                                                                <option>5x</option>
-                                                                <option>6x</option>
-                                                                <option>7x</option>
-                                                                <option>8x</option>
-                                                                <option>9x</option>
-                                                                <option>10x</option>
-                                                                <option>11x</option>
-                                                                <option>12x</option>
-
-                                                            </select>
-
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <label for="parcelas">Valor da Parcela</label>
-                                                            <input type="text" class="form-control" id="parcelas"
-                                                                min="1">
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <label for="parcelas">Percentual da Parcela</label>
-                                                            <input type="text" class="form-control" id="parcelas"
-                                                                min="1">
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <label for="vencimentos">Data de Vencimento das
-                                                                Parcelas</label>
-                                                            <input type="date" class="form-control" id="vencimentos"
-                                                                placeholder="dd/mm/aaaa">
-                                                        </div>
-
-
+                                            <!-- Campos específicos de Transferência Bancária -->
+                                            <div id="transferenciaFields" class="hidden">
+                                                <div class="form-row">
+                                                    <div class="col-md-3">
+                                                        <label for="banco">Banco</label>
+                                                        <select class="form-control" id="banco" disabled>
+                                                            <option value="">Selecione o Banco</option>
+                                                            <option value="001" selected>Banco do Brasil</option>
+                                                            <option value="033">Banco Santander</option>
+                                                            <option value="104">Caixa Econômica Federal</option>
+                                                            <option value="237">Bradesco</option>
+                                                            <option value="341">Itaú</option>
+                                                            <option value="399">HSBC</option>
+                                                            <option value="745">Citibank</option>
+                                                            <option value="077">Banco Inter</option>
+                                                            <option value="756">Bancoob</option>
+                                                            <option value="041">Banrisul</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="agencia">Agência</label>
+                                                        <input type="text" class="form-control" id="agencia"
+                                                            value="1234" disabled>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="conta">Conta</label>
+                                                        <input type="text" class="form-control" id="conta"
+                                                            value="56789-0" disabled>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="tipoTransferencia">Tipo de Transferência</label>
+                                                        <select class="form-control" id="tipoTransferencia" disabled>
+                                                            <option value="TED" selected>TED</option>
+                                                            <option value="DOC">DOC</option>
+                                                            <option value="TEF">TEF</option>
+                                                        </select>
                                                     </div>
                                                 </div>
+                                            </div>
 
-                                                <!-- Campos específicos de Transferência Bancária -->
-                                                <div id="transferenciaFields" class="hidden">
-                                                    <div class="form-row">
-                                                        <div class="col-md-3">
-                                                            <label for="banco">Banco</label>
-                                                            <select class="form-control" id="banco" disabled>
-                                                                <option value="">Selecione o Banco</option>
-                                                                <option value="001" selected>Banco do Brasil</option>
-                                                                <option value="033">Banco Santander</option>
-                                                                <option value="104">Caixa Econômica Federal</option>
-                                                                <option value="237">Bradesco</option>
-                                                                <option value="341">Itaú</option>
-                                                                <option value="399">HSBC</option>
-                                                                <option value="745">Citibank</option>
-                                                                <option value="077">Banco Inter</option>
-                                                                <option value="756">Bancoob</option>
-                                                                <option value="041">Banrisul</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <label for="agencia">Agência</label>
-                                                            <input type="text" class="form-control" id="agencia"
-                                                                value="1234" disabled>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <label for="conta">Conta</label>
-                                                            <input type="text" class="form-control" id="conta"
-                                                                value="56789-0" disabled>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <label for="tipoTransferencia">Tipo de Transferência</label>
-                                                            <select class="form-control" id="tipoTransferencia"
-                                                                disabled>
-                                                                <option value="TED" selected>TED</option>
-                                                                <option value="DOC">DOC</option>
-                                                                <option value="TEF">TEF</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="table-responsive">
+                                            <div class="table-responsive">
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
@@ -562,7 +556,7 @@
                                                             <th>Data de Vencimento</th>
                                                             <th>Saldo</th>
                                                             <th>Status Programação</th>
-                                                            
+
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -577,127 +571,136 @@
                                                                     value="01/08/2024" disabled></td>
                                                             <td><input type="text" class="form-control table-input"
                                                                     value="R$ 0,00" disabled></td>
-                                                            <td><div class="box-info-requisicao-btn" style="margin-top: 0;">
-                                                                <span class="botao-pagamento">
-                                                                    <img class="icones" src="imgs/ico-pagamento-azul.png" alt="Ícone de Pré-Compra">
-                                                                    PAGO
-                                                                </span>
-                                                            </div></td>
+                                                            <td>
+                                                                <div class="box-info-requisicao-btn"
+                                                                    style="margin-top: 0;">
+                                                                    <span class="botao-pagamento">
+                                                                        <img class="icones"
+                                                                            src="imgs/ico-pagamento-azul.png"
+                                                                            alt="Ícone de Pré-Compra">
+                                                                        PAGO
+                                                                    </span>
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                                </div>
+                                            </div>
 
-                                                <!-- Campos específicos de PIX -->
-                                                <div id="pixFields" class="hidden">
-                                                    <div class="form-row">
-                                                        <div class="col-md-4">
-                                                            <label for="tipoChave">Tipo de Chave PIX</label>
-                                                            <select class="form-control" id="tipoChave">
-                                                                <option value="cpf">CPF</option>
-                                                                <option value="cnpj">CNPJ</option>
-                                                                <option value="email">E-mail</option>
-                                                                <option value="telefone">Telefone</option>
-                                                                <option value="chaveAleatoria">Chave Aleatória</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <label for="chavePix">Chave PIX</label>
-                                                            <input type="text" class="form-control" id="chavePix">
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <label for="statusPagamento">Status da Programação:</label>
-                                                            <select id="statusPagamento" class="form-control"
-                                                                name="statusPagamento">
-                                                                <option value="pendente">Aberto</option>
-                                                                <option value="aprovado">Aprovado</option>
-                                                                <option value="emProcessamento">Em Processamento
-                                                                </option>
-                                                                <option value="concluido">Concluído</option>
-                                                                <option value="cancelado">Cancelado</option>
-                                                                <option value="falhou">Falhou</option>
-                                                                <option value="reembolsado">Reembolsado</option>
-                                                            </select>
+                                            <!-- Campos específicos de PIX -->
+                                            <div id="pixFields" class="hidden">
+                                                <div class="form-row">
+                                                    <div class="col-md-4">
+                                                        <label for="tipoChave">Tipo de Chave PIX</label>
+                                                        <select class="form-control" id="tipoChave">
+                                                            <option value="cpf">CPF</option>
+                                                            <option value="cnpj">CNPJ</option>
+                                                            <option value="email">E-mail</option>
+                                                            <option value="telefone">Telefone</option>
+                                                            <option value="chaveAleatoria">Chave Aleatória</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="chavePix">Chave PIX</label>
+                                                        <input type="text" class="form-control" id="chavePix">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="statusPagamento">Status da Programação:</label>
+                                                        <select id="statusPagamento" class="form-control"
+                                                            name="statusPagamento">
+                                                            <option value="pendente">Aberto</option>
+                                                            <option value="aprovado">Aprovado</option>
+                                                            <option value="emProcessamento">Em Processamento
+                                                            </option>
+                                                            <option value="concluido">Concluído</option>
+                                                            <option value="cancelado">Cancelado</option>
+                                                            <option value="falhou">Falhou</option>
+                                                            <option value="reembolsado">Reembolsado</option>
+                                                        </select>
 
-                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
 
 
-                                            </form>
+                                        </form>
 
 
-                                            <div class="form-row align-center">
+                                        <div class="form-row align-center">
 
-                                                <!-- Botões -->
-                                                <div class="space-btn text-center">
-                                                    <button type="submit" id="salvar-encerrar" name="salvar-encerrar"
-                                                        class="sub-icones">
-                                                        <i class="fa-regular fa-floppy-disk"></i> <label
-                                                            for="salvar-reprovar">&nbsp;Salvar</label>
-                                                    </button>
-                                                </div>
+                                            <!-- Botões -->
+                                            <div class="space-btn text-center">
+                                                <button type="submit" id="salvar-encerrar" name="salvar-encerrar"
+                                                    class="sub-icones">
+                                                    <i class="fa-regular fa-floppy-disk"></i> <label
+                                                        for="salvar-reprovar">&nbsp;Salvar</label>
+                                                </button>
+                                            </div>
 
-                                            </div><!--div form-row align-center-->
-
-
-
-                                        </div><!--div card-->
+                                        </div><!--div form-row align-center-->
 
 
 
-                        
+                                    </div><!--div card-->
 
-</div>
-                    </div><!--div conteudo in-->
-                    <div class="form-row align-center">
 
-                        <!-- Botões -->
-                        <div class="space-btn text-center">
-                            <button type="submit" id="salvar-encerrar" name="salvar-encerrar" class="sub-icones">
-                                <i class="fa-regular fa-floppy-disk"></i> <label for="salvar-reprovar">&nbsp;Salvar
-                                    e
-                                    Encerrar</label>
-                            </button>
+
+
+
+                                </div>
+                            </div><!--div conteudo in-->
+                            <div class="form-row align-center">
+
+                                <!-- Botões -->
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="salvar-encerrar" name="salvar-encerrar"
+                                        class="sub-icones">
+                                        <i class="fa-regular fa-floppy-disk"></i> <label
+                                            for="salvar-reprovar">&nbsp;Salvar
+                                            e
+                                            Encerrar</label>
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                        </div><!--div cards-container-->
+                        <div class="form-row align-right">
+                            <div class="space-btn text-center">
+                                <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
+                                    <i class="fa-regular fa-folder"></i>
+                                    <label>Histórico Geral</label>
+                                </button>
+                            </div>
                         </div>
-                </div>
-                
+
+                    </div><!--div conteudo in-->
 
 
-            </div><!--div cards-container-->
-            <div class="form-row align-right">
-                <div class="space-btn text-center">
-                    <button id="openModalBtn" class="sub-icones" onclick="openModal('modal-historico')">
-                        <i class="fa-regular fa-folder"></i>
-                        <label>Histórico Geral</label>
-                    </button>
-                </div>
+                </div><!--div container desktop-->
+
+            </div><!--div conteudo-->
+
+
+
+            <!-- Ícone no footer -->
+            <div class="ico-subir-footer" onclick="scrollToTop()">
+                <i class="fas fa-arrow-up"></i>
             </div>
-
-        </div><!--div conteudo in-->
-
-
-    </div><!--div container desktop-->
-
-    </div><!--div conteudo-->
+        </div><!--container desktop-->
 
 
-
-    <!-- Ícone no footer -->
-    <div class="ico-subir-footer" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+        <!-- Ícone no footer -->
+        <div class="ico-subir-footer" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </div>
     </div><!--container desktop-->
 
 
-    <!-- Ícone no footer -->
-    <div class="ico-subir-footer" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    </div><!--container desktop-->
 
 
- 
+
     <!-- Janela Modal Principal -->
     <div id="modal-historico" class="modal">
         <div class="modal-envolto">
@@ -705,7 +708,27 @@
                 <span class="close" onclick="closeModal('modal-historico')">&times;</span>
                 <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
 
-                <div class="modal-wrap" style="margin-top: 20px;">
+                <div class="modal-wrap" style="margin-top: 60px;">
+
+                    <!-- Bloco de Itens -->
+                    <div class="itens-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <div class="folder" onclick="mostrarSlide(0)">
+                            Nota Fiscal
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(1)">
+                            Boleto
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(2)">
+                            Recibo
+                        </div>
+                        <div class="folder-vazio" onclick="mostrarSlide(0)">
+                            Solicitação
+                        </div>
+                        <div class="folder-vazio" onclick="mostrarSlide(0)">
+                            Outro Doc
+                        </div>
+                    </div>
+
                     <div class="carrosel-container">
                         <!-- Setas de navegação -->
                         <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
@@ -724,13 +747,12 @@
                             <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
                             <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- JavaScript -->
     <script>
@@ -754,8 +776,68 @@
             document.getElementById("titulo-documento").textContent = titulos[slideIndex];
         }
 
+        function mostrarSlide(index) {
+            slideIndex = index;
+            mudarSlide(0); // Chama a função mudarSlide com n = 0 para mostrar o slide correto
+        }
     </script>
 
+    <style>
+        .folder {
+            width: 30%;
+            height: 100px;
+            margin: 10px;
+            border-radius: 10px;
+            filter: drop-shadow(0 0 0.75rem grey);
+            background: white;
+            position: relative;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+
+            font-size: 16px;
+            border: #f47332 3px solid;
+        }
+
+        .folder-vazio {
+            width: 30%;
+            height: 100px;
+            margin: 10px;
+            border-radius: 10px;
+            filter: drop-shadow(0 0 0.75rem grey);
+            background: rgb(228, 228, 228);
+            color: #aaaaaa;
+            position: relative;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: not-allowed;
+            font-size: 16px;
+
+
+
+        }
+
+        /* Estilo para mudar a cor ao passar o mouse */
+        .folder:hover {
+            background: #f0f0f0;
+        }
+
+        .itens-container {
+            display: flex;
+            /* Para alinhar os blocos na mesma linha */
+            justify-content: center;
+            /* Centraliza os itens */
+            gap: 10px;
+            /* Espaçamento entre os blocos */
+            margin-bottom: 20px;
+        }
+    </style>
 
 
 
@@ -778,35 +860,35 @@
 
 
 
-   
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // Seleciona o rádio botão de Transferência Bancária por padrão
-                document.getElementById('transferencia').checked = true;
 
-                // Mostra os campos específicos para Transferência Bancária
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Seleciona o rádio botão de Transferência Bancária por padrão
+            document.getElementById('transferencia').checked = true;
+
+            // Mostra os campos específicos para Transferência Bancária
+            document.getElementById('transferenciaFields').classList.remove('hidden');
+        });
+
+        function showFields(paymentType) {
+            // Oculta todos os campos de pagamento
+            document.getElementById('boletoFields').classList.add('hidden');
+            document.getElementById('transferenciaFields').classList.add('hidden');
+            document.getElementById('pixFields').classList.add('hidden');
+
+            // Mostra os campos específicos com base no tipo de pagamento selecionado
+            if (paymentType === 'boleto') {
+                document.getElementById('boletoFields').classList.remove('hidden');
+            } else if (paymentType === 'transferencia') {
                 document.getElementById('transferenciaFields').classList.remove('hidden');
-            });
-
-            function showFields(paymentType) {
-                // Oculta todos os campos de pagamento
-                document.getElementById('boletoFields').classList.add('hidden');
-                document.getElementById('transferenciaFields').classList.add('hidden');
-                document.getElementById('pixFields').classList.add('hidden');
-
-                // Mostra os campos específicos com base no tipo de pagamento selecionado
-                if (paymentType === 'boleto') {
-                    document.getElementById('boletoFields').classList.remove('hidden');
-                } else if (paymentType === 'transferencia') {
-                    document.getElementById('transferenciaFields').classList.remove('hidden');
-                } else if (paymentType === 'pix') {
-                    document.getElementById('pixFields').classList.remove('hidden');
-                }
+            } else if (paymentType === 'pix') {
+                document.getElementById('pixFields').classList.remove('hidden');
             }
-        </script>
+        }
+    </script>
 
-        <script src="filtro-plan.js"></script>
+    <script src="filtro-plan.js"></script>
 </body>
 
 </html>

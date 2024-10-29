@@ -380,20 +380,34 @@
                                             <hr width="100%">
 
                                             <div class="col-md-12">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
-                                                    <p
-                                                        style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
-                                                        MARCA S.A
-                                                        SOLUTIONS</p>
-                                                    <p
-                                                        style="text-transform: uppercase; margin-left: 5px; font-weight: bold;">
-                                                        R$ 300,00</p>
+                                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                                    <div style="width: 90%;">
+                                                        <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
+                                                        <p style="text-transform: uppercase; font-weight: bold; margin: 0 10px;">MARCA S.A SOLUTIONS</p>
+                                                        <p style="text-transform: uppercase; font-weight: bold; margin: 0 10px;">R$ 300,00</p>
+                                                    </div>
+                                                    
+                                                    <div class="form-row align-items-center" style="text-align: right;">
+                                                        <div style="display: flex; align-items: center; margin: 20px 0;">
+                                                            <label for="nota_fiscal" style="margin-right: 10px;">Nº da Nota Fiscal:</label>
+                                                            <input type="text" class="form-control text-center"
+                                                                style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
+                                                                maxlength="100" id="nota_fiscal" name="nota_fiscal"
+                                                                value="Digite Nº da Nota" />
+                                                        </div>
+                                            
+                                                        <input type="file" id="anexo" name="anexo" class="sub-icones" style="display: none;" />
+                                                        <button type="submit" id="sal_r" name="filtrar" class="sub-icones" title="Anexar Nova Nota Fiscal" style="margin-left: 10px;">
+                                                            <i class="fa fa-paperclip sub-icones fa-2x" aria-hidden="true"></i><label>Anexar Nota Fiscal</label>
+                                                        </button>
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            
 
                                                 <form>
                                                     <!-- Primeira linha do formulário -->
-                                                    <div class="form-row justify-content-end">
+                                                    <div class="form-row justify-content-end" style="border-top: 2px solid #eee;">
                                                         <div class="col-md-5 text-right">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
@@ -464,9 +478,8 @@
                                                         </div>
                                                     </div>
 
-                                                    <hr width="100%">
 
-                                                    <div class="form-row justify-content-end">
+                                                    <div class="form-row justify-content-end"  style="border-top: 2px solid #eee;">
                                                         <div class="col-md-5 text-right">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
@@ -521,7 +534,7 @@
 
                                                     <!-- Campos específicos de Boleto -->
                                                     <div id="boletoFields" class="hidden">
-                                                        <div class="form-row" style="margin-left: 5px;">
+                                                        <div class="form-row">
                                                             <div class="col-md-2 space-btn">
                                                                 <br>
                                                                 <input type="file" id="uploadFile"
@@ -568,10 +581,10 @@
                                                                 <input type="date" class="form-control" id="vencimentos"
                                                                     placeholder="dd/mm/aaaa">
                                                             </div>
-                                                            <div class="col-md-1" style="padding-top: 20px;">
+                                                            <div class="col-md-1" style="padding-top: 20px; margin-right: 0px;">
                                                                 <button type="button" class="sub-icones"
                                                                     onclick="adicionarLinha()"><i
-                                                                        class="fa-regular fa-square-plus"></i><label>Adicionar</label></button>
+                                                                        class="fa-regular fa-square-plus"></i><label>Incluir</label></button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -778,28 +791,8 @@
 
 
                                             
-                                            <hr width="100%">
-                                            <div class="form-row align-center">
-
-                                                <div style="display: flex; align-items: center; margin: 20px 0;">
-                                                    <label for="nota_fiscal" style="margin-right: 10px;">Nº da Nota
-                                                        Fiscal:</label>
-                                                    <input type="text" class="form-control text-center"
-                                                        style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
-                                                        maxlength="100" id="nota_fiscal" name="nota_fiscal"
-                                                        value="Digite Nº da Nota" />
-                                                </div>
-
-
-                                                <input type="file" id="anexo" name="anexo" class="sub-icones"
-                                                    style="display: none;" />
-                                                <button type="submit" id="sal_r" name="filtrar" class="sub-icones"
-                                                    title="Anexar Nova Nota Fiscal">
-                                                    <i class="fa fa-paperclip sub-icones fa-2x"
-                                                        aria-hidden="true"></i><label>Anexar Nota
-                                                        Fiscal</label>
-                                                </button>
-                                            </div>
+                                         
+                                            
                                             </div>
                                             </form>
 
@@ -822,7 +815,6 @@
 
 
 
-                                        </div>
                                     </div><!--div card-->
 
 
@@ -830,8 +822,6 @@
 
                             </div><!--#lis-cold-md-->
 
-
-                        </div>
 
 
                     </div><!--div cards-container-->
@@ -869,68 +859,142 @@
 
 
 
-        <!-- Janela Modal Principal -->
-        <div id="modal-historico" class="modal">
-            <div class="modal-envolto">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal('modal-historico')">&times;</span>
-                    <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
+     
 
-                    <div class="modal-wrap" style="margin-top: 20px;">
-                        <div class="carrosel-container">
-                            <!-- Setas de navegação -->
-                            <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
-                            <span class="next" onclick="mudarSlide(1)">&#10095;</span>
+    <!-- Janela Modal Principal -->
+    <div id="modal-historico" class="modal">
+        <div class="modal-envolto">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-historico')">&times;</span>
+                <h2 id="titulo-documento" class="tit-modal">Nota Fiscal</h2>
 
-                            <!-- Slides dos documentos -->
-                            <div class="slide" style="display: block; padding-top: 20px;">
-                                <p>Nota Fiscal referente à compra de xxxx no dia xx/xx/xxxx</p>
-                                <img src="imgs/ex-nota.png" alt="Nota Fiscal" class="document-img">
-                            </div>
-                            <div class="slide" style="display: none; padding-top: 20px;">
-                                <p>Boleto referente à primeira parcela do serviço xxxxxxx</p>
-                                <img src="imgs/ex-boleto.webp" alt="Boleto" class="document-img">
-                            </div>
-                            <div class="slide" style="display: none; padding-top: 20px;">
-                                <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
-                                <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
-                            </div>
+                <div class="modal-wrap" style="margin-top: 60px;">
+
+                    <!-- Bloco de Itens -->
+                    <div class="itens-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <div class="folder" onclick="mostrarSlide(0)">
+                            Nota Fiscal
                         </div>
+                        <div class="folder" onclick="mostrarSlide(1)">
+                            Boleto
+                        </div>
+                        <div class="folder" onclick="mostrarSlide(2)">
+                            Recibo
+                        </div>
+                        <div class="folder-vazio" onclick="mostrarSlide(0)">
+                            Solicitação
+                        </div>
+                        <div class="folder-vazio" onclick="mostrarSlide(0)">
+                            Outro Doc
+                        </div>
+                    </div>
+
+                    <div class="carrosel-container">
+                        <!-- Setas de navegação -->
+                        <span class="prev" onclick="mudarSlide(-1)">&#10094;</span>
+                        <span class="next" onclick="mudarSlide(1)">&#10095;</span>
+
+                        <!-- Slides dos documentos -->
+                        <div class="slide" style="display: block; padding-top: 20px;">
+                            <p>Nota Fiscal referente à compra de xxxx no dia xx/xx/xxxx</p>
+                            <img src="imgs/ex-nota.png" alt="Nota Fiscal" class="document-img">
+                        </div>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p>Boleto referente à primeira parcela do serviço xxxxxxx</p>
+                            <img src="imgs/ex-boleto.webp" alt="Boleto" class="document-img">
+                        </div>
+                        <div class="slide" style="display: none; padding-top: 20px;">
+                            <p class="descricao-documento">Recibo fiscal referente ao pagamento xxxxx</p>
+                            <img src="imgs/ex-recibo.png" alt="Recibo" class="document-img">
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
+    <!-- JavaScript -->
+    <script>
+        let slideIndex = 0;
 
-        <!-- JavaScript -->
-        <script>
-            let slideIndex = 0;
+        function mudarSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
 
-            function mudarSlide(n) {
-                const slides = document.getElementsByClassName("slide");
-                const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
 
-                slideIndex += n;
-                if (slideIndex >= slides.length) slideIndex = 0;
-                if (slideIndex < 0) slideIndex = slides.length - 1;
-
-                // Esconder todos os slides
-                for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-
-                // Mostrar o slide atual
-                slides[slideIndex].style.display = "block";
-                document.getElementById("titulo-documento").textContent = titulos[slideIndex];
+            // Esconder todos os slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
 
-            // Fechar o modal
-            function closeModal(element) {
-                // Encontra o modal pai do elemento que chamou a função
-                const modal = element.closest('.modal');
-                modal.style.display = "none";
-            }
-        </script>
+            // Mostrar o slide atual
+            slides[slideIndex].style.display = "block";
+            document.getElementById("titulo-documento").textContent = titulos[slideIndex];
+        }
+
+        function mostrarSlide(index) {
+            slideIndex = index;
+            mudarSlide(0); // Chama a função mudarSlide com n = 0 para mostrar o slide correto
+        }
+    </script>
+
+<style>
+    .folder {
+        width: 30%; 
+        height: 100px;
+        margin: 10px;
+        border-radius: 10px; 
+        filter: drop-shadow(0 0 0.75rem grey); 
+        background: white; 
+        position: relative;
+        transition: background 0.3s; 
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+
+        font-size: 16px;
+        border:#f47332 3px solid;
+    }
+
+    .folder-vazio {
+        width: 30%; 
+        height: 100px;
+        margin: 10px; 
+        border-radius: 10px;
+        filter: drop-shadow(0 0 0.75rem grey); 
+        background: rgb(228, 228, 228); 
+        color: #aaaaaa;
+        position: relative;
+        transition: background 0.3s; 
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: not-allowed;
+        font-size: 16px;
+        
+        
+
+    }
+
+    /* Estilo para mudar a cor ao passar o mouse */
+    .folder:hover {
+        background: #f0f0f0; 
+    }
+
+    .itens-container {
+        display: flex; /* Para alinhar os blocos na mesma linha */
+        justify-content: center; /* Centraliza os itens */
+        gap: 10px; /* Espaçamento entre os blocos */
+        margin-bottom: 20px;
+    }
+</style>
 
 
 

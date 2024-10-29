@@ -618,6 +618,27 @@ th:hover .tooltip-fornecedor {
     font-family: 'Lato', sans-serif;
 }
 
+.box-info-requisicao {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.box-info-requisicao-btn .icones {
+    position: absolute;
+    left: -15%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 25px;
+}
+
+.box-info-requisicao-btn {
+    display: flex;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
 /* Estilo para os status */
 .box-info-requisicao-btn .botao-aberta {
     background-color: #5fc9ed;

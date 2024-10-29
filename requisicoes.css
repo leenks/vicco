@@ -787,109 +787,298 @@ background-color: #ffffff;
         height: 100px;
     }
     
+/* Estilos para os botões de status */
+.botao-pre-compra,
+.botao-pagamento,
+.botao-cotacao,
+.botao-compra,
+.botao-cancelada,
+.botao-aprovacao,
+.botao-analise,
+.botao-orcamento,
+.botao-entrega,
+.botao-recebido,
+.botao-aprovado {
+    font-size: 12px;
+    min-width: 110px;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+}
 
-    /* Estilos para os status */
+/* Cores e sombras para os diferentes status */
+.box-info-requisicao-btn .botao-pre-compra {
+    background-color: #79C14E;
+    text-shadow: 1px 1px #356619;
+}
 
-    .botao-pre-compra,
-    .botao-pagamento,
-    .botao-pre-compra,
-    .botao-pagamento,
-    .botao-cotacao,
-    .botao-compra,
-    .botao-cancelada,
-    .botao-aprovacao,
-    .botao-analise,
-    .botao-orcamento,
-    .bota-entrega,
-    .botao-recebido,
-    .botao-aprovado {
-        font-size: 10px;
-        min-width: 110px;
-        text-align: center;
-        padding: 5px;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-    
-    }
+.box-info-requisicao-btn .botao-compra {
+    background-color: #298a2b;
+    text-shadow: 1px 1px #19662b;
+}
 
-    .box-info-requisicao-btn .botao-pre-compra {
+.box-info-requisicao-btn .botao-pagamento {
+    background-color: rgb(187, 2, 144);
+    text-shadow: 1px 1px #550135;
+}
 
-        background-color: #79C14E;
-        text-shadow: 1px 1px #356619;
-    }
 
-    .box-info-requisicao-btn .botao-compra {
-        background-color: #298a2b;
-        text-shadow: 1px 1px #19662b;
-    }
+.box-info-requisicao-btn .botao-cancelada {
+    background-color: rgb(214, 0, 0);
+    text-shadow: 1px 1px rgb(91, 0, 0);
+}
 
-    .box-info-requisicao-btn .botao-pagamento {
-        background-color: rgb(187, 2, 144);
-        text-shadow: 1px 1px #550135;
-    }
+.box-info-requisicao-btn .botao-aprovacao {
+    background-color: rgb(12, 204, 175);
+    text-shadow: 1px 1px rgb(1, 66, 67);
+}
 
-    .box-info-requisicao-btn .botao-cotacao {
-        background-color: orangered;
-        text-shadow: 1px 1px rgb(118, 31, 0);
-    }
+.box-info-requisicao-btn .botao-entrega {
+    background-color: rgb(12, 121, 204);
+    text-shadow: 1px 1px rgb(1, 27, 67);
+}
 
-    .box-info-requisicao-btn .botao-cancelada {
-        background-color: rgb(214, 0, 0);
-        text-shadow: 1px 1px rgb(91, 0, 0);
-    }
+.box-info-requisicao-btn .botao-recebido {
+    background-color: rgb(249, 126, 17);
+    text-shadow: 1px 1px rgb(92, 59, 2);
+}
 
-    .box-info-requisicao-btn .botao-aprovacao {
-        background-color: rgb(12, 204, 175);
-        text-shadow: 1px 1px rgb(1, 66, 67);
-    }
-    .box-info-requisicao-btn .botao-entrega {
-        background-color: rgb(12, 121, 204);
-        text-shadow: 1px 1px rgb(1, 27, 67);
-    }
+.box-info-requisicao-btn .botao-aprovado {
+    background-color: #579531;
+    text-shadow: 1px 1px #356619;
+}
 
-    .box-info-requisicao-btn .botao-recebido {
-        background-color: rgb(249, 126, 17);
-        text-shadow: 1px 1px rgb(92, 59, 2);
-    }
-    
-    .box-info-requisicao-btn .botao-aprovado {
-        background-color: #579531;
-        text-shadow: 1px 1px #356619;
-    }
+.box-info-requisicao-btn .botao-analise {
+    background-color: #ff973c;
+    text-shadow: 1px 1px #9f6d41;
+}
 
-    .box-info-requisicao-btn .botao-analise {
-        background-color: #ff973c;
-        text-shadow: 1px 1px #9f6d41;
-    }
+.box-info-requisicao-btn .botao-orcamento {
+    background-color: #ffc416;
+    text-shadow: 1px 1px #b58d16;
+}
+/* Estilos para os status */
+.box-info-requisicao-btn .botao-compra {
+    background-color: #298a2b;
+    text-shadow: 1px 1px #19662b;
+    color: white;
+    padding: 7px 10px 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    .box-info-requisicao-btn .botao-orcamento {
-        background-color: #ffc416;
-        text-shadow: 1px 1px #b58d16;
-        }
+.box-info-requisicao-btn .botao-pre-compra {
+    background-color: #79C14E;
+    text-shadow: 1px 1px #356619;
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    /* Estilo para o ícone */
-    .titulo-container .icone-abrir {
-        margin-right: 30px;
-        position: relative;
-        z-index: 1;
-    }
+.box-info-requisicao-btn .botao-pagamento {
+    background-color: rgb(187, 2, 144);
+    text-shadow: 1px 1px #550135;
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    /* Estilo para o ícone de pré-compra */
-    .box-info-requisicao-btn .icones {
-        position: absolute;
-        left: -15%;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1;
-        width: 25px;
-    }
+.box-info-requisicao-btn .botao-cotacao {
+    background-color: orangered;
+    text-shadow: 1px 1px rgb(118, 31, 0);
+    color: white;
+    padding: 7px 15px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
+
+.box-info-requisicao-btn .botao-cancelada {
+    background-color: rgb(214, 0, 0);
+    text-shadow: 1px 1px rgb(91, 0, 0);
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
+
+.box-info-requisicao-btn .botao-aprovacao {
+    background-color: rgb(12, 204, 175);
+    text-shadow: 1px 1px rgb(1, 66, 67);
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
+
+.box-info-requisicao-btn .botao-aprovado {
+    background-color: #579531;
+    text-shadow: 1px 1px #356619;
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
+
+.box-info-requisicao-btn .botao-analise {
+    background-color: #ff973c;
+    text-shadow: 1px 1px #9f6d41;
+    color: white;
+    padding: 7px 10px 6px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
+
+.box-info-requisicao-btn .botao-orcamento {
+    background-color: #ffc416;
+    text-shadow: 1px 1px #b58d16;
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
+
+.box-info-requisicao-btn .botao-conversao {
+background-color: #01e8a7;
+text-shadow: 1px 1px rgb(0, 136, 97);
+color: white;
+padding: 8px 10px 8px 25px;
+border: none;
+border-radius: 5px;
+height: 35px;
+}
+
+.box-info-requisicao-btn .botao-cancelada {
+background-color: rgb(214, 0, 0);
+text-shadow: 1px 1px rgb(91, 0, 0);
+color: white;
+padding: 8px 10px 8px 25px;
+border: none;
+border-radius: 5px;
+height: 35px;
+}
+
+
+.box-info-requisicao-btn .botao-aprovacao {
+background-color: rgb(12, 204, 175);
+text-shadow: 1px 1px rgb(1, 66, 67);
+color: white;
+padding: 8px 10px 8px 15px;
+border: none;
+border-radius: 5px;
+height: 35px;
+
+}
+.box-info-requisicao-btn .botao-entrega {
+background-color: rgb(12, 121, 204);
+text-shadow: 1px 1px rgb(1, 27, 67);
+color: white;
+padding: 8px 10px 8px 20px;
+border: none;
+border-radius: 5px;
+height: 35px;
+width: 110px;
+
+}
+.box-info-requisicao-btn .botao-recebido {
+background-color: rgb(249, 126, 17);
+text-shadow: 1px 1px rgb(92, 59, 2);
+color: white;
+padding: 8px 10px 8px 20px;
+border: none;
+border-radius: 5px;
+height: 35px;
+width: 110px;
+
+}
+
+/* Estilo para o ícone */
+.titulo-container .icone-abrir {
+    margin-right: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo para o ícone de pré-compra */
+.box-info-requisicao-btn .icones {
+    position: absolute;
+    left: -15%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 25px;
+}
 
     /* Estilo para o preço */
     .preco-container {

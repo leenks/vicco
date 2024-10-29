@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      
+
 </head>
 
 <body>
@@ -24,10 +24,10 @@
 
                 <div class="topo">
                     <div class="logo">
-    <a href="home.html">
-        <img src="imgs/logo.png" alt="Logo">
-    </a>
-</div>
+                        <a href="home.html">
+                            <img src="imgs/logo.png" alt="Logo">
+                        </a>
+                    </div>
 
                     <div class="menu">
                         <div class="menu-item">
@@ -42,11 +42,11 @@
                             </a>
                         </div>
                         <div class="menu-item">
-        <a href="#" onclick="goBack()">
-            <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
-            <p>Voltar</p>
-        </a>
-    </div>
+                            <a href="#" onclick="goBack()">
+                                <img src="imgs/ico-voltar.png" alt="Voltar" width="50px">
+                                <p>Voltar</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -69,10 +69,20 @@
                         <span>REQUISIÇÃO</span>
                     </div>
 
-                    <div class="conteudo-in">
-                        <h2>Requisição de Compra </h2>
-                            <h3>BIO RITMO - ALTO DAS NAÇÕES</h3>
-                    
+                    <div class="conteudo-in" id="conteudo-in">
+                        <div class="box-info-requisicao">
+
+
+                            <h3>Requisição de Compra - SMART FIT - PIRITUBA 2</h3>
+
+                            <div class="box-info-requisicao-btn">
+                                <span class="botao-pagamento">
+                                    <img class="icones" src="imgs/ico-pagamento-azul.png" alt="Ícone de pagamento">
+                                    PAGAMENTO
+                                </span>
+                            </div>
+                        </div>
+
 
                         <!-- visualizar ficha -->
 
@@ -106,7 +116,7 @@
                                             <input type="checkbox" id="ocu" name="ocu" value="1" />
                                             <label for="ocu" style="display: inline-block;">Sigilosa</label>
                                         </div>
-                                        
+
                                         <div class="col-md-2">
                                             <label>Status</label>
                                             <select id="status" name="status" class="form-control">
@@ -321,45 +331,45 @@
                                                     id="qtd_i" name="qtd_i" value="" />
                                             </div>-->
 
-                                        </div>
                                     </div>
-                                    <div class="form-row align-right">
-                                        <div class="col-md-2 text-center">
-                                            <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
-                                        </div>
-                                        <div class="col-md-2"></div>
-                                        <div class="space-btn text-center">
-                                            <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
-                                                    class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
-                                        </div>
-                                        <div class="space-btn text-center">
-                                            <button type="submit" id="fecha" class="sub-icones" name="fechar"
-                                                title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i
-                                                    class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
-                                        </div>
-                                        <div class="space-btn text-center">
-                                            <button type="submit" id="cancel" class="sub-icones" name="cancel"
-                                                title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
-                                                    class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
-                                        </div>
-                                        <div class="space-btn text-center">
-                                            <div>
-                                                <input type="file" id="anexo" name="anexo" class="sub-icones"
-                                                    style="display: none;" />
-                                                <button type="button" id="fot_carrega" class="sub-icones" name="subir"
-                                                    title="Abrir janela para carregar imagem para a requisição de compra"
-                                                    onclick="document.getElementById('anexo').click();">
-                                                    <i class="fa-solid fa-paperclip"></i><label>Solicitação</label>
-                                                </button>
-                                            </div>
-                                        </div>
+                            </div>
+                            <div class="form-row align-right">
+                                <div class="col-md-2 text-center">
+                                    <span id="tot_r" class="campo-valor"><strong>R$ 0,00</strong></span>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="sal_r" name="salvar" class="sub-icones"><i
+                                            class="fa-regular fa-floppy-disk"></i><label>Salvar</label></button>
+                                </div>
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="fecha" class="sub-icones" name="fechar"
+                                        title="Efetua fechamento da requisição para prosseguir com cotação da mesma"><i
+                                            class="fa-regular fa-square-check"></i><label>Finalizar</label></button>
+                                </div>
+                                <div class="space-btn text-center">
+                                    <button type="submit" id="cancel" class="sub-icones" name="cancel"
+                                        title="Efetua cancelamento de requisição de compra solicitada para ser adquirida"><i
+                                            class="fa-regular fa-rectangle-xmark"></i><label>Cancelar</label></button>
+                                </div>
+                                <div class="space-btn text-center">
+                                    <div>
+                                        <input type="file" id="anexo" name="anexo" class="sub-icones"
+                                            style="display: none;" />
+                                        <button type="button" id="fot_carrega" class="sub-icones" name="subir"
+                                            title="Abrir janela para carregar imagem para a requisição de compra"
+                                            onclick="document.getElementById('anexo').click();">
+                                            <i class="fa-solid fa-paperclip"></i><label>Solicitação</label>
+                                        </button>
                                     </div>
-                                </form>
-                            
+                                </div>
+                            </div>
+                            </form>
+
                             <hr width="100%">
                             <div id="lis_i" class="col-md-12  p-0">
                                 <div id="tab-2_wrapper" class="dataTables_wrapper no-footer">
-    
+
                                     <div class="overflow-auto" style="max-width: 100vw;">
                                         <div class="tab-1 table-responsive form-row-table">
                                             <table id="tab-2" class="table-ficha">
@@ -375,17 +385,23 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr class="cinza-claro">
-                                                         <td>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-editar-table" style="color: #ff892e; border: 0;" title="EDITAR">
-                                                    <i class="fa-solid fa-edit"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-concluir-edicao" style="color: green; display: none;" title="CONCLUIR">
-                                                    <i class="fa-solid fa-check"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-excluir-edicao" style="color:#dc3545; display: none;" title="EXCLUIR">
-                                                    <i class="fa-solid fa-trash-alt"></i>
-                                                </button>
-                                            </td>
+                                                        <td>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-editar-table"
+                                                                style="color: #ff892e; border: 0;" title="EDITAR">
+                                                                <i class="fa-solid fa-edit"></i>
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-concluir-edicao"
+                                                                style="color: green; display: none;" title="CONCLUIR">
+                                                                <i class="fa-solid fa-check"></i>
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-excluir-edicao"
+                                                                style="color:#dc3545; display: none;" title="EXCLUIR">
+                                                                <i class="fa-solid fa-trash-alt"></i>
+                                                            </button>
+                                                        </td>
                                                         <td>PIN-141</td>
                                                         <td>Tinta Borracha Clorada Azul - 3,6L</td>
                                                         <td>unid.</td>
@@ -393,17 +409,23 @@
                                                         <td>1</td>
                                                     </tr>
                                                     <tr class="cinza-claro">
-                                                         <td>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-editar-table" style="color: #ff892e; border: 0;" title="EDITAR">
-                                                    <i class="fa-solid fa-edit"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-concluir-edicao" style="color: green; display: none;" title="CONCLUIR">
-                                                    <i class="fa-solid fa-check"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-excluir-edicao" style="color:#dc3545; display: none;" title="EXCLUIR">
-                                                    <i class="fa-solid fa-trash-alt"></i>
-                                                </button>
-                                            </td>
+                                                        <td>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-editar-table"
+                                                                style="color: #ff892e; border: 0;" title="EDITAR">
+                                                                <i class="fa-solid fa-edit"></i>
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-concluir-edicao"
+                                                                style="color: green; display: none;" title="CONCLUIR">
+                                                                <i class="fa-solid fa-check"></i>
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-excluir-edicao"
+                                                                style="color:#dc3545; display: none;" title="EXCLUIR">
+                                                                <i class="fa-solid fa-trash-alt"></i>
+                                                            </button>
+                                                        </td>
                                                         <td>PIN-141</td>
                                                         <td>Tinta Borracha Clorada Azul - 3,6L</td>
                                                         <td>unid.</td>
@@ -411,17 +433,23 @@
                                                         <td>1</td>
                                                     </tr>
                                                     <tr class="cinza-medio">
-                                                         <td>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-editar-table" style="color: #ff892e; border: 0;" title="EDITAR">
-                                                    <i class="fa-solid fa-edit"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-concluir-edicao" style="color: green; display: none;" title="CONCLUIR">
-                                                    <i class="fa-solid fa-check"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-excluir-edicao" style="color:#dc3545; display: none;" title="EXCLUIR">
-                                                    <i class="fa-solid fa-trash-alt"></i>
-                                                </button>
-                                            </td>
+                                                        <td>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-editar-table"
+                                                                style="color: #ff892e; border: 0;" title="EDITAR">
+                                                                <i class="fa-solid fa-edit"></i>
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-concluir-edicao"
+                                                                style="color: green; display: none;" title="CONCLUIR">
+                                                                <i class="fa-solid fa-check"></i>
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-excluir-edicao"
+                                                                style="color:#dc3545; display: none;" title="EXCLUIR">
+                                                                <i class="fa-solid fa-trash-alt"></i>
+                                                            </button>
+                                                        </td>
                                                         <td>PIN-141</td>
                                                         <td>Tinta Borracha Clorada Azul - 3,6L</td>
                                                         <td>unid.</td>
@@ -429,34 +457,40 @@
                                                         <td>1</td>
                                                     </tr>
                                                     <tr class="cinza-escuro">
-                                                         <td>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-editar-table" style="color: #ff892e; border: 0;" title="EDITAR">
-                                                    <i class="fa-solid fa-edit"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-concluir-edicao" style="color: green; display: none;" title="CONCLUIR">
-                                                    <i class="fa-solid fa-check"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-sm btn-sm-custom btn-excluir-edicao" style="color:#dc3545; display: none;" title="EXCLUIR">
-                                                    <i class="fa-solid fa-trash-alt"></i>
-                                                </button>
-                                            </td>
+                                                        <td>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-editar-table"
+                                                                style="color: #ff892e; border: 0;" title="EDITAR">
+                                                                <i class="fa-solid fa-edit"></i>
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-concluir-edicao"
+                                                                style="color: green; display: none;" title="CONCLUIR">
+                                                                <i class="fa-solid fa-check"></i>
+                                                            </button>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-sm-custom btn-excluir-edicao"
+                                                                style="color:#dc3545; display: none;" title="EXCLUIR">
+                                                                <i class="fa-solid fa-trash-alt"></i>
+                                                            </button>
+                                                        </td>
                                                         <td>PIN-141</td>
                                                         <td>Tinta Borracha Clorada Azul - 3,6L</td>
                                                         <td>unid.</td>
                                                         <td>Qualquer</td>
                                                         <td>1</td>
                                                     </tr>
-    
+
                                                 </tbody>
                                             </table>
-    
+
                                         </div>
                                     </div>
-    
+
                                 </div>
                             </div>
                         </div>
-                    
+
 
                     </div>
                 </div>
@@ -552,9 +586,9 @@
         </script>
 
 
-       
-<!--DEIXA EDITAVEL COLUNAS DA TABELA-->
-<script src="edita-colunas.js"></script>
+
+        <!--DEIXA EDITAVEL COLUNAS DA TABELA-->
+        <script src="edita-colunas.js"></script>
 
 
 

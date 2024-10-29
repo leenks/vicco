@@ -456,7 +456,7 @@
                                     <button type="button" id="visualizar_cotacao" name="visualizar_cotacao"
                                         class="sub-icones">
                                         <a href="ver-requisicao.html">
-                                            <i class="fa-regular fa-eye"></i></a><label>Visualizar</label>
+                                            <i class="fa-regular fa-eye"></i></a><label>Ver Mapa de Cotação</label>
                                     </button>
                                 </div><!--space-btn text-center-->
 
@@ -517,7 +517,10 @@
                         <div class="folder" onclick="mostrarSlide(2)">
                             Recibo
                         </div>
-                        <div class="folder" onclick="mostrarSlide(0)">
+                        <div class="folder-vazio" onclick="mostrarSlide(0)">
+                            Solicitação
+                        </div>
+                        <div class="folder-vazio" onclick="mostrarSlide(0)">
                             Outro Doc
                         </div>
                     </div>
@@ -547,6 +550,87 @@
         </div>
     </div>
 
+    <!-- JavaScript -->
+    <script>
+        let slideIndex = 0;
+
+        function mudarSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
+
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+
+            // Esconder todos os slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Mostrar o slide atual
+            slides[slideIndex].style.display = "block";
+            document.getElementById("titulo-documento").textContent = titulos[slideIndex];
+        }
+
+        function mostrarSlide(index) {
+            slideIndex = index;
+            mudarSlide(0); // Chama a função mudarSlide com n = 0 para mostrar o slide correto
+        }
+    </script>
+
+<style>
+    .folder {
+        width: 30%; 
+        height: 100px;
+        margin: 10px;
+        border-radius: 10px; 
+        filter: drop-shadow(0 0 0.75rem grey); 
+        background: white; 
+        position: relative;
+        transition: background 0.3s; 
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+
+        font-size: 16px;
+        border:#f47332 3px solid;
+    }
+
+    .folder-vazio {
+        width: 30%; 
+        height: 100px;
+        margin: 10px; 
+        border-radius: 10px;
+        filter: drop-shadow(0 0 0.75rem grey); 
+        background: rgb(228, 228, 228); 
+        color: #aaaaaa;
+        position: relative;
+        transition: background 0.3s; 
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: not-allowed;
+        font-size: 16px;
+        
+        
+
+    }
+
+    /* Estilo para mudar a cor ao passar o mouse */
+    .folder:hover {
+        background: #f0f0f0; 
+    }
+
+    .itens-container {
+        display: flex; /* Para alinhar os blocos na mesma linha */
+        justify-content: center; /* Centraliza os itens */
+        gap: 10px; /* Espaçamento entre os blocos */
+        margin-bottom: 20px;
+    }
+</style>
     
 <!-- Modal Aprovar Requisição -->
 <div id="modal-reprovar" class="modal">
@@ -587,64 +671,6 @@
     </div>
 </div>
 
-    <!-- JavaScript -->
-    <script>
-        let slideIndex = 0;
-
-        function mudarSlide(n) {
-            const slides = document.getElementsByClassName("slide");
-            const titulos = ["Nota Fiscal", "Boleto", "Recibo"];
-
-            slideIndex += n;
-            if (slideIndex >= slides.length) slideIndex = 0;
-            if (slideIndex < 0) slideIndex = slides.length - 1;
-
-            // Esconder todos os slides
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            // Mostrar o slide atual
-            slides[slideIndex].style.display = "block";
-            document.getElementById("titulo-documento").textContent = titulos[slideIndex];
-        }
-
-        function mostrarSlide(index) {
-            slideIndex = index;
-            mudarSlide(0); // Chama a função mudarSlide com n = 0 para mostrar o slide correto
-        }
-    </script>
-
-<style>
-    .folder {
-        width: 130px; /* Diminuído para caber na mesma linha */
-        height: 100px; /* Diminuído para melhor proporção */
-        margin: 10px; /* Margem entre os retângulos */
-        border-radius: 10px; /* Bordas arredondadas */
-        filter: drop-shadow(0 0 0.75rem grey); /* Sombra */
-        background: white; /* Cor de fundo */
-        position: relative;
-        transition: background 0.3s; /* Transição suave */
-        display: flex; /* Para centralizar o texto */
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    /* Estilo para mudar a cor ao passar o mouse */
-    .folder:hover {
-        background: #f0f0f0; /* Cor de fundo ao passar o mouse */
-    }
-
-    .itens-container {
-        display: flex; /* Para alinhar os blocos na mesma linha */
-        justify-content: center; /* Centraliza os itens */
-        gap: 10px; /* Espaçamento entre os blocos */
-        margin-bottom: 20px;
-    }
-</style>
     <script>
         // Função para rolar até o topo da página
         function scrollToTop() {
