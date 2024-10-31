@@ -18,7 +18,8 @@ select {
 
 .table-input {
     width: 120px !important;
-    max-width: 100%; /* evita overflow */
+    max-width: 100%;
+    /* evita overflow */
 }
 
 .btn-sm-custom {
@@ -28,18 +29,20 @@ select {
 }
 
 
-.cinza-claro {    
-    border: 1px solid #ccc; 
+.cinza-claro {
+    border: 1px solid #ccc;
     background-color: #e7e7e7;
     border-radius: 10px;
 }
-.cinza-medio {    
-    border: 1px solid #ccc; 
+
+.cinza-medio {
+    border: 1px solid #ccc;
     background-color: #dbdbdb;
     border-radius: 10px;
 }
-.cinza-escuro {    
-    border: 1px solid #ccc; 
+
+.cinza-escuro {
+    border: 1px solid #ccc;
     background-color: #cecece;
     border-radius: 10px;
 }
@@ -50,12 +53,14 @@ select {
 
 /* Estilos para alternar as cores das linhas da tabela */
 .table-ficha tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Cinza claro */
+    background-color: #f9f9f9;
+    /* Cinza claro */
     margin-bottom: 20px;
 }
 
 .table-ficha tbody tr:nth-child(even) {
-    background-color: #ffffff; /* Branco */
+    background-color: #ffffff;
+    /* Branco */
 }
 
 /* Estilos para centralizar o conteúdo das células */
@@ -64,44 +69,54 @@ select {
 .sticky {
     position: sticky;
     left: 0;
-    background-color: white; /* Cor de fundo para a coluna fixa */
-    z-index: 1; /* Para garantir que a coluna fixa fique acima das outras */
+    background-color: white;
+    /* Cor de fundo para a coluna fixa */
+    z-index: 1;
+    /* Para garantir que a coluna fixa fique acima das outras */
 }
 
 .ontainer {
-    overflow-x: auto; /* Permite rolagem horizontal */
-    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura do pai */
+    overflow-x: auto;
+    /* Permite rolagem horizontal */
+    max-width: 100%;
+    /* Garante que o contêiner não ultrapasse a largura do pai */
 }
 
 .table-ficha {
     width: 100%;
-    border-collapse: collapse; /* Para remover os espaços entre as bordas das células */
+    border-collapse: collapse;
+    /* Para remover os espaços entre as bordas das células */
     font-size: 12px;
 }
 
-.table-ficha th, .table-ficha td {
+.table-ficha th,
+.table-ficha td {
     text-align: center;
-    vertical-align: middle; 
+    vertical-align: middle;
     padding: 5px 2px 5px;
-    border: 1px solid #ddd; 
+    border: 1px solid #ddd;
     font-size: 12px;
 }
 
 /* Estilos adicionais para cabeçalho */
 .table-ficha thead th {
-    background-color: #f2f2f2; /* Cor de fundo para o cabeçalho */
+    background-color: #f2f2f2;
+    /* Cor de fundo para o cabeçalho */
     font-weight: bold;
 }
 
 /* Estilo para os ícones dentro da tabela com a classe .table-ficha-icon */
 .table-ficha-icon i {
-    color: #e07b39; /* Cor laranja */
-    font-size: 2rem; /* Tamanho dos ícones */
+    color: #e07b39;
+    /* Cor laranja */
+    font-size: 2rem;
+    /* Tamanho dos ícones */
 }
 
 /* Estilo para os ícones com a classe .table-ficha-icon ao passar o mouse */
 .table-ficha-icon i:hover {
-    color: #e07b39; /* Cor laranja mais escura ao passar o mouse */
+    color: #e07b39;
+    /* Cor laranja mais escura ao passar o mouse */
 }
 
 /* Estilo geral para ícones com a classe .sub-icones */
@@ -167,7 +182,7 @@ select {
 }
 
 
-.form-check-inline .form-check-input  {
+.form-check-inline .form-check-input {
     margin-top: 10px;
     margin-right: 5px;
 }
@@ -215,16 +230,22 @@ select {
     justify-content: space-between;
 }
 
-.form-control {font-family: 'Lato', sans-serif; font-size: 14px !important;}
+.form-control {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px !important;
+}
 
 .hidden {
     display: none;
 }
+
 hr {
     background: #ccc;
 }
 
-.container-fluid {margin: 0 !important;}
+.container-fluid {
+    margin: 0 !important;
+}
 
 
 .form-row {
@@ -278,7 +299,8 @@ hr {
 }
 
 .input-buscar input {
-    width: 100px; /* Defina o tamanho desejado */
+    width: 100px;
+    /* Defina o tamanho desejado */
 }
 
 
@@ -304,19 +326,20 @@ hr {
 
 .checklist {
     margin-top: 15px;
-    text-align: center; 
+    text-align: center;
 }
 
 .checklist-item {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-    border-bottom: 1px solid #ddd; 
-    padding-bottom: 15px; 
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
 }
 
 .checklist-item:last-of-type {
-    border-bottom: none; /* Remove a linha da última checklist-item */
+    border-bottom: none;
+    /* Remove a linha da última checklist-item */
 }
 
 .checklist-content {
@@ -331,16 +354,10 @@ hr {
     align-items: center;
     cursor: pointer;
     margin: 0 10px;
-    /* Bordas arredondadas */
     border-radius: 20px;
     border: 2px solid #fff;
-    
-    /* Sombra para o efeito de relevo */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.4);
-
-    
-    /* Tamanho e padding */
-    padding: 20px 10px; /* Ajuste conforme necessário */
+    padding: 20px 10px;
 }
 
 .checkbox-icon-img {
@@ -358,47 +375,66 @@ hr {
     font-weight: bold;
     font-size: 18px;
     color: #0055ff;
-    margin: 0 10px; 
+    margin: 0 10px;
 }
 
 /* Container for the observations input and icon */
 .observations-wrapper {
     display: flex;
-    align-items: center; /* Alinha verticalmente o textarea e o status-container */
+    align-items: center;
+    /* Alinha verticalmente o textarea e o status-container */
 }
 
 .status-container {
-    display:flow-root;
-    flex-direction: column; /* Organiza ícone e texto verticalmente */
-    align-items: center; /* Alinha o ícone e o texto no centro */
-    margin-left: 10px; /* Adiciona um espaço entre o textarea e o status-container */
+    display: flow-root;
+    flex-direction: column;
+    /* Organiza ícone e texto verticalmente */
+    align-items: center;
+    /* Alinha o ícone e o texto no centro */
+    margin-left: 10px;
+    /* Adiciona um espaço entre o textarea e o status-container */
 }
 
 
 .checkbox-label {
-    margin-top: 5px; /* Adiciona um espaço entre o ícone e o texto */
-    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 5px;
+    /* Adiciona um espaço entre o ícone e o texto */
+    text-align: center;
+    /* Alinha o texto ao centro */
     font-size: 0.9em;
-    color:#555;
+    color: #555;
 }
 
 /* TOOTLTIP PARA FORNECEDOR DENTRO DE COTACAO*/
 
 .tooltip-fornecedor {
     visibility: hidden;
-    width: 200px; /* Largura do tooltip */
-    background-color: rgba(64, 64, 64, 0.8); /* Fundo suave */
-    color: white; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px; /* Espaçamento interno */
-    position: absolute; /* Posiciona o tooltip */
-    z-index: 1; /* Coloca o tooltip acima de outros elementos */
-    bottom: -100%; /* Aponta o tooltip acima do cabeçalho */
-    left: 50%; /* Centraliza o tooltip */
-    transform: translateX(-50%); /* Ajusta para o centro */
-    opacity: 0; /* Começa invisível */
-    transition: opacity 0.3s; /* Efeito de transição */
+    width: 200px;
+    /* Largura do tooltip */
+    background-color: rgba(64, 64, 64, 0.8);
+    /* Fundo suave */
+    color: white;
+    /* Cor do texto */
+    text-align: center;
+    /* Centraliza o texto */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    padding: 10px;
+    /* Espaçamento interno */
+    position: absolute;
+    /* Posiciona o tooltip */
+    z-index: 1;
+    /* Coloca o tooltip acima de outros elementos */
+    bottom: -100%;
+    /* Aponta o tooltip acima do cabeçalho */
+    left: 50%;
+    /* Centraliza o tooltip */
+    transform: translateX(-50%);
+    /* Ajusta para o centro */
+    opacity: 0;
+    /* Começa invisível */
+    transition: opacity 0.3s;
+    /* Efeito de transição */
     font-family: 'Lato' sans-serif;
     font-size: 12px;
     font-weight: normal;
@@ -406,76 +442,109 @@ hr {
 }
 
 th:hover .tooltip-fornecedor {
-    visibility: visible; /* Torna o tooltip visível ao passar o mouse */
-    opacity: 1; /* Torna o tooltip opaco */
+    visibility: visible;
+    /* Torna o tooltip visível ao passar o mouse */
+    opacity: 1;
+    /* Torna o tooltip opaco */
 }
 
 .sub-icones:hover .tooltip-fornecedor {
-    visibility: visible; /* Torna o tooltip visível ao passar o mouse */
-    opacity: 1; /* Torna o tooltip opaco */
+    visibility: visible;
+    /* Torna o tooltip visível ao passar o mouse */
+    opacity: 1;
+    /* Torna o tooltip opaco */
     bottom: 100%;
 }
 
 .tit-forne:hover {
-    color: blue; /* Muda a cor do texto ao passar o mouse */
+    color: blue;
+    /* Muda a cor do texto ao passar o mouse */
     cursor: pointer;
 }
 
 /* Container para a imagem e o tooltip */
 .tooltip-container {
-    position: relative; /* Necessário para o posicionamento absoluto do tooltip */
-    display: inline-block; /* Mantém a imagem e o tooltip alinhados */
+    position: relative;
+    /* Necessário para o posicionamento absoluto do tooltip */
+    display: inline-block;
+    /* Mantém a imagem e o tooltip alinhados */
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.4);
+    padding: 5px 5px;
 }
+.tooltip-container:hover { background-color: #eee;}
 
 /* Tooltip (dica de ferramenta) */
 .tooltip-text {
-    visibility: hidden; /* Oculta o tooltip por padrão */
-    width: 200px; /* Define a largura do tooltip */
-    background-color: #333; /* Cor de fundo do tooltip */
-    color: #fff; /* Cor do texto do tooltip */
-    text-align: center; /* Alinha o texto no centro */
-    border-radius: 5px; /* Cantos arredondados */
-    padding: 5px; /* Espaçamento interno */
-    position: absolute; /* Posiciona o tooltip em relação ao container */
-    bottom: 125%; /* Posiciona o tooltip acima da imagem */
-    left: 50%; /* Centraliza o tooltip horizontalmente em relação ao container */
-    margin-left: -100px; /* Ajusta o alinhamento horizontal do tooltip */
-    opacity: 0; /* Inicialmente invisível */
-    transition: opacity 0.3s; /* Suaviza a transição de opacidade */
-    z-index: 1; /* Garante que o tooltip esteja acima da imagem */
+    visibility: hidden;
+    /* Oculta o tooltip por padrão */
+    width: 200px;
+    /* Define a largura do tooltip */
+    background-color: #333;
+    /* Cor de fundo do tooltip */
+    color: #fff;
+    /* Cor do texto do tooltip */
+    text-align: center;
+    /* Alinha o texto no centro */
+    border-radius: 5px;
+    /* Cantos arredondados */
+    padding: 5px;
+    /* Espaçamento interno */
+    position: absolute;
+    /* Posiciona o tooltip em relação ao container */
+    bottom: 125%;
+    /* Posiciona o tooltip acima da imagem */
+    left: 50%;
+    /* Centraliza o tooltip horizontalmente em relação ao container */
+    margin-left: -100px;
+    /* Ajusta o alinhamento horizontal do tooltip */
+    opacity: 0;
+    /* Inicialmente invisível */
+    transition: opacity 0.3s;
+    /* Suaviza a transição de opacidade */
+    z-index: 1;
+    /* Garante que o tooltip esteja acima da imagem */
 }
 
 /* Exibe o tooltip quando o mouse está sobre o container */
 .tooltip-container:hover .tooltip-text {
-    visibility: visible; /* Torna o tooltip visível */
-    opacity: 1; /* Define a opacidade para totalmente visível */
+    visibility: visible;
+    /* Torna o tooltip visível */
+    opacity: 1;
+    /* Define a opacidade para totalmente visível */
 }
 
 
 
 .observations-input {
     flex-grow: 1;
-    height: 70px; 
-    width: 100%; 
+    height: 70px;
+    width: 100%;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical; 
+    resize: vertical;
 }
 
 /* Status icon styling */
 .entrega-status-icon {
-    height: 50px; /* Make the icon larger */
-    width: auto; /* Maintain aspect ratio */
+    height: 50px;
+    /* Make the icon larger */
+    width: auto;
+    /* Maintain aspect ratio */
     cursor: pointer;
-    align-self: flex-start; 
+    align-self: flex-start;
     margin-top: -5px;
 }
 
 
- /* Estilo para o botão de fechar */
- .close {
+/* Estilo para o botão de fechar */
+.close {
     cursor: pointer;
     float: right;
     font-size: 28px;
@@ -503,7 +572,8 @@ th:hover .tooltip-fornecedor {
 }
 
 .option-image {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
+    width: 30px;
+    /* Ajuste o tamanho conforme necessário */
     height: 30px;
     margin-right: 10px;
 }
@@ -512,8 +582,8 @@ th:hover .tooltip-fornecedor {
     flex-grow: 1;
 }
 
- /* Estilo para o botão de toggle */
- .toggle-button {
+/* Estilo para o botão de toggle */
+.toggle-button {
     margin: 10px 0;
     padding: 10px;
     letter-spacing: 0.1px;
@@ -565,50 +635,67 @@ th:hover .tooltip-fornecedor {
 @media (max-width: 768px) {
 
     .box-info-requisicao {
-        flex-direction: column; /* Muda a direção para coluna no mobile */
-        align-items: center; /* Centraliza o conteúdo */
-        text-align: center; /* Centraliza o texto */
+        flex-direction: column;
+        /* Muda a direção para coluna no mobile */
+        align-items: center;
+        /* Centraliza o conteúdo */
+        text-align: center;
+        /* Centraliza o texto */
     }
 
     .box-info-requisicao-btn {
-        margin: 0 0 10px 0; /* Adiciona espaço abaixo do botão */
+        margin: 0 0 10px 0;
+        /* Adiciona espaço abaixo do botão */
     }
 
     .observations-wrapper {
-        flex-direction: column; /* Alinha o textarea e o status-container verticalmente */
-        align-items: stretch; /* Faz o textarea ocupar a largura total disponível */
+        flex-direction: column;
+        /* Alinha o textarea e o status-container verticalmente */
+        align-items: stretch;
+        /* Faz o textarea ocupar a largura total disponível */
     }
 
     .observations-input {
-        width: 100%; /* Garante que o textarea ocupe toda a largura disponível */
-        
+        width: 100%;
+        /* Garante que o textarea ocupe toda a largura disponível */
+
     }
 
     .status-container {
-        width: 100%; /* Garante que o status-container ocupe toda a largura disponível */
-        align-items: center; /* Alinha o ícone e o texto no centro horizontalmente */
-        margin-left: 0; /* Remove a margem esquerda */
-        text-align: center; /* Centraliza o texto abaixo do ícone */
+        width: 100%;
+        /* Garante que o status-container ocupe toda a largura disponível */
+        align-items: center;
+        /* Alinha o ícone e o texto no centro horizontalmente */
+        margin-left: 0;
+        /* Remove a margem esquerda */
+        text-align: center;
+        /* Centraliza o texto abaixo do ícone */
     }
+
     .text-muted {
         font-size: 16px;
         width: 90%;
     }
 
     .entrega-status-icon {
-        height: 40px; /* Ajusta o tamanho do ícone para telas menores */
-        width: auto; /* Mantém a proporção do ícone */
-        margin: 0; /* Remove a margem ao redor do ícone */
+        height: 40px;
+        /* Ajusta o tamanho do ícone para telas menores */
+        width: auto;
+        /* Mantém a proporção do ícone */
+        margin: 0;
+        /* Remove a margem ao redor do ícone */
     }
-    
+
     .question {
-        font-size: 16px; /* Reduz o tamanho da fonte para melhor ajuste em telas menores */
-       width: 160px;
+        font-size: 16px;
+        /* Reduz o tamanho da fonte para melhor ajuste em telas menores */
+        width: 160px;
     }
 
     .checkbox-label {
-        margin-top: 5px; /* Mantém o espaço entre o ícone e o texto */
-        font-size:  0.9em;
+        margin-top: 5px;
+        /* Mantém o espaço entre o ícone e o texto */
+        font-size: 0.9em;
     }
 }
 
@@ -617,7 +704,7 @@ th:hover .tooltip-fornecedor {
 /*Estilo para tabela de visualização de requisições*/
 .table-striped-custom tbody tr:nth-child(odd) td:nth-child(odd) {
     background-color: #f2f2f2;
-  }
+}
 
 .campo-valor {
     padding: 5px 20px;
@@ -671,150 +758,150 @@ th:hover .tooltip-fornecedor {
 }
 
 
-    /* Estilos para os status */
-    .box-info-requisicao-btn .botao-compra {
-        background-color: #298a2b;
-        text-shadow: 1px 1px #19662b;
-        color: white;
-        padding: 7px 10px 8px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
+/* Estilos para os status */
+.box-info-requisicao-btn .botao-compra {
+    background-color: #298a2b;
+    text-shadow: 1px 1px #19662b;
+    color: white;
+    padding: 7px 10px 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    .box-info-requisicao-btn .botao-pre-compra {
-        background-color: #79C14E;
-        text-shadow: 1px 1px #356619;
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
+.box-info-requisicao-btn .botao-pre-compra {
+    background-color: #79C14E;
+    text-shadow: 1px 1px #356619;
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    .box-info-requisicao-btn .botao-pagamento {
-        background-color: rgb(187, 2, 144);
-        text-shadow: 1px 1px #550135;
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
+.box-info-requisicao-btn .botao-pagamento {
+    background-color: rgb(187, 2, 144);
+    text-shadow: 1px 1px #550135;
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    .box-info-requisicao-btn .botao-cotacao {
-        background-color: orangered;
-        text-shadow: 1px 1px rgb(118, 31, 0);
-        color: white;
-        padding: 7px 15px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
+.box-info-requisicao-btn .botao-cotacao {
+    background-color: orangered;
+    text-shadow: 1px 1px rgb(118, 31, 0);
+    color: white;
+    padding: 7px 15px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    .box-info-requisicao-btn .botao-cancelada {
-        background-color: rgb(214, 0, 0);
-        text-shadow: 1px 1px rgb(91, 0, 0);
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
+.box-info-requisicao-btn .botao-cancelada {
+    background-color: rgb(214, 0, 0);
+    text-shadow: 1px 1px rgb(91, 0, 0);
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    .box-info-requisicao-btn .botao-aprovacao {
-        background-color: rgb(12, 204, 175);
-        text-shadow: 1px 1px rgb(1, 66, 67);
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
-    
-    .box-info-requisicao-btn .botao-aprovado {
-        background-color: #579531;
-        text-shadow: 1px 1px #356619;
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
+.box-info-requisicao-btn .botao-aprovacao {
+    background-color: rgb(12, 204, 175);
+    text-shadow: 1px 1px rgb(1, 66, 67);
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    .box-info-requisicao-btn .botao-analise {
-        background-color: #ff973c;
-        text-shadow: 1px 1px #9f6d41;
-        color: white;
-        padding: 7px 10px 6px 18px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
+.box-info-requisicao-btn .botao-aprovado {
+    background-color: #579531;
+    text-shadow: 1px 1px #356619;
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
-    .box-info-requisicao-btn .botao-orcamento {
-        background-color: #ffc416;
-        text-shadow: 1px 1px #b58d16;
-        color: white;
-        padding: 7px 10px 6px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-        position: relative;
-        white-space: nowrap;
-        margin-left: 5px;
-        top: 20%;
-        height: 35px;
-    }
+.box-info-requisicao-btn .botao-analise {
+    background-color: #ff973c;
+    text-shadow: 1px 1px #9f6d41;
+    color: white;
+    padding: 7px 10px 6px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
+
+.box-info-requisicao-btn .botao-orcamento {
+    background-color: #ffc416;
+    text-shadow: 1px 1px #b58d16;
+    color: white;
+    padding: 7px 10px 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 5px;
+    top: 20%;
+    height: 35px;
+}
 
 .box-info-requisicao-btn .botao-conversao {
     background-color: #01e8a7;
@@ -847,6 +934,7 @@ th:hover .tooltip-fornecedor {
     height: 35px;
 
 }
+
 .box-info-requisicao-btn .botao-entrega {
     background-color: rgb(12, 121, 204);
     text-shadow: 1px 1px rgb(1, 27, 67);
@@ -858,6 +946,7 @@ th:hover .tooltip-fornecedor {
     width: 110px;
 
 }
+
 .box-info-requisicao-btn .botao-recebido {
     background-color: rgb(249, 126, 17);
     text-shadow: 1px 1px rgb(92, 59, 2);
@@ -869,9 +958,11 @@ th:hover .tooltip-fornecedor {
     width: 110px;
 
 }
+
 .space-btn {
     max-width: 35%;
 }
+
 .space-btn2 {
     width: 100%;
 }
@@ -895,14 +986,21 @@ th:hover .tooltip-fornecedor {
 
 
 .sidebar-form {
-    height: 100%; 
-    margin-left: auto; 
-    padding: 15px; 
-    box-sizing: border-box; /* Garante que o padding não aumente a largura do sidebar */
+    height: 100%;
+    margin-left: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    /* Garante que o padding não aumente a largura do sidebar */
     border-radius: 10px;
-    padding: 20px; 
+    padding: 20px;
 }
-.sidebar-form h3 {color: #333; font-size: 28px; margin: 0; font-family: 'Lato' sans-serif;}
+
+.sidebar-form h3 {
+    color: #333;
+    font-size: 28px;
+    margin: 0;
+    font-family: 'Lato' sans-serif;
+}
 
 .options-list {
     list-style-type: none;
@@ -944,47 +1042,59 @@ th:hover .tooltip-fornecedor {
 
 
 
-    .align-right,
-    .status-container,
-    .label-input-container {
-        width: 99%;
-    }
+.align-right,
+.status-container,
+.label-input-container {
+    width: 99%;
+}
 
-    .form-row label {flex: auto; }
-    .space-btn {min-width: 85px;}
-    
+.form-row label {
+    flex: auto;
+}
 
-    .form-row {
-        flex-direction: row;
-        align-items: center;
-    }
+.space-btn {
+    min-width: 85px;
+}
 
-    .form-row > * {
-        margin-bottom: 10px;
-    }
 
-    .form-row label,
-    .form-row input[type="text"],
-    .form-row select,
-    .form-row input[type="checkbox"] {
-        flex-basis: 100%;
-    }
-    .box-info-requisicao-btn {
-        margin-top: 10px;
-    }
-    .table-ficha td, .table-ficha th {
-    font-size: 14px; /* Tamanho da fonte no desktop */
-    padding: 2px;    /* Espaçamento */
+.form-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-row>* {
+    margin-bottom: 10px;
+}
+
+.form-row label,
+.form-row input[type="text"],
+.form-row select,
+.form-row input[type="checkbox"] {
+    flex-basis: 100%;
+}
+
+.box-info-requisicao-btn {
+    margin-top: 10px;
+}
+
+.table-ficha td,
+.table-ficha th {
+    font-size: 14px;
+    /* Tamanho da fonte no desktop */
+    padding: 2px;
+    /* Espaçamento */
 }
 
 .table-responsive {
     display: block;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Para uma rolagem suave no iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Para uma rolagem suave no iOS */
 }
 
 .table-ficha {
-    width: 100%; /* A largura da tabela será mantida dentro do container */
+    width: 100%;
+    /* A largura da tabela será mantida dentro do container */
 }
 }
 
@@ -1027,5 +1137,5 @@ th:hover .tooltip-fornecedor {
     /* Arredonda a borda superior direita */
     border-color: #fe9a35;
     /* Altera a cor da borda ao focar */
-   
+
 }
