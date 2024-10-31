@@ -1864,7 +1864,7 @@ width: 110px;
 
     @media screen and (max-width: 768px) {
         .status {
-            height: 60px;
+            height: 55px;
         }
 
         #mobile-conteudoModoSimples2 th,
