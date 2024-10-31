@@ -15,19 +15,21 @@
     <link rel="stylesheet" href="forms.css">
     <style>
 .box-info-requisicao-btn {
-    position: relative; /* Permite o uso de posicionamento absoluto nos filhos */
+    position: relative; 
+ 
 }
 
 .botao-entrega {
-    display: flex; /* Usar flexbox para alinhar o ícone e o texto */
-    align-items: center; /* Alinha verticalmente o ícone e o texto */
-    position: relative; /* Para o ícone posicionado dentro do botão */
+    display: flex;
+    align-items: center;
+    position: relative; 
+
 }
 
 .botao-entrega img {
-    width: 30px; /* Largura do ícone */
-    position: absolute; /* Permite posicionar o ícone */
-    top: 44.5%; /* Ajuste vertical do ícone */
+    width: 30px; 
+    position: absolute; 
+    top: 44.5%; 
 }
 
 /* Estilo padrão para telas grandes */
@@ -37,10 +39,45 @@
 
 /* Ajustes para telas pequenas */
 @media (max-width: 768px) {
+
+    .modal-body {
+        padding: 0;
+        margin: 0;
+        width: 75%;
+    }
+
+
     .botao-entrega img {
         left: 60%; /* Posição do ícone em telas pequenas */
     }
+    
+    .conteudo-in h3 {
+        line-height: 30px;
+    }
+
+    .box-info-requisicao-btn .icones {
+        width: 30px;
+    }
+
+    .box-info-requisicao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .box-info-requisicao-btn {
+        margin-top: 10px; /* Adiciona um espaço entre o título e o botão */
+        align-self: center; /* Alinha o botão ao início */
+    }
+
+    .botao-entrega {
+    max-width: 80px !important;
+    font-size: 20px;
+ 
 }
+}
+
 
     </style>
     <title>Vicco Construtora</title>
@@ -106,9 +143,8 @@
                     <div class="conteudo-in" id="conteudo-in">
                         <div class="box-info-requisicao">
                        
-
                             <h3>Requisição de Compra - SMART FIT - PIRITUBA 2</h3>
-    
+                           
                             <div class="box-info-requisicao-btn">
                                 <span class="botao-entrega">
                                     <img class="icones" src="imgs/ico-entregar-azul.png"
@@ -116,6 +152,9 @@
                                     ENTREGA
                                 </span>
                             </div>
+
+                           
+    
                             </div>
                     <div class="form-row align-left">
                         <div class="space-btn text-center">
@@ -135,7 +174,8 @@
                                     <label>Descrição:</label>
                                     <span
                                         style="font-size: 20px; font-weight: bold; padding: 2px; max-width: 600px; word-wrap: break-word;">Material
-                                        para Apoio Civil</span>
+                                        para Apoio Civil</span><br>
+                                        
                                 </div>
 
                             </div>
@@ -180,43 +220,32 @@
                         </div>
                            
                             
-                            <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
-                            <p style="text-transform: uppercase; margin-left: 5px;">MARCA S.A SOLUTIONS</p>
-                        
-                            <div class="form-row">
-                                <div class="col-md-6 col-6 mb-3">
-                                    <label for="dataEntrega2">Data da Entrega:</label>
-                                    <input type="text" class="form-control" id="dataEntrega2" value="20/07/2024 13:30" disabled>
+                        <div class="col-md-12">
+                            <div>
+                                <div style="width: 90%;">
+                                    <h4 style="text-align: left;">Entrega Fornecedor 01/02</h4>
+                                    <p style="text-transform: uppercase; font-weight: bold; margin: 0 10px;">MARCA S.A SOLUTIONS</p>
+                                    <p style="text-transform: uppercase; font-weight: bold; margin: 0 10px;">R$ 300,00</p>
                                 </div>
-                                <div class="col-md-6 col-6 mb-3">
-                                    <label for="responsavel2">Responsável pelo Recebimento:</label>
-                                    <input type="text" class="form-control" id="responsavel2" value="Fulana da Silva" disabled>
+                                
+                                <div class="form-row align-items-center" style="text-align: right;">
+                                    <div style="display: flex; align-items: center; margin: 20px 0;">
+                                        <label for="nota_fiscal" style="margin-right: 10px;">Nº da Nota Fiscal:</label>
+                                        <input type="text" class="form-control text-center"
+                                            style="background-color: #ffffff; color: #666; width: 200px; border: solid 2px #9b9b9b"
+                                            maxlength="100" id="nota_fiscal" name="nota_fiscal"
+                                            value="Digite Nº da Nota" />
+                                    </div>
+                        
+                                    <input type="file" id="anexo" name="anexo" class="sub-icones" style="display: none;" />
+                                    <button type="submit" id="sal_r" name="filtrar" class="sub-icones" title="Anexar Nova Nota Fiscal" style="margin-left: 10px;">
+                                        <i class="fa-solid fa-camera"></i><label>Anexar NF Romaneio</label>
+                                    </button>
                                 </div>
                             </div>
-                        
-                        <div class="form-row align-center">
-
-                            <div style="display: flex; align-items: center; margin: 20px 0;">
-                                <label for="nota_fiscal" style="margin-right: 10px;">Número de Documento:</label>
-                                <input type="text" class="form-control text-center"
-                                    style="background-color: #ffffff; color: #666; width: 200px; border: solid 1px #9b9b9b"
-                                    maxlength="100" id="nota_fiscal" name="nota_fiscal" placeholder="Digite Nº da Nota" />
-                            </div>
-
-
-                            <button type="button" id="visualizar_cotacao" name="visualizar_cotacao" class="sub-icones"
-                                onclick="openModal('modal-pdf');">
-                                <i class="fa-regular fa-file-pdf"></i><label>Visualizar Nota Fiscal</label>
-                            </button>
-
-
-                            <button type="button" id="fot_carrega" class="sub-icones" name="subir"
-                                title="Abrir janela para carregar imagem para a requisição de compra"
-                                onclick="document.getElementById('anexo').click();">
-                                <i class="fa-solid fa-paperclip"></i>
-                                <label>Nota Fiscal Romaneio</label>
-                            </button>
                         </div>
+                        
+                        
                             
                         
                                       
@@ -230,7 +259,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Areia Grossa Saco 8kg / Qualquer</td>
+                                    <td>Areia Grossa Saco 8kg / Qualquer<br><span style="color:red;">Grupo: 07 - Paredes e Divisórias / Sub-Grupo: Alvenaria de Elevação</span></td>
                                     <td>0/20</td>
                                         <td>
                                             <div class="tooltip-container">
@@ -243,7 +272,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Talhadeira - 5/8\" / Qualquer</td>
+                                    <td>Talhadeira - 5/8\" / Qualquer<br><span style="color:red;">Grupo: 20 - Serralheria / Sub-Grupo: Coberturas</span></td>
                                     <td>0/20</td>
                                     <td>
                                         <div class="tooltip-container">
@@ -256,7 +285,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Marreta Oitavada - 1kg / Qualquer</td>
+                                    <td>Marreta Oitavada - 1kg / Qualquer<br><span style="color:red;">Grupo: 07 - Paredes e Divisórias / Sub-Grupo: Alvenaria de Elevação</span></td>
                                     <td>0/3</td>
                                     <td>
                                         <div class="tooltip-container">
@@ -269,7 +298,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Talhadeira - 5/8\" / Qualquer</td>
+                                    <td>Talhadeira - 5/8\" / Qualquer<br><span style="color:red;">Grupo: 20 - Serralheria / Sub-Grupo: Coberturas</span>    </td>
                                     <td>0/20</td>
                                     <td>
                                         <div class="tooltip-container">
@@ -358,6 +387,9 @@
                                     </div>
                                 </div>
                                 <div class="text-muted">Observe se as características do produto estão condizentes com o solicitado.</div>
+                                <div class="reason-input" style="display: none;">
+        <textarea class="observations-input" placeholder="Explique o que houve de errado..."></textarea>
+    </div>
                             </div>
                         
                             <!-- Checklist Item 2 -->
@@ -376,6 +408,9 @@
                                     </div>
                                 </div>
                                 <div class="text-muted">Observe se o produto não tem avarias ou defeitos de fabricação.</div>
+                                <div class="reason-input" style="display: none;">
+                                    <textarea class="observations-input" placeholder="Explique o que houve de errado..."></textarea>
+                                </div>
                             </div>
                         
                             <!-- Checklist Item 3 -->
@@ -394,6 +429,9 @@
                                     </div>
                                 </div>
                                 <div class="text-muted">Se existe uma marca apontada no pedido, leve isso em consideração.</div>
+                                <div class="reason-input" style="display: none;">
+                                    <textarea class="observations-input" placeholder="Explique o que houve de errado..."></textarea>
+                                </div>
                             </div>
                         
                             <!-- Checklist Item 4 -->
@@ -412,6 +450,9 @@
                                     </div>
                                 </div>
                                 <div class="text-muted">A decisão de aceitar a mercadoria é sua e do seu departamento. <br> Tenha em mente os pilares: PRAZO, CUSTO e QUALIDADE.</div>
+                                <div class="reason-input" style="display: none;">
+                                    <textarea class="observations-input" placeholder="Explique o que houve de errado..."></textarea>
+                                </div>
                             </div>
                         
                             <!-- Observações -->
@@ -463,34 +504,38 @@
     }
 
     function toggleCheckbox(element, isChecked) {
-        const icon = element.querySelector('.checkbox-icon-img');
+    const icon = element.querySelector('.checkbox-icon-img');
+    const reasonInput = element.closest('.checklist-item').querySelector('.reason-input');
 
-        // Atualiza o estado dos checkboxes
-        if (isChecked) {
-            icon.src = 'imgs/status-entrega/ico-check-sim.png';
-            icon.classList.add('checked');
-            icon.classList.remove('unchecked');
-        } else {
-            icon.src = 'imgs/status-entrega/ico-check-no.png';
-            icon.classList.add('unchecked');
-            icon.classList.remove('checked');
-        }
-
-        // Atualiza os ícones "Sim" e "Não" do item
-        const siblingIcons = element.parentNode.querySelectorAll('.checkbox-icon');
-        siblingIcons.forEach(sibling => {
-            const siblingIconImg = sibling.querySelector('.checkbox-icon-img');
-            if (sibling !== element) {
-                if (isChecked) {
-                    siblingIconImg.src = 'imgs/status-entrega/ico-check-no-enable.png';
-                    siblingIconImg.classList.remove('checked', 'unchecked');
-                } else {
-                    siblingIconImg.src = 'imgs/status-entrega/ico-check-sim-enable.png';
-                    siblingIconImg.classList.remove('checked', 'unchecked');
-                }
-            }
-        });
+    // Atualiza o estado dos checkboxes
+    if (isChecked) {
+        icon.src = 'imgs/status-entrega/ico-check-sim.png';
+        icon.classList.add('checked');
+        icon.classList.remove('unchecked');
+        reasonInput.style.display = 'none'; // Esconde o campo de razão
+    } else {
+        icon.src = 'imgs/status-entrega/ico-check-no.png';
+        icon.classList.add('unchecked');
+        icon.classList.remove('checked');
+        reasonInput.style.display = 'block'; // Mostra o campo de razão
     }
+
+    // Atualiza os ícones "Sim" e "Não" do item
+    const siblingIcons = element.parentNode.querySelectorAll('.checkbox-icon');
+    siblingIcons.forEach(sibling => {
+        const siblingIconImg = sibling.querySelector('.checkbox-icon-img');
+        if (sibling !== element) {
+            if (isChecked) {
+                siblingIconImg.src = 'imgs/status-entrega/ico-check-no-enable.png';
+                siblingIconImg.classList.remove('checked', 'unchecked');
+            } else {
+                siblingIconImg.src = 'imgs/status-entrega/ico-check-sim-enable.png';
+                siblingIconImg.classList.remove('checked', 'unchecked');
+            }
+        }
+    });
+}
+
 
     function toggleStatus(icon) {
         const iconElement = icon;
