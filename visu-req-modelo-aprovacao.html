@@ -108,6 +108,8 @@
 
         .timeline-horizontal {
             margin-bottom: 20px;
+            width: 50%;
+            
         }
 
         .timeline-container {
@@ -188,14 +190,14 @@
         .chart-container {
             display: flex;
             justify-content: space-around;
-            align-items: center;
-            height: 300px; /* Ajuste a altura conforme necessário */
-            margin: 20px;
+            align-items: top;
+            height:300px;
+            margin:20px;
         }
         .chart {
             position: relative; /* Permite o ajuste do gráfico dentro do contêiner */
-            width: 2000px; /* Ajuste a largura conforme necessário */
-            height: 200px; /* Ajuste a altura conforme necessário */
+            width: 50%; 
+            height: 150px; 
         }
         .chart canvas {
             width: 100% !important; /* Força o canvas a ocupar 100% do tamanho do contêiner */
@@ -640,21 +642,35 @@
             <div class="modal-body" style="top:60px;">
 
                 <!-- Primeiro Bloco -->
-                <div class="bloco-container" style="border: 1px solid #e0e0e0; border-radius: 20px; margin-bottom: 20px;" >
+                <div class="bloco-container" style="border: 1px solid #e0e0e0; border-radius: 20px; margin-bottom: 20px;">
                     <div class="toggle-icon sub-icones" onclick="toggleBloco('bloco1', this)">
                         <i class="fa-solid fa-eye"></i>
                         <label>Mostrar/Esconder Dados</label>
                     </div>
                     <div class="bloco" id="bloco1">
+                        
+                        <h2 style="text-align: center; margin-top: 20px; font-size: 22px; font-weight: normal;">Grupo: Parede e Divisórias</h2>
                         <div class="chart-container">
+                            <!-- Título do Gráfico -->
                             <div class="chart">
+                                <h3 style="text-align: center; margin-top: 20px;">Budget do Grupo</h3>
+                                
                                 <canvas id="graficoGrupo"></canvas>
+                            
+                           <!-- Legendas -->
+                           <div style="margin-top: 10px; text-align: left; clear: both;">
+                            <div style="margin-bottom: 5px;">
+                                <div style="width: 40px; height: 10px; border: 1px solid #999; background-color: #FF9F40; display: inline-block; margin-right: 5px;"></div>
+                                <span>Verba Total do Grupo:</span> <span style="font-weight: bold; font-size: 16px;">R$ 25.563,90</span>
                             </div>
-                           <!-- <div class="chart">
-                                <canvas id="graficoSubgrupo"></canvas>
-                            </div> -->
+                            <div style="margin-bottom: 5px;">
+                                <div style="width: 40px; height: 10px; border: 1px solid #999; background-color: #36A2EB; display: inline-block; margin-right: 5px;"></div>
+                                <span>Verba Gasta do Grupo:</span> <span style="font-weight: bold; font-size: 16px;">R$ 20.563,90</span>
+                            </div>
+                        </div>
+                    </div>
                             <div class="timeline-horizontal">
-                                <p style="text-align: center"><b>Timeline de Entrega</b></p>
+                                <h3 style="text-align: center">Timeline de Entrega</h3>
                                 <div class="timeline-container">
                                     <div class="timeline-item atual">
                                         <div class="timeline-icon">
@@ -677,6 +693,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -686,33 +703,24 @@
                         <label>Por favor preencha explicando os motivos da decisão</label>
                         <textarea class="form-control" rows="5" id="obs-aprovar" name="obs-aprovar"></textarea>
                         <div class="form-check mt-2">
-                            <input class="form-check-input" style="margin-top: 0;" type="checkbox" id="salvar-sem-comentario"
-                                onclick="toggleTextarea(this)">
-                            <label class="form-check-label" for="salvar-sem-comentario">
-                                Salvar sem nenhum comentário
-                            </label>
+                            <input class="form-check-input" style="margin-top: 0;" type="checkbox" id="salvar-sem-comentario" onclick="toggleTextarea(this)">
+                            <label class="form-check-label" for="salvar-sem-comentario">Salvar sem nenhum comentário</label>
                         </div>
                     </div>
                 </div>
                 <div class="sub-icones align-right mt-3">
                     <div style="display: flex; align-items: center; margin-right: 10px;">
-                        <input type="radio" id="reprovar-requisicao" name="acao-requisicao" value="reprovar"
-                            style="margin-right: 5px;">
+                        <input type="radio" id="reprovar-requisicao" name="acao-requisicao" value="reprovar" style="margin-right: 5px;">
                         <label for="reprovar-requisicao" style="display: flex; align-items: center;">
-                            <i class="fa-regular fa-thumbs-down"></i><span style="margin-left: 5px;"> Reprovar
-                                Requisição</span>
+                            <i class="fa-regular fa-thumbs-down"></i><span style="margin-left: 5px;"> Reprovar Requisição</span>
                         </label>
                     </div>
-
                     <div style="display: flex; align-items: center; margin-right: 10px;">
-                        <input type="radio" id="aprovar-requisicao" name="acao-requisicao" value="aprovar"
-                            style="margin-right: 5px;">
+                        <input type="radio" id="aprovar-requisicao" name="acao-requisicao" value="aprovar" style="margin-right: 5px;">
                         <label for="aprovar-requisicao" style="display: flex; align-items: center;">
-                            <i class="fa-regular fa-thumbs-up"></i><span style="margin-left: 5px;"> Aprovar
-                                Requisição</span>
+                            <i class="fa-regular fa-thumbs-up"></i><span style="margin-left: 5px;"> Aprovar Requisição</span>
                         </label>
                     </div>
-
                     <div>
                         <button type="submit" id="salvar-aprovar" name="salvar-aprovar" class="sub-icones">
                             <i class="fa-regular fa-floppy-disk"></i>
@@ -725,222 +733,100 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    function toggleBloco(blocoId, icon) {
-    const bloco = document.getElementById(blocoId);
-    if (bloco.style.display === "none") {
-        bloco.style.display = "block";
-        icon.querySelector('i').classList.remove('fa-eye-slash');
-        icon.querySelector('i').classList.add('fa-eye');
-    } else {
-        bloco.style.display = "none";
-        icon.querySelector('i').classList.remove('fa-eye');
-        icon.querySelector('i').classList.add('fa-eye-slash');
-    }
-}
-</script>
+    // Dados fictícios para os gráficos
+    const verbaGrupoTotal = 100000; // Exemplo: verba total do grupo
+    const verbaGrupoGasta = 60000;  // Exemplo: verba já gasta no grupo
 
+    // Função para criar gráficos de pizza com 2 informações
+    function criarGraficoPizzaCom2Infos(idCanvas, labelTotal, labelGasto, total, gasto) {
+        const totalPorcentagem = (valor) => ((valor / verbaGrupoTotal) * 100).toFixed(2) + '%';
 
-    <script>
-        // Dados fictícios para os gráficos
-        const verbaGrupoTotal = 100000; // Exemplo: verba total do grupo
-        const verbaGrupoGasta = 60000;  // Exemplo: verba já gasta no grupo
-    
-        const verbaSubgrupoTotal = 50000;  // Exemplo: verba total do subgrupo
-        const verbaSubgrupoGasta = 25000;  // Exemplo: verba já gasta no subgrupo
-    
-        const verbaDesejada = 120000;  // Exemplo: valor desejado
-        const verbaGasta = verbaGrupoGasta + verbaSubgrupoGasta; // Soma dos gastos
-        const verbaResidual = verbaDesejada - verbaGasta; // Cálculo do gasto residual
-    
-        // Função para criar gráficos de pizza com 2 informações
-        function criarGraficoPizzaCom2Infos(idCanvas, labelTotal, labelGasto, total, gasto) {
-            new Chart(document.getElementById(idCanvas), {
-                type: 'pie',
-                data: {
-                    labels: [labelGasto, labelTotal],
-                    datasets: [{
-                        data: [gasto, total - gasto],
-                        backgroundColor:  ['#FF9F40', '#36A2EB'],
-                        hoverBackgroundColor: ['#f58d25', '#0b8de5']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                        },
-                        datalabels: {
-                            color: '#ffffff',
-                            font: {
-                                weight: 'bold',
-                                size: 14
-                            },
-                            formatter: (value, ctx) => {
-                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
-                                let percentage = (value / total * 100).toFixed(1);
-                                return `${percentage}%`;
-                            },
-                            anchor: 'end',
-                            align: 'end',
-                            offset: 4
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function (context) {
-                                    let label = context.label || '';
-                                    let value = context.raw || 0;
-                                    let percentage = (value / total * 100).toFixed(2);
-                                    return `${label}: ${value} (${percentage}%)`;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    
-        // Função para criar gráficos de pizza com 3 informações
-        function criarGraficoPizzaCom3Infos(idCanvas, label1, label2, label3, valor1, valor2, valor3) {
-            new Chart(document.getElementById(idCanvas), {
-                type: 'pie',
-                data: {
-                    labels: [label1, label2, label3],
-                    datasets: [{
-                        data: [valor1, valor2, valor3],
-                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-                        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false, // Permite ajustar o gráfico ao contêiner
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                        },
-                        datalabels: {
-                            color: '#ffffff',
-                            font: {
-                                weight: 'bold',
-                                size: 14
-                            },
-                            formatter: (value, ctx) => {
-                                let total = ctx.dataset._meta[Object.keys(ctx.dataset._meta)[0]].total;
-                                let percentage = (value / total * 100).toFixed(1);
-                                return `${percentage}%`;
-                            },
-                            anchor: 'end',
-                            align: 'end',
-                            offset: 4
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function (context) {
-                                    let label = context.label || '';
-                                    let value = context.raw || 0;
-                                    let percentage = (value / total * 100).toFixed(2);
-                                    return `${label}: ${value} (${percentage}%)`;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    
-        // Criando os gráficos
-        window.onload = function () {
-            criarGraficoPizzaCom2Infos(
-                'graficoGrupo',
-                'Verba Gasta do Grupo',
-                'Verba Total do Grupo',
-                verbaGrupoTotal,
-                verbaGrupoGasta
-            );
-            criarGraficoPizzaCom2Infos(
-                'graficoSubgrupo',
-                'Verba Gasta do Subgrupo',
-                'Verba Total do Subgrupo',
-                verbaSubgrupoTotal,
-                verbaSubgrupoGasta
-            );
-            criarGraficoPizzaCom3Infos(
-                'graficoDesejado',
-                'Gasto Residual',
-                'Verba Gasta',
-                'Verba Desejada',
-                verbaResidual,
-                verbaGasta,
-                verbaDesejada
-            );
-        };
-    </script>
-    
-
-    <!-- Inclusão do Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script>
-        // Configuração do gráfico com Chart.js
-        var ctx = document.getElementById('grafico-verba-gasto').getContext('2d');
-        var grafico = new Chart(ctx, {
-            type: 'bar',
+        new Chart(document.getElementById(idCanvas), {
+            type: 'pie',
             data: {
-                labels: ['Verba Grupo', 'Verba Subgrupo', 'Verba Desejada', 'Verba Total Gasto'],
+                labels: [labelGasto, labelTotal],
                 datasets: [{
-                    label: 'Valores',
-                    data: [3000, 5000, 7000, 8000], // Dados fictícios
-                    backgroundColor: [
-                        'rgba(255, 193, 7, 0.6)',
-                        'rgba(33, 150, 243, 0.6)',
-                        'rgba(76, 175, 80, 0.6)',
-                        'rgba(244, 67, 54, 0.6)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 193, 7, 1)',
-                        'rgba(33, 150, 243, 1)',
-                        'rgba(76, 175, 80, 1)',
-                        'rgba(244, 67, 54, 1)'
-                    ],
-                    borderWidth: 1
+                    data: [gasto, total - gasto],
+                    backgroundColor: ['#FF9F40', '#36A2EB'],
+                    hoverBackgroundColor: ['#f58d25', '#0b8de5']
                 }]
             },
             options: {
-                indexAxis: 'y', // Altera o gráfico para barras horizontais
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Valor ($)'
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Categoria'
-                        }
-                    }
-                },
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        display: false
+                        position: 'left',
+                        labels: {
+                            generateLabels: (chart) => {
+                                const data = chart.data.datasets[0].data;
+                                return data.map((value, index) => {
+                                    const percentage = totalPorcentagem(value);
+                                    return {
+                                        text: percentage, // A porcentagem será o texto da legenda
+                                        fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                        index,
+                                        value, // Armazena o valor para uso posterior
+                                    };
+                                });
+                            },
+                            // Customiza o desenho das legendas
+                            afterDraw: (chart) => {
+                                const legend = chart.legend;
+                                const ctx = chart.ctx;
+
+                                legend.legendItems.forEach((item, index) => {
+                                    const { value } = item; // Obtém o valor
+                                    const { left, top, width, height } = legend.legendItems[index];
+
+                                    // Texto da porcentagem
+                                    ctx.fillStyle = item.fillStyle; // Cor do fundo da legenda
+                                    ctx.fillText(item.text, left + width / 2, top + height / 2 - 20); // Porcentagem
+
+                                    // Texto do valor total ou gasto
+                                    ctx.fillStyle = '#000'; // Cor do texto
+                                    const label = index === 0 ? 'Verba Gasta' : 'Verba Total'; // Determina o label
+                                    ctx.fillText(label, left + width / 2, top + height / 2); // Label abaixo da porcentagem
+
+                                    // Texto do valor em reais
+                                    ctx.fillText(`R$ ${value}`, left + width / 2, top + height / 2 + 20); // Valor em reais
+                                });
+                            }
+                        },
                     },
-                    title: {
-                        display: true,
-                        text: 'Verbas',
-                        padding: {
-                            bottom: 20
-                        }
-                    }
                 }
             }
         });
+    }
 
-    </script>
+    // Criando os gráficos
+    window.onload = function () {
+        criarGraficoPizzaCom2Infos(
+            'graficoGrupo',
+            'Verba Total do Grupo',
+            'Verba Gasta do Grupo',
+            verbaGrupoTotal,
+            verbaGrupoGasta
+        );
+    };
+</script>
+
+<script>
+    function toggleBloco(blocoId, icon) {
+    const bloco = document.getElementById(blocoId);
+
+    if (bloco.style.display === "block" || bloco.style.display === "") {
+        bloco.style.display = "none";
+        icon.querySelector('i').classList.replace("fa-eye", "fa-eye-slash"); // Muda o ícone para 'mostrar'
+    } else {
+        bloco.style.display = "block";
+        icon.querySelector('i').classList.replace("fa-eye-slash", "fa-eye"); // Muda o ícone para 'esconder'
+    }
+}
+
+</script>
 
     
 
